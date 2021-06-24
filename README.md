@@ -4,7 +4,7 @@ SITE Course Year: **2021**
 
 Cohort: **Course Hero**
 
-Team Member Names:**Brian Balthazar, Stella Kim, Rodrigo Martinez**
+Team Member Names: **Brian Balthazar, Stella Kim, Rodrigo Martinez**
 
 Mentors Names: **Rachel Okun, Saurabh Sood, Ernesto Rodriguez**
 
