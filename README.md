@@ -10,7 +10,7 @@ Mentors Names: **Rachel Okun, Saurabh Sood, Ernesto Rodriguez**
 
 ## Project Overview
 
-Add a quick summary of what your project theme and objectives are. 
+Our goal is to help beginner artists gain exposure by helping them securely share their work with fellow beginner artists while also building a sense of community.
 
 Deployment Website: **Add Link to Deployed Project**
 
