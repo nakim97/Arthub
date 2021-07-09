@@ -98,7 +98,20 @@ List of pages:
 * Create New Post Page
 * Edit Portfolio Page
 
-Link to wireframes(public): https://www.figma.com/file/6leFJTd88cHkmYfATtc9u0/ArtHub-Wireframes?node-id=0%3A1
+Screenshot 1: 
+
+<img width="437" alt="Screen Shot 2021-07-09 at 11 54 34 AM" src="https://user-images.githubusercontent.com/57072287/125124109-7103c000-e0ac-11eb-98bd-1eea410d8a4b.png">
+
+Screenshot 2: 
+
+<img width="420" alt="Screen Shot 2021-07-09 at 11 55 31 AM" src="https://user-images.githubusercontent.com/57072287/125124192-9264ac00-e0ac-11eb-87d4-f2e10ee421d8.png">
+
+Screenshot 3: 
+
+<img width="419" alt="Screen Shot 2021-07-09 at 11 56 03 AM" src="https://user-images.githubusercontent.com/57072287/125124239-a4dee580-e0ac-11eb-8128-774268755ead.png">
+
+
+Link to **all** wireframes(public): https://www.figma.com/file/6leFJTd88cHkmYfATtc9u0/ArtHub-Wireframes?node-id=0%3A1
 
 ## Data Model
 
@@ -190,3 +203,5 @@ Link to wireframes(public): https://www.figma.com/file/6leFJTd88cHkmYfATtc9u0/Ar
 
 
 ***Don't forget to set up your Issues, Milestones, and Project Board!***
+
+Milestones, Issues, and Project Board have been set up!
