@@ -186,6 +186,7 @@ return arr;
           >
             {isProcessing ? "Loading..." : "Create Account"}
           </button>
+       
         </div>
 
         <div className="footer smaller">

@@ -83,7 +83,6 @@ export default function Login({ user, setUser }) {
               <span className="error">{errors.password}</span>
             )}
           </div>
-
           <button
             className="btn"
             disabled={isProcessing}
