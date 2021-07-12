@@ -10,11 +10,11 @@ export default function SubNavbar(){
         <nav className="subNavbar">
         <div className="content">
             <ul className="links">
-                <li className="subNavLink"> <BubbleChartIcon /> ABOUT</li>
-                <li className="subNavLink"> <ExploreIcon/> EXPLORE</li>
-                <li className="subNavLink"> <SchoolIcon/> LEARNING</li>
-                <li className="subNavLink"> <ShoppingCartIcon/> MARKETPLACE</li>
-                <li className="subNavLink"> <ForumIcon/> COMMUNITY</li>
+                <li className="subNavLink"> <BubbleChartIcon style={{ marginRight: '5px' }} /> ABOUT</li>
+                <li className="subNavLink"> <ExploreIcon style={{ marginRight: '5px' }}/> EXPLORE</li>
+                <li className="subNavLink"> <SchoolIcon style={{ marginRight: '5px' }}/> LEARNING</li>
+                <li className="subNavLink"> <ShoppingCartIcon style={{ marginRight: '5px' }}/> MARKETPLACE</li>
+                <li className="subNavLink"> <ForumIcon style={{ marginRight: '5px' }}/> COMMUNITY</li>
             </ul>
         </div>
     </nav>
