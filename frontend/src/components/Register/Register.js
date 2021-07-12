@@ -8,11 +8,9 @@ export default function Register({ user, setUser }) {
   const [isProcessing, setIsProcessing] = useState(false);
   const [errors, setErrors] = useState({});
   const [form, setForm] = useState({
-    firstName: "",
-    lastName: "",
+    name: "",
     email: "",
     userName: "",
-    email: "",
     password: "",
     passwordConfirm: "",
   });
@@ -60,9 +58,8 @@ export default function Register({ user, setUser }) {
       setErrors((e) => ({ ...e, passwordConfirm: null }));
     }
     const { data, error } = await apiClient.signupUser({
-      first_name: form.firstName,
+      name: form.firstName,
       username: form.userName,
-      last_name: form.lastName,
       email: form.email,
       password: form.password,
     });
@@ -77,13 +74,40 @@ export default function Register({ user, setUser }) {
   return (
     <div className="Register">
       <div className="card">
-        <h2>Create Account</h2>
+        <h2>Sign Up to ArtHub</h2>
 
         {errors.form && <span className="error">{errors.form}</span>}
         <br />
 
         <div className="form">
-          <div className="input-field">
+          {/* <div className="input-field">
+            <label htmlFor="name">Username</label>
+            <input
+              type="text"
+              name="userName"
+              placeholder="Enter your username"
+              value={form.userName}
+              onChange={handleOnInputChange}
+            />
+            {errors.userName && (
+              <span className="error">{errors.userName}</span>
+            )}
+          </div> */}
+          <div className="split-inputs">
+            <div className="input-field">
+              <label htmlFor="name">Name</label>
+              <input
+                type="text"
+                name="name"
+                placeholder="Jane"
+                value={form.name}
+                onChange={handleOnInputChange}
+              />
+              {errors.name && (
+                <span className="error">{errors.name}</span>
+              )}
+            </div>
+            <div className="input-field">
             <label htmlFor="name">Username</label>
             <input
               type="text"
@@ -96,33 +120,6 @@ export default function Register({ user, setUser }) {
               <span className="error">{errors.userName}</span>
             )}
           </div>
-          <div className="split-inputs">
-            <div className="input-field">
-              <label htmlFor="name">First Name</label>
-              <input
-                type="text"
-                name="firstName"
-                placeholder="Jane"
-                value={form.firstName}
-                onChange={handleOnInputChange}
-              />
-              {errors.firstName && (
-                <span className="error">{errors.firstName}</span>
-              )}
-            </div>
-            <div className="input-field">
-              <label htmlFor="name">Last Name</label>
-              <input
-                type="text"
-                name="lastName"
-                placeholder="Doe"
-                value={form.lastName}
-                onChange={handleOnInputChange}
-              />
-              {errors.lastName && (
-                <span className="error">{errors.lastName}</span>
-              )}
-            </div>
           </div>
 
           <div className="input-field">
@@ -164,7 +161,12 @@ export default function Register({ user, setUser }) {
               <span className="error">{errors.passwordConfirm}</span>
             )}
           </div>
-
+              <div className="checkbox">
+                <input
+              type="checkbox"
+              name="checkbox"
+              onChange={handleOnInputChange}
+            /> </div>
           <button
             className="btn"
             disabled={isProcessing}
