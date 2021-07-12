@@ -8,6 +8,7 @@ html,body{
 .home .homeCarousel{
     padding-top: 20px;
 }
+
 ul {
     white-space: nowrap;
 }
@@ -18,7 +19,46 @@ ul, li {
     margin-right: 50px;
 }
 
-.carouselimg{
+.carouselImg{
     width: 400px;
     height: 500px;
 }
+
+.exploreTrendingLatest .feedBtns{
+    float:left;
+    padding-top:50px;
+}
+
+.exploreTrendingLatest .feedBtns .feedExploreBtn{
+    width: 200px;
+    height: 60px;
+    margin-right: 50px;
+    color:white;
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin-left: 50px;
+}
+.exploreTrendingLatest .feedBtns .feedLatestBtn{
+    width: 200px;
+    height: 60px;
+    margin-right: 50px;
+    color:white;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+.exploreTrendingLatest .feedBtns .feedTrendingBtn{
+    width: 200px;
+    height: 60px;
+    margin-right: 50px;
+    color:white;
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin-bottom: 50px;
+}
+
+.feedImg{
+    width: 300px;
+    height: 200px;
+    padding-bottom: 50px;
+}
+
