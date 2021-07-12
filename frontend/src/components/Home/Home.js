@@ -1,5 +1,6 @@
 import "./Home.css"
 import Navbar from "../Navbar/Navbar"
+import SchoolIcon from '@material-ui/icons/School';
 
 import carousel1 from "../../Assets/carousel1.jpg"
 import carousel2 from "../../Assets/carousel2.jpg"
@@ -39,8 +40,58 @@ export default function Home(){
                         <li><img className="feedImg" src={homefeed4} alt=" home feed img 4"/></li>
                         <li><img className="feedImg" src={homefeed5} alt=" home feed img 5"/></li>
                         <li><img className="feedImg" src={homefeed6} alt=" home feed img 6"/></li>
-
                     </ul>
+                </div>
+
+                <div className="newLearning">
+                    <h4> <SchoolIcon style={{ marginRight: '5px' }}/> NEW ON ARTHUB LEARNING</h4>
+                    <div className="container">
+                        <div className="learningContainer"> 
+                            <div className="learningImageContainer">
+                             <li><img className="learningImg" src={homefeed7} alt=" home feed img 2"/></li>
+                            </div>
+                            <h4 className="learningTitle">How to Draw Rocks </h4>
+                            <div className="learningBlurb">
+                                <p style={{textAlign:'left'}}>by Hello World
+                                <span style={{float:'right'}}>1h 10s</span></p>
+                            </div>
+                        </div>
+
+                        <div className="learningContainer"> 
+                            <div className="learningImageContainer">
+                            <li><img className="learningImg" src={homefeed6} alt=" home feed img 6"/></li>
+                            </div>
+                            <h4 className="learningTitle">How to Concept Art </h4>
+                            <div className="learningBlurb">
+                                <p style={{textAlign:'left'}}>by Test
+                                <span style={{float:'right'}}>45m</span></p>
+                            </div>
+                        </div>
+
+                        <div className="learningContainer"> 
+                            <div className="learningImageContainer">
+                                <img className="learningImg" src={homefeed1} alt=" home feed img 1"/>
+                            </div>
+                            <h4 className="learningTitle">How to Sketch Animals </h4>
+                            <div className="learningBlurb">
+                                <p style={{textAlign:'left'}}>by Yes
+                                <span style={{float:'right'}}>2h 10m</span></p>
+                            </div>
+                        </div>
+
+                        <div className="learningContainer"> 
+                            <div className="learningImageContainer">
+                            <li><img className="learningImg" src={homefeed4} alt=" home feed img 4"/></li>
+                            </div>
+                            <h4 className="learningTitle">How to Draw Rocks </h4>
+                            <div className="learningBlurb">
+                                <p style={{textAlign:'left'}}>by Hello World
+                                <span style={{float:'right'}}>1h 10s</span></p>
+                            </div>
+                        </div>
+
+                    </div>
+
                 </div>
             </div>
         </div>

@@ -62,3 +62,52 @@ ul, li {
     padding-bottom: 50px;
 }
 
+.learningImageContainer{
+    width:100%;
+}
+
+.learningImageContainer img{
+    width:100%;
+}
+
+.learningDiv{
+    margin-top:10px;
+    color:white;
+    
+}
+
+.home .newLearning .container{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.learningContainer{
+    width: 300px;
+}
+
+.learningContainer .learningTitle{
+    color:white;
+    text-align:left;
+    margin:0;
+    align-items: left;
+}
+
+.learningBlurb p {
+    color:white;
+     font-style: italic;
+}
+
+.home .container{
+    margin-left: 50px;
+
+}
+.newLearning h4{
+    color:white;
+    text-align: left;
+    margin-left:50px;
+    font-size:20px;
+}
+
+.learningImg{
+    height: 200px;
+}
