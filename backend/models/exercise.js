@@ -17,8 +17,8 @@ class Exercise {
     `,
       [user.email]
     );
-    // 
-    
+    //
+
     return results.rows;
   }
   static async listExerciseMinutes({ user }) {
