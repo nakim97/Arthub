@@ -11,7 +11,6 @@ export default function Navbar() {
           <div className="logo">
             <BrushIcon style={{ fontSize: 40 }} />
           </div>
-
           <div className="search-bar">
             <input type="text" name="search" placeholder="Search..." />
           </div>
