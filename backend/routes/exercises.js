@@ -23,7 +23,6 @@ router.get("/", security.requireAuthenticatedUser, async (req, res, next) => {
     // List all exercises
     // call the listExercisesForUser from the Exercise model
     const { user } = res.locals;
-
     const exercises = await Exercise.listExercisesForUser({ user });
     return res.status(200).json({ exercises });
   } catch (err) {
@@ -38,7 +37,6 @@ router.get(
     try {
       // List all minutes
       const { user } = res.locals;
-
       const minutes = await Exercise.listExerciseMinutes({ user });
       return res.status(200).json({ minutes });
     } catch (err) {
