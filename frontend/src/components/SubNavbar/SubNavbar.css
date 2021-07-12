@@ -1,0 +1,26 @@
+.subNavbar .content{
+    background: black;
+    display: inline-block;
+    width: 100%;
+    
+
+}
+.subNavbar .content .links{
+    list-style-type: none;
+    gap: 350px;
+    font-size:16px;
+    color:white;
+    
+    
+}
+
+.subNavbar .content .links li{
+    display: inline;
+    margin-right: 180px;
+    vertical-align: 'middle';
+    
+}
+
+.subNavbar .content .links li:hover{
+    color:#7FFFD4;
+}
