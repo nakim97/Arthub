@@ -52,7 +52,7 @@ export default function Login({ user, setUser }) {
   return (
     <div className="Login">
       <div className="card">
-        <h2>Login</h2>
+        <h2>Sign in To ArtHub</h2>
 
         {errors.form && <span className="error">{errors.form}</span>}
         <br />
@@ -89,7 +89,7 @@ export default function Login({ user, setUser }) {
             disabled={isProcessing}
             onClick={handleOnSubmit}
           >
-            {isProcessing ? "Loading..." : "Login"}
+            {isProcessing ? "Loading..." : "Sign In"}
           </button>
         </div>
 
