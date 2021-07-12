@@ -21,7 +21,7 @@ export default function Register({ user, setUser }) {
     // if user is already logged in,
     // redirect them to the home page
     if (user?.email) {
-      navigate("/activity");
+      navigate("/");
     }
   }, [user, navigate]);
 
