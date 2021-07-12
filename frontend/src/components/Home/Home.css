@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+html,body{
+    background: #151313;
+    font-family: "Roboto", sans-serif;
+}
+
+.home .homeCarousel{
+    padding-top: 20px;
+}
+ul {
+    white-space: nowrap;
+}
+  
+ul, li {
+    list-style: none;
+    display: inline;
+    margin-right: 50px;
+}
+
+.carouselimg{
+    width: 400px;
+    height: 500px;
+}
