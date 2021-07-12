@@ -1,7 +1,8 @@
 const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
-const { NotFoundError } = require("./utils/errors");
+const config = require("./config")
+const { NotFoundError } = require("./utils/errors")
 const authRoutes = require("./routes/auth");
 const exerciseRoutes = require("./routes/exercises");
 const security = require("./middleware/security");

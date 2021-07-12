@@ -28,7 +28,8 @@
     "morgan": "^1.10.0",
     "nodemon": "^2.0.7",
     "pg": "^8.6.0",
-    "prettier": "^2.3.2"
+    "prettier": "^2.3.2",
+    "regenerator-runtime": "^0.13.7"
   },
   "devDependencies": {
     "jest": "^27.0.6",
