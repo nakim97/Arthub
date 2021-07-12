@@ -1,4 +1,5 @@
 const request = require("supertest")
+// Gets the runtime globally
 require("regenerator-runtime/runtime");
 const app = require("./app")
 const db = require("./db")
