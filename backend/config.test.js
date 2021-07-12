@@ -17,8 +17,8 @@ describe("Config derived from process.env", () => {
     delete process.env.BCRYPT_WORK_FACTOR
     delete process.env.DATABASE_URL
 
-    expect(config.getDatabaseUri()).toEqual("postgresql://postgres:postgres@localhost:5432/life_tracker")
+    expect(config.getDatabaseUri()).toEqual("postgresql://postgres:postgres@localhost:5432/art_hub")
     process.env.NODE_ENV = "test"
-    expect(config.getDatabaseUri()).toEqual("postgresql://postgres:postgres@localhost:5432/life_tracker_test")
+    expect(config.getDatabaseUri()).toEqual("postgresql://postgres:postgres@localhost:5432/art_hub_test")
   })
 })
