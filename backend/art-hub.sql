@@ -14,4 +14,5 @@ DROP DATABASE art_hub_test;
 CREATE DATABASE art_hub_test;
 \connect art_hub_test
 
+
 \i art-hub-schema.sql
