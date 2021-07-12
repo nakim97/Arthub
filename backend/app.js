@@ -4,9 +4,6 @@ const morgan = require("morgan");
 const { NotFoundError } = require("./utils/errors");
 const authRoutes = require("./routes/auth");
 const exerciseRoutes = require("./routes/exercises");
-const sleepRoutes = require("./routes/sleeps");
-const nutritionRoutes = require("./routes/nutritions");
-const activityRoutes = require("./routes/activities");
 const security = require("./middleware/security");
 
 const app = express();
@@ -26,9 +23,6 @@ app.use(security.extractUserFromJwt);
 // Use routes after middleware 
 app.use("/auth", authRoutes);
 app.use("/exercise", exerciseRoutes);
-app.use("/sleep", sleepRoutes);
-app.use("/nutrition", nutritionRoutes);
-app.use("/activity", activityRoutes);
 
 /** Handle 404 errors -- this matches everything */
 app.use((req, res, next) => {
