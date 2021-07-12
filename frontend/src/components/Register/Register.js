@@ -99,7 +99,7 @@ export default function Register({ user, setUser }) {
               <input
                 type="text"
                 name="name"
-                placeholder="Jane"
+                placeholder="Jane Doe"
                 value={form.name}
                 onChange={handleOnInputChange}
               />
@@ -166,7 +166,8 @@ export default function Register({ user, setUser }) {
               type="checkbox"
               name="checkbox"
               onChange={handleOnInputChange}
-            /> </div>
+            />
+            <label>Creating an account means you’re fine with our Terms and Conditions, Privacy Policy, and just being cool.</label> </div>
           <button
             className="btn"
             disabled={isProcessing}
@@ -178,7 +179,7 @@ export default function Register({ user, setUser }) {
 
         <div className="footer smaller">
           <p>
-            Already have an account? Login <Link to="/login">here</Link>
+            Already registered? <Link to="/login">Sign in</Link>
           </p>
         </div>
       </div>
