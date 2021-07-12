@@ -57,17 +57,28 @@ export default function Register({ user, setUser }) {
     } else {
       setErrors((e) => ({ ...e, passwordConfirm: null }));
     }
+    function splitName(name) {
+      let arr = []
+let index = name.indexOf(" ");  // Gets the first index where a space occurs
+let fName = name.substr(0, index); // Gets the first part
+let lName = name.substr(index + 1);  // Gets the second part
+arr[0] = fName;
+arr[1] = lName;
+return arr;
+    }
+    const myArr = splitName(form.name);
     const { data, error } = await apiClient.signupUser({
-      name: form.firstName,
+      first_name: myArr[0],
+      last_name: myArr[1],
       username: form.userName,
       email: form.email,
       password: form.password,
     });
     if (error) setErrors((e) => ({ ...e, form: error }));
-    if (data?.user) {
-      setUser(data.user);
-      apiClient.setToken(data.token);
-    }
+    // if (data?.user) {
+    //   setUser(data.user);
+    //   apiClient.setToken(data.token);
+    // }
     setIsProcessing(false);
   };
 
