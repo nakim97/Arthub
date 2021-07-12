@@ -27,7 +27,6 @@ export default function Navbar(){
                         Sign In
                     </li>
                 </ul>
-
            </div>
 
        </nav>
