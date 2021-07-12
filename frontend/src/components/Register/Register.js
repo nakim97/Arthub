@@ -58,13 +58,13 @@ export default function Register({ user, setUser }) {
       setErrors((e) => ({ ...e, passwordConfirm: null }));
     }
     function splitName(name) {
-      let arr = []
-let index = name.indexOf(" ");  // Gets the first index where a space occurs
-let fName = name.substr(0, index); // Gets the first part
-let lName = name.substr(index + 1);  // Gets the second part
-arr[0] = fName;
-arr[1] = lName;
-return arr;
+      let arr = [];
+      let index = name.indexOf(" "); // Gets the first index where a space occurs
+      let fName = name.substr(0, index); // Gets the first part
+      let lName = name.substr(index + 1); // Gets the second part
+      arr[0] = fName;
+      arr[1] = lName;
+      return arr;
     }
     const myArr = splitName(form.name);
     const { data, error } = await apiClient.signupUser({
@@ -91,19 +91,6 @@ return arr;
         <br />
 
         <div className="form">
-          {/* <div className="input-field">
-            <label htmlFor="name">Username</label>
-            <input
-              type="text"
-              name="userName"
-              placeholder="Enter your username"
-              value={form.userName}
-              onChange={handleOnInputChange}
-            />
-            {errors.userName && (
-              <span className="error">{errors.userName}</span>
-            )}
-          </div> */}
           <div className="split-inputs">
             <div className="input-field">
               <label htmlFor="name">Name</label>
@@ -114,23 +101,21 @@ return arr;
                 value={form.name}
                 onChange={handleOnInputChange}
               />
-              {errors.name && (
-                <span className="error">{errors.name}</span>
-              )}
+              {errors.name && <span className="error">{errors.name}</span>}
             </div>
             <div className="input-field">
-            <label htmlFor="name">Username</label>
-            <input
-              type="text"
-              name="userName"
-              placeholder="Enter your username"
-              value={form.userName}
-              onChange={handleOnInputChange}
-            />
-            {errors.userName && (
-              <span className="error">{errors.userName}</span>
-            )}
-          </div>
+              <label htmlFor="name">Username</label>
+              <input
+                type="text"
+                name="userName"
+                placeholder="Enter your username"
+                value={form.userName}
+                onChange={handleOnInputChange}
+              />
+              {errors.userName && (
+                <span className="error">{errors.userName}</span>
+              )}
+            </div>
           </div>
 
           <div className="input-field">
@@ -172,13 +157,17 @@ return arr;
               <span className="error">{errors.passwordConfirm}</span>
             )}
           </div>
-              <div className="checkbox">
-                <input
+          <div className="checkbox">
+            <input
               type="checkbox"
               name="checkbox"
               onChange={handleOnInputChange}
             />
-            <label>Creating an account means you’re fine with our Terms and Conditions, Privacy Policy, and just being cool.</label> </div>
+            <label>
+              Creating an account means you’re fine with our Terms and
+              Conditions, Privacy Policy, and just being cool.
+            </label>{" "}
+          </div>
           <button
             className="btn"
             disabled={isProcessing}
@@ -186,7 +175,6 @@ return arr;
           >
             {isProcessing ? "Loading..." : "Create Account"}
           </button>
-       
         </div>
 
         <div className="footer smaller">
