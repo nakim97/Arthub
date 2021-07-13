@@ -9,7 +9,7 @@ export default function Navbar() {
       <nav className="Navbar">
         <div className="content">
           <div className="logo">
-            <BrushIcon style={{ fontSize: 40 }} />
+            <BrushIcon style={{ fontSize: 30 }} />
           </div>
           <div className="search-bar">
             <input type="text" name="search" placeholder="Search..." />
