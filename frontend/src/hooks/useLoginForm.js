@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react"
-import { Link, useNavigate } from "react-router-dom"
-import { Button, Card, Input, InputField } from "components"
-import apiClient from "services/apiClient"
-export const useLoginForm = ({user, setUser}) => {
+import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { Button, Card, Input, InputField } from "components";
+import apiClient from "services/apiClient";
+
+export const useLoginForm = ({ user, setUser }) => {
   const navigate = useNavigate();
   const [isProcessing, setIsProcessing] = useState(false);
   const [errors, setErrors] = useState({});
@@ -48,6 +49,5 @@ export const useLoginForm = ({user, setUser}) => {
     setIsProcessing(false);
   };
 
-  return {isProcessing,
-    form, errors, handleOnSubmit, handleOnInputChange}
-}
+  return { isProcessing, form, errors, handleOnSubmit, handleOnInputChange };
+};

@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react"
-import { Link, useNavigate } from "react-router-dom"
-import { Button, Card, Input, InputField } from "components"
-import apiClient from "services/apiClient"
+import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { Button, Card, Input, InputField } from "components";
+import apiClient from "services/apiClient";
 
-export const useRegisterForm = ({user, setUser}) => {
+export const useRegisterForm = ({ user, setUser }) => {
   const navigate = useNavigate();
   const [isProcessing, setIsProcessing] = useState(false);
   const [errors, setErrors] = useState({});
@@ -85,6 +85,5 @@ export const useRegisterForm = ({user, setUser}) => {
     setIsProcessing(false);
   };
 
-  return {isProcessing,
-    form, errors, handleOnSubmit, handleOnInputChange}
-}
+  return { isProcessing, form, errors, handleOnSubmit, handleOnInputChange };
+};

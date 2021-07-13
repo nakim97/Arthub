@@ -3,10 +3,11 @@ import BrushIcon from "@material-ui/icons/Brush";
 import BubbleChartIcon from "@material-ui/icons/BubbleChart";
 import "./Register.css";
 import register1 from "../../assets/register1.png";
-import {useRegisterForm} from "hooks/useRegisterForm"
+import { useRegisterForm } from "hooks/useRegisterForm";
 
 export default function Register({ user, setUser }) {
-  const {form, errors, handleOnInputChange, handleOnSubmit, isProcessing} = useRegisterForm({user, setUser})
+  const { form, errors, handleOnInputChange, handleOnSubmit, isProcessing } =
+    useRegisterForm({ user, setUser });
 
   return (
     <div className="Register">

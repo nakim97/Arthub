@@ -1,4 +1,4 @@
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Login.css";
 import login1 from "../../assets/login1.png";
 import BrushIcon from "@material-ui/icons/Brush";
@@ -6,7 +6,8 @@ import BubbleChartIcon from "@material-ui/icons/BubbleChart";
 import { useLoginForm } from "hooks/useRegisterForm";
 
 export default function Login({ user, setUser }) {
-  const {form, errors, handleOnInputChange, handleOnSubmit, isProcessing} = useLoginForm({user, setUser})
+  const { form, errors, handleOnInputChange, handleOnSubmit, isProcessing } =
+    useLoginForm({ user, setUser });
 
   return (
     <div className="Login">
