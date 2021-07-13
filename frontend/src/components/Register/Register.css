@@ -45,13 +45,13 @@
 .Register .card .form .input-field label {
   margin-bottom: 5px;
 }
-.Register .card .form .input-field input {
+/* .Register .card .form .input-field input {
   height: 60px;
   padding: 0 15px;
   font-size: 16px;
   border: solid 1px var(--border-color);
   width: 100%;
-}
+} */
 /* .Register .card .footer {
   /* border-top: solid 1px var(--border-color); 
   margin-top: auto;
