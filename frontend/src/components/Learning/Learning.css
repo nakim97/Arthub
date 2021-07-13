@@ -1,0 +1,164 @@
+
+.learning .banner{
+    width:100%;
+    height: 600px;
+    margin:0;
+    
+}
+.learning .banner .bannerSearch .search-bar input {
+    width: 690px;
+    height: 40px;
+    background: white;
+    border: 1px solid #6b6b6b;
+    box-sizing: border-box;
+    color: black;
+    outline: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+    font-family: "Roboto", sans-serif;
+    padding-left: 20px;
+  }
+
+  .learning .banner .bannerSearch h4 {
+    color:white;
+    font-size:45px;
+    letter-spacing: 5px;
+  }
+
+  .learning .banner .bannerSearch{
+    padding-top: 100px;
+  }
+
+  ::placeholder{
+      font-size: 15px;
+  }
+
+
+  .learning .learningTags .learningBtns {
+    padding-top: 50px;
+    float:left;
+    outline:none;
+  }
+  
+  .learning .learningTags .learningBtns .learningBtn {
+    width: 200px;
+    height: 70px;
+    margin-right: 50px;
+    color: white;
+    font-size: 20px;
+    letter-spacing: 3px;
+    margin-left: 50px;
+  }
+  
+  .learning .learningTags .learningBtns .learningBtn1 {
+    width: 200px;
+    height: 70px;
+    margin-right: 50px;
+    color: white;
+    font-size: 20px;
+    letter-spacing: 3px;
+    margin-left: 50px;
+  }
+
+  .learning .learningTags .learningBtns .learningBtn2 {
+    width: 200px;
+    height: 70px;
+    margin-right: 50px;
+    color: white;
+    font-size: 20px;
+    letter-spacing: 3px;
+    margin-left: 50px;
+  }
+  .learning .learningTags .learningBtns .learningBtn3 {
+    width: 200px;
+    height: 70px;
+    margin-right: 50px;
+    color: white;
+    font-size: 20px;
+    letter-spacing: 3px;
+    margin-left: 50px;
+  }
+
+  .learning .learningTags .learningBtns .learningBtn4 {
+    width: 200px;
+    height: 70px;
+    margin-right: 50px;
+    color: white;
+    font-size: 20px;
+    letter-spacing: 3px;
+    margin-left: 50px;
+  }
+
+  .learning .learningTags .learningBtns .learningBtn5 {
+    width: 200px;
+    height: 70px;
+    margin-right: 50px;
+    color: white;
+    font-size: 20px;
+    letter-spacing: 3px;
+    margin-left: 50px;
+  }
+
+  
+.learningImageContainer {
+  width: 100%;
+}
+
+.learningImageContainer img {
+  width: 100%;
+}
+
+.learningDiv {
+  margin-top: 10px;
+  color: white;
+}
+
+.learning .newLearning .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.learningContainer{
+  width: 300px;
+}
+
+.learningContainer .learningTitle{
+  color: white;
+  text-align: left;
+  margin: 0;
+  align-items: left;
+}
+
+.learningContainer .learningTitle{
+    font-size: 20px;
+    margin-top:5px;
+}
+
+.learningBlurb p{
+    font-size: 13px;
+}
+
+.learningBlurb p {
+  color: white;
+  font-style: italic;
+}
+
+.learning .container {
+  margin-left: 50px;
+}
+.newLearning h4{
+  color: white;
+  text-align: left;
+  margin-left: 50px;
+  font-size: 25px;
+  padding-top:100px;
+}
+
+
+.learningImg{
+  height: 200px;
+}
+
+.learning .newLearning{
+    padding-top: 50px;
+}
