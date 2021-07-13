@@ -52,6 +52,7 @@ export default function Login({ user, setUser }) {
 
   return (
     <div className="Login">
+      <p className="aside">You’re One of Us Now</p>
       <img className="registerImage" src={login1} alt="login main img"/>
       <div className="card">
         <h2>Sign in To ArtHub</h2>
