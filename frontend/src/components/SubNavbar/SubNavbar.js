@@ -21,10 +21,13 @@ export default function SubNavbar() {
             {" "}
             <ExploreIcon style={{ marginRight: "5px" }} /> EXPLORE
           </li>
+          <Link to="/learning">
           <li className="subNavLink">
             {" "}
             <SchoolIcon style={{ marginRight: "5px" }} /> LEARNING
           </li>
+          </Link>
+          
           <li className="subNavLink">
             {" "}
             <ShoppingCartIcon style={{ marginRight: "5px" }} /> MARKETPLACE
