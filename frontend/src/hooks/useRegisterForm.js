@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { Button, Card, Input, InputField } from "components";
-import apiClient from "services/apiClient";
+import { useNavigate } from "react-router-dom";
+import apiClient from "../services/apiClient";
 
 export const useRegisterForm = ({ user, setUser }) => {
   const navigate = useNavigate();
@@ -78,10 +77,10 @@ export const useRegisterForm = ({ user, setUser }) => {
       password: form.password,
     });
     if (error) setErrors((e) => ({ ...e, form: error }));
-    if (data?.user) {
-      setUser(data.user);
-      apiClient.setToken(data.token);
-    }
+    // if (data?.user) {
+    //   setUser(data.user);
+    //   apiClient.setToken(data.token);
+    // }
     setIsProcessing(false);
   };
 
