@@ -9,7 +9,40 @@
   justify-content: center;
   color: white;
 }
+.aside {
+  position: absolute;
+width: 307px;
+height: 127px;
+left: 20px;
+top: 150px;
 
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 36px;
+line-height: 42px;
+display: flex;
+align-items: center;
+text-align: center;
+z-index: 1;
+color: #FFFFFF;
+}
+.logo {
+  position: absolute;
+left: 1.59%;
+right: 95.23%;
+top: 1.27%;
+bottom: 92.22%;
+z-index: 1;
+}
+.bubble {
+  position: absolute;
+width: 20px;
+height: 20px;
+left: 47px;
+top: 273px;
+z-index: 1;
+}
 .Register .card {
   min-height: 600px;
   width: 520px;
@@ -45,13 +78,13 @@
 .Register .card .form .input-field label {
   margin-bottom: 5px;
 }
-.Register .card .form .input-field input {
+/* .Register .card .form .input-field input {
   height: 60px;
   padding: 0 15px;
   font-size: 16px;
   border: solid 1px var(--border-color);
   width: 100%;
-}
+} */
 /* .Register .card .footer {
   /* border-top: solid 1px var(--border-color); 
   margin-top: auto;
@@ -70,7 +103,18 @@
   width: 100%;
   max-width: 100vw;
   display: flex;
-  padding: 50px 100px;
+}
+.registerImage {
+position: absolute;
+width: 341px;
+height: 100%;
+left: 0px;
+top: 0px;
+}
+.lines {
+  height: 20px;
+  width: 100vw;
+  margin-bottom: 10px;
 }
 .Register .media {
   flex: 1;
@@ -141,8 +185,6 @@
   margin-top: 15px;
 }
 .Register .card .footer {
-  /* border-top: solid 1px #ababb7; */
-  margin-top: auto;
   display: flex;
   align-items: center;
   justify-content: center;

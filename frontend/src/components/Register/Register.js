@@ -1,95 +1,34 @@
-import { useEffect, useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
-import apiClient from "../../services/apiClient";
+import { Link } from "react-router-dom";
+import BrushIcon from "@material-ui/icons/Brush";
+import BubbleChartIcon from "@material-ui/icons/BubbleChart";
 import "./Register.css";
+import register1 from "../../assets/register1.png";
+import coollines from "../../assets/coollines.png";
+import { useRegisterForm } from "../../hooks/useRegisterForm";
 
 export default function Register({ user, setUser }) {
-  const navigate = useNavigate();
-  const [isProcessing, setIsProcessing] = useState(false);
-  const [errors, setErrors] = useState({});
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    userName: "",
-    password: "",
-    passwordConfirm: "",
-  });
-
-  useEffect(() => {
-    // if user is already logged in,
-    // redirect them to the home page
-    if (user?.email) {
-      navigate("/");
-    }
-  }, [user, navigate]);
-
-  const handleOnInputChange = (event) => {
-    if (event.target.name === "email") {
-      if (event.target.value.indexOf("@") === -1) {
-        setErrors((e) => ({ ...e, email: "Please enter a valid email." }));
-      } else {
-        setErrors((e) => ({ ...e, email: null }));
-      }
-    }
-
-    if (event.target.name === "passwordConfirm") {
-      if (event.target.value !== form.password) {
-        setErrors((e) => ({
-          ...e,
-          passwordConfirm: "Passwords do not match.",
-        }));
-      } else {
-        setErrors((e) => ({ ...e, passwordConfirm: null }));
-      }
-    }
-
-    setForm((f) => ({ ...f, [event.target.name]: event.target.value }));
-  };
-
-  const handleOnSubmit = async () => {
-    setIsProcessing(true);
-    setErrors((e) => ({ ...e, form: null }));
-
-    if (form.passwordConfirm !== form.password) {
-      setErrors((e) => ({ ...e, passwordConfirm: "Passwords do not match." }));
-      setIsProcessing(false);
-      return;
-    } else {
-      setErrors((e) => ({ ...e, passwordConfirm: null }));
-    }
-    function splitName(name) {
-      let arr = [];
-      let index = name.indexOf(" "); // Gets the first index where a space occurs
-      let fName = name.substr(0, index); // Gets the first part
-      let lName = name.substr(index + 1); // Gets the second part
-      arr[0] = fName;
-      arr[1] = lName;
-      return arr;
-    }
-    const myArr = splitName(form.name);
-    const { data, error } = await apiClient.signupUser({
-      first_name: myArr[0],
-      last_name: myArr[1],
-      username: form.userName,
-      email: form.email,
-      password: form.password,
-    });
-    if (error) setErrors((e) => ({ ...e, form: error }));
-    if (data?.user) {
-      setUser(data.user);
-      apiClient.setToken(data.token);
-    }
-    setIsProcessing(false);
-  };
+  const { form, errors, handleOnInputChange, handleOnSubmit, isProcessing } =
+    useRegisterForm({ user, setUser });
 
   return (
     <div className="Register">
+      <div className="picture">
+        <div className="logo">
+          <BrushIcon style={{ fontSize: 40 }} />
+        </div>
+        <div className="bubble">
+          <BubbleChartIcon style={{ marginRight: "5px" }} />
+        </div>
+        <p className="aside">The First Step To Greatness</p>
+        <img className="registerImage" src={register1} alt="register main img" />
+   
+      </div>
       <div className="card">
         <h2>Sign Up to ArtHub</h2>
 
         {errors.form && <span className="error">{errors.form}</span>}
         <br />
-
+        <img className="lines" src={coollines} alt="cool lines img" />
         <div className="form">
           <div className="split-inputs">
             <div className="input-field">
@@ -161,12 +100,16 @@ export default function Register({ user, setUser }) {
             <input
               type="checkbox"
               name="checkbox"
+              required
               onChange={handleOnInputChange}
             />
+            {errors.checkbox && (
+              <span className="error">{errors.checkbox}</span>
+            )}
             <label>
               Creating an account means you’re fine with our Terms and
               Conditions, Privacy Policy, and just being cool.
-            </label>{" "}
+            </label>
           </div>
           <button
             className="btn"

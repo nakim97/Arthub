@@ -1,62 +1,33 @@
-import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import apiClient from "../../services/apiClient";
+import { Link } from "react-router-dom";
 import "./Login.css";
+import login1 from "../../assets/login1.png";
+import BrushIcon from "@material-ui/icons/Brush";
+import BubbleChartIcon from "@material-ui/icons/BubbleChart";
+import coollines from "../../assets/coollines.png";
+import { useLoginForm } from "../../hooks/useLoginForm";
 
 export default function Login({ user, setUser }) {
-  const navigate = useNavigate();
-  const [isProcessing, setIsProcessing] = useState(false);
-  const [errors, setErrors] = useState({});
-  const [showPassword, setShowPassword] = useState(false);
-  const [form, setForm] = useState({
-    email: "",
-    password: "",
-  });
-
-  useEffect(() => {
-    // if user is already logged in,
-    // redirect them to the home page
-    if (user?.email) {
-      navigate("/");
-    }
-  }, [user, navigate]);
-
-  const handleOnInputChange = (event) => {
-    if (event.target.name === "email") {
-      if (event.target.value.indexOf("@") === -1) {
-        setErrors((e) => ({ ...e, email: "Please enter a valid email." }));
-      } else {
-        setErrors((e) => ({ ...e, email: null }));
-      }
-    }
-
-    setForm((f) => ({ ...f, [event.target.name]: event.target.value }));
-  };
-
-  const handleOnSubmit = async () => {
-    setIsProcessing(true);
-    setErrors((e) => ({ ...e, form: null }));
-
-    const { data, error } = await apiClient.loginUser({
-      email: form.email,
-      password: form.password,
-    });
-    if (error) setErrors((e) => ({ ...e, form: error }));
-    if (data?.user) {
-      setUser(data.user);
-      apiClient.setToken(data.token);
-    }
-    setIsProcessing(false);
-  };
+  const { form, errors, handleOnInputChange, handleOnSubmit, isProcessing } =
+    useLoginForm({ user, setUser });
 
   return (
     <div className="Login">
+      <div>
+        <div className="logo">
+          <BrushIcon style={{ fontSize: 40 }} />
+        </div>
+        <div className="bubble">
+          <BubbleChartIcon style={{ marginRight: "5px" }} />
+        </div>
+        <p className="aside">You’re One of Us Now</p>
+        <img className="loginImage" src={login1} alt="login main img" /> 
+      </div>
       <div className="card">
         <h2>Sign in To ArtHub</h2>
 
         {errors.form && <span className="error">{errors.form}</span>}
         <br />
-
+        <img className="lines" src={coollines} alt="cool lines img" />
         <div className="form">
           <div className="input-field">
             <label htmlFor="email">Email</label>
