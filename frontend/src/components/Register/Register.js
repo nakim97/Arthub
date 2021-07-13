@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import BrushIcon from "@material-ui/icons/Brush";
 import BubbleChartIcon from "@material-ui/icons/BubbleChart";
 import "./Register.css";
-import register1 from "../../assets/register1.png";
-import coollines from "../../assets/coollines.png";
+import register1 from "../../Assets/register1.png";
+import coollines from "../../Assets/coollines.png";
 import { useRegisterForm } from "../../hooks/useRegisterForm";
 
 export default function Register({ user, setUser }) {

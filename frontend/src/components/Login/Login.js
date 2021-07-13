@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import "./Login.css";
-import login1 from "../../assets/login1.png";
+import login1 from "../../Assets/login1.png";
 import BrushIcon from "@material-ui/icons/Brush";
 import BubbleChartIcon from "@material-ui/icons/BubbleChart";
-import coollines from "../../assets/coollines.png";
+import coollines from "../../Assets/coollines.png";
 import { useLoginForm } from "../../hooks/useLoginForm";
 
 export default function Login({ user, setUser }) {

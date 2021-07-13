@@ -3,16 +3,16 @@ import Navbar from "../Navbar/Navbar"
 import SchoolIcon from '@material-ui/icons/School';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
-import carousel1 from "../../assets/carousel1.jpg"
-import carousel2 from "../../assets/carousel2.jpg"
-import carousel3 from "../../assets/carousel3.jpg"
-import carousel4 from "../../assets/carousel4.jpg"
+import carousel1 from "../../Assets/carousel1.jpg"
+import carousel2 from "../../Assets/carousel2.jpg"
+import carousel3 from "../../Assets/carousel3.jpg"
+import carousel4 from "../../Assets/carousel4.jpg"
 
-import homefeed1 from "../../assets/homefeed1.jpg"
-import homefeed7 from "../../assets/homefeed7.jpg"
-import homefeed4 from "../../assets/homefeed4.jpg"
-import homefeed5 from "../../assets/homefeed5.jpg"
-import homefeed6 from "../../assets/homefeed6.jpg"
+import homefeed1 from "../../Assets/homefeed1.jpg"
+import homefeed7 from "../../Assets/homefeed7.jpg"
+import homefeed4 from "../../Assets/homefeed4.jpg"
+import homefeed5 from "../../Assets/homefeed5.jpg"
+import homefeed6 from "../../Assets/homefeed6.jpg"
 
 export default function Home(){
     return(
