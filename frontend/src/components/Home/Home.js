@@ -26,7 +26,7 @@ export default function Home(){
                     <li><img className="carouselImg" src={carousel4} alt=" homecarousel img 4"/></li>
                 </ul>
             </div>
-            
+
             <div className="exploreTrendingLatest">
                 <div className="feedBtns">
                     <button className="feedExploreBtn"  style={{ backgroundImage: "url(" + "https://images.unsplash.com/photo-1561839561-b13bcfe95249?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=627&q=80" + ")", backgroundSize:"100%",}}>EXPLORE</button>
@@ -45,7 +45,7 @@ export default function Home(){
                 </div>
 
                 <div className="newLearning">
-                    <h4> <SchoolIcon style={{ marginRight: '5px' }}/> NEW ON ARTHUB LEARNING</h4>
+                    <h4> <SchoolIcon style={{ marginRight: '5px'}}/> NEW ON ARTHUB LEARNING</h4>
                     <div className="container">
                         <div className="learningContainer"> 
                             <div className="learningImageContainer">
@@ -90,9 +90,7 @@ export default function Home(){
                                 <span style={{float:'right'}}>1h 10s</span></p>
                             </div>
                         </div>
-
                     </div>
-
                 </div>
 
                 <div className="trendingMarket">
