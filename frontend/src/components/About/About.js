@@ -1,5 +1,8 @@
 import "./About.css";
-import banner2 from "../../assets/banner2.jpg";
+import banner2 from "../../Assets/banner2.jpg";
+import team1 from "../../Assets/team1.jpeg";
+import team2 from "../../Assets/team2.jpeg";
+import team3 from "../../Assets/team3.jpeg";
 import Navbar from "../Navbar/Navbar";
 
 export default function About() {
@@ -16,6 +19,19 @@ export default function About() {
         <div className="bannerText">
           <h4> TOGETHER WE GROW</h4>
         </div>
+      </div>
+
+      <div className="team">
+        <img className="pictures" src={team1} alt="team member picture 1" />
+        <img className="pictures" src={team2} alt="team member picture 2" />
+        <img className="pictures" src={team3} alt="team member picture 3" />
+      </div>
+
+      <div className="teamInfo">
+        <p className="memberName">
+          Art Piece No.1
+          <span className="description">$40</span>
+        </p>
       </div>
     </div>
   );

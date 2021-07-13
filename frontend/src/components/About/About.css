@@ -11,3 +11,15 @@
   margin-bottom: 20rem;
   font-size: 40px;
 }
+
+.about .team {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin: 3rem;
+}
+
+.about .team .pictures {
+  padding: 0rem 4.5rem;
+  width: 300px;
+  height: 350px;
+}
