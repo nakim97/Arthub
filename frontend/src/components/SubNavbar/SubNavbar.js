@@ -1,4 +1,4 @@
-import "./SubNavbar.css"
+import "./SubNavbar.css";
 import BubbleChartIcon from '@material-ui/icons/BubbleChart';
 import ExploreIcon from '@material-ui/icons/Explore';
 import SchoolIcon from '@material-ui/icons/School';
