@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import apiClient from "../../services/apiClient";
 import BrushIcon from "@material-ui/icons/Brush";
+import BubbleChartIcon from '@material-ui/icons/BubbleChart';
 import "./Register.css";
 import register1 from "../../assets/register1.png"
 
@@ -68,6 +69,9 @@ export default function Register({ user, setUser }) {
       arr[1] = lName;
       return arr;
     }
+    function joinName(fName, lName) {
+      return fName+lName;
+    }
     const myArr = splitName(form.name);
     const { data, error } = await apiClient.signupUser({
       first_name: myArr[0],
@@ -90,6 +94,9 @@ export default function Register({ user, setUser }) {
       <div className="picture">
       <div className="logo">
             <BrushIcon style={{ fontSize: 40 }} />
+          </div>
+          <div className="bubble">
+          <BubbleChartIcon style={{ marginRight: '5px' }} />
           </div>
       <p className="aside">The First Step
 To Greatness</p>

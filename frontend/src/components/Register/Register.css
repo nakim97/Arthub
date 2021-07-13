@@ -35,6 +35,14 @@ top: 1.27%;
 bottom: 92.22%;
 z-index: 1;
 }
+.bubble {
+  position: absolute;
+width: 20px;
+height: 20px;
+left: 47px;
+top: 273px;
+z-index: 1;
+}
 .Register .card {
   min-height: 600px;
   width: 520px;

@@ -4,6 +4,7 @@ import apiClient from "../../services/apiClient";
 import "./Login.css";
 import login1 from "../../assets/login1.png"
 import BrushIcon from "@material-ui/icons/Brush";
+import BubbleChartIcon from '@material-ui/icons/BubbleChart';
 
 export default function Login({ user, setUser }) {
   const navigate = useNavigate();
@@ -56,6 +57,9 @@ export default function Login({ user, setUser }) {
       <div>
       <div className="logo">
             <BrushIcon style={{ fontSize: 40 }} />
+          </div>
+          <div className="bubble">
+          <BubbleChartIcon style={{ marginRight: '5px' }} />
           </div>
       <p className="aside">You’re One of Us Now</p>
       <img className="registerImage" src={login1} alt="login main img"/>
