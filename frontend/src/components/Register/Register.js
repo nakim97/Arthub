@@ -84,6 +84,7 @@ export default function Register({ user, setUser }) {
   };
 
   return (
+    
     <div className="Register">
       <div className="card">
         <h2>Sign Up to ArtHub</h2>
