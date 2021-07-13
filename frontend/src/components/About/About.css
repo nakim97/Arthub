@@ -1,0 +1,13 @@
+.about .banner img {
+  display: flex;
+  width: 100%;
+}
+
+.about .banner .bannerText {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  color: #fff;
+  margin-bottom: 20rem;
+  font-size: 40px;
+}

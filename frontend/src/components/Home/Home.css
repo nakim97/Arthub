@@ -1,113 +1,170 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
-html,body{
-    background: #151313;
-    font-family: "Roboto", sans-serif;
+html,
+body {
+  background: #151313;
+  font-family: "Roboto", sans-serif;
 }
 
-.home .homeCarousel{
-    padding-top: 20px;
+/* Carousel */
+.home .homeCarousel {
+  padding-top: 20px;
 }
 
 ul {
-    white-space: nowrap;
-}
-  
-ul, li {
-    list-style: none;
-    display: inline;
-    margin-right: 50px;
+  white-space: nowrap;
 }
 
-.carouselImg{
-    width: 400px;
-    height: 500px;
+ul,
+li {
+  list-style: none;
+  display: inline;
+  margin-right: 50px;
 }
 
-.exploreTrendingLatest .feedBtns{
-    float:left;
-    padding-top:50px;
+.carouselImg {
+  width: 400px;
+  height: 500px;
 }
 
-.exploreTrendingLatest .feedBtns .feedExploreBtn{
-    width: 200px;
-    height: 60px;
-    margin-right: 50px;
-    color:white;
-    font-size: 20px;
-    letter-spacing: 2px;
-    margin-left: 50px;
-}
-.exploreTrendingLatest .feedBtns .feedLatestBtn{
-    width: 200px;
-    height: 60px;
-    margin-right: 50px;
-    color:white;
-    font-size: 20px;
-    letter-spacing: 2px;
-}
-.exploreTrendingLatest .feedBtns .feedTrendingBtn{
-    width: 200px;
-    height: 60px;
-    margin-right: 50px;
-    color:white;
-    font-size: 20px;
-    letter-spacing: 2px;
-    margin-bottom: 50px;
+/* Explore Trending Latest Feature */
+
+.exploreTrendingLatest .feedBtns {
+  padding-top: 50px;
 }
 
-.feedImg{
-    width: 300px;
-    height: 200px;
-    padding-bottom: 50px;
+.exploreTrendingLatest .feedBtns .feedExploreBtn {
+  width: 200px;
+  height: 50px;
+  margin-right: 50px;
+  color: white;
+  font-size: 20px;
+  letter-spacing: 3px;
+  margin-left: 50px;
+}
+.exploreTrendingLatest .feedBtns .feedLatestBtn {
+  width: 200px;
+  height: 50px;
+  margin-right: 50px;
+  color: white;
+  font-size: 20px;
+  letter-spacing: 3px;
 }
 
-.learningImageContainer{
-    width:100%;
+.exploreTrendingLatest .feedBtns .feedTrendingBtn {
+  width: 200px;
+  height: 50px;
+  margin-right: 50px;
+  color: white;
+  font-size: 20px;
+  letter-spacing: 3px;
+  margin-bottom: 50px;
 }
 
-.learningImageContainer img{
-    width:100%;
+.feedImg {
+  width: 300px;
+  height: 200px;
+  padding-bottom: 50px;
 }
 
-.learningDiv{
-    margin-top:10px;
-    color:white;
-    
+/* New On Learning +  Trending on the Marketplace */
+
+.learningImageContainer,
+.marketImageContainer {
+  width: 100%;
 }
 
-.home .newLearning .container{
-    display:grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+.learningImageContainer img,
+.marketImageContainer {
+  width: 100%;
 }
 
-.learningContainer{
-    width: 300px;
+.learningDiv,
+.marketDiv {
+  margin-top: 10px;
+  color: white;
+}
+
+.home .newLearning .container,
+.home .trendingMarket .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.learningContainer,
+.marketContainer {
+  width: 300px;
+}
+
+.learningContainer .learningTitle,
+.marketContainer .marketTitle {
+  color: white;
+  text-align: left;
+  margin: 0;
+  align-items: left;
 }
 
 .learningContainer .learningTitle{
-    color:white;
-    text-align:left;
-    margin:0;
-    align-items: left;
+    font-size: 20px;
+    margin-top:5px;
 }
 
-.learningBlurb p {
-    color:white;
-     font-style: italic;
+.learningBlurb p{
+    font-size: 13px;
 }
 
-.home .container{
-    margin-left: 50px;
-
-}
-.newLearning h4{
-    color:white;
-    text-align: left;
-    margin-left:50px;
-    font-size:20px;
+.learningBlurb p,
+.marketBlurb {
+  color: white;
+  font-style: italic;
 }
 
-.learningImg{
-    height: 200px;
+.home .container {
+  margin-left: 50px;
+}
+.newLearning h4,
+.trendingMarket h4 {
+  color: white;
+  text-align: left;
+  margin-left: 50px;
+  font-size: 20px;
+}
+
+
+.learningImg,
+.marketImg {
+  height: 200px;
+}
+
+/* Styling the Marketplace */
+.trendingMarket .container .marketAuthor {
+  color: white;
+  text-align: left;
+  margin: 0;
+  align-items: left;
+  font-style: italic;
+  font-size: 13px;
+  margin-top: 5px;
+}
+.trendingMarket .marketContainer .marketTitlePrice {
+  margin-top: 5px;
+}
+
+.trendingMarket .container .marketBlurb .marketRating {
+  font-size: 13px;
+}
+
+.trendingMarket .container .marketPrice {
+  font-size: 15px;
+  margin:0;
+  text-align: right;
+  align-items: right;
+}
+
+.trendingMarket .container .marketTitle {
+  font-size: 20px;
+}
+
+.home .trendingMarket{
+    margin-top: 50px;
 }
