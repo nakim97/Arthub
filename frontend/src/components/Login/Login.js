@@ -3,7 +3,7 @@ import "./Login.css";
 import login1 from "../../assets/login1.png";
 import BrushIcon from "@material-ui/icons/Brush";
 import BubbleChartIcon from "@material-ui/icons/BubbleChart";
-import { useLoginForm } from "hooks/useRegisterForm";
+import { useLoginForm } from "hooks/useLoginForm";
 
 export default function Login({ user, setUser }) {
   const { form, errors, handleOnInputChange, handleOnSubmit, isProcessing } =
