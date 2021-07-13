@@ -6,7 +6,7 @@ import Login from "../Login/Login";
 import About from "../About/About";
 import Learning from "../Learning/Learning";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
       <BrowserRouter>
@@ -21,5 +21,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
