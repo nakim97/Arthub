@@ -87,6 +87,7 @@ export default function Register({ user, setUser }) {
   return (
     
     <div className="Register">
+      <img className="registerImage" src={register1} alt="register main img"/>
       <div className="card">
         <h2>Sign Up to ArtHub</h2>
 
