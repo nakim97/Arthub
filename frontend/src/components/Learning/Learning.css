@@ -43,7 +43,7 @@
   .learning .learningTags .learningBtns .learningBtn {
     width: 200px;
     height: 70px;
-    margin-right: 50px;
+    margin-right: 30px;
     color: white;
     font-size: 20px;
     letter-spacing: 3px;
@@ -53,50 +53,50 @@
   .learning .learningTags .learningBtns .learningBtn1 {
     width: 200px;
     height: 70px;
-    margin-right: 50px;
+    margin-right:30px;
     color: white;
     font-size: 20px;
     letter-spacing: 3px;
-    margin-left: 50px;
+    margin-left: 30px;
   }
 
   .learning .learningTags .learningBtns .learningBtn2 {
     width: 200px;
     height: 70px;
-    margin-right: 50px;
+    margin-right: 30px;
     color: white;
     font-size: 20px;
     letter-spacing: 3px;
-    margin-left: 50px;
+    margin-left: 30px;
   }
   .learning .learningTags .learningBtns .learningBtn3 {
     width: 200px;
     height: 70px;
-    margin-right: 50px;
+    margin-right: 30px;
     color: white;
     font-size: 20px;
     letter-spacing: 3px;
-    margin-left: 50px;
+    margin-left: 30px;
   }
 
   .learning .learningTags .learningBtns .learningBtn4 {
     width: 200px;
     height: 70px;
-    margin-right: 50px;
+    margin-right: 30px;
     color: white;
     font-size: 20px;
     letter-spacing: 3px;
-    margin-left: 50px;
+    margin-left: 30px;
   }
 
   .learning .learningTags .learningBtns .learningBtn5 {
     width: 200px;
     height: 70px;
-    margin-right: 50px;
+    margin-right: 40px;
     color: white;
     font-size: 20px;
     letter-spacing: 3px;
-    margin-left: 50px;
+    margin-left: 30px;
   }
 
   
@@ -161,4 +161,8 @@
 
 .learning .newLearning{
     padding-top: 50px;
+}
+
+.learning .learningTags .learningBtns .filterIcon{
+    color:white;
 }

@@ -1,6 +1,7 @@
 import "./Learning.css";
 import learningbanner from "../../Assets/learningbanner.jpg";
 import Navbar from "../Navbar/Navbar";
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 import homefeed1 from "../../Assets/homefeed1.jpg"
 import homefeed7 from "../../Assets/homefeed7.jpg"
@@ -28,6 +29,7 @@ export default function Learning() {
             <button className="learningBtn3"  style={{ backgroundImage: "url(" + "https://images.unsplash.com/photo-1527066579998-dbbae57f45ce?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjZ8fGFic3RyYWN0fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" + ")", backgroundSize:"100%",}}>Illustration</button>
             <button className="learningBtn4"  style={{ backgroundImage: "url(" + "https://images.unsplash.com/photo-1567360425618-1594206637d2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzd8fGFic3RyYWN0fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" + ")", backgroundSize:"100%",}}>Animation </button>
             <button className="learningBtn5"  style={{ backgroundImage: "url(" + "https://images.unsplash.com/photo-1519933045055-2e2d61a64bcf?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDV8fGFic3RyYWN0fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" + ")", backgroundSize:"100%",}}>Painting </button>
+            <span className="filterIcon"> <ExpandMoreIcon style={{fontSize: "30px"}} /></span>
       </div>
       </div>
 
