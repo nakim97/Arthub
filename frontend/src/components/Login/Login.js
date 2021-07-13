@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import apiClient from "../../services/apiClient";
 import "./Login.css";
 import login1 from "../../assets/login1.png"
+import BrushIcon from "@material-ui/icons/Brush";
 
 export default function Login({ user, setUser }) {
   const navigate = useNavigate();
@@ -52,8 +53,13 @@ export default function Login({ user, setUser }) {
 
   return (
     <div className="Login">
+      <div>
+      <div className="logo">
+            <BrushIcon style={{ fontSize: 40 }} />
+          </div>
       <p className="aside">You’re One of Us Now</p>
       <img className="registerImage" src={login1} alt="login main img"/>
+      </div>
       <div className="card">
         <h2>Sign in To ArtHub</h2>
 

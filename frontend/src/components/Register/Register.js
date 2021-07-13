@@ -87,9 +87,14 @@ export default function Register({ user, setUser }) {
   return (
     
     <div className="Register">
+      <div className="picture">
+      <div className="logo">
+            <BrushIcon style={{ fontSize: 40 }} />
+          </div>
       <p className="aside">The First Step
 To Greatness</p>
       <img className="registerImage" src={register1} alt="register main img"/>
+      </div>
       <div className="card">
         <h2>Sign Up to ArtHub</h2>
 
