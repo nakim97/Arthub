@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import apiClient from "../../services/apiClient";
+import BrushIcon from "@material-ui/icons/Brush";
 import "./Register.css";
 
 export default function Register({ user, setUser }) {
