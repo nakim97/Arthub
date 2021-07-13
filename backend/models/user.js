@@ -112,19 +112,18 @@ class User {
     if (!username) {
       throw new BadRequestError("No username provided");
     }
-  
+
     const query = `SELECT * FROM users WHERE username = $1`;
-  
+
     const result = await db.query(query, [username]);
-  
+
     const user = result.rows[0];
-  
+
     return user;
   }
   static async destroy() {
-  
     const query = `DELETE FROM users;`;
-  
+
     await db.query(query);
   }
 }
