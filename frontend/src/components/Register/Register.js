@@ -3,6 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import apiClient from "../../services/apiClient";
 import BrushIcon from "@material-ui/icons/Brush";
 import "./Register.css";
+import register1 from "../../assets/register1.png"
 
 export default function Register({ user, setUser }) {
   const navigate = useNavigate();

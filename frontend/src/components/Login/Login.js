@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import apiClient from "../../services/apiClient";
 import "./Login.css";
+import login1 from "../../assets/login1.png"
 
 export default function Login({ user, setUser }) {
   const navigate = useNavigate();
