@@ -29,8 +29,8 @@ export default function About() {
 
       <div className="teamInfo">
         <p className="memberName">
-          Art Piece No.1
-          <span className="description">$40</span>
+          Member Name
+          <span className="description">Small Description for team member</span>
         </p>
       </div>
     </div>
