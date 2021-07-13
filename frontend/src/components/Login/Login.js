@@ -3,6 +3,7 @@ import "./Login.css";
 import login1 from "../../assets/login1.png";
 import BrushIcon from "@material-ui/icons/Brush";
 import BubbleChartIcon from "@material-ui/icons/BubbleChart";
+import coollines from "../../assets/coollines.png";
 import { useLoginForm } from "../../hooks/useLoginForm";
 
 export default function Login({ user, setUser }) {
@@ -19,14 +20,14 @@ export default function Login({ user, setUser }) {
           <BubbleChartIcon style={{ marginRight: "5px" }} />
         </div>
         <p className="aside">You’re One of Us Now</p>
-        <img className="registerImage" src={login1} alt="login main img" />
+        <img className="lines" src={coollines} alt="cool lines img" />
       </div>
       <div className="card">
         <h2>Sign in To ArtHub</h2>
-
         {errors.form && <span className="error">{errors.form}</span>}
         <br />
 
+        <img className="loginImage" src={login1} alt="login main img" />
         <div className="form">
           <div className="input-field">
             <label htmlFor="email">Email</label>

@@ -111,6 +111,9 @@ height: 100%;
 left: 0px;
 top: 0px;
 }
+.lines {
+  width: auto;
+}
 .Register .media {
   flex: 1;
 }

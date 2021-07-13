@@ -3,6 +3,7 @@ import BrushIcon from "@material-ui/icons/Brush";
 import BubbleChartIcon from "@material-ui/icons/BubbleChart";
 import "./Register.css";
 import register1 from "../../assets/register1.png";
+import coollines from "../../assets/coollines.png";
 import { useRegisterForm } from "../../hooks/useRegisterForm";
 
 export default function Register({ user, setUser }) {
@@ -19,18 +20,15 @@ export default function Register({ user, setUser }) {
           <BubbleChartIcon style={{ marginRight: "5px" }} />
         </div>
         <p className="aside">The First Step To Greatness</p>
-        <img
-          className="registerImage"
-          src={register1}
-          alt="register main img"
-        />
+        <img className="registerImage" src={register1} alt="register main img" />
+   
       </div>
       <div className="card">
         <h2>Sign Up to ArtHub</h2>
 
         {errors.form && <span className="error">{errors.form}</span>}
         <br />
-
+        <img className="lines" src={coollines} alt="cool lines img" />
         <div className="form">
           <div className="split-inputs">
             <div className="input-field">

@@ -97,7 +97,7 @@ z-index: 1;
   max-width: 100vw;
   display: flex;
 }
-.LoginImage {
+.loginImage {
 position: absolute;
 width: 341px;
 height: 100%;
