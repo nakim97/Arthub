@@ -9,7 +9,25 @@
   justify-content: center;
   color: white;
 }
-
+.aside {
+  position: absolute;
+  width: 307px;
+  height: 127px;
+  left: 20px;
+  top: 150px;
+  
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 42px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  
+  color: #FFFFFF;
+z-index: 1;
+}
 .Login .card {
   min-height: 600px;
   width: 520px;
