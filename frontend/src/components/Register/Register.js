@@ -102,12 +102,16 @@ export default function Register({ user, setUser }) {
             <input
               type="checkbox"
               name="checkbox"
+              required
               onChange={handleOnInputChange}
             />
+            {errors.checkbox && (
+              <span className="error">{errors.checkbox}</span>
+            )}
             <label>
               Creating an account means you’re fine with our Terms and
               Conditions, Privacy Policy, and just being cool.
-            </label>{" "}
+            </label>
           </div>
           <button
             className="btn"
