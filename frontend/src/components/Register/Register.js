@@ -1,6 +1,4 @@
-import { useEffect, useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
-import apiClient from "../../services/apiClient";
+import { Link } from "react-router-dom";
 import BrushIcon from "@material-ui/icons/Brush";
 import BubbleChartIcon from "@material-ui/icons/BubbleChart";
 import "./Register.css";

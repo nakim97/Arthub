@@ -3,48 +3,51 @@ import { Link, useNavigate } from "react-router-dom"
 import { Button, Card, Input, InputField } from "components"
 import apiClient from "services/apiClient"
 export const useLoginForm = ({user, setUser}) => {
-  const navigate = useNavigate()
-  const [isProcessing, setIsProcessing] = useState(false)
-  const [errors, setErrors] = useState({})
+  const navigate = useNavigate();
+  const [isProcessing, setIsProcessing] = useState(false);
+  const [errors, setErrors] = useState({});
+  const [showPassword, setShowPassword] = useState(false);
   const [form, setForm] = useState({
     email: "",
     password: "",
-  })
+  });
 
   useEffect(() => {
     // if user is already logged in,
     // redirect them to the home page
-    if (user?.username) {
-      navigate("/dashboard")
+    if (user?.email) {
+      navigate("/");
     }
-  }, [user, navigate])
+  }, [user, navigate]);
 
-  const handleOnChange = (event) => {
+  const handleOnInputChange = (event) => {
     if (event.target.name === "email") {
       if (event.target.value.indexOf("@") === -1) {
-        setErrors((e) => ({ ...e, email: "Please enter a valid email." }))
+        setErrors((e) => ({ ...e, email: "Please enter a valid email." }));
       } else {
-        setErrors((e) => ({ ...e, email: null }))
+        setErrors((e) => ({ ...e, email: null }));
       }
     }
 
-    setForm((f) => ({ ...f, [event.target.name]: event.target.value }))
-  }
+    setForm((f) => ({ ...f, [event.target.name]: event.target.value }));
+  };
 
   const handleOnSubmit = async () => {
-    setIsProcessing(true)
+    setIsProcessing(true);
+    setErrors((e) => ({ ...e, form: null }));
 
-    const { data, error } = await apiClient.loginUser({ email: form.email, password: form.password })
-    if (error) setErrors((e) => ({ ...e, form: error }))
-    if (data) {
-      setUser(data.user)
-      apiClient.setToken(data.token)
-      localStorage.setItem("kavholm_token", data.token)
+    const { data, error } = await apiClient.loginUser({
+      email: form.email,
+      password: form.password,
+    });
+    if (error) setErrors((e) => ({ ...e, form: error }));
+    if (data?.user) {
+      setUser(data.user);
+      apiClient.setToken(data.token);
     }
-
-    setIsProcessing(false)
-  }
+    setIsProcessing(false);
+  };
 
   return {isProcessing,
-    form, errors, handleOnSubmit, handleOnChange}
+    form, errors, handleOnSubmit, handleOnInputChange}
 }
