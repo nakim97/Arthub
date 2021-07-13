@@ -1,33 +1,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
-.subNavbar .content{
-    background: black;
-    display: inline-block;
-    width: 100%;
-    padding-top: 15px;
-    height:40px;
-    
-    
+.subNavbar .content {
+  background: black;
+  display: inline-block;
+  width: 100%;
+  padding-top: 15px;
+  height: 40px;
 }
-.subNavbar .content .links{
-    list-style-type: none;
-    gap: 350px;
-    font-size:16px;
-    color:white;
-    
-   
+.subNavbar .content .links {
+  list-style-type: none;
+  gap: 350px;
+  font-size: 16px;
+  color: white;
 }
 
-.subNavbar .content .links li{
-    display: inline-flex;
-    margin-right: 180px;
-    vertical-align: middle;
+.subNavbar .content .links li {
+  display: inline-flex;
+  margin-right: 180px;
+  vertical-align: middle;
 }
 
-.subNavbar .content .links li:hover{
-    color:#7FFFD4;
+.subNavbar .content .links li:hover {
+  color: #7fffd4;
 }
 
-.subNavbar{
-    font-family: "Roboto", sans-serif;
+.subNavbar {
+  font-family: "Roboto", sans-serif;
 }
