@@ -2,11 +2,10 @@ import { Link } from "react-router-dom";
 import BrushIcon from "@material-ui/icons/Brush";
 import BubbleChartIcon from "@material-ui/icons/BubbleChart";
 import "./Register.css";
-import { withStyles } from "@material-ui/core/styles";
 import register1 from "../../Assets/register1.png";
 import coollines from "../../Assets/coollines.png";
 import { useRegisterForm } from "../../hooks/useRegisterForm";
-import React from "react";
+import { withStyles } from "@material-ui/core/styles";
 import FormLabel from "@material-ui/core/FormLabel";
 import FormControl from "@material-ui/core/FormControl";
 import Checkbox from "@material-ui/core/Checkbox";
@@ -14,23 +13,8 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 
 
 export default function Register({ user, setUser }) {
-  const { form, errors, handleOnInputChange, handleOnSubmit, isProcessing } =
+  const { CustomColorCheckbox, checked, handleChange, form, errors, handleOnInputChange, handleOnSubmit, isProcessing } =
     useRegisterForm({ user, setUser });
-    // Defining a custom check box with a green color
-    // and setting the checkbox component to use that
-    const CustomColorCheckbox = withStyles({
-      root: {
-        color: "#13c552",
-        "&$checked": {
-          color: "#13c552"
-        }
-      },
-      checked: {}
-    })((props) => <Checkbox color="default" {...props} />);
-    const [checked, setChecked] = React.useState(true);
-    const handleChange = (event) => {
-      setChecked(event.target.checked);
-    };
   return (
     <div className="Register">
       <div className="picture">
