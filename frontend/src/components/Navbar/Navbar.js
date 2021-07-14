@@ -3,7 +3,7 @@ import SubNavbar from "../SubNavbar/SubNavbar";
 import BrushIcon from "@material-ui/icons/Brush";
 import { Link } from "react-router-dom";
 
-export default function Navbar() {
+export default function Navbar({handleOnLogout}) {
   return (
     <div>
       <nav className="Navbar">

@@ -14,10 +14,10 @@ import homefeed4 from "../../Assets/homefeed4.jpg";
 import homefeed5 from "../../Assets/homefeed5.jpg";
 import homefeed6 from "../../Assets/homefeed6.jpg";
 
-export default function Home() {
+export default function Home({handleOnLogout}) {
   return (
     <div className="home">
-      <Navbar />
+      <Navbar handleOnLogout={handleOnLogout} />
       <div className="homeCarousel">
         <ul>
           <li>
