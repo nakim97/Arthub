@@ -41,14 +41,6 @@ export default function Navbar({handleOnLogout, user}) {
           {/* If we are logged in, render the logout, otherwise use the normal buttons */}
           {/* This renders the buttons above */}
           {buttons}
-          {/* <ul className="links">
-            <Link to="/register" className="Link">
-              <li className="navRegister">Sign Up</li>
-            </Link>
-            <Link to="/login" className="Link">
-              <li className="navLogin">Sign In</li>
-            </Link>
-          </ul> */}
         </div>
       </nav>
       <div>
