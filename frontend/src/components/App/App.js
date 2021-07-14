@@ -13,6 +13,7 @@ import apiClient from "../../services/apiClient";
 export default function App() {
   const [isFetching, setFetching] = useState(false);
   const [error, setError] = useState(null);
+  // This is just in case for filtering
   const [filterInputValue, setInputValue] = useState(null);
   const [user, setUser] = useState({});
 
