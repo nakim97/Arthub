@@ -84,18 +84,7 @@ export const useRegisterForm = ({ user, setUser }) => {
     } else {
       setErrors((e) => ({ ...e, passwordConfirm: null }));
     }
-    // if (!form.checkbox.checked) {
-    //   setErrors((e) => ({ ...e, checkbox: "Checkbox not checked" }));
-    //   setIsProcessing(false);
-    //   return;
-    // } else {
-    //   setErrors((e) => ({ ...e, checkbox: null }));
-    // }
-    // if (!form.checkbox.checked) {
-    //   alert("Please indicate that you accept the Terms and Conditions.");
-    //   form.terms.focus();
-    //   setErrors((e) => ({ ...e, checkbox: "Checkbox not selected." }));
-    // }
+
     function splitName(name) {
       let arr = [];
       let index = name.indexOf(" "); // Gets the first index where a space occurs
@@ -105,9 +94,11 @@ export const useRegisterForm = ({ user, setUser }) => {
       arr[1] = lName;
       return arr;
     }
+
     function joinName(fName, lName) {
       return fName + lName;
     }
+    
     const myArr = splitName(form.name);
     const { data, error } = await apiClient.signupUser({
       first_name: myArr[0],
