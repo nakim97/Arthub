@@ -41,6 +41,15 @@ export const useRegisterForm = ({ user, setUser }) => {
         setErrors((e) => ({ ...e, passwordConfirm: null }));
       }
     }
+    if (event.target.type === "checkbox") {
+      if (!event.target.value) {
+        setErrors((e) => ({
+          ...e, checkbox: "Checkbox not checked.",
+        }));
+      } else {
+        setErrors((e) => ({ ...e, checkbox: null }));
+      }
+    }
 
     setForm((f) => ({ ...f, [event.target.name]: event.target.value }));
   };
@@ -56,6 +65,13 @@ export const useRegisterForm = ({ user, setUser }) => {
     } else {
       setErrors((e) => ({ ...e, passwordConfirm: null }));
     }
+    // if (!form.checkbox.checked) {
+    //   setErrors((e) => ({ ...e, checkbox: "Checkbox not checked" }));
+    //   setIsProcessing(false);
+    //   return;
+    // } else {
+    //   setErrors((e) => ({ ...e, checkbox: null }));
+    // }
     // if (!form.checkbox.checked) {
     //   alert("Please indicate that you accept the Terms and Conditions.");
     //   form.terms.focus();

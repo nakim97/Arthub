@@ -105,7 +105,7 @@ export default function Register({ user, setUser }) {
             <input
               type="checkbox"
               name="checkbox"
-              required
+              required="required"
               onChange={handleOnInputChange}
             />
             {errors.checkbox && (
