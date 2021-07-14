@@ -28,9 +28,6 @@ export const useRegisterForm = ({ user, setUser }) => {
     checked: {},
   })((props) => <Checkbox color="default" {...props} />);
 
-  const handleChange = (event) => {
-    setChecked(event.target.checked);
-  };
   useEffect(() => {
     // if user is already logged in,
     // redirect them to the home page
@@ -38,6 +35,10 @@ export const useRegisterForm = ({ user, setUser }) => {
       navigate("/");
     }
   }, [user, navigate]);
+
+  const handleChange = (event) => {
+    setChecked(event.target.checked);
+  };
 
   const handleOnInputChange = (event) => {
     if (event.target.name === "email") {
