@@ -1,33 +1,41 @@
-require("regenerator-runtime/runtime");
-test("Something", async () => {
-expect(0).toEqual(0)
-})
+// //require("regenerator-runtime/runtime");
+// // test("Something", async () => {
+// // expect(0).toEqual(0)
+// // })
 // const { NotFoundError, BadRequestError, UnauthorizedError } = require("../utils/errors")
 // const User = require("./user")
 // require("regenerator-runtime/runtime");
-// // const { commonBeforeAll, commonBeforeEach, commonAfterEach, commonAfterAll } = require("../tests/common")
+// //const { commonBeforeAll, commonBeforeEach, commonAfterEach, commonAfterAll } = require("../tests/common")
 
 // // beforeAll()
 // // beforeEach()
 // // afterEach()
-// // afterAll()
+// //afterAll(user.delete)
 
 // describe("User", () => {
 //   /************************************** User.login */
 
 //   describe("Test login", () => {
 //     test("User can login successfully with proper credentials", async () => {
-//       const user = await User.login({ email: "lebron@james.io", password: "password1" })
+//         const newUser = {
+//             username: "lebronill",
+//             first_name: "LeBron",
+//             last_name: "James",
+//             email: "lebronil@james.io",
+//             isAdmin: false,
+//           }
+//             const user21 = await User.register({ ...newUser, password: "password1" })
+//       const user = await User.login({ email: "lebronil@james.io", password: "password1" })
 
 //       expect(user).toEqual({
 //         id: expect.any(Number),
-//         username: "lebron",
-//         firstName: "LeBron",
-//         lastName: "James",
-//         email: "lebron@james.io",
+//         username: "lebronill",
+//         first_name: "LeBron",
+//         last_name: "James",
+//         email: "lebronil@james.io",
 //         isAdmin: false,
-//         createdAt: expect.any(Date),
 //       })
+    
 //     })
 
 //     test("Unknown email throw unauthorized error", async () => {
@@ -49,6 +57,12 @@ expect(0).toEqual(0)
 //         expect(err instanceof UnauthorizedError).toBeTruthy()
 //       }
 //     })
+// beforeAll(async () => {
+//     await User.destroy({
+//         where: {},
+//         truncate: true
+//       })
+// })
 //   })
 
 //   /************************************** User.register */
@@ -150,6 +164,7 @@ expect(0).toEqual(0)
 //         created_at: expect.any(Date),
 //       })
 //     })
+
 
 //     test("Unknown username returns nothing", async () => {
 //       expect.assertions(1)

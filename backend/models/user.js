@@ -2,7 +2,7 @@ const bcrypt = require("bcrypt");
 const { BCRYPT_WORK_FACTOR } = require("../config");
 const db = require("../db");
 const { BadRequestError, UnauthorizedError } = require("../utils/errors");
-
+require("regenerator-runtime/runtime");
 class User {
   static makePublicUser(user) {
     return {
@@ -120,6 +120,11 @@ class User {
     const user = result.rows[0];
 
     return user;
+  }
+  static async destroy() {
+    const query = `DELETE FROM users;`;
+
+    await db.query(query);
   }
 }
 

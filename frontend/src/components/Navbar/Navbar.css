@@ -26,10 +26,14 @@
 }
 .Navbar .content .logo {
   width: 100px;
-  margin-right: 50px;
+  padding-right: 100px;
 }
 .Navbar .content .logo h1 {
   color: white;
+}
+
+.Navbar .content .search-bar{
+  padding-left: 120px;
 }
 
 .Navbar .content .search-bar input {
@@ -57,6 +61,7 @@
   margin-left: auto;
   flex: 1;
   color: white;
+  outline:none;
   max-width: 650px;
   gap: 40px;
 }
@@ -68,12 +73,16 @@
 .Navbar .content .links li span {
   margin-left: 15px;
   color: white;
+  outline:none;
 }
 
 .Navbar .content .links li {
   margin-right: 50px;
+  outline:none;
 }
 
 .Navbar .content .logo {
   color: #7fffd4;
+  
+  
 }

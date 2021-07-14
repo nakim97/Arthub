@@ -13,9 +13,11 @@ export default function Login({ user, setUser }) {
   return (
     <div className="Login">
       <div>
-        <div className="logo">
-          <BrushIcon style={{ fontSize: 40 }} />
-        </div>
+      <Link to="/" style={{ color: 'inherit', textDecoration: 'inherit' }}>
+            <div className="logo">
+              <BrushIcon style={{ fontSize: 30 }} />
+            </div>
+          </Link>
         <div className="bubble">
           <BubbleChartIcon style={{ marginRight: "5px" }} />
         </div>
