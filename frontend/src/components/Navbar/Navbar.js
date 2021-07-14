@@ -8,7 +8,7 @@ export default function Navbar() {
     <div>
       <nav className="Navbar">
         <div className="content">
-          <Link to="/" style={{ color: 'inherit', textDecoration: 'inherit' }}>
+          <Link to="/" className="Link">
             <div className="logo">
               <BrushIcon style={{ fontSize: 30 }} />
             </div>
@@ -17,10 +17,10 @@ export default function Navbar() {
             <input type="text" name="search" placeholder="Search..." />
           </div>
           <ul className="links">
-            <Link to="/register" style={{ color: 'inherit', textDecoration: 'inherit' }}>
+            <Link to="/register" className="Link">
               <li className="navRegister">Sign Up</li>
             </Link>
-            <Link to="/login" style={{ color: 'inherit', textDecoration: 'inherit' }}>
+            <Link to="/login" className="Link">
               <li className="navLogin">Sign In</li>
             </Link>
           </ul>
