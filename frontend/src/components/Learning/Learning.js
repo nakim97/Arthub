@@ -16,7 +16,7 @@ export default function Learning() {
         <div className="bannerSearch" >
           <h4> EMPOWER YOURSELF</h4>
           <div className="search-bar">
-            <input type="text" name="search" placeholder="Search Tutorials" />
+            <input type="text" name="search" placeholder="Search Tutorials..." />
           </div>
         </div>
       </div>

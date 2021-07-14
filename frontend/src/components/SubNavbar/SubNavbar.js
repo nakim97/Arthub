@@ -11,7 +11,7 @@ export default function SubNavbar() {
     <nav className="subNavbar">
       <div className="content">
         <ul className="links">
-          <Link to="/about">
+          <Link to="/about" style={{ color: 'inherit', textDecoration: 'inherit' }}>
             <li className="subNavLink">
               {" "}
               <BubbleChartIcon style={{ marginRight: "5px" }} /> ABOUT
@@ -21,21 +21,24 @@ export default function SubNavbar() {
             {" "}
             <ExploreIcon style={{ marginRight: "5px" }} /> EXPLORE
           </li>
-          <Link to="/learning">
+          <Link to="/learning" style={{ color: 'inherit', textDecoration: 'inherit' }}>
           <li className="subNavLink">
             {" "}
             <SchoolIcon style={{ marginRight: "5px" }} /> LEARNING
           </li>
           </Link>
-          
+          <Link to="/market" style={{ color: 'inherit', textDecoration: 'inherit' }}>
           <li className="subNavLink">
             {" "}
             <ShoppingCartIcon style={{ marginRight: "5px" }} /> MARKETPLACE
           </li>
+          </Link>
+          <Link to="/community" style={{ color: 'inherit', textDecoration: 'inherit' }}>
           <li className="subNavLink">
             {" "}
             <ForumIcon style={{ marginRight: "5px" }} /> COMMUNITY
           </li>
+          </Link>
         </ul>
       </div>
     </nav>
