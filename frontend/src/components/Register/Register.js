@@ -22,8 +22,11 @@ export default function Register({ user, setUser }) {
           <BubbleChartIcon style={{ marginRight: "5px" }} />
         </div>
         <p className="aside">The First Step To Greatness</p>
-        <img className="registerImage" src={register1} alt="register main img" />
-   
+        <img
+          className="registerImage"
+          src={register1}
+          alt="register main img"
+        />
       </div>
       <div className="card">
         <h2>Sign Up to ArtHub</h2>

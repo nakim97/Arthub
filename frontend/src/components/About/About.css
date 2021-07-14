@@ -11,3 +11,61 @@
   margin-bottom: 20rem;
   font-size: 40px;
 }
+
+.about .aboutImageContainer {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2rem;
+}
+
+.about .aboutImageContainer img {
+  padding: rem 4.5rem;
+  width: 300px;
+  height: 350px;
+}
+
+.about .aboutInfo {
+  color: #fff;
+  display: flex;
+
+  justify-content: space-around;
+  font-weight: bold;
+}
+
+.about .aboutInfo .aboutName {
+}
+
+.about .aboutInfo .description {
+  display: block;
+}
+
+.about h2 {
+  color: #fff;
+  display: flex;
+  justify-content: left;
+  margin-left: 5.5rem;
+  padding-top: 2rem;
+}
+
+.about .mission {
+  display: flex;
+  justify-content: space-around;
+}
+
+.about .mission .text p {
+  color: #fff;
+
+  width: 600px;
+  word-wrap: break-word;
+  text-align: left;
+}
+
+.about .missionImgContainer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.about .missionImgContainer img {
+  width: 500px;
+  height: 600px;
+}
