@@ -8,17 +8,19 @@ export default function Navbar() {
     <div>
       <nav className="Navbar">
         <div className="content">
-          <div className="logo">
-            <BrushIcon style={{ fontSize: 30 }} />
-          </div>
+          <Link to="/" style={{ color: 'inherit', textDecoration: 'inherit' }}>
+            <div className="logo">
+              <BrushIcon style={{ fontSize: 30 }} />
+            </div>
+          </Link>
           <div className="search-bar">
             <input type="text" name="search" placeholder="Search..." />
           </div>
           <ul className="links">
-            <Link to="/register">
+            <Link to="/register" style={{ color: 'inherit', textDecoration: 'inherit' }}>
               <li className="navRegister">Sign Up</li>
             </Link>
-            <Link to="/login">
+            <Link to="/login" style={{ color: 'inherit', textDecoration: 'inherit' }}>
               <li className="navLogin">Sign In</li>
             </Link>
           </ul>

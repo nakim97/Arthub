@@ -1,0 +1,210 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+html, body{
+    font-family: "Roboto", sans-serif;
+}
+.market .banner{
+    width:100%;
+    height: 600px;
+    margin:0;
+    
+}
+.market .banner .bannerSearch .search-bar input {
+    width: 690px;
+    height: 40px;
+    background: white;
+    border: 1px solid #6b6b6b;
+    box-sizing: border-box;
+    color: black;
+    outline: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+    font-family: "Roboto", sans-serif;
+    padding-left: 20px;
+  }
+
+  .market .banner .bannerSearch h4 {
+    color:white;
+    font-size:45px;
+    letter-spacing: 5px;
+  }
+
+  .market .banner .bannerSearch{
+    padding-top: 100px;
+  }
+
+  ::placeholder{
+      font-size: 15px;
+  }
+
+  .marketImageContainer {
+    width: 100%;
+  }
+
+  .marketImageContainer {
+    width: 100%;
+  }
+
+  .marketDiv {
+    margin-top: 10px;
+    color: white;
+  }
+  
+
+  .home .trendingMarket .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .marketContainer {
+    width: 300px;
+  }
+  
+  .marketContainer .marketTitle {
+    color: white;
+    text-align: left;
+    margin: 0;
+    align-items: left;
+  }
+  
+  .marketBlurb {
+    color: white;
+    font-style: italic;
+  }
+  
+  .learning .container {
+    margin-left: 50px;
+  }
+ 
+  .trendingMarket h4 {
+    color: white;
+    text-align: left;
+    margin-left: 50px;
+    font-size: 20px;
+  }
+  
+  .marketImg {
+    height: 200px;
+  }
+
+  .trendingMarket .container .marketAuthor {
+    color: white;
+    text-align: left;
+    margin: 0;
+    align-items: left;
+    font-style: italic;
+    font-size: 13px;
+    margin-top: 5px;
+  }
+  .trendingMarket .marketContainer .marketTitlePrice {
+    margin-top: 5px;
+  }
+  
+  .trendingMarket .container .marketBlurb .marketRating {
+    font-size: 13px;
+  }
+  
+  .trendingMarket .container .marketPrice {
+    font-size: 15px;
+    margin:0;
+    text-align: right;
+    align-items: right;
+  }
+  
+  .trendingMarket .container .marketTitle {
+    font-size: 20px;
+  }
+  
+  .market .trendingMarket{
+      margin-top: 50px;
+  }
+
+
+.marketImageContainer {
+  width: 100%;
+}
+
+.market .container {
+    margin-left: 50px;
+  }
+
+.marketImageContainer {
+  width: 100%;
+}
+
+.marketDiv {
+  margin-top: 10px;
+  color: white;
+}
+
+
+.market .trendingMarket .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+
+.marketContainer {
+  width: 300px;
+}
+
+
+.marketContainer .marketTitle {
+  color: white;
+  text-align: left;
+  margin: 0;
+  align-items: left;
+}
+
+.marketBlurb {
+  color: white;
+  font-style: italic;
+}
+.marketImg {
+    height: 200px;
+  }
+  
+.trendingMarket .marketTags {
+  text-align: left;
+  margin-left: 50px;
+  padding-bottom:50px;
+}
+
+.trendingMarket .marketTags .marketTrending{
+    padding: 0;
+    border: none;
+    background: none;
+    margin-right: 50px;
+    font-size: 20px;
+    color:white;
+    cursor:pointer;
+
+}
+
+
+.trendingMarket .marketTags .marketTrending:hover{
+    color: #7fffd4;
+
+}
+.trendingMarket .marketTags .marketLatest{
+    padding: 0;
+    border: none;
+    background: none;
+    font-size:20px;
+    color:white;
+    cursor:pointer;
+}
+
+.trendingMarket .marketTags .marketLatest:hover{
+    color: #7fffd4;
+}
+
+.trendingMarket .marketTags .filterIcon{
+    color:white;
+    float:right;
+}
+
+.trendingMarket .marketTags{
+    padding-right: 100px;
+    cursor:pointer;
+}

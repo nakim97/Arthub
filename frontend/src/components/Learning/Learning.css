@@ -1,3 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+.learning{
+  font-family: "Roboto", sans-serif;
+}
 
 .learning .banner{
     width:100%;
@@ -48,6 +53,7 @@
     font-size: 20px;
     letter-spacing: 3px;
     margin-left: 50px;
+    cursor:pointer;
   }
   
   .learning .learningTags .learningBtns .learningBtn1 {
@@ -58,6 +64,7 @@
     font-size: 20px;
     letter-spacing: 3px;
     margin-left: 30px;
+    cursor:pointer;
   }
 
   .learning .learningTags .learningBtns .learningBtn2 {
@@ -68,6 +75,7 @@
     font-size: 20px;
     letter-spacing: 3px;
     margin-left: 30px;
+    cursor:pointer;
   }
   .learning .learningTags .learningBtns .learningBtn3 {
     width: 200px;
@@ -77,6 +85,7 @@
     font-size: 20px;
     letter-spacing: 3px;
     margin-left: 30px;
+    cursor:pointer;
   }
 
   .learning .learningTags .learningBtns .learningBtn4 {
@@ -87,6 +96,7 @@
     font-size: 20px;
     letter-spacing: 3px;
     margin-left: 30px;
+    cursor:pointer;
   }
 
   .learning .learningTags .learningBtns .learningBtn5 {
@@ -97,6 +107,7 @@
     font-size: 20px;
     letter-spacing: 3px;
     margin-left: 30px;
+    cursor:pointer;
   }
 
   
@@ -165,4 +176,5 @@
 
 .learning .learningTags .learningBtns .filterIcon{
     color:white;
+    cursor:pointer;
 }
