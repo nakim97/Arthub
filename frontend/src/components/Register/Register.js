@@ -5,24 +5,28 @@ import "./Register.css";
 import register1 from "../../Assets/register1.png";
 import coollines from "../../Assets/coollines.png";
 import { useRegisterForm } from "../../hooks/useRegisterForm";
-import { withStyles } from "@material-ui/core/styles";
-import FormLabel from "@material-ui/core/FormLabel";
 import FormControl from "@material-ui/core/FormControl";
-import Checkbox from "@material-ui/core/Checkbox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 
-
 export default function Register({ user, setUser }) {
-  const { CustomColorCheckbox, checked, handleChange, form, errors, handleOnInputChange, handleOnSubmit, isProcessing } =
-    useRegisterForm({ user, setUser });
+  const {
+    CustomColorCheckbox,
+    checked,
+    handleChange,
+    form,
+    errors,
+    handleOnInputChange,
+    handleOnSubmit,
+    isProcessing,
+  } = useRegisterForm({ user, setUser });
   return (
     <div className="Register">
       <div className="picture">
-      <Link to="/" style={{ color: 'inherit', textDecoration: 'inherit' }}>
-            <div className="logo">
-              <BrushIcon style={{ fontSize: 30 }} />
-            </div>
-          </Link>
+        <Link to="/" style={{ color: "inherit", textDecoration: "inherit" }}>
+          <div className="logo">
+            <BrushIcon style={{ fontSize: 30 }} />
+          </div>
+        </Link>
         <div className="bubble">
           <BubbleChartIcon style={{ marginRight: "5px" }} />
         </div>
@@ -109,7 +113,11 @@ export default function Register({ user, setUser }) {
           <FormControl>
             <FormControlLabel
               control={
-                <CustomColorCheckbox checked={checked} onChange={handleChange} required />
+                <CustomColorCheckbox
+                  checked={checked}
+                  onChange={handleChange}
+                  required
+                />
               }
               label="Creating an account means you’re fine with our Terms and
               Conditions, Privacy Policy, and just being cool."
@@ -120,7 +128,6 @@ export default function Register({ user, setUser }) {
             disabled={isProcessing || !checked}
             onClick={handleOnSubmit}
           >
-            
             {isProcessing ? "Loading..." : "Create Account"}
           </button>
         </div>
