@@ -56,6 +56,11 @@ export const useRegisterForm = ({ user, setUser }) => {
     } else {
       setErrors((e) => ({ ...e, passwordConfirm: null }));
     }
+    // if (!form.checkbox.checked) {
+    //   alert("Please indicate that you accept the Terms and Conditions.");
+    //   form.terms.focus();
+    //   setErrors((e) => ({ ...e, checkbox: "Checkbox not selected." }));
+    // }
     function splitName(name) {
       let arr = [];
       let index = name.indexOf(" "); // Gets the first index where a space occurs
