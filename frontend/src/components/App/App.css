@@ -37,3 +37,7 @@
     }
   }
   
+  .Link {
+    color: inherit;
+    text-decoration: inherit;
+  }

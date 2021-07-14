@@ -13,7 +13,7 @@ export default function Login({ user, setUser }) {
   return (
     <div className="Login">
       <div>
-      <Link to="/" style={{ color: 'inherit', textDecoration: 'inherit' }}>
+      <Link to="/" className="Link">
             <div className="logo">
               <BrushIcon style={{ fontSize: 30 }} />
             </div>
