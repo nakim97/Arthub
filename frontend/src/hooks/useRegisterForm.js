@@ -2,12 +2,12 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import apiClient from "../services/apiClient";
 import { withStyles } from "@material-ui/core/styles";
-import React from "react";
 import Checkbox from "@material-ui/core/Checkbox";
 
 export const useRegisterForm = ({ user, setUser }) => {
   const navigate = useNavigate();
   const [isProcessing, setIsProcessing] = useState(false);
+  const [checked, setChecked] = useState(true);
   const [errors, setErrors] = useState({});
   const [form, setForm] = useState({
     name: "",
@@ -16,21 +16,21 @@ export const useRegisterForm = ({ user, setUser }) => {
     password: "",
     passwordConfirm: "",
   });
-// Defining a custom check box with a green color
-    // and setting the checkbox component to use that
-    const CustomColorCheckbox = withStyles({
-      root: {
+  // Defining a custom check box with a green color
+  // and setting the checkbox component to use that
+  const CustomColorCheckbox = withStyles({
+    root: {
+      color: "#13c552",
+      "&$checked": {
         color: "#13c552",
-        "&$checked": {
-          color: "#13c552"
-        }
       },
-      checked: {}
-    })((props) => <Checkbox color="default" {...props} />);
-    const [checked, setChecked] = React.useState(true);
-    const handleChange = (event) => {
-      setChecked(event.target.checked);
-    };
+    },
+    checked: {},
+  })((props) => <Checkbox color="default" {...props} />);
+
+  const handleChange = (event) => {
+    setChecked(event.target.checked);
+  };
   useEffect(() => {
     // if user is already logged in,
     // redirect them to the home page
@@ -61,7 +61,8 @@ export const useRegisterForm = ({ user, setUser }) => {
     if (event.target.type === "checkbox") {
       if (!event.target.value) {
         setErrors((e) => ({
-          ...e, checkbox: "Checkbox not checked.",
+          ...e,
+          checkbox: "Checkbox not checked.",
         }));
       } else {
         setErrors((e) => ({ ...e, checkbox: null }));
@@ -122,5 +123,14 @@ export const useRegisterForm = ({ user, setUser }) => {
     setIsProcessing(false);
   };
 
-  return { CustomColorCheckbox, checked, handleChange, isProcessing, form, errors, handleOnSubmit, handleOnInputChange };
+  return {
+    CustomColorCheckbox,
+    checked,
+    handleChange,
+    isProcessing,
+    form,
+    errors,
+    handleOnSubmit,
+    handleOnInputChange,
+  };
 };
