@@ -111,7 +111,8 @@ export default function Register({ user, setUser }) {
               control={
                 <CustomColorCheckbox checked={checked} onChange={handleChange} required />
               }
-              label="I agree to the terms"
+              label="Creating an account means you’re fine with our Terms and
+              Conditions, Privacy Policy, and just being cool."
             />
           </FormControl>
           <button
