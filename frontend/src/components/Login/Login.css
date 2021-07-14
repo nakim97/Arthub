@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
-html, body{
-    font-family: "Roboto", sans-serif;
+html,
+body {
+  font-family: "Roboto", sans-serif;
 }
 
 .Login {
@@ -21,7 +22,7 @@ html, body{
   height: 127px;
   left: 20px;
   top: 150px;
-  
+
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
@@ -30,17 +31,17 @@ html, body{
   display: flex;
   align-items: center;
   text-align: center;
-  
-  color: #FFFFFF;
-z-index: 1;
+
+  color: #ffffff;
+  z-index: 1;
 }
 .bubble {
   position: absolute;
-width: 20px;
-height: 20px;
-left: 47px;
-top: 273px;
-z-index: 1;
+  width: 20px;
+  height: 20px;
+  left: 47px;
+  top: 273px;
+  z-index: 1;
 }
 .Login .card {
   min-height: 600px;
@@ -109,11 +110,11 @@ z-index: 1;
   margin-bottom: 10px;
 }
 .loginImage {
-position: absolute;
-width: 341px;
-height: 100%;
-left: 0px;
-top: 0px;
+  position: absolute;
+  width: 341px;
+  height: 100%;
+  left: 0px;
+  top: 0px;
 }
 .Login .media {
   flex: 1;

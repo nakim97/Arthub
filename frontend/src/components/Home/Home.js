@@ -14,7 +14,7 @@ import homefeed4 from "../../Assets/homefeed4.jpg";
 import homefeed5 from "../../Assets/homefeed5.jpg";
 import homefeed6 from "../../Assets/homefeed6.jpg";
 
-export default function Home({handleOnLogout, user}) {
+export default function Home({ handleOnLogout, user }) {
   return (
     <div className="home">
       <Navbar user={user} handleOnLogout={handleOnLogout} />

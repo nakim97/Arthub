@@ -65,6 +65,17 @@
   max-width: 650px;
   gap: 40px;
 }
+.Navbar .content .link-button {
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+  margin-left: auto;
+  flex: 1;
+  color: white;
+  outline: none;
+  max-width: 650px;
+  gap: 40px;
+}
 
 .navBarLink {
   margin: 15px;

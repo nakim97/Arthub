@@ -1,10 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-
+/* This may need to be changed to be more specific */
 .btn:disabled {
- background-color: red !important;
+  background-color: red !important;
 }
-html, body{
-    font-family: "Roboto", sans-serif;
+html,
+body {
+  font-family: "Roboto", sans-serif;
 }
 
 .Register {
@@ -20,37 +21,37 @@ html, body{
 }
 .aside {
   position: absolute;
-width: 307px;
-height: 127px;
-left: 20px;
-top: 150px;
+  width: 307px;
+  height: 127px;
+  left: 20px;
+  top: 150px;
 
-font-family: Roboto;
-font-style: normal;
-font-weight: bold;
-font-size: 36px;
-line-height: 42px;
-display: flex;
-align-items: center;
-text-align: center;
-z-index: 1;
-color: #FFFFFF;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 42px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  z-index: 1;
+  color: #ffffff;
 }
 .logo {
   position: absolute;
-left: 1.59%;
-right: 95.23%;
-top: 1.27%;
-bottom: 92.22%;
-z-index: 1;
+  left: 1.59%;
+  right: 95.23%;
+  top: 1.27%;
+  bottom: 92.22%;
+  z-index: 1;
 }
 .bubble {
   position: absolute;
-width: 20px;
-height: 20px;
-left: 47px;
-top: 273px;
-z-index: 1;
+  width: 20px;
+  height: 20px;
+  left: 47px;
+  top: 273px;
+  z-index: 1;
 }
 .Register .card {
   min-height: 600px;
@@ -114,11 +115,11 @@ z-index: 1;
   display: flex;
 }
 .registerImage {
-position: absolute;
-width: 341px;
-height: 100%;
-left: 0px;
-top: 0px;
+  position: absolute;
+  width: 341px;
+  height: 100%;
+  left: 0px;
+  top: 0px;
 }
 .lines {
   height: 20px;
