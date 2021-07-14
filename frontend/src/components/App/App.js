@@ -38,7 +38,7 @@ export default function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home handleOnLogout={handleOnLogout} />} />
+          <Route path="/" element={<Home user={user} handleOnLogout={handleOnLogout} />} />
           <Route path="/login" element={<Login user={user} setUser={setUser} />} />
           <Route path="/register" element={<Register user={user} setUser={setUser} />} />
           <Route path="/about" element={<About />} />
