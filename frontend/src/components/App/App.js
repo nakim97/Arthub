@@ -1,4 +1,5 @@
 import "./App.css";
+import { useState, useEffect } from "react";
 import Home from "../Home/Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Register from "../Register/Register";
@@ -9,6 +10,10 @@ import Market from "../Market/Market";
 import Community from "../Community/Community";
 
 export default function App() {
+  const [isFetching, setFetching] = useState(false);
+  const [error, setError] = useState(null);
+  const [filterInputValue, setInputValue] = useState(null);
+  const [user, setUser] = useState({});
   return (
     <div className="App">
       <BrowserRouter>
