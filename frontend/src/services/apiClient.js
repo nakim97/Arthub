@@ -1,5 +1,6 @@
 import axios from "axios";
-const yt = require('youtube-search-without-api-key');
+// import * as yt from 'youtube-search-without-api-key';
+var ytsr = require("ytsr");
 
 class ApiClient {
   constructor(remoteHostUrl) {
@@ -34,7 +35,16 @@ class ApiClient {
 
   // Get youtube videos with searches
   async searchVideos(query) {
-    return await yt.search(query);
+    // Get all the data about the videos and correct the query
+    const filters1 = await ytsr.getFilters(query);
+    const filter1 = filters1.get("Type").get("Video");
+    const filters2 = await ytsr.getFilters(filter1.url);
+    const filter2 = filters2.get("Features").get("Live");
+    const options = {
+      pages: 2,
+    };
+    const searchResults = await ytsr(filter2.url, options);
+    // searchResults.items
   }
   // async listPosts() {
   //     return await this.request({endpoint: `posts`, method: `GET`})
