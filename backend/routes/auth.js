@@ -27,7 +27,7 @@ router.post("/register", async (req, res, next) => {
 });
 router.post("/token/", async function (req, res, next) {
   const { email, password } = req.body;
-  const requiredFields = ["email", "password"];
+  //const requiredFields = ["email", "password"];
   // validateFields({ required: requiredFields, obj: req.body, location: "login route" });
   const user = await User.login({ email, password });
   const token = createUserJwt(user);
@@ -45,10 +45,20 @@ router.get("/me", security.requireAuthenticatedUser, async (req, res, next) => {
     next(err);
   }
 });
-// Development testing route
+
+/************************ Development testing routes  *******/
 router.get("/test", async (req, res, next) => {
   try {
     const test = Post.listPhotoPostsForUser();
+    return res.status(201).json({test});
+  } catch (err) {
+    next(err);
+  }
+});
+router.post("/test", async (req, res, next) => {
+  try {
+    const { id } = req.body;
+    const test = await User.fetchUserById(id);
     return res.status(201).json({test});
   } catch (err) {
     next(err);
