@@ -58,11 +58,20 @@ router.get("/test", async (req, res, next) => {
 router.post("/test", async (req, res, next) => {
   try {
     const { id } = req.body;
-    const test = await User.fetchUserById(id);
+    const test = await Post.fetchPhotoPostById(id);
     return res.status(201).json({test});
   } catch (err) {
     next(err);
   }
 });
+// router.post("/test", async (req, res, next) => {
+//   try {
+//     const { id } = req.body;
+//     const test = await User.fetchUserById(id);
+//     return res.status(201).json({test});
+//   } catch (err) {
+//     next(err);
+//   }
+// });
 
 module.exports = router;

@@ -30,85 +30,41 @@ class Post {
     ); 
     return results.rows;
   }
-
-  static async fetchPostsById(productId) {
-    // fetch a single product
-    const product = storage
-      .get("products")
-      .find({ id: Number(productId) })
-      .value();
-    return product;
-  }
-
-  static async recordProducts(product) {
-    // create a new product
-    //console.log(product);
-    if (!product) {
-      throw new BadRequestError(`No product sent.`);
+  static async fetchPhotoPostById(postId) {
+    if (!postId) {
+      throw new BadRequestError("No id provided");
     }
-    const requiredFields = ["description", "category", "price"];
-    requiredFields.forEach((field) => {
-      if (!product[field] && product[field] !== 0) {
-        throw new BadRequestError(`Field: "${field}" is required in product`);
-      }
-    });
 
-    const products = await Store.listProducts();
-    const productId = products.length + 1;
-    const postedAt = new Date().toISOString();
-
-    const newProduct = { id: productId, postedAt, ...product };
-
-    storage.get("products").push(newProduct).write();
-
-    return newProduct;
+    const query = `SELECT * FROM photoPost WHERE id = $1`;
+    const result = await db.query(query, [postId]);
+    const user = result.rows[0];
+    return user;
   }
 
-  static async recordCart(cart) {
-    // create a new product
-    //console.log(product);
-    if (!cart) {
-      throw new BadRequestError(`No cart sent.`);
+  static async createPost({ post, user }) {
+    if (!post || !Object.keys(post).length) {
+      throw new BadRequestError("No post info provided");
     }
-    // const requiredFields = ["description", "category", "price"];
-    // requiredFields.forEach((field) => {
-    //   if (!product[field] && product[field] !== 0) {
-    //     throw new BadRequestError(`Field: "${field}" is required in product`);
-    //   }
-    // });
-
-    // const products = await Store.listProducts();
-    // const productId = products.length + 1;
-    // const postedAt = new Date().toISOString();
-
-    const newCart = { ...cart };
-
-    order.get("cart").push(newCart).write();
-
-    return newCart;
-  }
-  static async recordUser(user) {
-    // create a new user
-    //console.log(product);
     if (!user) {
-      throw new BadRequestError(`No user info sent`);
+      throw new BadRequestError("No user provided");
     }
-    const requiredFields = ["name", "email"];
-    requiredFields.forEach((field) => {
-      if (!user[field] && user[field] !== 0) {
-        throw new BadRequestError(`Field: "${field}" is required in product`);
-      }
-    });
-
-    // const products = await Store.listProducts();
-    // const productId = products.length + 1;
-    // const postedAt = new Date().toISOString();
-
-    const newUser = { ...user };
-
-    order.get("userInfo").push(newUser).write();
-
-    return newUser;
+    const results = await db.query(
+      `
+            INSERT INTO photoPost (post_title, post_description, type, img_id, user_id)
+            VALUES ($1, $2, $3, $4, (SELECT id FROM users WHERE email = $5))
+            RETURNING id,
+            user_id AS "userId",
+            photo_created_at
+            `,
+      [
+        post.post_title,
+        post.post_description,
+        post.type,
+        post.img_id,
+        user.email,
+      ]
+    );
+    return results.rows[0];
   }
 }
 
