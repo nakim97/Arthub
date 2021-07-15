@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Register from "../Register/Register";
 import Login from "../Login/Login";
 import About from "../About/About";
+import Explore from "../Explore/Explore";
 import Learning from "../Learning/Learning";
 import Market from "../Market/Market";
 import Community from "../Community/Community";
@@ -17,6 +18,7 @@ export default function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/about" element={<About />} />
+          <Route path="/explore" element={<Explore />} />
           <Route path="/learning" element={<Learning />} />
           <Route path="/market" element={<Market />} />
           <Route path="/community" element={<Community />} />
