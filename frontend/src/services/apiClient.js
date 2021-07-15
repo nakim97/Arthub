@@ -1,5 +1,5 @@
 import axios from "axios";
-const yt = require('youtube-search-without-api-key');
+const yt = require("youtube-search-without-api-key");
 
 class ApiClient {
   constructor(remoteHostUrl) {
