@@ -35,6 +35,7 @@ class ApiClient {
 
   // Get youtube videos with searches
   async searchVideos(query) {
+    // Get all the data about the videos and correct the query
     const filters1 = await ytsr.getFilters(query);
     const filter1 = filters1.get("Type").get("Video");
     const filters2 = await ytsr.getFilters(filter1.url);
