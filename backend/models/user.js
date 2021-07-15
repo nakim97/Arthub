@@ -90,7 +90,6 @@ class User {
       ]
     );
     const user = userResult.rows[0];
-
     return User.makePublicUser(user);
   }
 
@@ -100,11 +99,8 @@ class User {
     }
 
     const query = `SELECT * FROM users WHERE email = $1`;
-
     const result = await db.query(query, [email.toLowerCase()]);
-
     const user = result.rows[0];
-
     return user;
   }
 
@@ -114,13 +110,22 @@ class User {
     }
 
     const query = `SELECT * FROM users WHERE username = $1`;
-
     const result = await db.query(query, [username]);
-
     const user = result.rows[0];
-
     return user;
   }
+
+  static async fetchUserById(id) {
+    if (!id) {
+      throw new BadRequestError("No id provided");
+    }
+
+    const query = `SELECT * FROM users WHERE id = $1`;
+    const result = await db.query(query, [id]);
+    const user = result.rows[0];
+    return user;
+  }
+
   static async destroy() {
     const query = `DELETE FROM users;`;
 

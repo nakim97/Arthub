@@ -1,7 +1,13 @@
+// const Post = require("../models/post");
+
 require("regenerator-runtime/runtime");
 test("Something", async () => {
   expect(0).toEqual(0)
   })
+  // test("Everything checks", async () => {
+  //         const res = await Post.listPosts();
+  //         expect(res).toBeTruthy()
+  //       })
 // const request = require("supertest")
 // require("regenerator-runtime/runtime");
 // const app = require("../app")

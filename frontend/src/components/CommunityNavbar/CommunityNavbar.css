@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+.communityNavbar {
+    width: 100%;
+    max-width: 100vw;
+    background: #1D1C1C;
+    color: var(--pure-white);
+    height: var(--navbar-height);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height:35px;
+    padding: 0 var(--side-padding);
+    font-family: "Roboto", sans-serif;
+  }
+ 
+  .communityNavbar .content {
+    max-width: var(--content-width);
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .communityNavbar .content .search-bar{
+    padding-left: 50px;
+    
+  }
+  
+  .communityNavbar .content .search-bar input {
+    width: 690px;
+    height: 25px;
+    background: #000000;
+    border: 1px solid #6b6b6b;
+    box-sizing: border-box;
+    color: white;
+    outline: none;
+    border-style: 1px solid #565252;
+    font-family: "Roboto", sans-serif;
+    padding-left: 20px;
+    
+  }
+  ::placeholder {
+    padding-left: 10px;
+  }
+  .communityNavbar .content .links {
+    color: white;
+    outline:none;
+    font-size:18px;
+    padding-left:50px;
+  }
+
+  .communityNavbar .content .filterBtn .filterIcon{
+      color:white;
+  }
+
+  .communityNavbar .content .filterBtn{
+    align-self: flex-end;
+    margin: 0 auto !important;
+    right:0;
+    padding-right:50px;
+    position:absolute;
+    
+
+  }
+  
