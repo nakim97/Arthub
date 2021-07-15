@@ -49,15 +49,24 @@ router.get("/me", security.requireAuthenticatedUser, async (req, res, next) => {
 /************************ Development testing routes  *******/
 router.get("/test", async (req, res, next) => {
   try {
-    const test = Post.listPhotoPostsForUser();
+    const test = Post.listAllPosts();
     return res.status(201).json({test});
   } catch (err) {
     next(err);
   }
 });
+// router.get("/test", async (req, res, next) => {
+//   try {
+//     const test = Post.listPhotoPostsForUser();
+//     return res.status(201).json({test});
+//   } catch (err) {
+//     next(err);
+//   }
+// });
 router.post("/test", async (req, res, next) => {
   try {
     const { id } = req.body;
+    console.log(id)
     const test = await Post.fetchPhotoPostById(id);
     return res.status(201).json({test});
   } catch (err) {
