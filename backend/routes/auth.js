@@ -48,7 +48,7 @@ router.get("/me", security.requireAuthenticatedUser, async (req, res, next) => {
 // Development testing route
 router.get("/test", async (req, res, next) => {
   try {
-    const test = Post.listPosts();
+    const test = Post.listPhotoPostsForUser();
     return res.status(201).json({test});
   } catch (err) {
     next(err);
