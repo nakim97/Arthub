@@ -2,13 +2,16 @@
   display: flex;
   width: 100%;
 }
-
+.banner {
+  position: relative;
+  text-align: center;
+}
 .about .banner .bannerText {
   position: absolute;
   width: 100%;
-  bottom: 0;
   color: #fff;
-  margin-bottom: 20rem;
+  top: 38%;
+  left: 0%;
   font-size: 40px;
 }
 

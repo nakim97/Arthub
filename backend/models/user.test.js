@@ -35,7 +35,7 @@
 //         email: "lebronil@james.io",
 //         isAdmin: false,
 //       })
-    
+
 //     })
 
 //     test("Unknown email throw unauthorized error", async () => {
@@ -164,7 +164,6 @@
 //         created_at: expect.any(Date),
 //       })
 //     })
-
 
 //     test("Unknown username returns nothing", async () => {
 //       expect.assertions(1)

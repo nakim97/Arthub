@@ -32,7 +32,7 @@
   color: white;
 }
 
-.Navbar .content .search-bar{
+.Navbar .content .search-bar {
   padding-left: 120px;
 }
 
@@ -61,9 +61,18 @@
   margin-left: auto;
   flex: 1;
   color: white;
-  outline:none;
+  outline: none;
   max-width: 650px;
   gap: 40px;
+}
+.Navbar .content .link-button {
+  justify-content: center;
+}
+.navSignOut {
+  background-color: black;
+  border: none;
+  color: white;
+  font-size: 1rem;
 }
 
 .navBarLink {
@@ -73,16 +82,14 @@
 .Navbar .content .links li span {
   margin-left: 15px;
   color: white;
-  outline:none;
+  outline: none;
 }
 
 .Navbar .content .links li {
   margin-right: 50px;
-  outline:none;
+  outline: none;
 }
 
 .Navbar .content .logo {
   color: #7fffd4;
-  
-  
 }

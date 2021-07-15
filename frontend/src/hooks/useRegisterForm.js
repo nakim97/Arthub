@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import apiClient from "../services/apiClient";
+import { withStyles } from "@material-ui/core/styles";
+import Checkbox from "@material-ui/core/Checkbox";
 
 export const useRegisterForm = ({ user, setUser }) => {
   const navigate = useNavigate();
   const [isProcessing, setIsProcessing] = useState(false);
+  const [checked, setChecked] = useState(true);
   const [errors, setErrors] = useState({});
   const [form, setForm] = useState({
     name: "",
@@ -13,6 +16,17 @@ export const useRegisterForm = ({ user, setUser }) => {
     password: "",
     passwordConfirm: "",
   });
+  // Defining a custom check box with a green color
+  // and setting the checkbox component to use that
+  const CustomColorCheckbox = withStyles({
+    root: {
+      color: "#13c552",
+      "&$checked": {
+        color: "#13c552",
+      },
+    },
+    checked: {},
+  })((props) => <Checkbox color="default" {...props} />);
 
   useEffect(() => {
     // if user is already logged in,
@@ -21,6 +35,10 @@ export const useRegisterForm = ({ user, setUser }) => {
       navigate("/");
     }
   }, [user, navigate]);
+
+  const handleChange = (event) => {
+    setChecked(event.target.checked);
+  };
 
   const handleOnInputChange = (event) => {
     if (event.target.name === "email") {
@@ -41,6 +59,16 @@ export const useRegisterForm = ({ user, setUser }) => {
         setErrors((e) => ({ ...e, passwordConfirm: null }));
       }
     }
+    if (event.target.type === "checkbox") {
+      if (!event.target.value) {
+        setErrors((e) => ({
+          ...e,
+          checkbox: "Checkbox not checked.",
+        }));
+      } else {
+        setErrors((e) => ({ ...e, checkbox: null }));
+      }
+    }
 
     setForm((f) => ({ ...f, [event.target.name]: event.target.value }));
   };
@@ -56,6 +84,7 @@ export const useRegisterForm = ({ user, setUser }) => {
     } else {
       setErrors((e) => ({ ...e, passwordConfirm: null }));
     }
+
     function splitName(name) {
       let arr = [];
       let index = name.indexOf(" "); // Gets the first index where a space occurs
@@ -65,9 +94,11 @@ export const useRegisterForm = ({ user, setUser }) => {
       arr[1] = lName;
       return arr;
     }
+
     function joinName(fName, lName) {
       return fName + lName;
     }
+
     const myArr = splitName(form.name);
     const { data, error } = await apiClient.signupUser({
       first_name: myArr[0],
@@ -77,12 +108,21 @@ export const useRegisterForm = ({ user, setUser }) => {
       password: form.password,
     });
     if (error) setErrors((e) => ({ ...e, form: error }));
-    // if (data?.user) {
-    //   setUser(data.user);
-    //   apiClient.setToken(data.token);
-    // }
+    if (data?.user) {
+      setUser(data.user);
+      apiClient.setToken(data.token);
+    }
     setIsProcessing(false);
   };
 
-  return { isProcessing, form, errors, handleOnSubmit, handleOnInputChange };
+  return {
+    CustomColorCheckbox,
+    checked,
+    handleChange,
+    isProcessing,
+    form,
+    errors,
+    handleOnSubmit,
+    handleOnInputChange,
+  };
 };
