@@ -1,11 +1,15 @@
 const { BadRequestError } = require("../utils/errors");
+const db = require("../db");
 const { storage } = require("../data/storage");
 
 class Post {
-  static async listProducts() {
-    // list all items in the products array
-    const products = storage.get("products").value();
-    return products;
+  static async listPosts() {
+    const results = await db.query(
+        `
+      SELECT * FROM photoPost;
+      `
+      );
+      return results.rows;
   }
   static async listOrders(carts, users) {
     // list all items in the products array

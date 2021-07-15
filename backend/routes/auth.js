@@ -1,8 +1,10 @@
 const express = require("express");
 const User = require("../models/user");
+const Post = require("../models/post");
 const { createUserJwt } = require("../utils/tokens");
 const security = require("../middleware/security");
 const router = express.Router();
+require("regenerator-runtime/runtime");
 
 router.post("/login", async (req, res, next) => {
   try {
@@ -39,6 +41,15 @@ router.get("/me", security.requireAuthenticatedUser, async (req, res, next) => {
 
     const publicUser = User.makePublicUser(user);
     return res.status(200).json({ user: publicUser });
+  } catch (err) {
+    next(err);
+  }
+});
+// Development testing route
+router.get("/test", async (req, res, next) => {
+  try {
+    const test = Post.listPosts();
+    return res.status(201).json({test});
   } catch (err) {
     next(err);
   }
