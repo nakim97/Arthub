@@ -10,6 +10,7 @@ import Learning from "../Learning/Learning";
 import Market from "../Market/Market";
 import Community from "../Community/Community";
 import apiClient from "../../services/apiClient";
+import UserProfile from "../UserProfile/UserProfile";
 
 export default function App() {
   const [isFetching, setFetching] = useState(false);
@@ -40,14 +41,24 @@ export default function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home user={user} handleOnLogout={handleOnLogout} />} />
-          <Route path="/login" element={<Login user={user} setUser={setUser} />} />
-          <Route path="/register" element={<Register user={user} setUser={setUser} />} />
+          <Route
+            path="/"
+            element={<Home user={user} handleOnLogout={handleOnLogout} />}
+          />
+          <Route
+            path="/login"
+            element={<Login user={user} setUser={setUser} />}
+          />
+          <Route
+            path="/register"
+            element={<Register user={user} setUser={setUser} />}
+          />
           <Route path="/about" element={<About />} />
           <Route path="/explore" element={<Explore />} />
           <Route path="/learning" element={<Learning />} />
           <Route path="/market" element={<Market />} />
           <Route path="/community" element={<Community />} />
+          <Route path="/me" element={<UserProfile />} />
         </Routes>
       </BrowserRouter>
     </div>

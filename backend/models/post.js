@@ -1,15 +1,14 @@
 const { BadRequestError } = require("../utils/errors");
 const db = require("../db");
-const { storage } = require("../data/storage");
 
 class Post {
   static async listAllPosts() {
     const results = await db.query(
-        `
+      `
       SELECT * FROM photoPost;
       `
-      );
-      return results.rows;
+    );
+    return results.rows;
   }
   static async listPhotoPostsForUser({ user }) {
     const results = await db.query(
@@ -27,7 +26,7 @@ class Post {
     WHERE u.id = (SELECT id FROM users WHERE email = $1)
     `,
       [user.email]
-    ); 
+    );
     return results.rows;
   }
   static async fetchPhotoPostById(postId) {
