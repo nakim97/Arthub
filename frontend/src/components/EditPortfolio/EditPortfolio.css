@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+html,
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.EditPortfolio .title {
+  color: white;
+  text-align: left;
+  margin-left: 50px;
+  font-size: 30px;
+}
+
+.EditPortfolio .portfolioposts {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  margin-top: 50px;
+  height: 100px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 150px;
+}
+
+.EditPortfolio .portfolioposts .portfolioImg .portfolioImg {
+  width: 100%;
+}
+
+.EditPortfolio .portfolioposts .post {
+  border: 1px solid grey;
+  padding-left: 10px;
+}
+
+.EditPortfolio .portfolioposts .post .portfolioTitle {
+  color: white;
+  text-align: left;
+  font-size: 30px;
+}
+
+.EditPortfolio .portfolioposts .post .portfolioDescription {
+  color: white;
+  text-align: left;
+  font-size: 15px;
+}
+
+.EditPortfolio .portfolioposts .post .portfolioTitle {
+  color: white;
+  text-align: left;
+}
+
+.EditPortfolio .portfolioposts .post .likeComments {
+  color: white;
+}
