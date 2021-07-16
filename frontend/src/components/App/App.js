@@ -12,6 +12,7 @@ import Community from "../Community/Community";
 import apiClient from "../../services/apiClient";
 import UserProfile from "../UserProfile/UserProfile";
 import EditPortfolio from "../EditPortfolio/EditPortfolio";
+import CreateForumPost from "../CreateForumPost/CreateForumPost";
 
 export default function App() {
   const [isFetching, setFetching] = useState(false);
@@ -61,6 +62,8 @@ export default function App() {
           <Route path="/community" element={<Community />} />
           <Route path="/me" element={<UserProfile />} />
           <Route path="/editportfolio" element={<EditPortfolio/>} />
+          <Route path="/createforumpost" element={<CreateForumPost/>} />
+
         </Routes>
       </BrowserRouter>
     </div>
