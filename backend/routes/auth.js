@@ -82,5 +82,18 @@ router.post("/test", async (req, res, next) => {
 //     next(err);
 //   }
 // });
+// PUT: Update movie by movieId from the database
+// app.put('/update-movie', (req, res) => {
+//   db('movies')
+//       .where('movie_id', '=', 1)
+//       .update({ movie_name: 'Goldeneye' })
+//       .then(() => {
+//           console.log('Movie Updated');
+//           return res.json({ msg: 'Movie Updated' });
+//       })
+//       .catch((err) => {
+//           console.log(err);
+//       });
+// });
 
 module.exports = router;
