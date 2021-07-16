@@ -11,6 +11,7 @@ import Market from "../Market/Market";
 import Community from "../Community/Community";
 import apiClient from "../../services/apiClient";
 import UserProfile from "../UserProfile/UserProfile";
+import EditPortfolio from "../EditPortfolio/EditPortfolio";
 
 export default function App() {
   const [isFetching, setFetching] = useState(false);
@@ -59,6 +60,7 @@ export default function App() {
           <Route path="/market" element={<Market />} />
           <Route path="/community" element={<Community />} />
           <Route path="/me" element={<UserProfile />} />
+          <Route path="/editportfolio" element={<EditPortfolio/>} />
         </Routes>
       </BrowserRouter>
     </div>

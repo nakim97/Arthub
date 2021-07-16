@@ -1,132 +1,146 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-html,
-body {
-  font-family: "Roboto", sans-serif;
+html, body{
+    font-family: "Roboto", sans-serif;
 }
+
+
 
 .community .container .communityAuthor {
-  color: white;
-  text-align: left;
-  margin: 0;
-  align-items: left;
-  font-style: italic;
-  font-size: 13px;
-  margin-top: 5px;
-}
-.community .communityContainer .communityTitlePrice {
-  margin-top: 5px;
+    color: white;
+    text-align: left;
+    margin: 0;
+    align-items: left;
+    font-style: italic;
+    font-size: 13px;
+    margin-top: 5px;
+  }
+  .community .communityContainer .communityTitlePrice {
+    margin-top: 5px;
+  }
+  
+  .community .container .communityBlurb .communityRating {
+    font-size: 13px;
+  }
+  
+  .community .container .communityTags .communityTag{
+      color:grey;
+      font-style: italic;
+      font-size: 12px;
+  }
+  .community .container .communityPrice {
+    font-size: 15px;
+    margin:0;
+    text-align: right;
+    align-items: right;
+  }
+  
+  .community .container .communityTitle {
+    font-size: 20px;
+  }
+  
+  .community .trendingCommunity{
+      margin-top: 50px;
+  }
+ 
+  .communityImageContainer {
+    width: 100%;
+  }
+
+  .communityImageContainer {
+    width: 100%;
+  }
+  
+  
+  .community .trendingCommunity{
+    padding-bottom:200px;
+  }
+
+  .community .trendingCommunity .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .communityContainer {
+    width: 300px;
+  }
+  
+  .communityContainer .communityTitle {
+    color: white;
+    text-align: left;
+    margin: 0;
+    align-items: left;
+  }
+
+ 
+  .communityBlurb {
+    color: white;
+    font-style: italic;
+  }
+  
+  .community .container {
+    margin-left: 50px;
+  }
+  
+  .trendingCommunity h4 {
+    color: white;
+    text-align: left;
+    margin-left: 50px;
+    font-size: 20px;
+  }
+  
+
+  .communityImg {
+    height: 200px;
+  }
+  
+
+  .community .banner{
+      height: 200px;
+      width:100%;
+      background-repeat: no-repeat;
+      margin-top:50px;
+    
+  }
+
+  .community .forumposts{
+      display:grid;
+      grid-template-columns: 20% 80%;
+      margin-top:50px;
+      height: 100px;
+      padding-left:50px;
+      padding-right:50px;
+      
+  }
+
+
+  .community .forumposts .postImg .communityImg{
+      width:100%;
+      
+  }
+
+  .community .forumposts .post{
+      border: 1px solid grey;
+      padding-left: 10px;
+    
+  }
+  
+  .community .forumposts .post .postTitle{
+      color:white;
+      text-align: left;
+      font-size: 30px;
+  }
+
+  .community .forumposts .post .postAuthor{
+    color:white;
+    text-align: left;
+    font-size: 15px;
 }
 
-.community .container .communityBlurb .communityRating {
-  font-size: 13px;
+.community .forumposts .post .postTitle{
+    color:white;
+    text-align: left;
 }
 
-.community .container .communityTags .communityTag {
-  color: grey;
-  font-style: italic;
-  font-size: 12px;
-}
-.community .container .communityPrice {
-  font-size: 15px;
-  margin: 0;
-  text-align: right;
-  align-items: right;
-}
-
-.community .container .communityTitle {
-  font-size: 20px;
-}
-
-.community .trendingCommunity {
-  margin-top: 50px;
-}
-
-.communityImageContainer {
-  width: 100%;
-}
-
-.communityImageContainer {
-  width: 100%;
-}
-
-.community .trendingCommunity .container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-}
-
-.communityContainer {
-  width: 300px;
-}
-
-.communityContainer .communityTitle {
-  color: white;
-  text-align: left;
-  margin: 0;
-  align-items: left;
-}
-
-.communityBlurb {
-  color: white;
-  font-style: italic;
-}
-
-.community .container {
-  margin-left: 50px;
-}
-
-.trendingCommunity h4 {
-  color: white;
-  text-align: left;
-  margin-left: 50px;
-  font-size: 20px;
-}
-
-.communityImg {
-  height: 200px;
-}
-
-.community .banner {
-  height: 200px;
-  width: 100%;
-  background-repeat: no-repeat;
-  margin-top: 50px;
-}
-
-.community .forumposts {
-  display: grid;
-  grid-template-columns: 20% 80%;
-  margin-top: 50px;
-  height: 100px;
-  padding-left: 50px;
-  padding-right: 50px;
-}
-
-.community .forumposts .postImg .communityImg {
-  width: 100%;
-}
-
-.community .forumposts .post {
-  border: 1px solid grey;
-  padding-left: 10px;
-}
-
-.community .forumposts .post .postTitle {
-  color: white;
-  text-align: left;
-  font-size: 30px;
-}
-
-.community .forumposts .post .postAuthor {
-  color: white;
-  text-align: left;
-  font-size: 15px;
-}
-
-.community .forumposts .post .postTitle {
-  color: white;
-  text-align: left;
-}
-
-.community .forumposts .post .likeComments {
-  color: white;
+.community .forumposts .post .likeComments{
+    color:white;
 }
