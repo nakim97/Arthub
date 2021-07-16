@@ -2,3 +2,92 @@
   display: flex;
   width: 100%;
 }
+
+.user .profilePic img {
+  width: 145px;
+  height: 135px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.user .profilePic {
+  display: flex;
+  margin-left: 2rem;
+  margin-top: 1rem;
+}
+
+.user .userInfo {
+  display: flex;
+  color: white;
+}
+
+.user .userInfo .name {
+  margin-left: 2rem;
+  margin-top: 2rem;
+  font-size: x-large;
+}
+.user .userInfo .name .username {
+  display: flex;
+  margin-top: -2rem;
+  font-size: medium;
+}
+
+.user .description {
+  text-align: left;
+  font-size: large;
+  margin-top: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  color: white;
+}
+
+.user .portfolioArea {
+  color: white;
+  display: flex;
+  padding-left: 2rem;
+}
+
+.user .portfolioArea .editPageButns {
+  display: flex;
+  margin-left: 50.5rem;
+}
+
+.user .portfolioArea .editPageButns .editPortfolio {
+  border-style: solid;
+  border-color: white;
+  border-radius: 2rem;
+  margin-bottom: 4rem;
+}
+
+.user .portfolioArea .editPageButns .editProfile {
+  border-style: solid;
+  border-color: white;
+  border-radius: 2rem;
+  margin-bottom: 4rem;
+  margin-left: 2rem;
+}
+.user .portfolioArea .editPageButns .editPortfolio p {
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+.user .portfolioArea .editPageButns .editProfile p {
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
+.user .pictureArea {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  justify-items: center;
+  grid-gap: 10px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 2rem;
+  margin-top: -2rem;
+}
+
+.image img {
+  object-fit: cover;
+  width: 100%;
+  height: 33vh;
+}
