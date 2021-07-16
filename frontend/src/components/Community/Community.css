@@ -51,7 +51,9 @@ html, body{
   }
   
   
-  
+  .community .trendingCommunity{
+    padding-bottom:200px;
+  }
 
   .community .trendingCommunity .container {
     display: grid;
@@ -97,6 +99,7 @@ html, body{
       width:100%;
       background-repeat: no-repeat;
       margin-top:50px;
+    
   }
 
   .community .forumposts{
