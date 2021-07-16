@@ -61,34 +61,34 @@ export default function Explore() {
       </div>
 
       <div className="pictureArea">
-        <div class="image">
+        <div className="image">
           <img src={homefeed1} alt="user portfolio image 1" />
         </div>
-        <div class="image">
+        <div className="image">
           <img src={homefeed2} alt="user portfolio image 2" />
         </div>
-        <div class="image">
+        <div className="image">
           <img src={homefeed3} alt="user portfolio image 3" />
         </div>
-        <div class="image">
+        <div className="image">
           <img src={homefeed4} alt="user portfolio image 4" />
         </div>
-        <div class="image">
+        <div className="image">
           <img src={homefeed5} alt="user portfolio image 5" />
         </div>
-        <div class="image">
+        <div className="image">
           <img src={homefeed6} alt="user portfolio image 6" />
         </div>
-        <div class="image">
+        <div className="image">
           <img src={homefeed1} alt="user portfolio image 1" />
         </div>
-        <div class="image">
+        <div className="image">
           <img src={homefeed2} alt="user portfolio image 2" />
         </div>
-        <div class="image">
+        <div className="image">
           <img src={homefeed3} alt="user portfolio image 3" />
         </div>
-        <div class="image">
+        <div className="image">
           <img src={homefeed4} alt="user portfolio image 4" />
         </div>
       </div>
