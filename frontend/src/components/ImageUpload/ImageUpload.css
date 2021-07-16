@@ -57,7 +57,9 @@
     box-shadow: none;
     outline: none;
   }
-  
+  .white {
+      color: white;
+  }
   .ImageUpload .left-side form .btn.widget-btn {
     margin-top: 15px;
     background: #800080;

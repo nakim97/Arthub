@@ -61,7 +61,7 @@ then finally logs the first element of the array in the result to the console. *
           </button>
         </form>
       </section>
-      <section className="right-side" style={{color: 'white'}}>
+      <section className="right-side white">
         <p>The resulting image will be displayed here</p>
         {imageUrl && (
           <img src={imageUrl} alt={imageAlt} className="displayed-image" />
