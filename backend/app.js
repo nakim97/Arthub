@@ -4,6 +4,7 @@ const morgan = require("morgan");
 const config = require("./config");
 const { NotFoundError } = require("./utils/errors");
 const authRoutes = require("./routes/auth");
+const userRoutes = require("./routes/users");
 const exerciseRoutes = require("./routes/exercises");
 const security = require("./middleware/security");
 
@@ -22,6 +23,7 @@ app.use(morgan("tiny"));
 // if it does, attach the decoded user to res.locals
 app.use(security.extractUserFromJwt);
 // Use routes after middleware
+app.use("/user", userRoutes);
 app.use("/auth", authRoutes);
 app.use("/exercise", exerciseRoutes);
 

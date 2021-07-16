@@ -92,6 +92,65 @@ class User {
     const user = userResult.rows[0];
     return User.makePublicUser(user);
   }
+  /************************ Keep working on the update profile function with the update sql call */
+  static async updateProfile(credentials) {
+    const requiredFields = [
+      "email",
+      "password",
+      "username",
+      "first_name",
+      "last_name",
+      "isAdmin",
+    ];
+    requiredFields.forEach((property) => {
+      if (!credentials.hasOwnProperty(property)) {
+        throw new BadRequestError(`Missing ${property} in request body.`);
+      }
+    });
+
+    if (credentials.email.indexOf("@") <= 0) {
+      throw new BadRequestError("Invalid email.");
+    }
+
+    const existingUser = await User.fetchUserByEmail(credentials.email);
+    if (existingUser) {
+      throw new BadRequestError(
+        `A user already exists with email: ${credentials.email}`
+      );
+    }
+
+    const existingUserWithUsername = await User.fetchUserByUsername(
+      credentials.username
+    );
+    if (existingUserWithUsername) {
+      throw new BadRequestError(
+        `A user already exists with username: ${credentials.username}`
+      );
+    }
+
+    const hashedPassword = await bcrypt.hash(
+      credentials.password,
+      BCRYPT_WORK_FACTOR
+    );
+    const normalizedEmail = credentials.email.toLowerCase();
+
+    const userResult = await db.query(
+      `INSERT INTO users (email, password, username, first_name, last_name, is_admin)
+       VALUES ($1, $2, $3, $4, $5, $6)
+       RETURNING id, email, password, username, first_name, last_name, is_admin;
+      `,
+      [
+        normalizedEmail,
+        hashedPassword,
+        credentials.username,
+        credentials.first_name,
+        credentials.last_name,
+        credentials.isAdmin,
+      ]
+    );
+    const user = userResult.rows[0];
+    return User.makePublicUser(user);
+  }
 
   static async fetchUserByEmail(email) {
     if (!email) {
