@@ -51,8 +51,8 @@ return fetch('https://api.Cloudinary.com/v1_1/:cloud_name/image/upload', options
               <input type="file"/>
             </div>
 
-            <button type="button" className="btn" onClick={this.handleImageUpload}>Submit</button>
-            <button type="button" className="btn widget-btn" onClick={this.openWidget}>Upload Via Widget</button>
+            <button type="button" className="btn" onClick={handleImageUpload}>Submit</button>
+            <button type="button" className="btn widget-btn" onClick={openWidget}>Upload Via Widget</button>
           </form>
         </section>
         <section className="right-side">
