@@ -33,7 +33,6 @@ then finally logs the first element of the array in the result to the console. *
       body: formData,
     };
 
-    // replace cloudname with your Cloudinary cloud_name
     return fetch(
       "https://api.Cloudinary.com/v1_1/powerstriders/image/upload",
       options
