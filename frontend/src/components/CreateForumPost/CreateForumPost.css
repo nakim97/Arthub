@@ -1,0 +1,78 @@
+html, body { margin: 0; padding: 0; }
+
+.CreateForumPost  .container { 
+    display: table;
+    margin-right: auto;
+    margin-left: auto;
+    width:1000px;
+    height:660px;
+    margin-top:150px;
+    margin-bottom:150px;
+    background: #1A1818;
+    display: table; text-align: center;
+    
+}
+
+
+
+.CreateForumPost h1{
+    color:white;
+}
+
+.CreateForumPost .container .form .title input{
+    width: 800px;
+    background: #1A1818;
+    height:40px;
+    color:white;
+    outline:none;
+    margin-bottom:50px;
+}
+
+.CreateForumPost .container .form .description textarea{
+    width: 800px;
+    background: #1A1818;
+    height:300px;
+    margin-bottom:50px;
+    color:white;
+    
+}
+
+.CreateForumPost .container .form .imgBar{
+    text-align: left;
+    margin-left:100px;
+    border-left: 0.6px solid #514F4F;
+    border-right: 0.6px solid #514F4F;
+    border-top: 0.6px solid #514F4F;
+    width:800px;
+    height:30px;
+}
+
+
+.CreateForumPost .container .form .tags .bubbletag{
+    color:#888181;
+    background: #1A1818;
+    border: 0.6px solid #514F4F;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    padding:10px;
+}
+
+.CreateForumPost .container .form .tags{
+    margin-bottom:50px;
+}
+
+.CreateForumPost .container .form .postBtn{
+
+    outline:none;
+    background: #BAB3B3;
+    border: 0.6px solid #514F4F;
+    box-sizing: border-box;
+    padding:5px;
+    width:60px;
+    text-align: center;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    display: table-cell; 
+    vertical-align: center;
+    margin-bottom: 20px;
+}
