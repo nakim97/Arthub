@@ -14,6 +14,7 @@ import UserProfile from "../UserProfile/UserProfile";
 import EditPortfolio from "../EditPortfolio/EditPortfolio";
 import ImageUpload from "../ImageUpload/ImageUpload";
 import CreateForumPost from "../CreateForumPost/CreateForumPost";
+import CommunityPostEdit from "../CommunityPostEdit/CommunityPostEdit";
 
 
 export default function App() {
@@ -67,6 +68,7 @@ export default function App() {
           <Route path="/editportfolio" element={<EditPortfolio/>} />
           <Route path="/createforumpost" element={<CreateForumPost/>} />
           <Route path="/image" element={<ImageUpload />} />
+          <Route path="/communitypostedit" element={<CommunityPostEdit />} />
 
         </Routes>
       </BrowserRouter>
