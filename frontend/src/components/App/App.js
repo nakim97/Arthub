@@ -66,6 +66,7 @@ export default function App() {
           <Route path="/community" element={<Community />} />
           <Route path="/me" element={<UserProfile />} />
           <Route path="/upload" element={<Upload />} />
+          <Route path="/post" element={<Upload />} />
 
           <Route path="/editportfolio" element={<EditPortfolio />} />
           <Route path="/createforumpost" element={<CreateForumPost />} />
