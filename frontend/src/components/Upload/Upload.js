@@ -38,7 +38,7 @@ export default function Upload({ user, setUser }) {
         {/* <div className="uploadImage">
           <img className="image" src={homefeed1} alt="Upload Image template" />
         </div> */}
-<ImageUpload/>
+        <ImageUpload />
         <div className="uploadData">
           <div className="postName">
             <p>Title of work</p>
