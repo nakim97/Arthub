@@ -1,5 +1,6 @@
 const express = require("express");
 const Post = require("../models/post");
+const Comment = require("../models/photoComments");
 const security = require("../middleware/security");
 const router = express.Router();
 
@@ -45,6 +46,18 @@ router.get("/:postsId", async (req, res, next) => {
       throw new NotFoundError("post not found");
     }
     res.status(200).json({ posting });
+  } catch (err) {
+    next(err);
+  }
+});
+
+// Photo Post Commenting
+router.get("/:postsId/comments", security.requireAuthenticatedUser, async (req, res, next) => {
+  try {
+    const { postsId } = req.params.postsId;
+    const { user } = res.locals;
+    const comment = await Comment.createCommentForPost({rating: req.body.comment, user, postsId})
+    return res.status(201).json({comment})
   } catch (err) {
     next(err);
   }
