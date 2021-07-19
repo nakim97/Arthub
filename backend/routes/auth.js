@@ -1,6 +1,7 @@
 const express = require("express");
 const User = require("../models/user");
 const Post = require("../models/post");
+const Image = require("../models/image");
 const { createUserJwt } = require("../utils/tokens");
 const security = require("../middleware/security");
 const router = express.Router();
@@ -47,14 +48,48 @@ router.get("/me", security.requireAuthenticatedUser, async (req, res, next) => {
 });
 
 /************************ Development testing routes  *******/
-router.get("/test", async (req, res, next) => {
+
+// router.get("/", security.requireAuthenticatedUser, async (req, res, next) => {
+//   try {
+//     // List all images
+//     const { user } = res.locals;
+//     const images = await Image.listImagesForUser({ user });
+//     return res.status(200).json({ images });
+//   } catch (err) {
+//     next(err);
+//   }
+// });
+
+
+// router.post("/", security.requireAuthenticatedUser, async (req, res, next) => {
+//   try {
+//     // Create a new image
+//     const { user } = res.locals;
+//     const image = await Image.createImage({
+//       user,
+//       image: req.body,
+//     });
+//     return res.status(201).json({ image });
+//   } catch (err) {
+//     next(err);
+//   }
+// });
+router.get("/test", security.requireAuthenticatedUser, async (req, res, next) => {
   try {
-    const test = Post.listAllPosts();
+    const test = Image.listImagesForUser();
     return res.status(201).json({test});
   } catch (err) {
     next(err);
   }
 });
+// router.get("/test", async (req, res, next) => {
+//   try {
+//     const test = Post.listAllPosts();
+//     return res.status(201).json({test});
+//   } catch (err) {
+//     next(err);
+//   }
+// });
 // router.get("/test", async (req, res, next) => {
 //   try {
 //     const test = Post.listPhotoPostsForUser();

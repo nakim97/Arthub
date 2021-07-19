@@ -17,7 +17,6 @@ class Exercise {
     `,
       [user.email]
     );
-    //
 
     return results.rows;
   }
