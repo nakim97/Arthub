@@ -22,9 +22,9 @@ export const useUploadForm = ({ user, setUser }) => {
   // and setting the checkbox component to use that
   const CustomColorCheckbox = withStyles({
     root: {
-      color: "#13c552",
+      color: "#563a87",
       "&$checked": {
-        color: "#13c552",
+        color: "#563a87",
       },
     },
     checked: {},
