@@ -37,13 +37,11 @@ class ApiClient {
     // Get all the data about the videos and correct the query
     const filters1 = await ytsr.getFilters(query);
     const filter1 = filters1.get("Type").get("Video");
-    const filters2 = await ytsr.getFilters(filter1.url);
-    const filter2 = filters2.get("Features").get("Live");
     const options = {
       pages: 2,
     };
-    const searchResults = await ytsr(filter2.url, options);
-    // searchResults.items
+    const searchResults = await ytsr(filter1.url, options);
+    return searchResults;
   }
   // async listPosts() {
   //     return await this.request({endpoint: `posts`, method: `GET`})

@@ -5,6 +5,7 @@ import homefeed1 from "../../Assets/homefeed1.jpg";
 import FormControl from "@material-ui/core/FormControl";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import { useUploadForm } from "../../hooks/useUploadForm";
+import ImageUpload from "../ImageUpload/ImageUpload";
 export default function Upload({ user, setUser }) {
   const {
     CustomColorCheckbox,
@@ -34,10 +35,10 @@ export default function Upload({ user, setUser }) {
       </div>
 
       <div className="uploadInfo">
-        <div className="uploadImage">
+        {/* <div className="uploadImage">
           <img className="image" src={homefeed1} alt="Upload Image template" />
-        </div>
-
+        </div> */}
+<ImageUpload/>
         <div className="uploadData">
           <div className="postName">
             <p>Title of work</p>
@@ -54,9 +55,9 @@ export default function Upload({ user, setUser }) {
         </div>
       </div>
 
-      <div className="uploadButn">
+      {/* <div className="uploadButn">
         <button>Upload</button>
-      </div>
+      </div> */}
 
       <div className="steps">
         <h2>Step 2: Post Pricing</h2>
@@ -112,15 +113,19 @@ export default function Upload({ user, setUser }) {
           />
         </FormControl>
       </div>
-      
-      <div className="editPageButns">
-          <button className="cancel"><Link to="/me">Cancel</Link></button>
 
-          <button className="submit"
+      <div className="editPageButns">
+        <button className="cancel">
+          <Link to="/me">Cancel</Link>
+        </button>
+
+        <button
+          className="submit"
           disabled={isProcessing || !checked1 || !checked2}
-          onClick={handleOnSubmit}><Link to="/me">
-            {isProcessing ? "Loading..." : "Submit"}
-            </Link></button>
+          onClick={handleOnSubmit}
+        >
+          <Link to="/me">{isProcessing ? "Loading..." : "Submit"}</Link>
+        </button>
       </div>
     </div>
   );

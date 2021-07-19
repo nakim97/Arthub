@@ -6,6 +6,12 @@ export default function ImageUpload() {
     useImageUpload();
   return (
     <main className="ImageUpload">
+      <section className="right-side white">
+        <p>The resulting image will be displayed here</p>
+        {imageUrl && (
+          <img src={imageUrl} alt={imageAlt} className="displayed-image" />
+        )}
+      </section>
       <section className="left-side">
         <form>
           <div className="form-group">
@@ -19,12 +25,6 @@ export default function ImageUpload() {
             Upload Via Widget
           </button>
         </form>
-      </section>
-      <section className="right-side white">
-        <p>The resulting image will be displayed here</p>
-        {imageUrl && (
-          <img src={imageUrl} alt={imageAlt} className="displayed-image" />
-        )}
       </section>
     </main>
   );
