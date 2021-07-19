@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 export const useImageUpload = () => {
-  var arr;
   const [imageUrl, setImageUrl] = useState(null);
   const [imageAlt, setImageAlt] = useState(null);
   // We will create the widget and open it up when clicked.
@@ -14,10 +13,11 @@ export const useImageUpload = () => {
           uploadPreset: "ll7bhjxz",
         },
         (error, result) => {
+          // This code only runs and gets the image
+          // when we successfully open and upload the image
           if (!error && result && result.event === "success") {
             setImageUrl(result.info.secure_url);
             setImageAlt(`An image of ${result.info.original_filename}`);
-          arr = result.info;
           }
         }
       )
