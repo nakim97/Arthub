@@ -67,16 +67,6 @@ export const useUploadForm = ({ user, setUser }) => {
         setErrors((e) => ({ ...e, passwordConfirm: null }));
       }
     }
-    if (event.target.type === "checkbox") {
-      if (!event.target.value) {
-        setErrors((e) => ({
-          ...e,
-          checkbox: "Checkbox not checked.",
-        }));
-      } else {
-        setErrors((e) => ({ ...e, checkbox: null }));
-      }
-    }
 
     setForm((f) => ({ ...f, [event.target.name]: event.target.value }));
   };

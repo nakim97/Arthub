@@ -117,7 +117,7 @@ export default function Upload({ user, setUser }) {
           <button className="cancel"><Link to="/me">Cancel</Link></button>
 
           <button className="submit"
-          disabled={isProcessing || !checked}
+          disabled={isProcessing || !checked1 || !checked2}
           onClick={handleOnSubmit}><Link to="/me">
             {isProcessing ? "Loading..." : "Submit"}
             </Link></button>
