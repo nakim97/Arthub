@@ -114,13 +114,11 @@ export default function Upload({ user, setUser }) {
       
       <div className="editPageButns">
         <div className="cancel">
-          <p>Cancel</p>
+          <button>Cancel</button>
         </div>
 
         <div className="submit">
-          <div>
-          <p>Submit</p>
-          </div>
+          <button>Submit</button>
         </div>
       </div>
     </div>
