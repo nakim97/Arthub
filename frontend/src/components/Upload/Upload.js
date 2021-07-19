@@ -3,18 +3,22 @@ import Navbar from "../Navbar/Navbar";
 import homefeed1 from "../../Assets/homefeed1.jpg";
 import FormControl from "@material-ui/core/FormControl";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
-import { useRegisterForm } from "../../hooks/useRegisterForm";
+import { useUploadForm } from "../../hooks/useUploadForm";
 export default function Upload({ user, setUser }) {
   const {
     CustomColorCheckbox,
     checked,
+    checked1,
+    checked2,
     handleChange,
+    handleChange1,
+    handleChange2,
     form,
     errors,
     handleOnInputChange,
     handleOnSubmit,
     isProcessing,
-  } = useRegisterForm({ user, setUser });
+  } = useUploadForm({ user, setUser });
 
   return (
     <div className="upload">
@@ -84,8 +88,8 @@ export default function Upload({ user, setUser }) {
           <FormControlLabel
             control={
               <CustomColorCheckbox
-                checked={checked}
-                onChange={handleChange}
+                checked={checked1}
+                onChange={handleChange1}
                 required
               />
             }
@@ -98,23 +102,25 @@ export default function Upload({ user, setUser }) {
           <FormControlLabel
             control={
               <CustomColorCheckbox
-                checked={checked}
-                onChange={handleChange}
+                checked={checked2}
+                onChange={handleChange2}
                 required
               />
             }
-            label="I have read and agree to the Terms of Service "
+            label="I have read and agree to the Terms of Service"
           />
         </FormControl>
       </div>
-
+      
       <div className="editPageButns">
         <div className="cancel">
           <p>Cancel</p>
         </div>
 
         <div className="submit">
+          <div>
           <p>Submit</p>
+          </div>
         </div>
       </div>
     </div>

@@ -4,10 +4,12 @@ import apiClient from "../services/apiClient";
 import { withStyles } from "@material-ui/core/styles";
 import Checkbox from "@material-ui/core/Checkbox";
 
-export const useRegisterForm = ({ user, setUser }) => {
+export const useUploadForm = ({ user, setUser }) => {
   const navigate = useNavigate();
   const [isProcessing, setIsProcessing] = useState(false);
   const [checked, setChecked] = useState(true);
+  const [checked1, setChecked1] = useState(true);
+  const [checked2, setChecked2] = useState(true);
   const [errors, setErrors] = useState({});
   const [form, setForm] = useState({
     name: "",
@@ -39,6 +41,12 @@ export const useRegisterForm = ({ user, setUser }) => {
   const handleChange = (event) => {
     setChecked(event.target.checked);
   };
+  const handleChange1 = (event) => {
+    setChecked1(event.target.checked);
+  };
+  const handleChange2 = (event) => {
+    setChecked2(event.target.checked);
+  };
 
   const handleOnInputChange = (event) => {
     if (event.target.name === "email") {
@@ -59,16 +67,16 @@ export const useRegisterForm = ({ user, setUser }) => {
         setErrors((e) => ({ ...e, passwordConfirm: null }));
       }
     }
-    // if (event.target.type === "checkbox") {
-    //   if (!event.target.value) {
-    //     setErrors((e) => ({
-    //       ...e,
-    //       checkbox: "Checkbox not checked.",
-    //     }));
-    //   } else {
-    //     setErrors((e) => ({ ...e, checkbox: null }));
-    //   }
-    // }
+    if (event.target.type === "checkbox") {
+      if (!event.target.value) {
+        setErrors((e) => ({
+          ...e,
+          checkbox: "Checkbox not checked.",
+        }));
+      } else {
+        setErrors((e) => ({ ...e, checkbox: null }));
+      }
+    }
 
     setForm((f) => ({ ...f, [event.target.name]: event.target.value }));
   };
@@ -118,7 +126,11 @@ export const useRegisterForm = ({ user, setUser }) => {
   return {
     CustomColorCheckbox,
     checked,
+    checked1,
+    checked2,
     handleChange,
+    handleChange1,
+    handleChange2,
     isProcessing,
     form,
     errors,
