@@ -7,7 +7,7 @@ export default function ImageUpload() {
   return (
     <main className="ImageUpload">
       <section className="right-side white">
-        <p>The resulting image will be displayed here</p>
+        <p>Picture</p>
         {imageUrl && (
           <img src={imageUrl} alt={imageAlt} className="displayed-image" />
         )}

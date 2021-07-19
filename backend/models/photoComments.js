@@ -1,7 +1,7 @@
 const { BadRequestError } = require("../utils/errors");
 const db = require("../db");
 
-class Comment{
+class Comment {
     static async fetchCommentForPostByUser({user,postsId}){
         // fetch a user's comment for a post if it exists
         const results = await db.query(
@@ -10,7 +10,7 @@ class Comment{
             FROM photoComments
             WHERE user_id = ( SELECT id FROM users WHERE email = $1)
                 AND post_id = $2
-            `,[user.email,postsId]
+            `, [user.email,postsId]
         )
         return results.rows[0]
 
@@ -27,7 +27,7 @@ class Comment{
             INSERT INTO photoComments(comment_description, id, user_id, post_id)
             VALUES ($1,$2,$3,$4, (SELECT id FROM users WHERE email = $5))
             RETURNING comment_description, id, user_id,post_id, comment_created_at
-            `,[comment, user.email, postsId]
+            `, [comment, user.email, postsId]
         )
         return results.rows[0]
     }
