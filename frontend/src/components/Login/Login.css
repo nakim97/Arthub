@@ -180,7 +180,7 @@ body {
   justify-content: center;
   background: black;
   border: solid;
-  border-radius: 15%;
+  border-radius: 2rem;
   cursor: pointer;
   margin-top: 15px;
 }
