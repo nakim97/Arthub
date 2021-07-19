@@ -22,7 +22,7 @@ export default function ImageUpload() {
             Submit
           </button>
           <button type="button" className="btn widget-btn" onClick={openWidget}>
-            Upload Via Widget
+            Upload and Submit Via Widget
           </button>
         </form>
       </section>

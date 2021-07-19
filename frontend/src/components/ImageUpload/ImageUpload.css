@@ -24,9 +24,9 @@
   
   .ImageUpload .left-side form {
     height: fit-content;
-    background: white;
+    /* background: white;
     border: 1px solid grey;
-    border-radius: 4px;
+    border-radius: 4px; */
     width: 300px;
     padding: 40px 10px;
   }
@@ -34,6 +34,7 @@
   .ImageUpload .left-side form input {
     margin: 0 0 30px;
     width: 200px;
+    color: white;
   }
   
   .ImageUpload .left-side form .btn {
