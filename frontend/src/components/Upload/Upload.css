@@ -1,0 +1,90 @@
+.title {
+  color: white;
+}
+.steps {
+  color: white;
+  display: flex;
+  margin-left: 5rem;
+}
+
+.uploadInfo {
+  display: flex;
+}
+
+.uploadImage .image {
+  width: 400px;
+  height: 400px;
+  margin-left: 5rem;
+}
+
+.uploadData {
+  color: white;
+  margin-left: 4rem;
+  text-align: start;
+}
+
+.uploadButn {
+  display: flex;
+  margin-top: 1rem;
+  margin-left: 15rem;
+  padding-bottom: 1rem;
+}
+.sell {
+  color: white;
+  display: flex;
+  margin-left: 5rem;
+}
+
+.sell .price {
+  display: flex;
+  margin-left: 1rem;
+}
+
+.notForSale {
+  color: white;
+  display: flex;
+  margin-left: 5rem;
+}
+
+.TOS1 {
+  display: flex;
+  color: white;
+  margin-left: 5rem;
+  margin-top: 3rem;
+}
+
+.TOS2 {
+  display: flex;
+  color: white;
+  margin-left: 5rem;
+}
+
+.upload .editPageButns {
+  color: white;
+  display: flex;
+  padding-left: 2rem;
+  margin-left: 50.5rem;
+}
+
+.upload .editPageButns .cancel {
+  border-style: solid;
+  border-color: white;
+  border-radius: 2rem;
+  margin-bottom: 4rem;
+}
+
+.upload .editPageButns .submit {
+  border-style: solid;
+  border-color: white;
+  border-radius: 2rem;
+  margin-bottom: 4rem;
+  margin-left: 2rem;
+}
+.upload .editPageButns .cancel p {
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+.upload .editPageButns .submit p {
+  padding-left: 4rem;
+  padding-right: 4rem;
+}

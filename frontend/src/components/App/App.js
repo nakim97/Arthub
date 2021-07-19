@@ -15,7 +15,7 @@ import EditPortfolio from "../EditPortfolio/EditPortfolio";
 import ImageUpload from "../ImageUpload/ImageUpload";
 import CreateForumPost from "../CreateForumPost/CreateForumPost";
 import CommunityPostEdit from "../CommunityPostEdit/CommunityPostEdit";
-
+import Upload from "../Upload/Upload";
 
 export default function App() {
   const [isFetching, setFetching] = useState(false);
@@ -64,12 +64,12 @@ export default function App() {
           <Route path="/market" element={<Market />} />
           <Route path="/community" element={<Community />} />
           <Route path="/me" element={<UserProfile />} />
+          <Route path="/upload" element={<Upload />} />
 
-          <Route path="/editportfolio" element={<EditPortfolio/>} />
-          <Route path="/createforumpost" element={<CreateForumPost/>} />
+          <Route path="/editportfolio" element={<EditPortfolio />} />
+          <Route path="/createforumpost" element={<CreateForumPost />} />
           <Route path="/image" element={<ImageUpload />} />
           <Route path="/communitypostedit" element={<CommunityPostEdit />} />
-
         </Routes>
       </BrowserRouter>
     </div>
