@@ -1,0 +1,14 @@
+.list {
+  margin-top: 52rem;
+  margin-left: -65rem;
+}
+
+.list .items {
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.video {
+  padding: 1rem;
+}
