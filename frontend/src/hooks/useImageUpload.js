@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 export const useImageUpload = () => {
+  var arr;
   const [imageUrl, setImageUrl] = useState(null);
   const [imageAlt, setImageAlt] = useState(null);
   // We will create the widget and open it up when clicked.
@@ -13,12 +14,15 @@ export const useImageUpload = () => {
           uploadPreset: "ll7bhjxz",
         },
         (error, result) => {
-          setImageUrl(result.info.secure_url);
+          if (!error && result && result.event === "success")
+            setImageUrl(result.info.secure_url);
+          arr = result.info;
           setImageAlt(`An image of ${result.info.original_filename}`);
         }
       )
       .open(); // open up the widget after creation
   };
+
   /*
     This function queries the document to get the first input element with the type of file,
   then it de-structures the files array from the resulting object,
