@@ -13,12 +13,17 @@ export const useImageUpload = () => {
           uploadPreset: "ll7bhjxz",
         },
         (error, result) => {
-          setImageUrl(result.info.secure_url);
-          setImageAlt(`An image of ${result.info.original_filename}`);
+          // This code only runs and gets the image
+          // when we successfully open and upload the image
+          if (!error && result && result.event === "success") {
+            setImageUrl(result.info.secure_url);
+            setImageAlt(`An image of ${result.info.original_filename}`);
+          }
         }
       )
       .open(); // open up the widget after creation
   };
+
   /*
     This function queries the document to get the first input element with the type of file,
   then it de-structures the files array from the resulting object,
