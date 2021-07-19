@@ -14,10 +14,11 @@ export const useImageUpload = () => {
           uploadPreset: "ll7bhjxz",
         },
         (error, result) => {
-          if (!error && result && result.event === "success")
+          if (!error && result && result.event === "success") {
             setImageUrl(result.info.secure_url);
+            setImageAlt(`An image of ${result.info.original_filename}`);
           arr = result.info;
-          setImageAlt(`An image of ${result.info.original_filename}`);
+          }
         }
       )
       .open(); // open up the widget after creation
