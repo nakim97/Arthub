@@ -28,7 +28,7 @@ router.get("/listPosts", async (req, res, next) => {
 
 router.get("/", security.requireAuthenticatedUser, async (req, res, next) => {
   try {
-    // List all minutes
+    // List all posts
     const { user } = res.locals;
     const postsByMe = await Post.listPhotoPostsForUser({ user });
     return res.status(200).json({ postsByMe });
@@ -36,7 +36,7 @@ router.get("/", security.requireAuthenticatedUser, async (req, res, next) => {
     next(err);
   }
 });
-// fetch single product
+// fetch single post
 router.get("/:postsId", async (req, res, next) => {
   try {
     const postsId = req.params.postsId;
