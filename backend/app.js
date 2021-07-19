@@ -7,6 +7,8 @@ const authRoutes = require("./routes/auth");
 const userRoutes = require("./routes/users");
 const exerciseRoutes = require("./routes/exercises");
 const security = require("./middleware/security");
+const postRoutes = require("./routes/posts");
+
 
 const app = express();
 
@@ -26,6 +28,8 @@ app.use(security.extractUserFromJwt);
 app.use("/user", userRoutes);
 app.use("/auth", authRoutes);
 app.use("/exercise", exerciseRoutes);
+app.use("/post", postRoutes);
+
 
 /** Handle 404 errors -- this matches everything */
 app.use((req, res, next) => {
