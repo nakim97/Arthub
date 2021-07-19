@@ -28,3 +28,51 @@
   font-family: "Roboto", sans-serif;
 }
 
+@media only screen and (max-width: 1330px) {
+  .subNavbar .content .links li {
+    margin-right: 150px;
+  }
+}
+
+@media only screen and (max-width: 1220px) {
+  .subNavbar .content .links li {
+    margin-right: 140px;
+  }
+}
+
+@media only screen and (max-width: 1170px) {
+  .subNavbar .content .links li {
+    margin-right: 120px;
+  }
+}
+
+@media only screen and (max-width: 1090px) {
+  .subNavbar .content .links li {
+    margin-right: 100px;
+  }
+}
+@media only screen and (max-width: 1008px) {
+  .subNavbar .content .links li {
+    margin-right: 60px;
+  }
+}
+@media only screen and (max-width: 870px) {
+  .subNavbar .content .links li {
+    margin-right: 30px;
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 709px) {
+  .subNavbar .content .links li {
+    margin-right: 10px;
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 630px) {
+  .subNavbar .content .links li {
+    margin-right: 10px;
+    font-size: 14px;
+  }
+}

@@ -93,3 +93,69 @@
 .Navbar .content .logo {
   color: #7fffd4;
 }
+
+
+/* Making Things Responsive! */
+
+@media only screen and (max-width:1050px){
+  .Navbar .content .links {
+    gap: 10px;
+  }
+}
+
+.Navbar .content .search-bar input {
+  width: 600px;
+ 
+}
+
+
+@media only screen and (max-width:950px){
+  .Navbar .content .links {
+    gap: 40px;
+
+  }
+  .Navbar .content .search-bar input {
+    width: 500px;
+   
+  }
+  
+}
+
+
+
+
+@media only screen and (max-width:880px){
+  .Navbar .content .links .navRegister {
+    display:none;
+  }
+  
+
+}
+
+@media only screen and (max-width:790px){
+  .Navbar .content .links {
+    gap: 0px;
+  }
+  .Navbar .content .search-bar input {
+    width: 400px;
+   
+  }
+}
+
+
+@media only screen and (max-width:640px){
+  .Navbar .content .search-bar input {
+    width: 300px;
+   
+  }
+  
+}
+
+@media only screen and (max-width:550px){
+  .Navbar .content .search-bar input {
+    width: 200px;
+   
+  }
+  
+}
+
