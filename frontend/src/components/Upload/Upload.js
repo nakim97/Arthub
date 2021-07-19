@@ -1,4 +1,5 @@
 import "./Upload.css";
+import { Link } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import homefeed1 from "../../Assets/homefeed1.jpg";
 import FormControl from "@material-ui/core/FormControl";
@@ -113,13 +114,11 @@ export default function Upload({ user, setUser }) {
       </div>
       
       <div className="editPageButns">
-        <div className="cancel">
-          <button>Cancel</button>
-        </div>
+          <button className="cancel"><Link to="/me">Cancel</Link></button>
 
-        <div className="submit">
-          <button>Submit</button>
-        </div>
+          <button className="submit"
+          disabled={isProcessing || !checked}
+          onClick={handleOnSubmit}><Link to="/me">Submit</Link></button>
       </div>
     </div>
   );
