@@ -16,6 +16,7 @@ import ImageUpload from "../ImageUpload/ImageUpload";
 import CreateForumPost from "../CreateForumPost/CreateForumPost";
 import CommunityPostEdit from "../CommunityPostEdit/CommunityPostEdit";
 import Upload from "../Upload/Upload";
+import Post from "../Post/Post";
 
 export default function App() {
   const [isFetching, setFetching] = useState(false);
