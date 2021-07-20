@@ -95,29 +95,15 @@ class User {
   /************************ Keep working on the update profile function with the update sql call */
   static async updateProfile(credentials) {
     const requiredFields = [
-      "email",
-      "password",
       "username",
       "first_name",
       "last_name",
-      "isAdmin",
     ];
     requiredFields.forEach((property) => {
       if (!credentials.hasOwnProperty(property)) {
         throw new BadRequestError(`Missing ${property} in request body.`);
       }
     });
-
-    if (credentials.email.indexOf("@") <= 0) {
-      throw new BadRequestError("Invalid email.");
-    }
-
-    const existingUser = await User.fetchUserByEmail(credentials.email);
-    if (existingUser) {
-      throw new BadRequestError(
-        `A user already exists with email: ${credentials.email}`
-      );
-    }
 
     const existingUserWithUsername = await User.fetchUserByUsername(
       credentials.username
@@ -128,28 +114,26 @@ class User {
       );
     }
 
-    const hashedPassword = await bcrypt.hash(
-      credentials.password,
-      BCRYPT_WORK_FACTOR
-    );
-    const normalizedEmail = credentials.email.toLowerCase();
-
     const userResult = await db.query(
-      `INSERT INTO users (email, password, username, first_name, last_name, is_admin)
-       VALUES ($1, $2, $3, $4, $5, $6)
-       RETURNING id, email, password, username, first_name, last_name, is_admin;
+      `UPDATE users set username = $1, first_name = $2, last_name = $3, profile_img_url = $4, banner_img_url = $5, instagram_url = $6, facebook_url = $7, twitter_url = $8, biography = $9
+      WHERE u.id = (SELECT id FROM users WHERE email = $10)
       `,
       [
-        normalizedEmail,
-        hashedPassword,
         credentials.username,
         credentials.first_name,
         credentials.last_name,
-        credentials.isAdmin,
+        credentials.profile_img_url,
+        credentials.banner_img_url,
+        credentials.instagram_url,
+        credentials.facebook_url,
+        credentials.twitter_url,
+        credentials.biography,
+        credentials.email,
+
       ]
     );
-    const user = userResult.rows[0];
-    return User.makePublicUser(user);
+ 
+    return result.rows[0];
   }
 
   static async fetchUserByEmail(email) {
@@ -185,10 +169,11 @@ class User {
     return user;
   }
 
-  static async destroy() {
-    const query = `DELETE FROM users;`;
-
-    await db.query(query);
+  static async destroy(email) {
+    const query = `DELETE FROM users WHERE email = $1`;
+    const result = await db.query(query, [email.toLowerCase()]);
+    const user = result.rows[0];
+    return user;
   }
 }
 

@@ -6,7 +6,7 @@ class Image {
     const results = await db.query(
       `
     SELECT pu.id AS "photoUploadId",
-    pu.post_img_url AS "postImageUrl",
+    pu.post_img_url AS "postImgUrl",
     pu.type AS "type",
     u.email AS "userEmail"
     FROM photoUpload AS pu
@@ -31,7 +31,7 @@ class Image {
             RETURNING id,
             user_id AS "userId"
             `,
-      [image.postImageUrl, image.type, user.email]
+      [image.postImgUrl, image.type, user.email]
     );
     return results.rows[0];
   }
