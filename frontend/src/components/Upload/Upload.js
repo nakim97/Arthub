@@ -33,7 +33,7 @@ export default function Upload({ user, setUser }) {
       <div className="steps">
         <h2>Step 1: Post Description</h2>
       </div>
-
+      <div className="form">
       <div className="uploadInfo">
         {/* <div className="uploadImage">
           <img className="image" src={homefeed1} alt="Upload Image template" />
@@ -113,7 +113,7 @@ export default function Upload({ user, setUser }) {
           />
         </FormControl>
       </div>
-
+      </div>
       <div className="editPageButns">
         <button className="cancel">
           <Link to="/me">Cancel</Link>

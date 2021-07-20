@@ -106,10 +106,10 @@ export const useUploadForm = ({ user, setUser }) => {
       password: form.password,
     });
     if (error) setErrors((e) => ({ ...e, form: error }));
-    if (data?.user) {
-      setUser(data.user);
-      apiClient.setToken(data.token);
-    }
+    // if (data?.user) {
+    //   setUser(data.user);
+    //   apiClient.setToken(data.token);
+    // }
     setIsProcessing(false);
   };
 
