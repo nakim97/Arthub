@@ -94,11 +94,7 @@ class User {
   }
   /************************ Keep working on the update profile function with the update sql call */
   static async updateProfile(credentials) {
-    const requiredFields = [
-      "username",
-      "first_name",
-      "last_name",
-    ];
+    const requiredFields = ["username", "first_name", "last_name"];
     requiredFields.forEach((property) => {
       if (!credentials.hasOwnProperty(property)) {
         throw new BadRequestError(`Missing ${property} in request body.`);
@@ -129,10 +125,9 @@ class User {
         credentials.twitter_url,
         credentials.biography,
         credentials.email,
-
       ]
     );
- 
+
     return result.rows[0];
   }
 
