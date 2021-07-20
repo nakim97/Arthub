@@ -71,3 +71,12 @@ CREATE TABLE tags (
   img_id                INTEGER NOT NULL REFERENCES photoUpload(id) ON DELETE CASCADE,
   forum_id              INTEGER NOT NULL REFERENCES forumPost(id) ON DELETE CASCADE
 );
+
+
+
+
+
+
+
+
+

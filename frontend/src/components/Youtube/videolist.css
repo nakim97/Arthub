@@ -1,0 +1,24 @@
+.list {
+  margin-top: 52rem;
+  margin-left: -65rem;
+}
+
+.list .items {
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.video {
+  padding: 1rem;
+}
+
+.noSearch {
+  color: white;
+  margin-top: 52rem;
+  margin-left: -115.5rem;
+}
+
+.header {
+  text-align: left;
+}
