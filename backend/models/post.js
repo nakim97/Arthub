@@ -55,10 +55,10 @@ class Post {
             photo_created_at
             `,
       [
-        post.post_title,
-        post.post_description,
+        post.postTitle,
+        post.postDescription,
         post.type,
-        post.img_id,
+        post.imgId,
         user.email,
         post.photo_created_at,
       ]
