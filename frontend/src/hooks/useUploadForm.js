@@ -12,10 +12,9 @@ export const useUploadForm = ({ user, setUser }) => {
   const [checked2, setChecked2] = useState(true);
   const [errors, setErrors] = useState({});
   const [form, setForm] = useState({
-    name: "",
-    email: "",
-    userName: "",
-    password: "",
+    title: "",
+    description: "",
+    tag: "",
     passwordConfirm: "",
   });
   // Defining a custom check box with a green color
@@ -123,6 +122,7 @@ export const useUploadForm = ({ user, setUser }) => {
     handleChange2,
     isProcessing,
     form,
+    setForm,
     errors,
     handleOnSubmit,
     handleOnInputChange,

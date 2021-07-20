@@ -68,7 +68,12 @@ CREATE TABLE tags (
   id                    SERIAL PRIMARY KEY,
   tag_name              TEXT,
   post_id               INTEGER NOT NULL REFERENCES photoPost(id) ON DELETE CASCADE,
-  img_id                INTEGER NOT NULL REFERENCES photoUpload(id) ON DELETE CASCADE,
+  img_id                INTEGER NOT NULL REFERENCES photoUpload(id) ON DELETE CASCADE
+);
+CREATE TABLE forumTags (
+  id                    SERIAL PRIMARY KEY,
+  tag_name              TEXT,
+  img_id                INTEGER NOT NULL REFERENCES forumUpload(id) ON DELETE CASCADE,
   forum_id              INTEGER NOT NULL REFERENCES forumPost(id) ON DELETE CASCADE
 );
 
