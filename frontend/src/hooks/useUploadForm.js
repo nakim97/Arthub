@@ -15,7 +15,6 @@ export const useUploadForm = ({ user, setUser }) => {
     title: "",
     description: "",
     tag: "",
-    passwordConfirm: "",
   });
   // Defining a custom check box with a green color
   // and setting the checkbox component to use that
@@ -97,12 +96,9 @@ export const useUploadForm = ({ user, setUser }) => {
     }
 
     const myArr = splitName(form.name);
-    const { data, error } = await apiClient.signupUser({
-      first_name: myArr[0],
-      last_name: myArr[1],
-      username: form.userName,
-      email: form.email,
-      password: form.password,
+    const { data, error } = await apiClient.createPost({
+      post_title: form.title,
+      post_description: form.description,
     });
     if (error) setErrors((e) => ({ ...e, form: error }));
     // if (data?.user) {
