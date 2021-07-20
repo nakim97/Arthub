@@ -92,7 +92,7 @@ class User {
     const user = userResult.rows[0];
     return User.makePublicUser(user);
   }
-  /************************ Keep working on the update profile function with the update sql call */
+
   static async updateProfile(credentials) {
     const requiredFields = ["username", "first_name", "last_name"];
     requiredFields.forEach((property) => {
