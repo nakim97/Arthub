@@ -17,6 +17,7 @@ import CreateForumPost from "../CreateForumPost/CreateForumPost";
 import CommunityPostEdit from "../CommunityPostEdit/CommunityPostEdit";
 import Upload from "../Upload/Upload";
 import Post from "../Post/Post";
+import EditProfile from "../EditProfile/EditProfile";
 
 export default function App() {
   const [isFetching, setFetching] = useState(false);
@@ -67,6 +68,7 @@ export default function App() {
           <Route path="/me" element={<UserProfile />} />
           <Route path="/upload" element={<Upload />} />
           <Route path="/post" element={<Post />} />
+          <Route path="/edit" element={<EditProfile />} />
 
           <Route path="/editportfolio" element={<EditPortfolio />} />
           <Route path="/createforumpost" element={<CreateForumPost />} />
