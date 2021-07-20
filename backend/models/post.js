@@ -17,7 +17,6 @@ class Post {
     pp.post_title AS "postTitle",
     pp.post_description AS "postDescription",
     pp.type AS "type",
-    e.intensity AS "intensity",
     img.id AS "imgId",
     u.email AS "userEmail"
     FROM photoPost AS pp
@@ -49,8 +48,8 @@ class Post {
     }
     const results = await db.query(
       `
-            INSERT INTO photoPost (post_title, post_description, type, img_id, user_id)
-            VALUES ($1, $2, $3, $4, (SELECT id FROM users WHERE email = $5))
+            INSERT INTO photoPost (post_title, post_description, type, img_id, user_id, photo_created_at)
+            VALUES ($1, $2, $3, $4, (SELECT id FROM users WHERE email = $5), $6)
             RETURNING id,
             user_id AS "userId",
             photo_created_at
@@ -61,6 +60,7 @@ class Post {
         post.type,
         post.img_id,
         user.email,
+        post.photo_created_at,
       ]
     );
     return results.rows[0];
