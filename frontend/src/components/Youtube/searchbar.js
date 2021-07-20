@@ -12,6 +12,12 @@ class Searchbar extends React.Component {
     this.props.handleFormSubmit(this.state.term);
   };
 
+  if(event = null) {
+    <div className="noSearch">
+      <p>Search for anything you want lo learn...</p>
+    </div>;
+  }
+
   render() {
     return (
       <div className="search">

@@ -1,8 +1,14 @@
+import "./videolist.css";
 import React from "react";
+import Searchbar from "./searchbar";
 
 const VideoDetail = ({ video }) => {
   if (!video) {
-    return <div></div>;
+    return (
+      <div className="noSearch">
+        <p>Search for anything you want lo learn...</p>
+      </div>
+    );
   }
 
   const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}`;
@@ -13,7 +19,8 @@ const VideoDetail = ({ video }) => {
         <iframe src={videoSrc} allowFullScreen title="Video player" />
       </div>
       <div className="ui segment">
-        <h4 className="ui header">{video.snippet.title}</h4>
+        <h4 className="header">{video.snippet.title}</h4>
+
         <p>{video.snippet.description}</p>
       </div>
     </div>
