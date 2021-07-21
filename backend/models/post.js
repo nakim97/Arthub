@@ -37,6 +37,15 @@ class Post {
     const user = result.rows[0];
     return user;
   }
+  static async deletePhotoPostById(postId) {
+    if (!postId) {
+      throw new BadRequestError("No id provided");
+    }
+    const query = `DELETE FROM photoPost WHERE id = $1`;
+    const result = await db.query(query, [postId]);
+    const user = result.rows[0];
+    return user;
+  }
 
   static async createPost({ post, user }) {
     if (!post || !Object.keys(post).length) {
