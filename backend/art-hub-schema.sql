@@ -17,6 +17,7 @@ CREATE TABLE photoUpload (
   id                    SERIAL PRIMARY KEY,
   user_id               INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
   post_img_url          TEXT,
+  type                  TEXT
 );
 
 CREATE TABLE photoPost (
@@ -25,7 +26,8 @@ CREATE TABLE photoPost (
   img_id                INTEGER NOT NULL REFERENCES photoUpload(id) ON DELETE CASCADE,
   post_title            TEXT NOT NULL,
   post_description      TEXT,
-  photo_created_at      TIMESTAMP DEFAULT NOW()
+  type                  TEXT,
+  photo_created_at      DATE NOT NULL
 );
 
 
@@ -34,13 +36,14 @@ CREATE TABLE photoComments (
   user_id               INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
   post_id               INTEGER NOT NULL REFERENCES photoPost(id) ON DELETE CASCADE,
   comment_description   TEXT,
-  comment_created_at    TIMESTAMP DEFAULT NOW()
+  comment_created_at    DATE NOT NULL
 );
 
 CREATE TABLE forumUpload (
   id                    SERIAL PRIMARY KEY,
   user_id               INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
   forum_img_url         TEXT,
+  type                  TEXT
 );
 
 CREATE TABLE forumPost (
@@ -49,7 +52,8 @@ CREATE TABLE forumPost (
   img_id                INTEGER NOT NULL REFERENCES forumUpload(id) ON DELETE CASCADE,
   forum_title           TEXT NOT NULL,
   forum_description     TEXT,
-  forum_created_at      TIMESTAMP DEFAULT NOW()
+  type                  TEXT,
+  forum_created_at      DATE NOT NULL
 );
 
 CREATE TABLE forumComments (
@@ -57,26 +61,24 @@ CREATE TABLE forumComments (
   user_id               INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
   forum_id              INTEGER NOT NULL REFERENCES forumPost(id) ON DELETE CASCADE,
   comment_description   TEXT,
-  comment_created_at    TIMESTAMP DEFAULT NOW()
+  comment_created_at    DATE NOT NULL
 );
 
 CREATE TABLE tags (
   id                    SERIAL PRIMARY KEY,
   tag_name              TEXT,
   post_id               INTEGER NOT NULL REFERENCES photoPost(id) ON DELETE CASCADE,
-  img_id                INTEGER NOT NULL REFERENCES photoUpload(id) ON DELETE CASCADE
-);
-CREATE TABLE forumTags (
-  id                    SERIAL PRIMARY KEY,
-  tag_name              TEXT,
-  img_id                INTEGER NOT NULL REFERENCES forumUpload(id) ON DELETE CASCADE,
+  img_id                INTEGER NOT NULL REFERENCES photoUpload(id) ON DELETE CASCADE,
   forum_id              INTEGER NOT NULL REFERENCES forumPost(id) ON DELETE CASCADE
 );
 
 
+CREATE TABLE likedPost {
+   id                    SERIAL PRIMARY KEY,
+   forum_post_id         INTEGER NOT NULL REFERENCES forumPost(img_id) ON DELETE CASCADE,
+   photo_post_id         INTEGER NOT NULL REFERENCES photoPost(img_id) ON DELETE CASCADE
 
-
-
+}
 
 
 
