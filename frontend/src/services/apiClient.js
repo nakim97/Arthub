@@ -53,7 +53,7 @@ class ApiClient {
     });
   }
   async listPosts() {
-      return await this.request({endpoint: `posts`, method: `GET`})
+    return await this.request({ endpoint: `posts`, method: `GET` });
   }
   async listExercises(user) {
     return await this.request({

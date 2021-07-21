@@ -2,14 +2,8 @@ import "./Post.css";
 import Navbar from "../Navbar/Navbar";
 import userBanner from "../../Assets/userBanner.png";
 import person2 from "../../Assets/person2.png";
-import homefeed1 from "../../Assets/homefeed1.jpg";
-import homefeed2 from "../../Assets/homefeed2.jpg";
-import homefeed3 from "../../Assets/homefeed3.jpg";
-import homefeed4 from "../../Assets/homefeed4.jpg";
-import homefeed5 from "../../Assets/homefeed5.jpg";
-import homefeed6 from "../../Assets/homefeed6.jpg";
 
-export default function Explore({user, handleOnLogout}) {
+export default function Explore({ user, handleOnLogout }) {
   return (
     <div className="user">
       <Navbar user={user} handleOnLogout={handleOnLogout} />

@@ -3,15 +3,10 @@ import Navbar from "../Navbar/Navbar";
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 
-
-
 import homefeed1 from "../../Assets/homefeed1.jpg";
 import homefeed7 from "../../Assets/homefeed7.jpg";
 import homefeed4 from "../../Assets/homefeed4.jpg";
 import homefeed5 from "../../Assets/homefeed5.jpg";
-import homefeed6 from "../../Assets/homefeed6.jpg";
-
-
 
 export default function EditPortfolio({user, handleOnLogout}){
     return(
@@ -78,9 +73,7 @@ export default function EditPortfolio({user, handleOnLogout}){
                     <DeleteIcon style={{ fontSize: "20px", marginLeft:"10px" }} />{" "}
                 </p>
           </div>
-        </div>
-
-          
+        </div>     
         </div>
     )
 }

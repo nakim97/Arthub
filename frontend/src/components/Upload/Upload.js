@@ -103,7 +103,6 @@ export default function Upload({ user, handleOnLogout }) {
           </div>
         </div>
 
-
         <div className="steps">
           <h2>Step 2: Post Pricing</h2>
         </div>

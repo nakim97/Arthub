@@ -23,80 +23,75 @@ export default function Market({user, handleOnLogout}) {
       </div>
 
       <div className="trendingMarket">
-                    <div className="marketTags">
-                        <button className="marketTrending"> TRENDING</button>
-                        <button className="marketLatest"> LATEST </button>
-                        <span className="filterIcon"><FilterListIcon /></span>
+            <div className="marketTags">
+                <button className="marketTrending"> TRENDING</button>
+                <button className="marketLatest"> LATEST </button>
+                <span className="filterIcon"><FilterListIcon /></span>
+            </div>
+
+            <div className="container">
+                <div className="marketContainer"> 
+                    <div className="marketImageContainer">
+                        <li><img className="marketImg" src={homefeed5} alt=" home feed img 4"/></li>
                     </div>
-
-                    <div className="container">
-                        <div className="marketContainer"> 
-                            <div className="marketImageContainer">
-                                <li><img className="marketImg" src={homefeed5} alt=" home feed img 4"/></li>
-                            </div>
-                            <div className="marketTitlePrice">
-                                <p className="marketTitle" style={{textAlign:'left'}}>	Art Piece No.1
-                                <span className="marketPrice" style={{float:'right'}}> $40 </span></p>
-                            </div>
-                            <p className="marketAuthor">by Picasso</p>
-                            <div className="marketBlurb">
-                                <p className="marketRating" style={{textAlign:'left'}}>	&#11088; 4.3
-                                <span className="marketBtn" style={{float:'right'}}><ShoppingCartIcon style= {{fontSize:"20px"}}/> </span></p>
-                            </div>
-                        </div>
-
-                        <div className="marketContainer"> 
-                            <div className="marketImageContainer">
-                             <li><img className="marketImg" src={homefeed1} alt=" home feed img 2"/></li>
-                            </div>
-                            <div className="marketTitlePrice">
-                                <p className="marketTitle" style={{textAlign:'left'}}>	Art Piece No.2
-                                <span className="marketPrice" style={{float:'right'}}> $120 </span></p>
-                            </div>
-                            <p className="marketAuthor">by me</p>
-                            <div className="marketBlurb">
-                                <p className="marketRating" style={{textAlign:'left'}}>	&#11088; 5.0
-                                <span className="marketBtn" style={{float:'right'}}><ShoppingCartIcon style= {{fontSize:"20px"}}/> </span></p>
-                            </div>
-                        </div>
-
-                        <div className="marketContainer"> 
-                            <div className="marketImageContainer">
-                             <li><img className="marketImg" src={homefeed7} alt=" home feed img 2"/></li>
-                            </div>
-                            <div className="marketTitlePrice">
-                                <p className="marketTitle" style={{textAlign:'left'}}>	Art Piece No.3
-                                <span className="marketPrice" style={{float:'right'}}> $10 </span></p>
-                            </div>
-                            <p className="marketAuthor">by you</p>
-                            <div className="marketBlurb">
-                                <p className="marketRating" style={{textAlign:'left'}}>	&#11088; 2.9
-                                <span className="marketBtn" style={{float:'right'}}><ShoppingCartIcon style= {{fontSize:"20px"}}/> </span></p>
-                            </div>
-                        </div>
-
-                        <div className="marketContainer"> 
-                            <div className="marketImageContainer">
-                             <li><img className="marketImg" src={homefeed6} alt=" home feed img 2"/></li>
-                            </div>
-                            <div className="marketTitlePrice">
-                                <p className="marketTitle" style={{textAlign:'left'}}>	Art Piece No.4
-                                <span className="marketPrice" style={{float:'right'}}> $300 </span></p>
-                            </div>
-                            <p className="marketAuthor">by demo</p>
-                            <div className="marketBlurb">
-                                <p className="marketRating" style={{textAlign:'left'}}>	&#11088; 3.4
-                                <span className="marketBtn" style={{float:'right'}}><ShoppingCartIcon style= {{fontSize:"20px"}}/> </span></p>
-                            </div>
-                        </div>
-
-
+                    <div className="marketTitlePrice">
+                        <p className="marketTitle" style={{textAlign:'left'}}>	Art Piece No.1
+                        <span className="marketPrice" style={{float:'right'}}> $40 </span></p>
                     </div>
-
+                    <p className="marketAuthor">by Picasso</p>
+                    <div className="marketBlurb">
+                        <p className="marketRating" style={{textAlign:'left'}}>	&#11088; 4.3
+                        <span className="marketBtn" style={{float:'right'}}><ShoppingCartIcon style= {{fontSize:"20px"}}/> </span></p>
+                    </div>
                 </div>
 
-    </div>
+                <div className="marketContainer"> 
+                    <div className="marketImageContainer">
+                        <li><img className="marketImg" src={homefeed1} alt=" home feed img 2"/></li>
+                    </div>
+                    <div className="marketTitlePrice">
+                        <p className="marketTitle" style={{textAlign:'left'}}>	Art Piece No.2
+                        <span className="marketPrice" style={{float:'right'}}> $120 </span></p>
+                    </div>
+                    <p className="marketAuthor">by me</p>
+                    <div className="marketBlurb">
+                        <p className="marketRating" style={{textAlign:'left'}}>	&#11088; 5.0
+                        <span className="marketBtn" style={{float:'right'}}><ShoppingCartIcon style= {{fontSize:"20px"}}/> </span></p>
+                    </div>
+                </div>
 
-    
+                <div className="marketContainer"> 
+                    <div className="marketImageContainer">
+                        <li><img className="marketImg" src={homefeed7} alt=" home feed img 2"/></li>
+                    </div>
+                    <div className="marketTitlePrice">
+                        <p className="marketTitle" style={{textAlign:'left'}}>	Art Piece No.3
+                        <span className="marketPrice" style={{float:'right'}}> $10 </span></p>
+                    </div>
+                    <p className="marketAuthor">by you</p>
+                    <div className="marketBlurb">
+                        <p className="marketRating" style={{textAlign:'left'}}>	&#11088; 2.9
+                        <span className="marketBtn" style={{float:'right'}}><ShoppingCartIcon style= {{fontSize:"20px"}}/> </span></p>
+                    </div>
+                </div>
+
+                <div className="marketContainer"> 
+                    <div className="marketImageContainer">
+                        <li><img className="marketImg" src={homefeed6} alt=" home feed img 2"/></li>
+                    </div>
+                    <div className="marketTitlePrice">
+                        <p className="marketTitle" style={{textAlign:'left'}}>	Art Piece No.4
+                        <span className="marketPrice" style={{float:'right'}}> $300 </span></p>
+                    </div>
+                    <p className="marketAuthor">by demo</p>
+                    <div className="marketBlurb">
+                        <p className="marketRating" style={{textAlign:'left'}}>	&#11088; 3.4
+                        <span className="marketBtn" style={{float:'right'}}><ShoppingCartIcon style= {{fontSize:"20px"}}/> </span></p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
   );
 }

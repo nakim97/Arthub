@@ -1,7 +1,5 @@
 const express = require("express");
 const User = require("../models/user");
-const Post = require("../models/post");
-const Image = require("../models/image");
 const { createUserJwt } = require("../utils/tokens");
 const security = require("../middleware/security");
 const router = express.Router();
@@ -48,6 +46,5 @@ router.get("/me", security.requireAuthenticatedUser, async (req, res, next) => {
 });
 
 /************************ Development testing routes  *******/
-
 
 module.exports = router;

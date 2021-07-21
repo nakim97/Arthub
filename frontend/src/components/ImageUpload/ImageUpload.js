@@ -1,6 +1,5 @@
 import "./ImageUpload.css";
 
-
 export default function ImageUpload({ handleImageUpload, openWidget, imageUrl, imageAlt }) {
   return (
     <main className="ImageUpload">
@@ -15,7 +14,6 @@ export default function ImageUpload({ handleImageUpload, openWidget, imageUrl, i
           <div className="form-group">
             <input type="file" />
           </div>
-
           <button type="button" className="btn" onClick={handleImageUpload}>
             Submit
           </button>
