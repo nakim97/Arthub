@@ -1,5 +1,4 @@
 import axios from "axios";
-var ytsr = require("ytsr");
 
 class ApiClient {
   constructor(remoteHostUrl) {
@@ -32,17 +31,6 @@ class ApiClient {
     }
   }
 
-  // Get youtube videos with searches
-  async searchVideos(query) {
-    // Get all the data about the videos and correct the query
-    const filters1 = await ytsr.getFilters(query);
-    const filter1 = filters1.get("Type").get("Video");
-    const options = {
-      pages: 2,
-    };
-    const searchResults = await ytsr(filter1.url, options);
-    return searchResults;
-  }
   async createPost(post) {
     return await this.request({
       endpoint: `post`,
