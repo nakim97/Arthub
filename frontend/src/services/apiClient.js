@@ -45,7 +45,7 @@ class ApiClient {
   }
   async createPost(post) {
     return await this.request({
-      endpoint: `auth/login`,
+      endpoint: `post`,
       method: `POST`,
       data: post,
     });

@@ -101,16 +101,19 @@ export const useUploadForm = ({ user, setUser, imageUrl, imageAlt }) => {
       postImgUrl: imageUrl,
     });
     if (error) setErrors((e) => ({ ...e, form: error }));
+    const myId = data?.photoUploadId
     const { data1, error1 } = await apiClient.createPost({
       post_title: form.title,
       post_description: form.description,
+      imgId: myId,
     });
-    if (error) setErrors((e) => ({ ...e, form: error }));
+    if (error1) setErrors((e) => ({ ...e, form: error1 }));
     // if (data?.user) {
     //   setUser(data.user);
     //   apiClient.setToken(data.token);
     // }
     setIsProcessing(false);
+    navigate("/");
   };
 
   return {
