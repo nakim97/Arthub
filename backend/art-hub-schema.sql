@@ -70,16 +70,16 @@ CREATE TABLE tags (
 CREATE TABLE forumTags (
   id                    SERIAL PRIMARY KEY,
   tag_name              TEXT,
-  img_id                INTEGER NOT NULL REFERENCES photoUpload(id) ON DELETE CASCADE,
+  img_id                INTEGER NOT NULL REFERENCES forumUpload(id) ON DELETE CASCADE,
   forum_id              INTEGER NOT NULL REFERENCES forumPost(id) ON DELETE CASCADE
 );
 
 CREATE TABLE likedPost (
    id                    SERIAL PRIMARY KEY,
-   photo_post_id         INTEGER NOT NULL REFERENCES photoPost(img_id) ON DELETE CASCADE
+   photo_post_id         INTEGER NOT NULL REFERENCES photoPost(id) ON DELETE CASCADE
 );
 
 CREATE TABLE likedForumPost (
    id                    SERIAL PRIMARY KEY,
-   forum_post_id         INTEGER NOT NULL REFERENCES forumPost(img_id) ON DELETE CASCADE
+   forum_post_id         INTEGER NOT NULL REFERENCES forumPost(id) ON DELETE CASCADE
 );
