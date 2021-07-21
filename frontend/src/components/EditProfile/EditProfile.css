@@ -1,6 +1,16 @@
+.user .banner {
+  display: flex;
+  color: white;
+  margin-left: 2rem;
+}
+
+.user .banner p {
+  margin-top: 4rem;
+}
+
 .user .banner img {
   display: flex;
-  width: 100%;
+  width: 20%;
 }
 
 .user .profilePic img {
@@ -20,15 +30,19 @@
   display: flex;
   color: white;
 }
+.user .userInfo .nameInfo {
+  margin-top: 2rem;
+  text-align: left;
+}
 
 .user .userInfo .name {
-  margin-left: 2rem;
-  margin-top: 2rem;
-  font-size: x-large;
+  margin-left: 8rem;
+
+  font-size: medium;
 }
 .user .userInfo .name .username {
-  display: flex;
-  margin-top: -2rem;
+  padding-top: 1rem;
+  margin-left: 0rem;
   font-size: medium;
 }
 
@@ -39,6 +53,16 @@
   padding-left: 2rem;
   padding-right: 2rem;
   color: white;
+}
+
+.user .uploadButn {
+  display: flex;
+  margin-left: 4.5rem;
+}
+
+.user .uploadButn2 {
+  display: flex;
+  margin-left: 2rem;
 }
 
 .user .portfolioArea {
@@ -90,4 +114,25 @@
   object-fit: cover;
   width: 100%;
   height: 33vh;
+}
+
+.user .SaveCancel {
+  display: flex;
+  margin-top: 3rem;
+  margin-left: 70rem;
+}
+.user .SaveCancel .saveButn {
+  margin-left: 2rem;
+}
+
+.user .textSpace {
+  display: flex;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.user .submitButn {
+  display: flex;
+  padding-top: 1rem;
+  padding-left: 2rem;
 }

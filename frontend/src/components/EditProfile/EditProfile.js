@@ -1,5 +1,6 @@
 import "./EditProfile.css";
 import Navbar from "../Navbar/Navbar";
+import formDes from "./form.js";
 import userBanner from "../../Assets/userBanner.png";
 import person2 from "../../Assets/person2.png";
 import homefeed1 from "../../Assets/homefeed1.jpg";
@@ -9,12 +10,43 @@ import homefeed4 from "../../Assets/homefeed4.jpg";
 import homefeed5 from "../../Assets/homefeed5.jpg";
 import homefeed6 from "../../Assets/homefeed6.jpg";
 
-export default function UserProfile() {
+export default function editProfile() {
   return (
     <div className="user">
       <Navbar />
 
+      <div className="userInfo">
+        <div className="profilePic">
+          <img className="bannerImg" src={person2} alt="user profile picture" />
+        </div>
+        <div className="nameInfo">
+          <div className="name">
+            <p>John Smith</p>
+            <div className="username">
+              <p>John_S23</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="uploadButn">
+        <button>Upload</button>
+      </div>
+
+      <div className="description">
+        <h3>Biliograpghy</h3>
+      </div>
+
+      <div className="textSpace">
+        <textarea id="w3review" name="w3review" rows="4" cols="120">
+         
+        </textarea>
+      </div>
+      <div className="submitButn">
+        <input type="submit" value="Submit" />
+      </div>
       <div className="banner">
+        <p>Banner Image: </p>
         <img
           className="bannerImg"
           src={userBanner}
@@ -22,74 +54,16 @@ export default function UserProfile() {
         />
       </div>
 
-      <div className="userInfo">
-        <div className="profilePic">
-          <img className="bannerImg" src={person2} alt="user profile picture" />
-        </div>
-
-        <div className="name">
-          <p>John Smith</p>
-          <div className="username">
-            <p>John_S23</p>
-          </div>
-        </div>
+      <div className="uploadButn2">
+        <button>Upload</button>
       </div>
 
-      <div className="description">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ornare
-          turpis at libero ultricies ullamcorper. Curabitur finibus libero eu
-          urna finibus aliquet. Vivamus ut bibendum quam. Aliquam erat volutpat.
-          Aenean eu ligula et dui scelerisque maximus nec ut sapien.{" "}
-        </p>
-      </div>
-
-      <div className="portfolioArea">
-        <div className="Portfolio">
-          <h2>Portfolio</h2>
+      <div className="SaveCancel">
+        <div className="cancelButn">
+          <button>Cancel</button>
         </div>
-
-        <div className="editPageButns">
-          <div className="editPortfolio">
-            <p>Edit Portfolio</p>
-          </div>
-
-          <div className="editProfile">
-            <p>Edit Profile</p>
-          </div>
-        </div>
-      </div>
-
-      <div className="pictureArea">
-        <div className="image">
-          <img src={homefeed1} alt="user portfolio image 1" />
-        </div>
-        <div className="image">
-          <img src={homefeed2} alt="user portfolio image 2" />
-        </div>
-        <div className="image">
-          <img src={homefeed3} alt="user portfolio image 3" />
-        </div>
-        <div className="image">
-          <img src={homefeed4} alt="user portfolio image 4" />
-        </div>
-        <div className="image">
-          <img src={homefeed5} alt="user portfolio image 5" />
-        </div>
-        <div className="image">
-          <img src={homefeed6} alt="user portfolio image 6" />
-        </div>
-        <div className="image">
-          <img src={homefeed1} alt="user portfolio image 1" />
-        </div>
-        <div className="image">
-          <img src={homefeed2} alt="user portfolio image 2" />
-        </div>
-        <div className="image">
-          <img src={homefeed3} alt="user portfolio image 3" />
-        </div>
-        <div className="image">
-          <img src={homefeed4} alt="user portfolio image 4" />
+        <div className="saveButn">
+          <button>Save</button>
         </div>
       </div>
     </div>
