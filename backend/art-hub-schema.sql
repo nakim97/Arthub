@@ -25,7 +25,7 @@ CREATE TABLE photoPost (
   img_id                INTEGER NOT NULL REFERENCES photoUpload(id) ON DELETE CASCADE,
   post_title            TEXT NOT NULL,
   post_description      TEXT,
-  photo_created_at      DATE NOT NULL
+  photo_created_at      TIMESTAMP DEFAULT NOW()
 );
 
 
@@ -34,7 +34,7 @@ CREATE TABLE photoComments (
   user_id               INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
   post_id               INTEGER NOT NULL REFERENCES photoPost(id) ON DELETE CASCADE,
   comment_description   TEXT,
-  comment_created_at    DATE NOT NULL
+  comment_created_at    TIMESTAMP DEFAULT NOW()
 );
 
 CREATE TABLE forumUpload (
@@ -49,7 +49,7 @@ CREATE TABLE forumPost (
   img_id                INTEGER NOT NULL REFERENCES forumUpload(id) ON DELETE CASCADE,
   forum_title           TEXT NOT NULL,
   forum_description     TEXT,
-  forum_created_at      DATE NOT NULL
+  forum_created_at      TIMESTAMP DEFAULT NOW()
 );
 
 CREATE TABLE forumComments (
@@ -57,7 +57,7 @@ CREATE TABLE forumComments (
   user_id               INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
   forum_id              INTEGER NOT NULL REFERENCES forumPost(id) ON DELETE CASCADE,
   comment_description   TEXT,
-  comment_created_at    DATE NOT NULL
+  comment_created_at    TIMESTAMP DEFAULT NOW()
 );
 
 CREATE TABLE tags (
