@@ -189,10 +189,10 @@ export default function Community({ user, handleOnLogout }) {
           <p className="postAuthor"> by Stella</p>
           <p className="likeComments" style={{ textAlign: "left" }}>
             {" "}
-            <ThumbUpIcon style={{ fontSize: "15px" }} /> 23 comments
             <QuestionAnswerIcon
               style={{ fontSize: "15px", marginLeft: "10px" }}
-            />{" "}
+            /> 23 comments{" "}
+            <ThumbUpIcon style={{ fontSize: "15px" }} />{" "}
             44 likes{" "}
             <span
               className="communityTime"
