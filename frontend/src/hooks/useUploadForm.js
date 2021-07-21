@@ -6,6 +6,7 @@ import Checkbox from "@material-ui/core/Checkbox";
 
 export const useUploadForm = ({ user, setUser, imageUrl, imageAlt }) => {
   const navigate = useNavigate();
+  const [isNavigating, setIsNavigating] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
   const [checked, setChecked] = useState(true);
   const [checked1, setChecked1] = useState(true);
@@ -28,14 +29,12 @@ export const useUploadForm = ({ user, setUser, imageUrl, imageAlt }) => {
     checked: {},
   })((props) => <Checkbox color="default" {...props} />);
 
-  // useEffect(() => {
-  //   // if user is not already logged in,
-  //   // redirect them to the register page
-  //   console.log(user)
-  //   if (!user?.email) {
-  //     navigate("/register");
-  //   }
-  // }, [user, navigate]);
+  useEffect(() => {
+    // We are done processing, go to the main page
+    if (isNavigating) {
+      navigate("/");
+    }
+  }, [isNavigating, navigate]);
 
   const handleChange = (event) => {
     setChecked(event.target.checked);
@@ -48,24 +47,24 @@ export const useUploadForm = ({ user, setUser, imageUrl, imageAlt }) => {
   };
 
   const handleOnInputChange = (event) => {
-    if (event.target.name === "email") {
-      if (event.target.value.indexOf("@") === -1) {
-        setErrors((e) => ({ ...e, email: "Please enter a valid email." }));
-      } else {
-        setErrors((e) => ({ ...e, email: null }));
-      }
-    }
+    // if (event.target.name === "email") {
+    //   if (event.target.value.indexOf("@") === -1) {
+    //     setErrors((e) => ({ ...e, email: "Please enter a valid email." }));
+    //   } else {
+    //     setErrors((e) => ({ ...e, email: null }));
+    //   }
+    // }
 
-    if (event.target.name === "passwordConfirm") {
-      if (event.target.value !== form.password) {
-        setErrors((e) => ({
-          ...e,
-          passwordConfirm: "Passwords do not match.",
-        }));
-      } else {
-        setErrors((e) => ({ ...e, passwordConfirm: null }));
-      }
-    }
+    // if (event.target.name === "passwordConfirm") {
+    //   if (event.target.value !== form.password) {
+    //     setErrors((e) => ({
+    //       ...e,
+    //       passwordConfirm: "Passwords do not match.",
+    //     }));
+    //   } else {
+    //     setErrors((e) => ({ ...e, passwordConfirm: null }));
+    //   }
+    // }
 
     setForm((f) => ({ ...f, [event.target.name]: event.target.value }));
   };
@@ -74,13 +73,13 @@ export const useUploadForm = ({ user, setUser, imageUrl, imageAlt }) => {
     setIsProcessing(true);
     setErrors((e) => ({ ...e, form: null }));
 
-    if (form.passwordConfirm !== form.password) {
-      setErrors((e) => ({ ...e, passwordConfirm: "Passwords do not match." }));
-      setIsProcessing(false);
-      return;
-    } else {
-      setErrors((e) => ({ ...e, passwordConfirm: null }));
-    }
+    // if (form.passwordConfirm !== form.password) {
+    //   setErrors((e) => ({ ...e, passwordConfirm: "Passwords do not match." }));
+    //   setIsProcessing(false);
+    //   return;
+    // } else {
+    //   setErrors((e) => ({ ...e, passwordConfirm: null }));
+    // }
 
     // function splitName(name) {
     //   let arr = [];
@@ -101,10 +100,11 @@ export const useUploadForm = ({ user, setUser, imageUrl, imageAlt }) => {
       postImgUrl: imageUrl,
     });
     if (error) setErrors((e) => ({ ...e, form: error }));
-    const myId = data?.photoUploadId
+    console.log("myd", data?.image.id)
+    const myId = data?.image.id
     const { data1, error1 } = await apiClient.createPost({
-      post_title: form.title,
-      post_description: form.description,
+      postTitle: form.title,
+      postDescription: form.description,
       imgId: myId,
     });
     if (error1) setErrors((e) => ({ ...e, form: error1 }));
@@ -113,7 +113,7 @@ export const useUploadForm = ({ user, setUser, imageUrl, imageAlt }) => {
     //   apiClient.setToken(data.token);
     // }
     setIsProcessing(false);
-    navigate("/");
+    setIsNavigating(true);
   };
 
   return {
