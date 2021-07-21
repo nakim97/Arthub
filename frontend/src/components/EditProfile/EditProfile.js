@@ -1,6 +1,5 @@
 import "./EditProfile.css";
 import Navbar from "../Navbar/Navbar";
-import formDes from "./form.js";
 import userBanner from "../../Assets/userBanner.png";
 import person2 from "../../Assets/person2.png";
 import homefeed1 from "../../Assets/homefeed1.jpg";
@@ -38,9 +37,7 @@ export default function editProfile() {
       </div>
 
       <div className="textSpace">
-        <textarea id="w3review" name="w3review" rows="4" cols="120">
-         
-        </textarea>
+        <textarea id="w3review" name="w3review" rows="4" cols="120"></textarea>
       </div>
       <div className="submitButn">
         <input type="submit" value="Submit" />
