@@ -6,6 +6,7 @@ import FormControl from "@material-ui/core/FormControl";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import { useUploadForm } from "../../hooks/useUploadForm";
 import ImageUpload from "../ImageUpload/ImageUpload";
+import { useImageUpload } from "../../hooks/useImageUpload";
 export default function Upload({ user, setUser }) {
   const tagOptions = [
     { key: 1, label: "Horror", value: "horror" },
@@ -28,7 +29,8 @@ export default function Upload({ user, setUser }) {
     handleOnSubmit,
     isProcessing,
   } = useUploadForm({ user, setUser });
-
+  const { handleImageUpload, openWidget, imageUrl, imageAlt } =
+  useImageUpload();
   return (
     <div className="upload">
       <Navbar />
@@ -47,7 +49,8 @@ export default function Upload({ user, setUser }) {
         {/* <div className="uploadImage">
           <img className="image" src={homefeed1} alt="Upload Image template" />
         </div> */}
-        <ImageUpload />
+        <ImageUpload handleImageUpload={handleImageUpload} openWidget={openWidget} imageUrl={imageUrl} imageAlt={imageAlt} />
+        {console.log(imageUrl)}
         <div className="uploadData">
           <div className="postName">
             <p>Title of work</p>

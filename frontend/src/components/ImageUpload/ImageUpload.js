@@ -1,9 +1,7 @@
 import "./ImageUpload.css";
-import { useImageUpload } from "../../hooks/useImageUpload";
 
-export default function ImageUpload() {
-  const { handleImageUpload, openWidget, imageUrl, imageAlt } =
-    useImageUpload();
+
+export default function ImageUpload({ handleImageUpload, openWidget, imageUrl, imageAlt }) {
   return (
     <main className="ImageUpload">
       <section className="right-side white">
