@@ -1,4 +1,5 @@
 import "./UserProfile.css";
+import { Link } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import userBanner from "../../Assets/userBanner.png";
 import person2 from "../../Assets/person2.png";
@@ -51,11 +52,11 @@ export default function UserProfile() {
 
         <div className="editPageButns">
           <div className="editPortfolio">
-            <p>Edit Portfolio</p>
+            <Link to="/editportfolio">Edit Portfolio</Link>
           </div>
 
           <div className="editProfile">
-            <p>Edit Profile</p>
+            <Link to="/edit">Edit Profile</Link>
           </div>
         </div>
       </div>
