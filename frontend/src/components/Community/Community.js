@@ -12,10 +12,10 @@ import homefeed4 from "../../Assets/homefeed4.jpg";
 import homefeed5 from "../../Assets/homefeed5.jpg";
 import homefeed6 from "../../Assets/homefeed6.jpg";
 
-export default function Community({user, setUser}){
+export default function Community({user, handleOnLogout}){
     return(
         <div className="community">
-            <Navbar user={user} setUser={setUser} />
+            <Navbar user={user} handleOnLogout={handleOnLogout} />
             <CommunityNavbar />
 
             <div className="trendingCommunity">

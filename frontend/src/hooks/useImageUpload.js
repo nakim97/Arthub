@@ -3,7 +3,6 @@ import { useState } from "react";
 export const useImageUpload = () => {
   const [imageUrl, setImageUrl] = useState(null);
   const [imageAlt, setImageAlt] = useState(null);
-  const [imageId, setImageId] = useState(null);
   // We will create the widget and open it up when clicked.
   const openWidget = () => {
     // create the widget
@@ -17,7 +16,7 @@ export const useImageUpload = () => {
           // This code only runs and gets the image
           // when we successfully open and upload the image
           if (!error && result && result.event === "success") {
-            console.log(result.info)
+            console.log(result.info);
             setImageUrl(result.info.secure_url);
             setImageAlt(`An image of ${result.info.original_filename}`);
           }

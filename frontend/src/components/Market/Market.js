@@ -9,10 +9,10 @@ import homefeed7 from "../../Assets/homefeed7.jpg"
 import homefeed5 from "../../Assets/homefeed5.jpg"
 import homefeed6 from "../../Assets/homefeed6.jpg"
 
-export default function Market({user, setUser}) {
+export default function Market({user, handleOnLogout}) {
   return (
     <div className="market">
-      <Navbar user={user} setUser={setUser} />
+      <Navbar user={user} handleOnLogout={handleOnLogout} />
       <div className="banner" style={{ backgroundImage: `url(${marketbanner})`}}>
         <div className="bannerSearch" >
           <h4> ArtHub Marketplace</h4>

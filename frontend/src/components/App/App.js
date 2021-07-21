@@ -60,20 +60,20 @@ export default function App() {
             path="/register"
             element={<Register user={user} setUser={setUser} />}
           />
-          <Route path="/about" element={<About />} />
-          <Route path="/explore" element={<Explore />} />
-          <Route path="/learning" element={<Learning />} />
-          <Route path="/market" element={<Market />} />
-          <Route path="/community" element={<Community />} />
-          <Route path="/me" element={<UserProfile />} />
-          <Route path="/upload" element={<Upload user={user} setUser={setUser} />} />
-          <Route path="/post" element={<Post />} />
-          <Route path="/edit" element={<EditProfile />} />
+          <Route path="/about" element={<About user={user} handleOnLogout={handleOnLogout} />} />
+          <Route path="/explore" element={<Explore user={user} handleOnLogout={handleOnLogout} />} />
+          <Route path="/learning" element={<Learning user={user} handleOnLogout={handleOnLogout} />} />
+          <Route path="/market" element={<Market user={user} handleOnLogout={handleOnLogout} />} />
+          <Route path="/community" element={<Community user={user} handleOnLogout={handleOnLogout} />} />
+          <Route path="/me" element={<UserProfile user={user} handleOnLogout={handleOnLogout} />} />
+          <Route path="/upload" element={<Upload user={user} handleOnLogout={handleOnLogout} />} />
+          <Route path="/post" element={<Post user={user} handleOnLogout={handleOnLogout} />} />
+          <Route path="/edit" element={<EditProfile user={user} handleOnLogout={handleOnLogout} />} />
 
-          <Route path="/editportfolio" element={<EditPortfolio />} />
-          <Route path="/createforumpost" element={<CreateForumPost />} />
+          <Route path="/editportfolio" element={<EditPortfolio user={user} handleOnLogout={handleOnLogout} />} />
+          <Route path="/createforumpost" element={<CreateForumPost user={user} handleOnLogout={handleOnLogout} />} />
           <Route path="/image" element={<ImageUpload />} />
-          <Route path="/communitypostedit" element={<CommunityPostEdit />} />
+          <Route path="/communitypostedit" element={<CommunityPostEdit user={user} handleOnLogout={handleOnLogout} />} />
         </Routes>
       </BrowserRouter>
     </div>

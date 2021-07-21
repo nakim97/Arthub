@@ -1,13 +1,12 @@
 import "./Upload.css";
 import { Link } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
-import homefeed1 from "../../Assets/homefeed1.jpg";
 import FormControl from "@material-ui/core/FormControl";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import { useUploadForm } from "../../hooks/useUploadForm";
 import ImageUpload from "../ImageUpload/ImageUpload";
 import { useImageUpload } from "../../hooks/useImageUpload";
-export default function Upload({ user, setUser }) {
+export default function Upload({ user, handleOnLogout }) {
   const { handleImageUpload, openWidget, imageUrl, imageAlt } =
     useImageUpload();
   const {
@@ -31,7 +30,7 @@ export default function Upload({ user, setUser }) {
   if (!user.email) {
     return (
       <div className="total">
-        <Navbar user={user} setUser={setUser} />
+        <Navbar user={user} handleOnLogout={handleOnLogout} />
         <div className="title">
           <h2>You must be logged in to create a post.</h2>
         </div>
@@ -41,7 +40,7 @@ export default function Upload({ user, setUser }) {
   // Normal view
   return (
     <div className="upload">
-      <Navbar user={user} setUser={setUser} />
+      <Navbar user={user} handleOnLogout={handleOnLogout} />
 
       <div className="title">
         <h2>Create A New Post</h2>

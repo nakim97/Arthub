@@ -9,10 +9,10 @@ import homefeed4 from "../../Assets/homefeed4.jpg";
 import homefeed5 from "../../Assets/homefeed5.jpg";
 import homefeed6 from "../../Assets/homefeed6.jpg";
 
-export default function editProfile({user, setUser}) {
+export default function editProfile({user, handleOnLogout}) {
   return (
     <div className="user">
-      <Navbar user={user} setUser={setUser}/>
+      <Navbar user={user} handleOnLogout={handleOnLogout}/>
 
       <div className="userInfo">
         <div className="profilePic">

@@ -10,10 +10,10 @@ import homefeed7 from "../../Assets/homefeed7.jpg";
 import homefeed4 from "../../Assets/homefeed4.jpg";
 import homefeed6 from "../../Assets/homefeed6.jpg";
 
-export default function Learning({user, setUser}) {
+export default function Learning({user, handleOnLogout}) {
   return (
     <div className="learning">
-      <Navbar user={user} setUser={setUser} />
+      <Navbar user={user} handleOnLogout={handleOnLogout} />
 
       <div
         className="banner"

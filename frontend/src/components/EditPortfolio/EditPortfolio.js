@@ -13,10 +13,10 @@ import homefeed6 from "../../Assets/homefeed6.jpg";
 
 
 
-export default function EditPortfolio({user, setUser}){
+export default function EditPortfolio({user, handleOnLogout}){
     return(
         <div className="EditPortfolio">
-            <Navbar user={user} setUser={setUser} />
+            <Navbar user={user} handleOnLogout={handleOnLogout} />
             <div className="content">
                 <h3 className="title">Edit Your Portfolio</h3>
             </div>

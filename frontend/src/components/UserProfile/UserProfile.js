@@ -10,10 +10,10 @@ import homefeed4 from "../../Assets/homefeed4.jpg";
 import homefeed5 from "../../Assets/homefeed5.jpg";
 import homefeed6 from "../../Assets/homefeed6.jpg";
 
-export default function UserProfile() {
+export default function UserProfile({ user, handleOnLogout }) {
   return (
     <div className="user">
-      <Navbar />
+      <Navbar user={user} handleOnLogout={handleOnLogout}/>
 
       <div className="banner">
         <img
