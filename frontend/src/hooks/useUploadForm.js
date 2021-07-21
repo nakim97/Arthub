@@ -32,7 +32,7 @@ export const useUploadForm = ({ user, setUser, imageUrl, imageAlt }) => {
   useEffect(() => {
     // We are done processing, go to the main page
     if (isNavigating) {
-      navigate("/");
+      navigate("/me");
     }
   }, [isNavigating, navigate]);
 

@@ -32,7 +32,7 @@ export default function Upload({ user, setUser }) {
     isProcessing,
   } = useUploadForm({ user, setUser, imageUrl, imageAlt });
 
-  
+  //Unauthenticated view
   if (!user.email) {
     return (
       <div className="total">
@@ -61,7 +61,7 @@ export default function Upload({ user, setUser }) {
           <img className="image" src={homefeed1} alt="Upload Image template" />
         </div> */}
         <ImageUpload handleImageUpload={handleImageUpload} openWidget={openWidget} imageUrl={imageUrl} imageAlt={imageAlt} />
-        {console.log("image", imageUrl)}
+        {/* {console.log("image", imageUrl)} */}
         <div className="uploadData">
           <div className="postName">
             <p>Title of work</p>
