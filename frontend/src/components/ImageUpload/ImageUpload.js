@@ -1,10 +1,10 @@
 import "./ImageUpload.css";
 
-export default function ImageUpload({ handleImageUpload, openWidget, imageUrl, imageAlt }) {
+export default function ImageUpload({ handleImageUpload, openWidget, imageUrl, imageAlt, name }) {
   return (
     <main className="ImageUpload">
       <section className="right-side white">
-        <p>Picture</p>
+        <p>{name}</p>
         {imageUrl && (
           <img src={imageUrl} alt={imageAlt} className="displayed-image" />
         )}

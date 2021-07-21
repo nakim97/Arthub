@@ -58,6 +58,7 @@ export default function Upload({ user, handleOnLogout }) {
             openWidget={openWidget}
             imageUrl={imageUrl}
             imageAlt={imageAlt}
+            name={"Picture"}
           />
           <div className="uploadData">
             <div className="postName">
