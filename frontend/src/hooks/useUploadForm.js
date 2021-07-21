@@ -96,7 +96,12 @@ export const useUploadForm = ({ user, setUser }) => {
     }
 
     const myArr = splitName(form.name);
-    const { data, error } = await apiClient.createPost({
+    const { data, error } = await apiClient.createImage({
+      post_title: form.title,
+      post_description: form.description,
+    });
+    if (error) setErrors((e) => ({ ...e, form: error }));
+    const { data1, error1 } = await apiClient.createPost({
       post_title: form.title,
       post_description: form.description,
     });
