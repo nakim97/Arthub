@@ -14,6 +14,8 @@ export default function Upload({ user, setUser }) {
     { key: 3, label: "Cartoon", value: "cartoon" },
     { key: 4, label: "Realistic", value: "realistic" },
   ];
+  const { handleImageUpload, openWidget, imageUrl, imageAlt } =
+  useImageUpload();
   const {
     CustomColorCheckbox,
     checked,
@@ -28,10 +30,9 @@ export default function Upload({ user, setUser }) {
     handleOnInputChange,
     handleOnSubmit,
     isProcessing,
-  } = useUploadForm({ user, setUser });
+  } = useUploadForm({ user, setUser, imageUrl, imageAlt });
 
-  const { handleImageUpload, openWidget, imageUrl, imageAlt } =
-  useImageUpload();
+  
   if (!user.email) {
     return (
       <div className="total">

@@ -59,7 +59,7 @@ class ApiClient {
   }
   async createImage(image) {
     return await this.request({
-      endpoint: `auth/login`,
+      endpoint: `image`,
       method: `POST`,
       data: image,
     });
