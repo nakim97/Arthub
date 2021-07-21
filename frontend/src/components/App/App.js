@@ -12,7 +12,6 @@ import Community from "../Community/Community";
 import apiClient from "../../services/apiClient";
 import UserProfile from "../UserProfile/UserProfile";
 import EditPortfolio from "../EditPortfolio/EditPortfolio";
-import ImageUpload from "../ImageUpload/ImageUpload";
 import CreateForumPost from "../CreateForumPost/CreateForumPost";
 import CommunityPostEdit from "../CommunityPostEdit/CommunityPostEdit";
 import Upload from "../Upload/Upload";
@@ -20,7 +19,7 @@ import Post from "../Post/Post";
 import EditProfile from "../EditProfile/EditProfile";
 
 export default function App() {
-  const [isFetching, setFetching] = useState(false);
+
   const [error, setError] = useState(null);
   // This is just in case for filtering
   const [filterInputValue, setInputValue] = useState(null);
@@ -44,22 +43,14 @@ export default function App() {
     setUser({});
     setError(null);
   };
+
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route
-            path="/"
-            element={<Home user={user} handleOnLogout={handleOnLogout} />}
-          />
-          <Route
-            path="/login"
-            element={<Login user={user} setUser={setUser} />}
-          />
-          <Route
-            path="/register"
-            element={<Register user={user} setUser={setUser} />}
-          />
+          <Route path="/" element={<Home user={user} handleOnLogout={handleOnLogout} />} />
+          <Route path="/login" element={<Login user={user} setUser={setUser} />} />
+          <Route path="/register" element={<Register user={user} setUser={setUser} />} />
           <Route path="/about" element={<About user={user} handleOnLogout={handleOnLogout} />} />
           <Route path="/explore" element={<Explore user={user} handleOnLogout={handleOnLogout} />} />
           <Route path="/learning" element={<Learning user={user} handleOnLogout={handleOnLogout} />} />
