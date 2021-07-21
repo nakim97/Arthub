@@ -4,7 +4,7 @@ import apiClient from "../services/apiClient";
 import { withStyles } from "@material-ui/core/styles";
 import Checkbox from "@material-ui/core/Checkbox";
 
-export const useUploadForm = ({ user, setUser, imageUrl, imageAlt }) => {
+export const useUploadForm = ({ imageUrl, imageAlt }) => {
   const navigate = useNavigate();
   const [isNavigating, setIsNavigating] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
@@ -17,6 +17,12 @@ export const useUploadForm = ({ user, setUser, imageUrl, imageAlt }) => {
     description: "",
     tag: "",
   });
+  const tagOptions = [
+    { key: 1, label: "Horror", value: "horror" },
+    { key: 2, label: "Funny", value: "funny" },
+    { key: 3, label: "Cartoon", value: "cartoon" },
+    { key: 4, label: "Realistic", value: "realistic" },
+  ];
   // Defining a custom check box with a green color
   // and setting the checkbox component to use that
   const CustomColorCheckbox = withStyles({
@@ -117,6 +123,7 @@ export const useUploadForm = ({ user, setUser, imageUrl, imageAlt }) => {
   };
 
   return {
+    tagOptions,
     CustomColorCheckbox,
     checked,
     checked1,
