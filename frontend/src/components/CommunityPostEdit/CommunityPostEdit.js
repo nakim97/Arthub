@@ -5,11 +5,11 @@ import React from "react";
 import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
 
 
-export default function CommunityPostEdit(){
+export default function CommunityPostEdit({user, setUser}){
   
     return(
         <div className="EditForumPost">
-            <Navbar/>
+            <Navbar user={user} setUser={setUser}/>
             <CommunityNavbar/>
             <div className="container">
                 <h1>EDIT YOUR FORUM POST</h1>

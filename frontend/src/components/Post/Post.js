@@ -9,10 +9,10 @@ import homefeed4 from "../../Assets/homefeed4.jpg";
 import homefeed5 from "../../Assets/homefeed5.jpg";
 import homefeed6 from "../../Assets/homefeed6.jpg";
 
-export default function Explore() {
+export default function Explore({user, setUser}) {
   return (
     <div className="user">
-      <Navbar />
+      <Navbar user={user} setUser={setUser} />
 
       <div className="userInfo">
         <div className="profilePic">

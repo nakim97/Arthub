@@ -5,11 +5,11 @@ import React from "react";
 import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
 
 
-export default function CreateForumPost(){
+export default function CreateForumPost({user, setUser}){
   
     return(
         <div className="CreateForumPost">
-            <Navbar/>
+            <Navbar user={user} setUser={setUser}/>
             <CommunityNavbar/>
             <div className="container">
                 <h1>CREATE A NEW FORUM POST</h1>

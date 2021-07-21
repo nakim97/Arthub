@@ -13,10 +13,10 @@ import homefeed6 from "../../Assets/homefeed6.jpg";
 
 
 
-export default function EditPortfolio(){
+export default function EditPortfolio({user, setUser}){
     return(
         <div className="EditPortfolio">
-            <Navbar />
+            <Navbar user={user} setUser={setUser} />
             <div className="content">
                 <h3 className="title">Edit Your Portfolio</h3>
             </div>

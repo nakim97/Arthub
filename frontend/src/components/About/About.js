@@ -5,10 +5,10 @@ import team2 from "../../Assets/team2.jpeg";
 import team3 from "../../Assets/team3.jpeg";
 import Navbar from "../Navbar/Navbar";
 
-export default function About() {
+export default function About({user, setUser}) {
   return (
     <div className="about">
-      <Navbar />
+      <Navbar user={user} setUser={setUser} />
 
       <div className="banner">
         <img

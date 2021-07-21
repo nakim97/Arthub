@@ -82,21 +82,21 @@ export const useUploadForm = ({ user, setUser, imageUrl, imageAlt }) => {
       setErrors((e) => ({ ...e, passwordConfirm: null }));
     }
 
-    function splitName(name) {
-      let arr = [];
-      let index = name.indexOf(" "); // Gets the first index where a space occurs
-      let fName = name.substr(0, index); // Gets the first part
-      let lName = name.substr(index + 1); // Gets the second part
-      arr[0] = fName;
-      arr[1] = lName;
-      return arr;
-    }
+    // function splitName(name) {
+    //   let arr = [];
+    //   let index = name.indexOf(" "); // Gets the first index where a space occurs
+    //   let fName = name.substr(0, index); // Gets the first part
+    //   let lName = name.substr(index + 1); // Gets the second part
+    //   arr[0] = fName;
+    //   arr[1] = lName;
+    //   return arr;
+    // }
 
-    function joinName(fName, lName) {
-      return fName + lName;
-    }
+    // function joinName(fName, lName) {
+    //   return fName + lName;
+    // }
 
-    const myArr = splitName(form.name);
+    // const myArr = splitName(form.name);
     const { data, error } = await apiClient.createImage({
       postImgUrl: imageUrl,
     });
