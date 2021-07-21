@@ -28,13 +28,14 @@ export const useUploadForm = ({ user, setUser }) => {
     checked: {},
   })((props) => <Checkbox color="default" {...props} />);
 
-  useEffect(() => {
-    // if user is already logged in,
-    // redirect them to the home page
-    if (user?.email) {
-      navigate("/");
-    }
-  }, [user, navigate]);
+  // useEffect(() => {
+  //   // if user is not already logged in,
+  //   // redirect them to the register page
+  //   console.log(user)
+  //   if (!user?.email) {
+  //     navigate("/register");
+  //   }
+  // }, [user, navigate]);
 
   const handleChange = (event) => {
     setChecked(event.target.checked);

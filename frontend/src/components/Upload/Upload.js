@@ -29,11 +29,21 @@ export default function Upload({ user, setUser }) {
     handleOnSubmit,
     isProcessing,
   } = useUploadForm({ user, setUser });
+
   const { handleImageUpload, openWidget, imageUrl, imageAlt } =
   useImageUpload();
+  if (!user.email) {
+    return (
+      <div className="total">
+    <Navbar user={user} setUser={setUser} />
+    <div className="title">
+    <h2>You must be logged in to create a post.</h2>
+  </div>
+  </div>)
+  }
   return (
     <div className="upload">
-      <Navbar />
+      <Navbar user={user} setUser={setUser} />
 
       <div className="title">
         <h2>Create A New Post</h2>
@@ -50,7 +60,7 @@ export default function Upload({ user, setUser }) {
           <img className="image" src={homefeed1} alt="Upload Image template" />
         </div> */}
         <ImageUpload handleImageUpload={handleImageUpload} openWidget={openWidget} imageUrl={imageUrl} imageAlt={imageAlt} />
-        {console.log(imageUrl)}
+        {console.log("image", imageUrl)}
         <div className="uploadData">
           <div className="postName">
             <p>Title of work</p>

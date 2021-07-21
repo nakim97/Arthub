@@ -66,7 +66,7 @@ export default function App() {
           <Route path="/market" element={<Market />} />
           <Route path="/community" element={<Community />} />
           <Route path="/me" element={<UserProfile />} />
-          <Route path="/upload" element={<Upload />} />
+          <Route path="/upload" element={<Upload user={user} setUser={setUser} />} />
           <Route path="/post" element={<Post />} />
           <Route path="/edit" element={<EditProfile />} />
 
