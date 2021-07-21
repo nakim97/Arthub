@@ -6,8 +6,7 @@ class Image {
     const results = await db.query(
       `
     SELECT pu.id AS "photoUploadId",
-    pu.post_img_url AS "postImageUrl",
-    pu.type AS "type",
+    pu.post_img_url AS "postImgUrl",
     u.email AS "userEmail"
     FROM photoUpload AS pu
     JOIN users AS u ON u.id = pu.user_id
@@ -26,12 +25,12 @@ class Image {
     }
     const results = await db.query(
       `
-            INSERT INTO photoUpload (post_img_url, type, user_id)
-            VALUES ($1, $2, (SELECT id FROM users WHERE email = $3))
+            INSERT INTO photoUpload (post_img_url, user_id)
+            VALUES ($1, (SELECT id FROM users WHERE email = $2))
             RETURNING id,
             user_id AS "userId"
             `,
-      [image.postImageUrl, image.type, user.email]
+      [image.postImgUrl, user.email]
     );
     return results.rows[0];
   }

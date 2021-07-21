@@ -12,11 +12,9 @@ export const useUploadForm = ({ user, setUser }) => {
   const [checked2, setChecked2] = useState(true);
   const [errors, setErrors] = useState({});
   const [form, setForm] = useState({
-    name: "",
-    email: "",
-    userName: "",
-    password: "",
-    passwordConfirm: "",
+    title: "",
+    description: "",
+    tag: "",
   });
   // Defining a custom check box with a green color
   // and setting the checkbox component to use that
@@ -98,18 +96,15 @@ export const useUploadForm = ({ user, setUser }) => {
     }
 
     const myArr = splitName(form.name);
-    const { data, error } = await apiClient.signupUser({
-      first_name: myArr[0],
-      last_name: myArr[1],
-      username: form.userName,
-      email: form.email,
-      password: form.password,
+    const { data, error } = await apiClient.createPost({
+      post_title: form.title,
+      post_description: form.description,
     });
     if (error) setErrors((e) => ({ ...e, form: error }));
-    if (data?.user) {
-      setUser(data.user);
-      apiClient.setToken(data.token);
-    }
+    // if (data?.user) {
+    //   setUser(data.user);
+    //   apiClient.setToken(data.token);
+    // }
     setIsProcessing(false);
   };
 
@@ -123,6 +118,7 @@ export const useUploadForm = ({ user, setUser }) => {
     handleChange2,
     isProcessing,
     form,
+    setForm,
     errors,
     handleOnSubmit,
     handleOnInputChange,

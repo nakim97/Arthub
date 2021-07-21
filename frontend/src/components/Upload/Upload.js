@@ -7,6 +7,12 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import { useUploadForm } from "../../hooks/useUploadForm";
 import ImageUpload from "../ImageUpload/ImageUpload";
 export default function Upload({ user, setUser }) {
+  const tagOptions = [
+    { key: 1, label: "Horror", value: "horror" },
+    { key: 2, label: "Funny", value: "funny" },
+    { key: 3, label: "Cartoon", value: "cartoon" },
+    { key: 4, label: "Realistic", value: "realistic" },
+  ];
   const {
     CustomColorCheckbox,
     checked,
@@ -16,6 +22,7 @@ export default function Upload({ user, setUser }) {
     handleChange1,
     handleChange2,
     form,
+    setForm,
     errors,
     handleOnInputChange,
     handleOnSubmit,
@@ -34,6 +41,8 @@ export default function Upload({ user, setUser }) {
         <h2>Step 1: Post Description</h2>
       </div>
 
+      {errors.form && <span className="error">{errors.form}</span>}
+      <div className="form">
       <div className="uploadInfo">
         {/* <div className="uploadImage">
           <img className="image" src={homefeed1} alt="Upload Image template" />
@@ -42,15 +51,31 @@ export default function Upload({ user, setUser }) {
         <div className="uploadData">
           <div className="postName">
             <p>Title of work</p>
-            <input type="text" name="search" placeholder="Title..." />
+            <input type="text" name="title" placeholder="Title..." value={form.title} onChange={handleOnInputChange} />
+            {errors.title && <span className="error">{errors.title}</span>}
           </div>
           <div className="tags">
             <p>Any tags</p>
-            <input type="text" name="search" placeholder="Tags..." />
+            <select
+              name="tag"
+              onChange={(event) =>
+                setForm((f) => ({ ...f, tag: event.target.value }))
+              }
+            >
+              {tagOptions.map((tag) => (
+                <option key={tag.key} value={tag.label}>
+                  {tag.label}
+                </option>
+              ))}
+            </select>
+            {errors.tag && (
+              <span className="error">{errors.tag}</span>
+            )}
           </div>
           <div className="description">
             <p>A brief description of the art work</p>
-            <input type="text" name="search" placeholder="Description..." />
+            <input type="text" name="description" placeholder="Description..." value={form.description} onChange={handleOnInputChange} />
+            {errors.description && <span className="error">{errors.description}</span>}
           </div>
         </div>
       </div>
@@ -66,7 +91,7 @@ export default function Upload({ user, setUser }) {
       <div className="sell">
         <p>Sell for:</p>
         <div className="price">
-          <input type="text" name="search" placeholder="Description..." />
+          <input type="text" name="sell" placeholder="Selling" />
         </div>
       </div>
 
@@ -113,7 +138,7 @@ export default function Upload({ user, setUser }) {
           />
         </FormControl>
       </div>
-
+      </div>
       <div className="editPageButns">
         <button className="cancel">
           <Link to="/me">Cancel</Link>
