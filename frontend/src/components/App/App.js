@@ -72,7 +72,6 @@ export default function App() {
 
           <Route path="/editportfolio" element={<EditPortfolio user={user} handleOnLogout={handleOnLogout} />} />
           <Route path="/createforumpost" element={<CreateForumPost user={user} handleOnLogout={handleOnLogout} />} />
-          <Route path="/image" element={<ImageUpload />} />
           <Route path="/communitypostedit" element={<CommunityPostEdit user={user} handleOnLogout={handleOnLogout} />} />
         </Routes>
       </BrowserRouter>
