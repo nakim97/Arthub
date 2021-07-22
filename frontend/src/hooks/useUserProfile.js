@@ -1,119 +1,55 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import apiClient from "../services/apiClient";
-import { withStyles } from "@material-ui/core/styles";
-import Checkbox from "@material-ui/core/Checkbox";
 
-export const useUserProfile = ({ user, setUser }) => {
-  const navigate = useNavigate();
-  const [isProcessing, setIsProcessing] = useState(false);
-  const [checked, setChecked] = useState(true);
-  const [errors, setErrors] = useState({});
+export const useUserProfile = ({ user }) => {
+  // console.log(user)
+  const [isFetching, setFetching] = useState(false);
+  const [error, setError] = useState(null);
   function joinName(fName, lName) {
     return fName + " " + lName;
   }
-  const myName = joinName(user.first_name,user.last_name)
-  // const [form, setForm] = useState({
-  //   name: "",
-  //   email: "",
-  //   userName: "",
-  //   password: "",
-  //   passwordConfirm: "",
-  // });
-  // Defining a custom check box with a green color
-  // and setting the checkbox component to use that
-  const CustomColorCheckbox = withStyles({
-    root: {
-      color: "#13c552",
-      "&$checked": {
-        color: "#13c552",
-      },
-    },
-    checked: {},
-  })((props) => <Checkbox color="default" {...props} />);
+  const [posts, setPosts] = useState([]);
+  const [userInfo, setUserInfo] = useState([]);
+  const myName = joinName(user.first_name, user.last_name);
+  const username = user.username;
+  useEffect(() => {
+    const fetchPosts = async () => {
+      setFetching(true);
+      try {
+        const { data } = await apiClient.listPosts(user);
+
+        setPosts(data.postsByMe);
+      } catch (err) {
+        setError(err);
+      }
+
+      setFetching(false);
+    };
+    fetchPosts();
+  }, [user]);
 
   useEffect(() => {
-    // if user is already logged in,
-    // redirect them to the home page
-    if (user?.email) {
-      navigate("/");
-    }
-  }, [user, navigate]);
+    const fetchUsers = async () => {
+      setFetching(true);
+      try {
+        const { data } = await apiClient.listUserByEmail(user.email);
 
-  const handleChange = (event) => {
-    setChecked(event.target.checked);
-  };
+        setUserInfo(data.user);
+        console.log("user", userInfo);
+      } catch (err) {
+        setError(err);
+      }
 
-  const handleOnInputChange = (event) => {
-  //   if (event.target.name === "email") {
-  //     if (event.target.value.indexOf("@") === -1) {
-  //       setErrors((e) => ({ ...e, email: "Please enter a valid email." }));
-  //     } else {
-  //       setErrors((e) => ({ ...e, email: null }));
-  //     }
-  //   }
-
-  //   if (event.target.name === "passwordConfirm") {
-  //     if (event.target.value !== form.password) {
-  //       setErrors((e) => ({
-  //         ...e,
-  //         passwordConfirm: "Passwords do not match.",
-  //       }));
-  //     } else {
-  //       setErrors((e) => ({ ...e, passwordConfirm: null }));
-  //     }
-  //   }
-  //   setForm((f) => ({ ...f, [event.target.name]: event.target.value }));
-  // };
-  }
-  const handleOnSubmit = async () => {
-    setIsProcessing(true);
-    setErrors((e) => ({ ...e, form: null }));
-
-    // if (form.passwordConfirm !== form.password) {
-    //   setErrors((e) => ({ ...e, passwordConfirm: "Passwords do not match." }));
-    //   setIsProcessing(false);
-    //   return;
-    // } else {
-    //   setErrors((e) => ({ ...e, passwordConfirm: null }));
-    // }
-
-    // function splitName(name) {
-    //   let arr = [];
-    //   let index = name.indexOf(" "); // Gets the first index where a space occurs
-    //   let fName = name.substr(0, index); // Gets the first part
-    //   let lName = name.substr(index + 1); // Gets the second part
-    //   arr[0] = fName;
-    //   arr[1] = lName;
-    //   return arr;
-    // }
-
-    
-    // const myArr = splitName(form.name);
-    // const { data, error } = await apiClient.signupUser({
-    //   first_name: myArr[0],
-    //   last_name: myArr[1],
-    //   username: form.userName,
-    //   email: form.email,
-    //   password: form.password,
-    // });
-    // if (error) setErrors((e) => ({ ...e, form: error }));
-    // if (data?.user) {
-    //   setUser(data.user);
-    //   apiClient.setToken(data.token);
-    // }
-    setIsProcessing(false);
-  };
+      setFetching(false);
+    };
+    fetchUsers();
+  }, [user]);
 
   return {
-    // CustomColorCheckbox,
-    // checked,
-    // handleChange,
-    // isProcessing,
-    // form,
-    // errors,
-    // handleOnSubmit,
-    // handleOnInputChange,
     myName,
+    username,
+    posts,
+    userInfo,
   };
 };
