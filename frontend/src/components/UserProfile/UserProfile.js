@@ -1,48 +1,90 @@
 import "./UserProfile.css";
+import { Link } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import userBanner from "../../Assets/userBanner.png";
 import person2 from "../../Assets/person2.png";
-import homefeed1 from "../../Assets/homefeed1.jpg";
-import homefeed2 from "../../Assets/homefeed2.jpg";
-import homefeed3 from "../../Assets/homefeed3.jpg";
-import homefeed4 from "../../Assets/homefeed4.jpg";
-import homefeed5 from "../../Assets/homefeed5.jpg";
-import homefeed6 from "../../Assets/homefeed6.jpg";
+import { useState, useEffect } from "react";
+import apiClient from "../../services/apiClient";
+import { useUserProfile } from "../../hooks/useUserProfile";
 
-export default function UserProfile() {
+export default function UserProfile({ user, handleOnLogout }) {
+  const { myName, username, posts, userInfo } = useUserProfile({ user });
+  const banner_url = userInfo.banner_img_url == null;
+  const banner_img = banner_url ? (
+    <>
+      <img
+        className="bannerImg"
+        src={userBanner}
+        alt="people standing on a mountain"
+      />
+    </>
+  ) : (
+    <>
+      <img
+        className="bannerImg"
+        src={`${userInfo.banner_img_url}`}
+        alt="my banner"
+      />
+    </>
+  );
+  const profile_url = userInfo.profile_img_url == null;
+  const profile_img = profile_url ? (
+    <>
+      <img className="bannerImg" src={person2} alt="user profile picture" />
+    </>
+  ) : (
+    <>
+      <img
+        className="bannerImg"
+        src={`${userInfo.profile_img_url}`}
+        alt="my profile"
+      />
+    </>
+  );
+  const bio = userInfo.biography == null;
+  const biography = bio ? (
+    <>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ornare
+        turpis at libero ultricies ullamcorper. Curabitur finibus libero eu urna
+        finibus aliquet. Vivamus ut bibendum quam. Aliquam erat volutpat. Aenean
+        eu ligula et dui scelerisque maximus nec ut sapien.{" "}
+      </p>
+    </>
+  ) : (
+    <>
+      <p>{`${userInfo.biography}`}</p>
+    </>
+  );
+  //Unauthenticated view
+  if (!user.email) {
+    return (
+      <div className="total">
+        <Navbar user={user} handleOnLogout={handleOnLogout} />
+        <div className="title">
+          <h2>You must be logged in to view your profile.</h2>
+        </div>
+      </div>
+    );
+  }
   return (
     <div className="user">
-      <Navbar />
+      <Navbar user={user} handleOnLogout={handleOnLogout} />
 
-      <div className="banner">
-        <img
-          className="bannerImg"
-          src={userBanner}
-          alt="people standing on a mountain"
-        />
-      </div>
+      <div className="banner">{banner_img}</div>
 
       <div className="userInfo">
-        <div className="profilePic">
-          <img className="bannerImg" src={person2} alt="user profile picture" />
-        </div>
+        <div className="profilePic">{profile_img}</div>
 
         <div className="name">
-          <p>John Smith</p>
+          <p>{myName}</p>
           <div className="username">
-            <p>John_S23</p>
+            <p>{username}</p>
           </div>
         </div>
       </div>
 
-      <div className="description">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ornare
-          turpis at libero ultricies ullamcorper. Curabitur finibus libero eu
-          urna finibus aliquet. Vivamus ut bibendum quam. Aliquam erat volutpat.
-          Aenean eu ligula et dui scelerisque maximus nec ut sapien.{" "}
-        </p>
-      </div>
+      <div className="description">{biography}</div>
 
       <div className="portfolioArea">
         <div className="Portfolio">
@@ -51,46 +93,22 @@ export default function UserProfile() {
 
         <div className="editPageButns">
           <div className="editPortfolio">
-            <p>Edit Portfolio</p>
+            <Link to="/editportfolio">Edit Portfolio</Link>
           </div>
 
           <div className="editProfile">
-            <p>Edit Profile</p>
+            <Link to="/edit">Edit Profile</Link>
           </div>
         </div>
       </div>
 
       <div className="pictureArea">
-        <div className="image">
-          <img src={homefeed1} alt="user portfolio image 1" />
-        </div>
-        <div className="image">
-          <img src={homefeed2} alt="user portfolio image 2" />
-        </div>
-        <div className="image">
-          <img src={homefeed3} alt="user portfolio image 3" />
-        </div>
-        <div className="image">
-          <img src={homefeed4} alt="user portfolio image 4" />
-        </div>
-        <div className="image">
-          <img src={homefeed5} alt="user portfolio image 5" />
-        </div>
-        <div className="image">
-          <img src={homefeed6} alt="user portfolio image 6" />
-        </div>
-        <div className="image">
-          <img src={homefeed1} alt="user portfolio image 1" />
-        </div>
-        <div className="image">
-          <img src={homefeed2} alt="user portfolio image 2" />
-        </div>
-        <div className="image">
-          <img src={homefeed3} alt="user portfolio image 3" />
-        </div>
-        <div className="image">
-          <img src={homefeed4} alt="user portfolio image 4" />
-        </div>
+        {posts.map((post) => (
+          <div className="image" key={post.photoPostId}>
+            {/* <Link to={`/posts/${post.photoPostId}`}> */}
+            <img src={`${post.imgPostUrl}`} alt="Portfolio"></img>
+          </div>
+        ))}
       </div>
     </div>
   );

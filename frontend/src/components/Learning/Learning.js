@@ -5,15 +5,10 @@ import Navbar from "../Navbar/Navbar";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import YouTube from "../Youtube/youtube";
 
-import homefeed1 from "../../Assets/homefeed1.jpg";
-import homefeed7 from "../../Assets/homefeed7.jpg";
-import homefeed4 from "../../Assets/homefeed4.jpg";
-import homefeed6 from "../../Assets/homefeed6.jpg";
-
-export default function Learning() {
+export default function Learning({user, handleOnLogout}) {
   return (
     <div className="learning">
-      <Navbar />
+      <Navbar user={user} handleOnLogout={handleOnLogout} />
 
       <div
         className="banner"

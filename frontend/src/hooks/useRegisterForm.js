@@ -84,9 +84,6 @@ export const useRegisterForm = ({ user, setUser }) => {
       return arr;
     }
 
-    function joinName(fName, lName) {
-      return fName + lName;
-    }
 
     const myArr = splitName(form.name);
     const { data, error } = await apiClient.signupUser({

@@ -164,7 +164,10 @@ class User {
     return user;
   }
 
-  static async destroy(email) {
+  static async deleteUserbyEmail(email) {
+    if (!email) {
+      throw new BadRequestError("No email provided");
+    }
     const query = `DELETE FROM users WHERE email = $1`;
     const result = await db.query(query, [email.toLowerCase()]);
     const user = result.rows[0];

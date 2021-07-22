@@ -12,14 +12,14 @@ import Community from "../Community/Community";
 import apiClient from "../../services/apiClient";
 import UserProfile from "../UserProfile/UserProfile";
 import EditPortfolio from "../EditPortfolio/EditPortfolio";
-import ImageUpload from "../ImageUpload/ImageUpload";
 import CreateForumPost from "../CreateForumPost/CreateForumPost";
 import CommunityPostEdit from "../CommunityPostEdit/CommunityPostEdit";
 import Upload from "../Upload/Upload";
 import Post from "../Post/Post";
+import EditProfile from "../EditProfile/EditProfile";
 
 export default function App() {
-  const [isFetching, setFetching] = useState(false);
+
   const [error, setError] = useState(null);
   // This is just in case for filtering
   const [filterInputValue, setInputValue] = useState(null);
@@ -43,35 +43,27 @@ export default function App() {
     setUser({});
     setError(null);
   };
+
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route
-            path="/"
-            element={<Home user={user} handleOnLogout={handleOnLogout} />}
-          />
-          <Route
-            path="/login"
-            element={<Login user={user} setUser={setUser} />}
-          />
-          <Route
-            path="/register"
-            element={<Register user={user} setUser={setUser} />}
-          />
-          <Route path="/about" element={<About />} />
-          <Route path="/explore" element={<Explore />} />
-          <Route path="/learning" element={<Learning />} />
-          <Route path="/market" element={<Market />} />
-          <Route path="/community" element={<Community />} />
-          <Route path="/me" element={<UserProfile />} />
-          <Route path="/upload" element={<Upload />} />
-          <Route path="/post" element={<Post />} />
+          <Route path="/" element={<Home user={user} handleOnLogout={handleOnLogout} />} />
+          <Route path="/login" element={<Login user={user} setUser={setUser} />} />
+          <Route path="/register" element={<Register user={user} setUser={setUser} />} />
+          <Route path="/about" element={<About user={user} handleOnLogout={handleOnLogout} />} />
+          <Route path="/explore" element={<Explore user={user} handleOnLogout={handleOnLogout} />} />
+          <Route path="/learning" element={<Learning user={user} handleOnLogout={handleOnLogout} />} />
+          <Route path="/market" element={<Market user={user} handleOnLogout={handleOnLogout} />} />
+          <Route path="/community" element={<Community user={user} handleOnLogout={handleOnLogout} />} />
+          <Route path="/me" element={<UserProfile user={user} handleOnLogout={handleOnLogout} />} />
+          <Route path="/upload" element={<Upload user={user} handleOnLogout={handleOnLogout} />} />
+          <Route path="/post" element={<Post user={user} handleOnLogout={handleOnLogout} />} />
+          <Route path="/edit" element={<EditProfile user={user} handleOnLogout={handleOnLogout} />} />
 
-          <Route path="/editportfolio" element={<EditPortfolio />} />
-          <Route path="/createforumpost" element={<CreateForumPost />} />
-          <Route path="/image" element={<ImageUpload />} />
-          <Route path="/communitypostedit" element={<CommunityPostEdit />} />
+          <Route path="/editportfolio" element={<EditPortfolio user={user} handleOnLogout={handleOnLogout} />} />
+          <Route path="/createforumpost" element={<CreateForumPost user={user} handleOnLogout={handleOnLogout} />} />
+          <Route path="/communitypostedit" element={<CommunityPostEdit user={user} handleOnLogout={handleOnLogout} />} />
         </Routes>
       </BrowserRouter>
     </div>

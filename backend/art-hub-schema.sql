@@ -5,6 +5,7 @@ CREATE TABLE users (
   password              TEXT NOT NULL,
   first_name            TEXT NOT NULL,
   last_name             TEXT NOT NULL,
+  biography             TEXT,
   profile_img_url       TEXT,
   banner_img_url        TEXT,
   instagram_url         TEXT,
@@ -16,7 +17,7 @@ CREATE TABLE users (
 CREATE TABLE photoUpload (
   id                    SERIAL PRIMARY KEY,
   user_id               INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
-  post_img_url          TEXT,
+  post_img_url          TEXT
 );
 
 CREATE TABLE photoPost (
@@ -40,7 +41,7 @@ CREATE TABLE photoComments (
 CREATE TABLE forumUpload (
   id                    SERIAL PRIMARY KEY,
   user_id               INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
-  forum_img_url         TEXT,
+  forum_img_url         TEXT
 );
 
 CREATE TABLE forumPost (
@@ -66,6 +67,7 @@ CREATE TABLE tags (
   post_id               INTEGER NOT NULL REFERENCES photoPost(id) ON DELETE CASCADE,
   img_id                INTEGER NOT NULL REFERENCES photoUpload(id) ON DELETE CASCADE
 );
+
 CREATE TABLE forumTags (
   id                    SERIAL PRIMARY KEY,
   tag_name              TEXT,
@@ -73,11 +75,12 @@ CREATE TABLE forumTags (
   forum_id              INTEGER NOT NULL REFERENCES forumPost(id) ON DELETE CASCADE
 );
 
+CREATE TABLE likedPost (
+   id                    SERIAL PRIMARY KEY,
+   photo_post_id         INTEGER NOT NULL REFERENCES photoPost(id) ON DELETE CASCADE
+);
 
-
-
-
-
-
-
-
+CREATE TABLE likedForumPost (
+   id                    SERIAL PRIMARY KEY,
+   forum_post_id         INTEGER NOT NULL REFERENCES forumPost(id) ON DELETE CASCADE
+);

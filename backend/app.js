@@ -5,11 +5,9 @@ const config = require("./config");
 const { NotFoundError } = require("./utils/errors");
 const authRoutes = require("./routes/auth");
 const userRoutes = require("./routes/users");
-const exerciseRoutes = require("./routes/exercises");
 const postRoutes = require("./routes/posts");
 const imageRoutes = require("./routes/images");
 const security = require("./middleware/security");
-
 
 const app = express();
 
@@ -28,10 +26,8 @@ app.use(security.extractUserFromJwt);
 // Use routes after middleware
 app.use("/user", userRoutes);
 app.use("/auth", authRoutes);
-app.use("/exercise", exerciseRoutes);
 app.use("/post", postRoutes);
 app.use("/image", imageRoutes);
-
 
 /** Handle 404 errors -- this matches everything */
 app.use((req, res, next) => {

@@ -14,10 +14,10 @@ import carousel4 from "../../Assets/carousel4.jpg";
 
 import Navbar from "../Navbar/Navbar";
 
-export default function Explore() {
+export default function Explore({user, handleOnLogout}) {
   return (
     <div className="explore">
-      <Navbar />
+      <Navbar user={user} handleOnLogout={handleOnLogout} />
 
       <div className="banner">
         <img

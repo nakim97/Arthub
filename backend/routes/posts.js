@@ -36,6 +36,7 @@ router.get("/", security.requireAuthenticatedUser, async (req, res, next) => {
     next(err);
   }
 });
+
 // fetch single post
 router.get("/:postsId", async (req, res, next) => {
   try {
@@ -52,15 +53,23 @@ router.get("/:postsId", async (req, res, next) => {
 });
 
 // Photo Post Commenting
-router.get("/:postsId/comments", security.requireAuthenticatedUser, async (req, res, next) => {
-  try {
-    const { postsId } = req.params.postsId;
-    const { user } = res.locals;
-    const comment = await Comment.createCommentForPost({rating: req.body.comment, user, postsId})
-    return res.status(201).json({comment})
-  } catch (err) {
-    next(err);
+router.get(
+  "/:postsId/comments",
+  security.requireAuthenticatedUser,
+  async (req, res, next) => {
+    try {
+      const { postsId } = req.params.postsId;
+      const { user } = res.locals;
+      const comment = await Comment.createCommentForPost({
+        rating: req.body.comment,
+        user,
+        postsId,
+      });
+      return res.status(201).json({ comment });
+    } catch (err) {
+      next(err);
+    }
   }
-});
+);
 
 module.exports = router;

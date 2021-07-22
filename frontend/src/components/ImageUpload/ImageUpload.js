@@ -1,13 +1,10 @@
 import "./ImageUpload.css";
-import { useImageUpload } from "../../hooks/useImageUpload";
 
-export default function ImageUpload() {
-  const { handleImageUpload, openWidget, imageUrl, imageAlt } =
-    useImageUpload();
+export default function ImageUpload({ handleImageUpload, openWidget, imageUrl, imageAlt, name }) {
   return (
     <main className="ImageUpload">
       <section className="right-side white">
-        <p>Picture</p>
+        <p>{name}</p>
         {imageUrl && (
           <img src={imageUrl} alt={imageAlt} className="displayed-image" />
         )}
@@ -17,7 +14,6 @@ export default function ImageUpload() {
           <div className="form-group">
             <input type="file" />
           </div>
-
           <button type="button" className="btn" onClick={handleImageUpload}>
             Submit
           </button>

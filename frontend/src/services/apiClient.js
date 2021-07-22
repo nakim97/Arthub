@@ -1,5 +1,4 @@
 import axios from "axios";
-var ytsr = require("ytsr");
 
 class ApiClient {
   constructor(remoteHostUrl) {
@@ -32,20 +31,9 @@ class ApiClient {
     }
   }
 
-  // Get youtube videos with searches
-  async searchVideos(query) {
-    // Get all the data about the videos and correct the query
-    const filters1 = await ytsr.getFilters(query);
-    const filter1 = filters1.get("Type").get("Video");
-    const options = {
-      pages: 2,
-    };
-    const searchResults = await ytsr(filter1.url, options);
-    return searchResults;
-  }
   async createPost(post) {
     return await this.request({
-      endpoint: `auth/login`,
+      endpoint: `post`,
       method: `POST`,
       data: post,
     });
@@ -59,13 +47,27 @@ class ApiClient {
   }
   async createImage(image) {
     return await this.request({
-      endpoint: `auth/login`,
+      endpoint: `image`,
       method: `POST`,
       data: image,
     });
   }
-  async listPosts() {
-      return await this.request({endpoint: `posts`, method: `GET`})
+  // async listPosts() {
+  //   return await this.request({ endpoint: `posts`, method: `GET` });
+  // }
+  async listPosts(user) {
+    return await this.request({
+      endpoint: `post`,
+      method: `GET`,
+      data: user,
+    });
+  }
+  async listUserByEmail(email) {
+    return await this.request({
+      endpoint: `user`,
+      method: `GET`,
+      data: email,
+    });
   }
   async listExercises(user) {
     return await this.request({
