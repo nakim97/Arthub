@@ -41,7 +41,7 @@ export default function UserProfile({ user, handleOnLogout }) {
         const { data } = await apiClient.listUserByEmail(user.email);
         
         setUserInfo(data.user);
-        // console.log("user",userInfo)
+        console.log("user",userInfo)
       } catch (err) {
         setError(err);
       }

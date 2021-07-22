@@ -5,6 +5,7 @@ CREATE TABLE users (
   password              TEXT NOT NULL,
   first_name            TEXT NOT NULL,
   last_name             TEXT NOT NULL,
+  biography             TEXT,
   profile_img_url       TEXT,
   banner_img_url        TEXT,
   instagram_url         TEXT,
