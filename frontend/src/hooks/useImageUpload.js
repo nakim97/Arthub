@@ -16,7 +16,7 @@ export const useImageUpload = () => {
           // This code only runs and gets the image
           // when we successfully open and upload the image
           if (!error && result && result.event === "success") {
-            console.log(result.info);
+            // console.log(result.info);
             setImageUrl(result.info.secure_url);
             setImageAlt(`An image of ${result.info.original_filename}`);
           }

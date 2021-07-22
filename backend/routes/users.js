@@ -1,6 +1,5 @@
 const express = require("express");
 const User = require("../models/user");
-const Post = require("../models/post");
 const security = require("../middleware/security");
 const router = express.Router();
 
@@ -8,11 +7,13 @@ const router = express.Router();
 // router.get("/", function (req, res, next) {
 //   res.send("respond with a resource");
 // });
+
+// Add middleware before response is sent to get the user
 router.get("/", security.requireAuthenticatedUser, async (req, res, next) => {
   try {
-    const { user } = res.locals;
-    const post = await Post.listPhotoPostsForUser({ user });
-    return res.status(200).json({ user, post });
+    const { email } = res.locals.user;
+    const user = await User.fetchUserByEmail(email);
+    return res.status(200).json({ user });
   } catch (err) {
     next(err);
   }

@@ -5,7 +5,13 @@ class Post {
   static async listAllPosts() {
     const results = await db.query(
       `
-      SELECT * FROM photoPost;
+      SELECT pp.id AS "photoPostId",
+    pp.post_title AS "postTitle",
+    pp.post_description AS "postDescription",
+    img.id AS "imgId",
+    img.post_img_url AS "imgPostUrl"
+    FROM photoPost AS pp
+    JOIN photoUpload AS img ON img.id = pp.img_id
       `
     );
     return results.rows;

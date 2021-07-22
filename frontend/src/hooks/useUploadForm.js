@@ -104,7 +104,7 @@ export const useUploadForm = ({ imageUrl, imageAlt }) => {
       postImgUrl: imageUrl,
     });
     if (error) setErrors((e) => ({ ...e, form: error }));
-    console.log("myd", data?.image.id);
+    // console.log("myd", data?.image.id);
     const myId = data?.image.id;
     const { data1, error1 } = await apiClient.createPost({
       postTitle: form.title,

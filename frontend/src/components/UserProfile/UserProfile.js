@@ -8,13 +8,14 @@ import apiClient from "../../services/apiClient";
 import { useUserProfile } from "../../hooks/useUserProfile";
 
 export default function UserProfile({ user, handleOnLogout }) {
-  
+  // console.log(user)
   const [isFetching, setFetching] = useState(false);
   const [error, setError] = useState(null);
   function joinName(fName, lName) {
     return fName + " " + lName;
   }
   const [posts, setPosts] = useState([]);
+  const [userInfo, setUserInfo] = useState([]);
   const myName = joinName(user.first_name, user.last_name)
   const username = user.username
   useEffect(() => {
@@ -32,6 +33,23 @@ export default function UserProfile({ user, handleOnLogout }) {
     };
     fetchPosts();
   }, [user]);
+
+  useEffect(() => {
+    const fetchUsers = async () => {
+      setFetching(true);
+      try {
+        const { data } = await apiClient.listUserByEmail(user.email);
+        
+        setUserInfo(data.user);
+        // console.log("user",userInfo)
+      } catch (err) {
+        setError(err);
+      }
+
+      setFetching(false);
+    };
+    fetchUsers();
+  }, [user]);
   //Unauthenticated view
   if (!user.email) {
     return (
@@ -43,21 +61,49 @@ export default function UserProfile({ user, handleOnLogout }) {
       </div>
     );
   }
+  const banner_url = userInfo.banner_img_url == null
+  const banner_img = banner_url ? (
+    <>
+    <img
+          className="bannerImg"
+          src={userBanner}
+          alt="people standing on a mountain"
+        />
+    </>
+  ) : (
+    <>
+    <img
+          className="bannerImg"
+          src={`${userInfo.banner_img_url}`}
+          alt="my banner"
+        />
+    </>
+  )
+  const profile_url = userInfo.profile_img_url == null
+  const profile_img = profile_url ? (
+    <>
+    <img className="bannerImg" src={person2} alt="user profile picture" />
+    </>
+  ) : (
+    <>
+    <img
+          className="bannerImg"
+          src={`${userInfo.profile_img_url}`}
+          alt="my profile"
+        />
+    </>
+  )
   return (
     <div className="user">
       <Navbar user={user} handleOnLogout={handleOnLogout}/>
 
       <div className="banner">
-        <img
-          className="bannerImg"
-          src={userBanner}
-          alt="people standing on a mountain"
-        />
+        {banner_img}
       </div>
 
       <div className="userInfo">
         <div className="profilePic">
-          <img className="bannerImg" src={person2} alt="user profile picture" />
+        {profile_img}
         </div>
 
         <div className="name">

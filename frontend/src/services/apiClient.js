@@ -62,6 +62,13 @@ class ApiClient {
       data: user,
     });
   }
+  async listUserByEmail(email) {
+    return await this.request({
+      endpoint: `user`,
+      method: `GET`,
+      data: email,
+    });
+  }
   async listExercises(user) {
     return await this.request({
       endpoint: `exercise`,
