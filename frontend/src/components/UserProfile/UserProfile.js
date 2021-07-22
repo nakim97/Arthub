@@ -8,65 +8,73 @@ import apiClient from "../../services/apiClient";
 import { useUserProfile } from "../../hooks/useUserProfile";
 
 export default function UserProfile({ user, handleOnLogout }) {
-  const { myName,
-    username,
-    posts,
-    userInfo} = useUserProfile({user});
-  const banner_url = userInfo.banner_img_url == null
- const banner_img = banner_url ? (
-   <>
-   <img
-         className="bannerImg"
-         src={userBanner}
-         alt="people standing on a mountain"
-       />
-   </>
- ) : (
-   <>
-   <img
-         className="bannerImg"
-         src={`${userInfo.banner_img_url}`}
-         alt="my banner"
-       />
-   </>
- )
- const profile_url = userInfo.profile_img_url == null
- const profile_img = profile_url ? (
-   <>
-   <img className="bannerImg" src={person2} alt="user profile picture" />
-   </>
- ) : (
-   <>
-   <img
-         className="bannerImg"
-         src={`${userInfo.profile_img_url}`}
-         alt="my profile"
-       />
-   </>
- )
-  //Unauthenticated view
- if (!user.email) {
-  return (
-    <div className="total">
-      <Navbar user={user} handleOnLogout={handleOnLogout} />
-      <div className="title">
-        <h2>You must be logged in to view your profile.</h2>
-      </div>
-    </div>
+  const { myName, username, posts, userInfo } = useUserProfile({ user });
+  const banner_url = userInfo.banner_img_url == null;
+  const banner_img = banner_url ? (
+    <>
+      <img
+        className="bannerImg"
+        src={userBanner}
+        alt="people standing on a mountain"
+      />
+    </>
+  ) : (
+    <>
+      <img
+        className="bannerImg"
+        src={`${userInfo.banner_img_url}`}
+        alt="my banner"
+      />
+    </>
   );
-}
+  const profile_url = userInfo.profile_img_url == null;
+  const profile_img = profile_url ? (
+    <>
+      <img className="bannerImg" src={person2} alt="user profile picture" />
+    </>
+  ) : (
+    <>
+      <img
+        className="bannerImg"
+        src={`${userInfo.profile_img_url}`}
+        alt="my profile"
+      />
+    </>
+  );
+  const bio = userInfo.biography == null;
+  const biography = bio ? (
+    <>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ornare
+        turpis at libero ultricies ullamcorper. Curabitur finibus libero eu urna
+        finibus aliquet. Vivamus ut bibendum quam. Aliquam erat volutpat. Aenean
+        eu ligula et dui scelerisque maximus nec ut sapien.{" "}
+      </p>
+    </>
+  ) : (
+    <>
+      <p>{`${userInfo.biography}`}</p>
+    </>
+  );
+  //Unauthenticated view
+  if (!user.email) {
+    return (
+      <div className="total">
+        <Navbar user={user} handleOnLogout={handleOnLogout} />
+        <div className="title">
+          <h2>You must be logged in to view your profile.</h2>
+        </div>
+      </div>
+    );
+  }
   return (
     <div className="user">
-      <Navbar user={user} handleOnLogout={handleOnLogout}/>
+      <Navbar user={user} handleOnLogout={handleOnLogout} />
 
-      <div className="banner">
-        {banner_img}
-      </div>
+      <div className="banner">{banner_img}</div>
 
       <div className="userInfo">
-        <div className="profilePic">
-        {profile_img}
-        </div>
+        <div className="profilePic">{profile_img}</div>
 
         <div className="name">
           <p>{myName}</p>
@@ -76,14 +84,7 @@ export default function UserProfile({ user, handleOnLogout }) {
         </div>
       </div>
 
-      <div className="description">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ornare
-          turpis at libero ultricies ullamcorper. Curabitur finibus libero eu
-          urna finibus aliquet. Vivamus ut bibendum quam. Aliquam erat volutpat.
-          Aenean eu ligula et dui scelerisque maximus nec ut sapien.{" "}
-        </p>
-      </div>
+      <div className="description">{biography}</div>
 
       <div className="portfolioArea">
         <div className="Portfolio">
@@ -102,11 +103,11 @@ export default function UserProfile({ user, handleOnLogout }) {
       </div>
 
       <div className="pictureArea">
-      {posts.map((post) => (
-        <div className="image" key={post.photoPostId}>
-          <img src={`${post.imgPostUrl}`} alt="Portfolio"></img>
-        </div>
-      ))}
+        {posts.map((post) => (
+          <div className="image" key={post.photoPostId}>
+            <img src={`${post.imgPostUrl}`} alt="Portfolio"></img>
+          </div>
+        ))}
       </div>
     </div>
   );
