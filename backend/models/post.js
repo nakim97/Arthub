@@ -17,6 +17,7 @@ class Post {
     pp.post_title AS "postTitle",
     pp.post_description AS "postDescription",
     img.id AS "imgId",
+    img.post_img_url AS "imgPostUrl",
     u.email AS "userEmail"
     FROM photoPost AS pp
     JOIN users AS u ON u.id = pp.user_id
@@ -60,6 +61,9 @@ class Post {
             VALUES ($1, $2, $3, (SELECT id FROM users WHERE email = $4))
             RETURNING id,
             user_id AS "userId",
+            img_id,
+            post_title,
+            post_description,
             photo_created_at
             `,
       [
