@@ -45,3 +45,23 @@ iframe{
   
 }
 
+@media only screen and (max-width:1555px){
+  .list .items{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media only screen and (max-width:1205px){
+  .list .items{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 835px){
+  .list .items{
+    grid-template-columns: 1fr;
+  }
+  iframe{
+    width:50%;
+    height: 30%;
+  }
+}

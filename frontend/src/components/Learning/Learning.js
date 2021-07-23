@@ -52,7 +52,7 @@ export default function Learning({user, handleOnLogout}) {
               backgroundSize: "100%",
             }}
           >
-            Concept Art{" "}
+            Ink{" "}
           </button>
           <button
             className="learningBtn2"
@@ -110,7 +110,7 @@ export default function Learning({user, handleOnLogout}) {
       </div>
 
       <div className="newLearning">
-        <h4>Search Results</h4>
+        <h4 style={{marginBottom:"100px"}}>Search Results</h4>
       </div>
 
       {/* 
