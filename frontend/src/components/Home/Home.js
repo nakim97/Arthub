@@ -333,3 +333,13 @@ export default function Home({ handleOnLogout, user }) {
     </div>
   );
 }
+// export default function Home( products ) {
+//   return (
+//     <div className="Home">
+//       <Intro />
+//       {/* <AddProduct /> */}
+//       {/* {console.log("Hi",products)} */}
+//       <StoreActivity products={products.products} />
+//     </div>
+//   );
+// }
