@@ -9,6 +9,9 @@ export default function Navbar({ handleOnLogout, user }) {
   const buttons = isAuthenticated ? (
     <>
       <ul className="links link-button">
+      <Link to="/me" className="Link">
+          <li className="navRegister">Me</li>
+        </Link>
         <button className="navSignOut" onClick={handleOnLogout}>
           Sign out
         </button>
