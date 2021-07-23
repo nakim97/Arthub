@@ -92,12 +92,15 @@ export default function UserProfile({ user, handleOnLogout }) {
         </div>
 
         <div className="editPageButns">
+          
           <div className="editPortfolio">
             <Link to="/editportfolio">Edit Portfolio</Link>
           </div>
-
           <div className="editProfile">
             <Link to="/edit">Edit Profile</Link>
+          </div>
+          <div className="editProfile">
+            <Link to="/upload">Create Post</Link>
           </div>
         </div>
       </div>
