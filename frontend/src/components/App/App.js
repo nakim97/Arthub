@@ -17,6 +17,7 @@ import CommunityPostEdit from "../CommunityPostEdit/CommunityPostEdit";
 import Upload from "../Upload/Upload";
 import Post from "../Post/Post";
 import EditProfile from "../EditProfile/EditProfile";
+import ProductDetail from "../ProductDetail/ProductDetail";
 
 export default function App() {
 
@@ -60,7 +61,10 @@ export default function App() {
           <Route path="/upload" element={<Upload user={user} handleOnLogout={handleOnLogout} />} />
           <Route path="/post" element={<Post user={user} handleOnLogout={handleOnLogout} />} />
           <Route path="/edit" element={<EditProfile user={user} handleOnLogout={handleOnLogout} />} />
-
+          <Route
+            path="/posts/:postId"
+            element={<ProductDetail />}
+          ></Route>
           <Route path="/editportfolio" element={<EditPortfolio user={user} handleOnLogout={handleOnLogout} />} />
           <Route path="/createforumpost" element={<CreateForumPost user={user} handleOnLogout={handleOnLogout} />} />
           <Route path="/communitypostedit" element={<CommunityPostEdit user={user} handleOnLogout={handleOnLogout} />} />

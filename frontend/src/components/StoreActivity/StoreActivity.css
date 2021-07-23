@@ -1,0 +1,85 @@
+.StoreActivity {
+  display: flex;
+  flex-direction: column;
+}
+.StoreActivity h2 {
+  color: black;
+  margin-bottom: 24px;
+  font-size: 28px;
+  margin-top: 40px;
+  font-weight: bolder;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+.StoreActivity .table {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 1rem;
+  row-gap: 1rem;
+  width: 100%;
+  /* border: 1px solid rgba(196, 196, 196, 0.3); */
+}
+.StoreActivity .product-item, .content {
+  display: block;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-decoration: none;
+  color: black;
+  font-size: 1em;
+  font-weight: bolder;
+  word-wrap: break-word;
+  max-width: 150px;
+}
+.StoreActivity .product-item .image {
+  width: 150px;
+  height: 150px;
+  border-radius: 15px;
+}
+.StoreActivity .table .table-row {
+  display: flex;
+  flex-direction: row;
+  height: 80px;
+  width: 100%;
+  border-bottom: 1px solid rgba(196, 196, 196, 0.3);
+  background: white;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.StoreActivity .table .table-row:hover {
+  background: #f3fffb;
+}
+.StoreActivity .table .table-row.table-header .col {
+  background: rgba(44, 64, 71, 1);
+  color: white;
+}
+.StoreActivity .table .table-row .col .arrow {
+  margin-right: 10px;
+  min-width: 20px;
+}
+.StoreActivity .table .table-row .col .arrow.flip {
+  transform: rotate(180deg);
+}
+
+.StoreActivity .table .table-row .col {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 80px;
+  padding: 25px;
+  color: rgba(44, 65, 71, 1);
+  font-weight: 600;
+}
+.StoreActivity .table .table-row .col.x1 {
+  flex: 1;
+}
+.StoreActivity .table .table-row .col.x15 {
+  flex: 1.5;
+}
+.StoreActivity .table .table-row .col.x2 {
+  flex: 2;
+}
+.StoreActivity .table .table-row .col.x3 {
+  flex: 3;
+}
+.StoreActivity .table .table-row .col.x4 {
+  flex: 4;
+}
