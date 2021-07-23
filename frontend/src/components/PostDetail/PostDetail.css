@@ -7,7 +7,7 @@
 
 .PostDetail .card {
   border: 1px solid rgba(255, 196, 1, 0.3);
-  background: #333;
+  background: whitesmoke;
   margin: 0 auto;
   padding: 28px;
   display: flex;
@@ -76,4 +76,63 @@
   padding: 8px 12px;
   background: rgba(244, 65, 71, 1);
   color: white;
+}
+.title {
+  display: flex;
+  margin-left: 2rem;
+}
+
+.user .banner img {
+  display: flex;
+
+  width: 100%;
+  padding-top: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.user .profilePic img {
+  width: 55px;
+  height: 50px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.user .profilePic {
+  display: flex;
+  margin-left: 2rem;
+  margin-top: 1rem;
+}
+
+.user .userInfo {
+  display: flex;
+  color: white;
+}
+
+.user .userInfo .username {
+  display: flex;
+  font-size: medium;
+  margin-left: 1.5rem;
+  margin-top: 1rem;
+}
+
+.user .commentsUserInfo {
+  display: flex;
+  color: white;
+}
+
+.user .commentsUserInfo {
+  display: flex;
+  color: white;
+}
+
+.user .commentsUserInfo .name {
+  margin-left: 2rem;
+  margin-top: 1rem;
+  text-align: left;
+}
+.user .commentsUserInfo .name .commentDes {
+  display: flex;
+  margin-top: -1rem;
+  text-align: left;
 }

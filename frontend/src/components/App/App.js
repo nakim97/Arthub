@@ -62,8 +62,8 @@ export default function App() {
           <Route path="/post" element={<Post user={user} handleOnLogout={handleOnLogout} />} />
           <Route path="/edit" element={<EditProfile user={user} handleOnLogout={handleOnLogout} />} />
           <Route
-            path="/posts/:postId"
-            element={<PostDetail user={user} />}
+            path="/post/:postId"
+            element={<PostDetail user={user} handleOnLogout={handleOnLogout} />}
           ></Route>
           <Route path="/editportfolio" element={<EditPortfolio user={user} handleOnLogout={handleOnLogout} />} />
           <Route path="/createforumpost" element={<CreateForumPost user={user} handleOnLogout={handleOnLogout} />} />

@@ -39,10 +39,13 @@ class Post {
       throw new BadRequestError("No id provided");
     }
 
-    const query = `SELECT * FROM photoPost WHERE id = $1`;
+    const query = `SELECT * FROM photoPost AS pp
+    JOIN users AS u ON u.id = pp.user_id
+    JOIN photoUpload AS img ON img.id = pp.img_id
+    WHERE pp.id = $1`;
     const result = await db.query(query, [postId]);
-    const user = result.rows[0];
-    return user;
+    const post = result.rows[0];
+    return post;
   }
   static async deletePhotoPostById(postId) {
     if (!postId) {

@@ -2,9 +2,12 @@ import "./PostDetail.css" ;
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 import apiClient from "../../services/apiClient";
+import Navbar from "../Navbar/Navbar";
+import userBanner from "../../Assets/userBanner.png";
+import person2 from "../../Assets/person2.png";
 /*
  - Fragment tags as return only returns one thing<> </>*/
-export default function PostDetail({user}) {
+export default function PostDetail({user, handleOnLogout}) {
   const { postId } = useParams();
   const [isLoading, setIsLoading] = useState(false);
   const [post, setPost] = useState([]);
@@ -14,8 +17,8 @@ export default function PostDetail({user}) {
       setIsLoading(true);
       try {
         const { data } = await apiClient.listPostWithId(postId);
-        console.log(data)
-        setPost(data);
+        console.log(data.posting)
+        setPost(data.posting);
       } catch (err) {
         setError(err);
       }
@@ -24,6 +27,7 @@ export default function PostDetail({user}) {
     };
     fetchPostById();
   }, [postId]);
+
   const renderProductContent = () => {
     if (isLoading) return <h1>Loading...</h1>;
     if (error) return <p className="description">No post found</p>;
@@ -44,15 +48,40 @@ export default function PostDetail({user}) {
   };
 
   return (
-    <div className="ProductDetail">
-      <div className="card">
-        <div className="title">
-          <h3>Product #{postId}</h3>
-          <p className="category">{post?.category}</p>
+    <div className="user">
+      <Navbar user={user} handleOnLogout={handleOnLogout} />
+
+      <div className="userInfo">
+        <div className="profilePic">
+          <img
+            className="profileImg"
+            src={person2}
+            alt="user profile picture"
+          />
         </div>
 
-        {renderProductContent()}
+        <div className="username">
+          <p>John_S23</p>
+        </div>
       </div>
-    </div>
+
+      <div className="banner">
+        <img
+          className="bannerImg"
+          src={userBanner}
+          alt="people standing on a mountain"
+        />
+      </div>
+      </div>
+    // <div className="ProductDetail">
+    //   <div className="card">
+    //     <div className="title">
+    //       <h3>Product #{postId}</h3>
+    //       <p className="category">{post?.category}</p>
+    //     </div>
+
+    //     {renderProductContent()}
+    //   </div>
+    // </div>
   );
 }
