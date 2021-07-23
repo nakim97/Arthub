@@ -1,11 +1,11 @@
-.ProductDetail {
+.PostDetail {
   min-height: 600px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.ProductDetail .card {
+.PostDetail .card {
   border: 1px solid rgba(255, 196, 1, 0.3);
   background: #333;
   margin: 0 auto;
@@ -17,18 +17,18 @@
   max-width: 600px;
   width: 100%;
 }
-.ProductDetail .card .title {
+.PostDetail .card .title {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   color: white;
 }
-.ProductDetail .card .title h3 {
+.PostDetail .card .title h3 {
   font-size: 30px;
   color: white;
 }
-.ProductDetail .card .description {
+.PostDetail .card .description {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -37,7 +37,7 @@
   font-size: 18px;
   color: white;
 }
-.ProductDetail .card .image {
+.PostDetail .card .image {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -47,7 +47,7 @@
   height: 200px;
   border-radius: 15px;
 }
-.ProductDetail .card .name {
+.PostDetail .card .name {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -56,21 +56,21 @@
   font-size: 26px;
   color: white;
 }
-.ProductDetail .card .meta {
+.PostDetail .card .meta {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   color: white;
 }
-.ProductDetail .card .price {
+.PostDetail .card .price {
   display: flex;
   align-items: center;
   padding: 8px 12px;
   background: rgba(44, 65, 71, 1);
   color: white;
 }
-.ProductDetail .card .price.minus {
+.PostDetail .card .price.minus {
   display: flex;
   align-items: center;
   padding: 8px 12px;

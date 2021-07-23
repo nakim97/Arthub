@@ -62,6 +62,12 @@ class ApiClient {
       data: user,
     });
   }
+  async listPostWithId(productId) {
+    return await this.request({
+      endpoint: `post/${productId}`,
+      method: `GET`,
+    });
+  }
   async listUserByEmail(email) {
     return await this.request({
       endpoint: `user`,

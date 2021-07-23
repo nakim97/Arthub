@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import userBanner from "../../Assets/userBanner.png";
 import person2 from "../../Assets/person2.png";
-import { useState, useEffect } from "react";
-import apiClient from "../../services/apiClient";
 import { useUserProfile } from "../../hooks/useUserProfile";
 
 export default function UserProfile({ user, handleOnLogout }) {
