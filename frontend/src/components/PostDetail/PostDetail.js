@@ -17,7 +17,7 @@ export default function PostDetail({user, handleOnLogout}) {
       setIsLoading(true);
       try {
         const { data } = await apiClient.listPostWithId(postId);
-        console.log(data.posting)
+        // console.log(data.posting)
         setPost(data.posting);
       } catch (err) {
         setError(err);
@@ -28,21 +28,42 @@ export default function PostDetail({user, handleOnLogout}) {
     fetchPostById();
   }, [postId]);
 
-  const renderProductContent = () => {
+  const renderPostContent = () => {
     if (isLoading) return <h1>Loading...</h1>;
     if (error) return <p className="description">No post found</p>;
 
     return (
       <>
-      <p className="name">{post?.name}</p>
+      <div className="userInfo">
+        <div className="profilePic">
+          <img
+            className="profileImg"
+            src={post.profile_img_url}
+            alt="user profile picture"
+          />
+        </div>
+
+        <div className="username">
+          <p>{post.username}</p>
+        </div>
+      </div>
+
+      <div className="banner">
+        <img
+          className="bannerImg"
+          src={post.post_img_url}
+          alt="people standing on a mountain"
+        />
+      </div>
+      {/* <p className="name">{post?.name}</p>
       <img className="image" src={post?.image} alt={"Gif of " + post?.name}></img>
         <p className="description">{post?.description}</p>
         <div className="meta">
           <p className={`price`}>
             {"$"+post?.price}
           </p>
-          {/* <p className="date">{formatDate(post?.postedAt)}</p> */}
-        </div>
+          {/* <p className="date">{formatDate(post?.postedAt)}</p>
+        </div> */}
       </>
     );
   };
@@ -50,28 +71,8 @@ export default function PostDetail({user, handleOnLogout}) {
   return (
     <div className="user">
       <Navbar user={user} handleOnLogout={handleOnLogout} />
-
-      <div className="userInfo">
-        <div className="profilePic">
-          <img
-            className="profileImg"
-            src={person2}
-            alt="user profile picture"
-          />
-        </div>
-
-        <div className="username">
-          <p>John_S23</p>
-        </div>
-      </div>
-
-      <div className="banner">
-        <img
-          className="bannerImg"
-          src={userBanner}
-          alt="people standing on a mountain"
-        />
-      </div>
+      {renderPostContent()}
+      
       </div>
     // <div className="ProductDetail">
     //   <div className="card">
@@ -80,7 +81,7 @@ export default function PostDetail({user, handleOnLogout}) {
     //       <p className="category">{post?.category}</p>
     //     </div>
 
-    //     {renderProductContent()}
+    //     
     //   </div>
     // </div>
   );
