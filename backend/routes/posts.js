@@ -43,9 +43,6 @@ router.get("/:postsId", async (req, res, next) => {
     const postsId = req.params.postsId;
     const posting = await Post.fetchPhotoPostById(postsId);
     // console.log("pID", postsId, "p", posts)
-    if (!posting) {
-      throw new NotFoundError("post not found");
-    }
     res.status(200).json({ posting });
   } catch (err) {
     next(err);

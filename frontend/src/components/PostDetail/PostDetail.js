@@ -13,7 +13,7 @@ export default function PostDetail({user}) {
     const fetchPostById = async () => {
       setIsLoading(true);
       try {
-        const { data } = await apiClient.listPosts(user);
+        const { data } = await apiClient.listPostWithId(postId);
         console.log(data)
         setPost(data);
       } catch (err) {
