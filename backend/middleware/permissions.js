@@ -1,6 +1,6 @@
-const Order = require("../models/order");
-const { post } = require("../routes/orders");
-const { BadRequestError, ForbiddenError } = require("../utils/errors");
+// const Order = require("../models/order");
+// const { post } = require("../routes/orders");
+const { ForbiddenError } = require("../utils/errors");
 
 // ensure authenticated user is owner of post
 // if they aren't, throw an error
@@ -35,7 +35,7 @@ const authedUserCannotRateOwnPost = async (req, res, next) => {
     const post = await post.fetchPostById(postId);
 
     if (post.userEmail === user.email) {
-      throw new BadRequestError(
+      throw new ForbiddenError(
         `User is not allowed to rate their own posts`
       );
     }
