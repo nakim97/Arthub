@@ -3,14 +3,10 @@ import Navbar from "../Navbar/Navbar";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
 import { Link } from "react-router-dom";
-import homefeed1 from "../../Assets/homefeed1.jpg";
-import homefeed7 from "../../Assets/homefeed7.jpg";
-import homefeed4 from "../../Assets/homefeed4.jpg";
-import homefeed5 from "../../Assets/homefeed5.jpg";
 import { useUserProfile } from "../../hooks/useUserProfile";
 
 export default function EditPortfolio({ user, handleOnLogout }) {
-  const { myName, username, posts } = useUserProfile({ user });
+  const { posts } = useUserProfile({ user });
   //Unauthenticated view
   if (!user.email) {
     return (
