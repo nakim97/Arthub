@@ -42,7 +42,7 @@ export default function EditPortfolio({ user, handleOnLogout }) {
               {" "}
               {/* <EditIcon style={{ fontSize: "20px" }} />{" "} */}
               <button className="clear" onClick={() => 
-                  handleDelete(post.photoPostId)
+                   handleDelete(post.photoPostId)
               
               }>
                 <DeleteIcon className="icon" />{" "}
