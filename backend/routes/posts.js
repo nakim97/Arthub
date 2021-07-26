@@ -74,12 +74,12 @@ router.post(
   security.requireAuthenticatedUser,
   async (req, res, next) => {
     try {
-      const { post_id } = req.params.postsId;
+      //const { post_id } = req.params.postsId;
       const { user } = res.locals;
       const comment = await Comment.postComment({
         comment_description: req.body.comment,
         user,
-        post_id,
+        post_id: req.params.postsId,
       });
       return res.status(201).json({ comment });
     } catch (err) {
