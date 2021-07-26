@@ -38,12 +38,25 @@ class ApiClient {
       data: post,
     });
   }
-  
-  async deletePost(post) {
+
+  async listPosts(user) {
     return await this.request({
       endpoint: `post`,
+      method: `GET`,
+      data: user,
+    });
+  }
+  async listPostWithId(postId) {
+    return await this.request({
+      endpoint: `post/${postId}`,
+      method: `GET`,
+    });
+  }
+
+  async deletePost(postId) {
+    return await this.request({
+      endpoint: `post/${postId}`,
       method: `DELETE`,
-      data: post,
     });
   }
   async createTag(tag) {
@@ -63,19 +76,6 @@ class ApiClient {
   // async listPosts() {
   //   return await this.request({ endpoint: `posts`, method: `GET` });
   // }
-  async listPosts(user) {
-    return await this.request({
-      endpoint: `post`,
-      method: `GET`,
-      data: user,
-    });
-  }
-  async listPostWithId(productId) {
-    return await this.request({
-      endpoint: `post/${productId}`,
-      method: `GET`,
-    });
-  }
   async listUserByEmail(email) {
     return await this.request({
       endpoint: `user`,

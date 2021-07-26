@@ -24,6 +24,7 @@ body {
 
 .EditPortfolio .portfolioposts .portfolioImg .portfolioImg {
   width: 100%;
+  height: 12rem;
 }
 
 .EditPortfolio .portfolioposts .post {

@@ -53,7 +53,7 @@ class Post {
     }
     const query = `DELETE FROM photoPost WHERE id = $1`;
     const result = await db.query(query, [postId]);
-    const user = result.rows[0];
+    const user = "ok";
     return user;
   }
 

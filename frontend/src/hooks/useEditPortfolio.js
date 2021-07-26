@@ -1,20 +1,33 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import apiClient from "../services/apiClient";
 
-export const useEditPortfolio = () => {
-  const navigate = useNavigate();
+export const useEditPortfolio = ({user}) => {
+  const [posts, setPosts] = useState([]);
+  const [isFetching, setFetching] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
-  const [errors, setErrors] = useState({});
+  const [errors, setError] = useState({});
+  useEffect(() => {
+    const fetchPosts = async () => {
+      setFetching(true);
+      try {
+        const { data } = await apiClient.listPosts(user);
+
+        setPosts(data.postsByMe);
+      } catch (err) {
+        setError(err);
+      }
+
+      setFetching(false);
+    };
+    fetchPosts();
+  }, [user, posts]);
 
   const handleDelete = async (postId) => {
     setIsProcessing(true);
 
-    const { data, error } = await apiClient.deletePost({
-      postId: postId,
-    });
+    const { data } = await apiClient.deletePost(postId);
     setIsProcessing(false);
   };
 
-  return { handleDelete };
+  return { handleDelete, posts };
 };

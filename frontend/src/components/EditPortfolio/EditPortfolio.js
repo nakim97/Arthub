@@ -3,12 +3,10 @@ import Navbar from "../Navbar/Navbar";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
 import { Link } from "react-router-dom";
-import { useUserProfile } from "../../hooks/useUserProfile";
 import { useEditPortfolio } from "../../hooks/useEditPortfolio";
 
 export default function EditPortfolio({ user, handleOnLogout }) {
-  const { posts } = useUserProfile({ user });
-  const {handleDelete} = useEditPortfolio();
+  const {handleDelete, posts} = useEditPortfolio({user});
   //Unauthenticated view
   if (!user.email) {
     return (
@@ -43,7 +41,10 @@ export default function EditPortfolio({ user, handleOnLogout }) {
             <p className="likeComments">
               {" "}
               {/* <EditIcon style={{ fontSize: "20px" }} />{" "} */}
-              <button className="clear" onClick={handleDelete}>
+              <button className="clear" onClick={() => 
+                  handleDelete(post.photoPostId)
+              
+              }>
                 <DeleteIcon className="icon" />{" "}
               </button>
             </p>
