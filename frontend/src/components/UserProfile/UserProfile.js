@@ -106,8 +106,9 @@ export default function UserProfile({ user, handleOnLogout }) {
       <div className="pictureArea">
         {posts.map((post) => (
           <div className="image" key={post.photoPostId}>
-            {/* <Link to={`/posts/${post.photoPostId}`}> */}
+            <Link to={`/post/${post.photoPostId}`}> 
             <img src={`${post.imgPostUrl}`} alt={`Portfolio ${post.photoPostId}`} ></img>
+            </Link>
           </div>
         ))}
       </div>
