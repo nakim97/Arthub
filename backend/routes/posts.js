@@ -69,4 +69,41 @@ router.get(
   }
 );
 
+router.post(
+  "/:postsId/comments",
+  security.requireAuthenticatedUser,
+  async (req, res, next) => {
+    try {
+      const { post_id } = req.params.postsId;
+      const { user } = res.locals;
+      const comment = await Comment.postComment({
+        comment_description: req.body.comment,
+        user,
+        post_id,
+      });
+      return res.status(201).json({ comment });
+    } catch (err) {
+      next(err);
+    }
+  }
+);
+
+router.post(
+  "/comment",
+  security.requireAuthenticatedUser,
+  async (req, res, next) => {
+    try {
+      const { user } = res.locals;
+      const comment = await Comment.postComment({
+        user,
+        post_id,
+        comment_description: req.body.comment,
+      });
+      return res.status(201).json({ post });
+    } catch (err) {
+      next(err);
+    }
+  }
+);
+
 module.exports = router;

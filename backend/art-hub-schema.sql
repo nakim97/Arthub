@@ -34,7 +34,7 @@ CREATE TABLE photoComments (
   id                    SERIAL PRIMARY KEY,
   user_id               INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
   post_id               INTEGER NOT NULL REFERENCES photoPost(id) ON DELETE CASCADE,
-  comment_description   TEXT,
+  comment_description   TEXT NOT NULL,
   comment_created_at    TIMESTAMP DEFAULT NOW()
 );
 
