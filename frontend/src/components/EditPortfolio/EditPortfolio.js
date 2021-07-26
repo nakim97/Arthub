@@ -10,7 +10,7 @@ import homefeed5 from "../../Assets/homefeed5.jpg";
 import { useUserProfile } from "../../hooks/useUserProfile";
 
 export default function EditPortfolio({ user, handleOnLogout }) {
-  const { myName, username, posts, userInfo } = useUserProfile({ user });
+  const { myName, username, posts } = useUserProfile({ user });
   //Unauthenticated view
   if (!user.email) {
     return (
@@ -29,41 +29,29 @@ export default function EditPortfolio({ user, handleOnLogout }) {
         <h3 className="title">Edit Your Portfolio</h3>
       </div>
       {posts.map((post) => (
-      <div className="portfolioposts" key={post.photoPostId}>
-        
-            <div className="portfolioImg">
-              <Link to={`/post/${post.photoPostId}`}>
-                <img
-                  className="portfolioImg"
-                  src={`${post.imgPostUrl}`}
-                  alt={`Post ${post.photoPostId}`}
-                />
-              </Link>
-            </div>
-            <div className="post" style={{ position: "relative" }}>
-              <h4 className="portfolioTitle">
-                {" "}
-                {post.postTitle}
-              </h4>
-              <p className="portfolioDescription"> {post.postDescription}</p>
-              <p
-                className="likeComments"
-                style={{
-                  textAlign: "right",
-                  position: "absolute",
-                  bottom: "0",
-                  right: "0",
-                  marginRight: "10px",
-                }}
-              >
-                {" "}
-                {/* <EditIcon style={{ fontSize: "20px" }} />{" "} */}
-                <DeleteIcon style={{ fontSize: "20px", marginLeft: "10px" }} />{" "}
-              </p>
-            </div>
-            </div>
-        ))}
-      
+        <div className="portfolioposts" key={post.photoPostId}>
+          <div className="portfolioImg">
+            <Link to={`/post/${post.photoPostId}`}>
+              <img
+                className="portfolioImg"
+                src={`${post.imgPostUrl}`}
+                alt={`Post ${post.photoPostId}`}
+              />
+            </Link>
+          </div>
+          <div className="post" style={{ position: "relative" }}>
+            <h4 className="portfolioTitle"> {post.postTitle}</h4>
+            <p className="portfolioDescription"> {post.postDescription}</p>
+            <p className="likeComments">
+              {" "}
+              {/* <EditIcon style={{ fontSize: "20px" }} />{" "} */}
+              <button className="clear">
+                <DeleteIcon className="icon" />{" "}
+              </button>
+            </p>
+          </div>
+        </div>
+      ))}
     </div>
   );
 }
