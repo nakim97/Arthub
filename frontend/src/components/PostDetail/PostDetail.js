@@ -20,6 +20,7 @@ export default function PostDetail({user, handleOnLogout}) {
         // console.log(data.posting)
         setPost(data.posting);
       } catch (err) {
+        console.log("hit")
         setError(err);
       }
 
@@ -30,7 +31,7 @@ export default function PostDetail({user, handleOnLogout}) {
 
   const renderPostContent = () => {
     if (isLoading) return <h1>Loading...</h1>;
-    if (error) return <p className="description">No post found</p>;
+    if (error || !post) return <p className="description">No post found</p>;
 
     return (
       <>
