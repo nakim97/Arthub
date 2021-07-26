@@ -68,6 +68,22 @@ router.get(
     }
   }
 );
+// Photo Post Commenting get
+router.get(
+  "/:postsId/comments",
+  security.requireAuthenticatedUser,
+  async (req, res, next) => {
+    try {
+      const { postsId } = req.params.postsId;
+      const comments = await Comment.fetchCommentForPostByUser({
+        postsId,
+      });
+      return res.status(201).json({ comments });
+    } catch (err) {
+      next(err);
+    }
+  }
+);
 
 router.post(
   "/:postsId/comments",
@@ -88,22 +104,22 @@ router.post(
   }
 );
 
-router.post(
-  "/comment",
-  security.requireAuthenticatedUser,
-  async (req, res, next) => {
-    try {
-      const { user } = res.locals;
-      const comment = await Comment.postComment({
-        user,
-        post_id,
-        comment_description: req.body.comment,
-      });
-      return res.status(201).json({ post });
-    } catch (err) {
-      next(err);
-    }
-  }
-);
+// router.post(
+//   "/comment",
+//   security.requireAuthenticatedUser,
+//   async (req, res, next) => {
+//     try {
+//       const { user } = res.locals;
+//       const comment = await Comment.postComment({
+//         user,
+//         post_id,
+//         comment_description: req.body.comment,
+//       });
+//       return res.status(201).json({ post });
+//     } catch (err) {
+//       next(err);
+//     }
+//   }
+// );
 
 module.exports = router;

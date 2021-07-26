@@ -19,23 +19,25 @@ class Comment {
 
     return results.rows[0];
   }
+
+  static async fetchCommentForPostByUser({ postsId }) {
+    // fetch a user's comment for a post if it exists
+    const results = await db.query(
+      `
+            SELECT *
+            FROM photoComments
+            WHERE post_id = $1
+            `,
+      [postsId]
+    );
+    return results.rows[0];
+  }
 }
 
+  
 module.exports = Comment;
 
-//   static async fetchCommentForPostByUser({ user, postsId }) {
-//     // fetch a user's comment for a post if it exists
-//     const results = await db.query(
-//       `
-//             SELECT id, user_id, post_id, comment_created_at
-//             FROM photoComments
-//             WHERE user_id = ( SELECT id FROM users WHERE email = $1)
-//                 AND post_id = $2
-//             `,
-//       [user.email, postsId]
-//     );
-//     return results.rows[0];
-//   }
+
 //   static async createCommentsForPost({ comment, user, postsId }) {
 //     // Check if user has already added a comment for this post
 //     // Throw an error if user has already added a comment
