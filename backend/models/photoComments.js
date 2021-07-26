@@ -30,7 +30,7 @@ class Comment {
             `,
       [postsId]
     );
-    return results.rows[0];
+    return results.rows;
   }
 }
 
