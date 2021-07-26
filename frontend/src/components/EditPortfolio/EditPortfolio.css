@@ -52,11 +52,13 @@ body {
 .EditPortfolio .portfolioposts .post .likeComments {
   color: white;
 }
+
 .clear {
   cursor: pointer;
   border: none;
   background-color: transparent;
 }
+
 .likeComments {
   text-align: right;
   position: absolute;
@@ -64,6 +66,7 @@ body {
   right: 0;
   margin-right: 10px;
 }
+
 .icon {
   font-size: 20px;
   margin-left: 10px;
