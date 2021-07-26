@@ -74,9 +74,9 @@ router.get(
   security.requireAuthenticatedUser,
   async (req, res, next) => {
     try {
-      const { postsId } = req.params.postsId;
+      // const { postsId } = req.params.postsId;
       const comments = await Comment.fetchCommentForPostByUser({
-        postsId,
+        postsId: req.params.postsId,
       });
       return res.status(201).json({ comments });
     } catch (err) {
