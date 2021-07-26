@@ -20,7 +20,7 @@ export default function PostDetail({user, handleOnLogout}) {
         // console.log(data.posting)
         setPost(data.posting);
       } catch (err) {
-        console.log("hit")
+        //console.log("hit")
         setError(err);
       }
 
