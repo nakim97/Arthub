@@ -50,33 +50,33 @@ router.get("/:postsId", async (req, res, next) => {
 });
 
 // Photo Post Commenting
-router.get(
-  "/:postsId/comments",
-  security.requireAuthenticatedUser,
-  async (req, res, next) => {
-    try {
-      const { postsId } = req.params.postsId;
-      const { user } = res.locals;
-      const comment = await Comment.createCommentForPost({
-        rating: req.body.comment,
-        user,
-        postsId,
-      });
-      return res.status(201).json({ comment });
-    } catch (err) {
-      next(err);
-    }
-  }
-);
+// router.get(
+//   "/:postsId/comments",
+//   security.requireAuthenticatedUser,
+//   async (req, res, next) => {
+//     try {
+//       const { postsId } = req.params.postsId;
+//       const { user } = res.locals;
+//       const comment = await Comment.createCommentForPost({
+//         rating: req.body.comment,
+//         user,
+//         postsId,
+//       });
+//       return res.status(201).json({ comment });
+//     } catch (err) {
+//       next(err);
+//     }
+//   }
+// );
 // Photo Post Commenting get
 router.get(
   "/:postsId/comments",
   security.requireAuthenticatedUser,
   async (req, res, next) => {
     try {
-      const { postsId } = req.params.postsId;
+      // const { postsId } = req.params.postsId;
       const comments = await Comment.fetchCommentForPostByUser({
-        postsId,
+        postsId: req.params.postsId,
       });
       return res.status(201).json({ comments });
     } catch (err) {
