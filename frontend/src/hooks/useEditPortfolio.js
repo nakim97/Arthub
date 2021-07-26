@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import apiClient from "../services/apiClient";
 
-export const useEditPortfolio = ({user}) => {
+export const useEditPortfolio = ({ user }) => {
   const [posts, setPosts] = useState([]);
   const [isFetching, setFetching] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
@@ -26,10 +26,9 @@ export const useEditPortfolio = ({user}) => {
   const handleDelete = async (postId) => {
     setIsProcessing(true);
     try {
-    const { data } = await apiClient.deletePost(postId);
-    }
-    catch (err) {
-      setError(err)
+      const { data } = await apiClient.deletePost(postId);
+    } catch (err) {
+      setError(err);
     }
     setIsProcessing(false);
   };

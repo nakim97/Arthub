@@ -6,7 +6,8 @@ import { Link } from "react-router-dom";
 import { useEditPortfolio } from "../../hooks/useEditPortfolio";
 
 export default function EditPortfolio({ user, handleOnLogout }) {
-  const {handleDelete, posts} = useEditPortfolio({user});
+  const { handleDelete, posts } = useEditPortfolio({ user });
+
   //Unauthenticated view
   if (!user.email) {
     return (
@@ -41,10 +42,10 @@ export default function EditPortfolio({ user, handleOnLogout }) {
             <p className="likeComments">
               {" "}
               {/* <EditIcon style={{ fontSize: "20px" }} />{" "} */}
-              <button className="clear" onClick={() => 
-                   handleDelete(post.photoPostId)
-              
-              }>
+              <button
+                className="clear"
+                onClick={() => handleDelete(post.photoPostId)}
+              >
                 <DeleteIcon className="icon" />{" "}
               </button>
             </p>
