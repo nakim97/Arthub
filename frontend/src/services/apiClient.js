@@ -38,6 +38,14 @@ class ApiClient {
       data: post,
     });
   }
+  
+  async deletePost(post) {
+    return await this.request({
+      endpoint: `post`,
+      method: `DELETE`,
+      data: post,
+    });
+  }
   async createTag(tag) {
     return await this.request({
       endpoint: `auth/login`,
