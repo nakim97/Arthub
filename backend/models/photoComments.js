@@ -8,7 +8,7 @@ class Comment {
     }
     const query = `INSERT INTO photoComments (user_id, post_id, comment_description)
         VALUES ((SELECT id FROM users WHERE email = $1), $2, $3)
-        RETURNING user_id, post_id, comment_description
+        RETURNING id, user_id, post_id, comment_description
     `;
 
     const results = await db.query(query, [
