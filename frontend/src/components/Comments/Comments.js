@@ -45,7 +45,7 @@ export default function Comments() {
 
       <form
         onSubmit={handleSubmit(
-          async (data) => await apiClient.createComment(data, postId)
+          async (data) => await apiClient.createComment(postId, data)
         )}
       >
         {/* {
