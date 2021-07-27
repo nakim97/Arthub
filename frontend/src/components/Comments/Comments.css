@@ -1,10 +1,10 @@
 .commentSection {
   color: white;
   display: flex;
+  justify-content: space-evenly;
 }
 
 .commentSection .profilePic {
-  margin-left: 4rem;
 }
 .commentSection .profilePic .username p {
 }
