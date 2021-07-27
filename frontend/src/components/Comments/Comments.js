@@ -53,38 +53,43 @@ export default function Comments() {
               comment: data,
               postId: postId,
             } */}
-
-        <input
-          type="text"
-          placeholder="Comments"
-          {...register("Comments", {})}
-        />
-
-        <input type="submit" />
+        <div className="commentSecCont">
+          <div className="typeComment">
+            <input
+              type="text"
+              placeholder="Comments"
+              {...register("Comments", {})}
+            />
+          </div>
+          <div className="submitComment">
+            <input type="submit" />
+          </div>
+        </div>
       </form>
 
       {/* {Object.keys(commentsMapping).map((commentId) => ( */}
-      {comments.map((comment) => (
-        <div className="commentSection">
-          <div className="user">
-            <div className="profilePic">
-              <img
-                className="profileImg"
-                src={comment.profile_img_url}
-                alt="user profile picture"
-              />
-            </div>
+      {comments.map((comment, i) => (
+        <div className="commentSection" key={i}>
+          <div className="profilePic">
+            <img
+              className="profileImg"
+              src={comment.profile_img_url}
+              alt="user profile picture"
+            />
+          </div>
+          <div className="userInfo">
             <div className="username">
               <p>{comment.username}</p>
             </div>
-          </div>
-          <div className="description">
-            <p>{comment.comment_description}</p>
+
+            <div className="description">
+              <p>{comment.comment_description}</p>
+            </div>
           </div>
         </div>
       ))}
       {/* ))} 
-      key={comment.id}
+      
       Name: {comment}
       */}
     </div>

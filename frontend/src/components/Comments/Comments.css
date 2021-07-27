@@ -1,7 +1,31 @@
 .commentSection {
   color: white;
+}
+
+.comments .commentSecCont {
   display: flex;
-  justify-content: space-evenly;
+}
+
+.comments .typeComment input {
+  display: flex;
+  margin-left: 4rem;
+  width: 690px;
+  height: 33px;
+  background: #000000;
+  border: 1px solid #6b6b6b;
+  box-sizing: border-box;
+  color: white;
+  outline: none;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 25px;
+  font-family: "Roboto", sans-serif;
+  padding-left: 20px;
+}
+
+.comments .submitComment input {
+  display: flex;
+
+  margin-left: 2rem;
 }
 
 .commentSection .profilePic {
