@@ -39,7 +39,7 @@ router.get("/", security.requireAuthenticatedUser, async (req, res, next) => {
 router.get("/search", async (req, res, next) => {
   try {
     //uses search?q= -str- - you enter the string
-    const {q} = req.query;
+    const { q } = req.query;
     const searches = await Post.searchByTitle(q);
     return res.status(200).json({ searches });
   } catch (err) {

@@ -56,7 +56,7 @@ class Post {
     const user = "ok";
     return user;
   }
-  
+
   static async searchByTitle(query) {
     if (!query) {
       throw new BadRequestError("No search query provided");

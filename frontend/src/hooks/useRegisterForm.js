@@ -84,7 +84,6 @@ export const useRegisterForm = ({ user, setUser }) => {
       return arr;
     }
 
-
     const myArr = splitName(form.name);
     const { data, error } = await apiClient.signupUser({
       first_name: myArr[0],
