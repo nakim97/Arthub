@@ -56,6 +56,18 @@ class Post {
     const user = "ok";
     return user;
   }
+  
+  static async searchByTitle(query) {
+    if (!query) {
+      throw new BadRequestError("No search query provided");
+    }
+    const dbquery = `Select * from photoPost where post_title like '%${query}%';
+    `;
+    console.log(dbquery);
+    const result = await db.query(dbquery);
+    const queries = result.rows;
+    return queries;
+  }
 
   static async createPost({ post, user }) {
     if (!post || !Object.keys(post).length) {
@@ -75,12 +87,7 @@ class Post {
             post_description,
             photo_created_at
             `,
-      [
-        post.postTitle,
-        post.postDescription,
-        post.imgId,
-        user.email,
-      ]
+      [post.postTitle, post.postDescription, post.imgId, user.email]
     );
     return results.rows[0];
   }
