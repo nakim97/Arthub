@@ -3,12 +3,16 @@ import SearchBar from "../Youtube/searchbar";
 import youtube from "../../APIs/youtube";
 import VideoList from "../Youtube/videolist";
 import VideoDetail from "../Youtube/videodetail";
+import OutsideClickHandler from 'react-outside-click-handler';
+
+
 import "./youtube.css";
 
 export default function Youtube() {
   const [videos, setVideos] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState(null);
   const handleSubmit = async (termFromSearchBar) => {
+
     const response = await youtube.get("/search", {
       params: {
         q: termFromSearchBar,
