@@ -45,13 +45,14 @@ export default function Comments() {
 
       <form
         onSubmit={handleSubmit(
-          async (data) =>
-            await apiClient.createComment({
-              comment: data,
-              postId: postId,
-            })
+          async (data) => await apiClient.createComment(data, postId)
         )}
       >
+        {/* {
+              comment: data,
+              postId: postId,
+            } */}
+
         <input
           type="text"
           placeholder="Comments"
@@ -63,7 +64,7 @@ export default function Comments() {
 
       {/* {Object.keys(commentsMapping).map((commentId) => ( */}
       {comments.map((comment) => (
-        <div className="commentSection" key={comment.id}>
+        <div className="commentSection">
           <div className="profilePic">
             <img
               className="profileImg"
@@ -80,6 +81,7 @@ export default function Comments() {
         </div>
       ))}
       {/* ))} 
+      key={comment.id}
       Name: {comment}
       */}
     </div>
