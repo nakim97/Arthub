@@ -25,8 +25,8 @@ class Comment {
     const results = await db.query(
       `
             SELECT *
-            FROM photoComments
-            
+            FROM photoComments AS pc
+            JOIN users AS u ON u.id = pc.user_id
             WHERE post_id = $1
             `,
       [postsId]
