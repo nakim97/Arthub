@@ -68,6 +68,21 @@ class ApiClient {
       method: `GET`,
     });
   }
+  async listCommentsWithPostId(postId) {
+    return await this.request({
+      endpoint: `post/${postId}/comments`,
+      method: `GET`,
+    });
+  }
+
+  async createComment(comment) {
+    return await this.request({
+      endpoint: `post/${postId}/comments`,
+      method: `POST`,
+      data: comment,
+    });
+  }
+
   async listUserByEmail(email) {
     return await this.request({
       endpoint: `user`,

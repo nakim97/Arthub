@@ -8,9 +8,6 @@ import person2 from "../../Assets/person2.png";
 import Comments from "../Comments/Comments";
 
 export default function Post({ user, handleOnLogout }) {
-  const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => alert(JSON.stringify(data));
-
   return (
     <div className="user">
       <Navbar user={user} handleOnLogout={handleOnLogout} />
