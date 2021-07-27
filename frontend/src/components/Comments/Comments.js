@@ -8,23 +8,32 @@ import Navbar from "../Navbar/Navbar";
 export default function Comments() {
   const { postId } = useParams();
   const [isLoading, setIsLoading] = useState(false);
-  const [comment, setComment] = useState([]);
+  const [comments, setComments] = useState([]);
   const [error, setError] = useState(false);
   useEffect(() => {
-    const fetchCommentById = async () => {
+    const fetchCommentsById = async () => {
       setIsLoading(true);
       try {
         const { data } = await apiClient.listCommentsWithPostId(postId);
-        // console.log(data.posting)
-        setComment(data.comments);
+        console.log(data);
+        setComments(data.comments);
       } catch (err) {
         setError(err);
       }
 
       setIsLoading(false);
     };
-    fetchCommentById();
+    fetchCommentsById();
   }, [postId]);
+
+  const groupComments = (commentDetails) => {
+    // get an array of unique comment ids
+    const commentIds = [...new Set(commentDetails.map((d) => d.commentId))];
+  };
+
+  //in return(), would we then return commentIds?
+
+  const commentsMapping = groupComments(comments);
 
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => alert(JSON.stringify(data));
@@ -39,6 +48,7 @@ export default function Comments() {
           async (data) =>
             await apiClient.createComment({
               comment: data,
+              postId: postId,
             })
         )}
       >
@@ -50,6 +60,16 @@ export default function Comments() {
 
         <input type="submit" />
       </form>
+
+      {/* {Object.keys(commentsMapping).map((commentId) => ( */}
+      {comments.map((comment) => (
+        <li className="commentSection">
+          <span className="cs">key: {comment.id}</span>
+        </li>
+      ))}
+      {/* ))} 
+      Name: {comment}
+      */}
     </div>
   );
 }

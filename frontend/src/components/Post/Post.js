@@ -5,7 +5,7 @@ import Navbar from "../Navbar/Navbar";
 import userBanner from "../../Assets/userBanner.png";
 import person2 from "../../Assets/person2.png";
 
-import Comments from "../Comments/Comments";
+// import Comments from "../Comments/Comments";
 
 export default function Post({ user, handleOnLogout }) {
   return (
@@ -34,7 +34,7 @@ export default function Post({ user, handleOnLogout }) {
         />
       </div>
 
-      <Comments />
+      {/* <Comments /> */}
 
       {/* <div className="comments">
         <div className="title">

@@ -75,7 +75,7 @@ class ApiClient {
     });
   }
 
-  async createComment(comment) {
+  async createComment(postId, comment) {
     return await this.request({
       endpoint: `post/${postId}/comments`,
       method: `POST`,
