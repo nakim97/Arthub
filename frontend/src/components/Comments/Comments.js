@@ -63,9 +63,21 @@ export default function Comments() {
 
       {/* {Object.keys(commentsMapping).map((commentId) => ( */}
       {comments.map((comment) => (
-        <li className="commentSection">
-          <span className="cs">key: {comment.id}</span>
-        </li>
+        <div className="commentSection" key={comment.id}>
+          <div className="profilePic">
+            <img
+              className="profileImg"
+              src={comment.profile_img_url}
+              alt="user profile picture"
+            />
+            <div className="username">
+              <p>{comment.username}</p>
+            </div>
+            <div className="description">
+              <p>{comment.comment_description}</p>
+            </div>
+          </div>
+        </div>
       ))}
       {/* ))} 
       Name: {comment}
