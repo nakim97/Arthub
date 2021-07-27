@@ -24,7 +24,9 @@ class Comment {
     // fetch a user's comment for a post if it exists
     const results = await db.query(
       `
-            SELECT *
+            SELECT pc.id,
+            pc.post_id,
+            pc.comment_description
             FROM photoComments AS pc
             JOIN users AS u ON u.id = pc.user_id
             WHERE post_id = $1
