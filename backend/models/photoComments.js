@@ -24,12 +24,10 @@ class Comment {
     // fetch a user's comment for a post if it exists
     const results = await db.query(
       `
-            SELECT pc.id,
-            pc.post_id,
-            pc.comment_description
+            SELECT *
             FROM photoComments AS pc
             JOIN users AS u ON u.id = pc.user_id
-            WHERE post_id = $1
+            WHERE pc.id = $1
             `,
       [postsId]
     );
@@ -37,7 +35,13 @@ class Comment {
     return results.rows;
   }
 }
-
+// SELECT pc.id,
+//             pc.post_id,
+//             pc.comment_description
+//             u.id,
+//             FROM photoComments AS pc
+//             JOIN users AS u ON u.id = pc.user_id
+//             WHERE pc.id = $1
 module.exports = Comment;
 
 //   static async createCommentsForPost({ comment, user, postsId }) {
