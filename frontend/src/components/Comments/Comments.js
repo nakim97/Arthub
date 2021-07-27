@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 import apiClient from "../../services/apiClient";
+import "./Comments.css";
 import Navbar from "../Navbar/Navbar";
 
 export default function Comments() {
@@ -71,12 +72,12 @@ export default function Comments() {
               src={comment.profile_img_url}
               alt="user profile picture"
             />
-            <div className="username">
-              <p>{comment.username}</p>
-            </div>
-            <div className="description">
-              <p>{comment.comment_description}</p>
-            </div>
+          </div>
+          <div className="username">
+            <p>{comment.username}</p>
+          </div>
+          <div className="description">
+            <p>{comment.comment_description}</p>
           </div>
         </div>
       ))}
