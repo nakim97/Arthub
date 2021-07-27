@@ -26,6 +26,7 @@ class Comment {
       `
             SELECT *
             FROM photoComments
+            
             WHERE post_id = $1
             `,
       [postsId]
@@ -34,9 +35,7 @@ class Comment {
   }
 }
 
-  
 module.exports = Comment;
-
 
 //   static async createCommentsForPost({ comment, user, postsId }) {
 //     // Check if user has already added a comment for this post
