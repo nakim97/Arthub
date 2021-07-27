@@ -4,8 +4,6 @@ import youtube from "../../APIs/youtube";
 import VideoList from "../Youtube/videolist";
 import VideoDetail from "../Youtube/videodetail";
 import OutsideClickHandler from 'react-outside-click-handler';
-
-
 import "./youtube.css";
 
 export default function Youtube() {
