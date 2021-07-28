@@ -36,6 +36,13 @@
   padding-left: 120px;
 }
 
+.userIcon {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 150px;
+}
+
 .Navbar .content .search-bar input {
   width: 690px;
   height: 33px;
@@ -94,10 +101,9 @@
   color: #7fffd4;
 }
 
-
 /* Making Things Responsive! */
 
-@media only screen and (max-width:1050px){
+@media only screen and (max-width: 1050px) {
   .Navbar .content .links {
     gap: 10px;
   }
@@ -105,57 +111,40 @@
 
 .Navbar .content .search-bar input {
   width: 600px;
- 
 }
 
-
-@media only screen and (max-width:950px){
+@media only screen and (max-width: 950px) {
   .Navbar .content .links {
     gap: 40px;
-
   }
   .Navbar .content .search-bar input {
     width: 500px;
-   
   }
-  
 }
 
-
-
-
-@media only screen and (max-width:880px){
+@media only screen and (max-width: 880px) {
   .Navbar .content .links .navRegister {
-    display:none;
+    display: none;
   }
-  
-
 }
 
-@media only screen and (max-width:790px){
+@media only screen and (max-width: 790px) {
   .Navbar .content .links {
     gap: 0px;
   }
   .Navbar .content .search-bar input {
     width: 400px;
-   
   }
 }
 
-
-@media only screen and (max-width:640px){
+@media only screen and (max-width: 640px) {
   .Navbar .content .search-bar input {
     width: 300px;
-   
   }
-  
 }
 
-@media only screen and (max-width:550px){
+@media only screen and (max-width: 550px) {
   .Navbar .content .search-bar input {
     width: 200px;
-   
   }
-  
 }
-
