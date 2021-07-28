@@ -65,31 +65,11 @@
   margin-left: 2rem;
 }
 
-.user .portfolioArea {
-  color: white;
-  display: flex;
-  padding-left: 2rem;
-}
 
-.user .portfolioArea .editPageButns {
-  display: flex;
-  margin-left: 50.5rem;
-}
 
-.user .portfolioArea .editPageButns .editPortfolio {
-  border-style: solid;
-  border-color: white;
-  border-radius: 2rem;
-  margin-bottom: 4rem;
-}
 
-.user .portfolioArea .editPageButns .editProfile {
-  border-style: solid;
-  border-color: white;
-  border-radius: 2rem;
-  margin-bottom: 4rem;
-  margin-left: 2rem;
-}
+
+
 .user .portfolioArea .editPageButns .editPortfolio p {
   padding-left: 4rem;
   padding-right: 4rem;

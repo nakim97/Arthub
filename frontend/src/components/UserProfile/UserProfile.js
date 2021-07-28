@@ -101,7 +101,7 @@ export default function UserProfile({ user, handleOnLogout }) {
           <div className="editProfile">
             <Link to="/edit">Edit Profile</Link>
           </div>
-          <div className="editProfile">
+          <div className="uploadProfile">
             <Link to="/upload">Create Post</Link>
           </div>
         </div>
