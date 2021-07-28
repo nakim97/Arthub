@@ -10,7 +10,7 @@ export default function Youtube() {
   const [videos, setVideos] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [hidden, setHidden] = useState(false);
-  
+
   const handleSubmit = async (termFromSearchBar) => {
 
     const response = await youtube.get("/search", {
