@@ -3,8 +3,11 @@ import { useForm } from "react-hook-form";
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 import apiClient from "../../services/apiClient";
+import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
+import ShareIcon from "@material-ui/icons/Share";
+import ChatIcon from "@material-ui/icons/Chat";
+import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import "./Comments.css";
-
 
 export default function Comments() {
   const { postId } = useParams();
@@ -32,6 +35,30 @@ export default function Comments() {
 
   return (
     <div className="comments">
+      <div className="likesAndShare">
+        <FavoriteBorderIcon />
+        <ShareIcon />
+      </div>
+
+      <div className="description">
+        <p>This is an amazing piece of work. Real amazing!!</p>
+      </div>
+
+      <div className="likeCommentCount">
+        <div className="commentCount">
+          <div className="numCount">
+            <ChatIcon />
+            <p>23 Comments</p>
+          </div>
+        </div>
+        <div className="likeCount">
+          <div className="numCount">
+            <ThumbUpIcon />
+            <p>983 Likes</p>
+          </div>
+        </div>
+      </div>
+
       <div className="title">
         <h2>Comments</h2>
       </div>
