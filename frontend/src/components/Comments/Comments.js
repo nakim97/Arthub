@@ -28,7 +28,7 @@ export default function Comments() {
       try {
         const { data } = await apiClient.listCommentsWithPostId(postId);
 
-        console.log(data);
+        // console.log(data);
 
         setComments(data.comments);
       } catch (err) {
@@ -39,7 +39,7 @@ export default function Comments() {
     };
 
     fetchCommentsById();
-  }, [postId]);
+  }, [postId, comments]);
 
   const groupComments = (commentDetails) => {
     // get an array of unique comment ids
