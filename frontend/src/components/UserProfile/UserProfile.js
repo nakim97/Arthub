@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import userBanner from "../../Assets/userBanner.png";
 import person2 from "../../Assets/person2.png";
+import InstagramIcon from "@material-ui/icons/Instagram";
+import FacebookIcon from "@material-ui/icons/Facebook";
+import TwitterIcon from "@material-ui/icons/Twitter";
 import { useUserProfile } from "../../hooks/useUserProfile";
 
 export default function UserProfile({ user, handleOnLogout }) {
@@ -80,6 +83,11 @@ export default function UserProfile({ user, handleOnLogout }) {
             <p>{username}</p>
           </div>
         </div>
+        <div className="socialMedia">
+          <InstagramIcon />
+          <FacebookIcon />
+          <TwitterIcon />
+        </div>
       </div>
 
       <div className="description">{biography}</div>
@@ -90,7 +98,6 @@ export default function UserProfile({ user, handleOnLogout }) {
         </div>
 
         <div className="editPageButns">
-          
           <div className="editPortfolio">
             <Link to="/editportfolio">Edit Portfolio</Link>
           </div>
@@ -106,8 +113,11 @@ export default function UserProfile({ user, handleOnLogout }) {
       <div className="pictureArea">
         {posts.map((post) => (
           <div className="image" key={post.photoPostId}>
-            <Link to={`/post/${post.photoPostId}`}> 
-            <img src={`${post.imgPostUrl}`} alt={`Portfolio ${post.photoPostId}`} ></img>
+            <Link to={`/post/${post.photoPostId}`}>
+              <img
+                src={`${post.imgPostUrl}`}
+                alt={`Portfolio ${post.photoPostId}`}
+              ></img>
             </Link>
           </div>
         ))}

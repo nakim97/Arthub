@@ -25,14 +25,15 @@ class Comment {
     const results = await db.query(
       `
       SELECT pc.id,
-                  pc.post_id,
-                  pc.comment_description,
-                  u.id AS "userId",
-                  pc.comment_created_at,
-                  u.username, u.profile_img_url
-                  FROM photoComments AS pc
-                  JOIN users AS u ON u.id = pc.user_id
-                  WHERE post_id = $1
+      pc.post_id,
+      pc.comment_description,
+      pc.comment_created_at,
+      u.id AS "userId",
+      u.username, u.profile_img_url
+      FROM photoComments AS pc
+      JOIN users AS u ON u.id = pc.user_id
+      WHERE post_id = $1
+      ORDER BY pc.comment_created_at DESC
             `,
       [postsId]
     );
@@ -40,37 +41,5 @@ class Comment {
     return results.rows;
   }
 }
-// SELECT pc.id,
-//             pc.post_id,
-//             pc.comment_description
-//             u.id,
-//             FROM photoComments AS pc
-//             JOIN users AS u ON u.id = pc.user_id
-//             WHERE pc.id = $1
+
 module.exports = Comment;
-
-//   static async createCommentsForPost({ comment, user, postsId }) {
-//     // Check if user has already added a comment for this post
-//     // Throw an error if user has already added a comment
-//     const existingComment = await Comment.fetchCommentForPostByUser({
-//       user,
-//       postsId,
-//     });
-//     if (existingComment) {
-//       throw BadRequestError(
-//         `Users are not allowed to leave multiple comments for a single post`
-//       );
-//     }
-//     const results = await db.query(
-//       `
-//             INSERT INTO photoComments(comment_description, id, user_id, post_id)
-//             VALUES ($1,$2,$3,$4, (SELECT id FROM users WHERE email = $5))
-//             RETURNING comment_description, id, user_id,post_id, comment_created_at
-//             `,
-//       [comment, user.email, postsId]
-//     );
-//     return results.rows[0];
-//   }
-// }
-
-// module.exports = Comment;

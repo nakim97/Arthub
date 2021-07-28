@@ -65,11 +65,6 @@
   margin-left: 2rem;
 }
 
-
-
-
-
-
 .user .portfolioArea .editPageButns .editPortfolio p {
   padding-left: 4rem;
   padding-right: 4rem;
@@ -99,7 +94,7 @@
 .user .SaveCancel {
   display: flex;
   margin-top: 3rem;
-  margin-left: 70rem;
+  margin-left: 60rem;
 }
 .user .SaveCancel .saveButn {
   margin-left: 2rem;
@@ -115,4 +110,16 @@
   display: flex;
   padding-top: 1rem;
   padding-left: 2rem;
+}
+
+.userInfo .socialMediaEdit {
+  margin-left: 30rem;
+  margin-top: 2rem;
+}
+
+.userInfo .socialMediaEdit .media .Facebook {
+  padding-top: 1rem;
+}
+.userInfo .socialMediaEdit .media .Twitter {
+  padding-top: 1rem;
 }

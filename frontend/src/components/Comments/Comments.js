@@ -3,46 +3,66 @@ import { useForm } from "react-hook-form";
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 import apiClient from "../../services/apiClient";
+import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
+import ShareIcon from "@material-ui/icons/Share";
+import ChatIcon from "@material-ui/icons/Chat";
+import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import "./Comments.css";
-import Navbar from "../Navbar/Navbar";
 
 export default function Comments() {
   const { postId } = useParams();
   const [isLoading, setIsLoading] = useState(false);
   const [comments, setComments] = useState([]);
   const [error, setError] = useState(false);
+
   useEffect(() => {
     const fetchCommentsById = async () => {
       setIsLoading(true);
       try {
         const { data } = await apiClient.listCommentsWithPostId(postId);
-        console.log(data);
+
         setComments(data.comments);
       } catch (err) {
         setError(err);
       }
-
       setIsLoading(false);
     };
+
     fetchCommentsById();
-  }, [postId]);
-
-  const groupComments = (commentDetails) => {
-    // get an array of unique comment ids
-    const commentIds = [...new Set(commentDetails.map((d) => d.commentId))];
-  };
-
-  //in return(), would we then return commentIds?
-
-  const commentsMapping = groupComments(comments);
+  }, [postId, comments]);
 
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => alert(JSON.stringify(data));
+
   return (
     <div className="comments">
+      <div className="likesAndShare">
+        <FavoriteBorderIcon />
+        <ShareIcon />
+      </div>
+
+      <div className="description">
+        <p>This is an amazing piece of work. Real amazing!!</p>
+      </div>
+
+      <div className="likeCommentCount">
+        <div className="commentCount">
+          <div className="numCount">
+            <ChatIcon />
+            <p>23 Comments</p>
+          </div>
+        </div>
+        <div className="likeCount">
+          <div className="numCount">
+            <ThumbUpIcon />
+            <p>983 Likes</p>
+          </div>
+        </div>
+      </div>
+
       <div className="title">
         <h2>Comments</h2>
       </div>
+
       <div className="searchForm">
         <form
           onSubmit={handleSubmit(
@@ -52,10 +72,6 @@ export default function Comments() {
               })
           )}
         >
-          {/* {
-              comment: data,
-              postId: postId,
-            } */}
           <div className="commentSecCont">
             <div className="typeComment">
               <input
@@ -64,62 +80,50 @@ export default function Comments() {
                 {...register("Comments", {})}
               />
             </div>
+
             <div className="submitComment">
               <input type="submit" />
             </div>
           </div>
         </form>
       </div>
+      {comments.map((comment, i) => {
+        var dateNew = new Date(comment.comment_created_at);
+        var options = {
+          year: 'numeric', month: 'numeric', day: 'numeric',
+          hour: 'numeric', minute: 'numeric', second: 'numeric',
+          hour12: false,
+          timeZone: 'America/Los_Angeles'
+        };
+        var date = new Intl.DateTimeFormat('default', options).format(dateNew)
 
-      {/* {Object.keys(commentsMapping).map((commentId) => ( */}
-      {comments.map((comment, i) => (
-        <div className="commentSection" key={i}>
-          <div className="profilePic">
-            <img
-              className="profileImg"
-              src={comment.profile_img_url}
-              alt="user profile picture"
-            />
-          </div>
-          <div className="userInfo">
-            <div className="subUserInfo">
-              <div className="username">
-                <p>{comment.username}</p>
-              </div>
-              <div className="description">
-                <p>{comment.comment_description}</p>
+        return (
+          <div className="commentSection" key={i}>
+            <div className="profilePic">
+              <img
+                className="profileImg"
+                src={comment.profile_img_url}
+                alt="user profile picture"
+              />
+            </div>
+
+            <div className="userInfo">
+              <div className="subUserInfo">
+                <div className="username">
+                  <p>{comment.username}</p>
+                </div>
+
+                <div className="description">
+                  <p>{comment.comment_description}</p>
+                </div>
+                <div className="timestamp">
+                  <p>{date}</p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      ))}
-      {/* ))} 
-      
-      Name: {comment}
-      */}
+        );
+      })}
     </div>
   );
 }
-
-// import React from "react";
-
-// class MyForm extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = { username: "" };
-//   }
-//   myChangeHandler = (event) => {
-//     this.setState({ username: event.target.value });
-//   };
-//   render() {
-//     return (
-//       <form>
-//         <h1>Hello {this.state.username}</h1>
-//         <p>Comments:</p>
-//         <input type="text" onChange={this.myChangeHandler} />
-//       </form>
-//     );
-//   }
-// }
-
-// export default MyForm;

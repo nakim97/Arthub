@@ -77,10 +77,14 @@ CREATE TABLE forumTags (
 
 CREATE TABLE likedPost (
    id                    SERIAL PRIMARY KEY,
-   photo_post_id         INTEGER NOT NULL REFERENCES photoPost(id) ON DELETE CASCADE
+   likes                 INTEGER,
+   user_id               INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+   post_id               INTEGER NOT NULL REFERENCES photoPost(id) ON DELETE CASCADE
 );
 
 CREATE TABLE likedForumPost (
    id                    SERIAL PRIMARY KEY,
+   likes                 INTEGER,
+   user_id               INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
    forum_post_id         INTEGER NOT NULL REFERENCES forumPost(id) ON DELETE CASCADE
 );

@@ -2,6 +2,33 @@
   color: white;
 }
 
+.likesAndShare {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100px;
+  margin-top: 1rem;
+  margin-left: 3rem;
+  color: white;
+}
+
+.likeCommentCount {
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+  margin-left: 4rem;
+  color: white;
+}
+
+.numCount {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 150px;
+}
+
+.description {
+  margin-left: 2rem;
+}
 .comments .title {
   margin-left: 4rem;
 }

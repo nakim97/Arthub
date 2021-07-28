@@ -3,6 +3,7 @@ import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 import apiClient from "../../services/apiClient";
 import Navbar from "../Navbar/Navbar";
+import Comments from "../Comments/Comments";
 /*
  - Fragment tags as return only returns one thing <> </> */
 export default function PostDetail({ user, handleOnLogout }) {
@@ -53,6 +54,8 @@ export default function PostDetail({ user, handleOnLogout }) {
             alt="people standing on a mountain"
           />
         </div>
+
+        <Comments />
       </>
     );
   };
