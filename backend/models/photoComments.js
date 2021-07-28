@@ -29,11 +29,11 @@ class Comment {
       pc.comment_description,
       pc.comment_created_at,
       u.id AS "userId",
-      pc.comment_created_at,
       u.username, u.profile_img_url
       FROM photoComments AS pc
       JOIN users AS u ON u.id = pc.user_id
       WHERE post_id = $1
+      ORDER BY pc.comment_created_at
             `,
       [postsId]
     );

@@ -60,7 +60,6 @@ export default function Comments() {
           </div>
         </form>
       </div>
-
       {comments.map((comment, i) => (
         <div className="commentSection" key={i}>
           <div className="profilePic">
@@ -79,6 +78,9 @@ export default function Comments() {
 
               <div className="description">
                 <p>{comment.comment_description}</p>
+              </div>
+              <div className="timestamp">
+                <p>{comment.comment_created_at}</p>
               </div>
             </div>
           </div>
