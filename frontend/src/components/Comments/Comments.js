@@ -46,7 +46,8 @@ export default function Comments() {
 
       <form
         onSubmit={handleSubmit(
-          async (data) => await apiClient.createComment(postId, data)
+          async (data) =>
+            await apiClient.createComment(postId, { comment: data["Comments"] })
         )}
       >
         {/* {
@@ -78,12 +79,13 @@ export default function Comments() {
             />
           </div>
           <div className="userInfo">
-            <div className="username">
-              <p>{comment.username}</p>
-            </div>
-
-            <div className="description">
-              <p>{comment.comment_description}</p>
+            <div className="subUserInfo">
+              <div className="username">
+                <p>{comment.username}</p>
+              </div>
+              <div className="description">
+                <p>{comment.comment_description}</p>
+              </div>
             </div>
           </div>
         </div>

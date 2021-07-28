@@ -2,6 +2,9 @@
   color: white;
 }
 
+.comments .title {
+  margin-left: 4rem;
+}
 .comments .commentSecCont {
   display: flex;
 }
@@ -24,11 +27,28 @@
 
 .comments .submitComment input {
   display: flex;
+  color: black;
+  margin-left: 2rem;
+  border-radius: 25rem;
+  padding: 0.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  background-color: #7fffd4;
+}
 
+.comments .commentSection {
+  display: flex;
+  margin-left: 2rem;
+  margin-top: 1rem;
+}
+
+.comments .commentSection .userInfo .subUserInfo {
+  margin-top: -1rem;
+}
+.comments .commentSection .userInfo .subUserInfo .username {
   margin-left: 2rem;
 }
 
-.commentSection .profilePic {
-}
-.commentSection .profilePic .username p {
+.comments .commentSection .userInfo .subUserInfo .description {
+  margin-top: -1rem;
 }

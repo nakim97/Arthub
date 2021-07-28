@@ -35,7 +35,7 @@ export default function PostDetail({ user, handleOnLogout }) {
 
     return (
       <>
-        <div className="userInfo">
+        <div className="userInfoCont">
           <div className="profilePic">
             <img
               className="profileImg"
