@@ -46,6 +46,7 @@ class ApiClient {
       data: tag,
     });
   }
+  
   async createImage(image) {
     return await this.request({
       endpoint: `image`,
@@ -53,9 +54,11 @@ class ApiClient {
       data: image,
     });
   }
+
   // async listPosts() {
   //   return await this.request({ endpoint: `posts`, method: `GET` });
   // }
+
   async listPosts(user) {
     return await this.request({
       endpoint: `post`,
@@ -63,6 +66,7 @@ class ApiClient {
       data: user,
     });
   }
+
   async listPostWithId(productId) {
     return await this.request({
       endpoint: `post/${productId}`,
@@ -91,6 +95,7 @@ class ApiClient {
       data: user,
     });
   }
+
   async createExercise(exercise) {
     return await this.request({
       endpoint: `exercise`,
@@ -102,6 +107,7 @@ class ApiClient {
   async fetchUserFromToken() {
     return await this.request({ endpoint: `auth/me`, method: `GET` });
   }
+
   async loginUser(credentials) {
     return await this.request({
       endpoint: `auth/login`,
@@ -109,6 +115,7 @@ class ApiClient {
       data: credentials,
     });
   }
+
   async signupUser(credentials) {
     return await this.request({
       endpoint: `auth/register`,
@@ -116,6 +123,7 @@ class ApiClient {
       data: credentials,
     });
   }
+
   async updateUser(credentials) {
     return await this.request({
       endpoint: `user`,
@@ -123,6 +131,7 @@ class ApiClient {
       data: credentials,
     });
   }
+
   async logoutUser() {
     this.setToken(null);
     localStorage.setItem(this.tokenName, "");
