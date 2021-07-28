@@ -13,8 +13,7 @@
 }
 
 .user .profilePic img {
-  width: 55px;
-  height: 50px;
+  max-width: 100px;
   border-radius: 50%;
   z-index: 1;
 }
@@ -56,4 +55,11 @@
   display: flex;
   margin-top: -1rem;
   text-align: left;
+}
+
+@media only screen and (max-width: 1050px) {
+  .user .userInfo .profilePic .profileImg {
+    width: 100%;
+    height: auto;
+  }
 }

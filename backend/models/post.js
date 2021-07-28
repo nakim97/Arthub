@@ -12,10 +12,10 @@ class Post {
     img.post_img_url AS "imgPostUrl"
     FROM photoPost AS pp
     JOIN photoUpload AS img ON img.id = pp.img_id
-      `
-    );
+    `
+        );
     return results.rows;
-  }
+    }
   static async listPhotoPostsForUser({ user }) {
     const results = await db.query(
       `
@@ -56,7 +56,7 @@ class Post {
     const user = "ok";
     return user;
   }
-  
+
   static async searchByTitle(query) {
     if (!query) {
       throw new BadRequestError("No search query provided");

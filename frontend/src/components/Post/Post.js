@@ -1,9 +1,13 @@
+import * as React from "react";
+import { useForm } from "react-hook-form";
 import "./Post.css";
 import Navbar from "../Navbar/Navbar";
 import userBanner from "../../Assets/userBanner.png";
 import person2 from "../../Assets/person2.png";
 
-export default function Explore({ user, handleOnLogout }) {
+// import Comments from "../Comments/Comments";
+
+export default function Post({ user, handleOnLogout }) {
   return (
     <div className="user">
       <Navbar user={user} handleOnLogout={handleOnLogout} />
@@ -29,7 +33,25 @@ export default function Explore({ user, handleOnLogout }) {
           alt="people standing on a mountain"
         />
       </div>
-      <div className="comments">
+
+      {/* <Comments /> */}
+
+      {/* <div className="comments">
+        <div className="title">
+          <h2>Comments</h2>
+        </div>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <input
+            type="text"
+            placeholder="Comments"
+            {...register("Comments", {})}
+          />
+
+          <input type="submit" />
+        </form>
+      </div> */}
+
+      {/* <div className="comments">
         <div className="title">
           <h2>Comments</h2>
         </div>
@@ -84,7 +106,7 @@ export default function Explore({ user, handleOnLogout }) {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

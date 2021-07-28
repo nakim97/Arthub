@@ -105,12 +105,12 @@
   margin-top: 1rem;
 }
 
-.user .userInfo {
+.user .userInfoCont {
   display: flex;
   color: white;
 }
 
-.user .userInfo .username {
+.user .userInfoCont .username {
   display: flex;
   font-size: medium;
   margin-left: 1.5rem;
@@ -136,4 +136,9 @@
   display: flex;
   margin-top: -1rem;
   text-align: left;
+}
+
+.userInfoCont {
+  margin-left: 2rem;
+  padding-bottom: 1rem;
 }
