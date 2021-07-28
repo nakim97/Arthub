@@ -31,10 +31,12 @@ export default function UserProfile({ user, handleOnLogout }) {
   const profile_url = userInfo.profile_img_url == null;
   const profile_img = profile_url ? (
     <>
+    {/* Return default image */}
       <img className="bannerImg" src={person2} alt="user profile picture" />
     </>
   ) : (
     <>
+    {/* Use our own image */}
       <img
         className="bannerImg"
         src={`${userInfo.profile_img_url}`}

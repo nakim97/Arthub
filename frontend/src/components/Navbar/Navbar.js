@@ -7,12 +7,27 @@ import { Link } from "react-router-dom";
 export default function Navbar({ handleOnLogout, user }) {
   // If the boolean is true, the user exists
   const isAuthenticated = Boolean(user?.email);
+  const icon = user?.profile_img_url == null;
+  const navIcon = icon ? (
+    <>
+    <AccountCircleIcon />
+    </>
+  ) : (
+    <>
+    <img
+        className="bannerImg"
+        src={`${user.profile_img_url}`}
+        alt="My profile"
+      />
+    </>
+  );
   const buttons = isAuthenticated ? (
     <>
       <ul className="links link-button">
         <Link to="/me" className="Link">
           <div className="userIcon">
-            <AccountCircleIcon />
+            {/* <AccountCircleIcon /> */}
+            {navIcon}
             <li className="navRegister">Me</li>
           </div>
         </Link>
