@@ -12,10 +12,17 @@ export const useEditProfile = ({ user }) => {
     name: "",
     email: "",
     userName: "",
-    password: "",
-    passwordConfirm: "",
+    profileImgUrl: "",
+    bannerImgUrl: "",
+    instagramUrl: "",
+    facebookUrl: "",
+    twitterUrl: "",
+    biography: "",
   });
-
+  function joinName(fName, lName) {
+    return fName + " " + lName;
+  }
+  const myName = joinName(user.first_name, user.last_name);
   // useEffect(() => {
   //   // if user is already logged in,
   //   // redirect them to the home page

@@ -4,6 +4,7 @@ import userBanner from "../../Assets/userBanner.png";
 import person2 from "../../Assets/person2.png";
 
 export default function editProfile({user, handleOnLogout}) {
+  const instagram_url = user.instagram_url || "";
   return (
     <div className="user">
       <Navbar user={user} handleOnLogout={handleOnLogout}/>
