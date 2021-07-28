@@ -43,30 +43,33 @@ export default function Comments() {
       <div className="title">
         <h2>Comments</h2>
       </div>
-
-      <form
-        onSubmit={handleSubmit(
-          async (data) =>
-            await apiClient.createComment(postId, { comment: data["Comments"] })
-        )}
-      >
-        {/* {
+      <div className="searchForm">
+        <form
+          onSubmit={handleSubmit(
+            async (data) =>
+              await apiClient.createComment(postId, {
+                comment: data["Comments"],
+              })
+          )}
+        >
+          {/* {
               comment: data,
               postId: postId,
             } */}
-        <div className="commentSecCont">
-          <div className="typeComment">
-            <input
-              type="text"
-              placeholder="Comments"
-              {...register("Comments", {})}
-            />
+          <div className="commentSecCont">
+            <div className="typeComment">
+              <input
+                type="text"
+                placeholder="Comments"
+                {...register("Comments", {})}
+              />
+            </div>
+            <div className="submitComment">
+              <input type="submit" />
+            </div>
           </div>
-          <div className="submitComment">
-            <input type="submit" />
-          </div>
-        </div>
-      </form>
+        </form>
+      </div>
 
       {/* {Object.keys(commentsMapping).map((commentId) => ( */}
       {comments.map((comment, i) => (
