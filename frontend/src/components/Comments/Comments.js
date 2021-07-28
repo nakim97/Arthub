@@ -48,13 +48,15 @@ export default function Comments() {
         <div className="commentCount">
           <div className="numCount">
             <ChatIcon />
-            <p>23 Comments</p>
+            <div className="numCommentsCount">
+              <p>23 Comments</p>
+            </div>
           </div>
         </div>
         <div className="likeCount">
           <div className="numCount">
             <ThumbUpIcon />
-            <p>983 Likes</p>
+            <p className="numLikesCount">983 Likes</p>
           </div>
         </div>
       </div>
