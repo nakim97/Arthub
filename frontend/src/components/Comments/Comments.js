@@ -4,7 +4,7 @@ import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 import apiClient from "../../services/apiClient";
 import "./Comments.css";
-import Navbar from "../Navbar/Navbar";
+// import Navbar from "../Navbar/Navbar";
 
 export default function Comments() {
   const { postId } = useParams();
