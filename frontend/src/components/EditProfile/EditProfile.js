@@ -8,6 +8,8 @@ import FacebookIcon from "@material-ui/icons/Facebook";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import { useImageUpload } from "../../hooks/useImageUpload";
 import { useImageUploadS } from "../../hooks/useImageUploadS";
+import ImageUpload from "../ImageUpload/ImageUpload";
+import { Link } from "react-router-dom";
 
 export default function EditProfile({ user, handleOnLogout }) {
   const { isProcessing, form, errors, handleOnSubmit, handleOnInputChange } =
@@ -24,9 +26,16 @@ export default function EditProfile({ user, handleOnLogout }) {
       <br />
       <div className="userInfo">
         {/* Change this to image comp */}
-        <div className="profilePic">
+        {/* <div className="profilePic">
           <img className="bannerImg" src={person2} alt="user profile picture" />
-        </div>
+        </div> */}
+        {/* <ImageUpload
+            handleImageUpload={handleImageUpload}
+            openWidget={openWidget}
+            imageUrl={imageUrl}
+            imageAlt={imageAlt}
+            name={"Picture"}
+          /> */}
 
         <div className="nameInfo">
           <div className="name">
@@ -99,9 +108,13 @@ export default function EditProfile({ user, handleOnLogout }) {
         </div>
       </div>
 
-      <div className="uploadButn">
-        <button>Upload</button>
-      </div>
+      <ImageUpload
+            handleImageUpload={handleImageUpload}
+            openWidget={openWidget}
+            imageUrl={imageUrl}
+            imageAlt={imageAlt}
+            name={"Profile picture"}
+          />
 
       <div className="description">
         <h3>Bibliography</h3>
@@ -124,7 +137,7 @@ export default function EditProfile({ user, handleOnLogout }) {
         <input type="submit" value="Submit" />
       </div> */}
       {/* Image Upload */}
-      <div className="banner">
+      {/* <div className="banner">
         <p>Banner Image: </p>
         <img
           className="bannerImg"
@@ -135,16 +148,36 @@ export default function EditProfile({ user, handleOnLogout }) {
 
       <div className="uploadButn2">
         <button>Upload</button>
-      </div>
+      </div> */}
+      <ImageUpload
+            handleImageUpload={handleImageUpload1}
+            openWidget={openWidget1}
+            imageUrl={imageUrl2}
+            imageAlt={imageAlt2}
+            name={"Banner picture"}
+          />
 
-      <div className="SaveCancel">
+<div className="SaveCancel">
+        <button className="cancel">
+          <Link to="/me">Cancel</Link>
+        </button>
+
+        <button
+          className="submit"
+          disabled={isProcessing }
+          onClick={handleOnSubmit}
+        >
+          <Link to="/me">{isProcessing ? "Loading..." : "Submit"}</Link>
+        </button>
+      </div>
+      {/* <div className="SaveCancel">
         <div className="cancelButn">
           <button>Cancel</button>
         </div>
         <div className="saveButn">
           <button>Save</button>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
