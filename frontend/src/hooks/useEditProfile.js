@@ -7,9 +7,9 @@ export const useEditProfile = ({ user }) => {
   function joinName(fName, lName) {
     return fName + " " + lName;
   }
-  console.log(user.first_name)
+  // console.log(user.first_name);
   const my_name = joinName(user.first_name, user.last_name) || "";
-  console.log("name"+my_name)
+  // console.log("name " + my_name);
   const instagram_url = user.instagram_url || "";
   const profile_img_url = user.profile_img_url || "";
   const facebook_url = user.facebook_url || "";
@@ -29,7 +29,7 @@ export const useEditProfile = ({ user }) => {
     twitterUrl: twitter_url,
     biography: biography,
   });
-  
+
   // useEffect(() => {
   //   // if user is already logged in,
   //   // redirect them to the home page
@@ -37,7 +37,6 @@ export const useEditProfile = ({ user }) => {
   //     navigate("/");
   //   }
   // }, [user, navigate]);
-
 
   const handleOnInputChange = (event) => {
     setForm((f) => ({ ...f, [event.target.name]: event.target.value }));
