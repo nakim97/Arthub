@@ -35,9 +35,8 @@ text-align: left;
 iframe{
 position: fixed;
 text-align: center;
-color: white;
-width: 40%;
-height: 40%;
+width: 60%;
+height: 50%;
 background: rgba(0, 0, 0, 0.5);
 top: 50%;
 left: 50%;

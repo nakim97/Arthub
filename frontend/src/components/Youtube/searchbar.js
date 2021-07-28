@@ -16,7 +16,7 @@ export default function Searchbar(props) {
     <div className="search">
       {term === null && (
         <div className="noSearch">
-          <p>Search for anything you want to learn...</p>
+         
         </div>
       )}
       <form onSubmit={handleSubmit} className="form">
