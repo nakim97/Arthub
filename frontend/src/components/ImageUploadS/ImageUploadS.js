@@ -11,12 +11,12 @@ export default function ImageUploadS({ handleImageUpload, openWidget, imageUrl, 
       </section>
       <section className="left-side">
         <form>
-          <div className="form-group">
+          {/* <div className="form-group">
             <input type="file" />
           </div>
           <button type="button" className="btn" onClick={handleImageUpload}>
             Submit
-          </button>
+          </button> */}
           <button type="button" className="btn widget-btn" onClick={openWidget}>
             Upload and Submit Via Widget
           </button>
