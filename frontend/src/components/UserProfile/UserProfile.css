@@ -40,11 +40,22 @@
   padding-right: 2rem;
   color: white;
 }
+.user .portfolioArea .Portfolio{
+  float:left;
+}
 
+.user .portfolioArea .editPageButns{
+  float:right;
+}
 .user .portfolioArea {
   color: white;
   display: flex;
   padding-left: 2rem;
+  margin: 0 auto;
+  flex-grow: 0;
+  flex-shrink: 0;
+  overflow:auto;
+  flex-basis: 40px;
 }
 
 .user .portfolioArea .editPageButns {
@@ -53,19 +64,35 @@
 }
 
 .user .portfolioArea .editPageButns .editPortfolio {
-  border-style: solid;
-  border-color: white;
-  border-radius: 2rem;
+  border-color:white;
+  border-style:solid;
+  border-radius: 30px;
+  width: 100px;
+  padding: 5px;
   margin-bottom: 4rem;
+  margin-right:20px;
 }
 
 .user .portfolioArea .editPageButns .editProfile {
-  border-style: solid;
-  border-color: white;
-  border-radius: 2rem;
+  border-color:white;
+  border-style:solid;
+  border-radius: 30px;
+  width: 100px;
+  padding: 5px;
   margin-bottom: 4rem;
-  margin-left: 2rem;
+  margin-right:20px;
 }
+
+.user .portfolioArea .editPageButns .uploadProfile {
+  border-color:white;
+  border-style:solid;
+  border-radius: 30px;
+  width: 100px;
+  padding: 5px;
+  margin-bottom: 4rem;
+  margin-right:20px;
+}
+
 .user .portfolioArea .editPageButns .editPortfolio p {
   padding-left: 4rem;
   padding-right: 4rem;
