@@ -28,10 +28,20 @@ router.get("/listPosts", async (req, res, next) => {
 
 router.get("/", security.requireAuthenticatedUser, async (req, res, next) => {
   try {
-    // List all posts
+    // List all posts for user
     const { user } = res.locals;
     const postsByMe = await Post.listPhotoPostsForUser({ user });
     return res.status(200).json({ postsByMe });
+  } catch (err) {
+    next(err);
+  }
+});
+router.get("/search", async (req, res, next) => {
+  try {
+    //uses search?q= -str- - you enter the string
+    const {q} = req.query;
+    const searches = await Post.searchByTitle(q);
+    return res.status(200).json({ searches });
   } catch (err) {
     next(err);
   }
