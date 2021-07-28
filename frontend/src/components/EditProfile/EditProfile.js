@@ -9,6 +9,7 @@ import TwitterIcon from "@material-ui/icons/Twitter";
 import { useImageUpload } from "../../hooks/useImageUpload";
 import { useImageUploadS } from "../../hooks/useImageUploadS";
 import ImageUpload from "../ImageUpload/ImageUpload";
+import ImageUploadS from "../ImageUploadS/ImageUploadS";
 import { Link } from "react-router-dom";
 
 export default function EditProfile({ user, handleOnLogout }) {
@@ -149,7 +150,7 @@ export default function EditProfile({ user, handleOnLogout }) {
       <div className="uploadButn2">
         <button>Upload</button>
       </div> */}
-      <ImageUpload
+      <ImageUploadS
             handleImageUpload={handleImageUpload1}
             openWidget={openWidget1}
             imageUrl={imageUrl2}

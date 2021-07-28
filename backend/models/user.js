@@ -112,7 +112,7 @@ class User {
 
     const userResult = await db.query(
       `UPDATE users set username = $1, first_name = $2, last_name = $3, profile_img_url = $4, banner_img_url = $5, instagram_url = $6, facebook_url = $7, twitter_url = $8, biography = $9
-      WHERE u.id = (SELECT id FROM users WHERE email = $10)
+      WHERE users.id = (SELECT id FROM users WHERE email = $10)
       `,
       [
         credentials.username,
