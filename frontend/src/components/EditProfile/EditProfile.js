@@ -3,6 +3,9 @@ import Navbar from "../Navbar/Navbar";
 import userBanner from "../../Assets/userBanner.png";
 import person2 from "../../Assets/person2.png";
 import { useEditProfile } from "../../hooks/useEditProfile";
+import InstagramIcon from "@material-ui/icons/Instagram";
+import FacebookIcon from "@material-ui/icons/Facebook";
+import TwitterIcon from "@material-ui/icons/Twitter";
 
 export default function EditProfile({user, handleOnLogout}) {
   const {
@@ -36,6 +39,20 @@ export default function EditProfile({user, handleOnLogout}) {
               {errors.name && <span className="error">{errors.name}</span>}
             <div className="username">
               <p>John_S23</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="socialMediaEdit">
+          <div className="media">
+            <div className="Instagram">
+              <InstagramIcon />
+            </div>
+            <div className="Facebook">
+              <FacebookIcon />
+            </div>
+            <div className="Twitter">
+              <TwitterIcon />
             </div>
           </div>
         </div>
