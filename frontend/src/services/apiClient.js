@@ -116,6 +116,13 @@ class ApiClient {
       data: credentials,
     });
   }
+  async updateUser(credentials) {
+    return await this.request({
+      endpoint: `user`,
+      method: `PUT`,
+      data: credentials,
+    });
+  }
   async logoutUser() {
     this.setToken(null);
     localStorage.setItem(this.tokenName, "");

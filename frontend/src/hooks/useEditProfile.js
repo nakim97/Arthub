@@ -6,23 +6,30 @@ import Checkbox from "@material-ui/core/Checkbox";
 
 export const useEditProfile = ({ user }) => {
   const navigate = useNavigate();
-  const [isProcessing, setIsProcessing] = useState(false);
-  const [errors, setErrors] = useState({});
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    userName: "",
-    profileImgUrl: "",
-    bannerImgUrl: "",
-    instagramUrl: "",
-    facebookUrl: "",
-    twitterUrl: "",
-    biography: "",
-  });
   function joinName(fName, lName) {
     return fName + " " + lName;
   }
-  const myName = joinName(user.first_name, user.last_name);
+  const my_name = joinName(user.first_name, user.last_name) || "";
+  const instagram_url = user.instagram_url || "";
+  const profile_img_url = user.profile_img_url || "";
+  const facebook_url = user.facebook_url || "";
+  const twitter_url = user.twitter_url || "";
+  const username = user.username || "";
+  const banner_img_url = user.banner_img_url || "";
+  const biography = user.biography || "";
+  const [isProcessing, setIsProcessing] = useState(false);
+  const [errors, setErrors] = useState({});
+  const [form, setForm] = useState({
+    name: my_name,
+    userName: username,
+    profileImgUrl: profile_img_url,
+    bannerImgUrl: banner_img_url,
+    instagramUrl: instagram_url,
+    facebookUrl: facebook_url,
+    twitterUrl: twitter_url,
+    biography: biography,
+  });
+  
   // useEffect(() => {
   //   // if user is already logged in,
   //   // redirect them to the home page
@@ -51,12 +58,17 @@ export const useEditProfile = ({ user }) => {
     }
 
     const myArr = splitName(form.name);
-    const { data, error } = await apiClient.signupUser({
+    const { data, error } = await apiClient.updateUser({
       first_name: myArr[0],
       last_name: myArr[1],
       username: form.userName,
-      email: form.email,
-      password: form.password,
+      email: user.email,
+      profile_img_url: form.profileImgUrl,
+      banner_img_url: form.bannerImgUrl,
+      instagram_url: form.instagramUrl,
+      facebook_url: form.facebookUrl,
+      twitter_url: form.twitterUrl,
+      biography: form.biography,
     });
     if (error) setErrors((e) => ({ ...e, form: error }));
     // if (data?.user) {
