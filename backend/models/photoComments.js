@@ -33,7 +33,7 @@ class Comment {
       FROM photoComments AS pc
       JOIN users AS u ON u.id = pc.user_id
       WHERE post_id = $1
-      ORDER BY pc.comment_created_at
+      ORDER BY pc.comment_created_at DESC
             `,
       [postsId]
     );

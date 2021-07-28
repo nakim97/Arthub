@@ -87,32 +87,34 @@ export default function Comments() {
           </div>
         </form>
       </div>
-      {comments.map((comment, i) => (
-        <div className="commentSection" key={i}>
-          <div className="profilePic">
-            <img
-              className="profileImg"
-              src={comment.profile_img_url}
-              alt="user profile picture"
-            />
-          </div>
+      {comments.map((comment, i) => {
+        return (
+          <div className="commentSection" key={i}>
+            <div className="profilePic">
+              <img
+                className="profileImg"
+                src={comment.profile_img_url}
+                alt="user profile picture"
+              />
+            </div>
 
-          <div className="userInfo">
-            <div className="subUserInfo">
-              <div className="username">
-                <p>{comment.username}</p>
-              </div>
+            <div className="userInfo">
+              <div className="subUserInfo">
+                <div className="username">
+                  <p>{comment.username}</p>
+                </div>
 
-              <div className="description">
-                <p>{comment.comment_description}</p>
-              </div>
-              <div className="timestamp">
-                <p>{comment.comment_created_at}</p>
+                <div className="description">
+                  <p>{comment.comment_description}</p>
+                </div>
+                <div className="timestamp">
+                  <p>{comment.comment_created_at}</p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 }
