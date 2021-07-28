@@ -1,15 +1,15 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import apiClient from "../services/apiClient";
-import { withStyles } from "@material-ui/core/styles";
-import Checkbox from "@material-ui/core/Checkbox";
 
 export const useEditProfile = ({ user }) => {
   const navigate = useNavigate();
   function joinName(fName, lName) {
     return fName + " " + lName;
   }
+  console.log(user.first_name)
   const my_name = joinName(user.first_name, user.last_name) || "";
+  console.log("name"+my_name)
   const instagram_url = user.instagram_url || "";
   const profile_img_url = user.profile_img_url || "";
   const facebook_url = user.facebook_url || "";

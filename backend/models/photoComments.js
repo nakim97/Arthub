@@ -27,6 +27,7 @@ class Comment {
       SELECT pc.id,
       pc.post_id,
       pc.comment_description,
+      pc.comment_created_at,
       u.id AS "userId",
       pc.comment_created_at,
       u.username, u.profile_img_url

@@ -2,20 +2,38 @@ import "./EditProfile.css";
 import Navbar from "../Navbar/Navbar";
 import userBanner from "../../Assets/userBanner.png";
 import person2 from "../../Assets/person2.png";
+import { useEditProfile } from "../../hooks/useEditProfile";
 
-export default function editProfile({user, handleOnLogout}) {
-  
+export default function EditProfile({user, handleOnLogout}) {
+  const {
+    isProcessing,
+    form,
+    errors,
+    handleOnSubmit,
+    handleOnInputChange,
+  } = useEditProfile({user})
   return (
     <div className="user">
       <Navbar user={user} handleOnLogout={handleOnLogout}/>
-
+      {errors.form && <span className="error">{errors.form}</span>}
+        <br />
       <div className="userInfo">
+        {/* Change this to image comp */}
         <div className="profilePic">
           <img className="bannerImg" src={person2} alt="user profile picture" />
         </div>
+
         <div className="nameInfo">
           <div className="name">
-            <p>John Smith</p>
+          <label htmlFor="name">Name </label>
+              <input
+                type="text"
+                name="name"
+                placeholder="Jane Doe"
+                value={form.name}
+                onChange={handleOnInputChange}
+              />
+              {errors.name && <span className="error">{errors.name}</span>}
             <div className="username">
               <p>John_S23</p>
             </div>
