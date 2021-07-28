@@ -6,10 +6,16 @@ import { useEditProfile } from "../../hooks/useEditProfile";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import TwitterIcon from "@material-ui/icons/Twitter";
+import { useImageUpload } from "../../hooks/useImageUpload";
+import { useImageUploadS } from "../../hooks/useImageUploadS";
 
 export default function EditProfile({ user, handleOnLogout }) {
   const { isProcessing, form, errors, handleOnSubmit, handleOnInputChange } =
     useEditProfile({ user });
+    const { handleImageUpload, openWidget, imageUrl, imageAlt } =
+    useImageUpload();
+    const { handleImageUpload1, openWidget1, imageUrl2, imageAlt2 } =
+    useImageUploadS();
   // console.log(form.name);
   return (
     <div className="user">
