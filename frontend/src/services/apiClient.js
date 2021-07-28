@@ -39,26 +39,6 @@ class ApiClient {
     });
   }
 
-  async listPosts(user) {
-    return await this.request({
-      endpoint: `post`,
-      method: `GET`,
-      data: user,
-    });
-  }
-  async listPostWithId(postId) {
-    return await this.request({
-      endpoint: `post/${postId}`,
-      method: `GET`,
-    });
-  }
-
-  async deletePost(postId) {
-    return await this.request({
-      endpoint: `post/${postId}`,
-      method: `DELETE`,
-    });
-  }
   async createTag(tag) {
     return await this.request({
       endpoint: `auth/login`,
@@ -76,13 +56,34 @@ class ApiClient {
   // async listPosts() {
   //   return await this.request({ endpoint: `posts`, method: `GET` });
   // }
-  async listUserByEmail(email) {
+  async listPosts(user) {
     return await this.request({
-      endpoint: `user`,
+      endpoint: `post`,
       method: `GET`,
-      data: email,
+      data: user,
     });
   }
+  async listPostWithId(productId) {
+    return await this.request({
+      endpoint: `post/${productId}`,
+      method: `GET`,
+    });
+  }
+  async listCommentsWithPostId(postId) {
+    return await this.request({
+      endpoint: `post/${postId}/comments`,
+      method: `GET`,
+    });
+  }
+
+  async createComment(postId, comment) {
+    return await this.request({
+      endpoint: `post/${postId}/comments`,
+      method: `POST`,
+      data: comment,
+    });
+  }
+
   async listExercises(user) {
     return await this.request({
       endpoint: `exercise`,
