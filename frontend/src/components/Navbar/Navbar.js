@@ -1,6 +1,7 @@
 import "./Navbar.css";
 import SubNavbar from "../SubNavbar/SubNavbar";
 import BrushIcon from "@material-ui/icons/Brush";
+import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import { Link } from "react-router-dom";
 
 export default function Navbar({ handleOnLogout, user }) {
@@ -9,8 +10,11 @@ export default function Navbar({ handleOnLogout, user }) {
   const buttons = isAuthenticated ? (
     <>
       <ul className="links link-button">
-      <Link to="/me" className="Link">
-          <li className="navRegister">Me</li>
+        <Link to="/me" className="Link">
+          <div className="userIcon">
+            <AccountCircleIcon />
+            <li className="navRegister">Me</li>
+          </div>
         </Link>
         <button className="navSignOut" onClick={handleOnLogout}>
           Sign out
