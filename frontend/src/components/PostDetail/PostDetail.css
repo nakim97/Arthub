@@ -142,3 +142,8 @@
   margin-left: 2rem;
   padding-bottom: 1rem;
 }
+
+.userInfo {
+  margin-left: 2rem;
+  align-items: center;
+}
