@@ -2,11 +2,14 @@ import "./EditProfile.css";
 import Navbar from "../Navbar/Navbar";
 import userBanner from "../../Assets/userBanner.png";
 import person2 from "../../Assets/person2.png";
+import InstagramIcon from "@material-ui/icons/Instagram";
+import FacebookIcon from "@material-ui/icons/Facebook";
+import TwitterIcon from "@material-ui/icons/Twitter";
 
-export default function editProfile({user, handleOnLogout}) {
+export default function editProfile({ user, handleOnLogout }) {
   return (
     <div className="user">
-      <Navbar user={user} handleOnLogout={handleOnLogout}/>
+      <Navbar user={user} handleOnLogout={handleOnLogout} />
 
       <div className="userInfo">
         <div className="profilePic">
@@ -17,6 +20,20 @@ export default function editProfile({user, handleOnLogout}) {
             <p>John Smith</p>
             <div className="username">
               <p>John_S23</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="socialMediaEdit">
+          <div className="media">
+            <div className="Instagram">
+              <InstagramIcon />
+            </div>
+            <div className="Facebook">
+              <FacebookIcon />
+            </div>
+            <div className="Twitter">
+              <TwitterIcon />
             </div>
           </div>
         </div>
