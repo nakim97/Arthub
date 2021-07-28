@@ -103,7 +103,7 @@ export default function App() {
           <Route
             path="/post/:postId"
             element={<PostDetail user={user} handleOnLogout={handleOnLogout} />}
-          ></Route>
+          />
           <Route
             path="/editportfolio"
             element={
