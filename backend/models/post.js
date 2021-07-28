@@ -12,10 +12,10 @@ class Post {
     img.post_img_url AS "imgPostUrl"
     FROM photoPost AS pp
     JOIN photoUpload AS img ON img.id = pp.img_id
-      `
-    );
+    `
+        );
     return results.rows;
-  }
+    }
   static async listPhotoPostsForUser({ user }) {
     const results = await db.query(
       `
@@ -53,8 +53,20 @@ class Post {
     }
     const query = `DELETE FROM photoPost WHERE id = $1`;
     const result = await db.query(query, [postId]);
-    const user = result.rows[0];
+    const user = "ok";
     return user;
+  }
+
+  static async searchByTitle(query) {
+    if (!query) {
+      throw new BadRequestError("No search query provided");
+    }
+    const dbquery = `Select * from photoPost where post_title like '%${query}%';
+    `;
+    console.log(dbquery);
+    const result = await db.query(dbquery);
+    const queries = result.rows;
+    return queries;
   }
 
   static async createPost({ post, user }) {
@@ -75,12 +87,7 @@ class Post {
             post_description,
             photo_created_at
             `,
-      [
-        post.postTitle,
-        post.postDescription,
-        post.imgId,
-        user.email,
-      ]
+      [post.postTitle, post.postDescription, post.imgId, user.email]
     );
     return results.rows[0];
   }

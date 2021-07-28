@@ -28,10 +28,20 @@ router.get("/listPosts", async (req, res, next) => {
 
 router.get("/", security.requireAuthenticatedUser, async (req, res, next) => {
   try {
-    // List all posts
+    // List all posts for user
     const { user } = res.locals;
     const postsByMe = await Post.listPhotoPostsForUser({ user });
     return res.status(200).json({ postsByMe });
+  } catch (err) {
+    next(err);
+  }
+});
+router.get("/search", async (req, res, next) => {
+  try {
+    //uses search?q= -str- - you enter the string
+    const { q } = req.query;
+    const searches = await Post.searchByTitle(q);
+    return res.status(200).json({ searches });
   } catch (err) {
     next(err);
   }
@@ -42,6 +52,17 @@ router.get("/:postsId", async (req, res, next) => {
   try {
     const postsId = req.params.postsId;
     const posting = await Post.fetchPhotoPostById(postsId);
+    // console.log("pID", postsId, "p", posts)
+    res.status(200).json({ posting });
+  } catch (err) {
+    next(err);
+  }
+});
+// delete single post
+router.delete("/:postsId", async (req, res, next) => {
+  try {
+    const postsId = req.params.postsId;
+    const posting = await Post.deletePhotoPostById(postsId);
     // console.log("pID", postsId, "p", posts)
     res.status(200).json({ posting });
   } catch (err) {

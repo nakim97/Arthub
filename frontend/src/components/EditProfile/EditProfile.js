@@ -27,7 +27,7 @@ export default function editProfile({user, handleOnLogout}) {
       </div>
 
       <div className="description">
-        <h3>Biliograpghy</h3>
+        <h3>Bibliography</h3>
       </div>
 
       <div className="textSpace">

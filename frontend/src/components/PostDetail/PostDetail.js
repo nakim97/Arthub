@@ -3,11 +3,8 @@ import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 import apiClient from "../../services/apiClient";
 import Navbar from "../Navbar/Navbar";
-import userBanner from "../../Assets/userBanner.png";
-import person2 from "../../Assets/person2.png";
-import Comments from "../Comments/Comments";
 /*
- - Fragment tags as return only returns one thing<> </>*/
+ - Fragment tags as return only returns one thing <> </> */
 export default function PostDetail({ user, handleOnLogout }) {
   const { postId } = useParams();
   const [isLoading, setIsLoading] = useState(false);
@@ -18,7 +15,7 @@ export default function PostDetail({ user, handleOnLogout }) {
       setIsLoading(true);
       try {
         const { data } = await apiClient.listPostWithId(postId);
-        // console.log(data.posting)
+
         setPost(data.posting);
       } catch (err) {
         setError(err);
@@ -31,16 +28,16 @@ export default function PostDetail({ user, handleOnLogout }) {
 
   const renderPostContent = () => {
     if (isLoading) return <h1>Loading...</h1>;
-    if (error) return <p className="description">No post found</p>;
+    if (error || !post) return <p className="description">No post found</p>;
 
     return (
       <>
-        <div className="userInfoCont">
+        <div className="userInfo">
           <div className="profilePic">
             <img
               className="profileImg"
               src={post.profile_img_url}
-              alt="user profile picture"
+              alt="user profile"
             />
           </div>
 
@@ -56,18 +53,6 @@ export default function PostDetail({ user, handleOnLogout }) {
             alt="people standing on a mountain"
           />
         </div>
-
-        <Comments />
-
-        {/* <p className="name">{post?.name}</p>
-      <img className="image" src={post?.image} alt={"Gif of " + post?.name}></img>
-        <p className="description">{post?.description}</p>
-        <div className="meta">
-          <p className={`price`}>
-            {"$"+post?.price}
-          </p>
-          {/* <p className="date">{formatDate(post?.postedAt)}</p>
-        </div> */}
       </>
     );
   };
@@ -77,15 +62,5 @@ export default function PostDetail({ user, handleOnLogout }) {
       <Navbar user={user} handleOnLogout={handleOnLogout} />
       {renderPostContent()}
     </div>
-    // <div className="ProductDetail">
-    //   <div className="card">
-    //     <div className="title">
-    //       <h3>Product #{postId}</h3>
-    //       <p className="category">{post?.category}</p>
-    //     </div>
-
-    //
-    //   </div>
-    // </div>
   );
 }
