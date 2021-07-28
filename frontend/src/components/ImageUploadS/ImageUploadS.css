@@ -1,0 +1,78 @@
+.ImageUploadS {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  padding-left: 20px;
+  }
+  
+  .ImageUploadS .left-side {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
+  .ImageUploadS .left-side,
+  .ImageUploadS .right-side {
+    height: 300px;
+    width: 100%;
+  }
+  
+  .ImageUploadS .left-side form {
+    height: fit-content;
+    /* background: white;
+    border: 1px solid grey;
+    border-radius: 4px; */
+    width: 300px;
+    padding: 40px 10px;
+  }
+  
+  .ImageUploadS .left-side form input {
+    margin: 0 0 30px;
+    width: 200px;
+    color: white;
+  }
+  
+  .ImageUploadS .left-side form .btn {
+    height: 40px;
+    width: 200px;
+    background: white;
+    border: 1px solid grey;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .ImageUploadS .left-side form .btn:hover {
+    color: white;
+    background: grey;
+  }
+  
+  .ImageUploadS .left-side form .btn:focus {
+    box-shadow: none;
+    outline: none;
+  }
+  .white {
+      color: white;
+  }
+  .ImageUploadS .left-side form .btn.widget-btn {
+    margin-top: 15px;
+    background: #800080;
+    border: 1px solid #800080;
+    color: #FFFFFF;
+  }
+  
+  .App .left-side form .btn.widget-btn:hover {
+    margin-top: 15px;
+    background: #4B0082;
+    border: 1px solid #4B0082;
+    color: #FFFFFF;
+  }
+  
+  .App .right-side .displayed-image {
+    height: 300px;
+    width: 300px;
+  }
