@@ -71,14 +71,11 @@
 }
 
 .comments .commentSection .userInfo .subUserInfo {
-  margin-top: -1rem;
+  text-align: left;
+  padding-left: 2rem;
 }
-.comments .commentSection .userInfo .subUserInfo .username {
-  margin-left: 2rem;
-}
-
-.comments .commentSection .userInfo .subUserInfo .description {
-  margin-top: -1rem;
+.comments .commentSection .userInfo .subUserInfo .commentTimestamp {
+  font-size: 12px;
 }
 
 @media only screen and (max-width: 1050px) {

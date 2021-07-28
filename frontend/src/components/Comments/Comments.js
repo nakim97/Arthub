@@ -90,12 +90,16 @@ export default function Comments() {
       {comments.map((comment, i) => {
         var dateNew = new Date(comment.comment_created_at);
         var options = {
-          year: 'numeric', month: 'numeric', day: 'numeric',
-          hour: 'numeric', minute: 'numeric', second: 'numeric',
+          year: "numeric",
+          month: "numeric",
+          day: "numeric",
+          hour: "numeric",
+          minute: "numeric",
+          second: "numeric",
           hour12: false,
-          timeZone: 'America/Los_Angeles'
+          timeZone: "America/Los_Angeles",
         };
-        var date = new Intl.DateTimeFormat('default', options).format(dateNew)
+        var date = new Intl.DateTimeFormat("default", options).format(dateNew);
 
         return (
           <div className="commentSection" key={i}>
@@ -109,14 +113,13 @@ export default function Comments() {
 
             <div className="userInfo">
               <div className="subUserInfo">
-                <div className="username">
+                <div className="commentUsername">
                   <p>{comment.username}</p>
                 </div>
-
-                <div className="description">
+                <div className="commentDescription">
                   <p>{comment.comment_description}</p>
                 </div>
-                <div className="timestamp">
+                <div className="commentTimestamp">
                   <p>{date}</p>
                 </div>
               </div>
