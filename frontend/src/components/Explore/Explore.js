@@ -23,10 +23,10 @@ export default function Explore({ user, handleOnLogout }) {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    const listPosts = async () => {
+    const listAllPosts = async () => {
       setIsLoading(true);
       try {
-        const { data } = await apiClient.listPosts();
+        const { data } = await apiClient.listAllPosts();
 
         setMyPosts(data.posts);
       } catch (err) {
@@ -34,7 +34,7 @@ export default function Explore({ user, handleOnLogout }) {
       }
     };
 
-    listPosts();
+    listAllPosts();
   });
 
   return (

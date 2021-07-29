@@ -66,12 +66,20 @@ class ApiClient {
   //   return await this.request({ endpoint: `posts`, method: `GET` });
   // }
 
-  async listPosts() {
+  async listAllPosts() {
     return await this.request({
       endpoint: `post/listPosts`,
       method: `GET`,
     });
   }
+  async listPosts(user) {
+      return await this.request({
+        endpoint: `post`,
+        method: `GET`,
+        data: user,
+      });
+    }
+  
 
   async listPostWithId(productId) {
     return await this.request({

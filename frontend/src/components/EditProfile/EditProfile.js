@@ -70,9 +70,9 @@ export default function EditProfile({ user, handleOnLogout }) {
         <div className="socialMediaEdit">
           <div className="media">
             <div className="Instagram">
-            <Link>
+            {/* <Link> */}
               <InstagramIcon />
-              </Link>
+              {/* </Link> */}
               <input
                 type="text"
                 name="instagramUrl"
@@ -85,9 +85,9 @@ export default function EditProfile({ user, handleOnLogout }) {
               )}
             </div>
             <div className="Facebook">
-            <Link>
+            {/* <Link> */}
               <FacebookIcon />
-              </Link>
+              {/* </Link> */}
               <input
                 type="text"
                 name="facebookUrl"
@@ -100,9 +100,9 @@ export default function EditProfile({ user, handleOnLogout }) {
               )}
             </div>
             <div className="Twitter">
-              <Link>
+              {/* <Link> */}
               <TwitterIcon />
-              </Link>
+              {/* </Link> */}
               <input
                 type="text"
                 name="twitterUrl"
