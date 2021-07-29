@@ -115,7 +115,7 @@ export default function UserProfile({ user, handleOnLogout }) {
       </div>
 
       <div className="pictureArea">
-        {posts.map((post) => (
+        {/* {posts.map((post) => (
           <div className="image" key={post.photoPostId}>
             <Link to={`/post/${post.photoPostId}`}>
               <img
@@ -124,7 +124,7 @@ export default function UserProfile({ user, handleOnLogout }) {
               ></img>
             </Link>
           </div>
-        ))}
+        ))} */}
       </div>
     </div>
   );
