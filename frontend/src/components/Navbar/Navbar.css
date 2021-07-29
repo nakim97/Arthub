@@ -27,6 +27,8 @@
 .Navbar .content .logo {
   width: 100px;
   padding-right: 100px;
+  position:fixed;
+  
 }
 .Navbar .content .logo h1 {
   color: white;
