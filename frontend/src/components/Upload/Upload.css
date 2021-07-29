@@ -117,3 +117,16 @@
   cursor: pointer;
   margin-top: 15px;
 }
+
+
+.upload .form .uploadInfo .uploadData input{
+  background: white;
+  color:black;
+  width:90%;
+  height: 20px;
+  margin-bottom: 30px;
+}
+
+.upload .form .uploadInfo .uploadData .descriptions {
+  margin-top: 30px;
+}
