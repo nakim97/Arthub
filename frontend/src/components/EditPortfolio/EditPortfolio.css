@@ -43,6 +43,7 @@ body {
   color: white;
   text-align: left;
   font-size: 15px;
+  word-wrap: break-word;
 }
 
 .EditPortfolio .portfolioposts .post .portfolioTitle {
@@ -84,4 +85,5 @@ body {
   .EditPortfolio .portfolioposts {
     grid-template-columns: 50% 50%;
   }
+  
 }
