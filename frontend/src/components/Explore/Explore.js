@@ -18,7 +18,7 @@ import { useState, useEffect } from "react";
 import Navbar from "../Navbar/Navbar";
 
 export default function Explore({ user, handleOnLogout }) {
-  const [posts, setPost] = useState([]);
+  const [myPosts, setMyPosts] = useState([]);
   const [error, setError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -28,7 +28,7 @@ export default function Explore({ user, handleOnLogout }) {
       try {
         const { data } = await apiClient.listPosts();
 
-        setPost(data.posts);
+        setMyPosts(data.posts);
       } catch (err) {
         setError(err);
       }
@@ -85,7 +85,7 @@ export default function Explore({ user, handleOnLogout }) {
         <div className="gallery-container w-3 h-2">
           <div className="gallery-item">
             <div className="image">
-              {posts.map((post) => (
+              {myPosts.map((post) => (
                 <div className="image" key={post.photoPostId}>
                   <Link to={`/post/${post.photoPostId}`}>
                     <img
@@ -102,7 +102,7 @@ export default function Explore({ user, handleOnLogout }) {
         <div className="gallery-container w-3 h-3">
           <div className="gallery-item">
             <div className="image">
-              {posts.map((post) => (
+              {myPosts.map((post) => (
                 <div className="image" key={post.photoPostId}>
                   <Link to={`/post/${post.photoPostId}`}>
                     <img
