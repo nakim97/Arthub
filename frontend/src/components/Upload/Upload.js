@@ -66,7 +66,6 @@ export default function Upload({ user, handleOnLogout }) {
               <input
                 type="text"
                 name="title"
-                placeholder="Title..."
                 value={form.title}
                 onChange={handleOnInputChange}
               />
@@ -93,7 +92,6 @@ export default function Upload({ user, handleOnLogout }) {
               <input
                 type="text"
                 name="description"
-                placeholder="Description..."
                 value={form.description}
                 onChange={handleOnInputChange}
               />
