@@ -76,7 +76,7 @@ export default function UserProfile({ user, handleOnLogout }) {
     <div className="user">
       <Navbar user={user} handleOnLogout={handleOnLogout} />
 
-      <div className="banner">{banner_img}</div>
+      <div className="banners">{banner_img}</div>
 
       <div className="userInfo">
         <div className="profilePic">{profile_img}</div>
