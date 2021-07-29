@@ -15,9 +15,9 @@ import { Link } from "react-router-dom";
 export default function EditProfile({ user, handleOnLogout }) {
   const { isProcessing, form, errors, handleOnSubmit, handleOnInputChange } =
     useEditProfile({ user });
-    const { handleImageUpload, openWidget, imageUrl, imageAlt } =
+  const { handleImageUpload, openWidget, imageUrl, imageAlt } =
     useImageUpload();
-    const { handleImageUpload1, openWidget1, imageUrl2, imageAlt2 } =
+  const { handleImageUpload1, openWidget1, imageUrl2, imageAlt2 } =
     useImageUploadS();
   // console.log(form.name);
   return (
@@ -49,9 +49,11 @@ export default function EditProfile({ user, handleOnLogout }) {
               onChange={handleOnInputChange}
             />
             {errors.name && <span className="error">{errors.name}</span>}
-            </div>
-            <div className="username">
-            <label htmlFor="name" style={{paddingRight: "5px"}}>Username</label>
+          </div>
+          <div className="username">
+            <label htmlFor="name" style={{ paddingRight: "5px" }}>
+              Username
+            </label>
             <input
               type="text"
               name="userName"
@@ -59,9 +61,10 @@ export default function EditProfile({ user, handleOnLogout }) {
               value={form.userName}
               onChange={handleOnInputChange}
             />
-            {errors.userName && <span className="error">{errors.userName}</span>}
-            </div>
-          
+            {errors.userName && (
+              <span className="error">{errors.userName}</span>
+            )}
+          </div>
         </div>
 
         <div className="socialMediaEdit">
@@ -110,28 +113,26 @@ export default function EditProfile({ user, handleOnLogout }) {
       </div>
 
       <ImageUpload
-            handleImageUpload={handleImageUpload}
-            openWidget={openWidget}
-            imageUrl={imageUrl}
-            imageAlt={imageAlt}
-            name={"Profile picture"}
-          />
+        handleImageUpload={handleImageUpload}
+        openWidget={openWidget}
+        imageUrl={imageUrl}
+        imageAlt={imageAlt}
+        name={"Profile picture"}
+      />
 
       <div className="description">
         <h3>Bibliography</h3>
       </div>
 
       <div className="textSpace">
-      <input
-                type="text"
-                name="biography"
-                placeholder="Your Biography"
-                value={form.biography}
-                onChange={handleOnInputChange}
-              />
-              {errors.biography && (
-                <span className="error">{errors.biography}</span>
-              )}
+        <input
+          type="text"
+          name="biography"
+          placeholder="Your Biography"
+          value={form.biography}
+          onChange={handleOnInputChange}
+        />
+        {errors.biography && <span className="error">{errors.biography}</span>}
         {/* <textarea id="w3review" name="w3review" rows="4" cols="120"></textarea> */}
       </div>
       {/* <div className="submitButn">
@@ -151,21 +152,21 @@ export default function EditProfile({ user, handleOnLogout }) {
         <button>Upload</button>
       </div> */}
       <ImageUploadS
-            handleImageUpload={handleImageUpload1}
-            openWidget={openWidget1}
-            imageUrl={imageUrl2}
-            imageAlt={imageAlt2}
-            name={"Banner picture"}
-          />
+        handleImageUpload={handleImageUpload1}
+        openWidget={openWidget1}
+        imageUrl={imageUrl2}
+        imageAlt={imageAlt2}
+        name={"Banner picture"}
+      />
 
-<div className="SaveCancel">
+      <div className="SaveCancel">
         <button className="cancel">
           <Link to="/me">Cancel</Link>
         </button>
 
         <button
           className="submit"
-          disabled={isProcessing }
+          disabled={isProcessing}
           onClick={handleOnSubmit}
         >
           <Link to="/me">{isProcessing ? "Loading..." : "Submit"}</Link>

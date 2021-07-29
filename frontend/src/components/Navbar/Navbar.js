@@ -17,7 +17,8 @@ export default function Navbar({ handleOnLogout, user }) {
       <img
         className="bannerImg"
         src={`${user.profile_img_url}`}
-        alt="My profile" style={{height: "20px", width: "20px"}}
+        alt="My profile"
+        style={{ height: "20px", width: "20px" }}
       />
     </>
   );
