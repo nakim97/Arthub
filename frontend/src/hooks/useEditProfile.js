@@ -37,7 +37,7 @@ export const useEditProfile = ({ user }) => {
     //   navigate("/");
     // }
   }, [user]);
-  console.log(form.biography);
+  // console.log(form.biography);
   const handleOnInputChange = (event) => {
     setForm((f) => ({ ...f, [event.target.name]: event.target.value }));
   };
