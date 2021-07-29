@@ -74,10 +74,10 @@ class User {
       BCRYPT_WORK_FACTOR
     );
     const normalizedEmail = credentials.email.toLowerCase();
-
+      const nullval = "null";
     const userResult = await db.query(
-      `INSERT INTO users (email, password, username, first_name, last_name, is_admin)
-       VALUES ($1, $2, $3, $4, $5, $6)
+      `INSERT INTO users (email, password, username, first_name, last_name, is_admin, profile_img_url, banner_img_url, instagram_url, facebook_url, twitter_url, biography)
+       VALUES ($1, $2, $3, $4, $5, $6, $7, $7, $7, $7, $7, $7)
        RETURNING id, email, password, username, first_name, last_name, is_admin;
       `,
       [
@@ -87,6 +87,7 @@ class User {
         credentials.first_name,
         credentials.last_name,
         credentials.isAdmin,
+        nullval,
       ]
     );
     const user = userResult.rows[0];
@@ -111,24 +112,27 @@ class User {
     // }
 
     const userResult = await db.query(
-      `UPDATE users set username = $1, first_name = $2, last_name = $3, profile_img_url = $4, banner_img_url = $5, instagram_url = $6, facebook_url = $7, twitter_url = $8, biography = $9
+      `UPDATE users SET username = $1, first_name = $2, last_name = $3, profile_img_url = $4, banner_img_url = $5, instagram_url = $6, facebook_url = $7, twitter_url = $8, biography = $9
       WHERE users.id = (SELECT id FROM users WHERE email = $10)
       `,
       [
         credentials.username,
         credentials.first_name,
         credentials.last_name,
-        credentials.profile_img_url,
-        credentials.banner_img_url,
-        credentials.instagram_url,
-        credentials.facebook_url,
-        credentials.twitter_url,
-        credentials.biography,
+        credentials.profile_img_url || "null",
+        credentials.banner_img_url || "null",
+        credentials.instagram_url || "null",
+        credentials.facebook_url || "null",
+        credentials.twitter_url || "null",
+        credentials.biography || "null",
         credentials.email,
       ]
     );
-
-    return result.rows[0];
+    const query = `SELECT * FROM users WHERE email = $1`;
+    const result = await db.query(query, [credentials.email.toLowerCase()]);
+    const user = result.rows[0];
+    return user;
+    // return "ok";
   }
 
   static async fetchUserByEmail(email) {
