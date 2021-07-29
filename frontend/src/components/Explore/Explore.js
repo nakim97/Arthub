@@ -13,7 +13,7 @@ import apiClient from "../../services/apiClient";
 //import carousel3 from "../../Assets/carousel3.jpg";
 import carousel4 from "../../Assets/carousel4.jpg";
 import { Link } from "react-router-dom";
-import { useUserProfile } from "../../hooks/useUserProfile";
+//import { useUserProfile } from "../../hooks/useUserProfile";
 import { useState, useEffect } from "react";
 
 import Navbar from "../Navbar/Navbar";
@@ -85,18 +85,7 @@ export default function Explore({ user, handleOnLogout }) {
       <div className="container">
         <div className="gallery-container w-3 h-2">
           <div className="gallery-item">
-            <div className="image">
-              {posts.map((post) => (
-                <div className="image" key={post.photoPostId}>
-                  <Link to={`/post/${post.photoPostId}`}>
-                    <img
-                      src={`${post.imgPostUrl}`}
-                      alt={`Portfolio ${post.photoPostId}`}
-                    ></img>
-                  </Link>
-                </div>
-              ))}
-            </div>
+            <div className="image"></div>
           </div>
         </div>
 
