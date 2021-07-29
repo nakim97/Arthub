@@ -1,16 +1,13 @@
 import "./Explore.css";
 import banner5 from "../../Assets/banner5.png";
-//import homefeed1 from "../../Assets/homefeed1.jpg";
 import homefeed2 from "../../Assets/homefeed2.jpg";
 import homefeed3 from "../../Assets/homefeed3.jpg";
 import homefeed4 from "../../Assets/homefeed4.jpg";
 import homefeed5 from "../../Assets/homefeed5.jpg";
 import homefeed6 from "../../Assets/homefeed6.jpg";
-import homefeed7 from "../../Assets/homefeed7.jpg";
 import carousel1 from "../../Assets/carousel1.jpg";
 import carousel2 from "../../Assets/carousel2.jpg";
 import apiClient from "../../services/apiClient";
-//import carousel3 from "../../Assets/carousel3.jpg";
 import carousel4 from "../../Assets/carousel4.jpg";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
