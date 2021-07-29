@@ -84,12 +84,11 @@
 
 .user .banner img {
   display: flex;
-
-  width: 100%;
+  width: 60%;
   padding-top: 1rem;
   padding-left: 2rem;
   padding-right: 2rem;
-  height: 30em;
+  height: auto;
 }
 
 .user .profilePic img {
@@ -141,4 +140,70 @@
 .userInfoCont {
   margin-left: 2rem;
   padding-bottom: 1rem;
+}
+
+.userInfo {
+  margin-left: 2rem;
+  align-items: center;
+}
+
+@media only screen and (max-width: 570px) {
+  .banner img {
+    max-width: 100%;
+    max-height: 400px;
+  }
+}
+
+@media only screen and (max-width: 515px) {
+  .banner img {
+    max-width: 100%;
+    max-height: 375px;
+  }
+}
+
+@media only screen and (max-width: 470px) {
+  .banner img {
+    max-width: 100%;
+    max-height: 350px;
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  .banner img {
+    max-width: 100%;
+    max-height: 325px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .banner img {
+    max-width: 100%;
+    max-height: 300px;
+  }
+}
+@media only screen and (max-width: 380px) {
+  .banner img {
+    max-width: 100%;
+    max-height: 275px;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .banner img {
+    max-width: 100%;
+    max-height: 250px;
+  }
+}
+
+@media only screen and (max-width: 340px) {
+  .banner img {
+    max-width: 100%;
+    max-height: 225px;
+  }
+}
+@media only screen and (max-width: 342px) {
+  .banner img {
+    max-width: 100%;
+    max-height: 200px;
+  }
 }
