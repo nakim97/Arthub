@@ -13,7 +13,6 @@ import apiClient from "../../services/apiClient";
 //import carousel3 from "../../Assets/carousel3.jpg";
 import carousel4 from "../../Assets/carousel4.jpg";
 import { Link } from "react-router-dom";
-// import { useUserProfile } from "../../hooks/useUserProfile";
 import { useState, useEffect } from "react";
 
 import Navbar from "../Navbar/Navbar";
