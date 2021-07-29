@@ -1,7 +1,5 @@
 import "./EditProfile.css";
 import Navbar from "../Navbar/Navbar";
-import userBanner from "../../Assets/userBanner.png";
-import person2 from "../../Assets/person2.png";
 import { useEditProfile } from "../../hooks/useEditProfile";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import FacebookIcon from "@material-ui/icons/Facebook";
@@ -26,18 +24,6 @@ export default function EditProfile({ user, handleOnLogout }) {
       {errors.form && <span className="error">{errors.form}</span>}
       <br />
       <div className="userInfo">
-        {/* Change this to image comp */}
-        {/* <div className="profilePic">
-          <img className="bannerImg" src={person2} alt="user profile picture" />
-        </div> */}
-        {/* <ImageUpload
-            handleImageUpload={handleImageUpload}
-            openWidget={openWidget}
-            imageUrl={imageUrl}
-            imageAlt={imageAlt}
-            name={"Picture"}
-          /> */}
-
         <div className="nameInfo">
           <div className="name">
             <label htmlFor="name">Name </label>
@@ -70,9 +56,7 @@ export default function EditProfile({ user, handleOnLogout }) {
         <div className="socialMediaEdit">
           <div className="media">
             <div className="Instagram">
-            {/* <Link> */}
               <InstagramIcon />
-              {/* </Link> */}
               <input
                 type="text"
                 name="instagramUrl"
@@ -85,9 +69,8 @@ export default function EditProfile({ user, handleOnLogout }) {
               )}
             </div>
             <div className="Facebook">
-            {/* <Link> */}
               <FacebookIcon />
-              {/* </Link> */}
+
               <input
                 type="text"
                 name="facebookUrl"
@@ -100,9 +83,8 @@ export default function EditProfile({ user, handleOnLogout }) {
               )}
             </div>
             <div className="Twitter">
-              {/* <Link> */}
               <TwitterIcon />
-              {/* </Link> */}
+
               <input
                 type="text"
                 name="twitterUrl"
@@ -139,24 +121,8 @@ export default function EditProfile({ user, handleOnLogout }) {
           onChange={handleOnInputChange}
         />
         {errors.biography && <span className="error">{errors.biography}</span>}
-        {/* <textarea id="w3review" name="w3review" rows="4" cols="120"></textarea> */}
-      </div>
-      {/* <div className="submitButn">
-        <input type="submit" value="Submit" />
-      </div> */}
-      {/* Image Upload */}
-      {/* <div className="banner">
-        <p>Banner Image: </p>
-        <img
-          className="bannerImg"
-          src={userBanner}
-          alt="people standing on a mountain"
-        />
       </div>
 
-      <div className="uploadButn2">
-        <button>Upload</button>
-      </div> */}
       <ImageUploadS
         handleImageUpload={handleImageUpload1}
         openWidget={openWidget1}
@@ -178,14 +144,6 @@ export default function EditProfile({ user, handleOnLogout }) {
           <Link to="/me">{isProcessing ? "Loading..." : "Submit"}</Link>
         </button>
       </div>
-      {/* <div className="SaveCancel">
-        <div className="cancelButn">
-          <button>Cancel</button>
-        </div>
-        <div className="saveButn">
-          <button>Save</button>
-        </div>
-      </div> */}
     </div>
   );
 }
