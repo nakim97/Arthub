@@ -84,12 +84,11 @@
 
 .user .banner img {
   display: flex;
-
-  max-width: 500px;
+  width: 60%;
   padding-top: 1rem;
   padding-left: 2rem;
   padding-right: 2rem;
-  height: 500px;
+  height: auto;
 }
 
 .user .profilePic img {
@@ -147,7 +146,7 @@
   margin-left: 2rem;
   align-items: center;
 }
-
+/* 
 @media only screen and (max-width: 570px) {
   .banner img {
     max-width: 100%;
@@ -207,4 +206,4 @@
     max-width: 100%;
     max-height: 200px;
   }
-}
+} */
