@@ -127,7 +127,7 @@ class ApiClient {
   async updateUser(credentials) {
     return await this.request({
       endpoint: `user`,
-      method: `PUT`,
+      method: `PATCH`,
       data: credentials,
     });
   }

@@ -119,12 +119,12 @@ class User {
         credentials.username,
         credentials.first_name,
         credentials.last_name,
-        credentials.profile_img_url || "null",
-        credentials.banner_img_url || "null",
-        credentials.instagram_url || "null",
-        credentials.facebook_url || "null",
-        credentials.twitter_url || "null",
-        credentials.biography || "null",
+        credentials.profile_img_url,
+        credentials.banner_img_url,
+        credentials.instagram_url,
+        credentials.facebook_url,
+        credentials.twitter_url,
+        credentials.biography,
         credentials.email,
       ]
     );
