@@ -38,7 +38,7 @@ body {
   color: #ffffff;
 }
 .logo {
-  position: absolute;
+  position: fixed;
   left: 1.59%;
   right: 95.23%;
   top: 1.27%;
