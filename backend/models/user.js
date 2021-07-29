@@ -12,12 +12,6 @@ class User {
       last_name: user.last_name,
       username: user.username,
       isAdmin: user.is_admin,
-      profile_img_url: user.profile_img_url,
-      banner_img_url: user.banner_img_url,
-      instagram_url: user.instagram_url,
-      facebook_url: user.facebook_url,
-      twitter_url: user.twitter_url,
-      biography: user.biography,
     };
   }
 
@@ -84,7 +78,7 @@ class User {
     const userResult = await db.query(
       `INSERT INTO users (email, password, username, first_name, last_name, is_admin, profile_img_url, banner_img_url, instagram_url, facebook_url, twitter_url, biography)
        VALUES ($1, $2, $3, $4, $5, $6, $7, $7, $7, $7, $7, $7)
-       RETURNING id, email, password, username, first_name, last_name, is_admin, profile_img_url, banner_img_url, instagram_url, facebook_url, twitter_url, biography;
+       RETURNING id, email, password, username, first_name, last_name, is_admin;
       `,
       [
         normalizedEmail,
