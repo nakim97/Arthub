@@ -10,6 +10,27 @@ import { useUserProfile } from "../../hooks/useUserProfile";
 
 export default function UserProfile({ user, handleOnLogout }) {
   const { myName, username, posts, userInfo } = useUserProfile({ user });
+  let instagram_url = "",
+    facebook_url = "",
+    twitter_url = "";
+  const instagram =
+    userInfo.instagram_url == null || userInfo.instagram_url == "null";
+  // We have a link to use
+  if (!instagram) {
+    instagram_url = userInfo.instagram_url;
+  }
+  const facebook =
+    userInfo.facebook_url == null || userInfo.facebook_url == "null";
+  // We have a link to use
+  if (!facebook) {
+    facebook_url = userInfo.facebook_url;
+  }
+  const twitter =
+    userInfo.twitter_url == null || userInfo.twitter_url == "null";
+  // We have a link to use
+  if (!twitter) {
+    twitter_url = userInfo.twitter_url;
+  }
   const banner_url =
     userInfo.banner_img_url == null || userInfo.banner_img_url == "null";
   const banner_img = banner_url ? (
@@ -88,9 +109,15 @@ export default function UserProfile({ user, handleOnLogout }) {
           </div>
         </div>
         <div className="socialMedia">
-          <InstagramIcon />
-          <FacebookIcon />
-          <TwitterIcon />
+          <Link to={instagram_url}>
+            <InstagramIcon />
+          </Link>
+          <Link to={facebook_url}>
+            <FacebookIcon />
+          </Link>
+          <Link to={twitter_url}>
+            <TwitterIcon />
+          </Link>
         </div>
       </div>
 
