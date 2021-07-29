@@ -40,6 +40,10 @@
   margin-left: 1rem;
 }
 
+.sell .price input{
+  width:100px;
+  height:25px;
+}
 .notForSale {
   color: white;
   display: flex;
@@ -61,27 +65,23 @@
 
 .upload .editPageButns {
   color: white;
+  margin-right: auto;
+  order: 2;
   display: flex;
-  padding-left: 2rem;
-  margin-left: 50.5rem;
 }
 
 .upload .editPageButns .cancel {
   margin-bottom: 4rem;
+  width: 100px;
 }
 
 .upload .editPageButns .submit {
   margin-bottom: 4rem;
   margin-left: 2rem;
+  width:100px;
 }
-.upload .editPageButns .cancel p {
-  padding-left: 4rem;
-  padding-right: 4rem;
-}
-.upload .editPageButns .submit p {
-  padding-left: 4rem;
-  padding-right: 4rem;
-}
+
+
 .editPageButns a {
   text-decoration: none;
   color: white;
@@ -91,7 +91,7 @@
 }
 .cancel {
   width: 100%;
-  height: 70px;
+  height: 50px;
   color: white;
   font-size: 20px;
   display: flex;
@@ -102,10 +102,13 @@
   border-radius: 2rem;
   cursor: pointer;
   margin-top: 15px;
+  margin-left: auto;
+  order: 2;
+  display: flex;
 }
 .submit {
   width: 100%;
-  height: 70px;
+  height: 50px;
   color: white;
   font-size: 20px;
   display: flex;
@@ -116,6 +119,10 @@
   border-radius: 2rem;
   cursor: pointer;
   margin-top: 15px;
+  margin-left: auto;
+  order: 2;
+  display: flex;
+  margin-right:50px;
 }
 
 
@@ -145,4 +152,35 @@
   border:none;
   outline:none;
   
+}
+
+@media only screen and (max-width: 830px) {
+  .upload .form .uploadInfo .uploadData .postName input{
+    width:250px;
+    height: 25px;
+  }
+
+  
+  .upload .form .uploadInfo .uploadData .descriptions input{
+    width:250px;
+    border-radius:10px;
+    height: 60px;
+  }
+
+}
+
+
+@media only screen and (max-width: 670px) {
+  .upload .form .uploadInfo .uploadData .postName input{
+    width:200px;
+    height: 25px;
+  }
+
+
+  
+  .upload .form .uploadInfo .uploadData .descriptions input{
+    width:200px;
+    border-radius:10px;
+    height: 60px;
+  }
 }
