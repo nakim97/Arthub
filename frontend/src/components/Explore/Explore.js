@@ -84,99 +84,70 @@ export default function Explore({ user, handleOnLogout }) {
       <div className="container">
         <div className="gallery-container w-3 h-2">
           <div className="gallery-item">
-            <div className="image">
-              {myPosts.map((post) => (
-                <div className="image" key={post.photoPostId}>
-                  <Link to={`/post/${post.photoPostId}`}>
-                    <img
-                      src={`${post.imgPostUrl}`}
-                      alt={`Portfolio ${post.photoPostId}`}
-                    ></img>
-                  </Link>
-                </div>
-              ))}
-            </div>
+            <div className="image"></div>
           </div>
         </div>
 
-        <div className="gallery-container w-3 h-3">
-          <div className="gallery-item">
-            <div className="image">
-              {myPosts.map((post) => (
-                <div className="image" key={post.photoPostId}>
-                  <Link to={`/post/${post.photoPostId}`}>
-                    <img
-                      src={`${post.imgPostUrl}`}
-                      alt={`Portfolio ${post.photoPostId}`}
-                    ></img>
-                  </Link>
-                </div>
-              ))}
-            </div>
+        <div className="gallery-item">
+          <div className="image">
+            {myPosts.map((post) => (
+              <div className="image" key={post.photoPostId}>
+                <Link to={`/post/${post.photoPostId}`}>
+                  <img
+                    src={`${post.imgPostUrl}`}
+                    alt={`Portfolio ${post.photoPostId}`}
+                  ></img>
+                </Link>
+              </div>
+            ))}
           </div>
         </div>
 
-        <div className="gallery-container h-2">
-          <div className="gallery-item">
-            <div className="image">
-              <img src={homefeed5} alt="explore page image 5" />
-            </div>
+        <div className="gallery-item">
+          <div className="image">
+            <img src={homefeed5} alt="explore page image 5" />
           </div>
         </div>
 
-        <div className="gallery-container w-2">
-          <div className="gallery-item">
-            <div className="image">
-              <img src={homefeed6} alt="explore page image 6" />
-            </div>
+        <div className="gallery-item">
+          <div className="image">
+            <img src={homefeed6} alt="explore page image 6" />
           </div>
         </div>
 
-        <div className="gallery-container w-4 h-1">
-          <div className="gallery-item">
-            <div className="image">
-              <img src={homefeed2} alt="explore page image 2" />
-            </div>
+        <div className="gallery-item">
+          <div className="image">
+            <img src={homefeed2} alt="explore page image 2" />
           </div>
         </div>
 
-        <div className="gallery-container">
-          <div className="gallery-item">
-            <div className="image">
-              <img src={homefeed3} alt="explore page image 3" />
-            </div>
+        <div className="gallery-item">
+          <div className="image">
+            <img src={homefeed3} alt="explore page image 3" />
           </div>
         </div>
 
-        <div className="gallery-container h-2">
-          <div className="gallery-item">
-            <div className="image">
-              <img src={homefeed4} alt="explore page image 4" />
-            </div>
+        <div className="gallery-item">
+          <div className="image">
+            <img src={homefeed4} alt="explore page image 4" />
           </div>
         </div>
 
-        <div className="gallery-container w-3 h-2">
-          <div className="gallery-item">
-            <div className="image">
-              <img src={carousel1} alt="explore page carousel image 1" />
-            </div>
+        <div className="gallery-item">
+          <div className="image">
+            <img src={carousel1} alt="explore page carousel image 1" />
           </div>
         </div>
 
-        <div className="gallery-container w-2 h-1">
-          <div className="gallery-item">
-            <div className="image">
-              <img src={carousel2} alt="explore page carousel image 2" />
-            </div>
+        <div className="gallery-item">
+          <div className="image">
+            <img src={carousel2} alt="explore page carousel image 2" />
           </div>
         </div>
 
-        <div className="gallery-container w-2 h-1">
-          <div className="gallery-item">
-            <div className="image">
-              <img src={carousel4} alt="explore page carousel image 4" />
-            </div>
+        <div className="gallery-item">
+          <div className="image">
+            <img src={carousel4} alt="explore page carousel image 4" />
           </div>
         </div>
       </div>
