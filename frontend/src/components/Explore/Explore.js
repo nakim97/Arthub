@@ -14,11 +14,29 @@ import apiClient from "../../services/apiClient";
 import carousel4 from "../../Assets/carousel4.jpg";
 import { Link } from "react-router-dom";
 import { useUserProfile } from "../../hooks/useUserProfile";
+import { useState, useEffect } from "react";
 
 import Navbar from "../Navbar/Navbar";
 
 export default function Explore({ user, handleOnLogout }) {
-  const { posts } = useUserProfile({ user });
+  const [posts, setPost] = useState([]);
+  const [error, setError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    const listPosts = async () => {
+      setIsLoading(true);
+      try {
+        const { data } = await apiClient.listPosts();
+
+        setPost(data.posts);
+      } catch (err) {
+        setError(err);
+      }
+    };
+
+    listPosts();
+  });
 
   return (
     <div className="explore">
