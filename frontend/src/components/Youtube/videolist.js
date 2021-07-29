@@ -3,7 +3,7 @@ import React from "react";
 import VideoItem from "../Youtube/videoitem";
 
 const VideoList = ({ videos, handleVideoSelect }) => {
-  if (!videos) { //
+  if (!videos) {
     return (
       <div className="noSearch">
         <p>No results shown</p>

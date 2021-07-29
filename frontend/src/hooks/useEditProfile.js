@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import apiClient from "../services/apiClient";
 
@@ -7,9 +7,9 @@ export const useEditProfile = ({ user }) => {
   function joinName(fName, lName) {
     return fName + " " + lName;
   }
-  console.log(user.first_name)
+  // console.log(user.first_name);
   const my_name = joinName(user.first_name, user.last_name) || "";
-  console.log("name"+my_name)
+  // console.log("name " + my_name);
   const instagram_url = user.instagram_url || "";
   const profile_img_url = user.profile_img_url || "";
   const facebook_url = user.facebook_url || "";
@@ -29,16 +29,15 @@ export const useEditProfile = ({ user }) => {
     twitterUrl: twitter_url,
     biography: biography,
   });
-  
-  // useEffect(() => {
-  //   // if user is already logged in,
-  //   // redirect them to the home page
-  //   if (user?.email) {
-  //     navigate("/");
-  //   }
-  // }, [user, navigate]);
 
-
+  useEffect(() => {
+    // if user is already logged in,
+    // redirect them to the home page
+    // if (user?.email) {
+    //   navigate("/");
+    // }
+  }, [user]);
+  console.log(form.biography);
   const handleOnInputChange = (event) => {
     setForm((f) => ({ ...f, [event.target.name]: event.target.value }));
   };
@@ -63,12 +62,12 @@ export const useEditProfile = ({ user }) => {
       last_name: myArr[1],
       username: form.userName,
       email: user.email,
-      profile_img_url: form.profileImgUrl,
-      banner_img_url: form.bannerImgUrl,
-      instagram_url: form.instagramUrl,
-      facebook_url: form.facebookUrl,
-      twitter_url: form.twitterUrl,
-      biography: form.biography,
+      profile_img_url: form.profileImgUrl || undefined,
+      banner_img_url: form.bannerImgUrl || undefined,
+      instagram_url: form.instagramUrl || undefined,
+      facebook_url: form.facebookUrl || undefined,
+      twitter_url: form.twitterUrl || undefined,
+      biography: form.biography || undefined,
     });
     if (error) setErrors((e) => ({ ...e, form: error }));
     // if (data?.user) {

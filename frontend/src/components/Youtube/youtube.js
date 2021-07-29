@@ -3,26 +3,22 @@ import SearchBar from "../Youtube/searchbar";
 import youtube from "../../APIs/youtube";
 import VideoList from "../Youtube/videolist";
 import VideoDetail from "../Youtube/videodetail";
-import ReactModal from 'react-modal';
-
+import ReactModal from "react-modal";
 
 import "./youtube.css";
 
 class YouTube extends React.Component {
-  
-  constructor () {
+  constructor() {
     super();
     this.state = {
       videos: [],
       selectedVideo: null,
     };
-    
-   
+
     this.handleCloseModal = this.handleCloseModal.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleVideoSelect = this.handleVideoSelect.bind(this);
   }
-  
 
   handleSubmit = async (termFromSearchBar) => {
     const response = await youtube.get("/search", {
@@ -40,10 +36,9 @@ class YouTube extends React.Component {
     this.setState({ selectedVideo: video });
   };
 
-  handleCloseModal () {
-    this.setState({ selectedVideo: null});
+  handleCloseModal() {
+    this.setState({ selectedVideo: null });
   }
-
 
   render() {
     return (
@@ -51,37 +46,37 @@ class YouTube extends React.Component {
         <SearchBar handleFormSubmit={this.handleSubmit} />
         <div className="ui grid">
           <div className="ui row">
-           
-            <div className="eleven wide column" style={{marginTop:"800px"}}>
+            <div className="eleven wide column" style={{ marginTop: "800px" }}>
+              <ReactModal
+                isOpen={!!this.state.selectedVideo}
+                onRequestClose={this.handleCloseModal}
+                ariaHideApp={false}
+                style={{
+                  overlay: {
+                    background: "black",
+                    opacity: "0.9",
+                  },
+                  content: {
+                    background: "black",
+                    position: "absolute",
+                  },
+                }}
+              >
+                <button className="xbtn" onClick={this.handleCloseModal}>
+                  {" "}
+                  X{" "}
+                </button>
 
-            <ReactModal isOpen={!!this.state.selectedVideo }  
-            onRequestClose={ this.handleCloseModal } 
-            ariaHideApp={false} 
-            style={{
-              overlay: {
-                background:"black",
-                opacity:"0.9"
-              },
-              content: {
-                background:"black",
-                position: 'absolute'
-              }
-            }}
-            >
-                <button className="xbtn" onClick={this.handleCloseModal}> X </button>
-
-                {this.state.selectedVideo &&
-                  <VideoDetail video={this.state.selectedVideo} /> }
-
-            </ReactModal>
+                {this.state.selectedVideo && (
+                  <VideoDetail video={this.state.selectedVideo} />
+                )}
+              </ReactModal>
             </div>
-            
-           
-          
-            <div className="five wide column"  >
-                <VideoList 
+
+            <div className="five wide column">
+              <VideoList
                 handleVideoSelect={this.handleVideoSelect}
-                videos={this.state.videos} 
+                videos={this.state.videos}
               />
             </div>
           </div>

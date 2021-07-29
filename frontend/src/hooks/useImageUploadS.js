@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-export const useImageUpload = () => {
-  const [imageUrl2, setImageUrl] = useState(null);
-  const [imageAlt2, setImageAlt] = useState(null);
+export const useImageUploadS = () => {
+  const [imageUrl2, setImageUrl2] = useState(null);
+  const [imageAlt2, setImageAlt2] = useState(null);
   // We will create the widget and open it up when clicked.
-  const openWidget = () => {
+  const openWidget1 = () => {
     // create the widget
     window.cloudinary
       .createUploadWidget(
@@ -17,8 +17,8 @@ export const useImageUpload = () => {
           // when we successfully open and upload the image
           if (!error && result && result.event === "success") {
             // console.log(result.info);
-            setImageUrl(result.info.secure_url);
-            setImageAlt(`An image of ${result.info.original_filename}`);
+            setImageUrl2(result.info.secure_url);
+            setImageAlt2(`An image of ${result.info.original_filename}`);
           }
         }
       )
@@ -29,7 +29,7 @@ export const useImageUpload = () => {
     This function queries the document to get the first input element with the type of file,
   then it de-structures the files array from the resulting object,
   then finally logs the first element of the array in the result to the console. */
-  const handleImageUpload = () => {
+  const handleImageUpload1 = () => {
     const { files } = document.querySelector('input[type="file"]');
     const formData = new FormData();
     formData.append("file", files[0]);
@@ -46,15 +46,15 @@ export const useImageUpload = () => {
     )
       .then((res) => res.json())
       .then((res) => {
-        setImageUrl(res.secure_url);
-        setImageAlt(`An image of ${res.original_filename}`);
+        setImageUrl2(res.secure_url);
+        setImageAlt2(`An image of ${res.original_filename}`);
       })
       .catch((err) => console.log(err));
   };
 
   return {
-    openWidget,
-    handleImageUpload,
+    openWidget1,
+    handleImageUpload1,
     imageUrl2,
     imageAlt2,
   };

@@ -10,7 +10,8 @@ import { useUserProfile } from "../../hooks/useUserProfile";
 
 export default function UserProfile({ user, handleOnLogout }) {
   const { myName, username, posts, userInfo } = useUserProfile({ user });
-  const banner_url = userInfo.banner_img_url == null;
+  const banner_url =
+    userInfo.banner_img_url == null || userInfo.banner_img_url == "null";
   const banner_img = banner_url ? (
     <>
       <img
@@ -28,13 +29,16 @@ export default function UserProfile({ user, handleOnLogout }) {
       />
     </>
   );
-  const profile_url = userInfo.profile_img_url == null;
+  const profile_url =
+    userInfo.profile_img_url == null || userInfo.profile_img_url == "null";
   const profile_img = profile_url ? (
     <>
+      {/* Return default image */}
       <img className="bannerImg" src={person2} alt="user profile picture" />
     </>
   ) : (
     <>
+      {/* Use our own image */}
       <img
         className="bannerImg"
         src={`${userInfo.profile_img_url}`}
@@ -42,7 +46,7 @@ export default function UserProfile({ user, handleOnLogout }) {
       />
     </>
   );
-  const bio = userInfo.biography == null;
+  const bio = userInfo.biography == null || userInfo.biography == "null";
   const biography = bio ? (
     <>
       <p>
@@ -111,7 +115,7 @@ export default function UserProfile({ user, handleOnLogout }) {
       </div>
 
       <div className="pictureArea">
-        {posts.map((post) => (
+        {/* {posts.map((post) => (
           <div className="image" key={post.photoPostId}>
             <Link to={`/post/${post.photoPostId}`}>
               <img
@@ -120,7 +124,7 @@ export default function UserProfile({ user, handleOnLogout }) {
               ></img>
             </Link>
           </div>
-        ))}
+        ))} */}
       </div>
     </div>
   );

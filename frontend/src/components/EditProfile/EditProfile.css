@@ -96,6 +96,10 @@
   margin-top: 3rem;
   margin-left: 60rem;
 }
+.user .SaveCancel a {
+  text-decoration: none;
+  color: white;
+}
 .user .SaveCancel .saveButn {
   margin-left: 2rem;
 }

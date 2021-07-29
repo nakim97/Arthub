@@ -19,10 +19,10 @@ router.get("/", security.requireAuthenticatedUser, async (req, res, next) => {
   }
 });
 
-router.put("/", async (req, res, next) => {
+router.patch("/", security.requireAuthenticatedUser, async (req, res, next) => {
   try {
     const user = await User.updateProfile( req.body );
-    return res.status(201).json({ user});
+    return res.status(201).json({ user });
   } catch (err) {
     next(err);
   }

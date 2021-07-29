@@ -38,6 +38,13 @@ class ApiClient {
       data: post,
     });
   }
+  
+  async deletePost(postId) {
+    return await this.request({
+      endpoint: `post/${postId}`,
+      method: `DELETE`,
+    });
+  }
 
   async createTag(tag) {
     return await this.request({
@@ -126,8 +133,16 @@ class ApiClient {
   async updateUser(credentials) {
     return await this.request({
       endpoint: `user`,
-      method: `PUT`,
+      method: `PATCH`,
       data: credentials,
+    });
+  }
+
+  async listUserByEmail(email) {
+    return await this.request({
+      endpoint: `user`,
+      method: `GET`,
+      data: email,
     });
   }
 
