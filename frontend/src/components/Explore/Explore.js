@@ -9,6 +9,7 @@ import homefeed6 from "../../Assets/homefeed6.jpg";
 import homefeed7 from "../../Assets/homefeed7.jpg";
 import carousel1 from "../../Assets/carousel1.jpg";
 import carousel2 from "../../Assets/carousel2.jpg";
+import apiClient from "../../services/apiClient";
 //import carousel3 from "../../Assets/carousel3.jpg";
 import carousel4 from "../../Assets/carousel4.jpg";
 import { Link } from "react-router-dom";
