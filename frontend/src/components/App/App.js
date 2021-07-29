@@ -97,7 +97,7 @@ export default function App() {
           <Route
             path="/edit"
             element={
-              <EditProfile user={user} handleOnLogout={handleOnLogout} />
+              <EditProfile user={user} setUser={setUser} handleOnLogout={handleOnLogout} />
             }
           />
           <Route

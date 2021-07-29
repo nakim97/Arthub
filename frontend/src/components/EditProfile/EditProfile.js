@@ -12,13 +12,14 @@ import ImageUpload from "../ImageUpload/ImageUpload";
 import ImageUploadS from "../ImageUploadS/ImageUploadS";
 import { Link } from "react-router-dom";
 
-export default function EditProfile({ user, handleOnLogout }) {
-  const { isProcessing, form, errors, handleOnSubmit, handleOnInputChange } =
-    useEditProfile({ user });
+export default function EditProfile({ user, handleOnLogout, setUser }) {
+  
   const { handleImageUpload, openWidget, imageUrl, imageAlt } =
     useImageUpload();
   const { handleImageUpload1, openWidget1, imageUrl2, imageAlt2 } =
     useImageUploadS();
+    const { isProcessing, form, errors, handleOnSubmit, handleOnInputChange } =
+    useEditProfile({ user, setUser, imageUrl, imageUrl2 });
   // console.log(form.name);
   return (
     <div className="user">
@@ -70,9 +71,7 @@ export default function EditProfile({ user, handleOnLogout }) {
         <div className="socialMediaEdit">
           <div className="media">
             <div className="Instagram">
-            <Link>
               <InstagramIcon />
-              </Link>
               <input
                 type="text"
                 name="instagramUrl"
@@ -85,9 +84,9 @@ export default function EditProfile({ user, handleOnLogout }) {
               )}
             </div>
             <div className="Facebook">
-            <Link>
+            {/* <Link> */}
               <FacebookIcon />
-              </Link>
+              {/* </Link> */}
               <input
                 type="text"
                 name="facebookUrl"
@@ -100,9 +99,9 @@ export default function EditProfile({ user, handleOnLogout }) {
               )}
             </div>
             <div className="Twitter">
-              <Link>
+              {/* <Link> */}
               <TwitterIcon />
-              </Link>
+              {/* </Link> */}
               <input
                 type="text"
                 name="twitterUrl"
@@ -175,7 +174,8 @@ export default function EditProfile({ user, handleOnLogout }) {
           disabled={isProcessing}
           onClick={handleOnSubmit}
         >
-          <Link to="/me">{isProcessing ? "Loading..." : "Submit"}</Link>
+          {/* <Link to="/me"></Link> */}
+          {isProcessing ? "Loading..." : "Submit"}
         </button>
       </div>
       {/* <div className="SaveCancel">
