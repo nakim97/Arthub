@@ -62,7 +62,7 @@ export default function Upload({ user, handleOnLogout }) {
           />
           <div className="uploadData">
             <div className="postName">
-              <p>Title of work</p>
+              <p>Image Title</p>
               <input
                 type="text"
                 name="title"
@@ -73,7 +73,7 @@ export default function Upload({ user, handleOnLogout }) {
               {errors.title && <span className="error">{errors.title}</span>}
             </div>
             <div className="tags">
-              <p>Any tags</p>
+              <p>Tags</p>
               <select
                 name="tag"
                 onChange={(event) =>
@@ -88,8 +88,8 @@ export default function Upload({ user, handleOnLogout }) {
               </select>
               {errors.tag && <span className="error">{errors.tag}</span>}
             </div>
-            <div className="description">
-              <p>A brief description of the art work</p>
+            <div className="descriptions">
+              <p>Image Description</p>
               <input
                 type="text"
                 name="description"
