@@ -1,6 +1,6 @@
 import "./Explore.css";
 import banner5 from "../../Assets/banner5.png";
-//import homefeed1 from "../../Assets/homefeed1.jpg";
+import homefeed1 from "../../Assets/homefeed1.jpg";
 import homefeed2 from "../../Assets/homefeed2.jpg";
 import homefeed3 from "../../Assets/homefeed3.jpg";
 import homefeed4 from "../../Assets/homefeed4.jpg";
@@ -9,35 +9,12 @@ import homefeed6 from "../../Assets/homefeed6.jpg";
 import homefeed7 from "../../Assets/homefeed7.jpg";
 import carousel1 from "../../Assets/carousel1.jpg";
 import carousel2 from "../../Assets/carousel2.jpg";
-import apiClient from "../../services/apiClient";
-//import carousel3 from "../../Assets/carousel3.jpg";
+import carousel3 from "../../Assets/carousel3.jpg";
 import carousel4 from "../../Assets/carousel4.jpg";
-import { Link } from "react-router-dom";
-import { useUserProfile } from "../../hooks/useUserProfile";
-import { useState, useEffect } from "react";
 
 import Navbar from "../Navbar/Navbar";
 
-export default function Explore({ user, handleOnLogout }) {
-  const [posts, setPost] = useState([]);
-  const [error, setError] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-
-  useEffect(() => {
-    const listPosts = async () => {
-      setIsLoading(true);
-      try {
-        const { data } = await apiClient.listPosts();
-
-        setPost(data.posts);
-      } catch (err) {
-        setError(err);
-      }
-    };
-
-    listPosts();
-  });
-
+export default function Explore({user, handleOnLogout}) {
   return (
     <div className="explore">
       <Navbar user={user} handleOnLogout={handleOnLogout} />
@@ -86,16 +63,7 @@ export default function Explore({ user, handleOnLogout }) {
         <div className="gallery-container w-3 h-2">
           <div className="gallery-item">
             <div className="image">
-              {posts.map((post) => (
-                <div className="image" key={post.photoPostId}>
-                  <Link to={`/post/${post.photoPostId}`}>
-                    <img
-                      src={`${post.imgPostUrl}`}
-                      alt={`Portfolio ${post.photoPostId}`}
-                    ></img>
-                  </Link>
-                </div>
-              ))}
+              <img src={homefeed1} alt="explore page image 1" />
             </div>
           </div>
         </div>
@@ -103,16 +71,7 @@ export default function Explore({ user, handleOnLogout }) {
         <div className="gallery-container w-3 h-3">
           <div className="gallery-item">
             <div className="image">
-              {posts.map((post) => (
-                <div className="image" key={post.photoPostId}>
-                  <Link to={`/post/${post.photoPostId}`}>
-                    <img
-                      src={`${post.imgPostUrl}`}
-                      alt={`Portfolio ${post.photoPostId}`}
-                    ></img>
-                  </Link>
-                </div>
-              ))}
+              <img src={homefeed7} alt="explore page image 7" />
             </div>
           </div>
         </div>
