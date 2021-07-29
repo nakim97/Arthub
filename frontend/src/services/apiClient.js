@@ -46,7 +46,7 @@ class ApiClient {
       data: tag,
     });
   }
-  
+
   async createImage(image) {
     return await this.request({
       endpoint: `image`,
@@ -61,7 +61,7 @@ class ApiClient {
 
   async listPosts(user) {
     return await this.request({
-      endpoint: `post`,
+      endpoint: `explore`,
       method: `GET`,
       data: user,
     });
