@@ -191,9 +191,8 @@ export default function Community({ user, handleOnLogout }) {
             {" "}
             <QuestionAnswerIcon
               style={{ fontSize: "15px", marginLeft: "10px" }}
-            /> 23 comments{" "}
-            <ThumbUpIcon style={{ fontSize: "15px" }} />{" "}
-            44 likes{" "}
+            />{" "}
+            23 comments <ThumbUpIcon style={{ fontSize: "15px" }} /> 44 likes{" "}
             <span
               className="communityTime"
               style={{
