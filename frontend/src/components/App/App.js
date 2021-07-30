@@ -15,7 +15,6 @@ import EditPortfolio from "../EditPortfolio/EditPortfolio";
 import CreateForumPost from "../CreateForumPost/CreateForumPost";
 import CommunityPostEdit from "../CommunityPostEdit/CommunityPostEdit";
 import Upload from "../Upload/Upload";
-import Post from "../Post/Post";
 import EditProfile from "../EditProfile/EditProfile";
 import PostDetail from "../PostDetail/PostDetail";
 
@@ -90,10 +89,7 @@ export default function App() {
             path="/upload"
             element={<Upload user={user} handleOnLogout={handleOnLogout} />}
           />
-          <Route
-            path="/post"
-            element={<Post user={user} handleOnLogout={handleOnLogout} />}
-          />
+
           <Route
             path="/edit"
             element={

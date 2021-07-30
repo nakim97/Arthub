@@ -71,14 +71,12 @@ router.delete("/:postsId", async (req, res, next) => {
   }
 });
 
-
 // Get the comments for the photo post
 router.get(
   "/:postsId/comments",
   security.requireAuthenticatedUser,
   async (req, res, next) => {
     try {
-
       const comments = await Comment.fetchCommentForPostByUser({
         postsId: req.params.postsId,
       });
@@ -95,7 +93,6 @@ router.post(
   security.requireAuthenticatedUser,
   async (req, res, next) => {
     try {
-
       const { user } = res.locals;
       const comment = await Comment.postComment({
         comment_description: req.body.comment,
@@ -143,6 +140,5 @@ router.post(
     }
   }
 );
-
 
 module.exports = router;

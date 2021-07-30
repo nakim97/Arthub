@@ -9,7 +9,7 @@ import ChatIcon from "@material-ui/icons/Chat";
 import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import "./Comments.css";
 
-export default function Comments({user}) {
+export default function Comments({ user }) {
   const { postId } = useParams();
   const [isLoading, setIsLoading] = useState(false);
   const [comments, setComments] = useState([]);
@@ -36,32 +36,32 @@ export default function Comments({user}) {
   if (user.email) {
     commentsForm = (
       <>
-      <div className="searchForm">
-        <form
-          onSubmit={handleSubmit(
-            async (data) =>
-              await apiClient.createComment(postId, {
-                comment: data["Comments"],
-              })
-          )}
-        >
-          <div className="commentSecCont">
-            <div className="typeComment">
-              <input
-                type="text"
-                placeholder="Comments"
-                {...register("Comments", {})}
-              />
-            </div>
+        <div className="searchForm">
+          <form
+            onSubmit={handleSubmit(
+              async (data) =>
+                await apiClient.createComment(postId, {
+                  comment: data["Comments"],
+                })
+            )}
+          >
+            <div className="commentSecCont">
+              <div className="typeComment">
+                <input
+                  type="text"
+                  placeholder="Comments"
+                  {...register("Comments", {})}
+                />
+              </div>
 
-            <div className="submitComment">
-              <input type="submit" />
+              <div className="submitComment">
+                <input type="submit" />
+              </div>
             </div>
-          </div>
-        </form>
-      </div>
+          </form>
+        </div>
       </>
-    )
+    );
   }
   return (
     <div className="comments">
@@ -94,8 +94,8 @@ export default function Comments({user}) {
       <div className="title">
         <h2>Comments</h2>
       </div>
-    {commentsForm}
-      
+      {commentsForm}
+
       {comments.map((comment, i) => {
         var dateNew = new Date(comment.comment_created_at);
         var options = {
