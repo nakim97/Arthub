@@ -26,7 +26,7 @@ export const useUserProfile = ({ user }) => {
       setFetching(false);
     };
     fetchPosts();
-  }, [user]);
+  }, [user, posts]);
 
   useEffect(() => {
     const fetchUsers = async () => {

@@ -57,7 +57,7 @@ export const useEditProfile = ({ user, setUser, imageUrl, imageUrl2 }) => {
     }
 
     const myArr = splitName(form.name);
-    console.log("name", myArr, form.username)
+    // console.log("name", myArr, form.username)
     const { data, error } = await apiClient.updateUser({
       first_name: myArr[0],
       last_name: myArr[1],
