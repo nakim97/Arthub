@@ -72,20 +72,17 @@ router.delete("/:postsId", async (req, res, next) => {
 });
 
 // Get the comments for the photo post
-router.get(
-  "/:postsId/comments",
-  async (req, res, next) => {
-    try {
-      const comments = await Comment.fetchCommentForPostByUser({
-        postsId: req.params.postsId,
-      });
+router.get("/:postsId/comments", async (req, res, next) => {
+  try {
+    const comments = await Comment.fetchCommentForPostByUser({
+      postsId: req.params.postsId,
+    });
 
-      return res.status(201).json({ comments });
-    } catch (err) {
-      next(err);
-    }
+    return res.status(201).json({ comments });
+  } catch (err) {
+    next(err);
   }
-);
+});
 // Create a new comment
 router.post(
   "/:postsId/comments",
@@ -106,20 +103,16 @@ router.post(
 );
 
 // Get the likes for a post
-router.get(
-  "/:postsId/likes",
-  security.requireAuthenticatedUser,
-  async (req, res, next) => {
-    try {
-      const likes = await Comment.fetchCommentForPostByUser({
-        postsId: req.params.postsId,
-      });
-      return res.status(201).json({ likes });
-    } catch (err) {
-      next(err);
-    }
+router.get("/:postsId/likes", async (req, res, next) => {
+  try {
+    const likes = await Comment.fetchCommentForPostByUser({
+      postsId: req.params.postsId,
+    });
+    return res.status(201).json({ likes });
+  } catch (err) {
+    next(err);
   }
-);
+});
 
 // Create the likes for a post
 router.post(

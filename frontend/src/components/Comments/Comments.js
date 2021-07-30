@@ -94,7 +94,7 @@ export default function Comments({ user }) {
       <div className="title">
         <h2>Comments</h2>
       </div>
-      
+
       {commentsForm}
 
       {comments.map((comment, i) => {
