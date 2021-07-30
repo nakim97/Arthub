@@ -8,6 +8,8 @@ import FacebookIcon from "@material-ui/icons/Facebook";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import { useUserProfile } from "../../hooks/useUserProfile";
 
+
+
 export default function UserProfile({ user, handleOnLogout }) {
   const { myName, username, posts, userInfo } = useUserProfile({ user });
   let instagram_url = "",
@@ -71,10 +73,7 @@ export default function UserProfile({ user, handleOnLogout }) {
   const biography = bio ? (
     <>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ornare
-        turpis at libero ultricies ullamcorper. Curabitur finibus libero eu urna
-        finibus aliquet. Vivamus ut bibendum quam. Aliquam erat volutpat. Aenean
-        eu ligula et dui scelerisque maximus nec ut sapien.{" "}
+        No biography.{" "}
       </p>
     </>
   ) : (
