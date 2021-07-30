@@ -75,16 +75,14 @@ CREATE TABLE forumTags (
   forum_id              INTEGER NOT NULL REFERENCES forumPost(id) ON DELETE CASCADE
 );
 
-CREATE TABLE likedPost (
+CREATE TABLE photoLikes (
    id                    SERIAL PRIMARY KEY,
-   likes                 INTEGER,
-   user_id               INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+   likes                 ARRAY,
    post_id               INTEGER NOT NULL REFERENCES photoPost(id) ON DELETE CASCADE
 );
 
-CREATE TABLE likedForumPost (
+CREATE TABLE forumLikes (
    id                    SERIAL PRIMARY KEY,
-   likes                 INTEGER,
-   user_id               INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+   likes                 ARRAY,
    forum_post_id         INTEGER NOT NULL REFERENCES forumPost(id) ON DELETE CASCADE
 );

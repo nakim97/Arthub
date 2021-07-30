@@ -1,6 +1,7 @@
 const express = require("express");
 const Post = require("../models/post");
 const Comment = require("../models/photoComments");
+const Like = require("../models/pLikes");
 const security = require("../middleware/security");
 const router = express.Router();
 
@@ -70,56 +71,30 @@ router.delete("/:postsId", async (req, res, next) => {
   }
 });
 
-// Photo Post Commenting
-// router.get(
-//   "/:postsId/comments",
-//   security.requireAuthenticatedUser,
-//   async (req, res, next) => {
-//     try {
-//       const { postsId } = req.params.postsId;
-//       const { user } = res.locals;
-//       const comment = await Comment.createCommentForPost({
-//         rating: req.body.comment,
-//         user,
-//         postsId,
-//       });
-//       return res.status(201).json({ comment });
-//     } catch (err) {
-//       next(err);
-//     }
-//   }
-// );
-// Photo Post Commenting get
-router.get(
-  "/:postsId/comments",
-  security.requireAuthenticatedUser,
-  async (req, res, next) => {
-    try {
-      // const { postsId } = req.params.postsId;
-      const comments = await Comment.fetchCommentForPostByUser({
-        postsId: req.params.postsId,
-      });
-      //console.log("This is the comments " + comments);
-      return res.status(201).json({ comments });
-    } catch (err) {
-      next(err);
-    }
-  }
-);
+// Get the comments for the photo post
+router.get("/:postsId/comments", async (req, res, next) => {
+  try {
+    const comments = await Comment.fetchCommentForPostByUser({
+      postsId: req.params.postsId,
+    });
 
+    return res.status(201).json({ comments });
+  } catch (err) {
+    next(err);
+  }
+});
+// Create a new comment
 router.post(
   "/:postsId/comments",
   security.requireAuthenticatedUser,
   async (req, res, next) => {
     try {
-      //const { post_id } = req.params.postsId;
       const { user } = res.locals;
       const comment = await Comment.postComment({
         comment_description: req.body.comment,
         user,
         post_id: req.params.postsId,
       });
-      //console.log("This is the comment " + comment);
       return res.status(201).json({ comment });
     } catch (err) {
       next(err);
@@ -127,22 +102,35 @@ router.post(
   }
 );
 
-// router.post(
-//   "/comment",
-//   security.requireAuthenticatedUser,
-//   async (req, res, next) => {
-//     try {
-//       const { user } = res.locals;
-//       const comment = await Comment.postComment({
-//         user,
-//         post_id,
-//         comment_description: req.body.comment,
-//       });
-//       return res.status(201).json({ post });
-//     } catch (err) {
-//       next(err);
-//     }
-//   }
-// );
+// Get the likes for a post
+router.get("/:postsId/likes", async (req, res, next) => {
+  try {
+    const likes = await Comment.fetchCommentForPostByUser({
+      postsId: req.params.postsId,
+    });
+    return res.status(201).json({ likes });
+  } catch (err) {
+    next(err);
+  }
+});
+
+// Create the likes for a post
+router.post(
+  "/:postsId/likes",
+  security.requireAuthenticatedUser,
+  async (req, res, next) => {
+    try {
+      const { user } = res.locals;
+      const like = await Comment.postComment({
+        comment_description: req.body.comment,
+        user,
+        post_id: req.params.postsId,
+      });
+      return res.status(201).json({ like });
+    } catch (err) {
+      next(err);
+    }
+  }
+);
 
 module.exports = router;

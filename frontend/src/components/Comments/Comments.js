@@ -9,7 +9,7 @@ import ChatIcon from "@material-ui/icons/Chat";
 import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import "./Comments.css";
 
-export default function Comments() {
+export default function Comments({ user }) {
   const { postId } = useParams();
   const [isLoading, setIsLoading] = useState(false);
   const [comments, setComments] = useState([]);
@@ -32,7 +32,37 @@ export default function Comments() {
   }, [postId, comments]);
 
   const { register, handleSubmit } = useForm();
+  let commentsForm;
+  if (user.email) {
+    commentsForm = (
+      <>
+        <div className="searchForm">
+          <form
+            onSubmit={handleSubmit(
+              async (data) =>
+                await apiClient.createComment(postId, {
+                  comment: data["Comments"],
+                })
+            )}
+          >
+            <div className="commentSecCont">
+              <div className="typeComment">
+                <input
+                  type="text"
+                  placeholder="Comments"
+                  {...register("Comments", {})}
+                />
+              </div>
 
+              <div className="submitComment">
+                <input type="submit" />
+              </div>
+            </div>
+          </form>
+        </div>
+      </>
+    );
+  }
   return (
     <div className="comments">
       <div className="likesAndShare">
@@ -65,30 +95,8 @@ export default function Comments() {
         <h2>Comments</h2>
       </div>
 
-      <div className="searchForm">
-        <form
-          onSubmit={handleSubmit(
-            async (data) =>
-              await apiClient.createComment(postId, {
-                comment: data["Comments"],
-              })
-          )}
-        >
-          <div className="commentSecCont">
-            <div className="typeComment">
-              <input
-                type="text"
-                placeholder="Comments"
-                {...register("Comments", {})}
-              />
-            </div>
+      {commentsForm}
 
-            <div className="submitComment">
-              <input type="submit" />
-            </div>
-          </div>
-        </form>
-      </div>
       {comments.map((comment, i) => {
         var dateNew = new Date(comment.comment_created_at);
         var options = {
