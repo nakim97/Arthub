@@ -2,12 +2,10 @@ import "./Home.css";
 import Navbar from "../Navbar/Navbar";
 import SchoolIcon from "@material-ui/icons/School";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
-
 import carousel1 from "../../Assets/carousel1.jpg";
 import carousel2 from "../../Assets/carousel2.jpg";
 import carousel3 from "../../Assets/carousel3.jpg";
 import carousel4 from "../../Assets/carousel4.jpg";
-
 import homefeed1 from "../../Assets/homefeed1.jpg";
 import homefeed7 from "../../Assets/homefeed7.jpg";
 import homefeed4 from "../../Assets/homefeed4.jpg";

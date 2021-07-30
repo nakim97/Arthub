@@ -1,5 +1,4 @@
 import * as React from "react";
-//import { useForm } from "react-hook-form";
 import "./Post.css";
 import Navbar from "../Navbar/Navbar";
 import userBanner from "../../Assets/userBanner.png";
