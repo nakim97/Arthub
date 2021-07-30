@@ -11,12 +11,11 @@ import ImageUploadS from "../ImageUploadS/ImageUploadS";
 import { Link } from "react-router-dom";
 
 export default function EditProfile({ user, setUser, handleOnLogout }) {
-  
   const { handleImageUpload, openWidget, imageUrl, imageAlt } =
     useImageUpload();
   const { handleImageUpload1, openWidget1, imageUrl2, imageAlt2 } =
     useImageUploadS();
-    const { isProcessing, form, errors, handleOnSubmit, handleOnInputChange } =
+  const { isProcessing, form, errors, handleOnSubmit, handleOnInputChange } =
     useEditProfile({ user, setUser, imageUrl, imageUrl2 });
   // console.log(form.name);
   return (
