@@ -74,7 +74,6 @@ router.delete("/:postsId", async (req, res, next) => {
 // Get the comments for the photo post
 router.get(
   "/:postsId/comments",
-  security.requireAuthenticatedUser,
   async (req, res, next) => {
     try {
       const comments = await Comment.fetchCommentForPostByUser({

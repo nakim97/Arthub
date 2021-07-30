@@ -89,7 +89,6 @@ export default function App() {
             path="/upload"
             element={<Upload user={user} handleOnLogout={handleOnLogout} />}
           />
-
           <Route
             path="/edit"
             element={
