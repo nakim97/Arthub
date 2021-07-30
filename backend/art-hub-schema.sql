@@ -77,12 +77,12 @@ CREATE TABLE forumTags (
 
 CREATE TABLE photoLikes (
    id                    SERIAL PRIMARY KEY,
-   likes                 ARRAY,
+   likes                 TEXT ARRAY,
    post_id               INTEGER NOT NULL REFERENCES photoPost(id) ON DELETE CASCADE
 );
 
 CREATE TABLE forumLikes (
    id                    SERIAL PRIMARY KEY,
-   likes                 ARRAY,
+   likes                 TEXT ARRAY,
    forum_post_id         INTEGER NOT NULL REFERENCES forumPost(id) ON DELETE CASCADE
 );

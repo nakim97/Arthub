@@ -105,7 +105,7 @@ router.post(
 // Get the likes for a post
 router.get("/:postsId/likes", async (req, res, next) => {
   try {
-    const likes = await Comment.fetchCommentForPostByUser({
+    const likes = await Like.fetchLikesForPost({
       postsId: req.params.postsId,
     });
     return res.status(201).json({ likes });
@@ -121,8 +121,7 @@ router.post(
   async (req, res, next) => {
     try {
       const { user } = res.locals;
-      const like = await Comment.postComment({
-        comment_description: req.body.comment,
+      const like = await Like.postLike({
         user,
         post_id: req.params.postsId,
       });

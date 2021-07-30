@@ -10,17 +10,20 @@ class Like {
     const query = `
         SELECT likes FROM photoLikes WHERE post_id = $1;
         `;
+
     // console.log("This is the query" + query);
     const results = await db.query(query, [post_id]);
+    const myUser = userResults.id
+    console.log("mU", myUser)
     // This should get an array of likes
     const arr = results.rows[0];
     console.log("arr", arr);
     // This gets a new object
-    const obj = { userId: user.id, userName: user.username };
+    const obj = [user.id, user.username];
     console.log("obj", obj);
-
     // This adds the new object of user things to the array
     arr.push(obj);
+    console.log("arr2", arr);
     // Put the array back in
     const queryf = `
     INSERT INTO photoLikes (post_id, likes)
@@ -30,7 +33,11 @@ class Like {
     const resultsf = await db.query(queryf, [arr, post_id]);
     return resultsf.rows[0];
   }
-
+// {
+// 	"postTitle": "Something",
+// 	"postDescription": "Let's do it!",
+// 	"imgId": 4
+// }
   static async fetchLikesForPost({ postsId }) {
     // fetch a user's comment for a post if it exists
     const results = await db.query(

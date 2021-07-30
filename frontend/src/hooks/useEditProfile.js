@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import apiClient from "../services/apiClient";
 
-export const useEditProfile = ({ user }) => {
+export const useEditProfile = ({ user, setUser, imageUrl, imageUrl2 }) => {
   const navigate = useNavigate();
   function joinName(fName, lName) {
     return fName + " " + lName;
@@ -57,13 +57,14 @@ export const useEditProfile = ({ user }) => {
     }
 
     const myArr = splitName(form.name);
+    console.log("name", myArr, form.username)
     const { data, error } = await apiClient.updateUser({
       first_name: myArr[0],
       last_name: myArr[1],
       username: form.userName,
       email: user.email,
-      profile_img_url: form.profileImgUrl || undefined,
-      banner_img_url: form.bannerImgUrl || undefined,
+      profile_img_url: imageUrl || undefined,
+      banner_img_url: imageUrl2 || undefined,
       instagram_url: form.instagramUrl || undefined,
       facebook_url: form.facebookUrl || undefined,
       twitter_url: form.twitterUrl || undefined,

@@ -109,7 +109,7 @@ export default function UserProfile({ user, handleOnLogout }) {
           </div>
         </div>
         <div className="socialMedia">
-          <Link to={instagram_url}>
+          <Link to={{ pathname: `${instagram_url}` }} target="_blank">
             <InstagramIcon />
           </Link>
           <Link to={facebook_url}>
