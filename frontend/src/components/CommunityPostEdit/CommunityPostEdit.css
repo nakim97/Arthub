@@ -33,6 +33,11 @@ body {
   margin-bottom: 50px;
 }
 
+.EditForumPost .container .form .description {
+  margin-top: 20px;
+  margin-right: 50px;
+}
+
 .EditForumPost .container .form .description textarea {
   width: 800px;
   background: #1a1818;
@@ -43,7 +48,7 @@ body {
 
 .EditForumPost .container .form .imgBar {
   text-align: left;
-  margin-left: 100px;
+  margin-left: 90px;
   border-left: 0.6px solid #514f4f;
   border-right: 0.6px solid #514f4f;
   border-top: 0.6px solid #514f4f;

@@ -16,7 +16,9 @@ export default function CommunityPostEdit({ user, handleOnLogout }) {
             <input type="text" name="title" placeholder="Title" />
           </div>
           <div className="imgBar">
-            <PhotoLibraryIcon style={{ color: "#514F4F", marginLeft: "5px" }} />
+            <PhotoLibraryIcon
+              style={{ color: "#514F4F", marginLeft: "10px" }}
+            />
           </div>
           <div className="description">
             <textarea placeholder="Text(optional)" />
