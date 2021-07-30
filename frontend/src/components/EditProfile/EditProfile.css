@@ -1,6 +1,3 @@
-.user .nameInfo {
-}
-
 .user .banner {
   display: flex;
   color: white;
@@ -31,7 +28,11 @@
 
 .user .userInfo {
   display: flex;
+  align-items: baseline;
   color: white;
+}
+.user .userInfo .userImage {
+  padding-right: 2rem;
 }
 .user .userInfo .nameInfo {
   margin-top: 2rem;
@@ -41,15 +42,55 @@
 .user .userInfo .name {
   display: flex;
   justify-content: space-between;
-  width: 250px;
+  width: 310px;
   font-size: medium;
-}
-.user .userInfo .username {
   margin-left: 0rem;
+}
+
+.user .userInfo .username {
   display: flex;
   justify-content: space-between;
-  width: 250px;
+  width: 310px;
+  margin-top: 1.5rem;
+  margin-left: 0rem;
 }
+
+.user .userInfo .name input {
+  width: 180px;
+}
+
+.user .userInfo .username input {
+  width: 180px;
+}
+.user .userInfo .nameInfo .nameUsername {
+  padding-top: 1rem;
+}
+
+.user .nameInfo .bio {
+  margin-top: 5rem;
+}
+
+.user .nameInfo .bioDescription {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 250px;
+  margin-top: -1rem;
+  margin-left: -4rem;
+}
+.user .bio input {
+  width: 520px;
+  margin-left: -2rem;
+}
+
+.user .bio .description {
+  font-size: medium;
+}
+
+/* .user .userInfo .nameInfo .bio input {
+  padding: 0rem;
+  font-size: small;
+} */
 
 .user .description {
   text-align: left;
@@ -105,7 +146,7 @@
   text-decoration: none;
   color: white;
 }
-.user .SaveCancel .saveButn {
+.user .SaveCancel .submit {
   margin-left: 2rem;
 }
 
@@ -126,9 +167,47 @@
   margin-top: 2rem;
 }
 
+.userInfo .socialMediaEdit .media {
+  margin-left: -23rem;
+}
+
+.userInfo .socialMediaEdit .media .Instagram {
+  display: flex;
+  justify-content: space-between;
+  width: 230px;
+  padding-top: 1rem;
+}
 .userInfo .socialMediaEdit .media .Facebook {
+  display: flex;
+  justify-content: space-between;
+  width: 230px;
   padding-top: 1rem;
 }
 .userInfo .socialMediaEdit .media .Twitter {
+  display: flex;
+  justify-content: space-between;
+  width: 230px;
   padding-top: 1rem;
+}
+
+.userInfo .socialMediaEdit .media .Instagram input {
+  width: 180px;
+}
+.userInfo .socialMediaEdit .media .Facebook input {
+  width: 180px;
+}
+.userInfo .socialMediaEdit .media .Twitter input {
+  width: 180px;
+}
+
+.userInfo .socialMediaEdit .media .socialMediaTitle {
+  display: flex;
+}
+
+.user .bannerImage {
+  margin-left: -19rem;
+}
+
+.user .bannerTitle {
+  margin-left: 3.5rem;
 }
