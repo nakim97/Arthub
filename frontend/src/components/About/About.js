@@ -70,9 +70,13 @@ export default function About({ user, handleOnLogout }) {
           </div>
           <div className="text">
             <p>
-              Explain any details of what our platform does, how is it different
-              from other platforms
+              At Arthub, we aim to provide reassurance and exposure to evry
+              artist in our community by showing them that:{" "}
             </p>
+
+            <p>○ Your work continues to be YOUR work</p>
+            <p>○ Art uploaded on our platform can be viewed by all members</p>
+            <p>○ Practice is the key to becoming a better artist</p>
           </div>
         </div>
         <div className="missionImgContainer">
