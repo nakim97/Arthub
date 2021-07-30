@@ -104,7 +104,7 @@ export default function UserProfile({ user, handleOnLogout }) {
 
         <div className="name">
           <p>{myName}</p>
-          <div className="username">
+          <div className="username" style={{marginTop: "60px"}}>
             <p>{username}</p>
           </div>
         </div>
