@@ -71,10 +71,12 @@ export const useEditProfile = ({ user, setUser, imageUrl, imageUrl2 }) => {
       biography: form.biography || undefined,
     });
     if (error) setErrors((e) => ({ ...e, form: error }));
-    // if (data?.user) {
-    //   setUser(data.user);
-    //   apiClient.setToken(data.token);
-    // }
+    if (data?.user) {
+      // console.log("data",data)
+      setUser(data.user);
+      navigate("/me");
+      // apiClient.setToken(data.token);
+    }
     setIsProcessing(false);
   };
 
