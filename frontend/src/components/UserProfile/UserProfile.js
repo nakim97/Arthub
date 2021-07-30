@@ -8,6 +8,7 @@ import FacebookIcon from "@material-ui/icons/Facebook";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import { useUserProfile } from "../../hooks/useUserProfile";
 
+
 export default function UserProfile({ user, handleOnLogout }) {
   const { myName, username, posts, userInfo } = useUserProfile({ user });
   let instagram_url = "",
