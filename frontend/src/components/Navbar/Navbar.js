@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 export default function Navbar({ handleOnLogout, user }) {
   // If the boolean is true, the user exists
   const isAuthenticated = Boolean(user?.email);
-  console.log(user)
+  //console.log(user)
   const icon = user?.profile_img_url == null || user?.profile_img_url == "null";
   const navIcon = icon ? (
     <>

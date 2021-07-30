@@ -99,7 +99,7 @@ router.get(
       const comments = await Comment.fetchCommentForPostByUser({
         postsId: req.params.postsId,
       });
-      console.log("This is the comments " + comments);
+      //console.log("This is the comments " + comments);
       return res.status(201).json({ comments });
     } catch (err) {
       next(err);
@@ -119,7 +119,7 @@ router.post(
         user,
         post_id: req.params.postsId,
       });
-      console.log("This is the comment " + comment);
+      //console.log("This is the comment " + comment);
       return res.status(201).json({ comment });
     } catch (err) {
       next(err);
