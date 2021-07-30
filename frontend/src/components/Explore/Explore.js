@@ -82,13 +82,7 @@ export default function Explore({ user, handleOnLogout }) {
       </div>
 
       <div className="container">
-        <div className="gallery-container w-3 h-2">
-          <div className="gallery-item">
-            <div className="image"></div>
-          </div>
-        </div>
-
-        <div className="gallery-item">
+        <div className="gallery-item w-2 h-2">
           <div className="image">
             {myPosts.map((post) => (
               <div className="image" key={post.photoPostId}>
@@ -103,7 +97,7 @@ export default function Explore({ user, handleOnLogout }) {
           </div>
         </div>
 
-        <div className="gallery-item">
+        {/* <div className="gallery-item">
           <div className="image">
             <img src={homefeed5} alt="explore page image 5" />
           </div>
@@ -149,7 +143,7 @@ export default function Explore({ user, handleOnLogout }) {
           <div className="image">
             <img src={carousel4} alt="explore page carousel image 4" />
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
