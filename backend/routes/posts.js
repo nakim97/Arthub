@@ -126,6 +126,43 @@ router.post(
     }
   }
 );
+// Photo Post Commenting get
+router.get(
+  "/:postsId/likes",
+  security.requireAuthenticatedUser,
+  async (req, res, next) => {
+    try {
+      // const { postsId } = req.params.postsId;
+      const likes = await Comment.fetchCommentForPostByUser({
+        postsId: req.params.postsId,
+      });
+      //console.log("This is the comments " + comments);
+      return res.status(201).json({ likes });
+    } catch (err) {
+      next(err);
+    }
+  }
+);
+
+router.post(
+  "/:postsId/likes",
+  security.requireAuthenticatedUser,
+  async (req, res, next) => {
+    try {
+      //const { post_id } = req.params.postsId;
+      const { user } = res.locals;
+      const like = await Comment.postComment({
+        comment_description: req.body.comment,
+        user,
+        post_id: req.params.postsId,
+      });
+      //console.log("This is the comment " + comment);
+      return res.status(201).json({ like });
+    } catch (err) {
+      next(err);
+    }
+  }
+);
 
 // router.post(
 //   "/comment",

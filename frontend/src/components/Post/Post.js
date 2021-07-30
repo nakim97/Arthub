@@ -8,6 +8,8 @@ import person2 from "../../Assets/person2.png";
 // import Comments from "../Comments/Comments";
 
 export default function Post({ user, handleOnLogout }) {
+  // (user.id)
+  // We need the user id, and there would be a button to add or remove a link
   return (
     <div className="user">
       <Navbar user={user} handleOnLogout={handleOnLogout} />
