@@ -71,10 +71,7 @@ export default function UserProfile({ user, handleOnLogout }) {
   const biography = bio ? (
     <>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ornare
-        turpis at libero ultricies ullamcorper. Curabitur finibus libero eu urna
-        finibus aliquet. Vivamus ut bibendum quam. Aliquam erat volutpat. Aenean
-        eu ligula et dui scelerisque maximus nec ut sapien.{" "}
+        No biography.{" "}
       </p>
     </>
   ) : (
