@@ -1,3 +1,6 @@
+.user .nameInfo {
+}
+
 .user .banner {
   display: flex;
   color: white;
@@ -36,14 +39,16 @@
 }
 
 .user .userInfo .name {
-  margin-left: 3rem;
-
+  display: flex;
+  justify-content: space-between;
+  width: 250px;
   font-size: medium;
 }
-.user .userInfo .name .username {
-  padding-top: 1rem;
+.user .userInfo .username {
   margin-left: 0rem;
-  font-size: medium;
+  display: flex;
+  justify-content: space-between;
+  width: 250px;
 }
 
 .user .description {

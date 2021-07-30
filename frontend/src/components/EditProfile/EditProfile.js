@@ -26,30 +26,36 @@ export default function EditProfile({ user, handleOnLogout }) {
       <div className="userInfo">
         <div className="nameInfo">
           <div className="name">
-            <label htmlFor="name">Name </label>
-            <input
-              type="text"
-              name="name"
-              placeholder="Jane Doe"
-              value={form.name}
-              onChange={handleOnInputChange}
-            />
-            {errors.name && <span className="error">{errors.name}</span>}
+            <div className="N1">
+              <label htmlFor="name">Name </label>
+            </div>
+            <div className="N2">
+              <input
+                type="text"
+                name="name"
+                placeholder="Jane Doe"
+                value={form.name}
+                onChange={handleOnInputChange}
+              />
+              {errors.name && <span className="error">{errors.name}</span>}
+            </div>
           </div>
           <div className="username">
-            <label htmlFor="name" style={{ paddingRight: "5px" }}>
-              Username
-            </label>
-            <input
-              type="text"
-              name="userName"
-              placeholder="Jane Doe"
-              value={form.userName}
-              onChange={handleOnInputChange}
-            />
-            {errors.userName && (
-              <span className="error">{errors.userName}</span>
-            )}
+            <div className="U1">
+              <label htmlFor="username">Username</label>
+            </div>
+            <div className="U2">
+              <input
+                type="text"
+                name="userName"
+                placeholder="Jane Doe"
+                value={form.userName}
+                onChange={handleOnInputChange}
+              />
+              {errors.userName && (
+                <span className="error">{errors.userName}</span>
+              )}
+            </div>
           </div>
         </div>
 
