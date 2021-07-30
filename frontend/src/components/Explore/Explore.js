@@ -7,8 +7,8 @@ import homefeed5 from "../../Assets/homefeed5.jpg";
 import homefeed6 from "../../Assets/homefeed6.jpg";
 import carousel1 from "../../Assets/carousel1.jpg";
 import carousel2 from "../../Assets/carousel2.jpg";
-import apiClient from "../../services/apiClient";
 import carousel4 from "../../Assets/carousel4.jpg";
+import apiClient from "../../services/apiClient";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
