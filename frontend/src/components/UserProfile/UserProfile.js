@@ -97,24 +97,28 @@ export default function UserProfile({ user, handleOnLogout }) {
       <div className="banners">{banner_img}</div>
 
       <div className="userInfo">
-        <div className="profilePic">{profile_img}</div>
-
-        <div className="name">
-          <p>{myName}</p>
-          <div className="username" style={{marginTop: "60px"}}>
-            <p>{username}</p>
+        <div className="profile">
+          <div className="profilePic">{profile_img}</div>
+          <div className="profileName">
+            <p>{myName}</p>
+            <div className="profileUsername">
+              <p>{username}</p>
+            </div>
           </div>
         </div>
-        <div className="socialMedia">
-          <a target="_blank" href={`http://${instagram_url}`}>
-            <InstagramIcon />
-          </a>
-          <a target="_blank" href={`http://${facebook_url}`}>
-            <FacebookIcon />
-          </a>
-          <a target="_blank" href={`http://${twitter_url}`}>
-            <TwitterIcon />
-          </a>
+
+        <div className="mediaLinks">
+          <div className="socialMedia">
+            <a target="_blank" href={`http://${instagram_url}`}>
+              <InstagramIcon />
+            </a>
+            <a target="_blank" href={`http://${facebook_url}`}>
+              <FacebookIcon />
+            </a>
+            <a target="_blank" href={`http://${twitter_url}`}>
+              <TwitterIcon />
+            </a>
+          </div>
         </div>
       </div>
 

@@ -22,13 +22,20 @@
   color: white;
 }
 
-.user .userInfo .name {
+.user .userInfo .profile {
+  display: flex;
+  justify-content: space-between;
+  width: 230px;
+  text-align: left;
+}
+
+/* .user .userInfo .name {
+  display: flex;
   margin-left: 2rem;
   font-size: 24px;
-}
-.user .userInfo .name .username {
-  display: flex;
-  margin-top: -2.5rem;
+} */
+
+.user .userInfo .profileUsername {
   font-size: 15px;
   color: #999898;
 }
@@ -122,15 +129,14 @@
   height: 33vh;
 }
 
-.socialMedia {
+.mediaLinks .socialMedia {
+  display: flex;
   color: white;
   width: 200px;
   justify-content: space-around;
   margin-top: 3rem;
-  margin-left: 55rem;
-  margin-left: auto;
+  margin-left: 60rem;
   order: 2;
-  display: flex;
 }
 
 html,
