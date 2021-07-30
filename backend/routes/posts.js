@@ -108,6 +108,7 @@ router.post(
     }
   }
 );
+
 // Get the likes for a post
 router.get(
   "/:postsId/likes",
@@ -123,6 +124,7 @@ router.get(
     }
   }
 );
+
 // Create the likes for a post
 router.post(
   "/:postsId/likes",
