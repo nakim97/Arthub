@@ -180,6 +180,12 @@ body {
   width: 100%;
   border-radius: 4px;
 }
+.footer a {
+  color: lightblue;
+}
+.footer a:visited {
+  color: orangered;
+}
 .Register .card .form .btn {
   width: 75%;
   height: 70px;

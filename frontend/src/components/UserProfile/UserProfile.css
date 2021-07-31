@@ -10,7 +10,12 @@
   border-radius: 50%;
   z-index: 1;
 }
-
+.socialMedia a {
+  color: white;
+}
+.socialMedia a:visited {
+  color: darkcyan;
+}
 .user .profilePic {
   display: flex;
   margin-left: 2rem;

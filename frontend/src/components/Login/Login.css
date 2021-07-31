@@ -96,7 +96,12 @@ body {
 } */
 
 /* Other styles */
-
+.footer a {
+  color: lightblue;
+}
+.footer a:visited {
+  color: orangered;
+}
 .Login {
   height: 100%;
   max-height: 100vh;
