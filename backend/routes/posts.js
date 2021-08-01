@@ -131,5 +131,21 @@ router.post(
     }
   }
 );
+router.delete(
+  "/:postsId/likes",
+  security.requireAuthenticatedUser,
+  async (req, res, next) => {
+    try {
+      const { user } = res.locals;
+      const liked = await Like.deleteLike({
+        user,
+        post_id: req.params.postsId,
+      });
+      return res.status(201).json({ liked });
+    } catch (err) {
+      next(err);
+    }
+  }
+);
 
 module.exports = router;

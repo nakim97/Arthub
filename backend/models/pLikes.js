@@ -1,26 +1,36 @@
-const { UnauthorizedError } = require("../utils/errors");
+const { UnauthorizedError, ForbiddenError } = require("../utils/errors");
 const db = require("../db");
+const User = require("../models/user")
 
 class Like {
   static async postLike({ user, post_id }) {
     if (!user) {
       throw new UnauthorizedError(`There is no user logged in.`);
     }
+    const myUser = await User.fetchUserByEmail(user.email)
     // Look up the post in the likes table and add the user id to the array
     const query = `
-        SELECT likes FROM photoLikes WHERE post_id = $1;
+        SELECT likes FROM photoLikes
+        WHERE post_id = $1;
         `;
 
-    // console.log("This is the query" + query);
     const results = await db.query(query, [post_id]);
-    const myUser = userResults.id
-    console.log("mU", myUser)
     // This should get an array of likes
-    const arr = results.rows[0];
-    console.log("arr", arr);
-    // This gets a new object
-    const obj = [user.id, user.username];
-    console.log("obj", obj);
+    let arr = [];
+     for (let like in results.rows) {
+       // This gets all the likes from all the users in the likes column
+       // Then it goes in to make an actual array with the 0 index
+       if (results.rows[like]["likes"][0][0] != myUser["id"].toString())
+        arr.push(results.rows[like]["likes"][0]);
+        else {
+          throw new ForbiddenError(`User cannot add more than one like.`);
+        }
+     }
+     console.log("arr", arr);
+    // Just in case there are no likes, create an empty array
+    if (!arr) arr = [];
+    // // This gets a new object with our user
+    let obj = [myUser["id"].toString(), myUser["username"]];
     // This adds the new object of user things to the array
     arr.push(obj);
     console.log("arr2", arr);
@@ -30,14 +40,10 @@ class Like {
         VALUES ($1, $2)
         RETURNING id, likes, post_id
         `;
-    const resultsf = await db.query(queryf, [arr, post_id]);
+    const resultsf = await db.query(queryf, [post_id, arr]);
     return resultsf.rows[0];
   }
-// {
-// 	"postTitle": "Something",
-// 	"postDescription": "Let's do it!",
-// 	"imgId": 4
-// }
+
   static async fetchLikesForPost({ postsId }) {
     // fetch a user's comment for a post if it exists
     const results = await db.query(
