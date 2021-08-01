@@ -9,7 +9,7 @@ import ChatIcon from "@material-ui/icons/Chat";
 import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import "./Comments.css";
 
-export default function Comments({ user }) {
+export default function Comments({ user, post }) {
   const { postId } = useParams();
   const [isLoading, setIsLoading] = useState(false);
   const [comments, setComments] = useState([]);
@@ -67,11 +67,19 @@ export default function Comments({ user }) {
     <div className="comments">
       <div className="likesAndShare">
         <FavoriteBorderIcon />
+        {/* window.location.href With a button here to make an alert that the link was copied */}
+        {/* 
+        <button
+                className="clear"
+                onClick={() => handleDelete(post.photoPostId)}
+              >
+                <DeleteIcon className="share" />{" "}
+              </button> */}
         <ShareIcon />
       </div>
 
       <div className="description">
-        <p>This is an amazing piece of work. Real amazing!!</p>
+        <p>{post.post_description}</p>
       </div>
 
       <div className="likeCommentCount">
@@ -79,7 +87,7 @@ export default function Comments({ user }) {
           <div className="numCount">
             <ChatIcon />
             <div className="numCommentsCount">
-              <p>23 Comments</p>
+              <p>{`${comments.length} Comments`}</p>
             </div>
           </div>
         </div>

@@ -54,7 +54,7 @@ export default function PostDetail({ user, handleOnLogout }) {
             alt="people standing on a mountain"
           />
         </div>
-        <Comments user={user} />
+        <Comments user={user} post={post} />
       </>
     );
   };
