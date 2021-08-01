@@ -97,12 +97,12 @@ class Like {
     let arr = [];
 
     const theResult = results.rows[0];
-    console.log("1st")
+
     for (let like in theResult["likes"]) {
       flag = true;
       // This gets all the likes from all the users in the likes column
       // Then it goes in to make an actual array with the 0 index
-      console.log("12st")
+
       if (theResult["likes"][like] == undefined) {
         continue;
       }
@@ -113,7 +113,6 @@ class Like {
       throw new ForbiddenError(`There was no like to delete`);
     }
     for (let dLike in arr) {
-      console.log("13st")
       // This gets all the likes from all the users in the likes column
       // Then it goes in to make an actual array with the 0 index
       if (!arr) break;
@@ -121,30 +120,30 @@ class Like {
       // For this statement, if the user id already exists in the user, throw an error
       if (arr[dLike][0] == myUser["id"].toString()) {
         arr.pop(arr[dLike]);
-        console.log("t1");
+
         break;
       } else if (
         arr[dLike][0] != myUser["id"].toString() &&
-        dLike != arr.length-1
+        dLike != arr.length - 1
       ) {
-        console.log("t2");
         continue;
       } else {
-        console.log("t3");
-
         // We reached the end of the array without finding anything
         throw new ForbiddenError(`There was no like to delete`);
       }
     }
-    console.log("14st")
+
     // Just in case there are no likes, create an empty array
-    if (!arr) { arr = []; throw new ForbiddenError(`There was no like to delete`);}
+    if (!arr) {
+      arr = [];
+      throw new ForbiddenError(`There was no like to delete`);
+    }
     // Put the array back in
     const queryd = `
         DELETE FROM photoLikes
         WHERE post_id = $1
         `;
-        console.log("15st")
+
     const resultsd = await db.query(queryd, [post_id]);
     const queryf = `
     INSERT INTO photoLikes (post_id, likes)
