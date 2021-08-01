@@ -37,6 +37,7 @@ router.get("/", security.requireAuthenticatedUser, async (req, res, next) => {
     next(err);
   }
 });
+
 router.get("/search", async (req, res, next) => {
   try {
     //uses search?q= -str- - you enter the string
@@ -59,6 +60,7 @@ router.get("/:postsId", async (req, res, next) => {
     next(err);
   }
 });
+
 // delete single post
 router.delete("/:postsId", async (req, res, next) => {
   try {
@@ -83,6 +85,7 @@ router.get("/:postsId/comments", async (req, res, next) => {
     next(err);
   }
 });
+
 // Create a new comment
 router.post(
   "/:postsId/comments",
@@ -131,6 +134,7 @@ router.post(
     }
   }
 );
+
 router.delete(
   "/:postsId/likes",
   security.requireAuthenticatedUser,

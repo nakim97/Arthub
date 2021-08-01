@@ -38,7 +38,7 @@ class ApiClient {
       data: post,
     });
   }
-  
+
   async deletePost(postId) {
     return await this.request({
       endpoint: `post/${postId}`,
@@ -73,13 +73,12 @@ class ApiClient {
     });
   }
   async listPosts(user) {
-      return await this.request({
-        endpoint: `post`,
-        method: `GET`,
-        data: user,
-      });
-    }
-  
+    return await this.request({
+      endpoint: `post`,
+      method: `GET`,
+      data: user,
+    });
+  }
 
   async listPostWithId(productId) {
     return await this.request({

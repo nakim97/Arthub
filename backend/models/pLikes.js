@@ -83,6 +83,7 @@ class Like {
     if (!user) {
       throw new UnauthorizedError(`There is no user logged in.`);
     }
+    // Flag to determine whether the array has been added to or not
     let flag = false;
     const myUser = await User.fetchUserByEmail(user.email);
     // Look up the post in the likes table and add the user id to the array
@@ -120,7 +121,6 @@ class Like {
       // For this statement, if the user id already exists in the user, throw an error
       if (arr[dLike][0] == myUser["id"].toString()) {
         arr.pop(arr[dLike]);
-
         break;
       } else if (
         arr[dLike][0] != myUser["id"].toString() &&

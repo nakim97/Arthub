@@ -70,9 +70,7 @@ export default function UserProfile({ user, handleOnLogout }) {
   const bio = userInfo.biography == null || userInfo.biography == "null";
   const biography = bio ? (
     <>
-      <p>
-        No biography.{" "}
-      </p>
+      <p>No biography. </p>
     </>
   ) : (
     <>

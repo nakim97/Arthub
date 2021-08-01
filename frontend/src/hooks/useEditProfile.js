@@ -7,9 +7,7 @@ export const useEditProfile = ({ user, setUser, imageUrl, imageUrl2 }) => {
   function joinName(fName, lName) {
     return fName + " " + lName;
   }
-  // console.log(user.first_name);
   const my_name = joinName(user.first_name, user.last_name) || "";
-  // console.log("name " + my_name);
   const instagram_url = user.instagram_url || "";
   const profile_img_url = user.profile_img_url || "";
   const facebook_url = user.facebook_url || "";
@@ -37,7 +35,6 @@ export const useEditProfile = ({ user, setUser, imageUrl, imageUrl2 }) => {
     //   navigate("/");
     // }
   }, [user]);
-  // console.log(form.biography);
   const handleOnInputChange = (event) => {
     setForm((f) => ({ ...f, [event.target.name]: event.target.value }));
   };
@@ -57,7 +54,6 @@ export const useEditProfile = ({ user, setUser, imageUrl, imageUrl2 }) => {
     }
 
     const myArr = splitName(form.name);
-    // console.log("name", myArr, form.username)
     const { data, error } = await apiClient.updateUser({
       first_name: myArr[0],
       last_name: myArr[1],
@@ -72,10 +68,8 @@ export const useEditProfile = ({ user, setUser, imageUrl, imageUrl2 }) => {
     });
     if (error) setErrors((e) => ({ ...e, form: error }));
     if (data?.user) {
-      // console.log("data",data)
       setUser(data.user);
       navigate("/me");
-      // apiClient.setToken(data.token);
     }
     setIsProcessing(false);
   };

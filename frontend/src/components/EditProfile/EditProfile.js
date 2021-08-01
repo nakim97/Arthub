@@ -17,7 +17,6 @@ export default function EditProfile({ user, setUser, handleOnLogout }) {
     useImageUploadS();
   const { isProcessing, form, errors, handleOnSubmit, handleOnInputChange } =
     useEditProfile({ user, setUser, imageUrl, imageUrl2 });
-  // console.log(form.name);
   return (
     <div className="user">
       <Navbar user={user} handleOnLogout={handleOnLogout} />
@@ -167,31 +166,6 @@ export default function EditProfile({ user, setUser, handleOnLogout }) {
         </div>
       </div>
 
-      {/* <ImageUpload
-        handleImageUpload={handleImageUpload}
-        openWidget={openWidget}
-        imageUrl={imageUrl}
-        imageAlt={imageAlt}
-        name={"Profile picture"}
-      />
-      <div className="bio">
-        <div className="description">
-          <label htmlFor="bio">Bibliography</label>
-        </div>
-
-        <div className="textSpace">
-          <input
-            type="text"
-            name="biography"
-            placeholder="Your Biography"
-            value={form.biography}
-            onChange={handleOnInputChange}
-          />
-          {errors.biography && (
-            <span className="error">{errors.biography}</span>
-          )}
-        </div>
-      </div> */}
       <div className="banner">
         <div className="bannerTitle">
           <h2>Upload Banner Image</h2>

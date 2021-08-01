@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import apiClient from "../services/apiClient";
 
 export const useUserProfile = ({ user }) => {
-  // console.log(user)
   const [isFetching, setFetching] = useState(false);
   const [error, setError] = useState(null);
   function joinName(fName, lName) {
@@ -17,7 +16,6 @@ export const useUserProfile = ({ user }) => {
       setFetching(true);
       try {
         const { data } = await apiClient.listPosts(user);
-        // console.log("data",data)
         setPosts(data.postsByMe);
       } catch (err) {
         setError(err);
@@ -35,7 +33,6 @@ export const useUserProfile = ({ user }) => {
         const { data } = await apiClient.listUserByEmail(user.email);
 
         setUserInfo(data.user);
-        // console.log("user", userInfo);
       } catch (err) {
         setError(err);
       }

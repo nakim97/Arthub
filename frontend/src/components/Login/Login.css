@@ -78,22 +78,6 @@ body {
 .Login .card .form .input-field label {
   margin-bottom: 5px;
 }
-/* .Login .card .form .input-field input {
-  height: 60px;
-  padding: 0 15px;
-  font-size: 16px;
-  border: solid 1px var(--border-color);
-  width: 100%;
-} */
-/* .Login .card .footer {
-  /* border-top: solid 1px var(--border-color); 
-  margin-top: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 35px;
-  width: 100%;
-} */
 
 /* Other styles */
 .footer a {
