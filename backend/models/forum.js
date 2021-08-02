@@ -5,13 +5,13 @@ class Forum {
   static async listAllForumPosts() {
     const results = await db.query(
       `
-      SELECT pp.id AS "photoPostId",
-    pp.post_title AS "postTitle",
-    pp.post_description AS "postDescription",
+      SELECT fp.id AS "forumPostId",
+    fp.forum_title AS "forumTitle",
+    fp.forum_description AS "forumDescription",
     img.id AS "imgId",
-    img.post_img_url AS "imgPostUrl"
-    FROM photoPost AS pp
-    JOIN photoUpload AS img ON img.id = pp.img_id
+    img.forum_img_url AS "imgPostUrl"
+    FROM forumPost AS fp
+    JOIN forumUpload AS img ON img.id = fp.img_id
     `
     );
     return results.rows;
@@ -19,15 +19,15 @@ class Forum {
   static async listForumPostsForUser({ user }) {
     const results = await db.query(
       `
-    SELECT pp.id AS "photoPostId",
-    pp.post_title AS "postTitle",
-    pp.post_description AS "postDescription",
+    SELECT fp.id AS "forumPostId",
+    fp.forum_title AS "forumTitle",
+    fp.forum_description AS "forumDescription",
     img.id AS "imgId",
-    img.post_img_url AS "imgPostUrl",
+    img.forum_img_url AS "imgPostUrl",
     u.email AS "userEmail"
-    FROM photoPost AS pp
-    JOIN users AS u ON u.id = pp.user_id
-    JOIN photoUpload AS img ON img.id = pp.img_id
+    FROM forumPost AS fp
+    JOIN users AS u ON u.id = fp.user_id
+    JOIN forumUpload AS img ON img.id = fp.img_id
     WHERE u.id = (SELECT id FROM users WHERE email = $1)
     `,
       [user.email]
@@ -39,10 +39,10 @@ class Forum {
       throw new BadRequestError("No id provided");
     }
 
-    const query = `SELECT * FROM photoPost AS pp
-    JOIN users AS u ON u.id = pp.user_id
-    JOIN photoUpload AS img ON img.id = pp.img_id
-    WHERE pp.id = $1`;
+    const query = `SELECT * FROM forumPost AS fp
+    JOIN users AS u ON u.id = fp.user_id
+    JOIN forumUpload AS img ON img.id = fp.img_id
+    WHERE fp.id = $1`;
     const result = await db.query(query, [postId]);
     const post = result.rows[0];
     return post;
@@ -51,7 +51,7 @@ class Forum {
     if (!postId) {
       throw new BadRequestError("No id provided");
     }
-    const query = `DELETE FROM photoPost WHERE id = $1`;
+    const query = `DELETE FROM forumPost WHERE id = $1`;
     const result = await db.query(query, [postId]);
     const user = "ok";
     return user;
@@ -61,7 +61,7 @@ class Forum {
     if (!query) {
       throw new BadRequestError("No search query provided");
     }
-    const dbquery = `Select * from photoPost where post_title like '%${query}%';
+    const dbquery = `Select * from forumPost where forum_title like '%${query}%';
     `;
     console.log(dbquery);
     const result = await db.query(dbquery);
@@ -71,23 +71,23 @@ class Forum {
 
   static async createForumPost({ post, user }) {
     if (!post || !Object.keys(post).length) {
-      throw new BadRequestError("No post info provided");
+      throw new BadRequestError("No forum info provided");
     }
     if (!user) {
       throw new BadRequestError("No user provided");
     }
     const results = await db.query(
       `
-            INSERT INTO photoPost (post_title, post_description, img_id, user_id)
+            INSERT INTO forumPost (forum_title, forum_description, img_id, user_id)
             VALUES ($1, $2, $3, (SELECT id FROM users WHERE email = $4))
             RETURNING id,
             user_id AS "userId",
             img_id,
-            post_title,
-            post_description,
-            photo_created_at
+            forum_title,
+            forum_description,
+            forum_created_at
             `,
-      [post.postTitle, post.postDescription, post.imgId, user.email]
+      [post.forumTitle, post.forumDescription, post.imgId, user.email]
     );
     return results.rows[0];
   }
