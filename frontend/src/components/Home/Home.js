@@ -27,10 +27,12 @@ export default function Home({ handleOnLogout, user }) {
     "how to sketch",
     "concept art",
   ];
+
   function random(min, max) {
     return Math.random() * (max - min) + min;
   }
   let term = searchTerms[Math.floor(random(0, searchTerms.length)) - 1];
+  // console.log(term)
   useEffect(() => {
     const fetchVideos = async () => {
       setIsLoading(true);
@@ -40,7 +42,7 @@ export default function Home({ handleOnLogout, user }) {
             q: term,
           },
         });
-        console.log(response);
+        // console.log(response);
         if (response?.data?.items) setVideos(response.data.items);
       } catch (err) {
         setError(err);
