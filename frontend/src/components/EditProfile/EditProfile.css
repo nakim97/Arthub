@@ -13,7 +13,7 @@
   width: 20%;
 }
 
-.user .profilePic img {
+/* .user .profilePic img {
   width: 145px;
   height: 135px;
   border-radius: 50%;
@@ -24,7 +24,7 @@
   display: flex;
   margin-left: 2rem;
   margin-top: 1rem;
-}
+} */
 
 .user .userInfo {
   display: flex;
@@ -210,4 +210,20 @@
 
 .user .bannerTitle {
   margin-left: 3.5rem;
+}
+
+@media only screen and (max-width: 850px) {
+  /* .user .userInfo {
+    display: flex;
+    flex-direction: column;
+  } */
+
+  /* .user .nameInfo .bio {
+    margin-top: 20rem;
+  }
+
+  .userInfo .socialMediaEdit .socialMediaTitle {
+    margin-left: -10rem;
+    margin-top: 15rem;
+  } */
 }
