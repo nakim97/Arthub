@@ -6,6 +6,7 @@ const { NotFoundError } = require("./utils/errors");
 const authRoutes = require("./routes/auth");
 const userRoutes = require("./routes/users");
 const postRoutes = require("./routes/posts");
+const forumRoutes = require("./routes/forums");
 const imageRoutes = require("./routes/images");
 const security = require("./middleware/security");
 
@@ -27,6 +28,7 @@ app.use(security.extractUserFromJwt);
 app.use("/user", userRoutes);
 app.use("/auth", authRoutes);
 app.use("/post", postRoutes);
+app.use("/forum", forumRoutes);
 app.use("/image", imageRoutes);
 
 /** Handle 404 errors -- this matches everything */

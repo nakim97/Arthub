@@ -1,6 +1,6 @@
 const { UnauthorizedError, ForbiddenError } = require("../utils/errors");
 const db = require("../db");
-const User = require("../models/user");
+const User = require("./user");
 
 class Like {
   static async postLike({ user, post_id }) {
