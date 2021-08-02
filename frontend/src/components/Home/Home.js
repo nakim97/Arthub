@@ -14,6 +14,8 @@ import homefeed6 from "../../Assets/homefeed6.jpg";
 import { useState, useEffect } from "react";
 import youtube from "../../APIs/youtube";
 import VideoItem from "../Youtube/videoitem";
+import ReactModal from "react-modal";
+import VideoDetail from "../Youtube/videodetail";
 
 export default function Home({ handleOnLogout, user }) {
   const [selectedVideo, setSelectedVideo] = useState([null]);
@@ -250,6 +252,33 @@ export default function Home({ handleOnLogout, user }) {
                 </p>
               </div>
             </div> */}
+             <div className="eleven wide column" style={{ marginTop: "800px" }}>
+              <ReactModal
+                isOpen={!!selectedVideo}
+                onRequestClose={this.handleCloseModal}
+                ariaHideApp={false}
+                style={{
+                  overlay: {
+                    background: "black",
+                    opacity: "0.9",
+                  },
+                  content: {
+                    background: "black",
+                    position: "absolute",
+                  },
+                }}
+              >
+                <button className="xbtn" onClick={this.handleCloseModal}>
+                  {" "}
+                  X{" "}
+                </button>
+
+                {this.state.selectedVideo && (
+                  <VideoDetail video={this.state.selectedVideo} />
+                )}
+              </ReactModal>
+            </div>
+
             <div className="list">
               <div className="items">{renderedVideos}</div>
             </div>
