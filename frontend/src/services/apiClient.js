@@ -61,6 +61,13 @@ class ApiClient {
       data: image,
     });
   }
+  async createForumImage(image) {
+    return await this.request({
+      endpoint: `image/forum`,
+      method: `POST`,
+      data: image,
+    });
+  }
 
   // async listPosts() {
   //   return await this.request({ endpoint: `posts`, method: `GET` });

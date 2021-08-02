@@ -56,7 +56,7 @@ export default function Navbar({ handleOnLogout, user }) {
         <div className="content">
           <Link to="/" className="Link">
             <div className="logo">
-              <BrushIcon style={{ fontSize: 30, position:"fixed"}} />
+              <BrushIcon style={{ fontSize: 30}} />
             </div>
           </Link>
           <div className="search-bar">

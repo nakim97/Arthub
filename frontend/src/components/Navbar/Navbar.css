@@ -26,16 +26,15 @@
 }
 .Navbar .content .logo {
   width: 100px;
-  padding-right: 100px;
-  position:fixed;
-  
+  position: sticky;
 }
+
 .Navbar .content .logo h1 {
   color: white;
 }
 
 .Navbar .content .search-bar {
-  padding-left: 120px;
+  /* padding-left: 120px; */
 }
 
 .userIcon {
