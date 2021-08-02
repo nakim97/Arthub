@@ -67,7 +67,7 @@ export default function Login({ user, setUser }) {
 
         <div className="footer smaller">
           <p>
-            Don't have an account? Sign up <Link to="/register">here</Link>
+            Don't have an account? <Link to="/register"> Sign up here</Link>
           </p>
         </div>
       </div>

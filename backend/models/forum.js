@@ -1,8 +1,8 @@
 const { BadRequestError } = require("../utils/errors");
 const db = require("../db");
 
-class Post {
-  static async listAllPosts() {
+class Forum {
+  static async listAllForumPosts() {
     const results = await db.query(
       `
       SELECT pp.id AS "photoPostId",
@@ -16,7 +16,7 @@ class Post {
     );
     return results.rows;
   }
-  static async listPhotoPostsForUser({ user }) {
+  static async listForumPostsForUser({ user }) {
     const results = await db.query(
       `
     SELECT pp.id AS "photoPostId",
@@ -34,7 +34,7 @@ class Post {
     );
     return results.rows;
   }
-  static async fetchPhotoPostById(postId) {
+  static async fetchForumPostById(postId) {
     if (!postId) {
       throw new BadRequestError("No id provided");
     }
@@ -47,7 +47,7 @@ class Post {
     const post = result.rows[0];
     return post;
   }
-  static async deletePhotoPostById(postId) {
+  static async deleteForumPostById(postId) {
     if (!postId) {
       throw new BadRequestError("No id provided");
     }
@@ -57,7 +57,7 @@ class Post {
     return user;
   }
 
-  static async searchByTitle(query) {
+  static async searchByForumTitle(query) {
     if (!query) {
       throw new BadRequestError("No search query provided");
     }
@@ -69,7 +69,7 @@ class Post {
     return queries;
   }
 
-  static async createPost({ post, user }) {
+  static async createForumPost({ post, user }) {
     if (!post || !Object.keys(post).length) {
       throw new BadRequestError("No post info provided");
     }
@@ -93,4 +93,4 @@ class Post {
   }
 }
 
-module.exports = Post;
+module.exports = Forum;
