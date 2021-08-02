@@ -29,7 +29,7 @@
   text-align: left;
 }
 
-.youtubeVideo {
+.youtube-video {
   position: fixed;
   text-align: center;
   width: 60%;
@@ -56,7 +56,7 @@
   .list .items {
     grid-template-columns: 1fr;
   }
-  .youtubeVideo {
+  .youtube-video {
     width: 50%;
     height: 30%;
   }

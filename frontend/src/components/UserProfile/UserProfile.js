@@ -17,19 +17,19 @@ export default function UserProfile({ user, handleOnLogout }) {
     userInfo.instagram_url == null || userInfo.instagram_url == "null";
   // We have a link to use
   if (!instagram) {
-    instagram_url = userInfo.instagram_url;
+    instagram_url = "http://" + userInfo.instagram_url;
   }
   const facebook =
     userInfo.facebook_url == null || userInfo.facebook_url == "null";
   // We have a link to use
   if (!facebook) {
-    facebook_url = userInfo.facebook_url;
+    facebook_url = "http://" + userInfo.facebook_url;
   }
   const twitter =
     userInfo.twitter_url == null || userInfo.twitter_url == "null";
   // We have a link to use
   if (!twitter) {
-    twitter_url = userInfo.twitter_url;
+    twitter_url = "http://" + userInfo.twitter_url;
   }
   const banner_url =
     userInfo.banner_img_url == null || userInfo.banner_img_url == "null";
@@ -112,13 +112,13 @@ export default function UserProfile({ user, handleOnLogout }) {
 
           <div className="mediaLinks">
             <div className="socialMedia">
-              <a target="_blank" href={`http://${instagram_url}`}>
+              <a target="_blank" href={`${instagram_url}`}>
                 <InstagramIcon />
               </a>
-              <a target="_blank" href={`http://${facebook_url}`}>
+              <a target="_blank" href={`${facebook_url}`}>
                 <FacebookIcon />
               </a>
-              <a target="_blank" href={`http://${twitter_url}`}>
+              <a target="_blank" href={`${twitter_url}`}>
                 <TwitterIcon />
               </a>
             </div>

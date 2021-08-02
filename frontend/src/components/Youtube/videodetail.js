@@ -8,7 +8,7 @@ const VideoDetail = ({ video }) => {
     <div>
       <div className="ui embed">
         <iframe
-          className="youtubeVideo"
+          className="youtube-video"
           src={videoSrc}
           allowFullScreen
           title="Video player"
