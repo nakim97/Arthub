@@ -1,7 +1,7 @@
 const express = require("express");
 const Post = require("../models/post");
-const Comment = require("../models/photoComments");
-const Like = require("../models/pLikes");
+const Comment = require("../models/picComments");
+const Like = require("../models/picLikes");
 const security = require("../middleware/security");
 const router = express.Router();
 
