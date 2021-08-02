@@ -65,6 +65,9 @@ export default function Home({ handleOnLogout, user }) {
 
   // }, []);
     // const responses = getResponse();
+    const handleCloseModal = () => {
+      setSelectedVideo(null);
+    }
   const handleVideoSelect = (video) => {
     setSelectedVideo(video);
   };
@@ -257,7 +260,7 @@ export default function Home({ handleOnLogout, user }) {
              <div className="eleven wide column" style={{ marginTop: "800px" }}>
               <ReactModal
                 isOpen={!!selectedVideo}
-                onRequestClose={this.handleCloseModal}
+                onRequestClose={handleCloseModal}
                 ariaHideApp={false}
                 style={{
                   overlay: {
@@ -270,13 +273,13 @@ export default function Home({ handleOnLogout, user }) {
                   },
                 }}
               >
-                <button className="xbtn" onClick={this.handleCloseModal}>
+                <button className="xbtn" onClick={handleCloseModal}>
                   {" "}
                   X{" "}
                 </button>
 
-                {this.state.selectedVideo && (
-                  <VideoDetail video={this.state.selectedVideo} />
+                {selectedVideo && (
+                  <VideoDetail video={selectedVideo} />
                 )}
               </ReactModal>
             </div>
