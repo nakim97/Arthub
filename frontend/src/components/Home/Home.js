@@ -11,41 +11,59 @@ import homefeed7 from "../../Assets/homefeed7.jpg";
 import homefeed4 from "../../Assets/homefeed4.jpg";
 import homefeed5 from "../../Assets/homefeed5.jpg";
 import homefeed6 from "../../Assets/homefeed6.jpg";
-import { useState , useEffect}  from 'react';
+import { useState, useEffect } from "react";
 import youtube from "../../APIs/youtube";
 import VideoItem from "../Youtube/videoitem";
 
 export default function Home({ handleOnLogout, user }) {
   const [selectedVideo, setSelectedVideo] = useState([null]);
-  const [videos, setVideos] = useState([])
+  const [isLoading, setIsLoading] = useState(false);
+  const [videos, setVideos] = useState([]);
+  const [error, setError] = useState(false);
   const searchTerms = [
     "art",
     "how to draw hands",
     "how to draw",
     "how to sketch",
-    "concept art"
-  ]
-  function random(min, max) {return Math.random() * (max-min)+ min;}
-  useEffect(() => {
-    let term = searchTerms[Math.floor(random(0,searchTerms.length))-1]
-    console.log(term);
-    async function getResponse(){
-      const response = await youtube.get("/search", {
-        params: {
-          q: term,
-        },
-      });
-    
-      const responses = getResponse();
-      setVideos(responses.data.items)
-      console.log(responses.data.items);
-    }
-    // const responses = getResponse();
-  }, [])
-  
-  const handleVideoSelect = (video) => {
-  setSelectedVideo(video)
+    "concept art",
+  ];
+  function random(min, max) {
+    return Math.random() * (max - min) + min;
   }
+  let term = searchTerms[Math.floor(random(0, searchTerms.length)) - 1];
+  useEffect(() => {
+    const fetchVideos = async () => {
+      setIsLoading(true);
+      try {
+        const response = await youtube.get("/search", {
+          params: {
+            q: term,
+          },
+        });
+        console.log(response);
+        if (response?.data?.items) setVideos(response.data.items);
+      } catch (err) {
+        setError(err);
+      }
+
+      setIsLoading(false);
+    };
+    fetchVideos();
+  }, []);
+  // useEffect(() => {
+  //   console.log(term);
+  //   async function getResponse() {
+
+  //     const responses = getResponse();
+  //     setVideos(responses.data.items);
+      
+  //   }
+
+  // }, []);
+    // const responses = getResponse();
+  const handleVideoSelect = (video) => {
+    setSelectedVideo(video);
+  };
 
   const renderedVideos = videos.map((video) => {
     return (
@@ -56,12 +74,6 @@ export default function Home({ handleOnLogout, user }) {
       />
     );
   });
-   
-
-
-  
-  
-
 
   return (
     <div className="home">
