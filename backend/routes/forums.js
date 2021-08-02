@@ -1,14 +1,14 @@
 const express = require("express");
-const Post = require("../models/post");
-const Comment = require("../models/picComments");
-const Like = require("../models/picLikes");
+const Forum = require("../models/post");
+const Comment = require("../models/comments");
+const Like = require("../models/likes");
 const security = require("../middleware/security");
 const router = express.Router();
 
 router.post("/", security.requireAuthenticatedUser, async (req, res, next) => {
   try {
     const { user } = res.locals;
-    const post = await Post.createPost({
+    const post = await Forum.createForumPost({
       user,
       post: req.body,
     });
@@ -20,7 +20,7 @@ router.post("/", security.requireAuthenticatedUser, async (req, res, next) => {
 
 router.get("/listPosts", async (req, res, next) => {
   try {
-    const posts = await Post.listAllPosts();
+    const posts = await Forum.listAllForumPosts();
     return res.status(200).json({ posts });
   } catch (err) {
     next(err);
@@ -31,7 +31,7 @@ router.get("/", security.requireAuthenticatedUser, async (req, res, next) => {
   try {
     // List all posts for user
     const { user } = res.locals;
-    const postsByMe = await Post.listPhotoPostsForUser({ user });
+    const postsByMe = await Forum.listForumPostsForUser({ user });
     return res.status(200).json({ postsByMe });
   } catch (err) {
     next(err);
@@ -42,7 +42,7 @@ router.get("/search", async (req, res, next) => {
   try {
     //uses search?q= -str- - you enter the string
     const { q } = req.query;
-    const searches = await Post.searchByTitle(q);
+    const searches = await Forum.searchByForumTitle(q);
     return res.status(200).json({ searches });
   } catch (err) {
     next(err);
@@ -53,7 +53,7 @@ router.get("/search", async (req, res, next) => {
 router.get("/:postsId", async (req, res, next) => {
   try {
     const postsId = req.params.postsId;
-    const posting = await Post.fetchPhotoPostById(postsId);
+    const posting = await Forum.fetchForumPostById(postsId);
     // console.log("pID", postsId, "p", posts)
     res.status(200).json({ posting });
   } catch (err) {
@@ -65,7 +65,7 @@ router.get("/:postsId", async (req, res, next) => {
 router.delete("/:postsId", async (req, res, next) => {
   try {
     const postsId = req.params.postsId;
-    const posting = await Post.deletePhotoPostById(postsId);
+    const posting = await Forum.deleteForumPostById(postsId);
     // console.log("pID", postsId, "p", posts)
     res.status(200).json({ posting });
   } catch (err) {
@@ -76,7 +76,7 @@ router.delete("/:postsId", async (req, res, next) => {
 // Get the comments for the photo post
 router.get("/:postsId/comments", async (req, res, next) => {
   try {
-    const comments = await Comment.fetchCommentForPostByUser({
+    const comments = await Comment.fetchCommentForForumPostByUser({
       postsId: req.params.postsId,
     });
 
@@ -93,7 +93,7 @@ router.post(
   async (req, res, next) => {
     try {
       const { user } = res.locals;
-      const comment = await Comment.postComment({
+      const comment = await Comment.postForumComment({
         comment_description: req.body.comment,
         user,
         post_id: req.params.postsId,
