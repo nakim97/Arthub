@@ -33,6 +33,13 @@ export default function Comments({ user, post }) {
 
   const { register, handleSubmit } = useForm();
   let commentsForm;
+  let commentsNum = ``;
+  if (comments.length == 1) {
+    commentsNum = `${comments.length} Comment`
+  }
+  else {
+    commentsNum = `${comments.length} Comments`
+  }
   if (user.email) {
     commentsForm = (
       <>
@@ -87,7 +94,7 @@ export default function Comments({ user, post }) {
           <div className="numCount">
             <ChatIcon />
             <div className="numCommentsCount">
-              <p>{`${comments.length} Comments`}</p>
+              <p>{commentsNum}</p>
             </div>
           </div>
         </div>
