@@ -73,6 +73,7 @@ export default function Home({ handleOnLogout, user }) {
   };
 
   const renderedVideos = videos.map((video) => {
+    // Add a key key={video.id.videoId} in a div
     return (
       <VideoItem
         key={video.id.videoId}
@@ -259,7 +260,7 @@ export default function Home({ handleOnLogout, user }) {
             </div> */}
              <div className="eleven wide column" style={{ marginTop: "800px" }}>
               <ReactModal
-                isOpen={!!selectedVideo}
+                isOpen={selectedVideo?.id}
                 onRequestClose={handleCloseModal}
                 ariaHideApp={false}
                 style={{
@@ -278,9 +279,9 @@ export default function Home({ handleOnLogout, user }) {
                   X{" "}
                 </button>
 
-                {selectedVideo && (
+                {/* {selectedVideo && (
                   <VideoDetail video={selectedVideo} />
-                )}
+                )} */}
               </ReactModal>
             </div>
 
