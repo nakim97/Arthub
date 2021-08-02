@@ -55,13 +55,13 @@ export default function UserProfile({ user, handleOnLogout }) {
   const profile_img = profile_url ? (
     <>
       {/* Return default image */}
-      <img className="bannerImg" src={person2} alt="user profile picture" />
+      <img className="profilePic" src={person2} alt="user profile picture" />
     </>
   ) : (
     <>
       {/* Use our own image */}
       <img
-        className="bannerImg"
+        className="profilePic"
         src={`${userInfo.profile_img_url}`}
         alt="my profile"
       />
@@ -70,11 +70,15 @@ export default function UserProfile({ user, handleOnLogout }) {
   const bio = userInfo.biography == null || userInfo.biography == "null";
   const biography = bio ? (
     <>
-      <p>No biography. </p>
+      <div className="description">
+        <p>No biography. </p>
+      </div>
     </>
   ) : (
     <>
-      <p>{`${userInfo.biography}`}</p>
+      <div className="description">
+        <p>{`${userInfo.biography}`}</p>
+      </div>
     </>
   );
   //Unauthenticated view
@@ -97,30 +101,33 @@ export default function UserProfile({ user, handleOnLogout }) {
       <div className="userInfo">
         <div className="profile">
           <div className="profilePic">{profile_img}</div>
-          <div className="profileName">
-            <p>{myName}</p>
+          <div className="profileNameUser">
+            <div className="profileName">
+              <p>{myName}</p>
+            </div>
             <div className="profileUsername">
               <p>{username}</p>
             </div>
           </div>
-        </div>
 
-        <div className="mediaLinks">
-          <div className="socialMedia">
-            <a target="_blank" href={`http://${instagram_url}`}>
-              <InstagramIcon />
-            </a>
-            <a target="_blank" href={`http://${facebook_url}`}>
-              <FacebookIcon />
-            </a>
-            <a target="_blank" href={`http://${twitter_url}`}>
-              <TwitterIcon />
-            </a>
+          <div className="mediaLinks">
+            <div className="socialMedia">
+              <a target="_blank" href={`http://${instagram_url}`}>
+                <InstagramIcon />
+              </a>
+              <a target="_blank" href={`http://${facebook_url}`}>
+                <FacebookIcon />
+              </a>
+              <a target="_blank" href={`http://${twitter_url}`}>
+                <TwitterIcon />
+              </a>
+            </div>
           </div>
         </div>
       </div>
-
-      <div className="description">{biography}</div>
+      <div className="userBio">
+        <div className="description">{biography}</div>
+      </div>
 
       <div className="portfolioArea">
         <div className="Portfolio">

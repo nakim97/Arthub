@@ -4,9 +4,9 @@
   height: 25rem;
 }
 
-.user .profilePic img {
-  width: 145px;
-  height: 135px;
+.user .userInfo .profilePic {
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   z-index: 1;
 }
@@ -16,11 +16,11 @@
 .socialMedia a:visited {
   color: darkcyan;
 }
-.user .profilePic {
+/* .user .profilePic {
   display: flex;
   margin-left: 2rem;
   margin-top: 1rem;
-}
+} */
 
 .user .userInfo {
   display: flex;
@@ -32,27 +32,29 @@
   justify-content: space-between;
   width: 230px;
   text-align: left;
+  margin-left: -4rem;
 }
 
-/* .user .userInfo .name {
-  display: flex;
-  margin-left: 2rem;
-  font-size: 24px;
-} */
+.user .userInfo .profile .profileNameUser {
+  margin-left: 4rem;
+  margin-top: 1.5rem;
+}
+
+.user .userInfo .profileName {
+  width: 100px;
+  font-size: 18px;
+}
 
 .user .userInfo .profileUsername {
+  width: 100px;
   font-size: 15px;
   color: #999898;
 }
 
-.user .description {
-  text-align: left;
-  font-size: large;
-  margin-top: 2rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  color: white;
+.user .userBio .description {
+  margin-left: -1rem;
 }
+
 .user .portfolioArea .Portfolio {
   float: left;
 }
