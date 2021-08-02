@@ -124,7 +124,7 @@ router.post(
   async (req, res, next) => {
     try {
       const { user } = res.locals;
-      const like = await Like.postLike({
+      const like = await Like.postForumLike({
         user,
         post_id: req.params.postsId,
       });
@@ -141,7 +141,7 @@ router.delete(
   async (req, res, next) => {
     try {
       const { user } = res.locals;
-      const liked = await Like.deleteLike({
+      const liked = await Like.deleteForumLike({
         user,
         post_id: req.params.postsId,
       });
