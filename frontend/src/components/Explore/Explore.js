@@ -24,7 +24,7 @@ export default function Explore({ user, handleOnLogout }) {
       setIsLoading(true);
       try {
         const { data } = await apiClient.listAllPosts();
-
+        console.log(data);
         setMyPosts(data.posts);
       } catch (err) {
         setError(err);
@@ -79,19 +79,17 @@ export default function Explore({ user, handleOnLogout }) {
       </div>
 
       <div className="container">
-        <div className="gallery-item w-2 h-2">
-          <div className="image">
-            {myPosts.map((post) => (
-              <div className="image" key={post.photoPostId}>
-                <Link to={`/post/${post.photoPostId}`}>
-                  <img
-                    src={`${post.imgPostUrl}`}
-                    alt={`Portfolio ${post.photoPostId}`}
-                  ></img>
-                </Link>
-              </div>
-            ))}
-          </div>
+        <div className="gallery-item">
+          {myPosts.map((post) => (
+            <div className="image1" key={post.photoPostId}>
+              <Link to={`/post/${post.photoPostId}`}>
+                <img
+                  src={`${post.imgPostUrl}`}
+                  alt={`Portfolio ${post.photoPostId}`}
+                ></img>
+              </Link>
+            </div>
+          ))}
         </div>
 
         {/* <div className="gallery-item">
