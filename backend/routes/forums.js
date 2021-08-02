@@ -49,7 +49,7 @@ router.get("/search", async (req, res, next) => {
   }
 });
 
-// fetch single post
+// fetch single forum post
 router.get("/:postsId", async (req, res, next) => {
   try {
     const postsId = req.params.postsId;
@@ -61,7 +61,7 @@ router.get("/:postsId", async (req, res, next) => {
   }
 });
 
-// delete single post
+// delete single forum post
 router.delete("/:postsId", async (req, res, next) => {
   try {
     const postsId = req.params.postsId;
@@ -73,7 +73,7 @@ router.delete("/:postsId", async (req, res, next) => {
   }
 });
 
-// Get the comments for the photo post
+// Get the comments for the forum post
 router.get("/:postsId/comments", async (req, res, next) => {
   try {
     const comments = await Comment.fetchCommentForForumPostByUser({
