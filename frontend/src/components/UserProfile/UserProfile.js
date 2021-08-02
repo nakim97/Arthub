@@ -55,7 +55,7 @@ export default function UserProfile({ user, handleOnLogout }) {
   const profile_img = profile_url ? (
     <>
       {/* Return default image */}
-      <img className="bannerImg" src={person2} alt="user profile picture" />
+      <img className="profilePic" src={person2} alt="user profile picture" />
     </>
   ) : (
     <>
@@ -70,7 +70,9 @@ export default function UserProfile({ user, handleOnLogout }) {
   const bio = userInfo.biography == null || userInfo.biography == "null";
   const biography = bio ? (
     <>
-      <p>No biography. </p>
+      <div className="description">
+        <p>No biography. </p>
+      </div>
     </>
   ) : (
     <>
