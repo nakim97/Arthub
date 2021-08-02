@@ -1,6 +1,7 @@
 .user .banner {
   display: flex;
   color: white;
+  margin-top: 30rem;
   margin-left: 2rem;
 }
 
@@ -12,21 +13,9 @@
   display: flex;
   width: 20%;
 }
-
-/* .user .profilePic img {
-  width: 145px;
-  height: 135px;
-  border-radius: 50%;
-  z-index: 1;
-}
-
-.user .profilePic {
-  display: flex;
-  margin-left: 2rem;
-  margin-top: 1rem;
-} */
-
 .user .userInfo {
+  /* display: grid;
+  grid-template-columns: repeat(6, 1fr); */
   display: flex;
   align-items: baseline;
   color: white;
@@ -34,12 +23,14 @@
 .user .userInfo .userImage {
   padding-right: 2rem;
 }
-.user .userInfo .nameInfo {
-  margin-top: 2rem;
+.user .nameInfo {
+  margin-top: -41.75rem;
+  margin-left: 25rem;
+  color: white;
   text-align: left;
 }
 
-.user .userInfo .name {
+.user .name {
   display: flex;
   justify-content: space-between;
   width: 310px;
@@ -47,7 +38,7 @@
   margin-left: 0rem;
 }
 
-.user .userInfo .username {
+.user .username {
   display: flex;
   justify-content: space-between;
   width: 310px;
@@ -55,22 +46,28 @@
   margin-left: 0rem;
 }
 
-.user .userInfo .name input {
+.user .name input {
   width: 180px;
 }
 
-.user .userInfo .username input {
+.user .username input {
   width: 180px;
 }
-.user .userInfo .nameInfo .nameUsername {
+.user .nameInfo .nameUsername {
   padding-top: 1rem;
 }
 
-.user .nameInfo .bio {
-  margin-top: 5rem;
+.bio {
+  margin-top: 2.75rem;
+  margin-left: 25rem;
+  color: white;
 }
 
-.user .nameInfo .bioDescription {
+.bio .bioTitle {
+  display: flex;
+}
+
+.user .bioDescription {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -85,12 +82,8 @@
 
 .user .bio .description {
   font-size: medium;
+  display: flex;
 }
-
-/* .user .userInfo .nameInfo .bio input {
-  padding: 0rem;
-  font-size: small;
-} */
 
 .user .description {
   text-align: left;
@@ -162,45 +155,46 @@
   padding-left: 2rem;
 }
 
-.userInfo .socialMediaEdit {
-  margin-left: 30rem;
-  margin-top: 2rem;
+.user .socialMediaEdit {
+  margin-left: 72rem;
+  margin-top: -18.5rem;
+  color: white;
 }
 
-.userInfo .socialMediaEdit .media {
+.user .socialMediaEdit .media {
   margin-left: -23rem;
 }
 
-.userInfo .socialMediaEdit .media .Instagram {
+.user .socialMediaEdit .media .Instagram {
   display: flex;
   justify-content: space-between;
   width: 230px;
   padding-top: 1rem;
 }
-.userInfo .socialMediaEdit .media .Facebook {
+.user .socialMediaEdit .media .Facebook {
   display: flex;
   justify-content: space-between;
   width: 230px;
   padding-top: 1rem;
 }
-.userInfo .socialMediaEdit .media .Twitter {
+.user .socialMediaEdit .media .Twitter {
   display: flex;
   justify-content: space-between;
   width: 230px;
   padding-top: 1rem;
 }
 
-.userInfo .socialMediaEdit .media .Instagram input {
+.user .socialMediaEdit .media .Instagram input {
   width: 180px;
 }
-.userInfo .socialMediaEdit .media .Facebook input {
+.user .socialMediaEdit .media .Facebook input {
   width: 180px;
 }
-.userInfo .socialMediaEdit .media .Twitter input {
+.user .socialMediaEdit .media .Twitter input {
   width: 180px;
 }
 
-.userInfo .socialMediaEdit .media .socialMediaTitle {
+.user .socialMediaEdit .media .socialMediaTitle {
   display: flex;
 }
 
@@ -212,34 +206,227 @@
   margin-left: 3.5rem;
 }
 
-/* element.style {
-  border: none;
-  background: transparent;
-  display: block;
-  position: fixed;
-  z-index: 1000000;
-  width: 100%;
-  height: 100%;
-  top: 0px;
-  left: 500px;
-} */
-
-/* .user .customize {
-  margin-left: 10rem;
-} */
-
-@media only screen and (max-width: 850px) {
-  /* .user .userInfo {
-    display: flex;
-    flex-direction: column;
-  } */
-
-  /* .user .nameInfo .bio {
-    margin-top: 20rem;
+@media only screen and (max-width: 1200px) {
+  .user .socialMediaEdit {
+    margin-left: 70rem;
   }
 
-  .userInfo .socialMediaEdit .socialMediaTitle {
-    margin-left: -10rem;
+  .user .bio input {
+    width: 450px;
+  }
+
+  .user .SaveCancel {
+    margin-left: 45rem;
+  }
+}
+
+@media only screen and (max-width: 1010px) {
+  .user .socialMediaEdit {
+    margin-left: 48rem;
+    margin-top: -20rem;
+  }
+
+  .user .socialMediaEdit .media .Instagram,
+  .user .socialMediaEdit .media .Facebook,
+  .user .socialMediaEdit .media .Twitter {
+    width: 300px;
+  }
+
+  .user .socialMediaEdit .media .Instagram input,
+  .user .socialMediaEdit .media .Facebook input,
+  .user .socialMediaEdit .media .Twitter input {
+    width: 230px;
+  }
+  .user .bio {
     margin-top: 15rem;
-  } */
+  }
+  .user .name {
+    width: 290px;
+  }
+  .user .username {
+    width: 290px;
+  }
+  .user .bio input {
+    width: 250px;
+  }
+  .user .SaveCancel {
+    margin-left: 25rem;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .user .userInfo .userImage {
+    margin-left: 10rem;
+  }
+  .user .banner {
+    margin-left: 13.5rem;
+    margin-top: 12rem;
+  }
+  .user .banner .bannerTitle {
+    margin-left: 2rem;
+  }
+
+  .user .nameInfo {
+    margin-top: -3rem;
+    margin-left: 15.5rem;
+  }
+
+  .user .name,
+  .user .username {
+    width: 250px;
+  }
+  .user .name input,
+  .user .username input {
+    width: 150px;
+  }
+  .user .socialMediaEdit {
+    margin-left: 38.5rem;
+    margin-top: -22rem;
+  }
+
+  .user .socialMediaEdit .media .Instagram,
+  .user .socialMediaEdit .media .Facebook,
+  .user .socialMediaEdit .media .Twitter {
+    width: 260px;
+  }
+
+  .user .socialMediaEdit .media .Instagram input,
+  .user .socialMediaEdit .media .Facebook input,
+  .user .socialMediaEdit .media .Twitter input {
+    width: 200px;
+  }
+  .user .bio {
+    margin-top: 15rem;
+    margin-left: 15.5rem;
+  }
+
+  .user .bio .bioDescription {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .user .bio .bioDescription .textSpace {
+    margin-top: 1rem;
+    margin-left: 4rem;
+  }
+  .user .SaveCancel {
+    margin-left: 15rem;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .user .userInfo .userImage {
+    margin-left: 4rem;
+  }
+  .user .banner {
+    margin-left: 7rem;
+    margin-top: 12rem;
+  }
+  .user .banner .bannerTitle {
+    margin-left: 2rem;
+  }
+
+  .user .nameInfo {
+    margin-top: -3rem;
+    margin-left: 9.5rem;
+  }
+
+  .user .name,
+  .user .username {
+    width: 250px;
+  }
+  .user .name input,
+  .user .username input {
+    width: 150px;
+  }
+  .user .socialMediaEdit {
+    margin-left: 32.5rem;
+    margin-top: -22rem;
+  }
+
+  .user .socialMediaEdit .media .Instagram,
+  .user .socialMediaEdit .media .Facebook,
+  .user .socialMediaEdit .media .Twitter {
+    width: 260px;
+  }
+
+  .user .socialMediaEdit .media .Instagram input,
+  .user .socialMediaEdit .media .Facebook input,
+  .user .socialMediaEdit .media .Twitter input {
+    width: 200px;
+  }
+  .user .bio {
+    margin-top: 15rem;
+    margin-left: 9.5rem;
+  }
+
+  .user .bio .bioDescription {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .user .bio .bioDescription .textSpace {
+    margin-top: 1rem;
+    margin-left: 4rem;
+  }
+  .user .SaveCancel {
+    margin-left: 10rem;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .user .userInfo .userImage {
+    padding-left: 0rem;
+    margin-left: -2rem;
+  }
+  .user .banner {
+    margin-top: 10rem;
+    margin-left: 1.5rem;
+  }
+  .user .banner .bannerTitle {
+    margin-left: 2rem;
+  }
+
+  .user .nameInfo {
+    margin-top: -3rem;
+    margin-left: 3.5rem;
+  }
+
+  .user .name,
+  .user .username {
+    width: 250px;
+  }
+  .user .name input,
+  .user .username input {
+    width: 150px;
+  }
+  .user .socialMediaEdit {
+    margin-left: 26rem;
+    margin-top: -22rem;
+  }
+
+  .user .socialMediaEdit .media .Instagram,
+  .user .socialMediaEdit .media .Facebook,
+  .user .socialMediaEdit .media .Twitter {
+    width: 260px;
+  }
+
+  .user .socialMediaEdit .media .Instagram input,
+  .user .socialMediaEdit .media .Facebook input,
+  .user .socialMediaEdit .media .Twitter input {
+    width: 200px;
+  }
+  .user .bio {
+    margin-top: 15rem;
+    margin-left: 3.5rem;
+  }
+
+  .user .bio .bioDescription {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .user .bio .bioDescription .textSpace {
+    margin-top: 1rem;
+    margin-left: 4rem;
+  }
+  .user .SaveCancel {
+    margin-left: 5rem;
+  }
 }
