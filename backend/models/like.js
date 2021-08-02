@@ -57,7 +57,7 @@ class Like {
       `
           SELECT *
           FROM photoLikes AS pl
-                `,
+                `
     );
 
     return results.rows;
@@ -165,22 +165,25 @@ class Like {
         WHERE forum_post_id = $1
         ORDER BY id DESC
         `;
-
+    // console.log(1)
     const results = await db.query(query, [post_id]);
     // This should get an array of likes
     let arr = [];
-
+    // console.log(results)
     const theResult = results.rows[0];
-    for (let like in theResult["likes"]) {
-      // This gets all the likes from all the users in the likes column
-      // Then it goes in to make an actual array with the 0 index
-      if (theResult["likes"][like] == undefined) continue;
+    // console.log("tr", theResult);
+    if (theResult) {
+      for (let like in theResult["likes"]) {
+        // This gets all the likes from all the users in the likes column
+        // Then it goes in to make an actual array with the 0 index
+        if (theResult["likes"][like] == undefined) continue;
 
-      // For this statement, if the user id already exists in the user, throw an error
-      if (theResult["likes"][like][0] != myUser["id"].toString())
-        arr.push(theResult["likes"][like]);
-      else {
-        throw new ForbiddenError(`User cannot add more than one like.`);
+        // For this statement, if the user id already exists in the user, throw an error
+        if (theResult["likes"][like][0] != myUser["id"].toString())
+          arr.push(theResult["likes"][like]);
+        else {
+          throw new ForbiddenError(`User cannot add more than one like.`);
+        }
       }
     }
     //  console.log(arr)
@@ -207,7 +210,7 @@ class Like {
       `
           SELECT *
           FROM forumLikes AS fl
-                `,
+                `
     );
 
     return results.rows;
@@ -302,6 +305,5 @@ class Like {
     const resultsf = await db.query(queryf, [post_id, arr]);
     return resultsf.rows[0];
   }
-
 }
 module.exports = Like;

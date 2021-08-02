@@ -108,7 +108,7 @@ router.post(
 // Get the likes for a post
 router.get("/:postsId/likes", async (req, res, next) => {
   try {
-    const likes = await Like.fetchLikesForPost({
+    const likes = await Like.fetchForumLikesForPost({
       postsId: req.params.postsId,
     });
     return res.status(201).json({ likes });
