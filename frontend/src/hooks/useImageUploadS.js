@@ -6,6 +6,7 @@ export const useImageUploadS = () => {
   // We will create the widget and open it up when clicked.
   const openWidget1 = () => {
     // create the widget
+
     window.cloudinary
       .createUploadWidget(
         {

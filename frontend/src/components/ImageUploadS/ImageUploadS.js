@@ -1,6 +1,12 @@
 import "./ImageUploadS.css";
 
-export default function ImageUploadS({ handleImageUpload, openWidget, imageUrl, imageAlt, name }) {
+export default function ImageUploadS({
+  handleImageUpload,
+  openWidget,
+  imageUrl,
+  imageAlt,
+  name,
+}) {
   return (
     <main className="ImageUpload">
       <section className="right-side white">
@@ -17,9 +23,15 @@ export default function ImageUploadS({ handleImageUpload, openWidget, imageUrl, 
           <button type="button" className="btn" onClick={handleImageUpload}>
             Submit
           </button> */}
-          <button type="button" className="btn widget-btn" onClick={openWidget}>
-            Upload and Submit Via Widget
-          </button>
+          <div className="customize">
+            <button
+              type="button"
+              className="btn widget-btn"
+              onClick={openWidget}
+            >
+              Upload and Submit Via Widget
+            </button>
+          </div>
         </form>
       </section>
     </main>
