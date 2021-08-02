@@ -51,14 +51,13 @@ class Like {
     return resultsf.rows[0];
   }
 
-  static async fetchAllLikes({ postsId }) {
+  static async fetchAllLikes() {
     // fetch a user's comment for a post if it exists
     const results = await db.query(
       `
           SELECT *
           FROM photoLikes AS pl
                 `,
-      [postsId]
     );
 
     return results.rows;
@@ -162,8 +161,8 @@ class Like {
     // Look up the post in the likes table and add the user id to the array
     // All the order by's take the latest id and uses that as a new id is created per like
     const query = `
-        SELECT likes FROM photoLikes
-        WHERE post_id = $1
+        SELECT likes FROM forumLikes
+        WHERE forum_post_id = $1
         ORDER BY id DESC
         `;
 
@@ -194,22 +193,21 @@ class Like {
 
     // Put the array back in
     const queryf = `
-    INSERT INTO photoLikes (post_id, likes)
+    INSERT INTO forumLikes (forum_post_id, likes)
         VALUES ($1, $2)
-        RETURNING id, likes, post_id
+        RETURNING id, likes, forum_post_id
         `;
     const resultsf = await db.query(queryf, [post_id, arr]);
     return resultsf.rows[0];
   }
 
-  static async fetchAllForumLikes({ postsId }) {
+  static async fetchAllForumLikes() {
     // fetch a user's comment for a post if it exists
     const results = await db.query(
       `
           SELECT *
-          FROM photoLikes AS pl
+          FROM forumLikes AS fl
                 `,
-      [postsId]
     );
 
     return results.rows;
@@ -220,8 +218,8 @@ class Like {
     const results = await db.query(
       `
           SELECT *
-          FROM photoLikes AS pl
-          WHERE post_id = $1
+          FROM forumLikes AS fl
+          WHERE forum_post_id = $1
           ORDER BY id DESC
                 `,
       [postsId]
@@ -239,8 +237,8 @@ class Like {
     const myUser = await User.fetchUserByEmail(user.email);
     // Look up the post in the likes table and add the user id to the array
     const query = `
-        SELECT likes FROM photoLikes
-        WHERE post_id = $1
+        SELECT likes FROM forumLikes
+        WHERE forum_post_id = $1
         ORDER BY id DESC
         `;
 
@@ -291,15 +289,15 @@ class Like {
     }
     // Put the array back in
     const queryd = `
-        DELETE FROM photoLikes
-        WHERE post_id = $1
+        DELETE FROM forumLikes
+        WHERE forum_post_id = $1
         `;
 
     const resultsd = await db.query(queryd, [post_id]);
     const queryf = `
-    INSERT INTO photoLikes (post_id, likes)
+    INSERT INTO forumLikes (forum_post_id, likes)
         VALUES ($1, $2)
-        RETURNING id, likes, post_id
+        RETURNING id, likes, forum_post_id
         `;
     const resultsf = await db.query(queryf, [post_id, arr]);
     return resultsf.rows[0];
