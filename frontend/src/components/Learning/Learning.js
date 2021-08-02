@@ -5,7 +5,7 @@ import Navbar from "../Navbar/Navbar";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import YouTube from "../Youtube/youtube";
 
-export default function Learning({user, handleOnLogout}) {
+export default function Learning({ user, handleOnLogout }) {
   return (
     <div className="learning">
       <Navbar user={user} handleOnLogout={handleOnLogout} />
@@ -18,13 +18,6 @@ export default function Learning({user, handleOnLogout}) {
 
         <div className="bannerSearch">
           <h4> EMPOWER YOURSELF</h4>
-          {/* <div className="search-bar">
-            <input
-              type="text"
-              name="search"
-              placeholder="Search Tutorials..."
-            />
-          </div> */}
         </div>
       </div>
 
@@ -110,88 +103,8 @@ export default function Learning({user, handleOnLogout}) {
       </div>
 
       <div className="newLearning">
-        <h4 style={{marginBottom:"100px"}}>Search Results</h4>
+        <h4 style={{ marginBottom: "100px" }}>Search Results</h4>
       </div>
-
-      {/* 
-      <div className="newLearning">
-        <h4>Search Results</h4>
-        <div className="container">
-          <div className="learningContainer">
-            <div className="learningImageContainer">
-              <li>
-                <img
-                  className="learningImg"
-                  src={homefeed7}
-                  alt=" home feed img 2"
-                />
-              </li>
-            </div>
-            <p className="learningTitle">How to Draw Rocks </p>
-            <div className="learningBlurb">
-              <p style={{ textAlign: "left" }}>
-                by Hello World
-                <span style={{ float: "right" }}>1h 10s</span>
-              </p>
-            </div>
-          </div>
-
-          <div className="learningContainer">
-            <div className="learningImageContainer">
-              <li>
-                <img
-                  className="learningImg"
-                  src={homefeed6}
-                  alt=" home feed img 6"
-                />
-              </li>
-            </div>
-            <p className="learningTitle">How to Concept Art </p>
-            <div className="learningBlurb">
-              <p style={{ textAlign: "left" }}>
-                by Test
-                <span style={{ float: "right" }}>45m</span>
-              </p>
-            </div>
-          </div>
-
-          <div className="learningContainer">
-            <div className="learningImageContainer">
-              <img
-                className="learningImg"
-                src={homefeed1}
-                alt=" home feed img 1"
-              />
-            </div>
-            <p className="learningTitle">How to Sketch Animals </p>
-            <div className="learningBlurb">
-              <p style={{ textAlign: "left" }}>
-                by Yes
-                <span style={{ float: "right" }}>2h 10m</span>
-              </p>
-            </div>
-          </div>
-
-          <div className="learningContainer">
-            <div className="learningImageContainer">
-              <li>
-                <img
-                  className="learningImg"
-                  src={homefeed4}
-                  alt=" home feed img 4"
-                />
-              </li>
-            </div>
-            <p className="learningTitle">How to Draw Rocks </p>
-            <div className="learningBlurb">
-              <p style={{ textAlign: "left" }}>
-                by Hello World
-                <span style={{ float: "right" }}>1h 10s</span>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div> */}
     </div>
   );
 }
