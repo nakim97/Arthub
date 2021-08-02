@@ -11,8 +11,58 @@ import homefeed7 from "../../Assets/homefeed7.jpg";
 import homefeed4 from "../../Assets/homefeed4.jpg";
 import homefeed5 from "../../Assets/homefeed5.jpg";
 import homefeed6 from "../../Assets/homefeed6.jpg";
+import { useState , useEffect}  from 'react';
+import youtube from "../../APIs/youtube";
+import VideoItem from "../Youtube/videoitem";
 
 export default function Home({ handleOnLogout, user }) {
+  const [selectedVideo, setSelectedVideo] = useState([null]);
+  const [videos, setVideos] = useState([])
+  const searchTerms = [
+    "art",
+    "how to draw hands",
+    "how to draw",
+    "how to sketch",
+    "concept art"
+  ]
+  function random(min, max) {return Math.random() * (max-min)+ min;}
+  useEffect(() => {
+    let term = searchTerms[Math.floor(random(0,searchTerms.length))-1]
+    console.log(term);
+    async function getResponse(){
+      const response = await youtube.get("/search", {
+        params: {
+          q: term,
+        },
+      });
+    
+      const responses = getResponse();
+      setVideos(responses.data.items)
+      console.log(responses.data.items);
+    }
+    // const responses = getResponse();
+  }, [])
+  
+  const handleVideoSelect = (video) => {
+  setSelectedVideo(video)
+  }
+
+  const renderedVideos = videos.map((video) => {
+    return (
+      <VideoItem
+        key={video.id.videoId}
+        video={video}
+        handleVideoSelect={handleVideoSelect}
+      />
+    );
+  });
+   
+
+
+  
+  
+
+
   return (
     <div className="home">
       <Navbar user={user} handleOnLogout={handleOnLogout} />
@@ -115,7 +165,7 @@ export default function Home({ handleOnLogout, user }) {
             <SchoolIcon style={{ marginRight: "5px" }} /> NEW ON ARTHUB LEARNING
           </h4>
           <div className="container">
-            <div className="learningContainer">
+            {/* <div className="learningContainer">
               <div className="learningImageContainer">
                 <li>
                   <img
@@ -187,6 +237,9 @@ export default function Home({ handleOnLogout, user }) {
                   <span style={{ float: "right" }}>1h 10s</span>
                 </p>
               </div>
+            </div> */}
+            <div className="list">
+              <div className="items">{renderedVideos}</div>
             </div>
           </div>
         </div>
