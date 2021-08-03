@@ -172,17 +172,16 @@ export default function Community({ user, handleOnLogout, term, setTerm}) {
         style={{ backgroundImage: `url(${communityHero})` }}
       >
         {" "}
-        /
       </div>
 
       <div className="forumposts">
-        <div className="postImg">
+        {/* <div className="postImg">
           <img
             className="communityImg"
             src={homefeed1}
             alt=" home feed img 4"
           />
-        </div>
+        </div> */}
 
         {/* <div className="post">
           <h4 className="postTitle"> Art Piece in Progress, any advice?</h4>

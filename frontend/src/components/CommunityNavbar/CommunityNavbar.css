@@ -60,7 +60,7 @@
     margin: 0 auto !important;
     right:0;
     padding-right:50px;
-    position:absolute;
+    position:sticky;
     
 
   }
