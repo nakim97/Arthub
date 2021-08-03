@@ -71,7 +71,7 @@ export default function UserProfile({ user, handleOnLogout, term, setTerm }) {
   const biography = bio ? (
     <>
       <div className="description">
-        <p>No biography. </p>
+        <p>No biography</p>
       </div>
     </>
   ) : (
