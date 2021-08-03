@@ -61,11 +61,10 @@ export default function Home({ handleOnLogout, user, term, setTerm }) {
     setSelectedVideo(video);
   };
 
-  const renderedVideos = videos.map((video) => {
+  const renderedVideos = videos.map((video, i) => {
     return (
-      <div key={video.id.videoId}>
+      <div key={i}>
       <VideoItem
-        key={video.id.videoId}
         video={video}
         handleVideoSelect={handleVideoSelect}
       />
