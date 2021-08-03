@@ -14,6 +14,8 @@ import homefeed6 from "../../Assets/homefeed6.jpg";
 import { useState, useEffect } from "react";
 import youtube from "../../APIs/youtube";
 import VideoItem from "../Youtube/videoitem";
+import ReactModal from "react-modal";
+import VideoDetail from "../Youtube/videodetail";
 
 export default function Home({ handleOnLogout, user }) {
   const [selectedVideo, setSelectedVideo] = useState([null]);
@@ -21,16 +23,17 @@ export default function Home({ handleOnLogout, user }) {
   const [videos, setVideos] = useState([]);
   const [error, setError] = useState(false);
   const searchTerms = [
-    "art",
     "how to draw hands",
     "how to draw",
     "how to sketch",
-    "concept art",
+    "how to draw concept art",
   ];
+
   function random(min, max) {
     return Math.random() * (max - min) + min;
   }
   let term = searchTerms[Math.floor(random(0, searchTerms.length)) - 1];
+  // console.log(term)
   useEffect(() => {
     const fetchVideos = async () => {
       setIsLoading(true);
@@ -40,7 +43,7 @@ export default function Home({ handleOnLogout, user }) {
             q: term,
           },
         });
-        console.log(response);
+        // console.log(response);
         if (response?.data?.items) setVideos(response.data.items);
       } catch (err) {
         setError(err);
@@ -61,17 +64,23 @@ export default function Home({ handleOnLogout, user }) {
 
   // }, []);
     // const responses = getResponse();
+    const handleCloseModal = () => {
+      setSelectedVideo(null);
+    }
   const handleVideoSelect = (video) => {
     setSelectedVideo(video);
   };
 
   const renderedVideos = videos.map((video) => {
     return (
+      <div key={video.id.videoId}>
       <VideoItem
         key={video.id.videoId}
         video={video}
         handleVideoSelect={handleVideoSelect}
       />
+      </div>
+
     );
   });
 
@@ -250,13 +259,44 @@ export default function Home({ handleOnLogout, user }) {
                 </p>
               </div>
             </div> */}
+             <div className="eleven wide column" style={{ marginTop: "1200px" }}>
+             {console.log(selectedVideo)}
+             
+             {console.log("Hi",Boolean(selectedVideo))}
+              <ReactModal
+                
+                isOpen={selectedVideo?.id}
+                onRequestClose={handleCloseModal}
+                ariaHideApp={false}
+                style={{
+                  overlay: {
+                    background: "black",
+                    opacity: "0.9",
+                  },
+                  content: {
+                    background: "black",
+                    position: "absolute",
+                  },
+                }}
+              >
+                <button className="xbtn" onClick={handleCloseModal}>
+                  {" "}
+                  X{" "}
+                </button>
+
+               {selectedVideo && (
+                  <VideoDetail video={selectedVideo} />
+                )} 
+              </ReactModal>
+            </div>
+
             <div className="list">
-              <div className="items">{renderedVideos}</div>
+              <div className="items" style={{marginTop:"300px"}}>{renderedVideos}</div>
             </div>
           </div>
         </div>
 
-        <div className="trendingMarket">
+        <div className="trendingMarket" style={{marginTop:"400px"}}>
           <h4>
             {" "}
             <ShoppingCartIcon style={{ marginRight: "5px" }} /> TRENDING ON THE
