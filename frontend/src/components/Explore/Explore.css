@@ -5,11 +5,14 @@
 
 .explore .banner .bannerText {
   position: absolute;
-  width: 100%;
-  bottom: 0;
-  color: #fff;
-  margin-bottom: 10rem;
-  font-size: 40px;
+  color: white;
+  left: 0;
+  top: 120px;
+  right: 0;
+  margin: auto;
+  font-size: 45px;
+  z-index: 1;
+  text-align: center;
 }
 
 .exploreButtons .feedBtns {
@@ -41,50 +44,34 @@
   padding-bottom: 50px;
 }
 
-.container {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-auto-rows: 100px 300px;
-  grid-gap: 10px;
-  grid-auto-flow: dense;
-}
-
 .gallery-item {
   display: grid;
-  grid-template-columns: repeat(4, minmax(350px, 1fr));
-  grid-gap: 20px;
-  align-items: end;
-}
-.gallery-item .image1 img {
-  border: 1px solid #ccc;
-  box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
-  max-width: 100%;
-}
-/* 
-.gallery-item .image1 {
-  width: 100%;
-  height: 100%;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-auto-rows: 250px 150px;
+  grid-auto-flow: dense;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
-.gallery-item .image img {
+.gallery-item .image1 img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 50% 50%;
   cursor: pointer;
-  transition: 0.5s ease-in-out;
-}
-.gallery-item:hover .image img {
-  transform: scale(1.1);
 }
 
-.gallery-item:hover .text {
+/* .gallery-item:hover .image1 img {
+  transform: scale(1.1);
+} */
+
+/* .gallery-item:hover .text {
   opacity: 1;
   animation: move-down 0.3s linear;
   padding: 1em;
   width: 100%;
 } */
-
+/* 
 .w-1 {
   grid-column: span 1;
 }
@@ -146,5 +133,39 @@
   }
   100% {
     top: 50%;
+  }
+} */
+
+@media only screen and (max-width: 1200px) {
+  .explore .banner .bannerText {
+    top: 90px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .explore .banner .bannerText {
+    top: 75px;
+    font-size: 35px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .explore .banner .bannerText {
+    top: 55px;
+    font-size: 30px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .explore .banner .bannerText {
+    top: 35px;
+    font-size: 25px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .explore .banner .bannerText {
+    top: 15px;
+    font-size: 20px;
   }
 }
