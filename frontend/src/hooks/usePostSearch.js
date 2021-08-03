@@ -12,7 +12,7 @@ export const usePostSearch = ({ user, term }) => {
       setFetching(true);
       try {
         const { data } = await apiClient.searchPosts(term);
-
+        // console.log(data);
         setPosts(data.searches);
       } catch (err) {
         setError(err);

@@ -51,7 +51,6 @@ export default function Navbar({ handleOnLogout, user, term, setTerm }) {
       <ul className="links link-button">
         <Link to="/me" className="Link">
           <div className="userIcon">
-            {/* <AccountCircleIcon /> */}
             {navIcon}
             <li className="navRegister">Me</li>
           </div>
@@ -83,7 +82,17 @@ export default function Navbar({ handleOnLogout, user, term, setTerm }) {
             </div>
           </Link>
           <div className="search-bar">
-            <input type="text" name="search" placeholder="Search..." />
+            {/* <input type="text" name="search" placeholder="Search..." /> */}
+            <form onSubmit={handleSubmit} className="form">
+        <div className="field">
+          <input
+            onChange={handleChange}
+            name="search"
+            type="text"
+            placeholder="Search.."
+          />
+        </div>
+      </form>
           </div>
 
          
@@ -91,16 +100,7 @@ export default function Navbar({ handleOnLogout, user, term, setTerm }) {
   {/* return (
     <div className="search">
       {term === null && <div className="noSearch"></div>}
-      <form onSubmit={handleSubmit} className="form">
-        <div className="field">
-          <input
-            onChange={handleChange}
-            name="video-search"
-            type="text"
-            placeholder="Search.."
-          />
-        </div>
-      </form>
+      
     </div>
   ); */}
           {/* If we are logged in, render the logout, otherwise use the normal buttons */}

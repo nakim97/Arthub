@@ -25,20 +25,20 @@ export default function PostSearch({ user, handleOnLogout, term, setTerm}) {
       <div className="Content">
         <h3 className="Title">Edit Your Portfolio</h3>
       </div>
-      {posts.map((post) => (
-        <div className="portfolio-posts" key={post.photoPostId}>
+      {posts.map((post, i) => (
+        <div className="portfolio-posts" key={i}>
           <div className="portfolioImage">
-            <Link to={`/post/${post.photoPostId}`}>
+            <Link to={`/post/${post.id}`}>
               <img
                 className="portfolioImage"
-                src={`${post.imgPostUrl}`}
-                alt={`Post ${post.photoPostId}`}
+                src={`${post.post_img_url}`}
+                alt={`Post ${post.id}`}
               />
             </Link>
           </div>
           <div className="Post" style={{ position: "relative" }}>
-            <h4 className="portfolioTitle"> {post.postTitle}</h4>
-            <p className="portfolioDescription"> {post.postDescription}</p>
+            <h4 className="portfolioTitle"> {post.post_title}</h4>
+            <p className="portfolioDescription"> {post.post_description}</p>
             <p className="likeComments">
               {" "}
               {/* <EditIcon style={{ fontSize: "20px" }} />{" "} */}

@@ -61,7 +61,9 @@ class Post {
     if (!query) {
       throw new BadRequestError("No search query provided");
     }
-    const dbquery = `Select * from photoPost where post_title like '%${query}%';
+    const dbquery = `SELECT * FROM photoPost AS pp
+    JOIN photoUpload AS img ON img.id = pp.img_id
+    WHERE post_title like '%${query}%';
     `;
     const result = await db.query(dbquery);
     const queries = result.rows;
