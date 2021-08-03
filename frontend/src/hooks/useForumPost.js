@@ -23,8 +23,8 @@ export const useForumPost = ({ imageUrl, imageAlt }) => {
     { key: 2, label: "Advice", value: "advice" },
     { key: 3, label: "Work In Progress", value: "work in progress" },
     { key: 4, label: "FAQ", value: "faq" },
-    { key: 4, label: "Art", value: "art" },
-    { key: 4, label: "Other", value: "other" },
+    { key: 5, label: "Art", value: "art" },
+    { key: 6, label: "Other", value: "other" },
   ];
   // Defining a custom check box with a green color
   // and setting the checkbox component to use that

@@ -82,8 +82,8 @@ export default function CreateForumPost({ user, handleOnLogout, term, setTerm })
                   setForm((f) => ({ ...f, tag: event.target.value }))
                 }
               >
-                {tagsOptions.map((tag, i) => (
-                  <option key={i} value={tag.label}>
+                {tagsOptions.map((tag) => (
+                  <option key={tag.key} value={tag.label}>
                     {tag.label}
                   </option>
                 ))}
