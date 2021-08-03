@@ -5,7 +5,7 @@ import communityHero from "../../Assets/learningbanner.jpg";
 import WhatshotIcon from "@material-ui/icons/Whatshot";
 import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import QuestionAnswerIcon from "@material-ui/icons/QuestionAnswer";
-
+import { Link } from "react-router-dom";
 import homefeed1 from "../../Assets/homefeed1.jpg";
 import homefeed7 from "../../Assets/homefeed7.jpg";
 import homefeed4 from "../../Assets/homefeed4.jpg";
@@ -13,6 +13,21 @@ import homefeed5 from "../../Assets/homefeed5.jpg";
 import homefeed6 from "../../Assets/homefeed6.jpg";
 
 export default function Community({ user, handleOnLogout, term, setTerm}) {
+  const button = Boolean(user.email) ? (
+    <>
+    <div className="forumBtn">
+          <div className="forumCreate">
+            <Link to="/createforumpost">Create Post</Link>
+          </div>
+          </div>
+    </>
+  ) : (
+    <>
+    <div className="forumBtn">
+      <p>You must be logged in to create a forum post.</p>
+    </div>
+    </>
+  )
   return (
     <div className="community">
       <Navbar user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}   />
@@ -175,6 +190,7 @@ export default function Community({ user, handleOnLogout, term, setTerm}) {
       </div>
 
       <div className="forumposts">
+      {button}
         {/* <div className="postImg">
           <img
             className="communityImg"

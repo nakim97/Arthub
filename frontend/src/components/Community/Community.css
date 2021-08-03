@@ -4,6 +4,24 @@ html, body{
 }
 
 
+.forumBtn .forumCreate {
+  border-color: white;
+  border-style: solid;
+  border-radius: 30px;
+  width: 100px;
+  padding: 5px;
+  margin-bottom: 4rem;
+  margin-right: 20px;
+
+}
+.forumCreate a {
+  text-decoration: none;
+  color: white;
+}
+
+.forumBtn p {
+  color: white;
+}
 
 .community .container .communityAuthor {
     color: white;
