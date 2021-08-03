@@ -54,17 +54,8 @@ export default function Home({ handleOnLogout, user, term, setTerm, handleFormSu
     };
     fetchVideos();
   }, []);
-  // useEffect(() => {
-  //   console.log(term);
-  //   async function getResponse() {
 
-  //     const responses = getResponse();
-  //     setVideos(responses.data.items);
-      
-  //   }
 
-  // }, []);
-    // const responses = getResponse();
     const handleCloseModal = () => {
       setSelectedVideo(null);
     }
@@ -73,8 +64,7 @@ export default function Home({ handleOnLogout, user, term, setTerm, handleFormSu
   };
 
   const renderedVideos = videos.map((video) => {
-    // Add a key key={video.id.videoId} in a div
-    return (
+    return (  
       <VideoItem
         key={video.id.videoId}
         video={video}
@@ -185,83 +175,9 @@ export default function Home({ handleOnLogout, user, term, setTerm, handleFormSu
             <SchoolIcon style={{ marginRight: "5px" }} /> NEW ON ARTHUB LEARNING
           </h4>
           <div className="container">
-            {/* <div className="learningContainer">
-              <div className="learningImageContainer">
-                <li>
-                  <img
-                    className="learningImg"
-                    src={homefeed7}
-                    alt=" home feed img 2"
-                  />
-                </li>
-              </div>
-              <p className="learningTitle">How to Draw Rocks </p>
-              <div className="learningBlurb">
-                <p style={{ textAlign: "left" }}>
-                  by Hello World
-                  <span style={{ float: "right" }}>1h 10s</span>
-                </p>
-              </div>
-            </div>
-
-            <div className="learningContainer">
-              <div className="learningImageContainer">
-                <li>
-                  <img
-                    className="learningImg"
-                    src={homefeed6}
-                    alt=" home feed img 6"
-                  />
-                </li>
-              </div>
-              <p className="learningTitle">How to Concept Art </p>
-              <div className="learningBlurb">
-                <p style={{ textAlign: "left" }}>
-                  by Test
-                  <span style={{ float: "right" }}>45m</span>
-                </p>
-              </div>
-            </div>
-
-            <div className="learningContainer">
-              <div className="learningImageContainer">
-                <img
-                  className="learningImg"
-                  src={homefeed1}
-                  alt=" home feed img 1"
-                />
-              </div>
-              <p className="learningTitle">How to Sketch Animals </p>
-              <div className="learningBlurb">
-                <p style={{ textAlign: "left" }}>
-                  by Yes
-                  <span style={{ float: "right" }}>2h 10m</span>
-                </p>
-              </div>
-            </div>
-
-            <div className="learningContainer">
-              <div className="learningImageContainer">
-                <li>
-                  <img
-                    className="learningImg"
-                    src={homefeed4}
-                    alt=" home feed img 4"
-                  />
-                </li>
-              </div>
-              <p className="learningTitle">How to Draw Rocks </p>
-              <div className="learningBlurb">
-                <p style={{ textAlign: "left" }}>
-                  by Hello World
-                  <span style={{ float: "right" }}>1h 10s</span>
-                </p>
-              </div>
-            </div> */}
+            
              <div className="eleven wide column" style={{ marginTop: "1200px" }}>
-             {console.log(selectedVideo)}
-             
-             {console.log("Hi",Boolean(selectedVideo))}
+
               <ReactModal
                 
                 isOpen={selectedVideo?.id}
@@ -435,13 +351,3 @@ export default function Home({ handleOnLogout, user, term, setTerm, handleFormSu
     </div>
   );
 }
-// export default function Home( products ) {
-//   return (
-//     <div className="Home">
-//       <Intro />
-//       {/* <AddProduct /> */}
-//       {/* {console.log("Hi",products)} */}
-//       <StoreActivity products={products.products} />
-//     </div>
-//   );
-// }
