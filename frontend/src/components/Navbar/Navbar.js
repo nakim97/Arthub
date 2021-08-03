@@ -15,14 +15,13 @@ export default function Navbar({ handleOnLogout, user, term, setTerm }) {
     //       q: term,
     //     },
     //   });
-  
+
     //   this.setState({
     //     videos: response.data.items,
     //   });
-    };
+  };
   const isAuthenticated = Boolean(user?.email);
-  
-  
+
   const handleSubmit = (event) => {
     event.preventDefault();
     handleFormSubmit(term);
@@ -78,31 +77,23 @@ export default function Navbar({ handleOnLogout, user, term, setTerm }) {
         <div className="content">
           <Link to="/" className="Link">
             <div className="logo">
-              <BrushIcon style={{ fontSize: 30}} />
+              <BrushIcon style={{ fontSize: 30 }} />
             </div>
           </Link>
           <div className="search-bar">
             {/* <input type="text" name="search" placeholder="Search..." /> */}
             <form onSubmit={handleSubmit} className="form">
-        <div className="field">
-          <input
-            onChange={handleChange}
-            name="search"
-            type="text"
-            placeholder="Search.."
-          />
-        </div>
-      </form>
+              <div className="field">
+                <input
+                  onChange={handleChange}
+                  name="search"
+                  type="text"
+                  placeholder="Search.."
+                />
+              </div>
+            </form>
           </div>
-
-         
-
-  {/* return (
-    <div className="search">
-      {term === null && <div className="noSearch"></div>}
-      
-    </div>
-  ); */}
+          
           {/* If we are logged in, render the logout, otherwise use the normal buttons */}
           {/* This renders the buttons above */}
           {buttons}
