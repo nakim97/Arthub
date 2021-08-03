@@ -10,7 +10,7 @@ export default function PostSearch({ user, handleOnLogout, term, setTerm}) {
     <div className="PostSearch">
       <Navbar user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}   />
       <div className="Content">
-        <h3 className="Title">Edit Your Portfolio</h3>
+        <h3 className="Title">Search Results</h3>
       </div>
       {posts.map((post, i) => (
         <div className="portfolio-posts" key={i}>
