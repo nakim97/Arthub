@@ -8,17 +8,17 @@ import { usePostSearch } from "../../hooks/usePostSearch";
 export default function PostSearch({ user, handleOnLogout }) {
   const { posts } = usePostSearch({ user });
 
-  //Unauthenticated view
-  if (!user.email) {
-    return (
-      <div className="total">
-        <Navbar user={user} handleOnLogout={handleOnLogout} />
-        <div className="title">
-          <h2>You must be logged in to view your portfolio posts.</h2>
-        </div>
-      </div>
-    );
-  }
+//   //Unauthenticated view
+//   if (!user.email) {
+//     return (
+//       <div className="total">
+//         <Navbar user={user} handleOnLogout={handleOnLogout} />
+//         <div className="title">
+//           <h2>You must be logged in to view your portfolio posts.</h2>
+//         </div>
+//       </div>
+//     );
+//   }
   return (
     <div className="PostSearch">
       <Navbar user={user} handleOnLogout={handleOnLogout} />

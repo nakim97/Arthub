@@ -17,6 +17,7 @@ import CommunityPostEdit from "../CommunityPostEdit/CommunityPostEdit";
 import Upload from "../Upload/Upload";
 import EditProfile from "../EditProfile/EditProfile";
 import PostDetail from "../PostDetail/PostDetail";
+import PostSearch from "../PostSearch/PostSearch";
 
 export default function App() {
   const [error, setError] = useState(null);
@@ -88,6 +89,10 @@ export default function App() {
           <Route
             path="/upload"
             element={<Upload user={user} handleOnLogout={handleOnLogout} />}
+          />
+          <Route
+            path="/search"
+            element={<PostSearch user={user} handleOnLogout={handleOnLogout} />}
           />
           <Route
             path="/edit"

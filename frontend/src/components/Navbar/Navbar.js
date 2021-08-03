@@ -3,10 +3,33 @@ import SubNavbar from "../SubNavbar/SubNavbar";
 import BrushIcon from "@material-ui/icons/Brush";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 export default function Navbar({ handleOnLogout, user }) {
   // If the boolean is true, the user exists
   const isAuthenticated = Boolean(user?.email);
+  const [term, setTerm] = useState(null);
+  const handleFormSubmit = async (termFromSearchBar) => {
+  //   const response = await youtube.get("/search", {
+  //     params: {
+  //       q: termFromSearchBar,
+  //     },
+  //   });
+
+  //   this.setState({
+  //     videos: response.data.items,
+  //   });
+  //   console.log("this is resp", response);
+  };
+  
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    handleFormSubmit(term);
+  };
+
+  const handleChange = (event) => {
+    setTerm(event.target.value);
+  };
   //console.log(user)
   const icon = user?.profile_img_url == null || user?.profile_img_url == "null";
   const navIcon = icon ? (
@@ -62,6 +85,24 @@ export default function Navbar({ handleOnLogout, user }) {
           <div className="search-bar">
             <input type="text" name="search" placeholder="Search..." />
           </div>
+
+         
+
+  return (
+    <div className="search">
+      {term === null && <div className="noSearch"></div>}
+      <form onSubmit={handleSubmit} className="form">
+        <div className="field">
+          <input
+            onChange={handleChange}
+            name="video-search"
+            type="text"
+            placeholder="Search.."
+          />
+        </div>
+      </form>
+    </div>
+  );
           {/* If we are logged in, render the logout, otherwise use the normal buttons */}
           {/* This renders the buttons above */}
           {buttons}

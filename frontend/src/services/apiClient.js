@@ -79,11 +79,19 @@ class ApiClient {
       method: `GET`,
     });
   }
+
   async listPosts(user) {
     return await this.request({
       endpoint: `post`,
       method: `GET`,
       data: user,
+    });
+  }
+
+  async searchPosts(q) {
+    return await this.request({
+      endpoint: `post/search?q=${q}`,
+      method: `GET`,
     });
   }
 

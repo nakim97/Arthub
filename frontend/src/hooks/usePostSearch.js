@@ -11,7 +11,7 @@ export const usePostSearch = ({ user }) => {
     const fetchPosts = async () => {
       setFetching(true);
       try {
-        const { data } = await apiClient.listPosts(user);
+        const { data } = await apiClient.searchPosts(user);
 
         setPosts(data.postsByMe);
       } catch (err) {
