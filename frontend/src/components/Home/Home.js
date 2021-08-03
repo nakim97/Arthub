@@ -62,12 +62,15 @@ export default function Home({ handleOnLogout, user, term, setTerm, handleFormSu
   };
 
   const renderedVideos = videos.map((video) => {
-    return (  
+    return (
+      <div key={video.id.videoId}>
       <VideoItem
         key={video.id.videoId}
         video={video}
         handleVideoSelect={handleVideoSelect}
       />
+      </div>
+
     );
   });
 
