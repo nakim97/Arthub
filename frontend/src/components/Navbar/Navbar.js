@@ -2,11 +2,24 @@ import "./Navbar.css";
 import SubNavbar from "../SubNavbar/SubNavbar";
 import BrushIcon from "@material-ui/icons/Brush";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-export default function Navbar({ handleOnLogout, user, term, setTerm, handleFormSubmit }) {
+export default function Navbar({ handleOnLogout, user, term, setTerm }) {
   // If the boolean is true, the user exists
+  const navigate = useNavigate();
+  const handleFormSubmit = async () => {
+    navigate("/search");
+    //   const response = await youtube.get("/search", {
+    //     params: {
+    //       q: term,
+    //     },
+    //   });
+  
+    //   this.setState({
+    //     videos: response.data.items,
+    //   });
+    };
   const isAuthenticated = Boolean(user?.email);
   
   

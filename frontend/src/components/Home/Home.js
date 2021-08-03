@@ -17,7 +17,7 @@ import VideoItem from "../Youtube/videoitem";
 import ReactModal from "react-modal";
 import VideoDetail from "../Youtube/videodetail";
 
-export default function Home({ handleOnLogout, user, term, setTerm, handleFormSubmit }) {
+export default function Home({ handleOnLogout, user, term, setTerm }) {
   const [selectedVideo, setSelectedVideo] = useState([null]);
   const [isLoading, setIsLoading] = useState(false);
   const [videos, setVideos] = useState([]);
@@ -76,7 +76,7 @@ export default function Home({ handleOnLogout, user, term, setTerm, handleFormSu
 
   return (
     <div className="home">
-      <Navbar user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm} handleFormSubmit={handleFormSubmit} />
+      <Navbar user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}   />
       <div className="homeCarousel">
         <ul>
           <li>

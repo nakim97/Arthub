@@ -18,7 +18,6 @@ import Upload from "../Upload/Upload";
 import EditProfile from "../EditProfile/EditProfile";
 import PostDetail from "../PostDetail/PostDetail";
 import PostSearch from "../PostSearch/PostSearch";
-import { useNavigate } from "react-router-dom";
 
 export default function App() {
   const [error, setError] = useState(null);
@@ -26,7 +25,7 @@ export default function App() {
   const [filterInputValue, setInputValue] = useState(null);
   const [user, setUser] = useState({});
   const [term, setTerm] = useState(null);
-  const navigate = useNavigate();
+
   // Fetch users using the jwt token and save or retrieve from local storage
   useEffect(() => {
     const fetchUser = async () => {
@@ -45,18 +44,7 @@ export default function App() {
     setUser({});
     setError(null);
   };
-  const handleFormSubmit = async () => {
-    navigate("/search");
-    //   const response = await youtube.get("/search", {
-    //     params: {
-    //       q: term,
-    //     },
-    //   });
   
-    //   this.setState({
-    //     videos: response.data.items,
-    //   });
-    };
 
   return (
     <div className="App">
@@ -64,76 +52,76 @@ export default function App() {
         <Routes>
           <Route
             path="/"
-            element={<Home user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm} handleFormSubmit={handleFormSubmit} />}
+            element={<Home user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}   />}
           />
           <Route
             path="/login"
-            element={<Login user={user} setUser={setUser} term={term} setTerm={setTerm} handleFormSubmit={handleFormSubmit} />}
+            element={<Login user={user} setUser={setUser} term={term} setTerm={setTerm}   />}
           />
           <Route
             path="/register"
-            element={<Register user={user} setUser={setUser} term={term} setTerm={setTerm} handleFormSubmit={handleFormSubmit} />}
+            element={<Register user={user} setUser={setUser} term={term} setTerm={setTerm}   />}
           />
           <Route
             path="/about"
-            element={<About user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm} handleFormSubmit={handleFormSubmit} />}
+            element={<About user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}   />}
           />
           <Route
             path="/explore"
-            element={<Explore user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm} handleFormSubmit={handleFormSubmit}/>}
+            element={<Explore user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}  />}
           />
           <Route
             path="/learning"
-            element={<Learning user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm} handleFormSubmit={handleFormSubmit}/>}
+            element={<Learning user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}  />}
           />
           <Route
             path="/market"
-            element={<Market user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm} handleFormSubmit={handleFormSubmit}/>}
+            element={<Market user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}  />}
           />
           <Route
             path="/community"
-            element={<Community user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm} handleFormSubmit={handleFormSubmit}/>}
+            element={<Community user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}  />}
           />
           <Route
             path="/me"
             element={
-              <UserProfile user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm} handleFormSubmit={handleFormSubmit}/>
+              <UserProfile user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}  />
             }
           />
           <Route
             path="/upload"
-            element={<Upload user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm} handleFormSubmit={handleFormSubmit}/>}
+            element={<Upload user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}  />}
           />
           <Route
             path="/search"
-            element={<PostSearch user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm} handleFormSubmit={handleFormSubmit}/>}
+            element={<PostSearch user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}  />}
           />
           <Route
             path="/edit"
             element={
-              <EditProfile user={user} setUser={setUser} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm} handleFormSubmit={handleFormSubmit}/>
+              <EditProfile user={user} setUser={setUser} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}  />
             }
           />
           <Route
             path="/post/:postId"
-            element={<PostDetail user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm} handleFormSubmit={handleFormSubmit}/>}
+            element={<PostDetail user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}  />}
           />
           <Route
             path="/editportfolio"
             element={
-              <EditPortfolio user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm} handleFormSubmit={handleFormSubmit}/>
+              <EditPortfolio user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}  />
             }
           />
           <Route
             path="/createforumpost"
             element={
-              <CreateForumPost user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm} handleFormSubmit={handleFormSubmit}/>
+              <CreateForumPost user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}  />
             }
           />
           <Route
             path="/communitypostedit"
             element={
-              <CommunityPostEdit user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm} handleFormSubmit={handleFormSubmit}/>
+              <CommunityPostEdit user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}  />
             }
           />
         </Routes>
