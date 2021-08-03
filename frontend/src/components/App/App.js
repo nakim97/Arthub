@@ -18,6 +18,7 @@ import Upload from "../Upload/Upload";
 import EditProfile from "../EditProfile/EditProfile";
 import PostDetail from "../PostDetail/PostDetail";
 import PostSearch from "../PostSearch/PostSearch";
+import { useNavigate } from "react-router-dom";
 
 export default function App() {
   const [error, setError] = useState(null);
@@ -25,7 +26,7 @@ export default function App() {
   const [filterInputValue, setInputValue] = useState(null);
   const [user, setUser] = useState({});
   const [term, setTerm] = useState(null);
-
+  const navigate = useNavigate();
   // Fetch users using the jwt token and save or retrieve from local storage
   useEffect(() => {
     const fetchUser = async () => {
@@ -44,7 +45,8 @@ export default function App() {
     setUser({});
     setError(null);
   };
-  const handleFormSubmit = async (term) => {
+  const handleFormSubmit = async () => {
+    navigate("/search");
     //   const response = await youtube.get("/search", {
     //     params: {
     //       q: term,

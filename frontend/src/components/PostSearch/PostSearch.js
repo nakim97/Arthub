@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { usePostSearch } from "../../hooks/usePostSearch";
 
 export default function PostSearch({ user, handleOnLogout, term, setTerm, handleFormSubmit }) {
-  const { posts } = usePostSearch({ user });
+  const { posts } = usePostSearch({ user, term });
 
 //   //Unauthenticated view
 //   if (!user.email) {
@@ -22,21 +22,21 @@ export default function PostSearch({ user, handleOnLogout, term, setTerm, handle
   return (
     <div className="PostSearch">
       <Navbar user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm} handleFormSubmit={handleFormSubmit} />
-      <div className="content">
-        <h3 className="title">Edit Your Portfolio</h3>
+      <div className="Content">
+        <h3 className="Title">Edit Your Portfolio</h3>
       </div>
       {posts.map((post) => (
-        <div className="portfolioposts" key={post.photoPostId}>
-          <div className="portfolioImg">
+        <div className="portfolio-posts" key={post.photoPostId}>
+          <div className="portfolioImage">
             <Link to={`/post/${post.photoPostId}`}>
               <img
-                className="portfolioImg"
+                className="portfolioImage"
                 src={`${post.imgPostUrl}`}
                 alt={`Post ${post.photoPostId}`}
               />
             </Link>
           </div>
-          <div className="post" style={{ position: "relative" }}>
+          <div className="Post" style={{ position: "relative" }}>
             <h4 className="portfolioTitle"> {post.postTitle}</h4>
             <p className="portfolioDescription"> {post.postDescription}</p>
             <p className="likeComments">

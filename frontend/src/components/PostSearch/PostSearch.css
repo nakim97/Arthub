@@ -6,14 +6,14 @@ body {
   overflow-x: hidden;
 }
 
-.PostSearch .title {
+.PostSearch .Title {
   color: white;
   text-align: left;
   margin-left: 50px;
   font-size: 30px;
 }
 
-.PostSearch .portfolioposts {
+.PostSearch .portfolio-posts {
   display: grid;
   grid-template-columns: 30% 70%;
   margin-top: 50px;
@@ -23,35 +23,35 @@ body {
   padding-bottom: 150px;
 }
 
-.PostSearch .portfolioposts .portfolioImg .portfolioImg {
+.PostSearch .portfolio-posts .portfolioImage .portfolioImage {
   width: 100%;
   height: 12rem;
 }
 
-.PostSearch .portfolioposts .post {
+.PostSearch .portfolio-posts .Post {
   border: 1px solid grey;
   padding-left: 10px;
 }
 
-.PostSearch .portfolioposts .post .portfolioTitle {
+.PostSearch .portfolio-posts .Post .portfolioT {
   color: white;
   text-align: left;
   font-size: 30px;
 }
 
-.PostSearch .portfolioposts .post .portfolioDescription {
+.PostSearch .portfolio-posts .Post .portfolioDescription {
   color: white;
   text-align: left;
   font-size: 15px;
   word-wrap: break-word;
 }
 
-.PostSearch .portfolioposts .post .portfolioTitle {
+.PostSearch .portfolio-posts .Post .portfolioT {
   color: white;
   text-align: left;
 }
 
-.PostSearch .portfolioposts .post .likeComments {
+.PostSearch .portfolio-posts .Post .likeComments {
   color: white;
 }
 
@@ -76,13 +76,13 @@ body {
 }
 
 @media only screen and (max-width: 800px) {
-  .PostSearch .portfolioposts {
+  .PostSearch .portfolio-posts {
     grid-template-columns: 40% 60%;
   }
 }
 
 @media only screen and (max-width: 600px) {
-  .PostSearch .portfolioposts {
+  .PostSearch .portfolio-posts {
     grid-template-columns: 50% 50%;
   }
   
