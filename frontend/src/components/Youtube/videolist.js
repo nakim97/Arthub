@@ -22,7 +22,7 @@ const VideoList = ({ videos, handleVideoSelect }) => {
 
   return (
     <div className="list">
-      <div className="items">{renderedVideos}</div>
+      <div className="items" style={{marginTop:"800px"}}>{renderedVideos}</div>
     </div>
   );
 };

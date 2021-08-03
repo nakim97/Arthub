@@ -170,12 +170,91 @@ export default function Home({ handleOnLogout, user, term, setTerm }) {
         </div>
 
         <div className="newLearning">
-          <h4>
+          <h4 style={{marginBottom:"-200px"}}>
             {" "}
             <SchoolIcon style={{ marginRight: "5px" }} /> NEW ON ARTHUB LEARNING
           </h4>
           <div className="container">
-            <div className="eleven wide column" style={{ marginTop: "1200px" }}>
+
+ 
+            {/* <div className="learningContainer">
+              <div className="learningImageContainer">
+                <li>
+                  <img
+                    className="learningImg"
+                    src={homefeed7}
+                    alt=" home feed img 2"
+                  />
+                </li>
+              </div>
+              <p className="learningTitle">How to Draw Rocks </p>
+              <div className="learningBlurb">
+                <p style={{ textAlign: "left" }}>
+                  by Hello World
+                  <span style={{ float: "right" }}>1h 10s</span>
+                </p>
+              </div>
+            </div>
+
+            <div className="learningContainer">
+              <div className="learningImageContainer">
+                <li>
+                  <img
+                    className="learningImg"
+                    src={homefeed6}
+                    alt=" home feed img 6"
+                  />
+                </li>
+              </div>
+              <p className="learningTitle">How to Concept Art </p>
+              <div className="learningBlurb">
+                <p style={{ textAlign: "left" }}>
+                  by Test
+                  <span style={{ float: "right" }}>45m</span>
+                </p>
+              </div>
+            </div>
+
+            <div className="learningContainer">
+              <div className="learningImageContainer">
+                <img
+                  className="learningImg"
+                  src={homefeed1}
+                  alt=" home feed img 1"
+                />
+              </div>
+              <p className="learningTitle">How to Sketch Animals </p>
+              <div className="learningBlurb">
+                <p style={{ textAlign: "left" }}>
+                  by Yes
+                  <span style={{ float: "right" }}>2h 10m</span>
+                </p>
+              </div>
+            </div>
+
+            <div className="learningContainer">
+              <div className="learningImageContainer">
+                <li>
+                  <img
+                    className="learningImg"
+                    src={homefeed4}
+                    alt=" home feed img 4"
+                  />
+                </li>
+              </div>
+              <p className="learningTitle">How to Draw Rocks </p>
+              <div className="learningBlurb">
+                <p style={{ textAlign: "left" }}>
+                  by Hello World
+                  <span style={{ float: "right" }}>1h 10s</span>
+                </p>
+              </div>
+            </div> */}
+             <div className="eleven wide column">
+             {console.log(selectedVideo)}
+             
+             {console.log("Hi",Boolean(selectedVideo))}
+
               <ReactModal
                 isOpen={selectedVideo?.id}
                 onRequestClose={handleCloseModal}
@@ -201,14 +280,17 @@ export default function Home({ handleOnLogout, user, term, setTerm }) {
             </div>
 
             <div className="list">
-              <div className="items" style={{ marginTop: "300px" }}>
-                {renderedVideos}
-              </div>
+
+              <div className="items" style={{marginTop:"100px"}}>{renderedVideos}</div>
+
             </div>
           </div>
         </div>
 
-        <div className="trendingMarket" style={{ marginTop: "400px" }}>
+
+
+        <div className="trendingMarket" style={{marginTop:"100px"}}>
+
           <h4>
             {" "}
             <ShoppingCartIcon style={{ marginRight: "5px" }} /> TRENDING ON THE
