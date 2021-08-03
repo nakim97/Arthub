@@ -4,10 +4,10 @@ import Navbar from "../Navbar/Navbar";
 import React from "react";
 import PhotoLibraryIcon from "@material-ui/icons/PhotoLibrary";
 
-export default function CreateForumPost({ user, handleOnLogout }) {
+export default function CreateForumPost({ user, handleOnLogout, term, setTerm }) {
   return (
     <div className="CreateForumPost">
-      <Navbar user={user} handleOnLogout={handleOnLogout} />
+      <Navbar user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm} />
       <CommunityNavbar />
       <div className="container">
         <h1>CREATE A NEW FORUM POST</h1>

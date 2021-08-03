@@ -6,7 +6,7 @@ import Navbar from "../Navbar/Navbar";
 import Comments from "../Comments/Comments";
 /*
  - Fragment tags as return only returns one thing <> </> */
-export default function PostDetail({ user, handleOnLogout }) {
+export default function PostDetail({ user, handleOnLogout, term, setTerm }) {
   const { postId } = useParams();
   const [isLoading, setIsLoading] = useState(false);
   const [post, setPost] = useState([]);
@@ -61,7 +61,7 @@ export default function PostDetail({ user, handleOnLogout }) {
 
   return (
     <div className="user">
-      <Navbar user={user} handleOnLogout={handleOnLogout} />
+      <Navbar user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm} />
       {renderPostContent()}
     </div>
   );

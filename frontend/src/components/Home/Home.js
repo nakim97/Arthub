@@ -17,7 +17,7 @@ import VideoItem from "../Youtube/videoitem";
 import ReactModal from "react-modal";
 import VideoDetail from "../Youtube/videodetail";
 
-export default function Home({ handleOnLogout, user }) {
+export default function Home({ handleOnLogout, user, term, setTerm }) {
   const [selectedVideo, setSelectedVideo] = useState([null]);
   const [isLoading, setIsLoading] = useState(false);
   const [videos, setVideos] = useState([]);
@@ -33,7 +33,8 @@ export default function Home({ handleOnLogout, user }) {
   function random(min, max) {
     return Math.random() * (max - min) + min;
   }
-  let term = searchTerms[Math.floor(random(0, searchTerms.length)) - 1];
+  // This gets a random element from the search terms array
+  let myTerm = searchTerms[Math.floor(random(0, searchTerms.length)) - 1];
   // console.log(term)
   useEffect(() => {
     const fetchVideos = async () => {
@@ -41,7 +42,7 @@ export default function Home({ handleOnLogout, user }) {
       try {
         const response = await youtube.get("/search", {
           params: {
-            q: term,
+            q: myTerm,
           },
         });
         // console.log(response);
@@ -85,7 +86,7 @@ export default function Home({ handleOnLogout, user }) {
 
   return (
     <div className="home">
-      <Navbar user={user} handleOnLogout={handleOnLogout} />
+      <Navbar user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm} />
       <div className="homeCarousel">
         <ul>
           <li>

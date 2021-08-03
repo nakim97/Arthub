@@ -6,10 +6,10 @@ import Stella from "../../Assets/stella_profile.jpeg";
 import team2 from "../../Assets/team2.jpeg";
 import Navbar from "../Navbar/Navbar";
 
-export default function About({ user, handleOnLogout }) {
+export default function About({ user, handleOnLogout, term, setTerm }) {
   return (
     <div className="about">
-      <Navbar user={user} handleOnLogout={handleOnLogout} />
+      <Navbar user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm} />
 
       <div className="banner">
         <img

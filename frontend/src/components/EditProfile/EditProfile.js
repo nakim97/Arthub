@@ -10,7 +10,7 @@ import ImageUpload from "../ImageUpload/ImageUpload";
 import ImageUploadS from "../ImageUploadS/ImageUploadS";
 import { Link } from "react-router-dom";
 
-export default function EditProfile({ user, setUser, handleOnLogout }) {
+export default function EditProfile({ user, setUser, handleOnLogout, term, setTerm }) {
   const { handleImageUpload, openWidget, imageUrl, imageAlt } =
     useImageUpload();
   const { handleImageUpload1, openWidget1, imageUrl2, imageAlt2 } =
@@ -19,7 +19,7 @@ export default function EditProfile({ user, setUser, handleOnLogout }) {
     useEditProfile({ user, setUser, imageUrl, imageUrl2 });
   return (
     <div className="user">
-      <Navbar user={user} handleOnLogout={handleOnLogout} />
+      <Navbar user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm} />
       {errors.form && <span className="error">{errors.form}</span>}
       <br />
 

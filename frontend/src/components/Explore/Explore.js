@@ -14,7 +14,7 @@ import { useState, useEffect } from "react";
 
 import Navbar from "../Navbar/Navbar";
 
-export default function Explore({ user, handleOnLogout }) {
+export default function Explore({ user, handleOnLogout, term, setTerm }) {
   const [myPosts, setMyPosts] = useState([]);
   const [error, setError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -36,7 +36,7 @@ export default function Explore({ user, handleOnLogout }) {
 
   return (
     <div className="explore">
-      <Navbar user={user} handleOnLogout={handleOnLogout} />
+      <Navbar user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}/>
 
       <div className="banner">
         <img
