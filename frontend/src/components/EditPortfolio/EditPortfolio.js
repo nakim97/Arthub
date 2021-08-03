@@ -12,7 +12,12 @@ export default function EditPortfolio({ user, handleOnLogout, term, setTerm }) {
   if (!user.email) {
     return (
       <div className="total">
-        <Navbar user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}   />
+        <Navbar
+          user={user}
+          handleOnLogout={handleOnLogout}
+          term={term}
+          setTerm={setTerm}
+        />
         <div className="title">
           <h2>You must be logged in to view your portfolio posts.</h2>
         </div>
@@ -21,7 +26,12 @@ export default function EditPortfolio({ user, handleOnLogout, term, setTerm }) {
   }
   return (
     <div className="EditPortfolio">
-      <Navbar user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}   />
+      <Navbar
+        user={user}
+        handleOnLogout={handleOnLogout}
+        term={term}
+        setTerm={setTerm}
+      />
       <div className="content">
         <h3 className="title">Edit Your Portfolio</h3>
       </div>

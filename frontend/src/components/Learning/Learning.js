@@ -8,7 +8,12 @@ import YouTube from "../Youtube/youtube";
 export default function Learning({ user, handleOnLogout, term, setTerm }) {
   return (
     <div className="learning">
-      <Navbar user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}   />
+      <Navbar
+        user={user}
+        handleOnLogout={handleOnLogout}
+        term={term}
+        setTerm={setTerm}
+      />
 
       <div
         className="banner"

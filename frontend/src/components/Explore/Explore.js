@@ -35,7 +35,12 @@ export default function Explore({ user, handleOnLogout, term, setTerm }) {
 
   return (
     <div className="explore">
-      <Navbar user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}  />
+      <Navbar
+        user={user}
+        handleOnLogout={handleOnLogout}
+        term={term}
+        setTerm={setTerm}
+      />
 
       <div className="banner">
         <img

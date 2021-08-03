@@ -53,10 +53,9 @@ export default function Home({ handleOnLogout, user, term, setTerm }) {
     fetchVideos();
   }, []);
 
-
-    const handleCloseModal = () => {
-      setSelectedVideo(null);
-    }
+  const handleCloseModal = () => {
+    setSelectedVideo(null);
+  };
   const handleVideoSelect = (video) => {
     setSelectedVideo(video);
   };
@@ -64,18 +63,19 @@ export default function Home({ handleOnLogout, user, term, setTerm }) {
   const renderedVideos = videos.map((video, i) => {
     return (
       <div key={i}>
-      <VideoItem
-        video={video}
-        handleVideoSelect={handleVideoSelect}
-      />
+        <VideoItem video={video} handleVideoSelect={handleVideoSelect} />
       </div>
-
     );
   });
 
   return (
     <div className="home">
-      <Navbar user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}   />
+      <Navbar
+        user={user}
+        handleOnLogout={handleOnLogout}
+        term={term}
+        setTerm={setTerm}
+      />
       <div className="homeCarousel">
         <ul>
           <li>
@@ -175,11 +175,8 @@ export default function Home({ handleOnLogout, user, term, setTerm }) {
             <SchoolIcon style={{ marginRight: "5px" }} /> NEW ON ARTHUB LEARNING
           </h4>
           <div className="container">
-            
-             <div className="eleven wide column" style={{ marginTop: "1200px" }}>
-
+            <div className="eleven wide column" style={{ marginTop: "1200px" }}>
               <ReactModal
-                
                 isOpen={selectedVideo?.id}
                 onRequestClose={handleCloseModal}
                 ariaHideApp={false}
@@ -199,19 +196,19 @@ export default function Home({ handleOnLogout, user, term, setTerm }) {
                   X{" "}
                 </button>
 
-               {selectedVideo && (
-                  <VideoDetail video={selectedVideo} />
-                )} 
+                {selectedVideo && <VideoDetail video={selectedVideo} />}
               </ReactModal>
             </div>
 
             <div className="list">
-              <div className="items" style={{marginTop:"300px"}}>{renderedVideos}</div>
+              <div className="items" style={{ marginTop: "300px" }}>
+                {renderedVideos}
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="trendingMarket" style={{marginTop:"400px"}}>
+        <div className="trendingMarket" style={{ marginTop: "400px" }}>
           <h4>
             {" "}
             <ShoppingCartIcon style={{ marginRight: "5px" }} /> TRENDING ON THE

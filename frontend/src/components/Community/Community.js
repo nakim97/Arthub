@@ -184,7 +184,7 @@ export default function Community({ user, handleOnLogout, term, setTerm}) {
           />
         </div>
 
-        <div className="post">
+        {/* <div className="post">
           <h4 className="postTitle"> Art Piece in Progress, any advice?</h4>
           <p className="postAuthor"> by Stella</p>
           <p className="likeComments" style={{ textAlign: "left" }}>
@@ -204,7 +204,7 @@ export default function Community({ user, handleOnLogout, term, setTerm}) {
               6 hours ago{" "}
             </span>
           </p>
-        </div>
+        </div> */}
       </div>
     </div>
   );

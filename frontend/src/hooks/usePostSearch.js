@@ -12,7 +12,6 @@ export const usePostSearch = ({ user, term }) => {
       setFetching(true);
       try {
         const { data } = await apiClient.searchPosts(term);
-        // console.log(data);
         setPosts(data.searches);
       } catch (err) {
         setError(err);
@@ -22,16 +21,6 @@ export const usePostSearch = ({ user, term }) => {
     };
     fetchPosts();
   }, [user, posts]);
-
-  // const handleDelete = async (postId) => {
-  //   setIsProcessing(true);
-  //   try {
-  //     const { data } = await apiClient.deletePost(postId);
-  //   } catch (err) {
-  //     setError(err);
-  //   }
-  //   setIsProcessing(false);
-  // };
 
   return { posts };
 };

@@ -33,7 +33,7 @@ class Like {
         throw new ForbiddenError(`User cannot add more than one like.`);
       }
     }
-  
+
     // Just in case there are no likes, create an empty array
     if (!arr) arr = [];
     // // This gets a new object with our user
