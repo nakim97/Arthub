@@ -184,16 +184,23 @@ li {
     grid-template-columns: 1fr 1fr 1fr;
   }
   .trendingMarket h4{
-    margin-top: 600px;
+    margin-top: 700px;
+  }
+
+  .home .list .items{
+    padding-top: 300px;
   }
 }
 @media only screen and (max-width: 1205px) {
   .list .items {
     grid-template-columns: 1fr 1fr;
   }
+  .home .list .items{
+    padding-top: 600px;
+  }
 
   .trendingMarket h4{
-    margin-top: 700px;
+    margin-top: 1000px;
   }
 }
 
@@ -201,12 +208,16 @@ li {
   .list .items {
     grid-template-columns: 1fr;
   }
+
+  .home .list .items{
+    padding-top: 1900px;
+  }
   .youtube-video {
     width: 50%;
     height: 30%;
   }
 
   .trendingMarket h4{
-    margin-top: 1350px;
+    margin-top: 2300px;
   }
 }
