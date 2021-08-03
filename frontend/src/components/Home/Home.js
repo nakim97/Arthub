@@ -181,7 +181,7 @@ export default function Home({ handleOnLogout, user }) {
         </div>
 
         <div className="newLearning">
-          <h4>
+          <h4 style={{marginBottom:"-200px"}}>
             {" "}
             <SchoolIcon style={{ marginRight: "5px" }} /> NEW ON ARTHUB LEARNING
           </h4>
@@ -259,7 +259,7 @@ export default function Home({ handleOnLogout, user }) {
                 </p>
               </div>
             </div> */}
-             <div className="eleven wide column" style={{ marginTop: "1200px" }}>
+             <div className="eleven wide column">
              {console.log(selectedVideo)}
              
              {console.log("Hi",Boolean(selectedVideo))}
@@ -291,12 +291,12 @@ export default function Home({ handleOnLogout, user }) {
             </div>
 
             <div className="list">
-              <div className="items" style={{marginTop:"300px"}}>{renderedVideos}</div>
+              <div className="items" style={{marginTop:"100px"}}>{renderedVideos}</div>
             </div>
           </div>
         </div>
 
-        <div className="trendingMarket" style={{marginTop:"400px"}}>
+        <div className="trendingMarket" style={{marginTop:"100px"}}>
           <h4>
             {" "}
             <ShoppingCartIcon style={{ marginRight: "5px" }} /> TRENDING ON THE

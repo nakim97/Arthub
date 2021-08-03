@@ -46,7 +46,7 @@ class YouTube extends React.Component {
         <SearchBar handleFormSubmit={this.handleSubmit} />
         <div className="ui grid">
           <div className="ui row">
-            <div className="eleven wide column" style={{ marginTop: "800px" }}>
+            <div className="eleven wide column">
               <ReactModal
                 isOpen={!!this.state.selectedVideo}
                 onRequestClose={this.handleCloseModal}
