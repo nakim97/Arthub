@@ -20,6 +20,9 @@ body {
 .CreateForumPost h1 {
   color: white;
 }
+.CreateForumPost p {
+  color: white;
+}
 
 .CreateForumPost .container .form .title {
   margin-left: 100px;
@@ -50,9 +53,9 @@ body {
 .CreateForumPost .container .form .imgBar {
   text-align: left;
   margin-left: 100px;
-  border-left: 0.6px solid #514f4f;
+  /* border-left: 0.6px solid #514f4f;
   border-right: 0.6px solid #514f4f;
-  border-top: 0.6px solid #514f4f;
+  border-top: 0.6px solid #514f4f; */
   width: 800px;
   height: 30px;
 }
@@ -105,4 +108,166 @@ body {
     height: 30px;
   }
   
+}
+
+
+
+/* Separate extras */
+.title {
+  color: white;
+}
+.steps {
+  color: white;
+  display: flex;
+  margin-left: 5rem;
+}
+
+.uploadInfo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.uploadImage .image {
+  width: 400px;
+  height: 400px;
+  margin-left: 5rem;
+}
+
+.uploadData {
+  color: white;
+  margin-left: 4rem;
+  text-align: start;
+}
+
+.uploadButn {
+  display: flex;
+  margin-top: 1rem;
+  margin-left: 15rem;
+  padding-bottom: 1rem;
+}
+.sell {
+  color: white;
+  display: flex;
+  margin-left: 5rem;
+}
+
+.sell .price {
+  display: flex;
+  margin-left: 1rem;
+}
+
+.sell .price input {
+  width: 100px;
+  height: 25px;
+}
+.notForSale {
+  color: white;
+  display: flex;
+  margin-left: 5rem;
+}
+
+.TOS1 {
+  display: flex;
+  color: white;
+  margin-left: 5rem;
+  margin-top: 3rem;
+}
+
+.TOS2 {
+  display: flex;
+  color: white;
+  margin-left: 5rem;
+}
+
+.upload .editPageButns {
+  color: white;
+  margin-right: auto;
+  order: 2;
+  display: flex;
+}
+
+.upload .editPageButns .cancel {
+  margin-bottom: 4rem;
+  width: 25px;
+}
+
+.upload .editPageButns .submit {
+  margin-bottom: 4rem;
+  margin-left: 2rem;
+  width: 25px;
+}
+
+.editPageButns a {
+  text-decoration: none;
+  color: white;
+}
+.submit:disabled {
+  background-color: red !important;
+}
+
+.upload .form .uploadInfo .uploadData .postName input {
+  background: white;
+  color: black;
+  width: 400px;
+  border-radius: 10px;
+  height: 25px;
+  border: none;
+  outline: none;
+  margin-bottom: 30px;
+}
+
+.upload .form .uploadInfo .uploadData .tags select {
+  margin-bottom: 30px;
+}
+
+.upload .form .uploadInfo .uploadData .descriptions input {
+  background: white;
+  color: black;
+  width: 400px;
+  word-wrap: break-word;
+  border-radius: 10px;
+  height: 60px;
+  border: none;
+  outline: none;
+}
+
+@media only screen and (max-width: 937px) {
+  .uploadInfo {
+    grid-template-columns: 1fr;
+    text-align: center;
+    align-items: center;
+  }
+  .uploadData {
+    text-align: center;
+    align-items: center;
+  }
+  .descriptions {
+    margin-bottom: 50px;
+  }
+}
+
+@media only screen and (max-width: 830px) {
+  .upload .form .uploadInfo .uploadData .postName input {
+    width: 250px;
+    height: 25px;
+  }
+
+  .upload .form .uploadInfo .uploadData .descriptions input {
+    width: 250px;
+    border-radius: 10px;
+    height: 60px;
+  }
+}
+
+@media only screen and (max-width: 670px) {
+  .upload .form .uploadInfo .uploadData .postName input {
+    width: 200px;
+    height: 25px;
+  }
+
+  .upload .form .uploadInfo .uploadData .descriptions input {
+    width: 200px;
+    border-radius: 10px;
+    height: 60px;
+  }
 }

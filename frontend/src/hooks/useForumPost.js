@@ -18,7 +18,7 @@ export const useForumPost = ({ imageUrl, imageAlt }) => {
     description: "",
     tag: "",
   });
-  const tagOptions = [
+  const tagsOptions = [
     { key: 1, label: "General", value: "general" },
     { key: 2, label: "Advice", value: "advice" },
     { key: 3, label: "Work In Progress", value: "work in progress" },
@@ -82,7 +82,7 @@ export const useForumPost = ({ imageUrl, imageAlt }) => {
   };
 
   return {
-    tagOptions,
+    tagsOptions,
     CustomColorCheckbox,
     checked,
     checked1,
