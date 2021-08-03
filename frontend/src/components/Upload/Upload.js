@@ -20,7 +20,7 @@ export default function Upload({ user, handleOnLogout, term, setTerm }) {
     handleChange2,
     form,
     setForm,
-    errors,
+    error,
     handleOnInputChange,
     handleOnSubmit,
     isProcessing,
@@ -50,7 +50,7 @@ export default function Upload({ user, handleOnLogout, term, setTerm }) {
         <h2>Step 1: Post Description</h2>
       </div>
 
-      {errors.form && <span className="error">{errors.form}</span>}
+      {error.form && <span className="error">{error.form}</span>}
       <div className="form">
         <div className="uploadInfo">
           <ImageUpload
@@ -69,7 +69,7 @@ export default function Upload({ user, handleOnLogout, term, setTerm }) {
                 value={form.title}
                 onChange={handleOnInputChange}
               />
-              {errors.title && <span className="error">{errors.title}</span>}
+              {error.title && <span className="error">{error.title}</span>}
             </div>
             <div className="tags">
               <p>Tags</p>
@@ -85,7 +85,7 @@ export default function Upload({ user, handleOnLogout, term, setTerm }) {
                   </option>
                 ))}
               </select>
-              {errors.tag && <span className="error">{errors.tag}</span>}
+              {error.tag && <span className="error">{error.tag}</span>}
             </div>
             <div className="descriptions">
               <p>Image Description</p>
@@ -95,8 +95,8 @@ export default function Upload({ user, handleOnLogout, term, setTerm }) {
                 value={form.description}
                 onChange={handleOnInputChange}
               />
-              {errors.description && (
-                <span className="error">{errors.description}</span>
+              {error.description && (
+                <span className="error">{error.description}</span>
               )}
             </div>
           </div>

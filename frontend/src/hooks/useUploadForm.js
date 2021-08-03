@@ -11,7 +11,8 @@ export const useUploadForm = ({ imageUrl, imageAlt }) => {
   const [checked, setChecked] = useState(true);
   const [checked1, setChecked1] = useState(true);
   const [checked2, setChecked2] = useState(true);
-  const [errors, setErrors] = useState({});
+  const [error, setErrors] = useState({});
+  const [error1, setErrors1] = useState({});
   const [form, setForm] = useState({
     title: "",
     description: "",
@@ -59,6 +60,7 @@ export const useUploadForm = ({ imageUrl, imageAlt }) => {
   const handleOnSubmit = async () => {
     setIsProcessing(true);
     setErrors((e) => ({ ...e, form: null }));
+    setErrors1((e) => ({ ...e, form: null }));
 
     const { data, error } = await apiClient.createImage({
       postImgUrl: imageUrl,
@@ -71,7 +73,7 @@ export const useUploadForm = ({ imageUrl, imageAlt }) => {
       postDescription: form.description,
       imgId: myId,
     });
-    if (error1) setErrors((e) => ({ ...e, form: error1 }));
+    if (error1) setErrors1((e) => ({ ...e, form: error1 }));
 
     setIsProcessing(false);
     setIsNavigating(true);
@@ -89,7 +91,7 @@ export const useUploadForm = ({ imageUrl, imageAlt }) => {
     isProcessing,
     form,
     setForm,
-    errors,
+    error,
     handleOnSubmit,
     handleOnInputChange,
   };
