@@ -161,9 +161,6 @@ export default function Home({ handleOnLogout, user, term, setTerm }) {
               <img className="feedImg" src={homefeed4} alt=" home feed img 4" />
             </li>
             <li>
-              <img className="feedImg" src={homefeed5} alt=" home feed img 5" />
-            </li>
-            <li>
               <img className="feedImg" src={homefeed6} alt=" home feed img 6" />
             </li>
           </ul>
