@@ -8,6 +8,7 @@ import { useState } from "react";
 export default function Navbar({ handleOnLogout, user, term, setTerm }) {
   // If the boolean is true, the user exists
   const navigate = useNavigate();
+  // This redirects to the search page to display the posts
   const handleFormSubmit = async () => {
     navigate("/search");
   };
