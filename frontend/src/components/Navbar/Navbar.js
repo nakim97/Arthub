@@ -76,7 +76,7 @@ export default function Navbar({ handleOnLogout, user, term, setTerm, handleForm
 
          
 
-  return (
+  {/* return (
     <div className="search">
       {term === null && <div className="noSearch"></div>}
       <form onSubmit={handleSubmit} className="form">
@@ -90,7 +90,7 @@ export default function Navbar({ handleOnLogout, user, term, setTerm, handleForm
         </div>
       </form>
     </div>
-  );
+  ); */}
           {/* If we are logged in, render the logout, otherwise use the normal buttons */}
           {/* This renders the buttons above */}
           {buttons}

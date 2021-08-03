@@ -34,7 +34,6 @@ export default function Home({ handleOnLogout, user, term, setTerm, handleFormSu
   }
   // This gets a random element from the search terms array
   let myTerm = searchTerms[Math.floor(random(0, searchTerms.length)) - 1];
-  // console.log(term)
   useEffect(() => {
     const fetchVideos = async () => {
       setIsLoading(true);
@@ -44,7 +43,6 @@ export default function Home({ handleOnLogout, user, term, setTerm, handleFormSu
             q: myTerm,
           },
         });
-        // console.log(response);
         if (response?.data?.items) setVideos(response.data.items);
       } catch (err) {
         setError(err);
