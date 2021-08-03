@@ -6,7 +6,7 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import { useUploadForm } from "../../hooks/useUploadForm";
 import ImageUpload from "../ImageUpload/ImageUpload";
 import { useImageUpload } from "../../hooks/useImageUpload";
-export default function Upload({ user, handleOnLogout, term, setTerm }) {
+export default function Upload({ user, handleOnLogout, term, setTerm, handleFormSubmit }) {
   const { handleImageUpload, openWidget, imageUrl, imageAlt } =
     useImageUpload();
   const {
@@ -30,7 +30,7 @@ export default function Upload({ user, handleOnLogout, term, setTerm }) {
   if (!user.email) {
     return (
       <div className="total">
-        <Navbar user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm} />
+        <Navbar user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm} handleFormSubmit={handleFormSubmit} />
         <div className="title">
           <h2>You must be logged in to create a post.</h2>
         </div>
@@ -40,7 +40,7 @@ export default function Upload({ user, handleOnLogout, term, setTerm }) {
   // Normal view
   return (
     <div className="upload">
-      <Navbar user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm} />
+      <Navbar user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm} handleFormSubmit={handleFormSubmit} />
 
       <div className="title">
         <h2>Create A New Post</h2>

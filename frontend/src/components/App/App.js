@@ -44,6 +44,18 @@ export default function App() {
     setUser({});
     setError(null);
   };
+  const handleFormSubmit = async (term) => {
+    //   const response = await youtube.get("/search", {
+    //     params: {
+    //       q: term,
+    //     },
+    //   });
+  
+    //   this.setState({
+    //     videos: response.data.items,
+    //   });
+    //   console.log("this is resp", response);
+    };
 
   return (
     <div className="App">
@@ -51,76 +63,76 @@ export default function App() {
         <Routes>
           <Route
             path="/"
-            element={<Home user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm} />}
+            element={<Home user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm} handleFormSubmit={handleFormSubmit} />}
           />
           <Route
             path="/login"
-            element={<Login user={user} setUser={setUser} term={term} setTerm={setTerm} />}
+            element={<Login user={user} setUser={setUser} term={term} setTerm={setTerm} handleFormSubmit={handleFormSubmit} />}
           />
           <Route
             path="/register"
-            element={<Register user={user} setUser={setUser} term={term} setTerm={setTerm} />}
+            element={<Register user={user} setUser={setUser} term={term} setTerm={setTerm} handleFormSubmit={handleFormSubmit} />}
           />
           <Route
             path="/about"
-            element={<About user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm} />}
+            element={<About user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm} handleFormSubmit={handleFormSubmit} />}
           />
           <Route
             path="/explore"
-            element={<Explore user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}/>}
+            element={<Explore user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm} handleFormSubmit={handleFormSubmit}/>}
           />
           <Route
             path="/learning"
-            element={<Learning user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}/>}
+            element={<Learning user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm} handleFormSubmit={handleFormSubmit}/>}
           />
           <Route
             path="/market"
-            element={<Market user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}/>}
+            element={<Market user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm} handleFormSubmit={handleFormSubmit}/>}
           />
           <Route
             path="/community"
-            element={<Community user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}/>}
+            element={<Community user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm} handleFormSubmit={handleFormSubmit}/>}
           />
           <Route
             path="/me"
             element={
-              <UserProfile user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}/>
+              <UserProfile user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm} handleFormSubmit={handleFormSubmit}/>
             }
           />
           <Route
             path="/upload"
-            element={<Upload user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}/>}
+            element={<Upload user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm} handleFormSubmit={handleFormSubmit}/>}
           />
           <Route
             path="/search"
-            element={<PostSearch user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}/>}
+            element={<PostSearch user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm} handleFormSubmit={handleFormSubmit}/>}
           />
           <Route
             path="/edit"
             element={
-              <EditProfile user={user} setUser={setUser} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}/>
+              <EditProfile user={user} setUser={setUser} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm} handleFormSubmit={handleFormSubmit}/>
             }
           />
           <Route
             path="/post/:postId"
-            element={<PostDetail user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}/>}
+            element={<PostDetail user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm} handleFormSubmit={handleFormSubmit}/>}
           />
           <Route
             path="/editportfolio"
             element={
-              <EditPortfolio user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}/>
+              <EditPortfolio user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm} handleFormSubmit={handleFormSubmit}/>
             }
           />
           <Route
             path="/createforumpost"
             element={
-              <CreateForumPost user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}/>
+              <CreateForumPost user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm} handleFormSubmit={handleFormSubmit}/>
             }
           />
           <Route
             path="/communitypostedit"
             element={
-              <CommunityPostEdit user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}/>
+              <CommunityPostEdit user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm} handleFormSubmit={handleFormSubmit}/>
             }
           />
         </Routes>

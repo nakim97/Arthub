@@ -4,10 +4,10 @@ import Navbar from "../Navbar/Navbar";
 import React from "react";
 import PhotoLibraryIcon from "@material-ui/icons/PhotoLibrary";
 
-export default function CommunityPostEdit({ user, handleOnLogout, term, setTerm }) {
+export default function CommunityPostEdit({ user, handleOnLogout, term, setTerm, handleFormSubmit }) {
   return (
     <div className="EditForumPost">
-      <Navbar user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm} />
+      <Navbar user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm} handleFormSubmit={handleFormSubmit} />
       <CommunityNavbar />
       <div className="container">
         <h1>EDIT YOUR FORUM POST</h1>

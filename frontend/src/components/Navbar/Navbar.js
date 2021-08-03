@@ -5,21 +5,10 @@ import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-export default function Navbar({ handleOnLogout, user, term, setTerm }) {
+export default function Navbar({ handleOnLogout, user, term, setTerm, handleFormSubmit }) {
   // If the boolean is true, the user exists
   const isAuthenticated = Boolean(user?.email);
-  const handleFormSubmit = async (termFromSearchBar) => {
-  //   const response = await youtube.get("/search", {
-  //     params: {
-  //       q: termFromSearchBar,
-  //     },
-  //   });
-
-  //   this.setState({
-  //     videos: response.data.items,
-  //   });
-  //   console.log("this is resp", response);
-  };
+  
   
   const handleSubmit = (event) => {
     event.preventDefault();

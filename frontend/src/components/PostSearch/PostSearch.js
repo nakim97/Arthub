@@ -5,7 +5,7 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import { Link } from "react-router-dom";
 import { usePostSearch } from "../../hooks/usePostSearch";
 
-export default function PostSearch({ user, handleOnLogout, term, setTerm }) {
+export default function PostSearch({ user, handleOnLogout, term, setTerm, handleFormSubmit }) {
   const { posts } = usePostSearch({ user });
 
 //   //Unauthenticated view
@@ -21,7 +21,7 @@ export default function PostSearch({ user, handleOnLogout, term, setTerm }) {
 //   }
   return (
     <div className="PostSearch">
-      <Navbar user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm} />
+      <Navbar user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm} handleFormSubmit={handleFormSubmit} />
       <div className="content">
         <h3 className="title">Edit Your Portfolio</h3>
       </div>

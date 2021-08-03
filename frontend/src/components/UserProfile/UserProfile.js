@@ -8,7 +8,7 @@ import FacebookIcon from "@material-ui/icons/Facebook";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import { useUserProfile } from "../../hooks/useUserProfile";
 
-export default function UserProfile({ user, handleOnLogout, term, setTerm }) {
+export default function UserProfile({ user, handleOnLogout, term, setTerm, handleFormSubmit }) {
   const { myName, username, posts, userInfo } = useUserProfile({ user });
   let instagram_url = "",
     facebook_url = "",
@@ -85,7 +85,7 @@ export default function UserProfile({ user, handleOnLogout, term, setTerm }) {
   if (!user.email) {
     return (
       <div className="total">
-        <Navbar user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm} />
+        <Navbar user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm} handleFormSubmit={handleFormSubmit} />
         <div className="title">
           <h2>You must be logged in to view your profile.</h2>
         </div>
@@ -94,7 +94,7 @@ export default function UserProfile({ user, handleOnLogout, term, setTerm }) {
   }
   return (
     <div className="user">
-      <Navbar user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm} />
+      <Navbar user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm} handleFormSubmit={handleFormSubmit} />
 
       <div className="banners">{banner_img}</div>
 

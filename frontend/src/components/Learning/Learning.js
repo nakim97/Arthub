@@ -5,10 +5,10 @@ import Navbar from "../Navbar/Navbar";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import YouTube from "../Youtube/youtube";
 
-export default function Learning({ user, handleOnLogout, term, setTerm }) {
+export default function Learning({ user, handleOnLogout, term, setTerm, handleFormSubmit }) {
   return (
     <div className="learning">
-      <Navbar user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm} />
+      <Navbar user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm} handleFormSubmit={handleFormSubmit} />
 
       <div
         className="banner"
