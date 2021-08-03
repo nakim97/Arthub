@@ -10,7 +10,6 @@ class Comment {
         VALUES ((SELECT id FROM users WHERE email = $1), $2, $3)
         RETURNING id, user_id, post_id, comment_description
     `;
-    // console.log("This is the query" + query);
     const results = await db.query(query, [
       user.email,
       post_id,
@@ -49,7 +48,6 @@ class Comment {
         VALUES ((SELECT id FROM users WHERE email = $1), $2, $3)
         RETURNING id, user_id, forum_id, comment_description
     `;
-    // console.log("This is the query" + query);
     const results = await db.query(query, [
       user.email,
       post_id,

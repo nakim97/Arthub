@@ -63,7 +63,6 @@ class Post {
     }
     const dbquery = `Select * from photoPost where post_title like '%${query}%';
     `;
-    console.log(dbquery);
     const result = await db.query(dbquery);
     const queries = result.rows;
     return queries;

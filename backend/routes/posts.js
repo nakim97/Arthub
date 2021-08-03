@@ -54,7 +54,6 @@ router.get("/:postsId", async (req, res, next) => {
   try {
     const postsId = req.params.postsId;
     const posting = await Post.fetchPhotoPostById(postsId);
-    // console.log("pID", postsId, "p", posts)
     res.status(200).json({ posting });
   } catch (err) {
     next(err);
@@ -66,7 +65,6 @@ router.delete("/:postsId", async (req, res, next) => {
   try {
     const postsId = req.params.postsId;
     const posting = await Post.deletePhotoPostById(postsId);
-    // console.log("pID", postsId, "p", posts)
     res.status(200).json({ posting });
   } catch (err) {
     next(err);

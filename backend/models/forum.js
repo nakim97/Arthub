@@ -63,7 +63,6 @@ class Forum {
     }
     const dbquery = `Select * from forumPost where forum_title like '%${query}%';
     `;
-    console.log(dbquery);
     const result = await db.query(dbquery);
     const queries = result.rows;
     return queries;

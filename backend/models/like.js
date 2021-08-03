@@ -33,7 +33,7 @@ class Like {
         throw new ForbiddenError(`User cannot add more than one like.`);
       }
     }
-    //  console.log(arr)
+  
     // Just in case there are no likes, create an empty array
     if (!arr) arr = [];
     // // This gets a new object with our user
@@ -165,13 +165,10 @@ class Like {
         WHERE forum_post_id = $1
         ORDER BY id DESC
         `;
-    // console.log(1)
     const results = await db.query(query, [post_id]);
     // This should get an array of likes
     let arr = [];
-    // console.log(results)
     const theResult = results.rows[0];
-    // console.log("tr", theResult);
     if (theResult) {
       for (let like in theResult["likes"]) {
         // This gets all the likes from all the users in the likes column
@@ -186,7 +183,6 @@ class Like {
         }
       }
     }
-    //  console.log(arr)
     // Just in case there are no likes, create an empty array
     if (!arr) arr = [];
     // // This gets a new object with our user

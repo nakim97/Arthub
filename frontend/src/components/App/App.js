@@ -54,7 +54,6 @@ export default function App() {
     //   this.setState({
     //     videos: response.data.items,
     //   });
-    //   console.log("this is resp", response);
     };
 
   return (

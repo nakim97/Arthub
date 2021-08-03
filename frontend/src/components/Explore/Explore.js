@@ -24,7 +24,6 @@ export default function Explore({ user, handleOnLogout, term, setTerm, handleFor
       setIsLoading(true);
       try {
         const { data } = await apiClient.listAllPosts();
-        // console.log(data);
         setMyPosts(data.posts);
       } catch (err) {
         setError(err);

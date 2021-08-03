@@ -18,7 +18,6 @@ export default function Navbar({ handleOnLogout, user, term, setTerm, handleForm
   const handleChange = (event) => {
     setTerm(event.target.value);
   };
-  //console.log(user)
   const icon = user?.profile_img_url == null || user?.profile_img_url == "null";
   const navIcon = icon ? (
     <>
