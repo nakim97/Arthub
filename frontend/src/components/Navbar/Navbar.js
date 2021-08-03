@@ -10,15 +10,6 @@ export default function Navbar({ handleOnLogout, user, term, setTerm }) {
   const navigate = useNavigate();
   const handleFormSubmit = async () => {
     navigate("/search");
-    //   const response = await youtube.get("/search", {
-    //     params: {
-    //       q: term,
-    //     },
-    //   });
-
-    //   this.setState({
-    //     videos: response.data.items,
-    //   });
   };
   const isAuthenticated = Boolean(user?.email);
 
@@ -93,7 +84,7 @@ export default function Navbar({ handleOnLogout, user, term, setTerm }) {
               </div>
             </form>
           </div>
-          
+
           {/* If we are logged in, render the logout, otherwise use the normal buttons */}
           {/* This renders the buttons above */}
           {buttons}
