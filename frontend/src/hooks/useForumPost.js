@@ -41,7 +41,7 @@ export const useForumPost = ({ imageUrl, imageAlt }) => {
   useEffect(() => {
     // We are done processing, go to the main page
     if (isNavigating) {
-      navigate("/me");
+      navigate("/community");
     }
   }, [isNavigating, navigate]);
 
