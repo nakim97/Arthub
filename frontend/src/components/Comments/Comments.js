@@ -39,7 +39,7 @@ export default function Comments({ user, post }) {
       setIsLoading(true);
       try {
         const { data } = await apiClient.listLikesWithPostId(postId);
-        // console.log("likes",data)
+        console.log("likes",data)
         setLikes(data.likes.likes);
       } catch (err) {
         setError(err);
@@ -53,7 +53,8 @@ export default function Comments({ user, post }) {
   const handleAddLike = async () => {
     setIsLoading(true);
     try {
-      const { data } = await apiClient.listLikesWithPostId(postId);
+      const { data } = await apiClient.createLike(postId);
+      console.log("add", data);
       setLikes(data.likes.likes);
     } catch (err) {
       setError(err);
@@ -63,8 +64,10 @@ export default function Comments({ user, post }) {
   const handleDeleteLike = async () => {
     setIsLoading(true);
     try {
-      const { data } = await apiClient.listLikesWithPostId(postId);
-      setLikes(data.likes.likes);
+      const { data } = await apiClient.deleteLike(postId);
+      console.log("delete", data);
+
+      // setLikes(data.likes.likes);
     } catch (err) {
       setError(err);
     }
@@ -73,7 +76,7 @@ export default function Comments({ user, post }) {
 
   let isLiked = false;
   for (let i in likes) {
-    if (likes[i][0] === user.id) {
+    if (likes[i][0] == user?.id) {
       isLiked = true;
       break;
     }
@@ -97,7 +100,14 @@ export default function Comments({ user, post }) {
     let link = window.location.href;
     alert("Share this link " + link);
   };
-
+  const isAuthenticated = Boolean(user.email);
+  const renderLike = isAuthenticated ? (
+    <>{likeButton}</>
+  ) : (
+    <>
+      <p>Sign in to like</p>
+    </>
+  );
   const { register, handleSubmit } = useForm();
 
   let commentsForm;
@@ -150,6 +160,7 @@ export default function Comments({ user, post }) {
   return (
     <div className="comments">
       <div className="likesAndShare">
+        {renderLike}
         <button className="clears" onClick={handleShare}>
           <ShareIcon className="icons" />
         </button>
