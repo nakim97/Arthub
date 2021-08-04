@@ -63,12 +63,14 @@ export default function Comments({ user, post }) {
     setIsLoading(true);
     try {
       const { data } = await apiClient.deleteLike(postId);
+
       setLikes(data.likes.likes);
     } catch (err) {
       setError(err);
     }
     setIsLoading(false);
   };
+
   let isLiked = false;
   for (let i in likes) {
     if (likes[i][0] == user?.id) {
@@ -76,8 +78,6 @@ export default function Comments({ user, post }) {
       break;
     }
   }
-console.log(isLiked);
-
   const likeButton = isLiked ? (
     <>
       {/* We did like this, so show a full icon */}
