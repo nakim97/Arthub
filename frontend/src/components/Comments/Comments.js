@@ -39,7 +39,6 @@ export default function Comments({ user, post }) {
       setIsLoading(true);
       try {
         const { data } = await apiClient.listLikesWithPostId(postId);
-        console.log("likes",data)
         setLikes(data.likes.likes);
       } catch (err) {
         setError(err);
@@ -54,7 +53,6 @@ export default function Comments({ user, post }) {
     setIsLoading(true);
     try {
       const { data } = await apiClient.createLike(postId);
-      console.log("add", data);
       setLikes(data.likes.likes);
     } catch (err) {
       setError(err);
@@ -65,9 +63,8 @@ export default function Comments({ user, post }) {
     setIsLoading(true);
     try {
       const { data } = await apiClient.deleteLike(postId);
-      console.log("delete", data);
 
-      // setLikes(data.likes.likes);
+      setLikes(data.likes.likes);
     } catch (err) {
       setError(err);
     }
