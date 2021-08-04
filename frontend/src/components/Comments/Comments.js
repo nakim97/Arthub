@@ -64,6 +64,7 @@ export default function Comments({ user, post }) {
   } else {
     commentsNum = `${comments.length} Comments`;
   }
+  
   // Display the message for likes
   let likesNum = ``;
   if (likes.length == 1) {
