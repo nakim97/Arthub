@@ -7,6 +7,7 @@ import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import ShareIcon from "@material-ui/icons/Share";
 import ChatIcon from "@material-ui/icons/Chat";
 import ThumbUpIcon from "@material-ui/icons/ThumbUp";
+import FavoriteIcon from "@material-ui/icons/Favorite";
 import "./Comments.css";
 
 export default function Comments({ user, post }) {
@@ -108,7 +109,7 @@ export default function Comments({ user, post }) {
       <div className="likesAndShare">
         <FavoriteBorderIcon />
         {/* window.location.href With a button here to make an alert that the link was copied */}
-
+        <FavoriteIcon />
         <button className="clears" onClick={handleShare}>
           <ShareIcon className="icons" />
         </button>
