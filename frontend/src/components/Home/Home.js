@@ -167,7 +167,7 @@ export default function Home({ handleOnLogout, user, term, setTerm }) {
         </div>
 
         <div className="newLearning">
-          <h4 style={{marginBottom:"-200px"}}>
+          <h4 style={{marginBottom:"-250px", marginTop: "-30px"}}>
             {" "}
             <SchoolIcon style={{ marginRight: "5px" }} /> NEW ON ARTHUB LEARNING
           </h4>
