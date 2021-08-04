@@ -150,6 +150,12 @@ class ApiClient {
       method: `POST`,
     });
   }
+  async deleteLike(postId) {
+    return await this.request({
+      endpoint: `post/${postId}/likes`,
+      method: `DELETE`,
+    });
+  }
 
   async fetchUserFromToken() {
     return await this.request({ endpoint: `auth/me`, method: `GET` });

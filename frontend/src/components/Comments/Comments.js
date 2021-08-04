@@ -50,6 +50,49 @@ export default function Comments({ user, post }) {
     fetchLikesById();
   }, [postId, likes]);
 
+  const handleAddLike = async () => {
+    setIsLoading(true);
+    try {
+      const { data } = await apiClient.listLikesWithPostId(postId);
+      setLikes(data.likes.likes);
+    } catch (err) {
+      setError(err);
+    }
+    setIsLoading(false);
+  };
+  const handleDeleteLike = async () => {
+    setIsLoading(true);
+    try {
+      const { data } = await apiClient.listLikesWithPostId(postId);
+      setLikes(data.likes.likes);
+    } catch (err) {
+      setError(err);
+    }
+    setIsLoading(false);
+  };
+
+  let isLiked = false;
+  for (let i in likes) {
+    if (likes[i][0] === user.id) {
+      isLiked = true;
+      break;
+    }
+  }
+  const likeButton = isLiked ? (
+    <>
+      {/* We did like this, so show a full icon */}
+      <button className="clears" onClick={handleDeleteLike}>
+        <FavoriteIcon className="icons" />
+      </button>
+    </>
+  ) : (
+    <>
+      {/* We did not like this, so show an empty icon */}
+      <button className="clears" onClick={handleAddLike}>
+        <FavoriteBorderIcon className="icons" />
+      </button>
+    </>
+  );
   const handleShare = () => {
     let link = window.location.href;
     alert("Share this link " + link);
@@ -65,7 +108,7 @@ export default function Comments({ user, post }) {
   } else {
     commentsNum = `${comments.length} Comments`;
   }
-  
+
   // Display the message for likes
   let likesNum = ``;
   if (likes.length == 1) {
@@ -107,9 +150,6 @@ export default function Comments({ user, post }) {
   return (
     <div className="comments">
       <div className="likesAndShare">
-        <FavoriteBorderIcon />
-        {/* window.location.href With a button here to make an alert that the link was copied */}
-        <FavoriteIcon />
         <button className="clears" onClick={handleShare}>
           <ShareIcon className="icons" />
         </button>
