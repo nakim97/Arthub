@@ -26,23 +26,6 @@ router.get("/listPosts", async (req, res, next) => {
     next(err);
   }
 });
-// Top and bottom
-router.get("/listPostsT", async (req, res, next) => {
-  try {
-    const posts = await Post.listAllPostsL4();
-    return res.status(200).json({ posts });
-  } catch (err) {
-    next(err);
-  }
-});
-router.get("/listPostsB", async (req, res, next) => {
-  try {
-    const posts = await Post.listAllPostsHL4();
-    return res.status(200).json({ posts });
-  } catch (err) {
-    next(err);
-  }
-});
 
 router.get("/", security.requireAuthenticatedUser, async (req, res, next) => {
   try {
@@ -149,7 +132,7 @@ router.post(
     }
   }
 );
-// Delete like for post
+
 router.delete(
   "/:postsId/likes",
   security.requireAuthenticatedUser,

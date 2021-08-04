@@ -11,17 +11,6 @@
   color: white;
 }
 
-.clears {
-  cursor: pointer;
-  border: none;
-  background-color: transparent;
-}
-.icons {
-  font-size: 20px;
-  margin-left: 10px;
-  color: white;
-}
-
 .likeCommentCount {
   display: flex;
   justify-content: space-between;

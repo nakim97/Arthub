@@ -46,7 +46,7 @@ export default function Register({ user, setUser }) {
         <div className="form">
           <div className="split-inputs">
             <div className="input-field">
-              <label htmlFor="name">First and Last Name</label>
+              <label htmlFor="name">Name</label>
               <input
                 type="text"
                 name="name"
@@ -120,7 +120,8 @@ export default function Register({ user, setUser }) {
                 />
               }
               label="Creating an account means you’re fine with our Terms and
-              Conditions, Privacy Policy, and just being cool."
+              Conditions
+               , Privacy Policy, and just being cool."
             />
           </FormControl>
           <button
@@ -136,6 +137,11 @@ export default function Register({ user, setUser }) {
           <p>
             Already registered? <Link to="/login">Sign in</Link>
           </p>
+        </div>
+        <div className="termsConditions" style={{fontSize:"12px", paddingTop:"50px", textDecoration:"underline"}}>
+        <Link to="/terms" style={{ color: "inherit", textDecoration: "inherit" }}>
+          <p>Terms and Conditions</p>
+        </Link>
         </div>
       </div>
     </div>

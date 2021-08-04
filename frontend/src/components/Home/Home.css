@@ -8,7 +8,7 @@ body {
   height: 100%;
   margin: 0px;
   padding: 0px;
-  overflow-x: hidden; 
+  overflow-x: hidden;
 }
 
 /* Carousel */
@@ -21,7 +21,7 @@ ul {
 }
 
 ul,
-li, .listing {
+li {
   list-style: none;
   display: inline;
   margin-right: 50px;
@@ -64,13 +64,13 @@ li, .listing {
   color: white;
   font-size: 20px;
   letter-spacing: 3px;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 .feed .feedImg {
   width: 400px;
   height: 250px;
-  padding-bottom: 50px;
+  padding-bottom: 20px;
 }
 
 /* New On Learning +  Trending on the Marketplace */
@@ -110,13 +110,13 @@ li, .listing {
   align-items: left;
 }
 
-.learningContainer .learningTitle{
-    font-size: 20px;
-    margin-top:5px;
+.learningContainer .learningTitle {
+  font-size: 20px;
+  margin-top: 5px;
 }
 
-.learningBlurb p{
-    font-size: 13px;
+.learningBlurb p {
+  font-size: 13px;
 }
 
 .learningBlurb p,
@@ -136,17 +136,11 @@ li, .listing {
   font-size: 20px;
 }
 
-.trendingMarket h4{
-  padding-top:100px;
-}
-
 
 .learningImg,
 .marketImg {
   height: 200px;
 }
-
-
 
 /* Styling the Marketplace */
 .trendingMarket .container .marketAuthor {
@@ -168,7 +162,7 @@ li, .listing {
 
 .trendingMarket .container .marketPrice {
   font-size: 15px;
-  margin:0;
+  margin: 0;
   text-align: right;
   align-items: right;
 }
@@ -177,27 +171,24 @@ li, .listing {
   font-size: 20px;
 }
 
-.home .trendingMarket{
-    margin-top: 50px;
+.home .trendingMarket {
+  margin-top: 50px;
 }
-
 
 @media only screen and (max-width: 1555px) {
   .list .items {
     grid-template-columns: 1fr 1fr 1fr;
   }
-  .trendingMarket h4{
+  .trendingMarket h4 {
     margin-top: 100px;
   }
-
 }
 @media only screen and (max-width: 1205px) {
   .list .items {
     grid-template-columns: 1fr 1fr;
   }
-  
 
-  .trendingMarket h4{
+  .trendingMarket h4 {
     margin-top: 100px;
   }
 }
@@ -207,18 +198,17 @@ li, .listing {
     grid-template-columns: 1fr;
   }
 
-  
   .youtube-video {
     width: 50%;
     height: 30%;
   }
 
-  .trendingMarket h4{
+  .trendingMarket h4 {
     margin-top: 100px;
   }
 }
 
-@media only screen and (max-width: 1811px){
+@media only screen and (max-width: 1811px) {
   .carouselImg {
     width: 300px;
     height: 400px;
@@ -226,12 +216,11 @@ li, .listing {
   .feed .feedImg {
     width: 300px;
     height: 200px;
-    padding-bottom: 50px;
+    padding-bottom: 20px;
   }
-  
 }
 
-@media only screen and (max-width: 1411px){
+@media only screen and (max-width: 1411px) {
   .carouselImg {
     width: 250px;
     height: 400px;
@@ -239,12 +228,11 @@ li, .listing {
   .feed .feedImg {
     width: 250px;
     height: 200px;
-    padding-bottom: 50px;
+    padding-bottom: 20px;
   }
-  
 }
 
-@media only screen and (max-width: 1207px){
+@media only screen and (max-width: 1207px) {
   .carouselImg {
     width: 200px;
     height: 300px;
@@ -252,62 +240,58 @@ li, .listing {
   .feed .feedImg {
     width: 200px;
     height: 200px;
-    padding-bottom: 50px;
+    padding-bottom: 20px;
   }
 }
 
-@media only screen and (max-width: 999px){
+@media only screen and (max-width: 999px) {
   .carouselImg {
     width: 150px;
     height: 250px;
   }
-  .feed .feedImg{
+  .feed .feedImg {
     width: 150px;
-    height:150px;
+    height: 150px;
   }
-  
 }
 
-@media only screen and (max-width: 801px){
+@media only screen and (max-width: 801px) {
   .carouselImg {
     width: 150px;
     height: 250px;
   }
-  ul li{
-    margin-right:20px;
+  ul li {
+    margin-right: 20px;
   }
-  
 }
 
-@media only screen and (max-width: 705px){
+@media only screen and (max-width: 705px) {
   .carouselImg {
     width: 130px;
     height: 230px;
   }
-  ul li{
-    margin-right:20px;
+  ul li {
+    margin-right: 20px;
   }
-  
 }
-@media only screen and (max-width: 713px){
-  .feed .feedImg{
+@media only screen and (max-width: 713px) {
+  .feed .feedImg {
     width: 130px;
     height: 140px;
   }
 }
 
-@media only screen and (max-width: 627px){
+@media only screen and (max-width: 627px) {
   .carouselImg {
     width: 130px;
     height: 230px;
   }
-  ul li{
-    margin-right:10px;
+  ul li {
+    margin-right: 10px;
   }
-  
 }
 
-@media only screen and (max-width:811px){
+@media only screen and (max-width: 811px) {
   .exploreTrendingLatest .feedBtns .feedExploreBtn {
     width: 150px;
     height: 50px;
@@ -325,7 +309,7 @@ li, .listing {
     font-size: 20px;
     letter-spacing: 3px;
   }
-  
+
   .exploreTrendingLatest .feedBtns .feedTrendingBtn {
     width: 150px;
     height: 50px;
@@ -333,12 +317,11 @@ li, .listing {
     color: white;
     font-size: 20px;
     letter-spacing: 3px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
   }
-  
 }
 
-@media only screen and (max-width:653px){
+@media only screen and (max-width: 653px) {
   .exploreTrendingLatest .feedBtns .feedExploreBtn {
     width: 130px;
     height: 50px;
@@ -356,7 +339,7 @@ li, .listing {
     font-size: 18px;
     letter-spacing: 3px;
   }
-  
+
   .exploreTrendingLatest .feedBtns .feedTrendingBtn {
     width: 130px;
     height: 50px;
@@ -364,12 +347,11 @@ li, .listing {
     color: white;
     font-size: 18px;
     letter-spacing: 3px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
   }
-  
 }
 
-@media only screen and (max-width:541px){
+@media only screen and (max-width: 541px) {
   .exploreTrendingLatest .feedBtns .feedExploreBtn {
     width: 110px;
     height: 50px;
@@ -387,7 +369,7 @@ li, .listing {
     font-size: 15px;
     letter-spacing: 3px;
   }
-  
+
   .exploreTrendingLatest .feedBtns .feedTrendingBtn {
     width: 110px;
     height: 50px;
@@ -395,7 +377,6 @@ li, .listing {
     color: white;
     font-size: 15px;
     letter-spacing: 3px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
   }
-  
 }

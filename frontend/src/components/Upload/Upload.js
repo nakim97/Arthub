@@ -21,7 +21,6 @@ export default function Upload({ user, handleOnLogout, term, setTerm }) {
     form,
     setForm,
     error,
-    error1,
     handleOnInputChange,
     handleOnSubmit,
     isProcessing,
@@ -52,8 +51,6 @@ export default function Upload({ user, handleOnLogout, term, setTerm }) {
       </div>
 
       {error.form && <span className="error">{error.form}</span>}
-      {error1.form && <span className="error">{error1.form}</span>}
-
       <div className="form">
         <div className="uploadInfo">
           <ImageUpload
@@ -167,7 +164,7 @@ export default function Upload({ user, handleOnLogout, term, setTerm }) {
 
         <button
           className="submit"
-          disabled={isProcessing || !checked1 || !checked2 || !imageUrl}
+          disabled={isProcessing || !checked1 || !checked2}
           onClick={handleOnSubmit}
         >
           <Link to="/me">{isProcessing ? "Loading..." : "Submit"}</Link>

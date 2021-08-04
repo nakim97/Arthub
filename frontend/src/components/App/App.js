@@ -14,6 +14,7 @@ import UserProfile from "../UserProfile/UserProfile";
 import EditPortfolio from "../EditPortfolio/EditPortfolio";
 import CreateForumPost from "../CreateForumPost/CreateForumPost";
 import CommunityPostEdit from "../CommunityPostEdit/CommunityPostEdit";
+import TermsConditions from "../TermsConditions/TermsConditions";
 import Upload from "../Upload/Upload";
 import EditProfile from "../EditProfile/EditProfile";
 import PostDetail from "../PostDetail/PostDetail";
@@ -122,6 +123,12 @@ export default function App() {
             path="/communitypostedit"
             element={
               <CommunityPostEdit user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}  />
+            }
+          />
+           <Route
+            path="/terms"
+            element={
+              <TermsConditions user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}  />
             }
           />
         </Routes>

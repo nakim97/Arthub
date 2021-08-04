@@ -7,17 +7,14 @@ import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import ShareIcon from "@material-ui/icons/Share";
 import ChatIcon from "@material-ui/icons/Chat";
 import ThumbUpIcon from "@material-ui/icons/ThumbUp";
-import FavoriteIcon from "@material-ui/icons/Favorite";
 import "./Comments.css";
 
 export default function Comments({ user, post }) {
   const { postId } = useParams();
   const [isLoading, setIsLoading] = useState(false);
   const [comments, setComments] = useState([]);
-  const [likes, setLikes] = useState([]);
   const [error, setError] = useState(false);
 
-  // Get comments
   useEffect(() => {
     const fetchCommentsById = async () => {
       setIsLoading(true);
@@ -33,97 +30,16 @@ export default function Comments({ user, post }) {
 
     fetchCommentsById();
   }, [postId, comments]);
-  // Get likes
-  useEffect(() => {
-    const fetchLikesById = async () => {
-      setIsLoading(true);
-      try {
-        const { data } = await apiClient.listLikesWithPostId(postId);
-        setLikes(data.likes.likes);
-      } catch (err) {
-        setError(err);
-      }
-      setIsLoading(false);
-    };
 
-    fetchLikesById();
-  }, [postId, likes]);
-
-  const handleAddLike = async () => {
-    setIsLoading(true);
-    try {
-      const { data } = await apiClient.createLike(postId);
-      setLikes(data.likes.likes);
-    } catch (err) {
-      setError(err);
-    }
-    setIsLoading(false);
-  };
-  const handleDeleteLike = async () => {
-    setIsLoading(true);
-    try {
-      const { data } = await apiClient.deleteLike(postId);
-
-      setLikes(data.likes.likes);
-    } catch (err) {
-      setError(err);
-    }
-    setIsLoading(false);
-  };
-
-  let isLiked = false;
-  for (let i in likes) {
-    if (likes[i][0] == user?.id) {
-      isLiked = true;
-      break;
-    }
-  }
-  const likeButton = isLiked ? (
-    <>
-      {/* We did like this, so show a full icon */}
-      <button className="clears" onClick={handleDeleteLike}>
-        <FavoriteIcon className="icons" />
-      </button>
-    </>
-  ) : (
-    <>
-      {/* We did not like this, so show an empty icon */}
-      <button className="clears" onClick={handleAddLike}>
-        <FavoriteBorderIcon className="icons" />
-      </button>
-    </>
-  );
-  const handleShare = () => {
-    let link = window.location.href;
-    alert("Share this link " + link);
-  };
-  const isAuthenticated = Boolean(user.email);
-  const renderLike = isAuthenticated ? (
-    <>{likeButton}</>
-  ) : (
-    <>
-      <p>Sign in to like</p>
-    </>
-  );
   const { register, handleSubmit } = useForm();
-
   let commentsForm;
-  // Display the message for comments
   let commentsNum = ``;
   if (comments.length == 1) {
-    commentsNum = `${comments.length} Comment`;
-  } else {
-    commentsNum = `${comments.length} Comments`;
+    commentsNum = `${comments.length} Comment`
   }
-
-  // Display the message for likes
-  let likesNum = ``;
-  if (likes.length == 1) {
-    likesNum = `${likes.length} Like`;
-  } else {
-    likesNum = `${likes.length} Likes`;
+  else {
+    commentsNum = `${comments.length} Comments`
   }
-
   if (user.email) {
     commentsForm = (
       <>
@@ -157,10 +73,16 @@ export default function Comments({ user, post }) {
   return (
     <div className="comments">
       <div className="likesAndShare">
-        {renderLike}
-        <button className="clears" onClick={handleShare}>
-          <ShareIcon className="icons" />
-        </button>
+        <FavoriteBorderIcon />
+        {/* window.location.href With a button here to make an alert that the link was copied */}
+        {/* 
+        <button
+                className="clear"
+                onClick={() => handleDelete(post.photoPostId)}
+              >
+                <DeleteIcon className="share" />{" "}
+              </button> */}
+        <ShareIcon />
       </div>
 
       <div className="description">
@@ -179,7 +101,7 @@ export default function Comments({ user, post }) {
         <div className="likeCount">
           <div className="numCount">
             <ThumbUpIcon />
-            <p className="numLikesCount">{likesNum}</p>
+            <p className="numLikesCount">983 Likes</p>
           </div>
         </div>
       </div>

@@ -92,7 +92,6 @@ export const useUploadForm = ({ imageUrl, imageAlt }) => {
     form,
     setForm,
     error,
-    error1,
     handleOnSubmit,
     handleOnInputChange,
   };

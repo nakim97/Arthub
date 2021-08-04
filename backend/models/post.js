@@ -16,38 +16,6 @@ class Post {
     );
     return results.rows;
   }
-  static async listAllPostsL4() {
-    const results = await db.query(
-      `
-      SELECT pp.id AS "photoPostId",
-    pp.post_title AS "postTitle",
-    pp.post_description AS "postDescription",
-    img.id AS "imgId",
-    img.post_img_url AS "imgPostUrl"
-    FROM photoPost AS pp
-    JOIN photoUpload AS img ON img.id = pp.img_id
-    ORDER BY pp.id ASC
-    LIMIT 4
-    `
-    );
-    return results.rows;
-  }
-  static async listAllPostsHL4() {
-    const results = await db.query(
-      `
-      SELECT pp.id AS "photoPostId",
-    pp.post_title AS "postTitle",
-    pp.post_description AS "postDescription",
-    img.id AS "imgId",
-    img.post_img_url AS "imgPostUrl"
-    FROM photoPost AS pp
-    JOIN photoUpload AS img ON img.id = pp.img_id
-    ORDER BY pp.id DESC
-    LIMIT 4
-    `
-    );
-    return results.rows;
-  }
   static async listPhotoPostsForUser({ user }) {
     const results = await db.query(
       `
