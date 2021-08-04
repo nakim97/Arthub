@@ -12,25 +12,30 @@ import homefeed4 from "../../Assets/homefeed4.jpg";
 import homefeed5 from "../../Assets/homefeed5.jpg";
 import homefeed6 from "../../Assets/homefeed6.jpg";
 
-export default function Community({ user, handleOnLogout, term, setTerm}) {
+export default function Community({ user, handleOnLogout, term, setTerm }) {
   const button = Boolean(user.email) ? (
     <>
-    <div className="forumBtn">
-          <div className="forumCreate">
-            <Link to="/createforumpost">Create Post</Link>
-          </div>
-          </div>
+      <div className="forumBtn">
+        <div className="forumCreate">
+          <Link to="/createforumpost">Create Post</Link>
+        </div>
+      </div>
     </>
   ) : (
     <>
-    <div className="forumBtn">
-      <p>You must be logged in to create a forum post.</p>
-    </div>
+      <div className="forumBtn">
+        <p>You must be logged in to create a forum post.</p>
+      </div>
     </>
-  )
+  );
   return (
     <div className="community">
-      <Navbar user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}   />
+      <Navbar
+        user={user}
+        handleOnLogout={handleOnLogout}
+        term={term}
+        setTerm={setTerm}
+      />
       <CommunityNavbar />
 
       <div className="trendingCommunity">
@@ -38,6 +43,8 @@ export default function Community({ user, handleOnLogout, term, setTerm}) {
           {" "}
           Trending Today <WhatshotIcon />
         </h4>
+        <div className="forumposts">{button}</div>
+
         <div className="container">
           <div className="communityContainer">
             <div className="communityImageContainer">
@@ -189,17 +196,17 @@ export default function Community({ user, handleOnLogout, term, setTerm}) {
         {" "}
       </div>
 
-      <div className="forumposts">
-      {button}
-        {/* <div className="postImg">
+      {/* <div className="forumposts">
+        {button}
+        <div className="postImg">
           <img
             className="communityImg"
             src={homefeed1}
             alt=" home feed img 4"
           />
-        </div> */}
+        </div>
 
-        {/* <div className="post">
+        <div className="post">
           <h4 className="postTitle"> Art Piece in Progress, any advice?</h4>
           <p className="postAuthor"> by Stella</p>
           <p className="likeComments" style={{ textAlign: "left" }}>
@@ -219,8 +226,8 @@ export default function Community({ user, handleOnLogout, term, setTerm}) {
               6 hours ago{" "}
             </span>
           </p>
-        </div> */}
-      </div>
+        </div>
+      </div> */}
     </div>
   );
 }
