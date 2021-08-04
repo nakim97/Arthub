@@ -31,7 +31,10 @@ export default function Comments({ user, post }) {
 
     fetchCommentsById();
   }, [postId, comments]);
-
+  const handleShare = () => {
+    let link = window.location.href;
+    alert("Share this link " + link);
+  };
   const { register, handleSubmit } = useForm();
   let commentsForm;
   let commentsNum = ``;
@@ -75,15 +78,10 @@ export default function Comments({ user, post }) {
       <div className="likesAndShare">
         <FavoriteBorderIcon />
         {/* window.location.href With a button here to make an alert that the link was copied */}
-        {/* 
-        <button
-                className="clear"
-                onClick={() => handleDelete(post.photoPostId)}
-              >
-                <DeleteIcon className="share" />{" "}
-              </button> */}
         <FavoriteIcon />
-        <ShareIcon />
+        <button className="clears" onClick={handleShare}>
+          <ShareIcon className="icons" />
+        </button>
       </div>
 
       <div className="description">

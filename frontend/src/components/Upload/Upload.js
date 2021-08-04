@@ -9,7 +9,6 @@ import { useImageUpload } from "../../hooks/useImageUpload";
 export default function Upload({ user, handleOnLogout, term, setTerm }) {
   const { handleImageUpload, openWidget, imageUrl, imageAlt } =
     useImageUpload();
-    // console.log("img",imageUrl)
   const {
     tagOptions,
     CustomColorCheckbox,
