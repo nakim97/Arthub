@@ -64,15 +64,15 @@ export const useForumPost = ({ imageUrl, imageAlt }) => {
     setErrors((e) => ({ ...e, form: null }));
     setErrors1((e) => ({ ...e, form: null }));
 
-    const { data, error } = await apiClient.createImage({
-      postImgUrl: imageUrl,
+    const { data, error } = await apiClient.createForumImage({
+      forumImgUrl: imageUrl,
     });
     if (error) setErrors((e) => ({ ...e, form: error }));
 
     const myId = data?.image.id;
-    const { data1, error1 } = await apiClient.createPost({
-      postTitle: form.title,
-      postDescription: form.description,
+    const { data1, error1 } = await apiClient.createForumPost({
+      forumTitle: form.title,
+      forumDescription: form.description,
       imgId: myId,
     });
     if (error1) setErrors1((e) => ({ ...e, form: error1 }));

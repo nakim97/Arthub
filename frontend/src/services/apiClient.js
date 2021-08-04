@@ -38,6 +38,13 @@ class ApiClient {
       data: post,
     });
   }
+  async createForumPost(post) {
+    return await this.request({
+      endpoint: `forum`,
+      method: `POST`,
+      data: post,
+    });
+  }
 
   async deletePost(postId) {
     return await this.request({

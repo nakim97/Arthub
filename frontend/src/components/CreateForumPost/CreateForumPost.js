@@ -155,7 +155,7 @@ export default function CreateForumPost({ user, handleOnLogout, term, setTerm })
 
         <button
           className="submit"
-          disabled={isProcessing || !checked1 || !checked2}
+          disabled={isProcessing || !checked1 || !checked2 || !imageUrl}
           onClick={handleOnSubmit}
         >
           <Link to="/community">{isProcessing ? "Loading..." : "Submit"}</Link>

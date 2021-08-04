@@ -70,6 +70,16 @@
   order: 2;
   display: flex;
 }
+.error {
+  background: #fe5421;
+  background: rgba(245, 41, 41, 0.1);
+  color: rgba(245, 41, 41, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+}
 
 .upload .editPageButns .cancel {
   margin-bottom: 4rem;
