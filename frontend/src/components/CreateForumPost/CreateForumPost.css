@@ -25,7 +25,7 @@ body {
 }
 
 .CreateForumPost .container .form .title {
-  margin-left: 100px;
+  margin-left: 14rem;
 }
 
 .CreateForumPost .container .form .title input {
@@ -38,8 +38,8 @@ body {
 }
 
 .CreateForumPost .container .form .description {
-  margin-top: 20px;
-  margin-right: 30px;
+  margin-top: -1rem;
+  margin-left: 0rem;
 }
 
 .CreateForumPost .container .form .description textarea {
@@ -52,12 +52,33 @@ body {
 
 .CreateForumPost .container .form .imgBar {
   text-align: left;
-  margin-left: 100px;
+  margin-left: 2rem;
   /* border-left: 0.6px solid #514f4f;
   border-right: 0.6px solid #514f4f;
   border-top: 0.6px solid #514f4f; */
   width: 800px;
   height: 30px;
+}
+
+.CreateForumPost .container .form .imgBar .postName input {
+  background: white;
+  color: black;
+  width: 400px;
+  border-radius: 10px;
+  height: 25px;
+  border: none;
+  outline: none;
+}
+
+.CreateForumPost .container .form .imgBar .description input {
+  background: white;
+  color: black;
+  width: 400px;
+  word-wrap: break-word;
+  border-radius: 10px;
+  height: 60px;
+  border: none;
+  outline: none;
 }
 
 .CreateForumPost .container .form .tags .bubbletag {
@@ -74,6 +95,12 @@ body {
   margin-bottom: 50px;
 }
 
+.CreateForumPost .container .TOS {
+  margin-top: -20rem;
+  margin-left: 18rem;
+  padding-bottom: 10rem;
+}
+
 .CreateForumPost .container .form .postBtn {
   outline: none;
   background: #bab3b3;
@@ -87,7 +114,26 @@ body {
   vertical-align: center;
   margin-bottom: 20px;
 }
-@media only screen and (max-width: 1034px){
+
+.container .editPageButns {
+  color: white;
+  margin-right: auto;
+  order: 2;
+  display: flex;
+}
+
+.container .editPageButns .cancel {
+  margin-bottom: 4rem;
+  width: 10rem;
+}
+
+.container .editPageButns .submit {
+  margin-bottom: 4rem;
+  margin-left: 2rem;
+  width: 10rem;
+}
+
+@media only screen and (max-width: 1034px) {
   .CreateForumPost .container {
     width: 700px;
     height: 660px;
@@ -107,13 +153,10 @@ body {
     width: 600px;
     height: 30px;
   }
-  
 }
 
-
-
 /* Separate extras */
-.title {
+/* .title {
   color: white;
 }
 .steps {
@@ -270,4 +313,4 @@ body {
     border-radius: 10px;
     height: 60px;
   }
-}
+} */
