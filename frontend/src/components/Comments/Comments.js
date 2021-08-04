@@ -13,17 +13,17 @@ import "./Comments.css";
 export default function Comments({ user, post }) {
   const { postId } = useParams();
   const [isLoading, setIsLoading] = useState(false);
+  const [isLoadingL, setIsLoadingL] = useState(false);
   const [comments, setComments] = useState([]);
   const [likes, setLikes] = useState([]);
   const [error, setError] = useState(false);
-
+  // console.log(isLoading);
   // Get comments
   useEffect(() => {
     const fetchCommentsById = async () => {
       setIsLoading(true);
       try {
         const { data } = await apiClient.listCommentsWithPostId(postId);
-
         setComments(data.comments);
       } catch (err) {
         setError(err);
@@ -36,14 +36,14 @@ export default function Comments({ user, post }) {
   // Get likes
   useEffect(() => {
     const fetchLikesById = async () => {
-      setIsLoading(true);
+      setIsLoadingL(true);
       try {
         const { data } = await apiClient.listLikesWithPostId(postId);
         setLikes(data.likes.likes);
       } catch (err) {
         setError(err);
       }
-      setIsLoading(false);
+      setIsLoadingL(false);
     };
 
     fetchLikesById();
@@ -63,14 +63,12 @@ export default function Comments({ user, post }) {
     setIsLoading(true);
     try {
       const { data } = await apiClient.deleteLike(postId);
-
       setLikes(data.likes.likes);
     } catch (err) {
       setError(err);
     }
     setIsLoading(false);
   };
-
   let isLiked = false;
   for (let i in likes) {
     if (likes[i][0] == user?.id) {
@@ -78,6 +76,8 @@ export default function Comments({ user, post }) {
       break;
     }
   }
+console.log(isLiked);
+
   const likeButton = isLiked ? (
     <>
       {/* We did like this, so show a full icon */}
@@ -95,7 +95,7 @@ export default function Comments({ user, post }) {
   );
   const handleShare = () => {
     let link = window.location.href;
-    alert("Share this link " + link);
+    alert("Share this link: " + link);
   };
   const isAuthenticated = Boolean(user.email);
   const renderLike = isAuthenticated ? (
