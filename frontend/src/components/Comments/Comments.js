@@ -13,8 +13,10 @@ export default function Comments({ user, post }) {
   const { postId } = useParams();
   const [isLoading, setIsLoading] = useState(false);
   const [comments, setComments] = useState([]);
+  const [likes, setLikes] = useState([]);
   const [error, setError] = useState(false);
 
+  // Get comments
   useEffect(() => {
     const fetchCommentsById = async () => {
       setIsLoading(true);
@@ -30,18 +32,46 @@ export default function Comments({ user, post }) {
 
     fetchCommentsById();
   }, [postId, comments]);
+  // Get likes
+  useEffect(() => {
+    const fetchLikesById = async () => {
+      setIsLoading(true);
+      try {
+        const { data } = await apiClient.listLikesWithPostId(postId);
+        // console.log("likes",data)
+        setLikes(data.likes.likes);
+      } catch (err) {
+        setError(err);
+      }
+      setIsLoading(false);
+    };
+
+    fetchLikesById();
+  }, [postId, likes]);
+
   const handleShare = () => {
     let link = window.location.href;
     alert("Share this link " + link);
   };
+
   const { register, handleSubmit } = useForm();
+
   let commentsForm;
+  // Display the message for comments
   let commentsNum = ``;
   if (comments.length == 1) {
     commentsNum = `${comments.length} Comment`;
   } else {
     commentsNum = `${comments.length} Comments`;
   }
+  // Display the message for likes
+  let likesNum = ``;
+  if (likes.length == 1) {
+    likesNum = `${likes.length} Like`;
+  } else {
+    likesNum = `${likes.length} Likes`;
+  }
+
   if (user.email) {
     commentsForm = (
       <>
@@ -99,7 +129,7 @@ export default function Comments({ user, post }) {
         <div className="likeCount">
           <div className="numCount">
             <ThumbUpIcon />
-            <p className="numLikesCount">983 Likes</p>
+            <p className="numLikesCount">{likesNum}</p>
           </div>
         </div>
       </div>
