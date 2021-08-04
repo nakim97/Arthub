@@ -462,3 +462,80 @@
     margin-top: 20px;
   }
 }
+
+@media only screen and (max-width: 564px) {
+  .learning .learningTags .learningBtns .learningBtn {
+    width: 120px;
+    height: 50px;
+    margin-right: 20px;
+    color: white;
+    font-size: 17px;
+    letter-spacing: 3px;
+    margin-left: 100px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+
+  .learning .learningTags .learningBtns .learningBtn1 {
+    width: 120px;
+    height: 50px;
+    margin-right: 20px;
+    color: white;
+    font-size: 17px;
+    letter-spacing: 3px;
+    margin-left: 20px;
+    cursor: pointer;
+  }
+
+  .learning .learningTags .learningBtns .learningBtn2 {
+    width: 120px;
+    height: 50px;
+    margin-right: 20px;
+    color: white;
+    font-size: 17px;
+    letter-spacing: 3px;
+    margin-left: 20px;
+    cursor: pointer;
+  }
+
+  .learning .learningTags .learningBtns .learningBtn3 {
+    width: 120px;
+    height: 50px;
+    margin-right: 20px;
+    color: white;
+    font-size: 17px;
+    letter-spacing: 3px;
+    margin-left: 20px;
+    cursor: pointer;
+  }
+
+  .learning .learningTags .learningBtns .learningBtn4 {
+    width: 120px;
+    height: 50px;
+    margin-right: 20px;
+    color: white;
+    font-size: 17px;
+    letter-spacing: 3px;
+    margin-left: 20px;
+    cursor: pointer;
+  }
+  .learning .learningTags .learningBtns .learningBtn5 {
+    width: 120px;
+    height: 50px;
+    margin-right: 20px;
+    color: white;
+    font-size: 17px;
+    letter-spacing: 3px;
+    margin-left: 20px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+
+ 
+}
+
+@media only screen and (max-width: 692px){
+  .learning .newLearning {
+    padding-top: 100px;
+  }
+}
