@@ -86,6 +86,18 @@ class ApiClient {
       method: `GET`,
     });
   }
+  async listAllPostsT() {
+    return await this.request({
+      endpoint: `post/listPostsT`,
+      method: `GET`,
+    });
+  }
+  async listAllPostsB() {
+    return await this.request({
+      endpoint: `post/listPostsB`,
+      method: `GET`,
+    });
+  }
 
   async listPosts(user) {
     return await this.request({
