@@ -38,6 +38,13 @@ class ApiClient {
       data: post,
     });
   }
+  async createForumPost(post) {
+    return await this.request({
+      endpoint: `forum`,
+      method: `POST`,
+      data: post,
+    });
+  }
 
   async deletePost(postId) {
     return await this.request({
@@ -80,6 +87,20 @@ class ApiClient {
     });
   }
 
+  async listAllPostsT() {
+    return await this.request({
+      endpoint: `post/listPostsT`,
+      method: `GET`,
+    });
+  }
+
+  async listAllPostsB() {
+    return await this.request({
+      endpoint: `post/listPostsB`,
+      method: `GET`,
+    });
+  }
+
   async listPosts(user) {
     return await this.request({
       endpoint: `post`,
@@ -116,19 +137,23 @@ class ApiClient {
     });
   }
 
-  async listExercises(user) {
+  async listLikesWithPostId(postId) {
     return await this.request({
-      endpoint: `exercise`,
+      endpoint: `post/${postId}/likes`,
       method: `GET`,
-      data: user,
     });
   }
 
-  async createExercise(exercise) {
+  async createLike(postId) {
     return await this.request({
-      endpoint: `exercise`,
+      endpoint: `post/${postId}/likes`,
       method: `POST`,
-      data: exercise,
+    });
+  }
+  async deleteLike(postId) {
+    return await this.request({
+      endpoint: `post/${postId}/likes`,
+      method: `DELETE`,
     });
   }
 

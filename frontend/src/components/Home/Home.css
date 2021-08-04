@@ -21,7 +21,7 @@ ul {
 }
 
 ul,
-li {
+li, listing {
   list-style: none;
   display: inline;
   margin-right: 50px;

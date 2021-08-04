@@ -16,16 +16,19 @@ import youtube from "../../APIs/youtube";
 import VideoItem from "../Youtube/videoitem";
 import ReactModal from "react-modal";
 import VideoDetail from "../Youtube/videodetail";
+import apiClient from "../../services/apiClient";
+import { Link } from "react-router-dom";
 
 export default function Home({ handleOnLogout, user, term, setTerm }) {
   const [selectedVideo, setSelectedVideo] = useState([null]);
   const [isLoading, setIsLoading] = useState(false);
   const [videos, setVideos] = useState([]);
   const [error, setError] = useState(false);
+  const [myPostsT, setMyPostsT] = useState([]);
+  const [myPostsB, setMyPostsB] = useState([]);
   const searchTerms = [
     "how to draw hands",
-    "how to draw",
-    "how to sketch",
+    "how to draw art",
     "how to draw concept art",
   ];
 
@@ -34,6 +37,7 @@ export default function Home({ handleOnLogout, user, term, setTerm }) {
   }
   // This gets a random element from the search terms array
   let myTerm = searchTerms[Math.floor(random(0, searchTerms.length)) - 1];
+  console.log(myTerm)
   useEffect(() => {
     const fetchVideos = async () => {
       setIsLoading(true);
@@ -51,6 +55,29 @@ export default function Home({ handleOnLogout, user, term, setTerm }) {
       setIsLoading(false);
     };
     fetchVideos();
+  }, []);
+  useEffect(() => {
+    const listAllPostsT = async () => {
+      setIsLoading(true);
+      try {
+        const { data } = await apiClient.listAllPostsT();
+        setMyPostsT(data.posts);
+      } catch (err) {
+        setError(err);
+      }
+    };
+    const listAllPostsB = async () => {
+      setIsLoading(true);
+      try {
+        const { data } = await apiClient.listAllPostsB();
+        setMyPostsB(data.posts);
+      } catch (err) {
+        setError(err);
+      }
+    };
+
+    listAllPostsT();
+    listAllPostsB();
   }, []);
 
   const handleCloseModal = () => {
@@ -78,34 +105,17 @@ export default function Home({ handleOnLogout, user, term, setTerm }) {
       />
       <div className="homeCarousel">
         <ul>
-          <li>
-            <img
-              className="carouselImg"
-              src={carousel1}
-              alt=" homecarousel img 1"
-            />
-          </li>
-          <li>
-            <img
-              className="carouselImg"
-              src={carousel2}
-              alt=" homecarousel img 2"
-            />
-          </li>
-          <li>
-            <img
-              className="carouselImg"
-              src={carousel3}
-              alt=" homecarousel img 3"
-            />
-          </li>
-          <li>
-            <img
-              className="carouselImg"
-              src={carousel4}
-              alt=" homecarousel img 4"
-            />
-          </li>
+          {myPostsT.map((post) => (
+            <li className="listing" key={post.photoPostId}>
+              <Link to={`/post/${post.photoPostId}`}>
+                <img
+                  className="carouselImg"
+                  src={`${post.imgPostUrl}`}
+                  alt={`homecarousel ${post.photoPostId}`}
+                />
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
 
@@ -151,29 +161,26 @@ export default function Home({ handleOnLogout, user, term, setTerm }) {
 
         <div className="feed">
           <ul>
-            <li>
-              <img className="feedImg" src={homefeed1} alt=" home feed img 1" />
-            </li>
-            <li>
-              <img className="feedImg" src={homefeed7} alt=" home feed img 2" />
-            </li>
-            <li>
-              <img className="feedImg" src={homefeed4} alt=" home feed img 4" />
-            </li>
-            <li>
-              <img className="feedImg" src={homefeed6} alt=" home feed img 6" />
-            </li>
+            {myPostsB.map((post) => (
+              <li key={post.photoPostId}>
+                <Link to={`/post/${post.photoPostId}`}>
+                  <img
+                    className="feedImg"
+                    src={`${post.imgPostUrl}`}
+                    alt={`home feed ${post.photoPostId}`}
+                  />
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 
         <div className="newLearning">
-          <h4 style={{marginBottom:"-250px", marginTop: "-30px"}}>
+          <h4 style={{ marginBottom: "-200px" }}>
             {" "}
             <SchoolIcon style={{ marginRight: "5px" }} /> NEW ON ARTHUB LEARNING
           </h4>
           <div className="container">
-
- 
             {/* <div className="learningContainer">
               <div className="learningImageContainer">
                 <li>
@@ -247,10 +254,10 @@ export default function Home({ handleOnLogout, user, term, setTerm }) {
                 </p>
               </div>
             </div> */}
-             <div className="eleven wide column">
-             {console.log(selectedVideo)}
-             
-             {console.log("Hi",Boolean(selectedVideo))}
+            <div className="eleven wide column">
+              {/* {console.log(selectedVideo)} */}
+
+              {/* {console.log("Hi",Boolean(selectedVideo))} */}
 
               <ReactModal
                 isOpen={selectedVideo?.id}
@@ -277,17 +284,14 @@ export default function Home({ handleOnLogout, user, term, setTerm }) {
             </div>
 
             <div className="list">
-
-              <div className="items" style={{marginTop:"100px"}}>{renderedVideos}</div>
-
+              <div className="items" style={{ marginTop: "100px" }}>
+                {renderedVideos}
+              </div>
             </div>
           </div>
         </div>
 
-
-
-        <div className="trendingMarket" style={{marginTop:"100px"}}>
-
+        <div className="trendingMarket" style={{ marginTop: "100px" }}>
           <h4>
             {" "}
             <ShoppingCartIcon style={{ marginRight: "5px" }} /> TRENDING ON THE

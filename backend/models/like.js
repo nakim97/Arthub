@@ -19,24 +19,25 @@ class Like {
     const results = await db.query(query, [post_id]);
     // This should get an array of likes
     let arr = [];
-
     const theResult = results.rows[0];
-    for (let like in theResult["likes"]) {
-      // This gets all the likes from all the users in the likes column
-      // Then it goes in to make an actual array with the 0 index
-      if (theResult["likes"][like] == undefined) continue;
+    // Checks if there was an array
+    if (theResult) {
+      for (let like in theResult["likes"]) {
+        // This gets all the likes from all the users in the likes column
+        // Then it goes in to make an actual array with the 0 index
+        if (theResult["likes"][like] == undefined) continue;
 
-      // For this statement, if the user id already exists in the user, throw an error
-      if (theResult["likes"][like][0] != myUser["id"].toString())
-        arr.push(theResult["likes"][like]);
-      else {
-        throw new ForbiddenError(`User cannot add more than one like.`);
+        // For this statement, if the user id already exists in the user, throw an error
+        if (theResult["likes"][like][0] != myUser["id"].toString())
+          arr.push(theResult["likes"][like]);
+        else {
+          throw new ForbiddenError(`User cannot add more than one like.`);
+        }
       }
     }
-// Hi eksk
     // Just in case there are no likes, create an empty array
     if (!arr) arr = [];
-    // // This gets a new object with our user
+    // This gets a new object with our user
     let obj = [myUser["id"].toString(), myUser["username"]];
     // This adds the new object of user things to the array
     arr.push(obj);
@@ -112,6 +113,7 @@ class Like {
     if (!flag && arr.length <= 0) {
       throw new ForbiddenError(`There was no like to delete`);
     }
+
     for (let dLike in arr) {
       // This gets all the likes from all the users in the likes column
       // Then it goes in to make an actual array with the 0 index
@@ -169,6 +171,7 @@ class Like {
     // This should get an array of likes
     let arr = [];
     const theResult = results.rows[0];
+    // Checks if there was an array
     if (theResult) {
       for (let like in theResult["likes"]) {
         // This gets all the likes from all the users in the likes column
@@ -185,7 +188,7 @@ class Like {
     }
     // Just in case there are no likes, create an empty array
     if (!arr) arr = [];
-    // // This gets a new object with our user
+    // This gets a new object with our user
     let obj = [myUser["id"].toString(), myUser["username"]];
     // This adds the new object of user things to the array
     arr.push(obj);

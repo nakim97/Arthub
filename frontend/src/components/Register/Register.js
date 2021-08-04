@@ -46,7 +46,7 @@ export default function Register({ user, setUser }) {
         <div className="form">
           <div className="split-inputs">
             <div className="input-field">
-              <label htmlFor="name">Name</label>
+              <label htmlFor="name">First and Last Name</label>
               <input
                 type="text"
                 name="name"
