@@ -86,12 +86,14 @@ class ApiClient {
       method: `GET`,
     });
   }
+
   async listAllPostsT() {
     return await this.request({
       endpoint: `post/listPostsT`,
       method: `GET`,
     });
   }
+
   async listAllPostsB() {
     return await this.request({
       endpoint: `post/listPostsB`,
@@ -135,19 +137,17 @@ class ApiClient {
     });
   }
 
-  async listExercises(user) {
+  async listLikesWithPostId(postId) {
     return await this.request({
-      endpoint: `exercise`,
+      endpoint: `post/${postId}/likes`,
       method: `GET`,
-      data: user,
     });
   }
 
-  async createExercise(exercise) {
+  async createLike(postId) {
     return await this.request({
-      endpoint: `exercise`,
+      endpoint: `post/${postId}/likes`,
       method: `POST`,
-      data: exercise,
     });
   }
 
