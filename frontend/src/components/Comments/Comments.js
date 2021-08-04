@@ -7,6 +7,7 @@ import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import ShareIcon from "@material-ui/icons/Share";
 import ChatIcon from "@material-ui/icons/Chat";
 import ThumbUpIcon from "@material-ui/icons/ThumbUp";
+import FavoriteIcon from "@material-ui/icons/Favorite";
 import "./Comments.css";
 
 export default function Comments({ user, post }) {
@@ -35,10 +36,9 @@ export default function Comments({ user, post }) {
   let commentsForm;
   let commentsNum = ``;
   if (comments.length == 1) {
-    commentsNum = `${comments.length} Comment`
-  }
-  else {
-    commentsNum = `${comments.length} Comments`
+    commentsNum = `${comments.length} Comment`;
+  } else {
+    commentsNum = `${comments.length} Comments`;
   }
   if (user.email) {
     commentsForm = (
@@ -82,6 +82,7 @@ export default function Comments({ user, post }) {
               >
                 <DeleteIcon className="share" />{" "}
               </button> */}
+        <FavoriteIcon />
         <ShareIcon />
       </div>
 
