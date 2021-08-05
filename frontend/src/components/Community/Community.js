@@ -54,7 +54,7 @@ export default function Community({ user, handleOnLogout, term, setTerm, forumTe
         term={term}
         setTerm={setTerm}
       />
-      <CommunityNavbar forumTerm={forumTerm} forumSetTerm={setForumTerm} />
+      <CommunityNavbar forumTerm={forumTerm} setForumTerm={setForumTerm} />
 
       <div className="trendingCommunity">
         <h4>
