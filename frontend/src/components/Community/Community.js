@@ -6,11 +6,6 @@ import WhatshotIcon from "@material-ui/icons/Whatshot";
 import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import QuestionAnswerIcon from "@material-ui/icons/QuestionAnswer";
 import { Link } from "react-router-dom";
-import homefeed1 from "../../Assets/homefeed1.jpg";
-import homefeed7 from "../../Assets/homefeed7.jpg";
-import homefeed4 from "../../Assets/homefeed4.jpg";
-import homefeed5 from "../../Assets/homefeed5.jpg";
-import homefeed6 from "../../Assets/homefeed6.jpg";
 import apiClient from "../../services/apiClient";
 import { useState, useEffect } from "react";
 
@@ -65,146 +60,60 @@ export default function Community({ user, handleOnLogout, term, setTerm }) {
         <div className="forumposts">{button}</div>
 
         <div className="container">
-          <div className="communityContainer">
-            <div className="communityImageContainer">
-              <li>
-                <img
-                  className="communityImg"
-                  src={homefeed1}
-                  alt=" home feed img 4"
-                />
-              </li>
-            </div>
+          {myPostsF.map((post) => {
+            var dateNew = new Date(post.forumCreatedAt);
+            var options = {
+              year: "numeric",
+              month: "numeric",
+              day: "numeric",
+              hour: "numeric",
+              minute: "numeric",
+              second: "numeric",
+              hour12: false,
+              timeZone: "America/Los_Angeles",
+            };
+            var date = new Intl.DateTimeFormat("default", options).format(
+              dateNew
+            );
+            return (
+              <div className="communityContainer" key={post.forumPostId}>
+                <div className="communityImageContainer">
+                  <li>
+                    <Link to={`/forum/${post.forumPostId}`}>
+                      <img
+                        className="communityImg"
+                        src={`${post.imgPostUrl}`}
+                        alt={`homecarousel ${post.forumPostId}`}
+                      />
+                    </Link>
+                  </li>
+                </div>
 
-            <div className="communityTags">
-              <p className="communityTag" style={{ textAlign: "left" }}>
-                {" "}
-                # Tutorial
-                <span className="communityTime" style={{ float: "right" }}>
-                  6 hours ago{" "}
-                </span>
-              </p>
+                <div className="communityTags">
+                  <p className="communityTag" style={{ textAlign: "left" }}>
+                    {" "}
+                    <span className="communityTime" style={{ float: "right" }}>
+                      {date}
+                    </span>
+                  </p>
 
-              <p className="communityTitle" style={{ textAlign: "left" }}>
-                {" "}
-                I'm Stuck Please Help
-              </p>
-            </div>
-            <p className="communityAuthor" style={{ textAlign: "left" }}>
-              by Picasso
-            </p>
-            <div className="communityBlurb">
-              <span className="communityBtn" style={{ float: "right" }}>
-                <ThumbUpIcon style={{ fontSize: "15px" }} />{" "}
-                <QuestionAnswerIcon style={{ fontSize: "15px" }} />{" "}
-              </span>
-            </div>
-          </div>
-          <div className="communityContainer">
-            <div className="communityImageContainer">
-              <li>
-                <img
-                  className="communityImg"
-                  src={homefeed7}
-                  alt=" home feed img 4"
-                />
-              </li>
-            </div>
-
-            <div className="communityTags">
-              <p className="communityTag" style={{ textAlign: "left" }}>
-                {" "}
-                # Tutorial
-                <span className="communityTime" style={{ float: "right" }}>
-                  6 hours ago{" "}
-                </span>
-              </p>
-
-              <p className="communityTitle" style={{ textAlign: "left" }}>
-                {" "}
-                I'm Stuck Please Help
-              </p>
-            </div>
-            <p className="communityAuthor" style={{ textAlign: "left" }}>
-              by Picasso
-            </p>
-            <div className="communityBlurb">
-              <span className="communityBtn" style={{ float: "right" }}>
-                <ThumbUpIcon style={{ fontSize: "15px" }} />{" "}
-                <QuestionAnswerIcon style={{ fontSize: "15px" }} />{" "}
-              </span>
-            </div>
-          </div>
-          <div className="communityContainer">
-            <div className="communityImageContainer">
-              <li>
-                <img
-                  className="communityImg"
-                  src={homefeed5}
-                  alt=" home feed img 4"
-                />
-              </li>
-            </div>
-
-            <div className="communityTags">
-              <p className="communityTag" style={{ textAlign: "left" }}>
-                {" "}
-                # Tutorial
-                <span className="communityTime" style={{ float: "right" }}>
-                  6 hours ago{" "}
-                </span>
-              </p>
-
-              <p className="communityTitle" style={{ textAlign: "left" }}>
-                {" "}
-                I'm Stuck Please Help
-              </p>
-            </div>
-            <p className="communityAuthor" style={{ textAlign: "left" }}>
-              by Picasso
-            </p>
-            <div className="communityBlurb">
-              <span className="communityBtn" style={{ float: "right" }}>
-                <ThumbUpIcon style={{ fontSize: "15px" }} />{" "}
-                <QuestionAnswerIcon style={{ fontSize: "15px" }} />{" "}
-              </span>
-            </div>
-          </div>
-          <div className="communityContainer">
-            <div className="communityImageContainer">
-              <li>
-                <img
-                  className="communityImg"
-                  src={homefeed6}
-                  alt=" home feed img 4"
-                />
-              </li>
-            </div>
-
-            <div className="communityTags">
-              <p className="communityTag" style={{ textAlign: "left" }}>
-                {" "}
-                # Tutorial
-                <span className="communityTime" style={{ float: "right" }}>
-                  6 hours ago{" "}
-                </span>
-              </p>
-
-              <p className="communityTitle" style={{ textAlign: "left" }}>
-                {" "}
-                I'm Stuck Please Help
-              </p>
-            </div>
-            <p className="communityAuthor" style={{ textAlign: "left" }}>
-              by Picasso
-            </p>
-            <div className="communityBlurb">
-              <span className="communityBtn" style={{ float: "right" }}>
-                <ThumbUpIcon style={{ fontSize: "15px" }} />{" "}
-                <QuestionAnswerIcon style={{ fontSize: "15px" }} />{" "}
-              </span>
-            </div>
-          </div>
+                  <p className="communityTitle" style={{ textAlign: "left" }}>
+                    {" "}
+                    {post.forumTitle}
+                  </p>
+                </div>
+                <p className="communityAuthor" style={{ textAlign: "left" }}>
+                  by {post.username}
+                </p>
+                <div className="communityBlurb">
+                  <span className="communityBtn" style={{ float: "right" }}>
+                    <ThumbUpIcon style={{ fontSize: "15px" }} />{" "}
+                    <QuestionAnswerIcon style={{ fontSize: "15px" }} />{" "}
+                  </span>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
 
@@ -214,38 +123,6 @@ export default function Community({ user, handleOnLogout, term, setTerm }) {
       >
         {" "}
       </div>
-
-      {/* <div className="forumposts">
-        {button}
-        <div className="postImg">
-          <img
-            className="communityImg"
-            src={homefeed1}
-            alt=" home feed img 4"
-          />
-        </div>
-        <div className="post">
-          <h4 className="postTitle"> Art Piece in Progress, any advice?</h4>
-          <p className="postAuthor"> by Stella</p>
-          <p className="likeComments" style={{ textAlign: "left" }}>
-            {" "}
-            <QuestionAnswerIcon
-              style={{ fontSize: "15px", marginLeft: "10px" }}
-            />{" "}
-            23 comments <ThumbUpIcon style={{ fontSize: "15px" }} /> 44 likes{" "}
-            <span
-              className="communityTime"
-              style={{
-                float: "right",
-                fontStyle: "italic",
-                marginRight: "10px",
-              }}
-            >
-              6 hours ago{" "}
-            </span>
-          </p>
-        </div>
-      </div> */}
     </div>
   );
 }
