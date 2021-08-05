@@ -19,7 +19,6 @@ export default function SubNavbar() {
                 color: "inherit",
                 textDecoration: "inherit",
                 borderRight: "solid",
-                // borderLeft: "solid",
               }}
             >
               <li className="subNavLink1">
@@ -36,7 +35,6 @@ export default function SubNavbar() {
                 color: "inherit",
                 textDecoration: "inherit",
                 borderRight: "solid",
-                // borderLeft: "solid",
               }}
             >
               <li className="subNavLink2">
@@ -53,7 +51,6 @@ export default function SubNavbar() {
                 color: "inherit",
                 textDecoration: "inherit",
                 borderRight: "solid",
-                // borderLeft: "solid",
               }}
             >
               <li className="subNavLink3">
@@ -70,7 +67,6 @@ export default function SubNavbar() {
                 color: "inherit",
                 textDecoration: "inherit",
                 borderRight: "solid",
-                // borderLeft: "solid",
               }}
             >
               <li className="subNavLink4">
@@ -86,8 +82,6 @@ export default function SubNavbar() {
               style={{
                 color: "inherit",
                 textDecoration: "inherit",
-                // borderRight: "solid",
-                // borderLeft: "solid",
               }}
             >
               <li className="subNavLink5">
