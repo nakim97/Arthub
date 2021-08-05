@@ -4,7 +4,7 @@ html, body{
 }
 
 
-.forumBtn .forumCreate {
+.forumBtn .forumCreate, .forumList {
   border-color: white;
   border-style: solid;
   border-radius: 30px;
@@ -14,7 +14,7 @@ html, body{
   margin-right: 20px;
 
 }
-.forumCreate a {
+.forumCreate a, .forumList a {
   text-decoration: none;
   color: white;
 }

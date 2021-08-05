@@ -21,6 +21,7 @@ import PostDetail from "../PostDetail/PostDetail";
 import ForumDetail from "../ForumDetail/ForumDetail";
 import PostSearch from "../PostSearch/PostSearch";
 import ForumSearch from "../ForumSearch/ForumSearch";
+import EditForum from "../EditForum/EditForum";
 
 
 export default function App() {
@@ -118,6 +119,12 @@ export default function App() {
             path="/editportfolio"
             element={
               <EditPortfolio user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}  />
+            }
+          />
+          <Route
+            path="/editforumpost"
+            element={
+              <EditForum user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}  />
             }
           />
           <Route

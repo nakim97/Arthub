@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import "./Login.css";
 import login1 from "../../Assets/login1.png";
+
+import learningbanner from "../../Assets/learningbanner.jpg";
 import BrushIcon from "@material-ui/icons/Brush";
 import BubbleChartIcon from "@material-ui/icons/BubbleChart";
 import coollines from "../../Assets/coollines.png";
@@ -22,7 +24,7 @@ export default function Login({ user, setUser }) {
           <BubbleChartIcon style={{ marginRight: "5px" }} />
         </div>
         <p className="aside">You’re One of Us Now</p>
-        <img className="loginImage" src={login1} alt="login main img" />
+        <img className="loginImage" src={learningbanner} alt="login main img" />
       </div>
       <div className="card">
         <h2>Sign in To ArtHub</h2>

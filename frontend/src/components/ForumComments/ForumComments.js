@@ -22,7 +22,7 @@ export default function ForumComments({ user, post }) {
     const fetchCommentsById = async () => {
       setIsLoading(true);
       try {
-        const { data } = await apiClient.listCommentsWithPostId(postId);
+        const { data } = await apiClient.listForumCommentsWithPostId(postId);
         setComments(data.comments);
       } catch (err) {
         setError(err);
@@ -37,7 +37,7 @@ export default function ForumComments({ user, post }) {
     const fetchLikesById = async () => {
       setIsLoadingL(true);
       try {
-        const { data } = await apiClient.listLikesWithPostId(postId);
+        const { data } = await apiClient.listForumLikesWithPostId(postId);
         setLikes(data.likes.likes);
       } catch (err) {
         setError(err);
@@ -51,7 +51,7 @@ export default function ForumComments({ user, post }) {
   const handleAddLike = async () => {
     setIsLoading(true);
     try {
-      const { data } = await apiClient.createLike(postId);
+      const { data } = await apiClient.createForumLike(postId);
       // console.log(data);
       setLikes(data.like.likes);
     } catch (err) {
@@ -63,7 +63,7 @@ export default function ForumComments({ user, post }) {
   const handleDeleteLike = async () => {
     setIsLoading(true);
     try {
-      const { data } = await apiClient.deleteLike(postId);
+      const { data } = await apiClient.deleteForumLike(postId);
       // console.log(data);
 
       setLikes(data.liked.likes);
@@ -135,7 +135,7 @@ export default function ForumComments({ user, post }) {
           <form
             onSubmit={handleSubmit(
               async (data) =>
-                await apiClient.createComment(postId, {
+                await apiClient.createForumComment(postId, {
                   comment: data["Comments"],
                 })
             )}
@@ -168,7 +168,7 @@ export default function ForumComments({ user, post }) {
       </div>
 
       <div className="description">
-        <p>{post.post_description}</p>
+        <p>{post.forum_description}</p>
       </div>
 
       <div className="likeCommentCount">

@@ -24,10 +24,13 @@ class Forum {
     fp.forum_title AS "forumTitle",
     fp.forum_description AS "forumDescription",
     fp.forum_created_at AS "forumCreatedAt",
+    u.username AS "username",
     img.id AS "imgId",
     img.forum_img_url AS "imgPostUrl"
     FROM forumPost AS fp
     JOIN forumUpload AS img ON img.id = fp.img_id
+    JOIN users AS u ON u.id = fp.user_id
+    ORDER BY fp.forum_created_at DESC
     LIMIT 4
     `
     );

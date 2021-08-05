@@ -3,7 +3,7 @@ import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 import apiClient from "../../services/apiClient";
 import Navbar from "../Navbar/Navbar";
-import Comments from "../Comments/Comments";
+import ForumComments from "../ForumComments/ForumComments";
 /*
  - Fragment tags as return only returns one thing <> </> */
 export default function ForumDetail({ user, handleOnLogout, term, setTerm }) {
@@ -15,8 +15,8 @@ export default function ForumDetail({ user, handleOnLogout, term, setTerm }) {
     const fetchPostById = async () => {
       setIsLoading(true);
       try {
-        const { data } = await apiClient.listPostWithId(postId);
-
+        const { data } = await apiClient.listForumPostWithId(postId);
+        // console.log(data)
         setPost(data.posting);
       } catch (err) {
         setError(err);
@@ -48,9 +48,9 @@ export default function ForumDetail({ user, handleOnLogout, term, setTerm }) {
         </div>
 
         <div className="banner-">
-          <img className="bannerImg" src={post.post_img_url} alt="post img" />
+          <img className="bannerImg" src={post.forum_img_url} alt="forum" />
         </div>
-        <Comments user={user} post={post} />
+        <ForumComments user={user} post={post} />
       </>
     );
   };
