@@ -23,7 +23,7 @@ export default function Login({ user, setUser }) {
         <div className="bubble">
           <BubbleChartIcon style={{ marginRight: "5px" }} />
         </div>
-        <p className="aside">You’re One of Us Now</p>
+        <p className="aside">You’re One<br></br> of <br></br>Us Now</p>
         <img className="loginImage" src={learningbanner} alt="login main img" />
       </div>
       <div className="card">
