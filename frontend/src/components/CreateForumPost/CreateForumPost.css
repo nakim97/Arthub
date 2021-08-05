@@ -119,6 +119,7 @@ body {
 
 .container .editPageButns {
   color: white;
+  display: flex;
   margin-left: 2rem;
 }
 
@@ -164,8 +165,7 @@ body {
 
   .CreateForumPost .container .editPageButns {
     color: white;
-
-    margin-left: -210rem;
+    margin-right: 32rem;
   }
 }
 
