@@ -18,7 +18,10 @@ import TermsConditions from "../TermsConditions/TermsConditions";
 import Upload from "../Upload/Upload";
 import EditProfile from "../EditProfile/EditProfile";
 import PostDetail from "../PostDetail/PostDetail";
+import ForumDetail from "../ForumDetail/ForumDetail";
 import PostSearch from "../PostSearch/PostSearch";
+import ForumSearch from "../ForumSearch/ForumSearch";
+
 
 export default function App() {
   const [error, setError] = useState(null);
@@ -106,6 +109,10 @@ export default function App() {
           <Route
             path="/post/:postId"
             element={<PostDetail user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}  />}
+          />
+          <Route
+            path="/post/:postId"
+            element={<ForumDetail user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}  />}
           />
           <Route
             path="/editportfolio"
