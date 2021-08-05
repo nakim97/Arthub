@@ -122,7 +122,7 @@ html, body{
 
   .community .forumposts{
       display:grid;
-      grid-template-columns: 20% 80%;
+      grid-template-columns: 40% 60%;
       margin-top:50px;
       height: 100px;
       padding-left:50px;
