@@ -23,6 +23,9 @@
 .subNavbar .content .links li:hover {
   color: #7fffd4;
 }
+/* .subNavbar .content .links a:focus {
+  color: #7fffd4;
+} */
 
 .subNavbar {
   font-family: "Roboto", sans-serif;
