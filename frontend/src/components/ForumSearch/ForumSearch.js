@@ -23,14 +23,14 @@ export default function ForumSearch({ user, handleOnLogout, term, setTerm, forum
             <Link to={`/post/${post.id}`}>
               <img
                 className="portfolioImage"
-                src={`${post.post_img_url}`}
+                src={`${post.forum_img_url}`}
                 alt={`Forum ${post.id}`}
               />
             </Link>
           </div>
           <div className="Forum" style={{ position: "relative" }}>
-            <h4 className="portfolioTitle"> {post.post_title}</h4>
-            <p className="portfolioDescription"> {post.post_description}</p>
+            <h4 className="portfolioTitle"> {post.forum_title}</h4>
+            <p className="portfolioDescription"> {post.forum_description}</p>
             <p className="likeComments"></p>
           </div>
         </div>
