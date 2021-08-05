@@ -89,6 +89,28 @@
   font-family: "Roboto", sans-serif;
 }
 
+@media only screen and (max-width: 1600px) {
+  .subNavbar .content .links {
+    margin-left: 45rem;
+  }
+  .subNavbar .content .links li {
+    padding-left: 4rem;
+    padding-right: 4rem;
+    margin-right: 0px;
+  }
+}
+
+@media only screen and (max-width: 1500px) {
+  .subNavbar .content .links {
+    margin-left: 40rem;
+  }
+  .subNavbar .content .links li {
+    padding-left: 4rem;
+    padding-right: 4rem;
+    margin-right: 0px;
+  }
+}
+
 @media only screen and (max-width: 1400px) {
   .subNavbar .content .links {
     margin-left: 35rem;
