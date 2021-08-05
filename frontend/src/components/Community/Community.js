@@ -19,7 +19,6 @@ export default function Community({ user, handleOnLogout, term, setTerm }) {
       setIsLoading(true);
       try {
         const { data } = await apiClient.listAllPostsD();
-        // console.log(data);
         setMyPostsF(data.posts);
       } catch (err) {
         setError(err);
@@ -33,13 +32,12 @@ export default function Community({ user, handleOnLogout, term, setTerm }) {
         <div className="forumCreate">
           <Link to="/createforumpost">Create Post</Link>
         </div>
-        
       </div>
       <div className="forumBtn">
-      <div className="forumList">
+        <div className="forumList">
           <Link to="/editforumpost">See Your Posts</Link>
         </div>
-        </div>
+      </div>
     </>
   ) : (
     <>

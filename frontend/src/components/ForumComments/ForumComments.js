@@ -52,7 +52,6 @@ export default function ForumComments({ user, post }) {
     setIsLoading(true);
     try {
       const { data } = await apiClient.createForumLike(postId);
-      // console.log(data);
       setLikes(data.like.likes);
     } catch (err) {
       setError(err);
@@ -64,8 +63,6 @@ export default function ForumComments({ user, post }) {
     setIsLoading(true);
     try {
       const { data } = await apiClient.deleteForumLike(postId);
-      // console.log(data);
-
       setLikes(data.liked.likes);
     } catch (err) {
       setError(err);
