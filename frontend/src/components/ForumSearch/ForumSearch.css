@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+html,
+body {
+  font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
+}
+
+.ForumSearch .Title {
+  color: white;
+  text-align: left;
+  margin-left: 50px;
+  font-size: 30px;
+}
+
+.ForumSearch .portfolio-posts {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  margin-top: 50px;
+  height: 100px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 150px;
+}
+
+.ForumSearch .portfolio-posts .portfolioImage .portfolioImage {
+  width: 100%;
+  height: 12rem;
+}
+
+.ForumSearch .portfolio-posts .Forum {
+  border: 1px solid grey;
+  padding-left: 10px;
+}
+
+.ForumSearch .portfolio-posts .Forum .portfolioT {
+  color: white;
+  text-align: left;
+  font-size: 30px;
+}
+
+.ForumSearch .portfolio-posts .Forum .portfolioDescription {
+  color: white;
+  text-align: left;
+  font-size: 15px;
+  word-wrap: break-word;
+}
+
+.ForumSearch .portfolio-posts .Forum .portfolioTitle {
+  color: white;
+  text-align: left;
+}
+
+.ForumSearch .portfolio-posts .Forum .likeComments {
+  color: white;
+}
+
+.clear {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+
+.likeComments {
+  text-align: right;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 10px;
+}
+
+.icon {
+  font-size: 20px;
+  margin-left: 10px;
+  color: white;
+}
+
+@media only screen and (max-width: 800px) {
+  .ForumSearch .portfolio-posts {
+    grid-template-columns: 40% 60%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .ForumSearch .portfolio-posts {
+    grid-template-columns: 50% 50%;
+  }
+}

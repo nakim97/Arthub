@@ -111,7 +111,7 @@ export default function App() {
             element={<PostDetail user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}  />}
           />
           <Route
-            path="/post/:postId"
+            path="/forum/:postId"
             element={<ForumDetail user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}  />}
           />
           <Route
