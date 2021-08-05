@@ -11,8 +11,27 @@ import homefeed7 from "../../Assets/homefeed7.jpg";
 import homefeed4 from "../../Assets/homefeed4.jpg";
 import homefeed5 from "../../Assets/homefeed5.jpg";
 import homefeed6 from "../../Assets/homefeed6.jpg";
+import apiClient from "../../services/apiClient";
+import { useState, useEffect } from "react";
 
 export default function Community({ user, handleOnLogout, term, setTerm }) {
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(false);
+  const [myPostsF, setMyPostsF] = useState([]);
+  // Gets posts to display on the page
+  useEffect(() => {
+    const listAllPostsF = async () => {
+      setIsLoading(true);
+      try {
+        const { data } = await apiClient.listAllPostsD();
+        console.log(data);
+        setMyPostsF(data.posts);
+      } catch (err) {
+        setError(err);
+      }
+    };
+    listAllPostsF();
+  }, []);
   const button = Boolean(user.email) ? (
     <>
       <div className="forumBtn">

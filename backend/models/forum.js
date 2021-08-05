@@ -16,14 +16,14 @@ class Forum {
     );
     return results.rows;
   }
-  
+
   static async listAllForumPostsD4() {
     const results = await db.query(
       `
-      SELECT fp.id AS "forumPostId",
+    SELECT fp.id AS "forumPostId",
     fp.forum_title AS "forumTitle",
     fp.forum_description AS "forumDescription",
-    fp.forum_created_at AS "forumCreatedAt"
+    fp.forum_created_at AS "forumCreatedAt",
     img.id AS "imgId",
     img.forum_img_url AS "imgPostUrl"
     FROM forumPost AS fp
