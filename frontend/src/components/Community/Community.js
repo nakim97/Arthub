@@ -205,7 +205,6 @@ export default function Community({ user, handleOnLogout, term, setTerm }) {
             alt=" home feed img 4"
           />
         </div>
-
         <div className="post">
           <h4 className="postTitle"> Art Piece in Progress, any advice?</h4>
           <p className="postAuthor"> by Stella</p>

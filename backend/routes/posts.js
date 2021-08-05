@@ -149,7 +149,7 @@ router.post(
     }
   }
 );
-
+// Delete like for post
 router.delete(
   "/:postsId/likes",
   security.requireAuthenticatedUser,

@@ -28,8 +28,7 @@ export default function Home({ handleOnLogout, user, term, setTerm }) {
   const [myPostsB, setMyPostsB] = useState([]);
   const searchTerms = [
     "how to draw hands",
-    "how to draw",
-    "how to sketch",
+    "how to draw art",
     "how to draw concept art",
   ];
 
@@ -38,6 +37,7 @@ export default function Home({ handleOnLogout, user, term, setTerm }) {
   }
   // This gets a random element from the search terms array
   let myTerm = searchTerms[Math.floor(random(0, searchTerms.length)) - 1];
+  console.log(myTerm)
   useEffect(() => {
     const fetchVideos = async () => {
       setIsLoading(true);

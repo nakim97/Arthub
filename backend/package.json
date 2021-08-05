@@ -26,9 +26,7 @@
     "jsonwebtoken": "^8.5.1",
     "morgan": "^1.10.0",
     "pg": "^8.6.0",
-    "prettier": "^2.3.2"
-  },
-  "devDependencies": {
+    "prettier": "^2.3.2",
     "body-parser": "^1.19.0",
     "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
