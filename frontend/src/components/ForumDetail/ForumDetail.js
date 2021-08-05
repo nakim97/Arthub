@@ -37,7 +37,7 @@ export default function ForumDetail({ user, handleOnLogout, term, setTerm }) {
           <div className="profilePic">
             <img
               className="profileImg"
-              src={post.forum_img_url}
+              src={post.profile_img_url}
               alt="user profile"
             />
           </div>
