@@ -1,6 +1,13 @@
-.about .banner img {
-  display: flex;
-  width: 100%;
+.about .banner .aboutImageContainer {
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+ 
+}
+
+
+.about .banner .bannerImgs{
+  width:100%;
+  display:flex;
 }
 .banner {
   position: relative;
@@ -54,35 +61,81 @@
   color: #fff;
   display: flex;
   justify-content: left;
-  margin-left: 5.5rem;
+  padding-left:50px;
   padding-top: 2rem;
 }
 
 .about .mission {
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: 60% 40%;
   margin-top: 2rem;
+  word-wrap: break-word;
+  overflow-x: hidden;
+  padding-left: 50px;
+}
+
+.about .mission .text{
+  overflow-x: hidden;
+  display: inline-block;
 }
 
 .about .mission .missionTitle {
   text-align: left;
-  margin-left: -5.5rem;
+  margin-left: -3.3rem;
 }
 
 .about .mission .text p {
   color: #fff;
-
-  width: 600px;
+  font-size: 15px;
+  white-space: normal;
   word-wrap: break-word;
+  overflow-x: hidden;
   text-align: left;
 }
 
-.about .missionImgContainer {
-  display: flex;
-  justify-content: space-around;
-}
 
 .about .missionImgContainer img {
   width: 500px;
-  height: 600px;
+  height: 500px;
+}
+
+@media screen and (max-width:1171px){
+  .about .missionImgContainer img {
+    width: 400px;
+    height: 500px;
+  }
+}
+
+@media screen and (max-width:1099px){
+  .about .missionImgContainer img {
+    width: 350px;
+    height: 600px;
+  }
+}
+
+@media screen and (max-width:627px){
+  .about .missionImgContainer img {
+    width: 350px;
+    height: 700px;
+  }
+}
+
+@media screen and (max-width:919px){
+  .about .aboutImageContainer .bannerImg {
+    width: 200px;
+    height:auto;
+   
+  }
+
+
+}
+
+@media screen and (max-width:639px){
+  .about .aboutImageContainer .bannerImg {
+    width: 150px;
+    height:auto;
+   
+  }
+
+
 }
