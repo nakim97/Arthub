@@ -56,7 +56,7 @@ export default function Home({ handleOnLogout, user, term, setTerm }) {
   }
   // This gets a random element from the search terms array
   let myTerm = searchTerms[Math.floor(random(0, searchTerms.length)) - 1];
-  console.log(myTerm)
+  // console.log(myTerm)
   useEffect(() => {
     const fetchVideos = async () => {
       setIsLoading(true);
