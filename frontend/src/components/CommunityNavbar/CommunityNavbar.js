@@ -1,25 +1,51 @@
-import "./CommunityNavbar.css"
-import FilterListIcon from '@material-ui/icons/FilterList';
+import "./CommunityNavbar.css";
+import { Link, useNavigate } from "react-router-dom";
+import FilterListIcon from "@material-ui/icons/FilterList";
 
-export default function CommunityNavbar(){
-    return(
-        <nav className="communityNavbar">
-            <div className="content">
-                <div className="links">
-                    <li className="trending">Trending</li>
-                    <li className="latest">Latest</li>
-                </div>
+export default function CommunityNavbar({ forumTerm, setForumTerm }) {
+  const navigate = useNavigate();
+  // This redirects to the search page to display the posts
+  const handleFormSubmit = async () => {
+    navigate("/forumsearch");
+  };
 
-                <div className="search-bar">
-                    <input type="text" name="search" placeholder="Search forum..." />
-                </div>
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    handleFormSubmit(forumTerm);
+  };
 
-                <div className="filterBtn" >
-                    <span className="filterIcon" style={{display:"flex", textAlign:"center", flexWrap:"wrap"}}><FilterListIcon/></span>
-                </div>
-                
+  const handleChange = (event) => {
+    setForumTerm(event.target.value);
+  };
+  return (
+    <nav className="communityNavbar">
+      <div className="content">
+        <div className="links">
+          <li className="trending">Trending</li>
+          <li className="latest">Latest</li>
+        </div>
+        <div className="search-bar">
+          <form onSubmit={handleSubmit} className="form">
+            <div className="field">
+              <input
+                onChange={handleChange}
+                name="search"
+                type="text"
+                placeholder="Search.."
+              />
             </div>
+          </form>
+        </div>
 
-        </nav>
-    )
+        <div className="filterBtn">
+          <span
+            className="filterIcon"
+            style={{ display: "flex", textAlign: "center", flexWrap: "wrap" }}
+          >
+            <FilterListIcon />
+          </span>
+        </div>
+      </div>
+    </nav>
+  );
 }

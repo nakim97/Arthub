@@ -137,6 +137,13 @@ class ApiClient {
     });
   }
 
+  async searchForumPosts(q) {
+    return await this.request({
+      endpoint: `forum/search?q=${q}`,
+      method: `GET`,
+    });
+  }
+
   async listPostWithId(productId) {
     return await this.request({
       endpoint: `post/${productId}`,

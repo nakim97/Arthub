@@ -30,6 +30,7 @@ export default function App() {
   const [filterInputValue, setInputValue] = useState(null);
   const [user, setUser] = useState({});
   const [term, setTerm] = useState(null);
+  const [forumTerm, setForumTerm] = useState(null);
 
   // Fetch users using the jwt token and save or retrieve from local storage
   useEffect(() => {
@@ -85,7 +86,7 @@ export default function App() {
           />
           <Route
             path="/community"
-            element={<Community user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}  />}
+            element={<Community user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm} forumTerm={forumTerm} setForumTerm={setForumTerm}  />}
           />
           <Route
             path="/me"
@@ -99,6 +100,10 @@ export default function App() {
           />
           <Route
             path="/search"
+            element={<PostSearch user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}  />}
+          />
+          <Route
+            path="/forumsearch"
             element={<PostSearch user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}  />}
           />
           <Route

@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 import apiClient from "../../services/apiClient";
 import { useState, useEffect } from "react";
 
-export default function Community({ user, handleOnLogout, term, setTerm }) {
+export default function Community({ user, handleOnLogout, term, setTerm, forumTerm, setForumTerm }) {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
   const [myPostsF, setMyPostsF] = useState([]);
@@ -54,7 +54,7 @@ export default function Community({ user, handleOnLogout, term, setTerm }) {
         term={term}
         setTerm={setTerm}
       />
-      <CommunityNavbar />
+      <CommunityNavbar forumTerm={forumTerm} forumSetTerm={setForumTerm} />
 
       <div className="trendingCommunity">
         <h4>

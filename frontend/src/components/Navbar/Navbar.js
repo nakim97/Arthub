@@ -3,10 +3,9 @@ import SubNavbar from "../SubNavbar/SubNavbar";
 import BrushIcon from "@material-ui/icons/Brush";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
 
 export default function Navbar({ handleOnLogout, user, term, setTerm }) {
-  // If the boolean is true, the user exists
+
   const navigate = useNavigate();
   // This redirects to the search page to display the posts
   const handleFormSubmit = async () => {
@@ -73,7 +72,6 @@ export default function Navbar({ handleOnLogout, user, term, setTerm }) {
             </div>
           </Link>
           <div className="search-bar">
-            {/* <input type="text" name="search" placeholder="Search..." /> */}
             <form onSubmit={handleSubmit} className="form">
               <div className="field">
                 <input

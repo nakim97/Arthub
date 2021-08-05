@@ -1,13 +1,13 @@
 import "./ForumSearch.css";
 import Navbar from "../Navbar/Navbar";
 import { Link } from "react-router-dom";
-import { usePostSearch } from "../../hooks/usePostSearch";
+import { useForumSearch } from "../../hooks/useForumSearch";
 
 export default function ForumSearch({ user, handleOnLogout, term, setTerm }) {
-  const { posts } = usePostSearch({ user, term });
+  const { posts } = useForumSearch({ user, term });
 
   return (
-    <div className="PostSearch">
+    <div className="ForumSearch">
       <Navbar
         user={user}
         handleOnLogout={handleOnLogout}
@@ -24,7 +24,7 @@ export default function ForumSearch({ user, handleOnLogout, term, setTerm }) {
               <img
                 className="portfolioImage"
                 src={`${post.post_img_url}`}
-                alt={`Post ${post.id}`}
+                alt={`Forum ${post.id}`}
               />
             </Link>
           </div>
