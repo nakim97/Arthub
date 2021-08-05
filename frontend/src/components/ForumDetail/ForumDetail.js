@@ -16,7 +16,7 @@ export default function ForumDetail({ user, handleOnLogout, term, setTerm }) {
       setIsLoading(true);
       try {
         const { data } = await apiClient.listForumPostWithId(postId);
-        console.log(data)
+        // console.log(data)
         setPost(data.posting);
       } catch (err) {
         setError(err);

@@ -19,7 +19,7 @@ export default function Community({ user, handleOnLogout, term, setTerm }) {
       setIsLoading(true);
       try {
         const { data } = await apiClient.listAllPostsD();
-        console.log(data);
+        // console.log(data);
         setMyPostsF(data.posts);
       } catch (err) {
         setError(err);
