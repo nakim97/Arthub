@@ -31,7 +31,7 @@ export default function CommunityNavbar({ forumTerm, setForumTerm }) {
                 onChange={handleChange}
                 name="search"
                 type="text"
-                placeholder="Search.."
+                placeholder="Search Forums..."
               />
             </div>
           </form>
