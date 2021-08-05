@@ -1,7 +1,7 @@
 .user .banner {
   display: flex;
   color: white;
-  margin-top: -1rem;
+  margin-top: 25rem;
   margin-left: 2rem;
 }
 
@@ -48,10 +48,12 @@
 
 .user .name input {
   width: 180px;
+  border-radius: 10px;
 }
 
 .user .username input {
   width: 180px;
+  border-radius: 10px;
 }
 .user .nameInfo .nameUsername {
   padding-top: 1rem;
@@ -78,6 +80,7 @@
 .user .bio input {
   width: 520px;
   margin-left: -2rem;
+  border-radius: 10px;
 }
 
 .user .bio .description {
@@ -185,12 +188,15 @@
 }
 
 .user .socialMediaEdit .media .Instagram input {
+  border-radius: 10px;
   width: 180px;
 }
 .user .socialMediaEdit .media .Facebook input {
+  border-radius: 10px;
   width: 180px;
 }
 .user .socialMediaEdit .media .Twitter input {
+  border-radius: 10px;
   width: 180px;
 }
 
