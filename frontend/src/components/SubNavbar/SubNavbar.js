@@ -13,7 +13,7 @@ export default function SubNavbar() {
         <ul className="links">
           <Link
             to="/about"
-            style={{ color: "inherit", textDecoration: "inherit" }}
+            style={{ color: "inherit", textDecoration: "inherit", borderRight: "solid", borderLeft: "solid" }}
           >
             <li className="subNavLink">
               {" "}
@@ -22,7 +22,7 @@ export default function SubNavbar() {
           </Link>
           <Link
             to="/explore"
-            style={{ color: "inherit", textDecoration: "inherit" }}
+            style={{ color: "inherit", textDecoration: "inherit", borderRight: "solid", borderLeft: "solid" }}
           >
             <li className="subNavLink">
               {" "}
@@ -31,7 +31,7 @@ export default function SubNavbar() {
           </Link>
           <Link
             to="/learning"
-            style={{ color: "inherit", textDecoration: "inherit" }}
+            style={{ color: "inherit", textDecoration: "inherit", borderRight: "solid", borderLeft: "solid" }}
           >
             <li className="subNavLink">
               {" "}
@@ -40,7 +40,7 @@ export default function SubNavbar() {
           </Link>
           <Link
             to="/market"
-            style={{ color: "inherit", textDecoration: "inherit" }}
+            style={{ color: "inherit", textDecoration: "inherit", borderRight: "solid", borderLeft: "solid" }}
           >
             <li className="subNavLink">
               {" "}
@@ -49,7 +49,7 @@ export default function SubNavbar() {
           </Link>
           <Link
             to="/community"
-            style={{ color: "inherit", textDecoration: "inherit" }}
+            style={{ color: "inherit", textDecoration: "inherit", borderRight: "solid", borderLeft: "solid" }}
           >
             <li className="subNavLink">
               {" "}
