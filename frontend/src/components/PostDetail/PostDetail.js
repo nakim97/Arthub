@@ -47,11 +47,11 @@ export default function PostDetail({ user, handleOnLogout, term, setTerm}) {
           </div>
         </div>
 
-        <div className="banner">
+        <div className="banner-">
           <img
             className="bannerImg"
             src={post.post_img_url}
-            alt="people standing on a mountain"
+            alt="post img"
           />
         </div>
         <Comments user={user} post={post} />

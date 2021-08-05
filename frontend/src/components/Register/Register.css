@@ -37,6 +37,17 @@ body {
   z-index: 1;
   color: #ffffff;
 }
+
+.termsConditions {
+  font-size: "12px";
+  padding-top: "50px";
+  text-decoration: "underline";
+}
+.termsConditions a {
+  color: darkgoldenrod;
+  text-decoration: "inherit";
+}
+
 .logo {
   position: fixed;
   left: 1.59%;

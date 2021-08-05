@@ -19,6 +19,18 @@ export default function Register({ user, setUser }) {
     handleOnSubmit,
     isProcessing,
   } = useRegisterForm({ user, setUser });
+  const registerLabel = (
+    <>
+      <div className="termsConditions">
+        {" "}
+        <p>Creating an account means you’re fine with our &nbsp;
+        <Link to="/terms">
+          Terms and Conditions / Privacy Policy,
+        </Link>
+        &nbsp; and just being cool.</p>
+      </div>
+    </>
+  );
   return (
     <div className="Register">
       <div className="picture">
@@ -119,9 +131,7 @@ export default function Register({ user, setUser }) {
                   required
                 />
               }
-              label="Creating an account means you’re fine with our Terms and
-              Conditions
-               , Privacy Policy, and just being cool."
+              label={registerLabel}
             />
           </FormControl>
           <button
@@ -137,11 +147,6 @@ export default function Register({ user, setUser }) {
           <p>
             Already registered? <Link to="/login">Sign in</Link>
           </p>
-        </div>
-        <div className="termsConditions" style={{fontSize:"12px", paddingTop:"50px", textDecoration:"underline"}}>
-        <Link to="/terms" style={{ color: "inherit", textDecoration: "inherit" }}>
-          <p>Terms and Conditions</p>
-        </Link>
         </div>
       </div>
     </div>
