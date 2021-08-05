@@ -15,7 +15,7 @@ export default function ForumSearch({ user, handleOnLogout, term, setTerm, forum
         setTerm={setTerm}
       />
       <div className="Content">
-        <h3 className="Title">Search Results</h3>
+        <h3 className="Title">Forum Search Results</h3>
       </div>
       {posts.map((post, i) => (
         <div className="portfolio-posts" key={i}>

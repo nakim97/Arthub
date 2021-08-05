@@ -81,7 +81,12 @@ class Forum {
     if (!query) {
       throw new BadRequestError("No search query provided");
     }
-    const dbquery = `SELECT * FROM forumPost AS fp
+    const dbquery = `SELECT fp.id,
+    fp.img_id,
+    fp.forum_title,
+    fp.forum_description,
+    fp.forum_created_at
+    FROM forumPost AS fp
     JOIN forumUpload AS img ON img.id = fp.img_id
     WHERE forum_title like '%${query}%';
     `;

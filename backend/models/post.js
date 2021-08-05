@@ -93,7 +93,12 @@ class Post {
     if (!query) {
       throw new BadRequestError("No search query provided");
     }
-    const dbquery = `SELECT * FROM photoPost AS pp
+    const dbquery = `SELECT pp.id,
+    pp.img_id,
+    pp.post_title,
+    pp.post_description,
+    pp.photo_created_at
+    FROM photoPost AS pp
     JOIN photoUpload AS img ON img.id = pp.img_id
     WHERE post_title like '%${query}%';
     `;
