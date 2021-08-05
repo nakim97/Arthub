@@ -8,9 +8,9 @@ import ShareIcon from "@material-ui/icons/Share";
 import ChatIcon from "@material-ui/icons/Chat";
 import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import FavoriteIcon from "@material-ui/icons/Favorite";
-import "./Comments.css";
+import "./ForumComments.css";
 
-export default function Comments({ user, post }) {
+export default function ForumComments({ user, post }) {
   const { postId } = useParams();
   const [isLoading, setIsLoading] = useState(false);
   const [isLoadingL, setIsLoadingL] = useState(false);

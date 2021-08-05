@@ -101,6 +101,13 @@ class ApiClient {
     });
   }
 
+  async listAllPostsD() {
+    return await this.request({
+      endpoint: `forum/listPostsD`,
+      method: `GET`,
+    });
+  }
+
   async listPosts(user) {
     return await this.request({
       endpoint: `post`,

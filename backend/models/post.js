@@ -27,7 +27,7 @@ class Post {
     FROM photoPost AS pp
     JOIN photoUpload AS img ON img.id = pp.img_id
     ORDER BY pp.id ASC
-    LIMIT 4
+    LIMIT 6
     `
     );
     return results.rows;

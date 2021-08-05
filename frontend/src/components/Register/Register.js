@@ -19,18 +19,20 @@ export default function Register({ user, setUser }) {
     handleOnSubmit,
     isProcessing,
   } = useRegisterForm({ user, setUser });
+
   const registerLabel = (
     <>
       <div className="termsConditions">
         {" "}
-        <p>Creating an account means you’re fine with our &nbsp;
-        <Link to="/terms">
-          Terms and Conditions / Privacy Policy,
-        </Link>
-        &nbsp; and just being cool.</p>
+        <p>
+          Creating an account means you’re fine with our &nbsp;
+          <Link to="/terms">Terms and Conditions / Privacy Policy,</Link>
+          &nbsp; and just being cool.
+        </p>
       </div>
     </>
   );
+  
   return (
     <div className="Register">
       <div className="picture">
