@@ -28,8 +28,12 @@ li, listing {
 }
 
 .carouselImg {
-  width: 400px;
-  height: 500px;
+  width: 550px;
+  height: 600px;
+}
+.react-multi-carousel-item{
+  max-width: 500px;
+  min-width:600px;
 }
 
 /* Explore Trending Latest Feature */
@@ -210,7 +214,7 @@ li, listing {
 
 @media only screen and (max-width: 1811px) {
   .carouselImg {
-    width: 300px;
+    width: 500px;
     height: 400px;
   }
   .feed .feedImg {
@@ -222,8 +226,21 @@ li, listing {
 
 @media only screen and (max-width: 1411px) {
   .carouselImg {
+    width: 400px;
+    height: 500px;
+  }
+  .feed .feedImg {
     width: 250px;
-    height: 400px;
+    height: 200px;
+    padding-bottom: 20px;
+  }
+}
+
+
+@media only screen and (max-width: 1396px) {
+  .carouselImg {
+    width: 450px;
+    height: 500px;
   }
   .feed .feedImg {
     width: 250px;
@@ -234,7 +251,7 @@ li, listing {
 
 @media only screen and (max-width: 1207px) {
   .carouselImg {
-    width: 200px;
+    width: 400px;
     height: 300px;
   }
   .feed .feedImg {
@@ -244,10 +261,10 @@ li, listing {
   }
 }
 
-@media only screen and (max-width: 999px) {
+@media only screen and (max-width: 1101px) {
   .carouselImg {
-    width: 150px;
-    height: 250px;
+    width: 350px;
+    height: 300px;
   }
   .feed .feedImg {
     width: 150px;
@@ -255,16 +272,18 @@ li, listing {
   }
 }
 
-@media only screen and (max-width: 801px) {
+@media only screen and (max-width: 915px) {
   .carouselImg {
-    width: 150px;
-    height: 250px;
+    width: 350px;
+    height: 300px;
   }
   ul li {
     margin-right: 20px;
   }
 }
 
+
+  
 @media only screen and (max-width: 705px) {
   .carouselImg {
     width: 130px;
@@ -277,15 +296,16 @@ li, listing {
 @media only screen and (max-width: 713px) {
   .feed .feedImg {
     width: 130px;
-    height: 140px;
+    height: 300px;
+  }
+  .carouselImg {
+    width: 350px;
+    height: 300px;
   }
 }
 
 @media only screen and (max-width: 627px) {
-  .carouselImg {
-    width: 130px;
-    height: 230px;
-  }
+ 
   ul li {
     margin-right: 10px;
   }
