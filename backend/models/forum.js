@@ -85,7 +85,8 @@ class Forum {
     fp.img_id,
     fp.forum_title,
     fp.forum_description,
-    fp.forum_created_at
+    fp.forum_created_at,
+    img.forum_img_url
     FROM forumPost AS fp
     JOIN forumUpload AS img ON img.id = fp.img_id
     WHERE forum_title like '%${query}%';

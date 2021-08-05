@@ -97,7 +97,8 @@ class Post {
     pp.img_id,
     pp.post_title,
     pp.post_description,
-    pp.photo_created_at
+    pp.photo_created_at,
+    img.post_img_url
     FROM photoPost AS pp
     JOIN photoUpload AS img ON img.id = pp.img_id
     WHERE post_title like '%${query}%';
