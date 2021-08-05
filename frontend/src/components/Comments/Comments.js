@@ -17,7 +17,6 @@ export default function Comments({ user, post }) {
   const [comments, setComments] = useState([]);
   const [likes, setLikes] = useState([]);
   const [error, setError] = useState(false);
-  // console.log(isLoading);
   // Get comments
   useEffect(() => {
     const fetchCommentsById = async () => {
@@ -39,7 +38,6 @@ export default function Comments({ user, post }) {
       setIsLoadingL(true);
       try {
         const { data } = await apiClient.listLikesWithPostId(postId);
-        // console.log(data)
         setLikes(data.likes.likes);
       } catch (err) {
         setError(err);
@@ -78,12 +76,10 @@ export default function Comments({ user, post }) {
   let isLiked = false;
   for (let i in likes) {
     if (likes[i][0] == user.id) {
-      // console.log("here")
       isLiked = true;
       break;
     }
   }
-  // console.log(isLiked);
   const likeButton = isLiked ? (
     <>
       {/* We did like this, so show a full icon */}
