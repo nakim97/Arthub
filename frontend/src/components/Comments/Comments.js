@@ -54,20 +54,21 @@ export default function Comments({ user, post }) {
     setIsLoading(true);
     try {
       const { data } = await apiClient.createLike(postId);
-      // console.log(data)
-      setLikes(data.likes.likes);
+      console.log(data)
+      setLikes(data.like.likes);
     } catch (err) {
       setError(err);
     }
     setIsLoading(false);
   };
-  
+
   const handleDeleteLike = async () => {
     setIsLoading(true);
     try {
       const { data } = await apiClient.deleteLike(postId);
-      // console.log(data)
-      setLikes(data.likes.likes);
+      console.log(data)
+
+      setLikes(data.liked.likes);
     } catch (err) {
       setError(err);
     }
@@ -76,11 +77,13 @@ export default function Comments({ user, post }) {
 
   let isLiked = false;
   for (let i in likes) {
-    if (likes[i][0] == user?.id) {
+    if (likes[i][0] == user.id) {
+      // console.log("here")
       isLiked = true;
       break;
     }
   }
+  // console.log(isLiked);
   const likeButton = isLiked ? (
     <>
       {/* We did like this, so show a full icon */}
@@ -96,10 +99,12 @@ export default function Comments({ user, post }) {
       </button>
     </>
   );
+
   const handleShare = () => {
     let link = window.location.href;
     alert("Share this link: " + link);
   };
+
   const isAuthenticated = Boolean(user.email);
   const renderLike = isAuthenticated ? (
     <>{likeButton}</>
