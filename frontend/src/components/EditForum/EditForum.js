@@ -38,11 +38,11 @@ export default function EditForum({ user, handleOnLogout, term, setTerm }) {
       {posts.map((post) => (
         <div className="portfolioposts" key={post.forumPostId}>
           <div className="portfolioImg">
-            <Link to={`/post/${post.forumPostId}`}>
+            <Link to={`/forum/${post.forumPostId}`}>
               <img
                 className="portfolioImg"
                 src={`${post.imgPostUrl}`}
-                alt={`Post ${post.forumPostId}`}
+                alt={`Forum ${post.forumPostId}`}
               />
             </Link>
           </div>

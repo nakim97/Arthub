@@ -20,7 +20,7 @@ export default function ForumSearch({ user, handleOnLogout, term, setTerm, forum
       {posts.map((post, i) => (
         <div className="portfolio-posts" key={i}>
           <div className="portfolioImage">
-            <Link to={`/post/${post.id}`}>
+            <Link to={`/forum/${post.id}`}>
               <img
                 className="portfolioImage"
                 src={`${post.forum_img_url}`}
