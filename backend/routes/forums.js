@@ -26,6 +26,14 @@ router.get("/listPosts", async (req, res, next) => {
     next(err);
   }
 });
+router.get("/listPostsD", async (req, res, next) => {
+  try {
+    const posts = await Forum.listAllForumPostsD4();
+    return res.status(200).json({ posts });
+  } catch (err) {
+    next(err);
+  }
+});
 
 router.get("/", security.requireAuthenticatedUser, async (req, res, next) => {
   try {
