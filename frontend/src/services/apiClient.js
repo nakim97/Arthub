@@ -143,9 +143,21 @@ class ApiClient {
       method: `GET`,
     });
   }
+  async listForumPostWithId(productId) {
+    return await this.request({
+      endpoint: `forum/${productId}`,
+      method: `GET`,
+    });
+  }
   async listCommentsWithPostId(postId) {
     return await this.request({
       endpoint: `post/${postId}/comments`,
+      method: `GET`,
+    });
+  }
+  async listForumCommentsWithPostId(postId) {
+    return await this.request({
+      endpoint: `forum/${postId}/comments`,
       method: `GET`,
     });
   }
@@ -158,9 +170,24 @@ class ApiClient {
     });
   }
 
+  async createForumComment(postId, comment) {
+    return await this.request({
+      endpoint: `forum/${postId}/comments`,
+      method: `POST`,
+      data: comment,
+    });
+  }
+
   async listLikesWithPostId(postId) {
     return await this.request({
       endpoint: `post/${postId}/likes`,
+      method: `GET`,
+    });
+  }
+
+  async listForumLikesWithPostId(postId) {
+    return await this.request({
+      endpoint: `forum/${postId}/likes`,
       method: `GET`,
     });
   }
@@ -171,9 +198,24 @@ class ApiClient {
       method: `POST`,
     });
   }
+
+  async createForumLike(postId) {
+    return await this.request({
+      endpoint: `forum/${postId}/likes`,
+      method: `POST`,
+    });
+  }
+
   async deleteLike(postId) {
     return await this.request({
       endpoint: `post/${postId}/likes`,
+      method: `DELETE`,
+    });
+  }
+
+  async deleteForumLike(postId) {
+    return await this.request({
+      endpoint: `forum/${postId}/likes`,
       method: `DELETE`,
     });
   }
