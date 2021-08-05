@@ -18,8 +18,8 @@ import ReactModal from "react-modal";
 import VideoDetail from "../Youtube/videodetail";
 import apiClient from "../../services/apiClient";
 import { Link } from "react-router-dom";
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 export default function Home({ handleOnLogout, user, term, setTerm }) {
   const [selectedVideo, setSelectedVideo] = useState([null]);
@@ -30,33 +30,39 @@ export default function Home({ handleOnLogout, user, term, setTerm }) {
   const [myPostsB, setMyPostsB] = useState([]);
   const searchTerms = [
     "how to draw hands",
+    "how to draw plam trees",
+    "how to draw realistic faces",
+    "how to draw 3D shapes",
+    "how to add better shading to my drawings",
+    "how to draw realistic human figures",
     "how to draw art",
+    "how to sketch a boat",
     "how to draw concept art",
   ];
   const responsive = {
-  desktop: {
-    breakpoint: { max: 3000, min: 1024 },
-    items: 3,
-    slidesToSlide: 1 // optional, default to 1.
-  },
-  tablet: {
-    breakpoint: { max: 1024, min: 639 },
-    items: 2,
-    slidesToSlide: 2 // optional, default to 1.
-  },
-  mobile: {
-    breakpoint: { max: 464, min: 0 },
-    items: 1,
-    slidesToSlide: 1 // optional, default to 1.
-  }
-};
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3,
+      slidesToSlide: 1, // optional, default to 1.
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 639 },
+      items: 2,
+      slidesToSlide: 2, // optional, default to 1.
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+      slidesToSlide: 1, // optional, default to 1.
+    },
+  };
 
   function random(min, max) {
     return Math.random() * (max - min) + min;
   }
   // This gets a random element from the search terms array
   let myTerm = searchTerms[Math.floor(random(0, searchTerms.length - 1))];
-  // console.log(myTerm)
+  // console.log(myTerm);
   useEffect(() => {
     const fetchVideos = async () => {
       setIsLoading(true);
@@ -123,24 +129,23 @@ export default function Home({ handleOnLogout, user, term, setTerm }) {
         setTerm={setTerm}
       />
       <div className="homeCarousel">
-
         <Carousel
-        swipeable={false}
-        draggable={false}
-        showDots={true}
-        responsive={responsive}
-        ssr={true} // means to render carousel on server-side.
-        infinite={true}
-        autoPlaySpeed={1000}
-        keyBoardControl={true}
-        customTransition="all .5"
-        transitionDuration={500}
-        containerClass="carousel-container"
-        removeArrowOnDeviceType={["tablet", "mobile"]}
-        dotListClass="custom-dot-list-style"
-        itemClass="carousel-item-padding-0-px"
+          swipeable={false}
+          draggable={false}
+          showDots={true}
+          responsive={responsive}
+          ssr={true} // means to render carousel on server-side.
+          infinite={true}
+          autoPlaySpeed={1000}
+          keyBoardControl={true}
+          customTransition="all .5"
+          transitionDuration={500}
+          containerClass="carousel-container"
+          removeArrowOnDeviceType={["tablet", "mobile"]}
+          dotListClass="custom-dot-list-style"
+          itemClass="carousel-item-padding-0-px"
         >
-        {myPostsT.map((post) => (
+          {myPostsT.map((post) => (
             <div className="listing" key={post.photoPostId}>
               <Link to={`/post/${post.photoPostId}`}>
                 <img
@@ -151,9 +156,8 @@ export default function Home({ handleOnLogout, user, term, setTerm }) {
               </Link>
             </div>
           ))}
-
-          
-        </Carousel>;
+        </Carousel>
+        ;
       </div>
 
       <div className="exploreTrendingLatest">
