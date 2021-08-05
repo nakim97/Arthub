@@ -143,8 +143,20 @@
 }
 
 .userInfo {
+  display: flex;
   margin-left: 2rem;
-  align-items: center;
+  align-items: baseline;
+}
+
+.nameContainer {
+  margin-top: -7rem;
+  margin-left: 9rem;
+  padding-bottom: 2rem;
+  color: white;
+}
+
+.banner- {
+  margin-left: 2rem;
 }
 
 @media only screen and (max-width: 570px) {
