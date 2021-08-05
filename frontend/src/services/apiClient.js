@@ -52,6 +52,12 @@ class ApiClient {
       method: `DELETE`,
     });
   }
+  async deleteForumPost(postId) {
+    return await this.request({
+      endpoint: `forum/${postId}`,
+      method: `DELETE`,
+    });
+  }
 
   async createTag(tag) {
     return await this.request({
@@ -111,6 +117,14 @@ class ApiClient {
   async listPosts(user) {
     return await this.request({
       endpoint: `post`,
+      method: `GET`,
+      data: user,
+    });
+  }
+
+  async listForumPosts(user) {
+    return await this.request({
+      endpoint: `forum`,
       method: `GET`,
       data: user,
     });
