@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap');
+
 
 html,
 body {
@@ -20,9 +22,8 @@ body {
   position: absolute;
   width: 307px;
   height: 127px;
-  left: 20px;
-  top: 150px;
-
+  left: 100px;
+  top: 350px;
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
@@ -40,7 +41,7 @@ body {
   width: 20px;
   height: 20px;
   left: 47px;
-  top: 273px;
+  top: 353px;
   z-index: 1;
 }
 .Login .card {
@@ -184,4 +185,96 @@ body {
   flex-wrap: wrap;
   flex-direction: row;
   font-size: 0.75em;
+}
+
+@media screen and (max-width:1095px){
+  .loginImage {
+    position: absolute;
+    width: 300px;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+  }
+  .aside {
+    position: absolute;
+    
+  
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 42px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  
+    color: #ffffff;
+    z-index: 1;
+  }
+}
+
+@media screen and (max-width:989px){
+  .loginImage {
+    position: absolute;
+    width: 220px;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+  }
+  .aside {
+    position: absolute;
+    left: 50px;
+  
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 42px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  
+    color: #ffffff;
+    z-index: 1;
+  }
+}
+
+@media screen and (max-width:839px){
+  .loginImage {
+    position: absolute;
+    width: 150px;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+  }
+  .aside {
+    position: absolute;
+    left: 20px;
+  
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 42px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  
+    color: #ffffff;
+    z-index: 1;
+  }
+  .bubble {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 15px;
+    top: 353px;
+    z-index: 2;
+  }
+}
+
+@media screen and (max-width:701px){
+  .aside, .bubble, .loginImage{
+    display: none;
+  }
 }
