@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import apiClient from "../services/apiClient";
 
-export const useForumSearch = ({ user, term }) => {
+export const useForumSearch = ({ user, forumTerm }) => {
   const [posts, setPosts] = useState([]);
   const [isFetching, setFetching] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
@@ -11,7 +11,8 @@ export const useForumSearch = ({ user, term }) => {
     const fetchForumPosts = async () => {
       setFetching(true);
       try {
-        const { data } = await apiClient.searchForumPosts(term);
+        const { data } = await apiClient.searchForumPosts(forumTerm);
+        console.log(data)
         setPosts(data.searches);
       } catch (err) {
         setError(err);

@@ -3,8 +3,8 @@ import Navbar from "../Navbar/Navbar";
 import { Link } from "react-router-dom";
 import { useForumSearch } from "../../hooks/useForumSearch";
 
-export default function ForumSearch({ user, handleOnLogout, term, setTerm }) {
-  const { posts } = useForumSearch({ user, term });
+export default function ForumSearch({ user, handleOnLogout, term, setTerm, forumTerm }) {
+  const { posts } = useForumSearch({ user, forumTerm });
 
   return (
     <div className="ForumSearch">

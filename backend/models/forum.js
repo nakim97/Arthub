@@ -81,7 +81,9 @@ class Forum {
     if (!query) {
       throw new BadRequestError("No search query provided");
     }
-    const dbquery = `Select * from forumPost where forum_title like '%${query}%';
+    const dbquery = `SELECT * FROM forumPost AS fp
+    JOIN forumUpload AS img ON img.id = fp.img_id
+    WHERE forum_title like '%${query}%';
     `;
     const result = await db.query(dbquery);
     const queries = result.rows;

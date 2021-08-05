@@ -104,7 +104,7 @@ export default function App() {
           />
           <Route
             path="/forumsearch"
-            element={<PostSearch user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}  />}
+            element={<ForumSearch user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm} forumTerm={forumTerm}  />}
           />
           <Route
             path="/edit"
