@@ -41,7 +41,7 @@
 }
 
 .user .userInfo .profileName {
-  width: 100px;
+  width: 300px;
   font-size: 18px;
 }
 
@@ -142,7 +142,7 @@
   width: 200px;
   justify-content: space-around;
   margin-top: 3rem;
-  margin-left: 60rem;
+  margin-left: 47rem;
   order: 2;
 }
 

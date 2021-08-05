@@ -165,6 +165,7 @@ export default function CreateForumPost({
         </div>
 
         {/* <button className="postBtn">POST</button> */}
+
         <div className="editPageButns">
           <button className="cancel">
             <Link to="/me">Cancel</Link>
