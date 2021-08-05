@@ -10,8 +10,9 @@
 .subNavbar .content .links {
   display: flex;
   justify-content: space-evenly;
-  width: 1400px;
+  width: 100px;
   margin-top: 0rem;
+  margin-left: 39rem;
   list-style-type: none;
   font-size: 16px;
   color: white;
@@ -19,8 +20,10 @@
 
 .subNavbar .content .links li {
   display: inline-flex;
-  padding-right: 2rem;
   vertical-align: middle;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  margin-right: 0px;
 }
 /* 
 .subNavbar .content .links .l1 .subNavLink1 {
@@ -86,53 +89,121 @@
   font-family: "Roboto", sans-serif;
 }
 
-@media only screen and (max-width: 1330px) {
+@media only screen and (max-width: 1400px) {
   .subNavbar .content .links {
-    width: 1000px;
-    padding-right: 0rem;
-    /* margin-right: 150px; */
+    margin-left: 35rem;
+  }
+  .subNavbar .content .links li {
+    padding-left: 4rem;
+    padding-right: 4rem;
+    margin-right: 0px;
   }
 }
 
-@media only screen and (max-width: 1220px) {
+@media only screen and (max-width: 1300px) {
+  .subNavbar .content .links {
+    margin-left: 30rem;
+  }
   .subNavbar .content .links li {
-    margin-right: 140px;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    margin-right: 0px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .subNavbar .content .links {
+    margin-left: 31rem;
+  }
+  .subNavbar .content .links li {
+    padding-left: 4rem;
+    padding-right: 4rem;
+    margin-right: 0px;
   }
 }
 
 @media only screen and (max-width: 1170px) {
+  .subNavbar .content .links {
+    margin-left: 30rem;
+  }
   .subNavbar .content .links li {
-    margin-right: 120px;
+    padding-left: 2rem;
+    padding-right: 4rem;
+    margin-right: 0px;
   }
 }
 
 @media only screen and (max-width: 1090px) {
+  .subNavbar .content .links {
+    margin-left: 27rem;
+  }
   .subNavbar .content .links li {
-    margin-right: 100px;
+    padding-left: 2rem;
+    padding-right: 3rem;
+    margin-right: 0px;
   }
 }
-@media only screen and (max-width: 1008px) {
-  .subNavbar .content .links li {
-    margin-right: 60px;
+@media only screen and (max-width: 1010px) {
+  .subNavbar .content .links {
+    margin-left: 25rem;
   }
-}
-@media only screen and (max-width: 870px) {
   .subNavbar .content .links li {
-    margin-right: 30px;
-    font-size: 15px;
+    padding-left: 1rem;
+    padding-right: 3rem;
+    margin-right: 0px;
   }
 }
 
-@media only screen and (max-width: 709px) {
+@media only screen and (max-width: 956px) {
+  .subNavbar .content .links {
+    margin-left: 25rem;
+  }
   .subNavbar .content .links li {
-    margin-right: 10px;
-    font-size: 15px;
+    padding-left: 1rem;
+    padding-right: 3rem;
+    margin-right: 0px;
+  }
+}
+@media only screen and (max-width: 878px) {
+  .subNavbar .content .links {
+    margin-left: 20rem;
+  }
+  .subNavbar .content .links li {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-right: 0px;
+  }
+}
+
+@media only screen and (max-width: 810px) {
+  .subNavbar .content .links {
+    margin-left: 17rem;
+  }
+  .subNavbar .content .links li {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-right: 0px;
+  }
+}
+
+@media only screen and (max-width: 710px) {
+  .subNavbar .content .links {
+    margin-left: 15rem;
+  }
+  .subNavbar .content .links li {
+    padding-left: 0rem;
+    padding-right: 1rem;
+    margin-right: 0px;
   }
 }
 
 @media only screen and (max-width: 630px) {
+  .subNavbar .content .links {
+    margin-left: 13.5rem;
+  }
   .subNavbar .content .links li {
-    margin-right: 10px;
-    font-size: 14px;
+    padding-left: 0rem;
+    padding-right: 1rem;
+    margin-right: 0px;
   }
 }
