@@ -33,28 +33,28 @@ export default function EditForum({ user, handleOnLogout, term, setTerm }) {
         setTerm={setTerm}
       />
       <div className="content">
-        <h3 className="title">Edit Your Forum</h3>
+        <h3 className="title">Edit Your Forum Posts</h3>
       </div>
       {posts.map((post) => (
-        <div className="portfolioposts" key={post.photoPostId}>
+        <div className="portfolioposts" key={post.forumPostId}>
           <div className="portfolioImg">
-            <Link to={`/post/${post.photoPostId}`}>
+            <Link to={`/post/${post.forumPostId}`}>
               <img
                 className="portfolioImg"
                 src={`${post.imgPostUrl}`}
-                alt={`Post ${post.photoPostId}`}
+                alt={`Post ${post.forumPostId}`}
               />
             </Link>
           </div>
           <div className="post" style={{ position: "relative" }}>
-            <h4 className="portfolioTitle"> {post.postTitle}</h4>
-            <p className="portfolioDescription"> {post.postDescription}</p>
+            <h4 className="portfolioTitle"> {post.forumTitle}</h4>
+            <p className="portfolioDescription"> {post.forumDescription}</p>
             <p className="likeComments">
               {" "}
               {/* <EditIcon style={{ fontSize: "20px" }} />{" "} */}
               <button
                 className="clear"
-                onClick={() => handleDelete(post.photoPostId)}
+                onClick={() => handleDelete(post.forumPostId)}
               >
                 <DeleteIcon className="icon" />{" "}
               </button>

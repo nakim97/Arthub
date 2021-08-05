@@ -30,6 +30,7 @@ class Forum {
     FROM forumPost AS fp
     JOIN forumUpload AS img ON img.id = fp.img_id
     JOIN users AS u ON u.id = fp.user_id
+    ORDER BY fp.forum_created_at DESC
     LIMIT 4
     `
     );

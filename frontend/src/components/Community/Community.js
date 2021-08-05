@@ -33,10 +33,13 @@ export default function Community({ user, handleOnLogout, term, setTerm }) {
         <div className="forumCreate">
           <Link to="/createforumpost">Create Post</Link>
         </div>
-        <div className="forumList">
+        
+      </div>
+      <div className="forumBtn">
+      <div className="forumList">
           <Link to="/editforumpost">See Your Posts</Link>
         </div>
-      </div>
+        </div>
     </>
   ) : (
     <>
