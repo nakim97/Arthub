@@ -30,6 +30,11 @@ export default function Home({ handleOnLogout, user, term, setTerm }) {
   const [myPostsB, setMyPostsB] = useState([]);
   const searchTerms = [
     "how to draw hands",
+    "how to draw plam trees",
+    "how to draw realistic faces",
+    "how to draw 3D shapes",
+    "how to add better shading to my drawings",
+    "how to draw realistic human figures",
     "how to draw art",
     "how to sketch a boat",
     "how to draw concept art",
