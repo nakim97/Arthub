@@ -91,7 +91,7 @@
   height: auto;
 }
 
-.user .profilePic img {
+.user .profilePic .link- img {
   width: 55px;
   height: 50px;
   border-radius: 50%;
