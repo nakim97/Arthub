@@ -28,5 +28,15 @@ router.patch("/", security.requireAuthenticatedUser, async (req, res, next) => {
   }
 });
 
+// fetch single user
+router.get("/:Id", async (req, res, next) => {
+  try {
+    const Id = req.params.Id;
+    const using = await User.fetchUserById(Id);
+    res.status(200).json({ using });
+  } catch (err) {
+    next(err);
+  }
+});
 
 module.exports = router;

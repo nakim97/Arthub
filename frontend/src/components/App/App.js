@@ -95,6 +95,10 @@ export default function App() {
             }
           />
           <Route
+            path="/user/:userId"
+            element={<PostDetail user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}  />}
+          />
+          <Route
             path="/upload"
             element={<Upload user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}  />}
           />
