@@ -1,7 +1,7 @@
 .commentSection {
     color: white;
   }
-  
+
   .likesAndShare {
     display: flex;
     justify-content: space-evenly;
@@ -209,3 +209,9 @@
     }
   }
   
+  .profilePic img {
+    width: 55px;
+    height: 50px;
+    border-radius: 50%;
+    z-index: 1;
+}
