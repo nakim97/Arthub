@@ -132,7 +132,7 @@ export default function Community({
 
       <div
         className="bannerBackground"
-        style={{ backgroundImage: `url(${communityHero})` }}
+        style={{ backgroundImage: `url(${communityHero})`, height:"880px"}}
       >
         {" "}
       </div>

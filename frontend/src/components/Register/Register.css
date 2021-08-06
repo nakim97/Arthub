@@ -19,12 +19,12 @@ body {
   justify-content: center;
   color: white;
 }
-.aside {
+.Register .aside {
   position: absolute;
   width: 307px;
   height: 127px;
-  left: 20px;
-  top: 150px;
+  left: 50px;
+  top: 350px;
 
   font-family: Roboto;
   font-style: normal;
@@ -227,3 +227,94 @@ body {
 }
 
 
+@media screen and (max-width:1090px){
+  .Register .registerImage {
+    position: absolute;
+    width: 250px;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+  }
+  .Register .aside {
+    position: absolute;
+    
+  
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 42px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  
+    color: #ffffff;
+    z-index: 1;
+  }
+}
+
+@media screen and (max-width:898px){
+  .Register .registerImage {
+    position: absolute;
+    width: 220px;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+  }
+  .Register .aside {
+    position: absolute;
+    left: 30px;
+  
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 42px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  
+    color: #ffffff;
+    z-index: 1;
+  }
+}
+
+@media screen and (max-width:839px){
+  .Register .registerImage {
+    position: absolute;
+    width: 150px;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+  }
+  .Register .aside {
+    position: absolute;
+    left: 15px;
+  
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 42px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  
+    color: #ffffff;
+    z-index: 1;
+  }
+  .Register .bubble {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 15px;
+    top: 353px;
+    z-index: 2;
+  }
+}
+
+@media screen and (max-width:701px){
+  .Register .aside, .Register .bubble, .Register .registerImage{
+    display: none;
+  }
+}
