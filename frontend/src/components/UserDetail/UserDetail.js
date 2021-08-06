@@ -38,8 +38,8 @@ export default function UserDetail({ user, handleOnLogout, term, setTerm }) {
       setFetching(true);
       try {
         const { data } = await apiClient.listPostsWithUser(myUser);
-        console.log(myUser);
-        console.log("data", data);
+        // console.log(myUser);
+        // console.log("data", data);
         setPosts(data.postsByMe);
       } catch (err) {
         setError(err);
