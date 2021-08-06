@@ -33,8 +33,12 @@ listing {
   height: 600px;
 }
 
+.react-multi-carousel-item:hover{
+  transform: translate(0, -10px);
+}
 .react-multi-carousel-item {
   max-width: 530px;
+  transition: all .5s ease;
 }
 
 
