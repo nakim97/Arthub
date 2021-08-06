@@ -22,6 +22,7 @@ import ForumDetail from "../ForumDetail/ForumDetail";
 import PostSearch from "../PostSearch/PostSearch";
 import ForumSearch from "../ForumSearch/ForumSearch";
 import EditForum from "../EditForum/EditForum";
+import UserDetail from "../UserDetail/UserDetail";
 
 
 export default function App() {
@@ -95,8 +96,8 @@ export default function App() {
             }
           />
           <Route
-            path="/user/:userId"
-            element={<PostDetail user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}  />}
+            path="/user/:Id"
+            element={<UserDetail user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}  />}
           />
           <Route
             path="/upload"

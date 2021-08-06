@@ -150,6 +150,14 @@ class ApiClient {
       method: `GET`,
     });
   }
+
+  async listUserWithId(productId) {
+    return await this.request({
+      endpoint: `user/${productId}`,
+      method: `GET`,
+    });
+  }
+
   async listForumPostWithId(productId) {
     return await this.request({
       endpoint: `forum/${productId}`,

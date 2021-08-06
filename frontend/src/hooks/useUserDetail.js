@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import apiClient from "../services/apiClient";
 
-export const useUserProfile = ({ myUser }) => {
+export const useUserDetail = ({ myUser }) => {
   const [isFetching, setFetching] = useState(false);
   const [error, setError] = useState(null);
   function joinName(fName, lName) {
