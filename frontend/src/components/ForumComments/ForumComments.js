@@ -228,7 +228,7 @@ export default function ForumComments({ user, post }) {
         return (
           <div className="commentSection" key={i}>
             <div className="profilePic">
-              <Link to={`/user/${post.user_id}`}>{comment_profile_img}</Link>
+              <Link to={`/user/${comment.userId}`}>{comment_profile_img}</Link>
             </div>
 
             <div className="userInfo">
