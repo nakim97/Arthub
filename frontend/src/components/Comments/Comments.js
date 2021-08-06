@@ -8,6 +8,8 @@ import ShareIcon from "@material-ui/icons/Share";
 import ChatIcon from "@material-ui/icons/Chat";
 import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import FavoriteIcon from "@material-ui/icons/Favorite";
+import person2 from "../../Assets/person2.png";
+import { Link } from "react-router-dom";
 import "./Comments.css";
 
 export default function Comments({ user, post }) {
@@ -207,15 +209,30 @@ export default function Comments({ user, post }) {
           timeZone: "America/Los_Angeles",
         };
         var date = new Intl.DateTimeFormat("default", options).format(dateNew);
-
+        // Return a profile img in the comments
+        const comment_profile_url =
+        comment.profile_img_url == null || comment.profile_img_url == "null";
+      const comment_profile_img = comment_profile_url ? (
+        <>
+          {/* Return default image */}
+          <img className="profilePic" src={person2} alt="user profile picture" />
+        </>
+      ) : (
+        <>
+          {/* Use our own image */}
+          <img
+            className="profilePic"
+            src={`${comment.profile_img_url}`}
+            alt="my profile"
+          />
+        </>
+      );
         return (
           <div className="commentSection" key={i}>
             <div className="profilePic">
-              <img
-                className="profileImg"
-                src={comment.profile_img_url}
-                alt="user profile picture"
-              />
+            <Link to={`/user/${post.user_id}`}>
+              {comment_profile_img}
+              </Link>
             </div>
 
             <div className="userInfo">

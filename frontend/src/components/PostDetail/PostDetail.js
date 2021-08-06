@@ -5,6 +5,8 @@ import apiClient from "../../services/apiClient";
 import Navbar from "../Navbar/Navbar";
 import Comments from "../Comments/Comments";
 import person2 from "../../Assets/person2.png";
+import { Link } from "react-router-dom";
+
 
 /*
  - Fragment tags as return only returns one thing <> </> */
@@ -54,7 +56,10 @@ export default function PostDetail({ user, handleOnLogout, term, setTerm }) {
       <>
         <div className="userInfo">
           <div className="profilePic">
+          <Link to={`/user/${post.user_id}`} className="link-">
             {profile_img}
+</Link>
+
           </div>
         </div>
 
