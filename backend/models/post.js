@@ -16,6 +16,7 @@ class Post {
     );
     return results.rows;
   }
+  
   static async listAllPostsL4() {
     const results = await db.query(
       `
@@ -66,6 +67,7 @@ class Post {
     );
     return results.rows;
   }
+
   static async fetchPhotoPostById(postId) {
     if (!postId) {
       throw new BadRequestError("No id provided");
@@ -79,6 +81,7 @@ class Post {
     const post = result.rows[0];
     return post;
   }
+
   static async deletePhotoPostById(postId) {
     if (!postId) {
       throw new BadRequestError("No id provided");

@@ -7,9 +7,6 @@ import Comments from "../Comments/Comments";
 import person2 from "../../Assets/person2.png";
 import { Link } from "react-router-dom";
 
-
-/*
- - Fragment tags as return only returns one thing <> </> */
 export default function PostDetail({ user, handleOnLogout, term, setTerm }) {
   const { postId } = useParams();
   const [isLoading, setIsLoading] = useState(false);
@@ -30,6 +27,8 @@ export default function PostDetail({ user, handleOnLogout, term, setTerm }) {
     };
     fetchPostById();
   }, [postId]);
+  /*
+ - Fragment tags as return only returns one thing <> </> */
   const profile_url =
     post.profile_img_url == null || post.profile_img_url == "null";
   const profile_img = profile_url ? (
@@ -50,20 +49,18 @@ export default function PostDetail({ user, handleOnLogout, term, setTerm }) {
   const renderPostContent = () => {
     if (isLoading) return <h1>Loading...</h1>;
     if (error || !post) return <p className="description">No post found</p>;
-    console.log(post);
 
     return (
       <>
         <div className="userInfo">
           <div className="profilePic">
-          <Link to={`/user/${post.user_id}`} className="link-">
-            {profile_img}
-</Link>
-
+            <Link to={`/user/${post.user_id}`} className="link-">
+              {profile_img}
+            </Link>
           </div>
         </div>
 
-        <div className="nameContainer" style={{paddingLeft: "50px"}}>
+        <div className="nameContainer" style={{ paddingLeft: "50px" }}>
           <div className="username">
             <p>{post.username}</p>
           </div>

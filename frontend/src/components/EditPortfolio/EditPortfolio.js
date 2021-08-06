@@ -51,7 +51,6 @@ export default function EditPortfolio({ user, handleOnLogout, term, setTerm }) {
             <p className="portfolioDescription"> {post.postDescription}</p>
             <p className="likeComments">
               {" "}
-              {/* <EditIcon style={{ fontSize: "20px" }} />{" "} */}
               <button
                 className="clear"
                 onClick={() => handleDelete(post.photoPostId)}
