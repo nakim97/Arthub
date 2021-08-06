@@ -122,6 +122,13 @@ class ApiClient {
     });
   }
 
+  async listPostsWithUser(myUser) {
+    return await this.request({
+      endpoint: `post/display/${myUser.id}`,
+      method: `GET`,
+    });
+  }
+
   async listForumPosts(user) {
     return await this.request({
       endpoint: `forum`,

@@ -16,7 +16,7 @@ class Post {
     );
     return results.rows;
   }
-  
+
   static async listAllPostsL4() {
     const results = await db.query(
       `
@@ -64,6 +64,24 @@ class Post {
     WHERE u.id = (SELECT id FROM users WHERE email = $1)
     `,
       [user.email]
+    );
+    return results.rows;
+  }
+
+  static async listPhotoPostsWithUser(id) {
+    const results = await db.query(
+      `
+    SELECT pp.id AS "photoPostId",
+    pp.post_title AS "postTitle",
+    pp.post_description AS "postDescription",
+    img.id AS "imgId",
+    img.post_img_url AS "imgPostUrl"
+    FROM photoPost AS pp
+    JOIN users AS u ON u.id = pp.user_id
+    JOIN photoUpload AS img ON img.id = pp.img_id
+    WHERE u.id = $1
+    `,
+      [id]
     );
     return results.rows;
   }

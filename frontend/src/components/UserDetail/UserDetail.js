@@ -37,7 +37,9 @@ export default function UserDetail({ user, handleOnLogout, term, setTerm }) {
     const fetchPosts = async () => {
       setFetching(true);
       try {
-        const { data } = await apiClient.listPosts(myUser);
+        const { data } = await apiClient.listPostsWithUser(myUser);
+        console.log(myUser);
+        console.log("data", data);
         setPosts(data.postsByMe);
       } catch (err) {
         setError(err);
@@ -50,7 +52,7 @@ export default function UserDetail({ user, handleOnLogout, term, setTerm }) {
 
   const renderPostContent = () => {
     if (isLoading) return <h1>Loading...</h1>;
-    if (error || !myUser) return <p className="description">No user found</p>;
+    // if (error || !myUser) return <p className="description">No user found</p>;
     function joinName(fName, lName) {
       return fName + " " + lName;
     }

@@ -55,6 +55,17 @@ router.get("/", security.requireAuthenticatedUser, async (req, res, next) => {
   }
 });
 
+router.get("/display/:id", async (req, res, next) => {
+  try {
+    // List all posts for user
+    const { id } = req.params;
+    const postsByMe = await Post.listPhotoPostsWithUser(id);
+    return res.status(200).json({ postsByMe });
+  } catch (err) {
+    next(err);
+  }
+});
+
 router.get("/search", async (req, res, next) => {
   try {
     //uses search?q= -str- - you enter the string
