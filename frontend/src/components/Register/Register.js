@@ -2,7 +2,8 @@ import { Link } from "react-router-dom";
 import BrushIcon from "@material-ui/icons/Brush";
 import BubbleChartIcon from "@material-ui/icons/BubbleChart";
 import "./Register.css";
-import register1 from "../../Assets/register1.png";
+import banner5 from "../../Assets/banner5.png";
+import register1 from "../../Assets/registerbanner.jpg";
 import coollines from "../../Assets/coollines.png";
 import { useRegisterForm } from "../../hooks/useRegisterForm";
 import FormControl from "@material-ui/core/FormControl";
@@ -44,7 +45,7 @@ export default function Register({ user, setUser }) {
         <div className="bubble">
           <BubbleChartIcon style={{ marginRight: "5px" }} />
         </div>
-        <p className="aside">The First Step To Greatness</p>
+        <p className="aside">The First Step <br></br>To <br></br>Greatness</p>
         <img
           className="registerImage"
           src={register1}
