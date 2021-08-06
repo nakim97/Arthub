@@ -54,6 +54,7 @@ body {
   align-items: left;
   font-style: italic;
   font-size: 13px;
+  padding-left: 0.5rem;
   margin-top: 5px;
 }
 .community .communityContainer .communityTitlePrice {
@@ -103,17 +104,27 @@ body {
 
 .communityContainer {
   width: 300px;
+  background-color: rgb(61, 61, 61);
 }
 
 .communityContainer .communityTitle {
   color: white;
   text-align: left;
+  padding-left: 0.5rem;
   margin: 0;
   align-items: left;
 }
 
+.communityContainer .communityTime {
+  padding-right: 0.5rem;
+  color: rgb(204, 204, 204);
+}
+
 .communityBlurb {
   color: white;
+  margin-top: -1rem;
+  padding-bottom: 2rem;
+  padding-right: 0.5rem;
   font-style: italic;
 }
 
@@ -132,11 +143,11 @@ body {
   height: 200px;
 }
 
-.community .banner {
-  height: 200px;
+.community .bannerBackground {
   width: 100%;
+  height: 350px;
   background-repeat: no-repeat;
-  margin-top: 50px;
+  margin-top: -32rem;
 }
 
 .community .forumposts {
