@@ -9,7 +9,14 @@ import { Link } from "react-router-dom";
 import apiClient from "../../services/apiClient";
 import { useState, useEffect } from "react";
 
-export default function Community({ user, handleOnLogout, term, setTerm, forumTerm, setForumTerm }) {
+export default function Community({
+  user,
+  handleOnLogout,
+  term,
+  setTerm,
+  forumTerm,
+  setForumTerm,
+}) {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
   const [myPostsF, setMyPostsF] = useState([]);
@@ -28,14 +35,16 @@ export default function Community({ user, handleOnLogout, term, setTerm, forumTe
   }, []);
   const button = Boolean(user.email) ? (
     <>
-      <div className="forumBtn">
-        <div className="forumCreate">
-          <Link to="/createforumpost">Create Post</Link>
+      <div className="forumBtnContainer">
+        <div className="forumBtn1">
+          <div className="forumCreate">
+            <Link to="/createforumpost">Create Post</Link>
+          </div>
         </div>
-      </div>
-      <div className="forumBtn">
-        <div className="forumList">
-          <Link to="/editforumpost">See Your Posts</Link>
+        <div className="forumBtn2">
+          <div className="forumList">
+            <Link to="/editforumpost">See Your Posts</Link>
+          </div>
         </div>
       </div>
     </>
