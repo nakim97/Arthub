@@ -6,18 +6,28 @@
   width: 100%;
   padding-top: 15px;
   height: 40px;
+  text-align: center;
 }
-.subNavbar .content .links {
+.subNavbar .content .links{
   display: flex;
   justify-content: space-evenly;
   width: 100px;
+  text-align: center;
   margin-top: 0rem;
-  margin-left: 39rem;
+  margin:auto;
   list-style-type: none;
   font-size: 16px;
+  gap: 15px;
   color: white;
 }
 
+.subNavbar .content .links  .subNav{
+  color:white;
+}
+.subNavbar .content .links  .subNav-active{
+  color:#7fffd4 !important;
+  border-color:white !important;
+}
 .subNavbar .content .links li {
   display: inline-flex;
   vertical-align: middle;
@@ -25,6 +35,8 @@
   padding-right: 4rem;
   margin-right: 0px;
 }
+
+
 /* 
 .subNavbar .content .links .l1 .subNavLink1 {
   margin-left: 2rem;
@@ -225,7 +237,8 @@
   }
   .subNavbar .content .links li {
     padding-left: 0rem;
-    padding-right: 1rem;
+    padding-right: 0rem;
     margin-right: 0px;
   }
 }
+

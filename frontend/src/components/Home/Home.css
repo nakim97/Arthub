@@ -21,7 +21,8 @@ ul {
 }
 
 ul,
-li, listing {
+li,
+listing {
   list-style: none;
   display: inline;
   margin-right: 50px;
@@ -31,9 +32,9 @@ li, listing {
   width: 550px;
   height: 600px;
 }
-.react-multi-carousel-item{
-  max-width: 500px;
-  min-width:600px;
+
+.react-multi-carousel-item {
+  max-width: 530px;
 }
 
 /* Explore Trending Latest Feature */
@@ -140,7 +141,6 @@ li, listing {
   font-size: 20px;
 }
 
-
 .learningImg,
 .marketImg {
   height: 200px;
@@ -213,10 +213,10 @@ li, listing {
 }
 
 @media only screen and (max-width: 1811px) {
-  .carouselImg {
-    width: 500px;
-    height: 400px;
+  .react-multi-carousel-item {
+    max-width: 530px;
   }
+
   .feed .feedImg {
     width: 300px;
     height: 200px;
@@ -224,24 +224,38 @@ li, listing {
   }
 }
 
-@media only screen and (max-width: 1411px) {
+@media only screen and (max-width: 1581px) {
+  .react-multi-carousel-item {
+    max-width: 530px;
+  }
   .carouselImg {
-    width: 400px;
+    width: 530px;
     height: 500px;
   }
+}
+@media only screen and (max-width: 1451px) {
   .feed .feedImg {
     width: 250px;
     height: 200px;
     padding-bottom: 20px;
   }
+  .react-multi-carousel-item {
+    max-width: 530px;
+  }
+  .carouselImg {
+    width: 500px;
+    height: 500px;
+  }
 }
-
 
 @media only screen and (max-width: 1396px) {
   .carouselImg {
     width: 450px;
     height: 500px;
   }
+  .react-multi-carousel-item {
+    max-width: 510px;
+  }
   .feed .feedImg {
     width: 250px;
     height: 200px;
@@ -249,11 +263,15 @@ li, listing {
   }
 }
 
-@media only screen and (max-width: 1207px) {
+@media only screen and (max-width:1283px){
   .carouselImg {
-    width: 400px;
-    height: 300px;
+    width: 420px;
+    height: 450px;
   }
+}
+
+@media only screen and (max-width: 1207px) {
+  
   .feed .feedImg {
     width: 200px;
     height: 200px;
@@ -261,11 +279,22 @@ li, listing {
   }
 }
 
-@media only screen and (max-width: 1101px) {
+@media only screen and (max-width:1148px){
   .carouselImg {
-    width: 350px;
-    height: 300px;
+    width: 380px;
+    height: 400px;
   }
+}
+
+@media only screen and (max-width:1024px){
+  .carouselImg {
+    width: 500px;
+    height: 500px;
+  }
+}
+
+
+@media only screen and (max-width: 1101px) {
   .feed .feedImg {
     width: 150px;
     height: 150px;
@@ -273,39 +302,63 @@ li, listing {
 }
 
 @media only screen and (max-width: 915px) {
+  ul li {
+    margin-right: 20px;
+  }
+  .carouselImg {
+    width: 450px;
+    height: 480px;
+  }
+}
+
+@media only screen and (max-width: 880px) {
+  .carouselImg {
+    width: 430px;
+    height: 450px;
+  }
+  ul li {
+    margin-right: 20px;
+  }
+}
+
+@media only screen and (max-width:824px){
+  .carouselImg {
+    width: 400px;
+    height: 450px;
+  }
+}
+
+@media only screen and (max-width:756px){
   .carouselImg {
     width: 350px;
-    height: 300px;
-  }
-  ul li {
-    margin-right: 20px;
+    height: 400px;
   }
 }
 
 
-  
-@media only screen and (max-width: 705px) {
-  .carouselImg {
-    width: 130px;
-    height: 230px;
-  }
-  ul li {
-    margin-right: 20px;
-  }
-}
 @media only screen and (max-width: 713px) {
   .feed .feedImg {
     width: 130px;
     height: 300px;
   }
+}
+
+@media only screen and (max-width:670px){
   .carouselImg {
-    width: 350px;
-    height: 300px;
+    width: 320px;
+    height: 350px;
   }
 }
 
+@media only screen and (max-width:488px){
+  .carouselImg {
+    width: 450px;
+    height: 450px;
+  }
+}
+
+
 @media only screen and (max-width: 627px) {
- 
   ul li {
     margin-right: 10px;
   }
