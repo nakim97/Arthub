@@ -206,6 +206,7 @@ export default function Comments({ user, post }) {
           timeZone: "America/Los_Angeles",
         };
         var date = new Intl.DateTimeFormat("default", options).format(dateNew);
+        // console.log(comment)
         // Return a profile img in the comments
         const comment_profile_url =
           comment.profile_img_url == null || comment.profile_img_url == "null";
@@ -227,7 +228,7 @@ export default function Comments({ user, post }) {
         return (
           <div className="commentSection" key={i}>
             <div className="profilePic">
-              <Link to={`/user/${post.user_id}`}>{comment_profile_img}</Link>
+              <Link to={`/user/${comment.userId}`}>{comment_profile_img}</Link>
             </div>
 
             <div className="userInfo">
