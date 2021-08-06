@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import apiClient from "../../services/apiClient";
 import Navbar from "../Navbar/Navbar";
 import Comments from "../Comments/Comments";
+import person2 from "../../Assets/person2.png";
+
 /*
  - Fragment tags as return only returns one thing <> </> */
 export default function PostDetail({ user, handleOnLogout, term, setTerm }) {
@@ -26,24 +28,37 @@ export default function PostDetail({ user, handleOnLogout, term, setTerm }) {
     };
     fetchPostById();
   }, [postId]);
-
+  const profile_url =
+    post.profile_img_url == null || post.profile_img_url == "null";
+  const profile_img = profile_url ? (
+    <>
+      {/* Return default image */}
+      <img className="profilePic" src={person2} alt="user profile picture" />
+    </>
+  ) : (
+    <>
+      {/* Use our own image */}
+      <img
+        className="profilePic"
+        src={`${post.profile_img_url}`}
+        alt="my profile"
+      />
+    </>
+  );
   const renderPostContent = () => {
     if (isLoading) return <h1>Loading...</h1>;
     if (error || !post) return <p className="description">No post found</p>;
+    console.log(post);
 
     return (
       <>
         <div className="userInfo">
           <div className="profilePic">
-            <img
-              className="profileImg"
-              src={post.profile_img_url}
-              alt="user profile"
-            />
+            {profile_img}
           </div>
         </div>
 
-        <div className="nameContainer">
+        <div className="nameContainer" style={{paddingLeft: "50px"}}>
           <div className="username">
             <p>{post.username}</p>
           </div>
