@@ -6,6 +6,7 @@ import SchoolIcon from "@material-ui/icons/School";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import ForumIcon from "@material-ui/icons/Forum";
 import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function SubNavbar() {
   return (
@@ -13,82 +14,92 @@ export default function SubNavbar() {
       <div className="content">
         <ul className="links">
           <div className="l1">
-            <Link
+            <NavLink
               to="/about"
               style={{
                 color: "inherit",
                 textDecoration: "inherit",
                 borderRight: "solid",
               }}
+              className="subNav"
+              activeClassName="subNav-active"
             >
               <li className="subNavLink1">
                 {" "}
                 <BubbleChartIcon style={{ marginRight: "5px" }} /> ABOUT
               </li>
-            </Link>
+            </NavLink>
           </div>
 
           <div className="l2">
-            <Link
+            <NavLink
               to="/explore"
               style={{
                 color: "inherit",
                 textDecoration: "inherit",
                 borderRight: "solid",
               }}
+              className="subNav"
+              activeClassName="subNav-active"
             >
               <li className="subNavLink2">
                 {" "}
                 <ExploreIcon style={{ marginRight: "5px" }} /> EXPLORE
               </li>
-            </Link>
+            </NavLink>
           </div>
 
           <div className="l3">
-            <Link
+            <NavLink
               to="/learning"
               style={{
                 color: "inherit",
                 textDecoration: "inherit",
                 borderRight: "solid",
               }}
+              className="subNav"
+              activeClassName="subNav-active"
             >
               <li className="subNavLink3">
                 {" "}
                 <SchoolIcon style={{ marginRight: "5px" }} /> LEARNING
               </li>
-            </Link>
+            </NavLink>
           </div>
 
           <div className="l4">
-            <Link
+            <NavLink
               to="/market"
               style={{
                 color: "inherit",
                 textDecoration: "inherit",
                 borderRight: "solid",
               }}
+              className="subNav"
+              activeClassName="subNav-active"
             >
               <li className="subNavLink4">
                 {" "}
                 <ShoppingCartIcon style={{ marginRight: "5px" }} /> MARKETPLACE
               </li>
-            </Link>
+            </NavLink>
           </div>
 
           <div className="l5">
-            <Link
+            <NavLink
               to="/community"
               style={{
                 color: "inherit",
                 textDecoration: "inherit",
               }}
+              className="subNav"
+              activeClassName="subNav-active"
             >
               <li className="subNavLink5">
                 {" "}
                 <ForumIcon style={{ marginRight: "5px" }} /> COMMUNITY
               </li>
-            </Link>
+            </NavLink>
           </div>
         </ul>
       </div>

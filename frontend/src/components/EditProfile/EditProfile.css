@@ -48,11 +48,21 @@
 
 .user .name input {
   width: 180px;
+  padding-left: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-top: -1rem;
+  margin-left: 1rem;
   border-radius: 10px;
 }
 
 .user .username input {
   width: 180px;
+  padding-left: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-top: -1rem;
+  margin-left: 1rem;
   border-radius: 10px;
 }
 .user .nameInfo .nameUsername {
@@ -79,7 +89,10 @@
 }
 .user .bio input {
   width: 520px;
-  margin-left: -2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-top: -1rem;
+  margin-left: -3rem;
   border-radius: 10px;
 }
 
@@ -160,7 +173,7 @@
 
 .user .socialMediaEdit {
   margin-left: 72rem;
-  margin-top: -18.5rem;
+  margin-top: -19.5rem;
   color: white;
 }
 
@@ -178,25 +191,40 @@
   display: flex;
   justify-content: space-between;
   width: 230px;
-  padding-top: 1rem;
+  padding-top: 2rem;
 }
 .user .socialMediaEdit .media .Twitter {
   display: flex;
   justify-content: space-between;
   width: 230px;
-  padding-top: 1rem;
+  padding-top: 2rem;
 }
 
 .user .socialMediaEdit .media .Instagram input {
   border-radius: 10px;
+  padding-left: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-top: -1rem;
+  margin-left: 1rem;
   width: 180px;
 }
 .user .socialMediaEdit .media .Facebook input {
   border-radius: 10px;
+  padding-left: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-top: -1rem;
+  margin-left: 1rem;
   width: 180px;
 }
 .user .socialMediaEdit .media .Twitter input {
   border-radius: 10px;
+  padding-left: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-top: -1rem;
+  margin-left: 1rem;
   width: 180px;
 }
 
@@ -205,11 +233,11 @@
 }
 
 .user .bannerImage {
-  margin-left: -19rem;
+  margin-left: -17.5rem;
 }
 
 .user .bannerTitle {
-  margin-left: 3.5rem;
+  margin-left: 4rem;
 }
 
 @media only screen and (max-width: 1200px) {
