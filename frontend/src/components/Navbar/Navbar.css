@@ -37,6 +37,9 @@
   /* padding-left: 120px; */
 }
 
+.navBannerImg {
+  border-radius: 25rem;
+}
 .userIcon {
   display: flex;
   justify-content: space-evenly;
@@ -80,7 +83,7 @@
   border: none;
   color: white;
   font-size: 1rem;
-  outline:none;
+  outline: none;
   background: #151313;
 }
 

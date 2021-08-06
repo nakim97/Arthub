@@ -41,7 +41,9 @@ export default function PostDetail({ user, handleOnLogout, term, setTerm }) {
               alt="user profile"
             />
           </div>
+        </div>
 
+        <div className="nameContainer">
           <div className="username">
             <p>{post.username}</p>
           </div>

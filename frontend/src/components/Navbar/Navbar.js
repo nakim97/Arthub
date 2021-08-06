@@ -5,7 +5,6 @@ import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function Navbar({ handleOnLogout, user, term, setTerm }) {
-
   const navigate = useNavigate();
   // This redirects to the search page to display the posts
   const handleFormSubmit = async () => {
@@ -29,10 +28,10 @@ export default function Navbar({ handleOnLogout, user, term, setTerm }) {
   ) : (
     <>
       <img
-        className="bannerImg"
+        className="navBannerImg"
         src={`${user.profile_img_url}`}
         alt="My profile"
-        style={{ height: "20px", width: "20px" }}
+        style={{ height: "30px", width: "30px" }}
       />
     </>
   );
@@ -42,7 +41,7 @@ export default function Navbar({ handleOnLogout, user, term, setTerm }) {
         <Link to="/me" className="Link">
           <div className="userIcon">
             {navIcon}
-            <li className="navRegister">Me</li>
+            <li className="navRegister">Profile</li>
           </div>
         </Link>
         <button className="navSignOut" onClick={handleOnLogout}>
