@@ -11,6 +11,7 @@ import homefeed7 from "../../Assets/homefeed7.jpg";
 import homefeed4 from "../../Assets/homefeed4.jpg";
 import homefeed5 from "../../Assets/homefeed5.jpg";
 import homefeed6 from "../../Assets/homefeed6.jpg";
+import ForumIcon from "@material-ui/icons/Forum";
 import WhatshotIcon from "@material-ui/icons/Whatshot";
 import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import { useState, useEffect } from "react";
@@ -22,6 +23,8 @@ import apiClient from "../../services/apiClient";
 import { Link } from "react-router-dom";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import QuestionAnswerIcon from "@material-ui/icons/QuestionAnswer";
+
 
 export default function Home({ handleOnLogout, user, term, setTerm }) {
   const [selectedVideo, setSelectedVideo] = useState([null]);
@@ -30,6 +33,7 @@ export default function Home({ handleOnLogout, user, term, setTerm }) {
   const [error, setError] = useState(false);
   const [myPostsT, setMyPostsT] = useState([]);
   const [myPostsB, setMyPostsB] = useState([]);
+  const [myPostsF, setMyPostsF] = useState([]);
   const searchTerms = [
     "how to draw hands",
     "how to draw plam trees",
@@ -41,6 +45,18 @@ export default function Home({ handleOnLogout, user, term, setTerm }) {
     "how to sketch a boat",
     "how to draw concept art",
   ];
+  useEffect(() => {
+    const listAllPostsF = async () => {
+      setIsLoading(true);
+      try {
+        const { data } = await apiClient.listAllPostsD();
+        setMyPostsF(data.posts);
+      } catch (err) {
+        setError(err);
+      }
+    };
+    listAllPostsF();
+  }, []);
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -468,6 +484,69 @@ export default function Home({ handleOnLogout, user, term, setTerm }) {
               </div>
             </div>
           </div>
+        </div>
+        
+        <div className="communityContainers">
+        <h4 className="communityhomeTitle">
+            {" "}
+            <ForumIcon style={{ marginRight: "5px" }} /> TRENDING ON COMMUNITY FORUMS
+          </h4>
+        <div className="container">
+          {myPostsF.map((post) => {
+            var dateNew = new Date(post.forumCreatedAt);
+            var options = {
+              year: "numeric",
+              month: "numeric",
+              day: "numeric",
+              hour: "numeric",
+              minute: "numeric",
+              second: "numeric",
+              hour12: false,
+              timeZone: "America/Los_Angeles",
+            };
+            var date = new Intl.DateTimeFormat("default", options).format(
+              dateNew
+            );
+            return (
+              <div className="communityContainer" key={post.forumPostId}>
+                <div className="communityImageContainer">
+                  <li>
+                    <Link to={`/forum/${post.forumPostId}`}>
+                      <img
+                        className="communityImg"
+                        src={`${post.imgPostUrl}`}
+                        alt={`homecarousel ${post.forumPostId}`}
+                      />
+                    </Link>
+                  </li>
+                </div>
+
+                <div className="communityTags">
+                  <p className="communityTag" style={{ textAlign: "left" }}>
+                    {" "}
+                    <span className="communityTime" style={{ float: "right" }}>
+                      {date}
+                    </span>
+                  </p>
+
+                  <p className="communityTitle" style={{ textAlign: "left" }}>
+                    {" "}
+                    {post.forumTitle}
+                  </p>
+                </div>
+                <p className="communityAuthor" style={{ textAlign: "left" }}>
+                  by {post.username}
+                </p>
+                <div className="communityBlurb">
+                  <span className="communityBtn" style={{ float: "right" }}>
+                    <ThumbUpIcon style={{ fontSize: "15px" }} />{" "}
+                    <QuestionAnswerIcon style={{ fontSize: "15px" }} />{" "}
+                  </span>
+                </div>
+              </div>
+            );
+          })}
+        </div>
         </div>
 
       </div>

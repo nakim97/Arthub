@@ -33,15 +33,13 @@ listing {
   height: 600px;
 }
 
-.react-multi-carousel-item:hover{
+.react-multi-carousel-item:hover {
   transform: translate(0, -10px);
 }
 .react-multi-carousel-item {
   max-width: 530px;
-  transition: all .8s ease;
+  transition: all 0.8s ease;
 }
-
-
 
 /* Explore Trending Latest Feature */
 
@@ -103,18 +101,21 @@ listing {
 }
 
 .home .newLearning .container,
-.home .trendingMarket .container {
+.home .trendingMarket .container,
+.home .communityContainers .container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .learningContainer,
-.marketContainer {
+.marketContainer,
+.communityContainer {
   width: 300px;
 }
 
 .learningContainer .learningTitle,
-.marketContainer .marketTitle {
+.marketContainer .marketTitle,
+.communityContainers .communityhomeTitle {
   color: white;
   text-align: left;
   margin: 0;
@@ -136,11 +137,17 @@ listing {
   font-style: italic;
 }
 
-.home .container {
+.home .container,
+.home .communityContainers h4 {
   margin-left: 50px;
 }
+
+.home .communityContainers h4 {
+  margin-top: 100px;
+}
 .newLearning h4,
-.trendingMarket h4 {
+.trendingMarket h4,
+.communityContainers h4 {
   color: white;
   text-align: left;
   margin-left: 50px;
@@ -269,7 +276,7 @@ listing {
   }
 }
 
-@media only screen and (max-width:1283px){
+@media only screen and (max-width: 1283px) {
   .carouselImg {
     width: 420px;
     height: 450px;
@@ -277,7 +284,6 @@ listing {
 }
 
 @media only screen and (max-width: 1207px) {
-  
   .feed .feedImg {
     width: 200px;
     height: 200px;
@@ -285,20 +291,19 @@ listing {
   }
 }
 
-@media only screen and (max-width:1148px){
+@media only screen and (max-width: 1148px) {
   .carouselImg {
     width: 380px;
     height: 400px;
   }
 }
 
-@media only screen and (max-width:1024px){
+@media only screen and (max-width: 1024px) {
   .carouselImg {
     width: 500px;
     height: 500px;
   }
 }
-
 
 @media only screen and (max-width: 1101px) {
   .feed .feedImg {
@@ -327,20 +332,19 @@ listing {
   }
 }
 
-@media only screen and (max-width:824px){
+@media only screen and (max-width: 824px) {
   .carouselImg {
     width: 400px;
     height: 450px;
   }
 }
 
-@media only screen and (max-width:756px){
+@media only screen and (max-width: 756px) {
   .carouselImg {
     width: 350px;
     height: 400px;
   }
 }
-
 
 @media only screen and (max-width: 713px) {
   .feed .feedImg {
@@ -349,20 +353,19 @@ listing {
   }
 }
 
-@media only screen and (max-width:670px){
+@media only screen and (max-width: 670px) {
   .carouselImg {
     width: 320px;
     height: 350px;
   }
 }
 
-@media only screen and (max-width:488px){
+@media only screen and (max-width: 488px) {
   .carouselImg {
     width: 450px;
     height: 450px;
   }
 }
-
 
 @media only screen and (max-width: 627px) {
   ul li {
@@ -458,4 +461,23 @@ listing {
     letter-spacing: 3px;
     margin-bottom: 20px;
   }
+}
+
+/* Community styling */
+.home .communityContainers .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  color: white;
+}
+.home .communityContainers {
+  margin-bottom: 50px;
+}
+
+.home .communityContainers .container .communityImg {
+  width: 300px;
+}
+.home .communityContainers .container .communityContainer {
+  width: 300px;
+  padding-top: 50px;
+  background-color: #151313;
 }
