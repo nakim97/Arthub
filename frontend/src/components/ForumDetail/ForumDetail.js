@@ -30,22 +30,22 @@ export default function ForumDetail({ user, handleOnLogout, term, setTerm }) {
   }, [postId]);
 
   const profile_url =
-      post.profile_img_url == null || post.profile_img_url == "null";
-    const profile_img = profile_url ? (
-      <>
-        {/* Return default image */}
-        <img className="profilePic" src={person2} alt="user profile picture" />
-      </>
-    ) : (
-      <>
-        {/* Use our own image */}
-        <img
-          className="profilePic"
-          src={`${post.profile_img_url}`}
-          alt="my profile"
-        />
-      </>
-    );
+    post.profile_img_url == null || post.profile_img_url == "null";
+  const profile_img = profile_url ? (
+    <>
+      {/* Return default image */}
+      <img className="profilePic" src={person2} alt="user profile picture" />
+    </>
+  ) : (
+    <>
+      {/* Use our own image */}
+      <img
+        className="profilePic"
+        src={`${post.profile_img_url}`}
+        alt="my profile"
+      />
+    </>
+  );
   const renderPostContent = () => {
     if (isLoading) return <h1>Loading...</h1>;
     if (error || !post) return <p className="description">No post found</p>;
@@ -54,7 +54,7 @@ export default function ForumDetail({ user, handleOnLogout, term, setTerm }) {
       <>
         <div className="userInfo">
           <div className="profilePic">
-          <Link to={`/user/${post.user_id}`} className="link-">
+            <Link to={`/user/${post.user_id}`} className="link-">
               {profile_img}
             </Link>
           </div>

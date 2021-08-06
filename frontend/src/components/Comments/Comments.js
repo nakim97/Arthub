@@ -212,11 +212,7 @@ export default function Comments({ user, post }) {
         const comment_profile_img = comment_profile_url ? (
           <>
             {/* Return default image */}
-            <img
-              className="profilePic"
-              src={person2}
-              alt="user profile"
-            />
+            <img className="profilePic" src={person2} alt="user profile" />
           </>
         ) : (
           <>

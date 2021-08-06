@@ -208,27 +208,23 @@ export default function ForumComments({ user, post }) {
         var date = new Intl.DateTimeFormat("default", options).format(dateNew);
 
         // Return a profile img in the comments
-                const comment_profile_url =
-                  comment.profile_img_url == null || comment.profile_img_url == "null";
-                const comment_profile_img = comment_profile_url ? (
-                  <>
-                    {/* Return default image */}
-                    <img
-                      className="profilePic"
-                      src={person2}
-                      alt="user profile"
-                    />
-                  </>
-                ) : (
-                  <>
-                    {/* Use our own image */}
-                    <img
-                      className="profilePic"
-                      src={`${comment.profile_img_url}`}
-                      alt="my profile"
-                    />
-                  </>
-                );
+        const comment_profile_url =
+          comment.profile_img_url == null || comment.profile_img_url == "null";
+        const comment_profile_img = comment_profile_url ? (
+          <>
+            {/* Return default image */}
+            <img className="profilePic" src={person2} alt="user profile" />
+          </>
+        ) : (
+          <>
+            {/* Use our own image */}
+            <img
+              className="profilePic"
+              src={`${comment.profile_img_url}`}
+              alt="my profile"
+            />
+          </>
+        );
         return (
           <div className="commentSection" key={i}>
             <div className="profilePic">
