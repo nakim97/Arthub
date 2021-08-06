@@ -1,4 +1,4 @@
-import "./UserProfile.css";
+import "./UserDetail.css";
 import { Link } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import userBanner from "../../Assets/userBanner.png";
@@ -12,29 +12,29 @@ import { useEffect, useState } from "react";
 import apiClient from "../../services/apiClient";
 
 export default function UserDetail({ user, handleOnLogout, term, setTerm }) {
-  const { postId } = useParams();
+  const { Id } = useParams();
   const [isLoading, setIsLoading] = useState(false);
-  const [post, setPost] = useState([]);
+  const [myUser, setMyUser] = useState([]);
   const [error, setError] = useState(false);
   useEffect(() => {
-    const fetchPostById = async () => {
+    const fetchUserById = async () => {
       setIsLoading(true);
       try {
-        const { data } = await apiClient.listPostWithId(postId);
+        const { data } = await apiClient.listUserWithId(Id);
 
-        setPost(data.posting);
+        setMyUser(data.using);
       } catch (err) {
         setError(err);
       }
 
       setIsLoading(false);
     };
-    fetchPostById();
-  }, [postId]);
+    fetchUserById();
+  }, [Id]);
 
   const renderPostContent = () => {
     if (isLoading) return <h1>Loading...</h1>;
-    if (error || !post) return <p className="description">No post found</p>;
+    if (error || !myUser) return <p className="description">No user found</p>;
 
     return (
       <>
@@ -42,7 +42,7 @@ export default function UserDetail({ user, handleOnLogout, term, setTerm }) {
           <div className="profilePic">
             <img
               className="profileImg"
-              src={post.profile_img_url}
+              src={myUser.profile_img_url}
               alt="user profile"
             />
           </div>
@@ -50,12 +50,12 @@ export default function UserDetail({ user, handleOnLogout, term, setTerm }) {
 
         <div className="nameContainer">
           <div className="username">
-            <p>{post.username}</p>
+            <p>{myUser.username}</p>
           </div>
         </div>
 
         <div className="banner-">
-          <img className="bannerImg" src={post.post_img_url} alt="post img" />
+          <img className="bannerImg" src={myUser.post_img_url} alt="post img" />
         </div>
         {/* <Comments user={user} post={post} /> */}
       </>
