@@ -242,3 +242,16 @@
   }
 }
 
+@media only screen and (max-width:656px){
+  .subNavbar .content .links .l1{
+    font-size: 15px;
+    gap: 10px;
+    border-style:none;
+    border-right:none red !important;
+  }
+  .subNavbar .content .links li {
+    padding-left: 0rem;
+    padding-right: 1rem;
+    margin-right: 0px;
+  }
+}
