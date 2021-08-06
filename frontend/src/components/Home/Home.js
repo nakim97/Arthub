@@ -11,6 +11,8 @@ import homefeed7 from "../../Assets/homefeed7.jpg";
 import homefeed4 from "../../Assets/homefeed4.jpg";
 import homefeed5 from "../../Assets/homefeed5.jpg";
 import homefeed6 from "../../Assets/homefeed6.jpg";
+import WhatshotIcon from "@material-ui/icons/Whatshot";
+import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import { useState, useEffect } from "react";
 import youtube from "../../APIs/youtube";
 import VideoItem from "../Youtube/videoitem";
@@ -467,6 +469,7 @@ export default function Home({ handleOnLogout, user, term, setTerm }) {
             </div>
           </div>
         </div>
+
       </div>
     </div>
   );
