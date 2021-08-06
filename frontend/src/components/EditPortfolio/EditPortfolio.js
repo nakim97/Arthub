@@ -33,7 +33,7 @@ export default function EditPortfolio({ user, handleOnLogout, term, setTerm }) {
         setTerm={setTerm}
       />
       <div className="content">
-        <h3 className="title">Edit Your Portfolio</h3>
+        <h3 className="title">Delete Your Portfolio Posts</h3>
       </div>
       {posts.map((post) => (
         <div className="portfolioposts" key={post.photoPostId}>
