@@ -94,6 +94,7 @@
 .user .profilePic .link- img {
   width: 55px;
   height: 50px;
+  margin-left: 0rem;
   border-radius: 50%;
   z-index: 1;
 }
@@ -149,8 +150,8 @@
 }
 
 .nameContainer {
-  margin-top: -7rem;
-  margin-left: 9rem;
+  margin-top: -6.5rem;
+  margin-left: 5.5rem;
   padding-bottom: 2rem;
   color: white;
 }
