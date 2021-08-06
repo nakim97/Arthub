@@ -41,12 +41,12 @@ export default function ForumDetail({ user, handleOnLogout, term, setTerm }) {
               alt="user profile"
             />
           </div>
-
+        </div>
+        <div className="forumDetailUsername">
           <div className="username">
             <p>{post.username}</p>
           </div>
         </div>
-
         <div className="banner-">
           <img className="bannerImg" src={post.forum_img_url} alt="forum" />
         </div>
