@@ -12,18 +12,10 @@ import homefeed6 from "../../Assets/homefeed6.jpg";
 export default function Market({ user, handleOnLogout, term, setTerm }) {
   return (
     <div className="market">
-      <Navbar
-        user={user}
-        handleOnLogout={handleOnLogout}
-        term={term}
-        setTerm={setTerm}
-      />
-      <div
-        className="banner"
-        style={{ backgroundImage: `url(${marketbanner})` }}
-      >
-        <div className="bannerSearch">
-          <h4> ArtHub Marketplace</h4>
+      <Navbar user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}   />
+      <div className="banner" style={{ backgroundImage: `url(${marketbanner})`}}>
+        <div className="bannerSearch" >
+          <h4> ARTHUB MARKETPLACE </h4>
           <div className="search-bar">
             <input type="text" name="search" placeholder="Search Products..." />
           </div>

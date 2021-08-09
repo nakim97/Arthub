@@ -13,7 +13,7 @@ export default function Searchbar(props) {
             onChange={handleChange}
             name="video-search"
             type="text"
-            placeholder="Search.."
+            placeholder="Search Tutorials..."
           />
         </div>
       </form>

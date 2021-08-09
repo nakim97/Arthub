@@ -1,7 +1,7 @@
 import "./Community.css";
 import CommunityNavbar from "../CommunityNavbar/CommunityNavbar";
 import Navbar from "../Navbar/Navbar";
-import communityHero from "../../Assets/learningbanner.jpg";
+import communityHero from "../../Assets/banner8.jpg";
 import WhatshotIcon from "@material-ui/icons/Whatshot";
 import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import QuestionAnswerIcon from "@material-ui/icons/QuestionAnswer";
@@ -26,7 +26,12 @@ export default function Community({
         setTerm={setTerm}
       />
       <CommunityNavbar user={user} forumTerm={forumTerm} setForumTerm={setForumTerm} />
-
+      <div
+        className="bannerBackground"
+        style={{ backgroundImage: `url(${communityHero})`}}
+      >
+        <h1> COMMUNITY FORUM </h1>
+      </div>
       <div className="trendingCommunity">
         <h4>
           {" "}
@@ -52,6 +57,7 @@ export default function Community({
             );
             return (
               <div className="communityContainer" key={post.forumPostId}>
+                <div className="communityImageContainer">
                   <li>
                     <Link to={`/forum/${post.forumPostId}`}>
                       <img
@@ -61,6 +67,7 @@ export default function Community({
                       />
                     </Link>
                   </li>
+                  </div>
 
                 <div className="communityTags">
                   <p className="communityTag" style={{ textAlign: "left" }}>
@@ -90,12 +97,7 @@ export default function Community({
         </div>
       </div>
 
-      <div
-        className="bannerBackground"
-        style={{ backgroundImage: `url(${communityHero})`, height: "880px" }}
-      >
-        {" "}
-      </div>
+      
     </div>
   );
 }

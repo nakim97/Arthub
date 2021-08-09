@@ -257,6 +257,7 @@ export default function Home({ handleOnLogout, user, term, setTerm }) {
               );
               return (
                 <div className="communityContainer" key={post.forumPostId}>
+                <div className="communityImageContainer">
                   <li>
                     <Link to={`/forum/${post.forumPostId}`}>
                       <img
@@ -266,6 +267,7 @@ export default function Home({ handleOnLogout, user, term, setTerm }) {
                       />
                     </Link>
                   </li>
+                  </div>
 
                   <div className="communityTags">
                     <p className="communityTag" style={{ textAlign: "left" }}>

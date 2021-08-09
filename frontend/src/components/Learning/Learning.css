@@ -33,15 +33,26 @@
   width: 100%;
 }
 
-.learning .banner .bannerSearch {
-  padding-top: 100px;
-  display: flex;
-  height: 50px;
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 100%;
-}
+  .learning .banner .bannerSearch h4 {
+    color:white;
+    font-size:45px;
+    letter-spacing: 5px;
+    height: 20px;
+    left: 0;
+    width: 100%;
+    
+  }
+
+  .learning .banner .bannerSearch{
+    padding-top: 180px;
+    display: flex;
+    height: 50px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+  }
+
 
 ::placeholder {
   font-size: 15px;

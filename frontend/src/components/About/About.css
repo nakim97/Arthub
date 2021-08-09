@@ -3,9 +3,14 @@
   grid-template-columns: 1fr 1fr 1fr;
 }
 
-.about .banner .bannerImgs {
-  width: 100%;
-  display: flex;
+
+.about .banner .bannerImg{
+  width:100%;
+  height: 600px;
+  margin:0;
+
+  background-repeat: repeat-x;
+  opacity:0.6;
 }
 .banner {
   position: relative;
@@ -17,7 +22,8 @@
   color: #fff;
   top: 38%;
   left: 0%;
-  font-size: 40px;
+  font-size: 45px;
+  letter-spacing:5px;
 }
 
 .about .aboutImageContainer {
