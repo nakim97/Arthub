@@ -6,10 +6,15 @@ import Stella from "../../Assets/stella_profile.jpeg";
 import team2 from "../../Assets/team2.jpeg";
 import Navbar from "../Navbar/Navbar";
 
-export default function About({ user, handleOnLogout, term, setTerm}) {
+export default function About({ user, handleOnLogout, term, setTerm }) {
   return (
     <div className="about">
-      <Navbar user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}   />
+      <Navbar
+        user={user}
+        handleOnLogout={handleOnLogout}
+        term={term}
+        setTerm={setTerm}
+      />
 
       <div className="banner">
         <img
@@ -18,7 +23,7 @@ export default function About({ user, handleOnLogout, term, setTerm}) {
           alt="people standing on a mountain"
         />
         <div className="bannerText">
-          <h4> TOGETHER WE GROW</h4>
+          <h4>WHERE OUR STORY BEGINS</h4>
         </div>
       </div>
 
@@ -69,7 +74,6 @@ export default function About({ user, handleOnLogout, term, setTerm}) {
             <h2>How We Do This</h2>
           </div>
           <div className="text2">
-          
             <p>
               At ArtHub, we aim to provide reassurance and exposure to every
               artist in our community by showing them that:{" "}
@@ -78,8 +82,6 @@ export default function About({ user, handleOnLogout, term, setTerm}) {
             <p>○ Your work continues to be YOUR work</p>
             <p>○ Art uploaded on our platform can be viewed by all members</p>
             <p>○ Practice is the key to becoming a better artist</p>
-            
-            
           </div>
         </div>
         <div className="missionImgContainer">
