@@ -6,8 +6,7 @@ import WhatshotIcon from "@material-ui/icons/Whatshot";
 import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import QuestionAnswerIcon from "@material-ui/icons/QuestionAnswer";
 import { Link } from "react-router-dom";
-import apiClient from "../../services/apiClient";
-import { useState, useEffect } from "react";
+import { useCommunity } from "../../hooks/useCommunity";
 
 export default function Community({
   user,
@@ -17,44 +16,7 @@ export default function Community({
   forumTerm,
   setForumTerm,
 }) {
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(false);
-  const [myPostsF, setMyPostsF] = useState([]);
-  // Gets posts to display on the page
-  useEffect(() => {
-    const listAllPostsF = async () => {
-      setIsLoading(true);
-      try {
-        const { data } = await apiClient.listAllPostsD();
-        setMyPostsF(data.posts);
-      } catch (err) {
-        setError(err);
-      }
-    };
-    listAllPostsF();
-  }, []);
-  const button = Boolean(user.email) ? (
-    <>
-      <div className="forumBtnContainer">
-        <div className="forumBtn1">
-          <div className="forumCreate">
-            <Link to="/createforumpost">Create Post</Link>
-          </div>
-        </div>
-        <div className="forumBtn2">
-          <div className="forumList">
-            <Link to="/editforumpost">See Your Posts</Link>
-          </div>
-        </div>
-      </div>
-    </>
-  ) : (
-    <>
-      <div className="forumBtn">
-        <p>You must be logged in to create a forum post.</p>
-      </div>
-    </>
-  );
+  const { button, myPostsF } = useCommunity({ user });
   return (
     <div className="community">
       <Navbar
@@ -132,7 +94,7 @@ export default function Community({
 
       <div
         className="bannerBackground"
-        style={{ backgroundImage: `url(${communityHero})`, height:"880px"}}
+        style={{ backgroundImage: `url(${communityHero})`, height: "880px" }}
       >
         {" "}
       </div>
