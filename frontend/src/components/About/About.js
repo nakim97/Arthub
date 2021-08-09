@@ -1,5 +1,5 @@
 import "./About.css";
-import banner2 from "../../Assets/banner2.jpg";
+import banner2 from "../../Assets/banner7.jpg";
 import team1 from "../../Assets/team1.jpeg";
 import Brian from "../../Assets/brian_profile.png";
 import Stella from "../../Assets/stella_profile.jpeg";
@@ -54,8 +54,8 @@ export default function About({ user, handleOnLogout, term, setTerm}) {
             <p>
               For years, art has served as an outlet for people around the world
               to express themselves. However, finding an online space that
-              allows an artist to claim art as their own after upload can be
-              time consuming and difficult task. We want to help!
+              allows an artist to claim art as their own after uploading can be
+              time consuming and a difficult task. We want to help!
             </p>
 
             <p>
@@ -71,7 +71,7 @@ export default function About({ user, handleOnLogout, term, setTerm}) {
           <div className="text2">
           
             <p>
-              At ArtHub, we aim to provide reassurance and exposure to evry
+              At ArtHub, we aim to provide reassurance and exposure to every
               artist in our community by showing them that:{" "}
             </p>
 

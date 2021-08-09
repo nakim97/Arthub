@@ -147,6 +147,9 @@ body {
   height: 200px;
 }
 
+.home .communityContainer .communityImg{
+  height: 200px;
+}
 /* Styling the Marketplace */
 .trendingMarket .container .marketAuthor {
   color: white;
