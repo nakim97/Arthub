@@ -1,11 +1,9 @@
 import "./SubNavbar.css";
-import React, { useState } from "react";
 import BubbleChartIcon from "@material-ui/icons/BubbleChart";
 import ExploreIcon from "@material-ui/icons/Explore";
 import SchoolIcon from "@material-ui/icons/School";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import ForumIcon from "@material-ui/icons/Forum";
-import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 
 export default function SubNavbar() {

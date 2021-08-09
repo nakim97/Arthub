@@ -5,8 +5,6 @@ import userBanner from "../../Assets/userBanner.png";
 import person2 from "../../Assets/person2.png";
 
 export default function Post({ user, handleOnLogout, term, setTerm }) {
-  // (user.id)
-  // We need the user id, and there would be a button to add or remove a link
   return (
     <div className="user">
       <Navbar user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}   />
