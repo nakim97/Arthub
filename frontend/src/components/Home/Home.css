@@ -16,18 +16,6 @@ body {
   padding-top: 20px;
 }
 
-ul {
-  white-space: nowrap;
-}
-
-ul,
-li,
-listing {
-  list-style: none;
-  display: inline;
-  margin-right: 50px;
-}
-
 .carouselImg {
   width: 550px;
   height: 600px;
@@ -190,6 +178,10 @@ listing {
 
 .home .trendingMarket {
   margin-top: 50px;
+}
+
+.react-multi-carousel-list {
+  padding-bottom: 50px;
 }
 
 @media only screen and (max-width: 1555px) {
@@ -480,4 +472,214 @@ listing {
   width: 300px;
   padding-top: 50px;
   background-color: #151313;
+}
+
+@media only screen and (max-width: 1324px) {
+  .home .communityContainers .container .communityImg {
+    width: 250px;
+  }
+  .home .communityContainers .container .communityContainer {
+    width: 250px;
+    padding-top: 50px;
+    background-color: #151313;
+  }
+  .home .trendingMarket .container .marketContainer {
+    width: 250px;
+  }
+  .home
+    .trendingMarket
+    .container
+    .marketContainer
+    .marketImageContainer
+    .marketImg {
+    width: 250px;
+  }
+}
+
+@media only screen and (max-width: 1096px) {
+  .home .communityContainers .container .communityImg {
+    width: 200px;
+    height: 180px;
+  }
+  .home .communityContainers .container .communityContainer {
+    width: 200px;
+    padding-top: 50px;
+    background-color: #151313;
+  }
+
+  .home .trendingMarket .container .marketContainer {
+    width: 200px;
+    height: 180px;
+    padding-bottom: 50px;
+  }
+  .home
+    .trendingMarket
+    .container
+    .marketContainer
+    .marketImageContainer
+    .marketImg {
+    width: 200px;
+  }
+}
+
+@media only screen and (max-width: 950px) {
+  .home .communityContainers .container .communityImg {
+    width: 180px;
+    height: 180px;
+  }
+  .home .communityContainers .container .communityContainer {
+    width: 180px;
+    padding-top: 50px;
+    background-color: #151313;
+  }
+  .home .trendingMarket .container .marketContainer {
+    width: 180px;
+    height: 180px;
+    padding-bottom: 50px;
+  }
+  .home
+    .trendingMarket
+    .container
+    .marketContainer
+    .marketImageContainer
+    .marketImg {
+    width: 180px;
+  }
+}
+
+@media only screen and (max-width: 890px) {
+  .home .communityContainers .container .communityImg {
+    width: 300px;
+    height: 300px;
+  }
+  .home .communityContainers .container .communityContainer {
+    width: 300px;
+    padding-top: 50px;
+    background-color: #151313;
+  }
+  .home .communityContainers .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    color: white;
+  }
+  .home .trendingMarket .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-left: 20px;
+  }
+  .home .trendingMarket .container .marketContainer {
+    width: 300px;
+    height: 300px;
+    padding-bottom: 50px;
+  }
+  .home
+    .trendingMarket
+    .container
+    .marketContainer
+    .marketImageContainer
+    .marketImg {
+    width: 300px;
+  }
+}
+
+@media only screen and (max-width: 706px) {
+  .home .communityContainers .container .communityImg {
+    width: 250px;
+    height: 250px;
+  }
+  .home .communityContainers .container .communityContainer {
+    width: 250px;
+    padding-top: 50px;
+    background-color: #151313;
+  }
+  .home .communityContainers .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    color: white;
+  }
+  .home .trendingMarket .container .marketContainer {
+    width: 250px;
+    height: 250px;
+    padding-bottom: 50px;
+  }
+  .home
+    .trendingMarket
+    .container
+    .marketContainer
+    .marketImageContainer
+    .marketImg {
+    width: 250px;
+  }
+}
+
+@media only screen and (max-width: 706px) {
+  .home .communityContainers .container .communityImg {
+    width: 200px;
+    height: 200px;
+  }
+  .home .communityContainers .container .communityContainer {
+    width: 200px;
+    padding-top: 50px;
+    background-color: #151313;
+  }
+  .home .communityContainers .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    color: white;
+  }
+
+  .home .trendingMarket .container .marketContainer {
+    width: 200px;
+    height: 200px;
+    padding-bottom: 50px;
+  }
+  .home
+    .trendingMarket
+    .container
+    .marketContainer
+    .marketImageContainer
+    .marketImg {
+    width: 200px;
+  }
+}
+
+@media only screen and (max-width: 515px) {
+  .home .trendingMarket .container .marketContainer {
+    width: 180px;
+    margin-top:50px;
+    padding-bottom: 50px;
+  }
+  .home
+    .trendingMarket
+    .container
+    .marketContainer
+    .marketImageContainer
+    .marketImg {
+    width: 180px;
+  }
+  .home .communityContainers .container .communityImg {
+    width: 180px;
+    height: 180px;
+  }
+  .home .communityContainers .container .communityContainer {
+    width: 180px;
+    padding-top: 50px;
+    background-color: #151313;
+  }
+}
+
+ul {
+  white-space: nowrap;
+}
+
+ul,
+li,
+listing {
+  list-style: none;
+  display: inline;
+  margin-right: 50px;
+}
+
+.home .communityContainers .communityAuthor{
+  padding-left: 0.5rem;
 }
