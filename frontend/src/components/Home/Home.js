@@ -2,143 +2,26 @@ import "./Home.css";
 import Navbar from "../Navbar/Navbar";
 import SchoolIcon from "@material-ui/icons/School";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
-import carousel1 from "../../Assets/carousel1.jpg";
-import carousel2 from "../../Assets/carousel2.jpg";
-import carousel3 from "../../Assets/carousel3.jpg";
-import carousel4 from "../../Assets/carousel4.jpg";
 import homefeed1 from "../../Assets/homefeed1.jpg";
 import homefeed7 from "../../Assets/homefeed7.jpg";
-import homefeed4 from "../../Assets/homefeed4.jpg";
 import homefeed5 from "../../Assets/homefeed5.jpg";
 import homefeed6 from "../../Assets/homefeed6.jpg";
 import ForumIcon from "@material-ui/icons/Forum";
-import WhatshotIcon from "@material-ui/icons/Whatshot";
 import ThumbUpIcon from "@material-ui/icons/ThumbUp";
-import { useState, useEffect } from "react";
-import youtube from "../../APIs/youtube";
-import VideoItem from "../Youtube/videoitem";
 import ReactModal from "react-modal";
 import VideoDetail from "../Youtube/videodetail";
-import apiClient from "../../services/apiClient";
 import { Link } from "react-router-dom";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import QuestionAnswerIcon from "@material-ui/icons/QuestionAnswer";
-
+import { useHome } from "../../hooks/useHome";
 
 export default function Home({ handleOnLogout, user, term, setTerm }) {
-  const [selectedVideo, setSelectedVideo] = useState([null]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [videos, setVideos] = useState([]);
-  const [error, setError] = useState(false);
-  const [myPostsT, setMyPostsT] = useState([]);
-  const [myPostsB, setMyPostsB] = useState([]);
-  const [myPostsF, setMyPostsF] = useState([]);
-  const searchTerms = [
-    "how to draw hands",
-    "how to draw plam trees",
-    "how to draw realistic faces",
-    "how to draw 3D shapes",
-    "how to add better shading to my drawings",
-    "how to draw realistic human figures",
-    "how to draw art",
-    "how to sketch a boat",
-    "how to draw concept art",
-  ];
-  useEffect(() => {
-    const listAllPostsF = async () => {
-      setIsLoading(true);
-      try {
-        const { data } = await apiClient.listAllPostsD();
-        setMyPostsF(data.posts);
-      } catch (err) {
-        setError(err);
-      }
-    };
-    listAllPostsF();
-  }, []);
-  const responsive = {
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 3,
-      slidesToSlide: 1, // optional, default to 1.
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 639 },
-      items: 2,
-      slidesToSlide: 2, // optional, default to 1.
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
-      slidesToSlide: 1, // optional, default to 1.
-    },
-  };
-
-  function random(min, max) {
-    return Math.random() * (max - min) + min;
-  }
-  // This gets a random element from the search terms array
-  let myTerm = searchTerms[Math.floor(random(0, searchTerms.length - 1))];
-  // console.log(myTerm);
-  useEffect(() => {
-    const fetchVideos = async () => {
-      setIsLoading(true);
-      try {
-        const response = await youtube.get("/search", {
-          params: {
-            q: myTerm,
-          },
-        });
-        if (response?.data?.items) setVideos(response.data.items);
-      } catch (err) {
-        setError(err);
-      }
-
-      setIsLoading(false);
-    };
-    fetchVideos();
-  }, []);
-  useEffect(() => {
-    const listAllPostsT = async () => {
-      setIsLoading(true);
-      try {
-        const { data } = await apiClient.listAllPostsT();
-        setMyPostsT(data.posts);
-      } catch (err) {
-        setError(err);
-      }
-    };
-    const listAllPostsB = async () => {
-      setIsLoading(true);
-      try {
-        const { data } = await apiClient.listAllPostsB();
-        setMyPostsB(data.posts);
-      } catch (err) {
-        setError(err);
-      }
-    };
-
-    listAllPostsT();
-    listAllPostsB();
-  }, []);
-
-  const handleCloseModal = () => {
-    setSelectedVideo(null);
-  };
-  const handleVideoSelect = (video) => {
-    setSelectedVideo(video);
-  };
-
-  const renderedVideos = videos.map((video, i) => {
-    return (
-      <div key={i}>
-        <VideoItem video={video} handleVideoSelect={handleVideoSelect} />
-      </div>
-    );
-  });
-
+const {
+  renderedVideos, responsive, myPostsT, selectedVideo, handleCloseModal, myPostsF
+} = useHome({user})
   return (
+
     <div className="home">
       <Navbar
         user={user}
@@ -158,7 +41,6 @@ export default function Home({ handleOnLogout, user, term, setTerm }) {
           keyBoardControl={true}
           customTransition="all .5"
           transitionDuration={500}
-
           containerClass="carousel-container"
           dotListClass="custom-dot-list-style"
           itemClass="carousel-item-padding-0-px"
@@ -235,7 +117,7 @@ export default function Home({ handleOnLogout, user, term, setTerm }) {
         </div> */}
 
         <div className="newLearning">
-          <h4 style={{ marginBottom: "-250px", marginTop:"-50px" }}>
+          <h4 style={{ marginBottom: "-250px", marginTop: "-50px" }}>
             {" "}
             <SchoolIcon style={{ marginRight: "5px" }} /> NEW ON ARTHUB LEARNING
           </h4>
@@ -359,13 +241,11 @@ export default function Home({ handleOnLogout, user, term, setTerm }) {
           <div className="container">
             <div className="marketContainer">
               <div className="marketImageContainer">
-               
-                  <img
-                    className="marketImg"
-                    src={homefeed5}
-                    alt=" home feed img 4"
-                  />
-              
+                <img
+                  className="marketImg"
+                  src={homefeed5}
+                  alt=" home feed img 4"
+                />
               </div>
               <div className="marketTitlePrice">
                 <p className="marketTitle" style={{ textAlign: "left" }}>
@@ -391,13 +271,11 @@ export default function Home({ handleOnLogout, user, term, setTerm }) {
 
             <div className="marketContainer">
               <div className="marketImageContainer">
-    
-                  <img
-                    className="marketImg"
-                    src={homefeed1}
-                    alt=" home feed img 2"
-                  />
-      
+                <img
+                  className="marketImg"
+                  src={homefeed1}
+                  alt=" home feed img 2"
+                />
               </div>
               <div className="marketTitlePrice">
                 <p className="marketTitle" style={{ textAlign: "left" }}>
@@ -423,13 +301,11 @@ export default function Home({ handleOnLogout, user, term, setTerm }) {
 
             <div className="marketContainer">
               <div className="marketImageContainer">
-         
-                  <img
-                    className="marketImg"
-                    src={homefeed7}
-                    alt=" home feed img 2"
-                  />
-        
+                <img
+                  className="marketImg"
+                  src={homefeed7}
+                  alt=" home feed img 2"
+                />
               </div>
               <div className="marketTitlePrice">
                 <p className="marketTitle" style={{ textAlign: "left" }}>
@@ -455,13 +331,11 @@ export default function Home({ handleOnLogout, user, term, setTerm }) {
 
             <div className="marketContainer">
               <div className="marketImageContainer">
-   
-                  <img
-                    className="marketImg"
-                    src={homefeed6}
-                    alt=" home feed img 2"
-                  />
-              
+                <img
+                  className="marketImg"
+                  src={homefeed6}
+                  alt=" home feed img 2"
+                />
               </div>
               <div className="marketTitlePrice">
                 <p className="marketTitle" style={{ textAlign: "left" }}>
@@ -486,70 +360,71 @@ export default function Home({ handleOnLogout, user, term, setTerm }) {
             </div>
           </div>
         </div>
-        
+
         <div className="communityContainers">
-        <h4 className="communityhomeTitle">
+          <h4 className="communityhomeTitle">
             {" "}
-            <ForumIcon style={{ marginRight: "5px" }} /> TRENDING ON COMMUNITY FORUMS
+            <ForumIcon style={{ marginRight: "5px" }} /> TRENDING ON COMMUNITY
+            FORUMS
           </h4>
-        <div className="container">
-          {myPostsF.map((post) => {
-            var dateNew = new Date(post.forumCreatedAt);
-            var options = {
-              year: "numeric",
-              month: "numeric",
-              day: "numeric",
-              hour: "numeric",
-              minute: "numeric",
-              second: "numeric",
-              hour12: false,
-              timeZone: "America/Los_Angeles",
-            };
-            var date = new Intl.DateTimeFormat("default", options).format(
-              dateNew
-            );
-            return (
-              <div className="communityContainer" key={post.forumPostId}>
-                <div className="communityImageContainer">
-                  <li>
-                    <Link to={`/forum/${post.forumPostId}`}>
-                      <img
-                        className="communityImg"
-                        src={`${post.imgPostUrl}`}
-                        alt={`homecarousel ${post.forumPostId}`}
-                      />
-                    </Link>
-                  </li>
-                </div>
+          <div className="container">
+            {myPostsF.map((post) => {
+              var dateNew = new Date(post.forumCreatedAt);
+              var options = {
+                year: "numeric",
+                month: "numeric",
+                day: "numeric",
+                hour: "numeric",
+                minute: "numeric",
+                second: "numeric",
+                hour12: false,
+                timeZone: "America/Los_Angeles",
+              };
+              var date = new Intl.DateTimeFormat("default", options).format(
+                dateNew
+              );
+              return (
+                <div className="communityContainer" key={post.forumPostId}>
+                    <li>
+                      <Link to={`/forum/${post.forumPostId}`}>
+                        <img
+                          className="communityImg"
+                          src={`${post.imgPostUrl}`}
+                          alt={`homecarousel ${post.forumPostId}`}
+                        />
+                      </Link>
+                    </li>
 
-                <div className="communityTags">
-                  <p className="communityTag" style={{ textAlign: "left" }}>
-                    {" "}
-                    <span className="communityTime" style={{ float: "right" }}>
-                      {date}
+                  <div className="communityTags">
+                    <p className="communityTag" style={{ textAlign: "left" }}>
+                      {" "}
+                      <span
+                        className="communityTime"
+                        style={{ float: "right" }}
+                      >
+                        {date}
+                      </span>
+                    </p>
+
+                    <p className="communityTitle" style={{ textAlign: "left" }}>
+                      {" "}
+                      {post.forumTitle}
+                    </p>
+                  </div>
+                  <p className="communityAuthor" style={{ textAlign: "left" }}>
+                    by {post.username}
+                  </p>
+                  <div className="communityBlurb">
+                    <span className="communityBtn" style={{ float: "right" }}>
+                      <ThumbUpIcon style={{ fontSize: "15px" }} />{" "}
+                      <QuestionAnswerIcon style={{ fontSize: "15px" }} />{" "}
                     </span>
-                  </p>
-
-                  <p className="communityTitle" style={{ textAlign: "left" }}>
-                    {" "}
-                    {post.forumTitle}
-                  </p>
+                  </div>
                 </div>
-                <p className="communityAuthor" style={{ textAlign: "left" }}>
-                  by {post.username}
-                </p>
-                <div className="communityBlurb">
-                  <span className="communityBtn" style={{ float: "right" }}>
-                    <ThumbUpIcon style={{ fontSize: "15px" }} />{" "}
-                    <QuestionAnswerIcon style={{ fontSize: "15px" }} />{" "}
-                  </span>
-                </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
-        </div>
-
       </div>
     </div>
   );

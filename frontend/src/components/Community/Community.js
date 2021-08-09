@@ -52,7 +52,6 @@ export default function Community({
             );
             return (
               <div className="communityContainer" key={post.forumPostId}>
-                <div className="communityImageContainer">
                   <li>
                     <Link to={`/forum/${post.forumPostId}`}>
                       <img
@@ -62,7 +61,6 @@ export default function Community({
                       />
                     </Link>
                   </li>
-                </div>
 
                 <div className="communityTags">
                   <p className="communityTag" style={{ textAlign: "left" }}>

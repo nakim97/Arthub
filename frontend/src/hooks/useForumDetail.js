@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import apiClient from "../services/apiClient";
-import person2 from "../../Assets/person2.png";
+import person2 from "../Assets/person2.png";
 import { useParams } from "react-router";
 import ForumComments from "../components/ForumComments/ForumComments";
 
@@ -15,7 +15,6 @@ export const useForumDetail = ({ user }) => {
       setIsLoading(true);
       try {
         const { data } = await apiClient.listForumPostWithId(postId);
-        // console.log(data)
         setPost(data.posting);
       } catch (err) {
         setError(err);
@@ -70,6 +69,6 @@ export const useForumDetail = ({ user }) => {
   };
 
   return {
-    renderPostContent,
+    renderPostContent
   };
 };
