@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import "./Login.css";
 import login1 from "../../Assets/login1.png";
+import Logo from "../../Assets/Logo.png";
 
 import learningbanner from "../../Assets/learningbanner.jpg";
 import BrushIcon from "@material-ui/icons/Brush";
@@ -17,13 +18,16 @@ export default function Login({ user, setUser }) {
       <div>
         <Link to="/" className="Link">
           <div className="logo">
-            <BrushIcon style={{ fontSize: 30 }} />
+            <img src={Logo} />
+            {/* <BrushIcon style={{ fontSize: 30 }} /> */}
           </div>
         </Link>
         <div className="bubble">
           <BubbleChartIcon style={{ marginRight: "5px" }} />
         </div>
-        <p className="aside">You’re One<br></br> of <br></br>Us Now</p>
+        <p className="aside">
+          You’re One<br></br> of <br></br>Us Now
+        </p>
         <img className="loginImage" src={learningbanner} alt="login main img" />
       </div>
       <div className="card">
