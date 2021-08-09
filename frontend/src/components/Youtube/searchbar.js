@@ -1,16 +1,8 @@
+import { useSearchbar } from "../../hooks/useSearchbar";
 import "./searchbar.css";
-import React, { useState } from "react";
+
 export default function Searchbar(props) {
-  const [term, setTerm] = useState(null);
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    props.handleFormSubmit(term);
-  };
-
-  const handleChange = (event) => {
-    setTerm(event.target.value);
-  };
+  const { term, handleSubmit, handleChange } = useSearchbar(props);
 
   return (
     <div className="search">

@@ -4,16 +4,6 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-/* .forumBtn .forumCreate,
-.forumList {
-  border-color: white;
-  border-style: solid;
-  border-radius: 30px;
-  width: 100px;
-  padding: 5px;
-  margin-bottom: 4rem;
-  margin-right: 20px;
-} */
 .forumCreate a,
 .forumList a {
   text-decoration: none;
@@ -96,9 +86,7 @@ body {
 
 .communityContainer {
   width: 300px;
-  /* background-color: rgb(61, 61, 61); */
 }
-
 
 
 .communityContainer .communityTitle {

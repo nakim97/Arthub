@@ -31,7 +31,12 @@ export default function Upload({ user, handleOnLogout, term, setTerm }) {
   if (!user.email) {
     return (
       <div className="total">
-        <Navbar user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}   />
+        <Navbar
+          user={user}
+          handleOnLogout={handleOnLogout}
+          term={term}
+          setTerm={setTerm}
+        />
         <div className="title">
           <h2>You must be logged in to create a post.</h2>
         </div>
@@ -41,7 +46,12 @@ export default function Upload({ user, handleOnLogout, term, setTerm }) {
   // Normal view
   return (
     <div className="upload">
-      <Navbar user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}   />
+      <Navbar
+        user={user}
+        handleOnLogout={handleOnLogout}
+        term={term}
+        setTerm={setTerm}
+      />
 
       <div className="title">
         <h2>Create A New Post</h2>

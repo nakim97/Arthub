@@ -5,7 +5,7 @@ import apiClient from "../services/apiClient";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 
-export const useCommentsForm = ({ user }) => {
+export const useForumCommentsForm = ({ user, post }) => {
   const { postId } = useParams();
   const [isLoading, setIsLoading] = useState(false);
   const [isLoadingL, setIsLoadingL] = useState(false);
@@ -18,7 +18,7 @@ export const useCommentsForm = ({ user }) => {
     const fetchCommentsById = async () => {
       setIsLoading(true);
       try {
-        const { data } = await apiClient.listCommentsWithPostId(postId);
+        const { data } = await apiClient.listForumCommentsWithPostId(postId);
         setComments(data.comments);
       } catch (err) {
         setError(err);
@@ -34,7 +34,7 @@ export const useCommentsForm = ({ user }) => {
     const fetchLikesById = async () => {
       setIsLoadingL(true);
       try {
-        const { data } = await apiClient.listLikesWithPostId(postId);
+        const { data } = await apiClient.listForumLikesWithPostId(postId);
         setLikes(data.likes.likes);
       } catch (err) {
         setError(err);
@@ -48,7 +48,7 @@ export const useCommentsForm = ({ user }) => {
   const handleAddLike = async () => {
     setIsLoading(true);
     try {
-      const { data } = await apiClient.createLike(postId);
+      const { data } = await apiClient.createForumLike(postId);
       setLikes(data.like.likes);
     } catch (err) {
       setError(err);
@@ -56,15 +56,10 @@ export const useCommentsForm = ({ user }) => {
     setIsLoading(false);
   };
 
-  const handleShare = () => {
-    let link = window.location.href;
-    alert("Share this link: " + link);
-  };
-
   const handleDeleteLike = async () => {
     setIsLoading(true);
     try {
-      const { data } = await apiClient.deleteLike(postId);
+      const { data } = await apiClient.deleteForumLike(postId);
       setLikes(data.liked.likes);
     } catch (err) {
       setError(err);
@@ -72,7 +67,6 @@ export const useCommentsForm = ({ user }) => {
     setIsLoading(false);
   };
 
-  // Determine if the user liked the current post based on the array of likes
   let isLiked = false;
   for (let i in likes) {
     if (likes[i][0] == user.id) {
@@ -97,6 +91,11 @@ export const useCommentsForm = ({ user }) => {
     </>
   );
 
+  const handleShare = () => {
+    let link = window.location.href;
+    alert("Share this link: " + link);
+  };
+
   const isAuthenticated = Boolean(user.email);
   const renderLike = isAuthenticated ? (
     <>{likeButton}</>
@@ -108,7 +107,7 @@ export const useCommentsForm = ({ user }) => {
   const { register, handleSubmit } = useForm();
 
   let commentsForm;
-  // Display the correct message for number of comments
+  // Display the message for comments
   let commentsNum = ``;
   if (comments.length == 1) {
     commentsNum = `${comments.length} Comment`;
@@ -116,7 +115,7 @@ export const useCommentsForm = ({ user }) => {
     commentsNum = `${comments.length} Comments`;
   }
 
-  // Display the correct message for number of likes
+  // Display the message for likes
   let likesNum = ``;
   if (likes.length == 1) {
     likesNum = `${likes.length} Like`;
@@ -129,17 +128,17 @@ export const useCommentsForm = ({ user }) => {
       <>
         <div className="searchForm">
           <form
-            onSubmit={handleSubmit(async (data) => {
-              await apiClient.createComment(postId, {
-                comment: data["Comments"],
-              });
-            })}
+            onSubmit={handleSubmit(
+              async (data) =>
+                await apiClient.createForumComment(postId, {
+                  comment: data["Comments"],
+                })
+            )}
           >
             <div className="commentSecCont">
               <div className="typeComment">
                 <input
                   type="text"
-                  name="Comments"
                   placeholder="Comments"
                   {...register("Comments", {})}
                 />

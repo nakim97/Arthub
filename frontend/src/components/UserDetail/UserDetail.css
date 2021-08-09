@@ -16,11 +16,6 @@
 .socialMedia a:visited {
   color: cyan;
 }
-/* .user .profilePic {
-  display: flex;
-  margin-left: 2rem;
-  margin-top: 1rem;
-} */
 
 .user .userInfo {
   display: flex;

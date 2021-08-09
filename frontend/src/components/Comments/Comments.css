@@ -1,67 +1,109 @@
 .commentSection {
-    color: white;
-  }
-  
-  .likesAndShare {
-    display: flex;
-    justify-content: space-evenly;
-    width: 100px;
-    margin-top: 1rem;
-    margin-left: 3rem;
-    color: white;
-  }
-  
-  .clears {
-    cursor: pointer;
-    border: none;
-    background-color: transparent;
-  }
-  .icons {
-    font-size: 20px;
-    margin-left: 10px;
-    color: white;
-  }
-  
-  .likeCommentCount {
-    display: flex;
-    justify-content: space-between;
-    width: 200px;
-    margin-left: 4rem;
-    color: white;
-  }
-  
-  .numCount {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 150px;
-    margin-left: 0.5rem;
-  }
-  
-  .numCount .numCommentsCount p {
-    margin-left: 1rem;
-  }
-  
-  .description {
-    margin-left: 2rem;
-  }
-  .comments .title {
-    margin-left: 4rem;
-  }
-  .comments .commentSecCont {
-    display: flex;
-  }
-  
-  .share {
-    font-size: 20px;
-    margin-left: 10px;
-    color: white;
-  }
-  
+  color: white;
+}
+
+.likesAndShare {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100px;
+  margin-top: 1rem;
+  margin-left: 3rem;
+  color: white;
+}
+
+.clears {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+.icons {
+  font-size: 20px;
+  margin-left: 10px;
+  color: white;
+}
+
+.likeCommentCount {
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+  margin-left: 4rem;
+  color: white;
+}
+
+.numCount {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 150px;
+  margin-left: 0.5rem;
+}
+
+.numCount .numCommentsCount p {
+  margin-left: 1rem;
+}
+
+.description {
+  margin-left: 2rem;
+}
+.comments .title {
+  margin-left: 4rem;
+}
+.comments .commentSecCont {
+  display: flex;
+}
+
+.share {
+  font-size: 20px;
+  margin-left: 10px;
+  color: white;
+}
+
+.comments .typeComment input {
+  display: flex;
+  margin-left: 4rem;
+  width: 690px;
+  height: 33px;
+  background: #000000;
+  border: 1px solid #6b6b6b;
+  box-sizing: border-box;
+  color: white;
+  outline: none;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 25px;
+  font-family: "Roboto", sans-serif;
+  padding-left: 20px;
+}
+
+.comments .submitComment input {
+  display: flex;
+  color: black;
+  margin-left: 2rem;
+  border-radius: 25rem;
+  padding-right: 6rem;
+  padding: 0.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  background-color: #7fffd4;
+}
+
+.comments .commentSection {
+  display: flex;
+  margin-left: 2rem;
+  margin-top: 1rem;
+}
+
+.comments .commentSection .userInfo .subUserInfo {
+  text-align: left;
+}
+.comments .commentSection .userInfo .subUserInfo .commentTimestamp {
+  font-size: 12px;
+}
+
+@media only screen and (max-width: 1050px) {
   .comments .typeComment input {
     display: flex;
     margin-left: 4rem;
-    width: 690px;
+    max-width: 400px;
     height: 33px;
     background: #000000;
     border: 1px solid #6b6b6b;
@@ -71,141 +113,98 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 25px;
     font-family: "Roboto", sans-serif;
-    padding-left: 20px;
+    padding-left: 10px;
   }
-  
+}
+
+@media only screen and (max-width: 630px) {
+  .comments .typeComment input {
+    display: flex;
+    margin-left: 4rem;
+    max-width: 300px;
+    height: 33px;
+    background: #000000;
+    border: 1px solid #6b6b6b;
+    box-sizing: border-box;
+    color: white;
+    outline: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+    font-family: "Roboto", sans-serif;
+    padding-left: 10px;
+  }
+}
+
+@media only screen and (max-width: 530px) {
+  .comments .typeComment input {
+    display: flex;
+    margin-left: 4rem;
+    max-width: 250px;
+    height: 33px;
+    background: #000000;
+    border: 1px solid #6b6b6b;
+    box-sizing: border-box;
+    color: white;
+    outline: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+    font-family: "Roboto", sans-serif;
+    padding-left: 10px;
+  }
+}
+
+@media only screen and (max-width: 470px) {
+  .comments .typeComment input {
+    display: flex;
+    margin-left: 4rem;
+    max-width: 170px;
+    height: 33px;
+    background: #000000;
+    border: 1px solid #6b6b6b;
+    box-sizing: border-box;
+    color: white;
+    outline: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+    font-family: "Roboto", sans-serif;
+    padding-left: 10px;
+  }
+}
+
+@media only screen and (max-width: 390px) {
+  .comments .typeComment input {
+    display: flex;
+    margin-left: 4rem;
+    max-width: 140px;
+    height: 33px;
+    background: #000000;
+    border: 1px solid #6b6b6b;
+    box-sizing: border-box;
+    color: white;
+    outline: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+    font-family: "Roboto", sans-serif;
+    padding-left: 10px;
+  }
+
   .comments .submitComment input {
     display: flex;
     color: black;
-    margin-left: 2rem;
+    margin-left: 1rem;
     border-radius: 25rem;
-    padding-right: 6rem;
-    padding: 0.5rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     background-color: #7fffd4;
   }
-  
-  .comments .commentSection {
-    display: flex;
-    margin-left: 2rem;
-    margin-top: 1rem;
+}
+
+@media only screen and (max-width: 390px) {
+  .likeCommentCount {
+    display: grid;
+    color: white;
   }
-  
-  .comments .commentSection .userInfo .subUserInfo {
-    text-align: left;
+  .likeCommentCount .likeCount .numCount {
+    margin-left: -0.5rem;
   }
-  .comments .commentSection .userInfo .subUserInfo .commentTimestamp {
-    font-size: 12px;
-  }
-  
-  @media only screen and (max-width: 1050px) {
-    .comments .typeComment input {
-      display: flex;
-      margin-left: 4rem;
-      max-width: 400px;
-      height: 33px;
-      background: #000000;
-      border: 1px solid #6b6b6b;
-      box-sizing: border-box;
-      color: white;
-      outline: none;
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      border-radius: 25px;
-      font-family: "Roboto", sans-serif;
-      padding-left: 10px;
-    }
-  }
-  
-  @media only screen and (max-width: 630px) {
-    .comments .typeComment input {
-      display: flex;
-      margin-left: 4rem;
-      max-width: 300px;
-      height: 33px;
-      background: #000000;
-      border: 1px solid #6b6b6b;
-      box-sizing: border-box;
-      color: white;
-      outline: none;
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      border-radius: 25px;
-      font-family: "Roboto", sans-serif;
-      padding-left: 10px;
-    }
-  }
-  
-  @media only screen and (max-width: 530px) {
-    .comments .typeComment input {
-      display: flex;
-      margin-left: 4rem;
-      max-width: 250px;
-      height: 33px;
-      background: #000000;
-      border: 1px solid #6b6b6b;
-      box-sizing: border-box;
-      color: white;
-      outline: none;
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      border-radius: 25px;
-      font-family: "Roboto", sans-serif;
-      padding-left: 10px;
-    }
-  }
-  
-  @media only screen and (max-width: 470px) {
-    .comments .typeComment input {
-      display: flex;
-      margin-left: 4rem;
-      max-width: 170px;
-      height: 33px;
-      background: #000000;
-      border: 1px solid #6b6b6b;
-      box-sizing: border-box;
-      color: white;
-      outline: none;
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      border-radius: 25px;
-      font-family: "Roboto", sans-serif;
-      padding-left: 10px;
-    }
-  }
-  
-  @media only screen and (max-width: 390px) {
-    .comments .typeComment input {
-      display: flex;
-      margin-left: 4rem;
-      max-width: 140px;
-      height: 33px;
-      background: #000000;
-      border: 1px solid #6b6b6b;
-      box-sizing: border-box;
-      color: white;
-      outline: none;
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      border-radius: 25px;
-      font-family: "Roboto", sans-serif;
-      padding-left: 10px;
-    }
-  
-    .comments .submitComment input {
-      display: flex;
-      color: black;
-      margin-left: 1rem;
-      border-radius: 25rem;
-      padding-left: 1rem;
-      padding-right: 1rem;
-      background-color: #7fffd4;
-    }
-  }
-  
-  @media only screen and (max-width: 390px) {
-    .likeCommentCount {
-      display: grid;
-      color: white;
-    }
-    .likeCommentCount .likeCount .numCount {
-      margin-left: -0.5rem;
-    }
-  }
-  
+}

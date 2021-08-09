@@ -1,29 +1,12 @@
 import "./Explore.css";
 import banner5 from "../../Assets/banner6.jpg";
-import apiClient from "../../services/apiClient";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
 
 import Navbar from "../Navbar/Navbar";
+import { useExplore } from "../../hooks/useExplore";
 
 export default function Explore({ user, handleOnLogout, term, setTerm }) {
-  const [myPosts, setMyPosts] = useState([]);
-  const [error, setError] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-
-  useEffect(() => {
-    const listAllPosts = async () => {
-      setIsLoading(true);
-      try {
-        const { data } = await apiClient.listAllPosts();
-        setMyPosts(data.posts);
-      } catch (err) {
-        setError(err);
-      }
-    };
-
-    listAllPosts();
-  });
+  const { myPosts } = useExplore({ user });
 
   return (
     <div className="explore">
@@ -87,54 +70,6 @@ export default function Explore({ user, handleOnLogout, term, setTerm }) {
             </div>
           ))}
         </div>
-
-        {/* <div className="gallery-item">
-          <div className="image">
-            <img src={homefeed5} alt="explore page image 5" />
-          </div>
-        </div>
-
-        <div className="gallery-item">
-          <div className="image">
-            <img src={homefeed6} alt="explore page image 6" />
-          </div>
-        </div>
-
-        <div className="gallery-item">
-          <div className="image">
-            <img src={homefeed2} alt="explore page image 2" />
-          </div>
-        </div>
-
-        <div className="gallery-item">
-          <div className="image">
-            <img src={homefeed3} alt="explore page image 3" />
-          </div>
-        </div>
-
-        <div className="gallery-item">
-          <div className="image">
-            <img src={homefeed4} alt="explore page image 4" />
-          </div>
-        </div>
-
-        <div className="gallery-item">
-          <div className="image">
-            <img src={carousel1} alt="explore page carousel image 1" />
-          </div>
-        </div>
-
-        <div className="gallery-item">
-          <div className="image">
-            <img src={carousel2} alt="explore page carousel image 2" />
-          </div>
-        </div>
-
-        <div className="gallery-item">
-          <div className="image">
-            <img src={carousel4} alt="explore page carousel image 4" />
-          </div>
-        </div> */}
       </div>
     </div>
   );

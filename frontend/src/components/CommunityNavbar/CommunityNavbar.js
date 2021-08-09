@@ -1,22 +1,9 @@
 import "./CommunityNavbar.css";
-import { Link, useNavigate } from "react-router-dom";
 import FilterListIcon from "@material-ui/icons/FilterList";
+import { useCommunity } from "../../hooks/useCommunity";
 
-export default function CommunityNavbar({ forumTerm, setForumTerm }) {
-  const navigate = useNavigate();
-  // This redirects to the search page to display the posts
-  const handleFormSubmit = async () => {
-    navigate("/forumsearch");
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    handleFormSubmit(forumTerm);
-  };
-
-  const handleChange = (event) => {
-    setForumTerm(event.target.value);
-  };
+export default function CommunityNavbar({ user, forumTerm, setForumTerm }) {
+  const { handleSubmit, handleChange } = useCommunity({ user, forumTerm, setForumTerm });
   return (
     <nav className="communityNavbar">
       <div className="content">

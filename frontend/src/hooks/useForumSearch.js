@@ -12,7 +12,6 @@ export const useForumSearch = ({ user, forumTerm }) => {
       setFetching(true);
       try {
         const { data } = await apiClient.searchForumPosts(forumTerm);
-        // console.log(data)
         setPosts(data.searches);
       } catch (err) {
         setError(err);

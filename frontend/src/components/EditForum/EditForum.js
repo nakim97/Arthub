@@ -1,6 +1,5 @@
 import "./EditForum.css";
 import Navbar from "../Navbar/Navbar";
-// import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
 import { Link } from "react-router-dom";
 import { useEditForum } from "../../hooks/useEditForum";
@@ -24,6 +23,7 @@ export default function EditForum({ user, handleOnLogout, term, setTerm }) {
       </div>
     );
   }
+
   return (
     <div className="EditForum">
       <Navbar
@@ -51,7 +51,6 @@ export default function EditForum({ user, handleOnLogout, term, setTerm }) {
             <p className="portfolioDescription"> {post.forumDescription}</p>
             <p className="likeComments">
               {" "}
-              {/* <EditIcon style={{ fontSize: "20px" }} />{" "} */}
               <button
                 className="clear"
                 onClick={() => handleDelete(post.forumPostId)}

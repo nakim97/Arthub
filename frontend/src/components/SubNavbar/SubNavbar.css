@@ -8,25 +8,25 @@
   height: 40px;
   text-align: center;
 }
-.subNavbar .content .links{
+.subNavbar .content .links {
   display: flex;
   justify-content: space-evenly;
   width: 100px;
   text-align: center;
   margin-top: 0rem;
-  margin:auto;
+  margin: auto;
   list-style-type: none;
   font-size: 16px;
   gap: 15px;
   color: white;
 }
 
-.subNavbar .content .links  .subNav{
-  color:white;
+.subNavbar .content .links .subNav {
+  color: white;
 }
-.subNavbar .content .links  .subNav-active{
-  color:#7fffd4 !important;
-  border-color:white !important;
+.subNavbar .content .links .subNav-active {
+  color: #7fffd4 !important;
+  border-color: white !important;
 }
 .subNavbar .content .links li {
   display: inline-flex;
@@ -36,66 +36,9 @@
   margin-right: 0px;
 }
 
-
-/* 
-.subNavbar .content .links .l1 .subNavLink1 {
-  margin-left: 2rem;
-}
-.subNavbar .content .links .l2 .subNavLink2 {
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
-.subNavbar .content .links .l3 .subNavLink3 {
-  padding-left: 2rem;
-}
-.subNavbar .content .links .l4 .subNavLink4 {
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
-.subNavbar .content .links .l5 .subNavLink5 {
-  padding-left: 2rem;
-  padding-right: 2rem;
-} */
-
 .subNavbar .content .links li:hover {
   color: #7fffd4;
 }
-/* 
-.subNavbar .content .links .subNavLink1:active,
-.subNavLink1:link,
-.subNavLink1:visited,
-.subNavLink1:active,
-.subNavLink1:target {
-  color: #7fffd4;
-} */
-/* .subNavbar .content .links .l1:focus-within .subNavLink1 {
-  color: #7fffd4;
-}
-.subNavbar .content .links .l2:focus-within .subNavLink2 {
-  color: #7fffd4;
-}
-.subNavbar .content .links .l3:focus-within .subNavLink3 {
-  color: #7fffd4;
-}
-.subNavbar .content .links .l4:focus-within .subNavLink4 {
-  color: #7fffd4;
-}
-.subNavbar .content .links .l5:focus-within .subNavLink5 {
-  color: #7fffd4;
-} */
-
-/* .subNavbar .content .links:focus-within .subNavLink2 {
-  color: #7fffd4;
-}
-.subNavbar .content .links:focus-within .subNavLink3 {
-  color: #7fffd4;
-}
-.subNavbar .content .links:focus-within .subNavLink4 {
-  color: #7fffd4;
-}
-.subNavbar .content .links:focus-within .subNavLink5 {
-  color: #7fffd4;
-} */
 
 .subNavbar {
   font-family: "Roboto", sans-serif;
@@ -242,12 +185,12 @@
   }
 }
 
-@media only screen and (max-width:656px){
-  .subNavbar .content .links .l1{
+@media only screen and (max-width: 656px) {
+  .subNavbar .content .links .l1 {
     font-size: 15px;
     gap: 10px;
-    border-style:none;
-    border-right:none red !important;
+    border-style: none;
+    border-right: none red !important;
   }
   .subNavbar .content .links li {
     padding-left: 0rem;

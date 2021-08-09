@@ -17,12 +17,6 @@ export default function ImageUploadS({
       </section>
       <section className="left-side">
         <form>
-          {/* <div className="form-group">
-            <input type="file" />
-          </div>
-          <button type="button" className="btn" onClick={handleImageUpload}>
-            Submit
-          </button> */}
           <div className="customize">
             <button
               type="button"

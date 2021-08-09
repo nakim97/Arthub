@@ -13,21 +13,18 @@
   color: white;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-
 }
-
 
 .video {
   padding: 1rem;
   margin-top: 50px;
-  cursor:pointer;
-  transition: all .5s ease;
+  cursor: pointer;
+  transition: all 0.5s ease;
 }
 
-.video:hover{
+.video:hover {
   transform: translate(0, -10px);
 }
-
 
 .noSearch {
   color: white;
@@ -70,5 +67,3 @@
     height: 30%;
   }
 }
-
-

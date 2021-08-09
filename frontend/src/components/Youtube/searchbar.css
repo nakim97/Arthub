@@ -27,13 +27,13 @@ body {
 }
 
 @media only screen and (max-width: 650px) {
-  .search .field input{
+  .search .field input {
     width: 450px;
   }
 }
 
 @media only screen and (max-width: 4740px) {
-  .search .field input{
+  .search .field input {
     width: 400px;
   }
 }

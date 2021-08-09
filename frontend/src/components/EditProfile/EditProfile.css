@@ -13,16 +13,17 @@
   display: flex;
   width: 20%;
 }
+
 .user .userInfo {
-  /* display: grid;
-  grid-template-columns: repeat(6, 1fr); */
   display: flex;
   align-items: baseline;
   color: white;
 }
+
 .user .userInfo .userImage {
   padding-right: 2rem;
 }
+
 .user .nameInfo {
   margin-top: -41.75rem;
   margin-left: 25rem;

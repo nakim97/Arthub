@@ -17,4 +17,3 @@ const VideoItem = ({ video, handleVideoSelect }) => {
   );
 };
 export default VideoItem;
-
