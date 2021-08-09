@@ -107,10 +107,12 @@ body {
   grid-auto-flow: dense; */
 
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  grid-template-rows: repeat(6, 200px);
-  grid-gap: 1rem;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-rows: repeat(3, 200px);
   grid-auto-flow: dense;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .communityImageContainer img {
