@@ -17,11 +17,15 @@ import QuestionAnswerIcon from "@material-ui/icons/QuestionAnswer";
 import { useHome } from "../../hooks/useHome";
 
 export default function Home({ handleOnLogout, user, term, setTerm }) {
-const {
-  renderedVideos, responsive, myPostsT, selectedVideo, handleCloseModal, myPostsF
-} = useHome({user})
+  const {
+    renderedVideos,
+    responsive,
+    myPostsT,
+    selectedVideo,
+    handleCloseModal,
+    myPostsF,
+  } = useHome({ user });
   return (
-
     <div className="home">
       <Navbar
         user={user}
@@ -61,145 +65,13 @@ const {
       </div>
 
       <div className="exploreTrendingLatest">
-        {/* <div className="feedBtns">
-          <button
-            className="feedExploreBtn"
-            style={{
-              backgroundImage:
-                "url(" +
-                "https://images.unsplash.com/photo-1561839561-b13bcfe95249?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=627&q=80" +
-                ")",
-              backgroundSize: "100%",
-            }}
-          >
-            EXPLORE
-          </button>
-          <button
-            className="feedTrendingBtn"
-            style={{
-              backgroundImage:
-                "url(" +
-                "https://images.unsplash.com/photo-1572379371012-9e11bfc61b35?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTY1fHxhcnR8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" +
-                ")",
-              backgroundSize: "100%",
-            }}
-          >
-            TRENDING
-          </button>
-          <button
-            className="feedLatestBtn"
-            style={{
-              backgroundImage:
-                "url(" +
-                "https://images.unsplash.com/photo-1588260692965-2c90db1b8c0e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NjB8fGFydHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" +
-                ")",
-              backgroundSize: "100%",
-            }}
-          >
-            LATEST
-          </button>
-        </div> */}
-
-        {/* <div className="feed">
-          <ul>
-            {myPostsB.map((post) => (
-              <li key={post.photoPostId}>
-                <Link to={`/post/${post.photoPostId}`}>
-                  <img
-                    className="feedImg"
-                    src={`${post.imgPostUrl}`}
-                    alt={`home feed ${post.photoPostId}`}
-                  />
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div> */}
-
         <div className="newLearning">
           <h4 style={{ marginBottom: "-250px", marginTop: "-50px" }}>
             {" "}
             <SchoolIcon style={{ marginRight: "5px" }} /> NEW ON ARTHUB LEARNING
           </h4>
           <div className="container">
-            {/* <div className="learningContainer">
-              <div className="learningImageContainer">
-                <li>
-                  <img
-                    className="learningImg"
-                    src={homefeed7}
-                    alt=" home feed img 2"
-                  />
-                </li>
-              </div>
-              <p className="learningTitle">How to Draw Rocks </p>
-              <div className="learningBlurb">
-                <p style={{ textAlign: "left" }}>
-                  by Hello World
-                  <span style={{ float: "right" }}>1h 10s</span>
-                </p>
-              </div>
-            </div>
-
-            <div className="learningContainer">
-              <div className="learningImageContainer">
-                <li>
-                  <img
-                    className="learningImg"
-                    src={homefeed6}
-                    alt=" home feed img 6"
-                  />
-                </li>
-              </div>
-              <p className="learningTitle">How to Concept Art </p>
-              <div className="learningBlurb">
-                <p style={{ textAlign: "left" }}>
-                  by Test
-                  <span style={{ float: "right" }}>45m</span>
-                </p>
-              </div>
-            </div>
-
-            <div className="learningContainer">
-              <div className="learningImageContainer">
-                <img
-                  className="learningImg"
-                  src={homefeed1}
-                  alt=" home feed img 1"
-                />
-              </div>
-              <p className="learningTitle">How to Sketch Animals </p>
-              <div className="learningBlurb">
-                <p style={{ textAlign: "left" }}>
-                  by Yes
-                  <span style={{ float: "right" }}>2h 10m</span>
-                </p>
-              </div>
-            </div>
-
-            <div className="learningContainer">
-              <div className="learningImageContainer">
-                <li>
-                  <img
-                    className="learningImg"
-                    src={homefeed4}
-                    alt=" home feed img 4"
-                  />
-                </li>
-              </div>
-              <p className="learningTitle">How to Draw Rocks </p>
-              <div className="learningBlurb">
-                <p style={{ textAlign: "left" }}>
-                  by Hello World
-                  <span style={{ float: "right" }}>1h 10s</span>
-                </p>
-              </div>
-            </div> */}
             <div className="eleven wide column">
-              {/* {console.log(selectedVideo)} */}
-
-              {/* {console.log("Hi",Boolean(selectedVideo))} */}
-
               <ReactModal
                 isOpen={selectedVideo?.id}
                 onRequestClose={handleCloseModal}
@@ -385,15 +257,15 @@ const {
               );
               return (
                 <div className="communityContainer" key={post.forumPostId}>
-                    <li>
-                      <Link to={`/forum/${post.forumPostId}`}>
-                        <img
-                          className="communityImg"
-                          src={`${post.imgPostUrl}`}
-                          alt={`homecarousel ${post.forumPostId}`}
-                        />
-                      </Link>
-                    </li>
+                  <li>
+                    <Link to={`/forum/${post.forumPostId}`}>
+                      <img
+                        className="communityImg"
+                        src={`${post.imgPostUrl}`}
+                        alt={`homecarousel ${post.forumPostId}`}
+                      />
+                    </Link>
+                  </li>
 
                   <div className="communityTags">
                     <p className="communityTag" style={{ textAlign: "left" }}>

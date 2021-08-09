@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap");
 
 html,
 body {
@@ -187,7 +186,7 @@ body {
   font-size: 0.75em;
 }
 
-@media screen and (max-width:1095px){
+@media screen and (max-width: 1095px) {
   .loginImage {
     position: absolute;
     width: 300px;
@@ -197,8 +196,7 @@ body {
   }
   .aside {
     position: absolute;
-    
-  
+
     font-family: Roboto;
     font-style: normal;
     font-weight: bold;
@@ -207,13 +205,13 @@ body {
     display: flex;
     align-items: center;
     text-align: center;
-  
+
     color: #ffffff;
     z-index: 1;
   }
 }
 
-@media screen and (max-width:989px){
+@media screen and (max-width: 989px) {
   .loginImage {
     position: absolute;
     width: 220px;
@@ -224,7 +222,7 @@ body {
   .aside {
     position: absolute;
     left: 50px;
-  
+
     font-family: Roboto;
     font-style: normal;
     font-weight: bold;
@@ -233,13 +231,13 @@ body {
     display: flex;
     align-items: center;
     text-align: center;
-  
+
     color: #ffffff;
     z-index: 1;
   }
 }
 
-@media screen and (max-width:839px){
+@media screen and (max-width: 839px) {
   .loginImage {
     position: absolute;
     width: 150px;
@@ -250,7 +248,7 @@ body {
   .aside {
     position: absolute;
     left: 20px;
-  
+
     font-family: Roboto;
     font-style: normal;
     font-weight: bold;
@@ -259,7 +257,7 @@ body {
     display: flex;
     align-items: center;
     text-align: center;
-  
+
     color: #ffffff;
     z-index: 1;
   }
@@ -273,8 +271,10 @@ body {
   }
 }
 
-@media screen and (max-width:701px){
-  .aside, .bubble, .loginImage{
+@media screen and (max-width: 701px) {
+  .aside,
+  .bubble,
+  .loginImage {
     display: none;
   }
 }
