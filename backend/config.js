@@ -6,6 +6,7 @@ const SECRET_KEY = process.env.SECRET_KEY || "secret_dev";
 
 const IS_TESTING = process.env.NODE_ENV === "test";
 
+// The singular name of a url
 function getDatabaseUri() {
   const dbUser = process.env.DATABASE_USER || "postgres";
   const dbPass = process.env.DATABASE_PASS
