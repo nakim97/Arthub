@@ -5,7 +5,7 @@ import apiClient from "../services/apiClient";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 
-export const useCommentsForm = ({ user, post }) => {
+export const useCommentsForm = ({ user }) => {
   const { postId } = useParams();
   const [isLoading, setIsLoading] = useState(false);
   const [isLoadingL, setIsLoadingL] = useState(false);

@@ -52,6 +52,7 @@ class ApiClient {
       method: `DELETE`,
     });
   }
+
   async deleteForumPost(postId) {
     return await this.request({
       endpoint: `forum/${postId}`,
@@ -81,10 +82,6 @@ class ApiClient {
       data: image,
     });
   }
-
-  // async listPosts() {
-  //   return await this.request({ endpoint: `posts`, method: `GET` });
-  // }
 
   async listAllPosts() {
     return await this.request({

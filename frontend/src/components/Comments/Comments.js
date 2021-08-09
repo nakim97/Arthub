@@ -14,7 +14,7 @@ export default function Comments({ user, post }) {
     likesNum,
     commentsForm,
     comments,
-  } = useCommentsForm({ user, post });
+  } = useCommentsForm({ user });
   return (
     <div className="comments">
       <div className="likesAndShare">

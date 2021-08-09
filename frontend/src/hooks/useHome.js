@@ -4,7 +4,6 @@ import youtube from "../APIs/youtube";
 import VideoItem from "../components/Youtube/videoitem";
 
 export const useHome = ({ user }) => {
-  
   const [selectedVideo, setSelectedVideo] = useState([null]);
   const [isLoading, setIsLoading] = useState(false);
   const [videos, setVideos] = useState([]);
@@ -115,6 +114,11 @@ export const useHome = ({ user }) => {
     );
   });
   return {
-   renderedVideos, responsive, myPostsT, selectedVideo, handleCloseModal, myPostsF
+    renderedVideos,
+    responsive,
+    myPostsT,
+    selectedVideo,
+    handleCloseModal,
+    myPostsF,
   };
 };

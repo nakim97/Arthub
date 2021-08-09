@@ -29,11 +29,7 @@ export const useEditProfile = ({ user, setUser, imageUrl, imageUrl2 }) => {
   });
 
   useEffect(() => {
-    // if user is already logged in,
-    // redirect them to the home page
-    // if (user?.email) {
-    //   navigate("/");
-    // }
+    // Kinda just here...
   }, [user]);
   const handleOnInputChange = (event) => {
     setForm((f) => ({ ...f, [event.target.name]: event.target.value }));

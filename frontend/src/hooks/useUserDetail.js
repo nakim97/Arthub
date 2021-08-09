@@ -8,7 +8,6 @@ import FacebookIcon from "@material-ui/icons/Facebook";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import { Link } from "react-router-dom";
 
-
 export const useUserDetail = ({ user }) => {
   const { Id } = useParams();
   const [isLoading, setIsLoading] = useState(false);

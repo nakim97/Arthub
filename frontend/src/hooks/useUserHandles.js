@@ -1,5 +1,5 @@
-import userBanner from "../../Assets/userBanner.png";
-import person2 from "../../Assets/person2.png";
+import userBanner from "../Assets/userBanner.png";
+import person2 from "../Assets/person2.png";
 
 export const useUserHandles = ({ userInfo }) => {
   let instagram_url = "",

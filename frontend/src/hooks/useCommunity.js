@@ -63,6 +63,6 @@ export const useCommunity = ({ user, forumTerm, setForumTerm }) => {
     button,
     myPostsF,
     handleSubmit,
-    handleChange
+    handleChange,
   };
 };
