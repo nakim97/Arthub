@@ -25,9 +25,9 @@ export default function About({ user, handleOnLogout, term, setTerm}) {
       <h2>Meet The Team</h2>
 
       <div className="aboutImageContainer">
-        <img className="bannerImg" src={Brian} alt="team member 1 image" />
-        <img className="bannerImg" src={Stella} alt="team member 2 image" />
-        <img className="bannerImg" src={team2} alt="team member 3 image" />
+        <img className="bannerImg" src={Brian} alt="team member 1" />
+        <img className="bannerImg" src={Stella} alt="team member 2" />
+        <img className="bannerImg" src={team2} alt="team member 3" />
       </div>
 
       <div className="aboutInfo">
@@ -80,7 +80,7 @@ export default function About({ user, handleOnLogout, term, setTerm}) {
           </div>
         </div>
         <div className="missionImgContainer">
-          <img className="missionImg" src={team1} alt="An image of the team" />
+          <img className="missionImg" src={team1} alt="The team" />
         </div>
       </div>
     </div>
