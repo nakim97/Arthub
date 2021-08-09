@@ -17,6 +17,7 @@ export default function EditProfile({ user, setUser, handleOnLogout, term, setTe
     useImageUploadS();
   const { isProcessing, form, errors, handleOnSubmit, handleOnInputChange } =
     useEditProfile({ user, setUser, imageUrl, imageUrl2 });
+    
   return (
     <div className="user">
       <Navbar user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}   />
