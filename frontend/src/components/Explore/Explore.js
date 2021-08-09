@@ -1,5 +1,5 @@
 import "./Explore.css";
-import banner5 from "../../Assets/banner5.png";
+import banner5 from "../../Assets/banner6.jpg";
 import apiClient from "../../services/apiClient";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
