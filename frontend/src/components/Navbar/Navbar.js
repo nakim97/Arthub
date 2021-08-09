@@ -1,6 +1,7 @@
 import "./Navbar.css";
 import SubNavbar from "../SubNavbar/SubNavbar";
 import BrushIcon from "@material-ui/icons/Brush";
+import Logo from "../../Assets/Logo.png";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -67,7 +68,8 @@ export default function Navbar({ handleOnLogout, user, term, setTerm }) {
         <div className="content">
           <Link to="/" className="Link">
             <div className="logo">
-              <BrushIcon style={{ fontSize: 30 }} />
+              <img src={Logo} />
+              {/* <BrushIcon style={{ fontSize: 30 }} /> */}
             </div>
           </Link>
           <div className="search-bar">

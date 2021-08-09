@@ -29,6 +29,10 @@
   position: sticky;
 }
 
+.Navbar .content .logo img {
+  width: 50%;
+}
+
 .Navbar .content .logo h1 {
   color: white;
 }
