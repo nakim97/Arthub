@@ -9,7 +9,7 @@ import Navbar from "../Navbar/Navbar";
 export default function About({ user, handleOnLogout, term, setTerm}) {
   return (
     <div className="about">
-      <Navbar user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}   />
+      <Navbar user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm} />
 
       <div className="banner">
         <img

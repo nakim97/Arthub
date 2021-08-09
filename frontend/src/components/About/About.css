@@ -1,13 +1,11 @@
 .about .banner .aboutImageContainer {
-  display:grid;
+  display: grid;
   grid-template-columns: 1fr 1fr 1fr;
- 
 }
 
-
-.about .banner .bannerImgs{
-  width:100%;
-  display:flex;
+.about .banner .bannerImgs {
+  width: 100%;
+  display: flex;
 }
 .banner {
   position: relative;
@@ -21,14 +19,6 @@
   left: 0%;
   font-size: 40px;
 }
-
-/* .mission .text ul {
-  list-style: circle;
-  color: white;
-}
-.mission .text ul li {
-  color: white;
-} */
 
 .about .aboutImageContainer {
   display: flex;
@@ -50,9 +40,6 @@
   font-weight: bold;
 }
 
-/* .about .aboutInfo .aboutName {
-} */
-
 .about .aboutInfo .description {
   display: block;
 }
@@ -61,7 +48,7 @@
   color: #fff;
   display: flex;
   justify-content: left;
-  padding-left:50px;
+  padding-left: 50px;
   padding-top: 2rem;
 }
 
@@ -74,7 +61,7 @@
   padding-left: 50px;
 }
 
-.about .mission .text{
+.about .mission .text {
   overflow-x: hidden;
   display: inline-block;
 }
@@ -93,49 +80,42 @@
   text-align: left;
 }
 
-
 .about .missionImgContainer img {
   width: 500px;
   height: 500px;
 }
 
-@media screen and (max-width:1171px){
+@media screen and (max-width: 1171px) {
   .about .missionImgContainer img {
     width: 400px;
     height: 500px;
   }
 }
 
-@media screen and (max-width:1099px){
+@media screen and (max-width: 1099px) {
   .about .missionImgContainer img {
     width: 350px;
     height: 600px;
   }
 }
 
-@media screen and (max-width:627px){
+@media screen and (max-width: 627px) {
   .about .missionImgContainer img {
     width: 350px;
     height: 700px;
   }
 }
 
-@media screen and (max-width:919px){
+@media screen and (max-width: 919px) {
   .about .aboutImageContainer .bannerImg {
     width: 200px;
-    height:auto;
-   
+    height: auto;
   }
-
-
 }
 
-@media screen and (max-width:639px){
+@media screen and (max-width: 639px) {
   .about .aboutImageContainer .bannerImg {
     width: 150px;
-    height:auto;
-   
+    height: auto;
   }
-
-
 }
