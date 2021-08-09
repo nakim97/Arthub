@@ -27,8 +27,6 @@ import UserDetail from "../UserDetail/UserDetail";
 
 export default function App() {
   const [error, setError] = useState(null);
-  // This is just in case for filtering
-  // const [filterInputValue, setInputValue] = useState(null);
   const [user, setUser] = useState({});
   const [term, setTerm] = useState(null);
   const [forumTerm, setForumTerm] = useState(null);
@@ -51,7 +49,6 @@ export default function App() {
     setUser({});
     setError(null);
   };
-  
 
   return (
     <div className="App">

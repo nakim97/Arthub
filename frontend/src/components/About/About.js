@@ -70,7 +70,7 @@ export default function About({ user, handleOnLogout, term, setTerm}) {
           </div>
           <div className="text">
             <p>
-              At ArtHub, we aim to provide reassurance and exposure to evry
+              At ArtHub, we aim to provide reassurance and exposure to every
               artist in our community by showing them that:{" "}
             </p>
 

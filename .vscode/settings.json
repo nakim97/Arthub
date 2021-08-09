@@ -7,7 +7,9 @@
         "coollines",
         "createforumpost",
         "dbquery",
+        "editforumpost",
         "editportfolio",
+        "forumsearch",
         "postgres",
         "postgresql",
         "youtube"
