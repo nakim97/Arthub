@@ -16,7 +16,7 @@ export default function Community({
   forumTerm,
   setForumTerm,
 }) {
-  const { button, myPostsF } = useCommunity({ user });
+  const { button, myPostsF } = useCommunity({ user, forumTerm, setForumTerm });
   return (
     <div className="community">
       <Navbar
@@ -25,7 +25,7 @@ export default function Community({
         term={term}
         setTerm={setTerm}
       />
-      <CommunityNavbar forumTerm={forumTerm} setForumTerm={setForumTerm} />
+      <CommunityNavbar user={user} forumTerm={forumTerm} setForumTerm={setForumTerm} />
 
       <div className="trendingCommunity">
         <h4>

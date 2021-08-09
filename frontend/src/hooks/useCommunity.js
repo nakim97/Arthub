@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import apiClient from "../services/apiClient";
 
-export const useCommunity = ({ user }) => {
+export const useCommunity = ({ user, forumTerm, setForumTerm }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
   const [myPostsF, setMyPostsF] = useState([]);
@@ -44,8 +44,25 @@ export const useCommunity = ({ user }) => {
     </>
   );
 
+  const navigate = useNavigate();
+  // This redirects to the search page to display the posts
+  const handleFormSubmit = async () => {
+    navigate("/forumsearch");
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    handleFormSubmit(forumTerm);
+  };
+
+  const handleChange = (event) => {
+    setForumTerm(event.target.value);
+  };
+
   return {
     button,
     myPostsF,
+    handleSubmit,
+    handleChange
   };
 };
