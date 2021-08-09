@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import apiClient from "../services/apiClient";
 import person2 from "../Assets/person2.png";
 import { useParams } from "react-router";
-import Comments from "../Comments/Comments";
+import Comments from "../components/Comments/Comments";
 
 export const usePostDetail = ({ user }) => {
   const { postId } = useParams();
@@ -25,7 +25,7 @@ export const usePostDetail = ({ user }) => {
     };
     fetchPostById();
   }, [postId]);
-  
+
   /*
  - Fragment tags as return only returns one thing <> </> */
   const profile_url =
