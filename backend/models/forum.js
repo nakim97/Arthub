@@ -105,15 +105,15 @@ class Forum {
     }
     const results = await db.query(
       `
-            INSERT INTO forumPost (forum_title, forum_description, img_id, user_id)
-            VALUES ($1, $2, $3, (SELECT id FROM users WHERE email = $4))
-            RETURNING id,
-            user_id AS "userId",
-            img_id,
-            forum_title,
-            forum_description,
-            forum_created_at
-            `,
+      INSERT INTO forumPost (forum_title, forum_description, img_id, user_id)
+      VALUES ($1, $2, $3, (SELECT id FROM users WHERE email = $4))
+      RETURNING id,
+      user_id AS "userId",
+      img_id,
+      forum_title,
+      forum_description,
+      forum_created_at
+      `,
       [post.forumTitle, post.forumDescription, post.imgId, user.email]
     );
     return results.rows[0];

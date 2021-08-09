@@ -207,9 +207,9 @@ class Like {
     // fetch a user's comment for a post if it exists
     const results = await db.query(
       `
-          SELECT *
-          FROM forumLikes AS fl
-                `
+      SELECT *
+      FROM forumLikes AS fl
+      `
     );
 
     return results.rows;
@@ -219,11 +219,11 @@ class Like {
     // fetch the likes for a post if it exists
     const results = await db.query(
       `
-          SELECT *
-          FROM forumLikes AS fl
-          WHERE forum_post_id = $1
-          ORDER BY id DESC
-                `,
+      SELECT *
+      FROM forumLikes AS fl
+      WHERE forum_post_id = $1
+      ORDER BY id DESC
+      `,
       [postsId]
     );
 

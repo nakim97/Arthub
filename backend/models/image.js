@@ -26,11 +26,11 @@ class Image {
     }
     const results = await db.query(
       `
-            INSERT INTO photoUpload (post_img_url, user_id)
-            VALUES ($1, (SELECT id FROM users WHERE email = $2))
-            RETURNING id,
-            user_id AS "userId"
-            `,
+      INSERT INTO photoUpload (post_img_url, user_id)
+      VALUES ($1, (SELECT id FROM users WHERE email = $2))
+      RETURNING id,
+      user_id AS "userId"
+      `,
       [image.postImgUrl, user.email]
     );
     return results.rows[0];

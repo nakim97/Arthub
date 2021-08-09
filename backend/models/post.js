@@ -138,15 +138,15 @@ class Post {
     }
     const results = await db.query(
       `
-            INSERT INTO photoPost (post_title, post_description, img_id, user_id)
-            VALUES ($1, $2, $3, (SELECT id FROM users WHERE email = $4))
-            RETURNING id,
-            user_id AS "userId",
-            img_id,
-            post_title,
-            post_description,
-            photo_created_at
-            `,
+      INSERT INTO photoPost (post_title, post_description, img_id, user_id)
+      VALUES ($1, $2, $3, (SELECT id FROM users WHERE email = $4))
+      RETURNING id,
+      user_id AS "userId",
+      img_id,
+      post_title,
+      post_description,
+      photo_created_at
+      `,
       [post.postTitle, post.postDescription, post.imgId, user.email]
     );
     return results.rows[0];
