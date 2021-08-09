@@ -56,6 +56,10 @@ body {
   bottom: 92.22%;
   z-index: 1;
 }
+
+.logo img {
+  width: 100%;
+}
 .bubble {
   position: absolute;
   width: 20px;
@@ -226,8 +230,7 @@ body {
   font-size: 0.75em;
 }
 
-
-@media screen and (max-width:1090px){
+@media screen and (max-width: 1090px) {
   .Register .registerImage {
     position: absolute;
     width: 250px;
@@ -237,8 +240,7 @@ body {
   }
   .Register .aside {
     position: absolute;
-    
-  
+
     font-family: Roboto;
     font-style: normal;
     font-weight: bold;
@@ -247,13 +249,13 @@ body {
     display: flex;
     align-items: center;
     text-align: center;
-  
+
     color: #ffffff;
     z-index: 1;
   }
 }
 
-@media screen and (max-width:898px){
+@media screen and (max-width: 898px) {
   .Register .registerImage {
     position: absolute;
     width: 220px;
@@ -264,7 +266,7 @@ body {
   .Register .aside {
     position: absolute;
     left: 30px;
-  
+
     font-family: Roboto;
     font-style: normal;
     font-weight: bold;
@@ -273,13 +275,13 @@ body {
     display: flex;
     align-items: center;
     text-align: center;
-  
+
     color: #ffffff;
     z-index: 1;
   }
 }
 
-@media screen and (max-width:839px){
+@media screen and (max-width: 839px) {
   .Register .registerImage {
     position: absolute;
     width: 150px;
@@ -290,7 +292,7 @@ body {
   .Register .aside {
     position: absolute;
     left: 15px;
-  
+
     font-family: Roboto;
     font-style: normal;
     font-weight: bold;
@@ -299,7 +301,7 @@ body {
     display: flex;
     align-items: center;
     text-align: center;
-  
+
     color: #ffffff;
     z-index: 1;
   }
@@ -313,8 +315,10 @@ body {
   }
 }
 
-@media screen and (max-width:701px){
-  .Register .aside, .Register .bubble, .Register .registerImage{
+@media screen and (max-width: 701px) {
+  .Register .aside,
+  .Register .bubble,
+  .Register .registerImage {
     display: none;
   }
 }

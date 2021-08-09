@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import BrushIcon from "@material-ui/icons/Brush";
+import Logo from "../../Assets/Logo.png";
 import BubbleChartIcon from "@material-ui/icons/BubbleChart";
 import "./Register.css";
 import banner5 from "../../Assets/banner5.png";
@@ -33,19 +34,22 @@ export default function Register({ user, setUser }) {
       </div>
     </>
   );
-  
+
   return (
     <div className="Register">
       <div className="picture">
         <Link to="/" style={{ color: "inherit", textDecoration: "inherit" }}>
           <div className="logo">
-            <BrushIcon style={{ fontSize: 30 }} />
+            <img src={Logo} />
+            {/* <BrushIcon style={{ fontSize: 30 }} /> */}
           </div>
         </Link>
         <div className="bubble">
           <BubbleChartIcon style={{ marginRight: "5px" }} />
         </div>
-        <p className="aside">The First Step <br></br>To <br></br>Greatness</p>
+        <p className="aside">
+          The First Step <br></br>To <br></br>Greatness
+        </p>
         <img
           className="registerImage"
           src={register1}
