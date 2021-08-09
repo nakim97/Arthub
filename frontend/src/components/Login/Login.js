@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "./Login.css";
-
+import Logo from "../../Assets/Logo.png";
 import learningbanner from "../../Assets/learningbanner.jpg";
 import BrushIcon from "@material-ui/icons/Brush";
 import BubbleChartIcon from "@material-ui/icons/BubbleChart";
