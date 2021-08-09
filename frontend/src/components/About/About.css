@@ -74,17 +74,19 @@
   padding-left: 50px;
 }
 
-.about .mission .text{
+.about .mission .text, .about .mission .text2{
   overflow-x: hidden;
   display: inline-block;
+ 
 }
+
 
 .about .mission .missionTitle {
   text-align: left;
   margin-left: -3.3rem;
 }
 
-.about .mission .text p {
+.about .mission .text p , .about .mission .text2 p{
   color: #fff;
   font-size: 15px;
   white-space: normal;
@@ -93,6 +95,9 @@
   text-align: left;
 }
 
+.about .mission .text2 {
+  float:left;
+}
 
 .about .missionImgContainer img {
   width: 500px;
