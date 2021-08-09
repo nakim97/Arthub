@@ -3,8 +3,6 @@ const User = require("../models/user");
 const security = require("../middleware/security");
 const router = express.Router();
 
-// /* GET users listing. */
-
 // Add middleware before response is sent to get the user
 router.get("/", security.requireAuthenticatedUser, async (req, res, next) => {
   try {
@@ -18,7 +16,7 @@ router.get("/", security.requireAuthenticatedUser, async (req, res, next) => {
 
 router.patch("/", security.requireAuthenticatedUser, async (req, res, next) => {
   try {
-    const user = await User.updateProfile( req.body );
+    const user = await User.updateProfile(req.body);
     return res.status(201).json({ user });
   } catch (err) {
     next(err);
