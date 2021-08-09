@@ -68,7 +68,8 @@ export default function About({ user, handleOnLogout, term, setTerm}) {
           <div className="missionTitle">
             <h2>How We Do This</h2>
           </div>
-          <div className="text">
+          <div className="text2">
+          
             <p>
               At ArtHub, we aim to provide reassurance and exposure to every
               artist in our community by showing them that:{" "}
@@ -77,6 +78,8 @@ export default function About({ user, handleOnLogout, term, setTerm}) {
             <p>○ Your work continues to be YOUR work</p>
             <p>○ Art uploaded on our platform can be viewed by all members</p>
             <p>○ Practice is the key to becoming a better artist</p>
+            
+            
           </div>
         </div>
         <div className="missionImgContainer">
