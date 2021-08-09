@@ -24,27 +24,24 @@ router.post("/register", async (req, res, next) => {
     next(err);
   }
 });
+
 router.post("/token/", async function (req, res, next) {
   const { email, password } = req.body;
-  //const requiredFields = ["email", "password"];
-  // validateFields({ required: requiredFields, obj: req.body, location: "login route" });
   const user = await User.login({ email, password });
   const token = createUserJwt(user);
   return res.status(200).json({ user, token });
 });
+
 // Add middleware before response is sent to get the user
 router.get("/me", security.requireAuthenticatedUser, async (req, res, next) => {
   try {
     const { email } = res.locals.user;
     const user = await User.fetchUserByEmail(email);
-
     const publicUser = User.makePublicUser(user);
     return res.status(200).json({ user: publicUser });
   } catch (err) {
     next(err);
   }
 });
-
-/************************ Development testing routes  *******/
 
 module.exports = router;

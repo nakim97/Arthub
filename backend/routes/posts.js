@@ -26,7 +26,8 @@ router.get("/listPosts", async (req, res, next) => {
     next(err);
   }
 });
-// Top and bottom
+
+// Top and bottom posts
 router.get("/listPostsT", async (req, res, next) => {
   try {
     const posts = await Post.listAllPostsL4();
@@ -35,6 +36,7 @@ router.get("/listPostsT", async (req, res, next) => {
     next(err);
   }
 });
+
 router.get("/listPostsB", async (req, res, next) => {
   try {
     const posts = await Post.listAllPostsHL4();
@@ -160,6 +162,7 @@ router.post(
     }
   }
 );
+
 // Delete like for post
 router.delete(
   "/:postsId/likes",

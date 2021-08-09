@@ -1,7 +1,7 @@
-const bcrypt = require("bcrypt")
-const db = require("../db")
-const tokens = require("../utils/tokens")
-const { BCRYPT_WORK_FACTOR } = require("../config")
+const bcrypt = require("bcrypt");
+const db = require("../db");
+const tokens = require("../utils/tokens");
+const { BCRYPT_WORK_FACTOR } = require("../config");
 
 const createUsers = async () => {
   await db.query(`
@@ -28,21 +28,24 @@ const createUsers = async () => {
       '${await bcrypt.hash("password2", BCRYPT_WORK_FACTOR)}',
       TRUE  
     );  
-  `)
+  `);
 
-  const results = await db.query(`SELECT id FROM users ORDER BY id ASC`)
+  const results = await db.query(`SELECT id FROM users ORDER BY id ASC`);
 
-  const ids = results.rows.map((row) => row.id)
-  return ids
-}
+  const ids = results.rows.map((row) => row.id);
+  return ids;
+};
 
-const jloToken = tokens.createUserJwt({ username: "jlo", isAdmin: false })
-const lebronToken = tokens.createUserJwt({ username: "lebron", isAdmin: false })
-const adminToken = tokens.createUserJwt({ username: "serena", isAdmin: true })
+const jloToken = tokens.createUserJwt({ username: "jlo", isAdmin: false });
+const lebronToken = tokens.createUserJwt({
+  username: "lebron",
+  isAdmin: false,
+});
+const adminToken = tokens.createUserJwt({ username: "serena", isAdmin: true });
 
 module.exports = {
   createUsers,
   jloToken,
   lebronToken,
   adminToken,
-}
+};

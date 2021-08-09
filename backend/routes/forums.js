@@ -26,6 +26,7 @@ router.get("/listPosts", async (req, res, next) => {
     next(err);
   }
 });
+
 router.get("/listPostsD", async (req, res, next) => {
   try {
     const posts = await Forum.listAllForumPostsD4();
@@ -48,7 +49,7 @@ router.get("/", security.requireAuthenticatedUser, async (req, res, next) => {
 
 router.get("/search", async (req, res, next) => {
   try {
-    //uses search?q= -str- - you enter the string
+    //uses - search?q= -str- - you enter the string
     const { q } = req.query;
     const searches = await Forum.searchByForumTitle(q);
     return res.status(200).json({ searches });

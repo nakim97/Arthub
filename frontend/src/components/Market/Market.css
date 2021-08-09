@@ -37,57 +37,57 @@ html, body{
       font-size: 15px;
   }
 
-  .marketImageContainer {
+  .market .marketImageContainer {
     width: 100%;
   }
 
-  .marketImageContainer {
+  .market .marketImageContainer {
     width: 100%;
   }
 
-  .marketDiv {
+  .market .marketDiv {
     margin-top: 10px;
     color: white;
   }
   
 
-  .home .trendingMarket .container {
+  .market .trendingMarket .container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 
-  .marketContainer {
+  .market .marketContainer {
     width: 300px;
   }
   
-  .marketContainer .marketTitle {
+  .market .marketContainer .marketTitle {
     color: white;
     text-align: left;
     margin: 0;
     align-items: left;
   }
   
-  .marketBlurb {
+  .market .marketBlurb {
     color: white;
     font-style: italic;
   }
   
-  .learning .container {
+  .market .learning .container {
     margin-left: 50px;
   }
  
-  .trendingMarket h4 {
+  .market .trendingMarket h4 {
     color: white;
     text-align: left;
     margin-left: 50px;
     font-size: 20px;
   }
   
-  .marketImg {
+  .market .marketImg {
     height: 200px;
   }
 
-  .trendingMarket .container .marketAuthor {
+  .market .trendingMarket .container .marketAuthor {
     color: white;
     text-align: left;
     margin: 0;
@@ -96,26 +96,26 @@ html, body{
     font-size: 13px;
     margin-top: 5px;
   }
-  .trendingMarket .marketContainer .marketTitlePrice {
+  .market .trendingMarket .marketContainer .marketTitlePrice {
     margin-top: 5px;
   }
   
-  .trendingMarket .container .marketBlurb .marketRating {
+  .market .trendingMarket .container .marketBlurb .marketRating {
     font-size: 13px;
   }
   
-  .trendingMarket .container .marketPrice {
+  .market .trendingMarket .container .marketPrice {
     font-size: 15px;
     margin:0;
     text-align: right;
     align-items: right;
   }
   
-  .trendingMarket .container .marketTitle {
+  .market .trendingMarket .container .marketTitle {
     font-size: 20px;
   }
   
-  .market .trendingMarket{
+  .market .market .trendingMarket{
       margin-top: 50px;
   }
 
@@ -160,7 +160,7 @@ html, body{
   color: white;
   font-style: italic;
 }
-.marketImg {
+.market .marketImg {
     height: 200px;
   }
   

@@ -158,6 +158,7 @@ export default function Home({ handleOnLogout, user, term, setTerm }) {
           keyBoardControl={true}
           customTransition="all .5"
           transitionDuration={500}
+
           containerClass="carousel-container"
           dotListClass="custom-dot-list-style"
           itemClass="carousel-item-padding-0-px"
@@ -178,7 +179,7 @@ export default function Home({ handleOnLogout, user, term, setTerm }) {
       </div>
 
       <div className="exploreTrendingLatest">
-        <div className="feedBtns">
+        {/* <div className="feedBtns">
           <button
             className="feedExploreBtn"
             style={{
@@ -215,9 +216,9 @@ export default function Home({ handleOnLogout, user, term, setTerm }) {
           >
             LATEST
           </button>
-        </div>
+        </div> */}
 
-        <div className="feed">
+        {/* <div className="feed">
           <ul>
             {myPostsB.map((post) => (
               <li key={post.photoPostId}>
@@ -231,10 +232,10 @@ export default function Home({ handleOnLogout, user, term, setTerm }) {
               </li>
             ))}
           </ul>
-        </div>
+        </div> */}
 
         <div className="newLearning">
-          <h4 style={{ marginBottom: "-200px" }}>
+          <h4 style={{ marginBottom: "-250px", marginTop:"-50px" }}>
             {" "}
             <SchoolIcon style={{ marginRight: "5px" }} /> NEW ON ARTHUB LEARNING
           </h4>
@@ -358,13 +359,13 @@ export default function Home({ handleOnLogout, user, term, setTerm }) {
           <div className="container">
             <div className="marketContainer">
               <div className="marketImageContainer">
-                <li>
+               
                   <img
                     className="marketImg"
                     src={homefeed5}
                     alt=" home feed img 4"
                   />
-                </li>
+              
               </div>
               <div className="marketTitlePrice">
                 <p className="marketTitle" style={{ textAlign: "left" }}>
@@ -390,13 +391,13 @@ export default function Home({ handleOnLogout, user, term, setTerm }) {
 
             <div className="marketContainer">
               <div className="marketImageContainer">
-                <li>
+    
                   <img
                     className="marketImg"
                     src={homefeed1}
                     alt=" home feed img 2"
                   />
-                </li>
+      
               </div>
               <div className="marketTitlePrice">
                 <p className="marketTitle" style={{ textAlign: "left" }}>
@@ -422,13 +423,13 @@ export default function Home({ handleOnLogout, user, term, setTerm }) {
 
             <div className="marketContainer">
               <div className="marketImageContainer">
-                <li>
+         
                   <img
                     className="marketImg"
                     src={homefeed7}
                     alt=" home feed img 2"
                   />
-                </li>
+        
               </div>
               <div className="marketTitlePrice">
                 <p className="marketTitle" style={{ textAlign: "left" }}>
@@ -454,13 +455,13 @@ export default function Home({ handleOnLogout, user, term, setTerm }) {
 
             <div className="marketContainer">
               <div className="marketImageContainer">
-                <li>
+   
                   <img
                     className="marketImg"
                     src={homefeed6}
                     alt=" home feed img 2"
                   />
-                </li>
+              
               </div>
               <div className="marketTitlePrice">
                 <p className="marketTitle" style={{ textAlign: "left" }}>
