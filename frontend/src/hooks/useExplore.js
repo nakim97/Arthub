@@ -18,7 +18,7 @@ export const useExplore = ({ user }) => {
     };
 
     listAllPosts();
-  });
+  }, []);
 
   return {
     myPosts,

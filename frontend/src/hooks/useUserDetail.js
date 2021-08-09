@@ -143,13 +143,13 @@ export const useUserDetail = ({ user }) => {
 
             <div className="mediaLinks">
               <div className="socialMedia">
-                <a target="_blank" href={`${instagram_url}`}>
+                <a target="_blank" rel="noreferrer" href={`${instagram_url}`}>
                   <InstagramIcon />
                 </a>
-                <a target="_blank" href={`${facebook_url}`}>
+                <a target="_blank" rel="noreferrer" href={`${facebook_url}`}>
                   <FacebookIcon />
                 </a>
-                <a target="_blank" href={`${twitter_url}`}>
+                <a target="_blank" rel="noreferrer" href={`${twitter_url}`}>
                   <TwitterIcon />
                 </a>
               </div>
