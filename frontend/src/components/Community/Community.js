@@ -1,5 +1,4 @@
 import "./Community.css";
-import CommunityNavbar from "../CommunityNavbar/CommunityNavbar";
 import Navbar from "../Navbar/Navbar";
 import communityHero from "../../Assets/banner8.jpg";
 import WhatshotIcon from "@material-ui/icons/Whatshot";
@@ -7,6 +6,7 @@ import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import QuestionAnswerIcon from "@material-ui/icons/QuestionAnswer";
 import { Link } from "react-router-dom";
 import { useCommunity } from "../../hooks/useCommunity";
+import { useCommunityNavbar } from "../../hooks/useCommunityNavbar";
 
 export default function Community({
   user,
@@ -17,6 +17,7 @@ export default function Community({
   setForumTerm,
 }) {
   const { button, myPostsF } = useCommunity({ user });
+  const { handleSubmit, handleChange } = useCommunityNavbar({ forumTerm, setForumTerm });
   return (
     <div className="community">
       <Navbar
@@ -25,12 +26,23 @@ export default function Community({
         term={term}
         setTerm={setTerm}
       />
-      <CommunityNavbar user={user} forumTerm={forumTerm} setForumTerm={setForumTerm} />
       <div
         className="bannerBackground"
         style={{ backgroundImage: `url(${communityHero})`}}
       >
         <h1> COMMUNITY FORUM </h1>
+        <div className="search-bar">
+          <form onSubmit={handleSubmit} className="form">
+            <div className="field">
+              <input
+                onChange={handleChange}
+                name="search"
+                type="text"
+                placeholder="Search Forum Posts..."
+              />
+            </div>
+          </form>
+        </div>
       </div>
       <div className="trendingCommunity">
         <h4>

@@ -30,7 +30,7 @@ export default function Navbar({ handleOnLogout, user, term, setTerm }) {
                   onChange={handleChange}
                   name="search"
                   type="text"
-                  placeholder="Search Posts..."
+                  placeholder="Search Image Posts..."
                 />
               </div>
             </form>
