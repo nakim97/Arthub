@@ -23,7 +23,7 @@ export default function About({ user, handleOnLogout, term, setTerm }) {
           alt="people standing on a mountain"
         />
         <div className="bannerText">
-          <h4>WHERE OUR STORY BEGINS</h4>
+          <h4>WHERE OUR STORY BEGAN</h4>
         </div>
       </div>
 
