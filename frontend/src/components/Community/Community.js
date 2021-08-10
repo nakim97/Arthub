@@ -44,6 +44,7 @@ export default function Community({
           </form>
         </div>
       </div>
+      
       <div className="trendingCommunity">
         <h4>
           {" "}
