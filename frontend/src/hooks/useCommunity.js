@@ -44,10 +44,6 @@ export const useCommunity = ({ user }) => {
     </>
   );
 
- 
-
-
-
   return {
     button,
     myPostsF,
