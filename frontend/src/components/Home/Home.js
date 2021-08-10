@@ -256,45 +256,54 @@ export default function Home({ handleOnLogout, user, term, setTerm }) {
                 dateNew
               );
               return (
-                <div className="communityContainer" key={post.forumPostId}>
-                <div className="communityImageContainer">
-                  <li>
-                    <Link to={`/forum/${post.forumPostId}`}>
-                      <img
-                        className="communityImg"
-                        src={`${post.imgPostUrl}`}
-                        alt={`homecarousel ${post.forumPostId}`}
-                      />
-                    </Link>
-                  </li>
-                  </div>
+                <Link
+                  style={{ textDecoration: "none" }}
+                  to={`/forum/${post.forumPostId}`}
+                >
+                  <div className="communityContainer" key={post.forumPostId}>
+                    <div className="communityImageContainer">
+                      <li>
+                        <img
+                          className="communityImg"
+                          src={`${post.imgPostUrl}`}
+                          alt={`homecarousel ${post.forumPostId}`}
+                        />
+                      </li>
+                    </div>
 
-                  <div className="communityTags">
-                    <p className="communityTag" style={{ textAlign: "left" }}>
-                      {" "}
-                      <span
-                        className="communityTime"
-                        style={{ float: "right" }}
+                    <div className="communityTags">
+                      <p className="communityTag" style={{ textAlign: "left" }}>
+                        {" "}
+                        <span
+                          className="communityTime"
+                          style={{ float: "right" }}
+                        >
+                          {date}
+                        </span>
+                      </p>
+
+                      <p
+                        className="communityTitle"
+                        style={{ textAlign: "left" }}
                       >
-                        {date}
+                        {" "}
+                        {post.forumTitle}
+                      </p>
+                    </div>
+                    <p
+                      className="communityAuthor"
+                      style={{ textAlign: "left" }}
+                    >
+                      by {post.username}
+                    </p>
+                    <div className="communityBlurb">
+                      <span className="communityBtn" style={{ float: "right" }}>
+                        <ThumbUpIcon style={{ fontSize: "15px" }} />{" "}
+                        <QuestionAnswerIcon style={{ fontSize: "15px" }} />{" "}
                       </span>
-                    </p>
-
-                    <p className="communityTitle" style={{ textAlign: "left" }}>
-                      {" "}
-                      {post.forumTitle}
-                    </p>
+                    </div>
                   </div>
-                  <p className="communityAuthor" style={{ textAlign: "left" }}>
-                    by {post.username}
-                  </p>
-                  <div className="communityBlurb">
-                    <span className="communityBtn" style={{ float: "right" }}>
-                      <ThumbUpIcon style={{ fontSize: "15px" }} />{" "}
-                      <QuestionAnswerIcon style={{ fontSize: "15px" }} />{" "}
-                    </span>
-                  </div>
-                </div>
+                </Link>
               );
             })}
           </div>

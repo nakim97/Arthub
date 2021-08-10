@@ -3,6 +3,7 @@
 html,
 body {
   background: #151313;
+  color: white;
   font-family: "Roboto", sans-serif;
   width: 100%;
   height: 100%;
@@ -147,7 +148,7 @@ body {
   height: 200px;
 }
 
-.home .communityContainer .communityImg{
+.home .communityContainer .communityImg {
   height: 200px;
 }
 /* Styling the Marketplace */
@@ -647,14 +648,13 @@ body {
   .communityTime {
     font-size: 10px;
     text-align: right;
-   
   }
 }
 
 @media only screen and (max-width: 515px) {
   .home .trendingMarket .container .marketContainer {
     width: 180px;
-    margin-top:50px;
+    margin-top: 50px;
     padding-bottom: 50px;
   }
   .home
@@ -684,10 +684,12 @@ ul,
 li,
 listing {
   list-style: none;
+  color: white;
   display: inline;
   margin-right: 50px;
 }
 
-.home .communityContainers .communityAuthor{
+.communityContainers .communityAuthor {
   padding-left: 0.5rem;
+  text-decoration: none;
 }

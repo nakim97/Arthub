@@ -79,7 +79,7 @@ body {
   padding-bottom: 200px;
 }
 
-.community .trendingCommunity .container  {
+.community .trendingCommunity .container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
@@ -87,7 +87,6 @@ body {
 .communityContainer {
   width: 300px;
 }
-
 
 .communityContainer .communityTitle {
   color: white;
@@ -121,27 +120,26 @@ body {
   font-size: 20px;
 }
 
-.community .communityContainer .communityImg{
+.community .communityContainer .communityImg {
   height: 200px;
   width: 300px;
 }
 
 .community .bannerBackground {
-  width:100%;
+  width: 100%;
   height: 600px;
-  margin:0;
-  margin-top:-30px;
+  margin: 0;
+  margin-top: -30px;
   background-repeat: repeat-x;
-
 }
 
-.community .bannerBackground h1{
-  color:white;
+.community .bannerBackground h1 {
+  color: white;
   position: relative;
-  font-size:45px;
+  font-size: 45px;
   letter-spacing: 5px;
   top: 50%;
-  z-index:1;
+  z-index: 1;
   transform: translateY(-50%);
 }
 
@@ -153,8 +151,6 @@ body {
   padding-left: 50px;
   padding-right: 50px;
 }
-
-
 
 .community .forumposts .post {
   border: 1px solid grey;
@@ -182,7 +178,8 @@ body {
   color: white;
 }
 
-ul, li{
+ul,
+li {
   display: inline;
 }
 
@@ -192,62 +189,60 @@ li {
   margin-right: 50px;
 }
 
-@media screen and (max-width:1306px){
-  .communityContainer{
-    width:250px;
+@media screen and (max-width: 1306px) {
+  .communityContainer {
+    width: 250px;
   }
-  .community .communityContainer .communityImg{
+  .community .communityContainer .communityImg {
     height: 200px;
     width: 250px;
   }
 }
 
-@media screen and (max-width:1106px){
-  .communityContainer{
-    width:200px;
+@media screen and (max-width: 1106px) {
+  .communityContainer {
+    width: 200px;
   }
-  .community .communityContainer .communityImg{
+  .community .communityContainer .communityImg {
     height: 180px;
     width: 200px;
   }
 }
 
-@media screen and (max-width:954px){
-  .communityContainer{
-    width:150px;
+@media screen and (max-width: 954px) {
+  .communityContainer {
+    width: 150px;
   }
-  .community .communityContainer .communityImg{
+  .community .communityContainer .communityImg {
     height: 150px;
     width: 150px;
   }
 }
 
-@media screen and (max-width:760px){
-  .communityContainer{
-    width:150px;
+@media screen and (max-width: 760px) {
+  .communityContainer {
+    width: 150px;
   }
-  .community .communityContainer .communityImg{
+  .community .communityContainer .communityImg {
     height: 150px;
     width: 150px;
   }
-  .community .trendingCommunity .container  {
+  .community .trendingCommunity .container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
   }
-  
 }
 
-@media screen and (max-width:580px){
-  .communityContainer{
-    width:150px;
+@media screen and (max-width: 580px) {
+  .communityContainer {
+    width: 150px;
   }
-  .community .communityContainer .communityImg{
+  .community .communityContainer .communityImg {
     height: 150px;
     width: 150px;
   }
-  .community .trendingCommunity .container  {
+  .community .trendingCommunity .container {
     display: grid;
-    grid-template-columns: 1fr 1fr ;
+    grid-template-columns: 1fr 1fr;
   }
-  
 }
