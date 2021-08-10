@@ -37,31 +37,54 @@ export default function About({ user, handleOnLogout, term, setTerm }) {
       </div>
 
       <div className="aboutInfo">
-        <p className="aboutName" style={{ textAlign: "left" }}>
-          {" "}
-          <div className="Brian">
-            <div className="socialMedia1">
-              <a target="_blank" rel="noreferrer" href={"www.gooogle.com"}>
-                <LinkedInIcon />
-              </a>
-            </div>
-            Brian Balthazar
+        <div className="Brian">
+          <div className="socialMedia1">
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href={"https://www.linkedin.com/in/brian-balthazar/"}
+            >
+              <LinkedInIcon />
+            </a>
           </div>
-        </p>
-        <p className="aboutName" style={{ textAlign: "left" }}>
-          {" "}
-          Stella Kim
-        </p>
-        <p className="aboutName" style={{ textAlign: "left" }}>
-          {" "}
-          Rodrigo Martinez
-        </p>
-      </div>
 
-      <div className="socialMedia1">
-        <a target="_blank" rel="noreferrer" href={"www.gooogle.com"}>
-          <LinkedInIcon />
-        </a>
+          <p className="aboutName" style={{ textAlign: "left" }}>
+            {" "}
+            Brian Balthazar
+          </p>
+        </div>
+        <div className="Stella">
+          <div className="socialMedia2">
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href={"https://www.linkedin.com/in/stellakim97/"}
+            >
+              <LinkedInIcon />
+            </a>
+          </div>
+
+          <p className="aboutName" style={{ textAlign: "left" }}>
+            {" "}
+            Stella Kim
+          </p>
+        </div>
+        <div className="Rodrigo">
+          <div className="socialMedia3">
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href={"https://www.linkedin.com/in/rodrigo-martinez-2023/"}
+            >
+              <LinkedInIcon />
+            </a>
+          </div>
+
+          <p className="aboutName" style={{ textAlign: "left" }}>
+            {" "}
+            Rodrigo Martinez
+          </p>
+        </div>
       </div>
 
       <div className="mission">
