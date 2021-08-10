@@ -132,17 +132,23 @@
   height: 33vh;
 }
 
-.mediaLinks .socialMedia {
-  display: flex;
+.user .mediaLinks .socialMedia {
+
   color: white;
   width: 200px;
   justify-content: space-around;
   margin-top: 3rem;
-  margin-left: 47rem;
+
+}
+
+.user .mediaLinks{
+  margin-left: auto;
   order: 2;
+  display: flex;
 }
 
 html,
 body {
   overflow-x: hidden;
 }
+
