@@ -4,6 +4,7 @@ import team1 from "../../Assets/team1.jpeg";
 import Brian from "../../Assets/brian_profile.png";
 import Stella from "../../Assets/stella_profile.jpeg";
 import team2 from "../../Assets/team2.jpeg";
+import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import Navbar from "../Navbar/Navbar";
 
 export default function About({ user, handleOnLogout, term, setTerm }) {
@@ -38,7 +39,14 @@ export default function About({ user, handleOnLogout, term, setTerm }) {
       <div className="aboutInfo">
         <p className="aboutName" style={{ textAlign: "left" }}>
           {" "}
-          Brian Balthazar
+          <div className="Brian">
+            <div className="socialMedia1">
+              <a target="_blank" rel="noreferrer" href={"www.gooogle.com"}>
+                <LinkedInIcon />
+              </a>
+            </div>
+            Brian Balthazar
+          </div>
         </p>
         <p className="aboutName" style={{ textAlign: "left" }}>
           {" "}
@@ -48,6 +56,12 @@ export default function About({ user, handleOnLogout, term, setTerm }) {
           {" "}
           Rodrigo Martinez
         </p>
+      </div>
+
+      <div className="socialMedia1">
+        <a target="_blank" rel="noreferrer" href={"www.gooogle.com"}>
+          <LinkedInIcon />
+        </a>
       </div>
 
       <div className="mission">
