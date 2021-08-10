@@ -23,6 +23,7 @@ export default function Explore({ user, handleOnLogout, term, setTerm }) {
           src={banner5}
           alt="people standing on a mountain"
         />
+        
         <div className="bannerText">
           <h4>EXPLORE</h4>
         </div>
