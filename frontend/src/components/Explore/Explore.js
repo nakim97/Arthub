@@ -28,7 +28,7 @@ export default function Explore({ user, handleOnLogout, term, setTerm }) {
         </div>
       </div>
 
-      <div className="exploreButtons">
+      {/* <div className="exploreButtons">
         <div className="feedBtns">
           <button
             className="feedTrendingBtn"
@@ -55,7 +55,7 @@ export default function Explore({ user, handleOnLogout, term, setTerm }) {
             LATEST
           </button>
         </div>
-      </div>
+      </div> */}
 
       <div className="container">
         <div className="gallery-item">

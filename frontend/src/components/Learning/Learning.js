@@ -26,7 +26,7 @@ export default function Learning({ user, handleOnLogout, term, setTerm }) {
         </div>
       </div>
 
-      <div className="learningTags">
+      {/* <div className="learningTags">
         <div className="learningBtns">
           <button
             className="learningBtn"
@@ -105,9 +105,9 @@ export default function Learning({ user, handleOnLogout, term, setTerm }) {
             <ExpandMoreIcon style={{ fontSize: "30px" }} />
           </span>
         </div>
-      </div>
+      </div> */}
 
-      <div className="newLearning">
+      <div className="newLearning" style={{marginTop:"-100px"}}>
         <h4 style={{ marginBottom: "100px" }}>Search Results</h4>
       </div>
     </div>

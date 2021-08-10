@@ -16,14 +16,21 @@ export default function Market({ user, handleOnLogout, term, setTerm }) {
       <div className="banner" style={{ backgroundImage: `url(${marketbanner})`}}>
         <div className="bannerSearch" >
           <h4> ARTHUB MARKETPLACE </h4>
-          <div className="search-bar">
-            <input type="text" name="search" placeholder="Search Products..." />
+          <h1>UNDER CONSTRUCTION</h1>
+          <div className="bar">
+            <div></div>
+           
           </div>
+          <div class="percentage">
+              <span> 0% </span>
+              <span> 50%</span>
+              <span> 100% </span>
+            </div>
         </div>
       </div>
 
       <div className="trendingMarket">
-        <div className="marketTags">
+        <div className="marketTags" style={{marginTop:"50px"}}>
           <button className="marketTrending"> TRENDING</button>
           <button className="marketLatest"> LATEST </button>
           <span className="filterIcon">
