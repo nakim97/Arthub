@@ -21,7 +21,7 @@ export const useCommunity = ({ user, forumTerm, setForumTerm }) => {
     listAllPostsF();
   }, []);
 
-  const button = Boolean(user.email) ? (
+  const button = Boolean(user?.email) ? (
     <>
       <div className="forumBtnContainer">
         <div className="forumBtn1">
