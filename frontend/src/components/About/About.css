@@ -3,14 +3,13 @@
   grid-template-columns: 1fr 1fr 1fr;
 }
 
-
-.about .banner .bannerImg{
-  width:100%;
+.about .banner .bannerImg {
+  width: 100%;
   height: 600px;
-  margin:0;
+  margin: 0;
 
   background-repeat: repeat-x;
-  opacity:0.6;
+  opacity: 0.6;
 }
 .banner {
   position: relative;
@@ -23,7 +22,7 @@
   top: 38%;
   left: 0%;
   font-size: 45px;
-  letter-spacing:5px;
+  letter-spacing: 5px;
 }
 
 .about .aboutImageContainer {
@@ -44,6 +43,44 @@
 
   justify-content: space-around;
   font-weight: bold;
+}
+.about .aboutInfo .aboutName {
+  display: flex;
+  justify-content: space-between;
+}
+
+.about .aboutInfo .Brian {
+  display: flex;
+}
+
+.about .aboutInfo .Brian .socialMedia1 {
+  margin: 1rem;
+}
+
+.about .aboutInfo .Stella {
+  display: flex;
+}
+
+.about .aboutInfo .Stella .socialMedia2 {
+  margin: 1rem;
+}
+
+.about .aboutInfo .Rodrigo {
+  display: flex;
+}
+
+.about .aboutInfo .Rodrigo .socialMedia3 {
+  margin: 1rem;
+}
+
+.socialMedia1 a:visited {
+  color: cyan;
+}
+.socialMedia2 a:visited {
+  color: cyan;
+}
+.socialMedia3 a:visited {
+  color: cyan;
 }
 
 .about .aboutInfo .description {
@@ -67,19 +104,19 @@
   padding-left: 50px;
 }
 
-.about .mission .text, .about .mission .text2{
+.about .mission .text,
+.about .mission .text2 {
   overflow-x: hidden;
   display: inline-block;
- 
 }
-
 
 .about .mission .missionTitle {
   text-align: left;
   margin-left: -3.3rem;
 }
 
-.about .mission .text p , .about .mission .text2 p{
+.about .mission .text p,
+.about .mission .text2 p {
   color: #fff;
   font-size: 15px;
   white-space: normal;
@@ -89,7 +126,7 @@
 }
 
 .about .mission .text2 {
-  float:left;
+  float: left;
 }
 
 .about .missionImgContainer img {

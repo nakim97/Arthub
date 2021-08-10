@@ -16,7 +16,7 @@ export default function Community({
   forumTerm,
   setForumTerm,
 }) {
-  const { button, myPostsF } = useCommunity({ user, forumTerm, setForumTerm });
+  const { button, myPostsF } = useCommunity({ user });
   return (
     <div className="community">
       <Navbar

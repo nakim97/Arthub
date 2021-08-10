@@ -1,9 +1,9 @@
 import "./CommunityNavbar.css";
 import FilterListIcon from "@material-ui/icons/FilterList";
-import { useCommunity } from "../../hooks/useCommunity";
+import { useCommunityNavbar } from "../../hooks/useCommunityNavbar";
 
 export default function CommunityNavbar({ user, forumTerm, setForumTerm }) {
-  const { handleSubmit, handleChange } = useCommunity({ user, forumTerm, setForumTerm });
+  const { handleSubmit, handleChange } = useCommunityNavbar({ forumTerm, setForumTerm });
   return (
     <nav className="communityNavbar">
       <div className="content">

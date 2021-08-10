@@ -4,6 +4,7 @@ import team1 from "../../Assets/team1.jpeg";
 import Brian from "../../Assets/brian_profile.png";
 import Stella from "../../Assets/stella_profile.jpeg";
 import team2 from "../../Assets/team2.jpeg";
+import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import Navbar from "../Navbar/Navbar";
 
 export default function About({ user, handleOnLogout, term, setTerm }) {
@@ -23,7 +24,7 @@ export default function About({ user, handleOnLogout, term, setTerm }) {
           alt="people standing on a mountain"
         />
         <div className="bannerText">
-          <h4>WHERE OUR STORY BEGINS</h4>
+          <h4>WHERE OUR STORY BEGAN</h4>
         </div>
       </div>
 
@@ -36,18 +37,54 @@ export default function About({ user, handleOnLogout, term, setTerm }) {
       </div>
 
       <div className="aboutInfo">
-        <p className="aboutName" style={{ textAlign: "left" }}>
-          {" "}
-          Brian Balthazar
-        </p>
-        <p className="aboutName" style={{ textAlign: "left" }}>
-          {" "}
-          Stella Kim
-        </p>
-        <p className="aboutName" style={{ textAlign: "left" }}>
-          {" "}
-          Rodrigo Martinez
-        </p>
+        <div className="Brian">
+          <div className="socialMedia1">
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href={"https://www.linkedin.com/in/brian-balthazar/"}
+            >
+              <LinkedInIcon />
+            </a>
+          </div>
+
+          <p className="aboutName" style={{ textAlign: "left" }}>
+            {" "}
+            Brian Balthazar
+          </p>
+        </div>
+        <div className="Stella">
+          <div className="socialMedia2">
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href={"https://www.linkedin.com/in/stellakim97/"}
+            >
+              <LinkedInIcon />
+            </a>
+          </div>
+
+          <p className="aboutName" style={{ textAlign: "left" }}>
+            {" "}
+            Stella Kim
+          </p>
+        </div>
+        <div className="Rodrigo">
+          <div className="socialMedia3">
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href={"https://www.linkedin.com/in/rodrigo-martinez-2023/"}
+            >
+              <LinkedInIcon />
+            </a>
+          </div>
+
+          <p className="aboutName" style={{ textAlign: "left" }}>
+            {" "}
+            Rodrigo Martinez
+          </p>
+        </div>
       </div>
 
       <div className="mission">
