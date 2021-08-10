@@ -3,6 +3,7 @@
 html,
 body {
   background: #151313;
+  text-decoration: none;
   color: white;
   font-family: "Roboto", sans-serif;
   width: 100%;
@@ -689,7 +690,8 @@ listing {
   margin-right: 50px;
 }
 
-.communityContainers .communityAuthor {
+.communityContainer .Author {
   padding-left: 0.5rem;
   text-decoration: none;
+  color: white;
 }

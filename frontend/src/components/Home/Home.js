@@ -61,7 +61,6 @@ export default function Home({ handleOnLogout, user, term, setTerm }) {
             </div>
           ))}
         </Carousel>
-        ;
       </div>
 
       <div className="exploreTrendingLatest">
@@ -290,12 +289,14 @@ export default function Home({ handleOnLogout, user, term, setTerm }) {
                         {post.forumTitle}
                       </p>
                     </div>
-                    <p
-                      className="communityAuthor"
-                      style={{ textAlign: "left" }}
-                    >
-                      by {post.username}
-                    </p>
+                    <div className="Author">
+                      <p
+                        className="communityAuthor"
+                        style={{ textAlign: "left" }}
+                      >
+                        by {post.username}
+                      </p>
+                    </div>
                     <div className="communityBlurb">
                       <span className="communityBtn" style={{ float: "right" }}>
                         <ThumbUpIcon style={{ fontSize: "15px" }} />{" "}
