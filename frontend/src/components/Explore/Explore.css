@@ -19,11 +19,11 @@
   text-align: center;
 }
 
-.exploreButtons .feedBtns {
+/* .exploreButtons .feedBtns {
   padding-top: 50px;
-}
+} */
 
-.exploreButtons .feedBtns .feedLatestBtn {
+/* .exploreButtons .feedBtns .feedLatestBtn {
   width: 200px;
   height: 50px;
   margin-right: 50px;
@@ -40,7 +40,7 @@
   font-size: 20px;
   letter-spacing: 3px;
   margin-bottom: 50px;
-}
+} */
 
 .feedImg {
   width: 300px;
