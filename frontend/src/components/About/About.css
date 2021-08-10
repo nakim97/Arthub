@@ -80,7 +80,7 @@
   color: cyan;
 }
 .socialMedia3 a:visited {
-  color: cyan;
+  color: cyan !important;
 }
 
 .about .aboutInfo .description {

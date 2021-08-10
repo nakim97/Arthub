@@ -68,7 +68,7 @@ export const usePostDetail = ({ user }) => {
         <div className="bannerTitle">
           <p>{post.post_title}</p>
         </div>
-
+        
         <div className="banner-">
           <img className="bannerImg" src={post.post_img_url} alt="post img" />
         </div>
