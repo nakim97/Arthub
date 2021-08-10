@@ -20,7 +20,7 @@ export const usePostSearch = ({ user, term }) => {
       setFetching(false);
     };
     fetchPosts();
-  }, [user, posts, term]);
+  }, [user, posts]);
 
   return { posts };
 };
