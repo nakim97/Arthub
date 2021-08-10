@@ -57,7 +57,7 @@ export default function Register({ user, setUser }) {
         />
       </div>
       <div className="card">
-        <h2>Sign Up to ArtHub</h2>
+        <h2>Sign Up to Arthub</h2>
 
         {errors.form && <span className="error">{errors.form}</span>}
         <br />

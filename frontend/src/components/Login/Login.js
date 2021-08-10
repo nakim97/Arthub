@@ -29,7 +29,7 @@ export default function Login({ user, setUser }) {
         <img className="loginImage" src={learningbanner} alt="login main img" />
       </div>
       <div className="card">
-        <h2>Sign in To ArtHub</h2>
+        <h2>Sign in To Arthub</h2>
 
         {errors.form && <span className="error">{errors.form}</span>}
         <br />
