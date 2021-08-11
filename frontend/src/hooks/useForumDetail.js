@@ -60,6 +60,11 @@ export const useForumDetail = ({ user }) => {
             <p>{post.username}</p>
           </div>
         </div>
+
+        <div className="uploadForumTitle">
+          <p>{post.forum_title}</p>
+        </div>
+
         <div className="banner-">
           <img className="bannerImg" src={post.forum_img_url} alt="forum" />
         </div>
@@ -69,6 +74,6 @@ export const useForumDetail = ({ user }) => {
   };
 
   return {
-    renderPostContent
+    renderPostContent,
   };
 };

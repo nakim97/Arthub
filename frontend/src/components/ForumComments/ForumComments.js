@@ -1,7 +1,8 @@
 import * as React from "react";
 import ShareIcon from "@material-ui/icons/Share";
 import ChatIcon from "@material-ui/icons/Chat";
-import ThumbUpIcon from "@material-ui/icons/ThumbUp";
+import FavoriteIcon from "@material-ui/icons/Favorite";
+// import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import person2 from "../../Assets/person2.png";
 import { Link } from "react-router-dom";
 import "./ForumComments.css";
@@ -16,7 +17,7 @@ export default function ForumComments({ user, post }) {
     commentsForm,
     comments,
   } = useForumCommentsForm({ user, post });
-  
+
   return (
     <div className="comments">
       <div className="likesAndShare">
@@ -41,7 +42,7 @@ export default function ForumComments({ user, post }) {
         </div>
         <div className="likeCount">
           <div className="numCount">
-            <ThumbUpIcon />
+            <FavoriteIcon />
             <p className="numLikesCount">{likesNum}</p>
           </div>
         </div>

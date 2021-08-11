@@ -147,6 +147,12 @@
   align-items: center;
 }
 
+.uploadForumTitle {
+  display: flex;
+  font-size: large;
+  margin-left: 4rem;
+}
+
 @media only screen and (max-width: 570px) {
   .banner img {
     max-width: 100%;

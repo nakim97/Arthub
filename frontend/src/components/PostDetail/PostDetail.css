@@ -160,6 +160,12 @@
   margin-left: 2rem;
 }
 
+.uploadPostTitle {
+  display: flex;
+  font-size: large;
+  margin-left: 4rem;
+}
+
 @media only screen and (max-width: 570px) {
   .banner img {
     max-width: 100%;

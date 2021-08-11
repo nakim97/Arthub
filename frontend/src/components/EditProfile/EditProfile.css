@@ -1,8 +1,8 @@
 .user .banner {
   display: flex;
   color: white;
-  margin-top: 25rem;
-  margin-left: 2rem;
+  margin-top: -40rem;
+  margin-left: 45rem;
 }
 
 .user .banner p {
@@ -21,12 +21,13 @@
 }
 
 .user .userInfo .userImage {
-  padding-right: 2rem;
+  /* padding-right: 2rem; */
+  margin-left: 15rem;
 }
 
 .user .nameInfo {
-  margin-top: -41.75rem;
-  margin-left: 25rem;
+  margin-top: 2rem;
+  margin-left: 22rem;
   color: white;
   text-align: left;
 }
@@ -72,8 +73,9 @@
 
 .bio {
   margin-top: 2.75rem;
-  margin-left: 25rem;
+  margin-left: 22rem;
   color: white;
+  padding-bottom: 4rem;
 }
 
 .bio .bioTitle {
@@ -173,9 +175,10 @@
 }
 
 .user .socialMediaEdit {
-  margin-left: 72rem;
-  margin-top: -19.5rem;
+  margin-left: 70rem;
+  margin-top: -24rem;
   color: white;
+  padding-bottom: 4rem;
 }
 
 .user .socialMediaEdit .media {
@@ -239,6 +242,7 @@
 
 .user .bannerTitle {
   margin-left: 4rem;
+  margin-top: -1.7rem;
 }
 
 @media only screen and (max-width: 1200px) {

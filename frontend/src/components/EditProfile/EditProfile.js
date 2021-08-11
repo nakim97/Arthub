@@ -10,17 +10,28 @@ import ImageUpload from "../ImageUpload/ImageUpload";
 import ImageUploadS from "../ImageUploadS/ImageUploadS";
 import { Link } from "react-router-dom";
 
-export default function EditProfile({ user, setUser, handleOnLogout, term, setTerm }) {
+export default function EditProfile({
+  user,
+  setUser,
+  handleOnLogout,
+  term,
+  setTerm,
+}) {
   const { handleImageUpload, openWidget, imageUrl, imageAlt } =
     useImageUpload();
   const { handleImageUpload1, openWidget1, imageUrl2, imageAlt2 } =
     useImageUploadS();
   const { isProcessing, form, errors, handleOnSubmit, handleOnInputChange } =
     useEditProfile({ user, setUser, imageUrl, imageUrl2 });
-    
+
   return (
     <div className="user">
-      <Navbar user={user} handleOnLogout={handleOnLogout} term={term} setTerm={setTerm}   />
+      <Navbar
+        user={user}
+        handleOnLogout={handleOnLogout}
+        term={term}
+        setTerm={setTerm}
+      />
       {errors.form && <span className="error">{errors.form}</span>}
       <br />
 
@@ -39,6 +50,21 @@ export default function EditProfile({ user, setUser, handleOnLogout, term, setTe
               name={"Profile picture"}
             />
           </div>
+        </div>
+      </div>
+
+      <div className="banner">
+        <div className="bannerTitle">
+          <h2>Upload Banner Image</h2>
+        </div>
+        <div className="bannerImage">
+          <ImageUploadS
+            handleImageUpload={handleImageUpload1}
+            openWidget={openWidget1}
+            imageUrl={imageUrl2}
+            imageAlt={imageAlt2}
+            name={"Banner picture"}
+          />
         </div>
       </div>
 
@@ -167,7 +193,7 @@ export default function EditProfile({ user, setUser, handleOnLogout, term, setTe
         </div>
       </div>
 
-      <div className="banner">
+      {/* <div className="banner">
         <div className="bannerTitle">
           <h2>Upload Banner Image</h2>
         </div>
@@ -180,7 +206,7 @@ export default function EditProfile({ user, setUser, handleOnLogout, term, setTe
             name={"Banner picture"}
           />
         </div>
-      </div>
+      </div> */}
 
       <div className="SaveCancel">
         <button className="cancel">

@@ -1,4 +1,5 @@
-import ThumbUpIcon from "@material-ui/icons/ThumbUp";
+//import ThumbUpIcon from "@material-ui/icons/ThumbUp";
+import FavoriteIcon from "@material-ui/icons/Favorite";
 import ShareIcon from "@material-ui/icons/Share";
 import ChatIcon from "@material-ui/icons/Chat";
 import person2 from "../../Assets/person2.png";
@@ -39,7 +40,7 @@ export default function Comments({ user, post }) {
         </div>
         <div className="likeCount">
           <div className="numCount">
-            <ThumbUpIcon />
+            <FavoriteIcon />
             <p className="numLikesCount">{likesNum}</p>
           </div>
         </div>
@@ -64,7 +65,7 @@ export default function Comments({ user, post }) {
           timeZone: "America/Los_Angeles",
         };
         var date = new Intl.DateTimeFormat("default", options).format(dateNew);
-        
+
         // Return a profile img in the comments
         const comment_profile_url =
           comment.profile_img_url == null || comment.profile_img_url == "null";
