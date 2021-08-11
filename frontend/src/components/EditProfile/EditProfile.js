@@ -23,7 +23,9 @@ export default function EditProfile({
     useImageUploadS();
   const { isProcessing, form, errors, handleOnSubmit, handleOnInputChange } =
     useEditProfile({ user, setUser, imageUrl, imageUrl2 });
-
+    function goTo(link) {
+      window.location.href = link;
+    }
   return (
     <div className="user">
       <Navbar
@@ -209,7 +211,7 @@ export default function EditProfile({
       </div> */}
 
       <div className="SaveCancel">
-        <button className="cancel">
+        <button className="cancel" onClick={() => {goTo('/me')}}>
           <Link to="/me">Cancel</Link>
         </button>
 
