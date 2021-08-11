@@ -3,6 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  color:white !important;
 }
 
 .PostDetail .card {
@@ -22,11 +23,11 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  color: white;
+  color: white !important;
 }
 .PostDetail .card .title h3 {
   font-size: 30px;
-  color: white;
+  color: white !important;
 }
 .PostDetail .card .description {
   flex: 1;
@@ -162,6 +163,7 @@
 
 .uploadPostTitle {
   display: flex;
+  color: white;
   font-size: large;
   margin-left: 4rem;
 }
