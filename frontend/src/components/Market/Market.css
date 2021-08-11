@@ -274,3 +274,11 @@ body {
     width: 400px;
   }
 }
+
+.market .marketContainer:hover {
+  transform: scale(1.03);
+}
+.market .marketContainer {
+  max-width: 530px;
+  transition: all 0.8s ease;
+}
