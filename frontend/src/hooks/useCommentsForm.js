@@ -130,9 +130,11 @@ export const useCommentsForm = ({ user }) => {
         <div className="searchForm">
           <form
             onSubmit={handleSubmit(async (data) => {
-              await apiClient.createComment(postId, {
-                comment: data["Comments"],
-              });
+              if (data["Comments"] != "") {
+                await apiClient.createComment(postId, {
+                  comment: data["Comments"],
+                });
+              }
             })}
           >
             <div className="commentSecCont">

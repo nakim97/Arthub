@@ -241,6 +241,28 @@ export default function Home({ handleOnLogout, user, term, setTerm }) {
           </h4>
           <div className="container">
             {myPostsF.map((post) => {
+              // Return a banner img in the forum
+              const forumImg =
+                post.imgPostUrl == null || post.imgPostUrl == "null";
+              const community_img = forumImg ? (
+                <>
+                  {/* Return default image */}
+                  <img
+                    className="communityImg"
+                    src={homefeed6}
+                    alt="community"
+                  />
+                </>
+              ) : (
+                <>
+                  {/* Use our own image */}
+                  <img
+                    className="communityImg"
+                    src={`${post.imgPostUrl}`}
+                    alt={`homecarousel ${post.forumPostId}`}
+                  />
+                </>
+              );
               var dateNew = new Date(post.forumCreatedAt);
               var options = {
                 year: "numeric",
@@ -257,16 +279,12 @@ export default function Home({ handleOnLogout, user, term, setTerm }) {
               );
               return (
                 <div className="communityContainer" key={post.forumPostId}>
-                <div className="communityImageContainer">
-                  <li>
-                    <Link to={`/forum/${post.forumPostId}`}>
-                      <img
-                        className="communityImg"
-                        src={`${post.imgPostUrl}`}
-                        alt={`homecarousel ${post.forumPostId}`}
-                      />
-                    </Link>
-                  </li>
+                  <div className="communityImageContainer">
+                    <li>
+                      <Link to={`/forum/${post.forumPostId}`}>
+                        {community_img}
+                      </Link>
+                    </li>
                   </div>
 
                   <div className="communityTags">

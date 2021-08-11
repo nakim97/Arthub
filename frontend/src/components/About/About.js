@@ -1,9 +1,9 @@
 import "./About.css";
 import banner2 from "../../Assets/banner7.jpg";
 import team1 from "../../Assets/team1.jpeg";
-import Brian from "../../Assets/brian_profile.png";
+import Brian from "../../Assets/Brian.jpeg";
 import Stella from "../../Assets/stella_profile.jpeg";
-import team2 from "../../Assets/team2.jpeg";
+import Rodrigo from "../../Assets/Rodrigo.jpeg";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import Navbar from "../Navbar/Navbar";
 
@@ -33,7 +33,7 @@ export default function About({ user, handleOnLogout, term, setTerm }) {
       <div className="aboutImageContainer">
         <img className="bannerImg" src={Brian} alt="team member 1" />
         <img className="bannerImg" src={Stella} alt="team member 2" />
-        <img className="bannerImg" src={team2} alt="team member 3" />
+        <img className="bannerImg" src={Rodrigo} alt="team member 3" />
       </div>
 
       <div className="aboutInfo">
