@@ -15,10 +15,10 @@ export default function ImageUpload({ handleImageUpload, openWidget, imageUrl, i
             <input type="file" />
           </div>
           <button type="button" className="btn" onClick={handleImageUpload}>
-            Submit
+            Upload Image File
           </button>
           <button type="button" className="btn widget-btn" onClick={openWidget}>
-            Upload and Submit Via Widget
+            Upload Image File Via Widget
           </button>
         </form>
       </section>
