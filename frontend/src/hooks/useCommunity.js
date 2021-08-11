@@ -19,7 +19,7 @@ export const useCommunity = ({ user }) => {
       }
     };
     listAllPostsF();
-  }, []);
+  }, [myPostsF]);
 
   const button = Boolean(user?.email) ? (
     <>

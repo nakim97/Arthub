@@ -23,7 +23,7 @@ export default function ImageUploadS({
               className="btn widget-btn"
               onClick={openWidget}
             >
-              Upload Image File Via Widget
+              Choose and Upload Image File Via Widget
             </button>
           </div>
         </form>
