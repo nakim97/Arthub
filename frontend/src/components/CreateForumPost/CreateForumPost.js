@@ -33,7 +33,9 @@ export default function CreateForumPost({
     handleOnSubmit,
     isProcessing,
   } = useForumPost({ imageUrl, imageAlt });
-
+  function goTo(link) {
+    window.location.href = link;
+  }
   //Unauthenticated view
   if (!user.email) {
     return (
@@ -148,7 +150,7 @@ export default function CreateForumPost({
           </div>
         </div>
 
-        <div className="editPageButns">
+        <div className="editPageButns" onClick={() => {goTo('/me')}}>
           <button className="cancel">
             <Link to="/me">Cancel</Link>
           </button>

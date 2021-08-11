@@ -26,6 +26,9 @@ export default function Upload({ user, handleOnLogout, term, setTerm }) {
     handleOnSubmit,
     isProcessing,
   } = useUploadForm({ imageUrl, imageAlt });
+  function goTo(link) {
+    window.location.href = link;
+  }
 
   //Unauthenticated view
   if (!user.email) {
@@ -171,7 +174,7 @@ export default function Upload({ user, handleOnLogout, term, setTerm }) {
         </div>
       </div>
       <div className="editPageButns">
-        <button className="cancel">
+        <button className="cancel" onClick={() => {goTo('/me')}}>
           <Link to="/me">Cancel</Link>
         </button>
 
