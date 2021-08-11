@@ -246,12 +246,27 @@
 }
 
 @media only screen and (max-width: 1200px) {
-  .user .socialMediaEdit {
-    margin-left: 70rem;
+  .user .userInfo .userImage {
+    margin-left: 10rem;
   }
 
+  .user .bannerTitle {
+    margin-left: -4rem;
+  }
+
+  .user .nameInfo {
+    margin-left: 16rem;
+  }
+
+  .user .socialMediaEdit {
+    margin-left: 63rem;
+  }
+
+  .user .bio {
+    margin-left: 15rem;
+  }
   .user .bio input {
-    width: 450px;
+    width: 540px;
   }
 
   .user .SaveCancel {
@@ -260,7 +275,34 @@
 }
 
 @media only screen and (max-width: 1010px) {
+  .user .userInfo .userImage {
+    margin-left: 5rem;
+  }
+
+  .user .bannerTitle {
+    margin-left: -10rem;
+  }
+
+  .user .nameInfo {
+    margin-left: 12rem;
+  }
+
   .user .socialMediaEdit {
+    margin-left: 57rem;
+  }
+
+  .user .bio {
+    margin-left: 12rem;
+  }
+  .user .bio input {
+    width: 490px;
+  }
+
+  .user .SaveCancel {
+    margin-left: 35rem;
+  }
+
+  /* .user .socialMediaEdit {
     margin-left: 48rem;
     margin-top: -20rem;
   }
@@ -290,22 +332,22 @@
   }
   .user .SaveCancel {
     margin-left: 25rem;
-  }
+  } */
 }
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 845px) {
   .user .userInfo .userImage {
     margin-left: 10rem;
   }
   .user .banner {
     margin-left: 13.5rem;
-    margin-top: 12rem;
+    margin-top: 0rem;
   }
   .user .banner .bannerTitle {
     margin-left: 2rem;
   }
 
   .user .nameInfo {
-    margin-top: -3rem;
+    margin-top: -5rem;
     margin-left: 15.5rem;
   }
 
@@ -319,7 +361,8 @@
   }
   .user .socialMediaEdit {
     margin-left: 38.5rem;
-    margin-top: -22rem;
+    margin-top: -29rem;
+    padding-bottom: 10rem;
   }
 
   .user .socialMediaEdit .media .Instagram,
@@ -334,7 +377,7 @@
     width: 200px;
   }
   .user .bio {
-    margin-top: 15rem;
+    margin-top: 17rem;
     margin-left: 15.5rem;
   }
 
