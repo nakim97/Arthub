@@ -275,3 +275,11 @@ li {
    
   }
 }
+
+.community .communityContainer:hover {
+  transform: scale(1.03);
+}
+.community .communityContainer {
+  max-width: 530px;
+  transition: all 0.8s ease;
+}

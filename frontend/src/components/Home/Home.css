@@ -29,6 +29,22 @@ body {
   transition: all 0.8s ease;
 }
 
+.home .marketContainer:hover {
+  transform: scale(1.03);
+}
+.home .marketContainer {
+  max-width: 530px;
+  transition: all 0.8s ease;
+}
+
+.home .communityContainer:hover {
+  transform: scale(1.02);
+}
+.home .communityContainer {
+  max-width: 530px;
+  transition: all 0.8s ease;
+}
+
 /* Explore Trending Latest Feature */
 
 .exploreTrendingLatest .feedBtns {
