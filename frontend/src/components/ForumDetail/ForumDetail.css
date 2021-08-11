@@ -149,6 +149,7 @@
 
 .uploadForumTitle {
   display: flex;
+  color: white;
   font-size: large;
   margin-left: 4rem;
 }
