@@ -150,7 +150,7 @@ export default function CreateForumPost({
           </div>
         </div>
 
-        <div className="editPageButns" onClick={() => {goTo('/me')}}>
+        <div className="editPageButns">
           <button className="cancel">
             <Link to="/me">Cancel</Link>
           </button>

@@ -1,6 +1,12 @@
 import "./ImageUpload.css";
 
-export default function ImageUpload({ handleImageUpload, openWidget, imageUrl, imageAlt, name }) {
+export default function ImageUpload({
+  handleImageUpload,
+  openWidget,
+  imageUrl,
+  imageAlt,
+  name,
+}) {
   return (
     <main className="ImageUpload">
       <section className="right-side white">
@@ -18,7 +24,7 @@ export default function ImageUpload({ handleImageUpload, openWidget, imageUrl, i
             Upload Image File
           </button>
           <button type="button" className="btn widget-btn" onClick={openWidget}>
-            Upload Image File Via Widget
+            Choose and Upload Image File Via Widget
           </button>
         </form>
       </section>

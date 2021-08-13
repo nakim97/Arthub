@@ -128,12 +128,13 @@ export const useForumCommentsForm = ({ user, post }) => {
       <>
         <div className="searchForm">
           <form
-            onSubmit={handleSubmit(
-              async (data) =>
+            onSubmit={handleSubmit(async (data) => {
+              if (data["Comments"] != "") {
                 await apiClient.createForumComment(postId, {
                   comment: data["Comments"],
-                })
-            )}
+                });
+              }
+            })}
           >
             <div className="commentSecCont">
               <div className="typeComment">

@@ -5,6 +5,7 @@ import WhatshotIcon from "@material-ui/icons/Whatshot";
 import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import QuestionAnswerIcon from "@material-ui/icons/QuestionAnswer";
 import { Link } from "react-router-dom";
+import homefeed6 from "../../Assets/homefeed6.jpg";
 import { useCommunity } from "../../hooks/useCommunity";
 import { useCommunityNavbar } from "../../hooks/useCommunityNavbar";
 
@@ -17,7 +18,10 @@ export default function Community({
   setForumTerm,
 }) {
   const { button, myPostsF } = useCommunity({ user });
-  const { handleSubmit, handleChange } = useCommunityNavbar({ forumTerm, setForumTerm });
+  const { handleSubmit, handleChange } = useCommunityNavbar({
+    forumTerm,
+    setForumTerm,
+  });
   return (
     <div className="community">
       <Navbar
@@ -28,7 +32,7 @@ export default function Community({
       />
       <div
         className="bannerBackground"
-        style={{ backgroundImage: `url(${communityHero})`}}
+        style={{ backgroundImage: `url(${communityHero})` }}
       >
         <h1> COMMUNITY FORUM </h1>
         <div className="search-bar">
@@ -44,7 +48,7 @@ export default function Community({
           </form>
         </div>
       </div>
-      
+
       <div className="trendingCommunity">
         <h4>
           {" "}
@@ -54,6 +58,25 @@ export default function Community({
 
         <div className="container">
           {myPostsF.map((post) => {
+            // Return a banner img in the forum
+            const forumImg =
+              post.imgPostUrl == null || post.imgPostUrl == "null";
+            const community_img = forumImg ? (
+              <>
+                {/* Return default image */}
+                <img className="communityImg" src={homefeed6} alt="community" />
+              </>
+            ) : (
+              <>
+                {/* Use our own image */}
+                <img
+                  className="communityImg"
+                  src={`${post.imgPostUrl}`}
+                  alt={`homecarousel ${post.forumPostId}`}
+                />
+              </>
+            );
+
             var dateNew = new Date(post.forumCreatedAt);
             var options = {
               year: "numeric",
@@ -73,14 +96,10 @@ export default function Community({
                 <div className="communityImageContainer">
                   <li>
                     <Link to={`/forum/${post.forumPostId}`}>
-                      <img
-                        className="communityImg"
-                        src={`${post.imgPostUrl}`}
-                        alt={`homecarousel ${post.forumPostId}`}
-                      />
+                      {community_img}
                     </Link>
                   </li>
-                  </div>
+                </div>
 
                 <div className="communityTags">
                   <p className="communityTag" style={{ textAlign: "left" }}>
@@ -109,8 +128,6 @@ export default function Community({
           })}
         </div>
       </div>
-
-      
     </div>
   );
 }
