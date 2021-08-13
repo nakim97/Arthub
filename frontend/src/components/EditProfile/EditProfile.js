@@ -112,11 +112,11 @@ export default function EditProfile({
 
       <div className="bio">
         <div className="bioTitle">
-          <h2>Edit Bibliography</h2>
+          <h2>Edit Biography</h2>
         </div>
         <div className="bioDescription">
           <div className="description">
-            <label htmlFor="bio">Bibliography:</label>
+            <label htmlFor="bio">Biography:</label>
           </div>
 
           <div className="textSpace">
