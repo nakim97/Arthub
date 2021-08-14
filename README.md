@@ -12,7 +12,7 @@ Mentors Names: **Rachel Okun, Saurabh Sood, Ernesto Rodriguez**
 
 Our goal is to help beginner artists gain exposure by helping them securely share their work with fellow beginner artists while also building a sense of community.
 
-Deployment Website: **Add Link to Deployed Project**
+Deployment Website: https://arthub-site.surge.sh/
 
 ### Open-source libraries used
 
