@@ -14,6 +14,45 @@ Our goal is to help beginner artists gain exposure by helping them securely shar
 
 Deployment Website: https://arthub-site.surge.sh/
 
-### Open-source libraries used
+## Walkthrough
 
-- Add any links to open-source libraries used in your project.
+- Showcasing Landing Page
+
+![](demogif.gif)
+
+
+- Showcasing Sign up, Sign in, Sign out features
+
+![](demogif1.gif)
+
+
+- Showcasing User Profile, Edit Profile, Edit Portfolio posts
+
+![](demogif2.gif)
+
+
+- Showcasing User creating an image post and uploading images
+
+![](demogif3.gif)
+
+
+- Showcasing Search Bar System Feature
+
+![](demogif4.gif)
+
+
+- Showcasing Liking and Commenting 
+
+![](demogif5.gif)
+
+
+- Showcasing Learning Page
+
+![](demogif6.gif)
+
+
+
+- Showcasing Community Forum Page
+![](demogif7.gif)
+
+
