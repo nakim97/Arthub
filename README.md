@@ -56,3 +56,8 @@ Deployment Website: https://arthub-site.surge.sh/
 ![](demogif7.gif)
 
 
+## WireFrames
+
+Wireframes on Figma: https://www.figma.com/file/6leFJTd88cHkmYfATtc9u0/ArtHub-Wireframes?node-id=0%3A1
+
+
