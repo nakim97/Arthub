@@ -14,6 +14,13 @@ Our goal is to help beginner artists gain exposure by helping them securely shar
 
 Deployment Website: https://arthub-site.surge.sh/
 
+## WireFrames
+
+Wireframes on Figma: https://www.figma.com/file/6leFJTd88cHkmYfATtc9u0/ArtHub-Wireframes?node-id=0%3A1
+
+![](arthub_wireframe.png)
+
+
 ## Walkthrough
 
 - Showcasing Landing Page
@@ -53,11 +60,9 @@ Deployment Website: https://arthub-site.surge.sh/
 
 
 - Showcasing Community Forum Page
+- 
 ![](demogif7.gif)
 
 
-## WireFrames
-
-Wireframes on Figma: https://www.figma.com/file/6leFJTd88cHkmYfATtc9u0/ArtHub-Wireframes?node-id=0%3A1
 
 
